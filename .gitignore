@@ -16,6 +16,12 @@ DerivedData
 .idea/
 *.hmap
 *.xccheckout
+*~.nib/ 
+*.swp 
+*~ *.dat 
+*.dep
+*.o 
+*.LinkFileList
 
 #CocoaPods
 Pods
