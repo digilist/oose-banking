@@ -1,0 +1,96 @@
+\documentclass[10pt,a4paper]{scrreprt}
+\usepackage{amssymb}
+\let\checkmark\relax
+\usepackage{papi}
+\usepackage[top=1.5cm,bottom=1cm,left=1.5cm,right=1.5cm]{geometry}
+\author{Projekt OOSE}
+\title{Umfragebogen zu einer Banking-App}
+
+\pagestyle{myheadings}
+\begin{document}
+	\begin{questionnaire}
+		\markboth{}{Umfragebogen zu einer Banking-App}
+		\question{1.}{Welchen \textbf{Studiengang} belegst du?}
+		
+		   \answer{Informatik}
+		   \answer{Wirtschaftsinformatik}
+		   \answer{Mensch-Computer-Interaktion}
+		   \answeropenone{Anderes, und zwar:}
+		
+		\separator
+		
+		\question{2.}{Findest du folgende \textbf{Funktionen} für eine Banking-App nützlich?}
+		
+		\blockAfive{sehr nützlich}{}{}{}{nicht nützlich}{%
+			\textAfive{A}{Möglichkeit, Geld an Personen in der Nähe zu senden {\footnotesize (mit NFC, WLAN, \dots)}}
+			\textAfive{B}{Bezahlung mit QR-Code}
+			\textAfive{C}{Intelligentes FAQ {\footnotesize (z.B. bei Steuerfragen)}}
+			\textAfive{D}{Chat mit einem persönlichen Berater}
+			\textAfive{E}{Bankautomaten-Finder}
+			\textAfive{F}{Filialen-Finder}
+			\textAfive{G}{Kartensperre}
+			\textAfive{H}{Personalisierte Angebote der Bank}
+			\textAfive{I}{Grafische Aufbereitung der Umsätze}
+			\textAfive{J}{Ausgaben verschiedenen Kategorien zugehörig machen {\footnotesize (Haushalt, \, Versicherung, Gehalt, \dots)}}
+			\textAfive{K}{V.d. Steuer absetzbare Einkäufe anzeigen}
+			\textAfive{L}{Depot-Verwaltung für Aktien}
+			\textAfive{M}{Push-Benachrichtigung für Transaktionen}
+		}
+		
+		\separator
+		
+		\question{3.}{Welche \textbf{weiteren} Features fändest du nützlich? (Bitte angeben)}
+		\longline
+		\longline
+		\longline
+		
+		\separator
+		
+		\question{4.}{Wie \textbf{oft} kontrollierst du deinen Kontostand?}	
+			\answer{täglich}
+			\answer{2-3 Mal die Woche}
+			\answer{1 Mal die Woche}
+			\answer{alle 2 Wochen}
+			\answer{seltener}
+			
+		\pageseparator	
+			
+		\question{5.}{Benutzt du derzeit eine \textbf{Banking-App}?}
+			\answer{Ja}
+			\answeropenone{Nein, und zwar aus folgendem Grund:}
+			
+		\question{5A.}{Wenn ja, \textbf{was gefällt dir} an der App?}
+			\longline
+			\longline
+			
+		\question{5B.}{\dots und was gefällt dir \textbf{nicht}?}
+			\longline
+			\longline
+			
+		\separator
+		
+		\question{6.}{Hast du \textbf{Bedenken} bezüglich folgender Punkte bei der Bedienung einer mobilen App?}
+		\blockAfour{keine Bedenken}{}{}{große Bedenken}{%
+			\textAfour{A}{Social-Media-Anbindung {\footnotesize (z.B. Facebook)}}
+			\textAfour{B}{Ortung}
+			\textAfour{C}{Missbrauch der Daten}
+			\textAfour{D}{Datenschutz}
+			\textAfour{E}{Verlust des Handys}
+			\textAfour{F}{Angst vor Betrug}
+			\textAfour{G}{Zu viel Wissen über Persönliches}
+		}
+		\question{6H.}{Siehst du etwas \textbf{besonders kritisch}?}
+			\longline
+			\longline
+		
+		\separator
+		
+		\question{7.}{Das wollte ich noch loswerden \dots}
+			\longline
+			\longline
+			\longline
+	\end{questionnaire}
+	\begin{center}
+		{\Huge Herzlichen Dank für deine Unterstützung!}
+	\end{center}
+\end{document}
