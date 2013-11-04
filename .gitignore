@@ -25,3 +25,13 @@ DerivedData
 
 #CocoaPods
 Pods
+
+#LaTeX
+*.aux
+*.bbl
+*.log
+*.bak
+*.ps
+*.dvi
+*.pdf
+
