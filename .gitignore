@@ -34,4 +34,6 @@ Pods
 *.ps
 *.dvi
 *.pdf
+*.synctex.gz
+
 
