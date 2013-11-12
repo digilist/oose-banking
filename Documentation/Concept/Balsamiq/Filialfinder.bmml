@@ -1,0 +1,101 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1299" measuredH="994" mockupW="1239" mockupH="974">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::Component" x="60" y="20" w="1239" h="974" measuredW="1239" measuredH="974" zOrder="0" locked="true" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="1239" h="974"/>
+        <override controlID="1" x="107" y="102" w="1024" h="21"/>
+        <override controlID="2" x="1151" y="471" w="-1" h="-1"/>
+        <override controlID="1:4" x="0" y="0" w="1024" h="20"/>
+        <override controlID="1:10" x="504" y="2" w="-1" h="-1"/>
+        <override controlID="1:8" x="13" y="2" w="59" h="-1"/>
+        <override controlID="1:9" x="48" y="2" w="-1" h="-1"/>
+        <override controlID="0:1" x="107" y="103" w="1024" h="768"/>
+        <override controlID="1:11" x="993" y="2" w="-1" h="-1"/>
+        <override controlID="0:0" x="0" y="0" w="1239" h="974"/>
+        <override controlID="-1"/>
+        <src>./assets/iPads.bmml%23iPad%20Landscape</src>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Component" x="168" y="142" w="1023" h="748" measuredW="1023" measuredH="748" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22112%2C163%2C423%2C198%22%20href%3D%22Dashboard.bmml%22%20alt%3D%22Dashboard%22%20id%3D%2222%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22112%2C233%2C423%2C268%22%20href%3D%22Filialfinder.bmml%22%20alt%3D%22Filialfinder%22%20id%3D%2222%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22112%2C303%2C423%2C338%22%20href%3D%22Finanzierung.bmml%22%20alt%3D%22Finanzierung%22%20id%3D%2222%22/%3E</map>
+        <override controlID="0" x="320" y="0" w="703" h="748"/>
+        <override controlID="22" x="4" y="38" w="311" h="704">
+          <hasHeader>false</hasHeader>
+          <hrefs>Dashboard%26bm%3BDashboard.bmml%26bm%3BDashboard.bmml%26bm%3BDashboard.bmml%2C%2CFilialfinder%26bm%3BFilialfinder.bmml%26bm%3BFilialfinder.bmml%26bm%3BFilialfinder.bmml%2C%2CFinanzierung%26bm%3BFinanzierung.bmml%26bm%3BFinanzierung.bmml%26bm%3BFinanzierung.bmml%2C%2C%2C%2C</hrefs>
+          <selectedIndex>2</selectedIndex>
+          <text>Dashboard%0AGirokonto%0AFilialfinder%0AKiBacenter%0AFinanzierung%0AAltersvorsorge%0AImmobilien%0AMein%20Bereich%0A%DCber%20die%20App</text>
+        </override>
+        <override controlID="23" x="0" y="0" w="320" h="45">
+          <text>KiBa%20%u2014%20Die%20App%20und%20Du</text>
+        </override>
+        <override controlID="24" x="320" y="0" w="699" h="45"/>
+        <override controlID="13" x="0" y="0" w="320" h="748"/>
+        <override controlID="-1"/>
+        <src>./assets/iPad%20Controls.bmml%23iPad%20Split%20View%2C%20Landscape</src>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::RoundButton" x="488" y="189" w="702" h="702" measuredW="32" measuredH="32" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+        <borderColor>16777215</borderColor>
+        <shape>rectangle</shape>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Map" x="488" y="189" w="703" h="701" measuredW="252" measuredH="222" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Component" x="778" y="286" w="187" h="49" measuredW="187" measuredH="49" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="77" y="8" w="32" h="41"/>
+        <override controlID="1" x="0" y="0" w="187" h="36"/>
+        <override controlID="3" x="157" y="5" w="25" h="25"/>
+        <override controlID="5" x="7" y="5" w="25" h="25"/>
+        <override controlID="7" x="32" y="3" w="125" h="-1">
+          <text>Deichstra%DFe%2012</text>
+        </override>
+        <override controlID="3:0" x="0" y="0" w="25" h="25"/>
+        <override controlID="3:1" x="6" y="4" w="-1" h="-1"/>
+        <override controlID="5:1" x="4" y="5" w="-1" h="-1"/>
+        <override controlID="5:0" x="0" y="0" w="25" h="25">
+          <color>13576743</color>
+        </override>
+        <override controlID="-1"/>
+        <src>./assets/iPad%2520Controls.bmml%23iPad%2520Location%2520Popover</src>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Component" x="508" y="517" w="187" h="49" measuredW="187" measuredH="49" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="7">
+          <text>Stadtpark</text>
+        </override>
+        <override controlID="5:0">
+          <color>16750848</color>
+        </override>
+        <override controlID="5:1">
+          <icon>EuroIcon%7Cxsmall</icon>
+        </override>
+        <src>./assets/iPad%2520Controls.bmml%23iPad%2520Location%2520Popover</src>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Component" x="940" y="591" w="187" h="49" measuredW="187" measuredH="49" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="77" y="8" w="32" h="41"/>
+        <override controlID="1" x="0" y="0" w="187" h="36"/>
+        <override controlID="3" x="157" y="5" w="25" h="25"/>
+        <override controlID="5" x="7" y="5" w="25" h="25"/>
+        <override controlID="7" x="32" y="3" w="125" h="-1">
+          <text>Hauptmann%202</text>
+        </override>
+        <override controlID="3:0" x="0" y="0" w="25" h="25"/>
+        <override controlID="3:1" x="6" y="4" w="-1" h="-1"/>
+        <override controlID="5:1" x="4" y="5" w="-1" h="-1">
+          <icon>EuroIcon%7Cxsmall</icon>
+        </override>
+        <override controlID="5:0" x="0" y="0" w="25" h="25">
+          <color>16750848</color>
+        </override>
+        <override controlID="-1"/>
+        <src>./assets/iPad%2520Controls.bmml%23iPad%2520Location%2520Popover</src>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

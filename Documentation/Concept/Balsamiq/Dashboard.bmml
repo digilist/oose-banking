@@ -18,9 +18,11 @@
     </control>
     <control controlID="1" controlTypeID="com.balsamiq.mockups::Component" x="168" y="142" w="1023" h="748" measuredW="1023" measuredH="748" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22112%2C163%2C423%2C198%22%20href%3D%22Dashboard.bmml%22%20alt%3D%22Dashboard%22%20id%3D%2222%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22112%2C233%2C423%2C268%22%20href%3D%22Filialfinder.bmml%22%20alt%3D%22Filialfinder%22%20id%3D%2222%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22112%2C303%2C423%2C338%22%20href%3D%22Finanzierung.bmml%22%20alt%3D%22Finanzierung%22%20id%3D%2222%22/%3E</map>
         <override controlID="0" x="320" y="0" w="703" h="748"/>
         <override controlID="22" x="4" y="38" w="311" h="704">
           <hasHeader>false</hasHeader>
+          <hrefs>Dashboard%26bm%3BDashboard.bmml%26bm%3BDashboard.bmml%26bm%3BDashboard.bmml%2C%2CFilialfinder%26bm%3BFilialfinder.bmml%26bm%3BFilialfinder.bmml%26bm%3BFilialfinder.bmml%2C%2CFinanzierung%26bm%3BFinanzierung.bmml%26bm%3BFinanzierung.bmml%26bm%3BFinanzierung.bmml%2C%2C%2C%2C</hrefs>
           <selectedIndex>0</selectedIndex>
           <text>Dashboard%0AGirokonto%0AFilialfinder%0AKiBacenter%0AFinanzierung%0AAltersvorsorge%0AImmobilien%0AMein%20Bereich%0A%DCber%20die%20App</text>
         </override>
@@ -53,7 +55,7 @@
         <control controlID="0" controlTypeID="__group__" x="200" y="0" w="85" h="129" measuredW="85" measuredH="129" zOrder="0" locked="false" isInGroup="19">
           <groupChildrenDescriptors>
             <control controlID="0" controlTypeID="com.balsamiq.mockups::PieChart" x="0" y="41" w="85" h="88" measuredW="180" measuredH="180" zOrder="0" locked="false" isInGroup="0"/>
-            <control controlID="1" controlTypeID="com.balsamiq.mockups::CallOut" x="0" y="0" w="85" h="31" measuredW="85" measuredH="40" zOrder="1" locked="false" isInGroup="0">
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::CallOut" x="0" y="0" w="85" h="31" measuredW="85" measuredH="39" zOrder="1" locked="false" isInGroup="0">
               <controlProperties>
                 <text>Verh%E4ltnis</text>
               </controlProperties>
@@ -63,7 +65,7 @@
         <control controlID="1" controlTypeID="__group__" x="400" y="0" w="85" h="129" measuredW="85" measuredH="129" zOrder="1" locked="false" isInGroup="19">
           <groupChildrenDescriptors>
             <control controlID="0" controlTypeID="com.balsamiq.mockups::PieChart" x="0" y="41" w="85" h="88" measuredW="180" measuredH="180" zOrder="0" locked="false" isInGroup="1"/>
-            <control controlID="1" controlTypeID="com.balsamiq.mockups::CallOut" x="0" y="0" w="85" h="31" measuredW="85" measuredH="40" zOrder="1" locked="false" isInGroup="1">
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::CallOut" x="0" y="0" w="85" h="31" measuredW="85" measuredH="37" zOrder="1" locked="false" isInGroup="1">
               <controlProperties>
                 <text>Ausgaben</text>
               </controlProperties>
