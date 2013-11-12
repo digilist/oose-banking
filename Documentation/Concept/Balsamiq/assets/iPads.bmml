@@ -1,0 +1,153 @@
+<mockup version="1.0" skin="sketch" measuredW="1514" measuredH="1549" mockupW="1451" mockupH="1500">
+  <controls>
+    <control controlID="0" controlTypeID="__group__" x="63" y="49" w="978" h="1230" measuredW="978" measuredH="1230" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>iPad%20Portrait</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="__group__" x="0" y="0" w="978" h="1230" measuredW="978" measuredH="1230" zOrder="0" locked="false" isInGroup="0">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="978" h="1230" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="0">
+              <controlProperties>
+                <borderColor>0</borderColor>
+                <color>0</color>
+                <markup>false</markup>
+                <shape>roundRect</shape>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="105" y="105" w="768" h="1024" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="0">
+              <controlProperties>
+                <borderStyle>none</borderStyle>
+                <color>14540253</color>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::RoundButton" x="473" y="1158" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="2" locked="false" isInGroup="0">
+              <controlProperties>
+                <color>4144959</color>
+                <icon>StopIcon%7Cxsmall</icon>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="1" controlTypeID="__group__" x="105" y="103" w="768" h="20" measuredW="768" measuredH="20" zOrder="1" locked="false" isInGroup="0">
+          <controlProperties>
+            <controlName/>
+          </controlProperties>
+          <groupChildrenDescriptors>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="1" w="768" h="18" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="1">
+              <controlProperties>
+                <backgroundAlpha>0.75</backgroundAlpha>
+                <borderStyle>none</borderStyle>
+                <color>0</color>
+              </controlProperties>
+            </control>
+            <control controlID="8" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="44" h="20" measuredW="27" measuredH="20" zOrder="1" locked="false" isInGroup="1">
+              <controlProperties>
+                <bold>true</bold>
+                <color>16777215</color>
+                <size>11</size>
+                <text>iPad</text>
+              </controlProperties>
+            </control>
+            <control controlID="9" controlTypeID="com.balsamiq.mockups::Icon" x="45" y="2" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="2" locked="false" isInGroup="1">
+              <controlProperties>
+                <color>16777215</color>
+                <icon>WirelessIcon%7Cxsmall</icon>
+              </controlProperties>
+            </control>
+            <control controlID="10" controlTypeID="com.balsamiq.mockups::Icon" x="373" y="2" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="3" locked="false" isInGroup="1">
+              <controlProperties>
+                <color>16777215</color>
+                <icon>LockIcon%7Cxsmall</icon>
+              </controlProperties>
+            </control>
+            <control controlID="11" controlTypeID="com.balsamiq.mockups::Icon" x="732" y="2" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="4" locked="false" isInGroup="1">
+              <controlProperties>
+                <color>16777215</color>
+                <icon>BatteryIcon%7Cxsmall</icon>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="1" controlTypeID="__group__" x="275" y="575" w="1239" h="974" measuredW="1239" measuredH="974" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>iPad%20Landscape</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="__group__" x="0" y="0" w="1239" h="974" measuredW="1239" measuredH="974" zOrder="0" locked="false" isInGroup="1">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="1239" h="974" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="0">
+              <controlProperties>
+                <borderColor>0</borderColor>
+                <color>0</color>
+                <markup>false</markup>
+                <shape>roundRect</shape>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="107" y="103" w="1024" h="768" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="0">
+              <controlProperties>
+                <borderStyle>none</borderStyle>
+                <color>14540253</color>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="1" controlTypeID="__group__" x="107" y="102" w="1024" h="20" measuredW="1024" measuredH="20" zOrder="1" locked="false" isInGroup="1">
+          <controlProperties>
+            <controlName/>
+          </controlProperties>
+          <groupChildrenDescriptors>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="1024" h="20" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="1">
+              <controlProperties>
+                <backgroundAlpha>0.75</backgroundAlpha>
+                <borderStyle>none</borderStyle>
+                <color>0</color>
+              </controlProperties>
+            </control>
+            <control controlID="8" controlTypeID="com.balsamiq.mockups::Label" x="13" y="2" w="59" h="16" measuredW="27" measuredH="20" zOrder="1" locked="false" isInGroup="1">
+              <controlProperties>
+                <bold>true</bold>
+                <color>16777215</color>
+                <size>11</size>
+                <text>iPad</text>
+              </controlProperties>
+            </control>
+            <control controlID="9" controlTypeID="com.balsamiq.mockups::Icon" x="48" y="2" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="2" locked="false" isInGroup="1">
+              <controlProperties>
+                <color>16777215</color>
+                <icon>WirelessIcon%7Cxsmall</icon>
+              </controlProperties>
+            </control>
+            <control controlID="10" controlTypeID="com.balsamiq.mockups::Icon" x="504" y="2" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="3" locked="false" isInGroup="1">
+              <controlProperties>
+                <color>16777215</color>
+                <icon>LockIcon%7Cxsmall</icon>
+              </controlProperties>
+            </control>
+            <control controlID="11" controlTypeID="com.balsamiq.mockups::Icon" x="993" y="2" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="4" locked="false" isInGroup="1">
+              <controlProperties>
+                <color>16777215</color>
+                <icon>BatteryIcon%7Cxsmall</icon>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::RoundButton" x="1151" y="471" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="2" locked="false" isInGroup="1">
+          <controlProperties>
+            <color>4144959</color>
+            <icon>StopIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::StickyNote" x="1194" y="58" w="303" h="433" measuredW="109" measuredH="123" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>14</size>
+        <text>%7Bcolor%3A%23ff0000%7DAbout%7Bcolor%7D%0ABasic%20iPad%20bezels%20in%20portrait%20and%20landscape.%20This%20version%20is%20made%20with%20as%20few%20elements%20as%20possible%2C%20without%20an%20open%20viewport.%20Wireframe%20elements%20will%20need%20to%20be%20layered%20above.%20It%20is%20meant%20to%20be%20combined%20with%20the%20extended%20iPad%20Controls%20library.%0A%20%0A%7Bcolor%3A%23ff0000%7DInstallation%7Bcolor%7D%0ATo%20use%20as%20a%20symbol%20library%2C%20add%20to%20your%20account%20assets%20or%20to%20a%20project%20assets%20folder.%0A%20%0A%7Bcolor%3A%23ff0000%7DVersion%20History%7Bcolor%7D%0AV.%201%20Created%20by%20Mike%20Angeles%20on%2018%20Feb%202011</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
