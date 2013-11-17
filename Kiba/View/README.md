@@ -1,4 +1,4 @@
-Services Package
-================
+View Package
+============
 
-Contains service classes.
+Contains view controllers and visual elements.

@@ -30,7 +30,7 @@
 		3407E8DA1838FA200045C014 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8D91838FA200045C014 /* README.md */; };
 		3407E8DC1838FA420045C014 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8DB1838FA420045C014 /* README.md */; };
 		3407E8DE1838FA790045C014 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8DD1838FA790045C014 /* README.md */; };
-		3407E8E11838FAAB0045C014 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8E01838FAAB0045C014 /* README.md */; };
+		3407E8E31838FC3E0045C014 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8E21838FC3E0045C014 /* README.md */; };
 		342322E11837B9FD00618D7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342322E01837B9FD00618D7E /* Foundation.framework */; };
 		342322E31837B9FD00618D7E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342322E21837B9FD00618D7E /* CoreGraphics.framework */; };
 		342322E51837B9FD00618D7E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342322E41837B9FD00618D7E /* UIKit.framework */; };
@@ -84,7 +84,7 @@
 		3407E8D91838FA200045C014 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = View/README.md; sourceTree = "<group>"; };
 		3407E8DB1838FA420045C014 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = Services/README.md; sourceTree = "<group>"; };
 		3407E8DD1838FA790045C014 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = Library/README.md; sourceTree = "<group>"; };
-		3407E8E01838FAAB0045C014 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		3407E8E21838FC3E0045C014 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = Entities/README.md; sourceTree = "<group>"; };
 		342322DD1837B9FD00618D7E /* Kiba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		342322E01837B9FD00618D7E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		342322E21837B9FD00618D7E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -238,7 +238,7 @@
 		3407E8DF1838FA950045C014 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				3407E8E01838FAAB0045C014 /* README.md */,
+				3407E8E21838FC3E0045C014 /* README.md */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -401,7 +401,7 @@
 				3407E8DE1838FA790045C014 /* README.md in Resources */,
 				342322FC1837B9FD00618D7E /* Images.xcassets in Resources */,
 				342322EB1837B9FD00618D7E /* InfoPlist.strings in Resources */,
-				3407E8E11838FAAB0045C014 /* README.md in Resources */,
+				3407E8E31838FC3E0045C014 /* README.md in Resources */,
 				3407E8DC1838FA420045C014 /* README.md in Resources */,
 				3407E8DA1838FA200045C014 /* README.md in Resources */,
 				342322F41837B9FD00618D7E /* Main.storyboard in Resources */,
