@@ -31,6 +31,8 @@
 		3407E8DC1838FA420045C014 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8DB1838FA420045C014 /* README.md */; };
 		3407E8DE1838FA790045C014 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8DD1838FA790045C014 /* README.md */; };
 		3407E8E31838FC3E0045C014 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8E21838FC3E0045C014 /* README.md */; };
+		3407E8E81838FD110045C014 /* KBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3407E8E51838FD110045C014 /* KBDetailViewController.m */; };
+		3407E8E91838FD110045C014 /* KBMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3407E8E71838FD110045C014 /* KBMasterViewController.m */; };
 		342322E11837B9FD00618D7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342322E01837B9FD00618D7E /* Foundation.framework */; };
 		342322E31837B9FD00618D7E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342322E21837B9FD00618D7E /* CoreGraphics.framework */; };
 		342322E51837B9FD00618D7E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342322E41837B9FD00618D7E /* UIKit.framework */; };
@@ -38,8 +40,6 @@
 		342322ED1837B9FD00618D7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 342322EC1837B9FD00618D7E /* main.m */; };
 		342322F11837B9FD00618D7E /* KBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 342322F01837B9FD00618D7E /* KBAppDelegate.m */; };
 		342322F41837B9FD00618D7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342322F21837B9FD00618D7E /* Main.storyboard */; };
-		342322F71837B9FD00618D7E /* KBMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 342322F61837B9FD00618D7E /* KBMasterViewController.m */; };
-		342322FA1837B9FD00618D7E /* KBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 342322F91837B9FD00618D7E /* KBDetailViewController.m */; };
 		342322FC1837B9FD00618D7E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 342322FB1837B9FD00618D7E /* Images.xcassets */; };
 		342323031837B9FD00618D7E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342323021837B9FD00618D7E /* XCTest.framework */; };
 		342323041837B9FD00618D7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342322E01837B9FD00618D7E /* Foundation.framework */; };
@@ -85,6 +85,10 @@
 		3407E8DB1838FA420045C014 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = Services/README.md; sourceTree = "<group>"; };
 		3407E8DD1838FA790045C014 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = Library/README.md; sourceTree = "<group>"; };
 		3407E8E21838FC3E0045C014 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = Entities/README.md; sourceTree = "<group>"; };
+		3407E8E41838FD110045C014 /* KBDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBDetailViewController.h; path = View/KBDetailViewController.h; sourceTree = "<group>"; };
+		3407E8E51838FD110045C014 /* KBDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBDetailViewController.m; path = View/KBDetailViewController.m; sourceTree = "<group>"; };
+		3407E8E61838FD110045C014 /* KBMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBMasterViewController.h; path = View/KBMasterViewController.h; sourceTree = "<group>"; };
+		3407E8E71838FD110045C014 /* KBMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBMasterViewController.m; path = View/KBMasterViewController.m; sourceTree = "<group>"; };
 		342322DD1837B9FD00618D7E /* Kiba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		342322E01837B9FD00618D7E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		342322E21837B9FD00618D7E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -96,10 +100,6 @@
 		342322EF1837B9FD00618D7E /* KBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KBAppDelegate.h; sourceTree = "<group>"; };
 		342322F01837B9FD00618D7E /* KBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KBAppDelegate.m; sourceTree = "<group>"; };
 		342322F31837B9FD00618D7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		342322F51837B9FD00618D7E /* KBMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KBMasterViewController.h; sourceTree = "<group>"; };
-		342322F61837B9FD00618D7E /* KBMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KBMasterViewController.m; sourceTree = "<group>"; };
-		342322F81837B9FD00618D7E /* KBDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KBDetailViewController.h; sourceTree = "<group>"; };
-		342322F91837B9FD00618D7E /* KBDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KBDetailViewController.m; sourceTree = "<group>"; };
 		342322FB1837B9FD00618D7E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		342323011837B9FD00618D7E /* KibaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KibaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		342323021837B9FD00618D7E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -226,11 +226,11 @@
 		3407E8CF1838F9400045C014 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3407E8E41838FD110045C014 /* KBDetailViewController.h */,
+				3407E8E51838FD110045C014 /* KBDetailViewController.m */,
+				3407E8E61838FD110045C014 /* KBMasterViewController.h */,
+				3407E8E71838FD110045C014 /* KBMasterViewController.m */,
 				3407E8D91838FA200045C014 /* README.md */,
-				342322F51837B9FD00618D7E /* KBMasterViewController.h */,
-				342322F61837B9FD00618D7E /* KBMasterViewController.m */,
-				342322F81837B9FD00618D7E /* KBDetailViewController.h */,
-				342322F91837B9FD00618D7E /* KBDetailViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -443,10 +443,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3407E8E81838FD110045C014 /* KBDetailViewController.m in Sources */,
 				342322ED1837B9FD00618D7E /* main.m in Sources */,
 				342322F11837B9FD00618D7E /* KBAppDelegate.m in Sources */,
-				342322FA1837B9FD00618D7E /* KBDetailViewController.m in Sources */,
-				342322F71837B9FD00618D7E /* KBMasterViewController.m in Sources */,
+				3407E8E91838FD110045C014 /* KBMasterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
