@@ -7,15 +7,20 @@
 //
 
 #import "KBAMasterViewController.h"
-
 #import "KBADetailViewController.h"
 
-@interface KBAMasterViewController () {
-    NSMutableArray *_objects;
-}
-@end
+static NSArray * KBAMasterViewEntryNames;
 
 @implementation KBAMasterViewController
+
+/**
+ *  Initializes object values.
+ */
++ (void)initialize {
+    KBAMasterViewEntryNames = @[@"Dashboard", @"Girokonto", @"Filialfinder", @"KiBa-Center",
+                               @"Finanzierung", @"Immobilien", @"Mein Bereich", @"Über die App"];
+
+}
 
 - (void)awakeFromNib
 {
@@ -27,11 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    self.title = @"KiBa App";
     self.detailViewController = (KBADetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
@@ -41,16 +42,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
-{
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
-    }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
-
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -58,17 +49,32 @@
     return 1;
 }
 
+/**
+ *  Returns the number of entries in the view.
+ *
+ *  @param tableView
+ *  @param section
+ *
+ *  @return The count.
+ */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return KBAMasterViewEntryNames.count;
 }
 
+/**
+ *  Returns the cell for a given index path.
+ *
+ *  @param tableView
+ *  @param indexPath
+ *
+ *  @return The corresponding cell.
+ */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    cell.textLabel.text = KBAMasterViewEntryNames[indexPath.row];
     return cell;
 }
 
@@ -76,16 +82,6 @@
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
 }
 
 /*
@@ -106,8 +102,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDate *object = _objects[indexPath.row];
-    self.detailViewController.detailItem = object;
+//    NSDate *object = _objects[indexPath.row];
+//    self.detailViewController.detailItem = object;
 }
 
 @end
