@@ -3,7 +3,7 @@ Project OOSE: Banking-App “KiBa”
 
 This is the Objective-C written iPad Banking App “KiBa”, made in Cooperation with [T-Systems MMS] [1].
 
-Coding-Style Conventions: [https://github.com/NYTimes/objective-c-style-guide](NYTimes Objectvice-C-Style Guide)
+Coding-Style Conventions: [NYTimes Objectvice-C-Style Guide](https://github.com/NYTimes/objective-c-style-guide)
 
 ## Dependecy Injector
 Example-Usage: `id<KBABranchDao> branchDao = [KBADependencyInjector getByKey:@"branchDao"];`
