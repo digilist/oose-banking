@@ -7,15 +7,20 @@
 //
 
 #import "KBAMasterViewController.h"
-
 #import "KBADetailViewController.h"
 
-@interface KBAMasterViewController () {
-    NSMutableArray *_objects;
-}
-@end
+static NSArray * KBAMasterViewEntryNames;
 
 @implementation KBAMasterViewController
+
+/**
+ *  Initializes object values.
+ */
++ (void)initialize {
+    KBAMasterViewEntryNames = @[@"Dashboard", @"Girokonto", @"Filialfinder", @"KiBa-Center",
+                               @"Finanzierung", @"Immobilien", @"Mein Bereich", @"Über die App"];
+
+}
 
 - (void)awakeFromNib
 {
@@ -44,17 +49,32 @@
     return 1;
 }
 
+/**
+ *  Returns the number of entries in the view.
+ *
+ *  @param tableView
+ *  @param section
+ *
+ *  @return The count.
+ */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return KBAMasterViewEntryNames.count;
 }
 
+/**
+ *  Returns the cell for a given index path.
+ *
+ *  @param tableView
+ *  @param indexPath
+ *
+ *  @return The corresponding cell.
+ */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    cell.textLabel.text = KBAMasterViewEntryNames[indexPath.row];
     return cell;
 }
 
@@ -82,8 +102,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDate *object = _objects[indexPath.row];
-    self.detailViewController.detailItem = object;
+//    NSDate *object = _objects[indexPath.row];
+//    self.detailViewController.detailItem = object;
 }
 
 @end

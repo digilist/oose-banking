@@ -13,5 +13,7 @@
 @interface KBAMasterViewController : UITableViewController
 
 @property (strong, nonatomic) KBADetailViewController *detailViewController;
+@property (strong, nonatomic) IBOutlet UITableView *mainLeftView;
+
 
 @end
