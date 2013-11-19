@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Projekt Kiba. All rights reserved.
 //
 
-#import "KBAppDelegate.h"
+#import "KBAAppDelegate.h"
 
-@implementation KBAppDelegate
+@implementation KBAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

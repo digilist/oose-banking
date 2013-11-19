@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 Projekt Kiba. All rights reserved.
 //
 
-#import "KBDetailViewController.h"
+#import "KBADetailViewController.h"
 
-@interface KBDetailViewController ()
+@interface KBADetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
 @end
 
-@implementation KBDetailViewController
+@implementation KBADetailViewController
 
 #pragma mark - Managing the detail item
 

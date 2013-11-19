@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "KBAppDelegate.h"
+#import "KBAAppDelegate.h"
 
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([KBAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([KBAAppDelegate class]));
     }
 }

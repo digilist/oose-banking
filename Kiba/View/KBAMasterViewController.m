@@ -6,16 +6,16 @@
 //  Copyright (c) 2013 Projekt Kiba. All rights reserved.
 //
 
-#import "KBMasterViewController.h"
+#import "KBAMasterViewController.h"
 
-#import "KBDetailViewController.h"
+#import "KBADetailViewController.h"
 
-@interface KBMasterViewController () {
+@interface KBAMasterViewController () {
     NSMutableArray *_objects;
 }
 @end
 
-@implementation KBMasterViewController
+@implementation KBAMasterViewController
 
 - (void)awakeFromNib
 {
@@ -32,7 +32,7 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
-    self.detailViewController = (KBDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.detailViewController = (KBADetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
 - (void)didReceiveMemoryWarning
