@@ -7,11 +7,16 @@
 //
 
 #import "KBAAppDelegate.h"
+#import "KBABootstrap.h"
+#import "Library/DAO/KBABranchDao.h"
+#import "Library/KBADependencyInjector.h"
 
 @implementation KBAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [KBABootstrap bootstrap];
+    
     // Override point for customization after application launch.
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];

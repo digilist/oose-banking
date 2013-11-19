@@ -27,10 +27,6 @@
 		3407E8C81837BD750045C014 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8B21837BD750045C014 /* README.md */; };
 		3407E8C91837BD750045C014 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8B41837BD750045C014 /* README.md */; };
 		3407E8CA1837BD750045C014 /* psp.tex in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8B61837BD750045C014 /* psp.tex */; };
-		3407E8DA1838FA200045C014 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8D91838FA200045C014 /* README.md */; };
-		3407E8DC1838FA420045C014 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8DB1838FA420045C014 /* README.md */; };
-		3407E8DE1838FA790045C014 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8DD1838FA790045C014 /* README.md */; };
-		3407E8E31838FC3E0045C014 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8E21838FC3E0045C014 /* README.md */; };
 		3407E8E81838FD110045C014 /* KBADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3407E8E51838FD110045C014 /* KBADetailViewController.m */; };
 		3407E8E91838FD110045C014 /* KBAMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3407E8E71838FD110045C014 /* KBAMasterViewController.m */; };
 		342322E11837B9FD00618D7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342322E01837B9FD00618D7E /* Foundation.framework */; };
@@ -46,6 +42,10 @@
 		342323051837B9FD00618D7E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342322E41837B9FD00618D7E /* UIKit.framework */; };
 		3423230D1837B9FD00618D7E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3423230B1837B9FD00618D7E /* InfoPlist.strings */; };
 		3423230F1837B9FD00618D7E /* KibaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3423230E1837B9FD00618D7E /* KibaTests.m */; };
+		C10C5FBF183B877B008FAECB /* KBABranchDaoRest.m in Sources */ = {isa = PBXBuildFile; fileRef = C10C5FBE183B877B008FAECB /* KBABranchDaoRest.m */; };
+		C10C5FC2183B8A5A008FAECB /* KBADependencyInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = C10C5FC1183B8A5A008FAECB /* KBADependencyInjector.m */; };
+		C10C5FC5183B8DF7008FAECB /* KBABootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = C10C5FC4183B8DF7008FAECB /* KBABootstrap.m */; };
+		C13B62F4183B7D0200207422 /* KBABranchDaoDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C13B62F3183B7D0200207422 /* KBABranchDaoDummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +106,15 @@
 		3423230A1837B9FD00618D7E /* KibaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KibaTests-Info.plist"; sourceTree = "<group>"; };
 		3423230C1837B9FD00618D7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3423230E1837B9FD00618D7E /* KibaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KibaTests.m; sourceTree = "<group>"; };
+		C10C5FBD183B877B008FAECB /* KBABranchDaoRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBABranchDaoRest.h; path = Library/DAO/KBABranchDaoRest.h; sourceTree = "<group>"; };
+		C10C5FBE183B877B008FAECB /* KBABranchDaoRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBABranchDaoRest.m; path = Library/DAO/KBABranchDaoRest.m; sourceTree = "<group>"; };
+		C10C5FC0183B8A5A008FAECB /* KBADependencyInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBADependencyInjector.h; path = Library/KBADependencyInjector.h; sourceTree = "<group>"; };
+		C10C5FC1183B8A5A008FAECB /* KBADependencyInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBADependencyInjector.m; path = Library/KBADependencyInjector.m; sourceTree = "<group>"; };
+		C10C5FC3183B8DF7008FAECB /* KBABootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBABootstrap.h; sourceTree = "<group>"; };
+		C10C5FC4183B8DF7008FAECB /* KBABootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBABootstrap.m; sourceTree = "<group>"; };
+		C13B62F1183B7CC600207422 /* KBABranchDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KBABranchDao.h; path = Library/DAO/KBABranchDao.h; sourceTree = "<group>"; };
+		C13B62F2183B7D0200207422 /* KBABranchDaoDummy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBABranchDaoDummy.h; path = Library/DAO/KBABranchDaoDummy.h; sourceTree = "<group>"; };
+		C13B62F3183B7D0200207422 /* KBABranchDaoDummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBABranchDaoDummy.m; path = Library/DAO/KBABranchDaoDummy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,7 +219,10 @@
 		3407E8CD1838F9320045C014 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				C13B62EF183B7C8C00207422 /* DAO */,
 				3407E8DD1838FA790045C014 /* README.md */,
+				C10C5FC0183B8A5A008FAECB /* KBADependencyInjector.h */,
+				C10C5FC1183B8A5A008FAECB /* KBADependencyInjector.m */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -285,6 +297,8 @@
 				3407E8CD1838F9320045C014 /* Library */,
 				342322EF1837B9FD00618D7E /* KBAAppDelegate.h */,
 				342322F01837B9FD00618D7E /* KBAAppDelegate.m */,
+				C10C5FC3183B8DF7008FAECB /* KBABootstrap.h */,
+				C10C5FC4183B8DF7008FAECB /* KBABootstrap.m */,
 				342322F21837B9FD00618D7E /* Main.storyboard */,
 				342322FB1837B9FD00618D7E /* Images.xcassets */,
 				342322E71837B9FD00618D7E /* Supporting Files */,
@@ -319,6 +333,18 @@
 				3423230B1837B9FD00618D7E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C13B62EF183B7C8C00207422 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				C13B62F1183B7CC600207422 /* KBABranchDao.h */,
+				C13B62F2183B7D0200207422 /* KBABranchDaoDummy.h */,
+				C13B62F3183B7D0200207422 /* KBABranchDaoDummy.m */,
+				C10C5FBD183B877B008FAECB /* KBABranchDaoRest.h */,
+				C10C5FBE183B877B008FAECB /* KBABranchDaoRest.m */,
+			);
+			name = DAO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,12 +424,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3407E8DE1838FA790045C014 /* README.md in Resources */,
 				342322FC1837B9FD00618D7E /* Images.xcassets in Resources */,
 				342322EB1837B9FD00618D7E /* InfoPlist.strings in Resources */,
-				3407E8E31838FC3E0045C014 /* README.md in Resources */,
-				3407E8DC1838FA420045C014 /* README.md in Resources */,
-				3407E8DA1838FA200045C014 /* README.md in Resources */,
 				342322F41837B9FD00618D7E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +467,10 @@
 			files = (
 				3407E8E81838FD110045C014 /* KBADetailViewController.m in Sources */,
 				342322ED1837B9FD00618D7E /* main.m in Sources */,
+				C10C5FBF183B877B008FAECB /* KBABranchDaoRest.m in Sources */,
+				C10C5FC2183B8A5A008FAECB /* KBADependencyInjector.m in Sources */,
+				C13B62F4183B7D0200207422 /* KBABranchDaoDummy.m in Sources */,
+				C10C5FC5183B8DF7008FAECB /* KBABootstrap.m in Sources */,
 				342322F11837B9FD00618D7E /* KBAAppDelegate.m in Sources */,
 				3407E8E91838FD110045C014 /* KBAMasterViewController.m in Sources */,
 			);
