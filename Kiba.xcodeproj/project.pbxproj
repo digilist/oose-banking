@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A893764183BA118003495A4 /* KBADashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A893763183BA118003495A4 /* KBADashboardController.m */; };
 		3407E8B71837BD750045C014 /* iPad Controls.bmml in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8A01837BD750045C014 /* iPad Controls.bmml */; };
 		3407E8B81837BD750045C014 /* iPads.bmml in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8A11837BD750045C014 /* iPads.bmml */; };
 		3407E8B91837BD750045C014 /* Mock On.bmml in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8A21837BD750045C014 /* Mock On.bmml */; };
@@ -59,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A893762183BA118003495A4 /* KBADashboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBADashboardController.h; path = View/Dashboard/KBADashboardController.h; sourceTree = "<group>"; };
+		0A893763183BA118003495A4 /* KBADashboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBADashboardController.m; path = View/Dashboard/KBADashboardController.m; sourceTree = "<group>"; };
 		3407E8A01837BD750045C014 /* iPad Controls.bmml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "iPad Controls.bmml"; sourceTree = "<group>"; };
 		3407E8A11837BD750045C014 /* iPads.bmml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = iPads.bmml; sourceTree = "<group>"; };
 		3407E8A21837BD750045C014 /* Mock On.bmml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Mock On.bmml"; sourceTree = "<group>"; };
@@ -141,6 +144,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A893761183BA0BE003495A4 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				0A893762183BA118003495A4 /* KBADashboardController.h */,
+				0A893763183BA118003495A4 /* KBADashboardController.m */,
+			);
+			name = Dashboard;
+			sourceTree = "<group>";
+		};
 		3407E89C1837BD750045C014 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,10 +250,11 @@
 		3407E8CF1838F9400045C014 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3407E8E41838FD110045C014 /* KBADetailViewController.h */,
-				3407E8E51838FD110045C014 /* KBADetailViewController.m */,
+				0A893761183BA0BE003495A4 /* Dashboard */,
 				3407E8E61838FD110045C014 /* KBAMasterViewController.h */,
 				3407E8E71838FD110045C014 /* KBAMasterViewController.m */,
+				3407E8E41838FD110045C014 /* KBADetailViewController.h */,
+				3407E8E51838FD110045C014 /* KBADetailViewController.m */,
 				3407E8D91838FA200045C014 /* README.md */,
 			);
 			name = View;
@@ -473,6 +486,7 @@
 				C10C5FC5183B8DF7008FAECB /* KBABootstrap.m in Sources */,
 				342322F11837B9FD00618D7E /* KBAAppDelegate.m in Sources */,
 				3407E8E91838FD110045C014 /* KBAMasterViewController.m in Sources */,
+				0A893764183BA118003495A4 /* KBADashboardController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

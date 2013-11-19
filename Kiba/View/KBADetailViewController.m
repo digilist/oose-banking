@@ -7,6 +7,7 @@
 //
 
 #import "KBADetailViewController.h"
+#import "Dashboard/KBADashboardController.h"
 
 @interface KBADetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -17,11 +18,11 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
+- (void)setDetailController:(UIViewController *)newDetailController
 {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
-        
+    if (self.detailController != newDetailController) {
+        _detailController = newDetailController;
+    
         // Update the view.
         [self configureView];
     }
@@ -31,20 +32,29 @@
     }        
 }
 
+/**
+ *  Configures the view. Update the user interface for the detail item.
+ */
 - (void)configureView
 {
-    // Update the user interface for the detail item.
-
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+    if (self.detailController) {
+        [self.navigationController pushViewController:self.detailController animated:NO];
+        self.detailDescriptionLabel.text = [self.detailController description];
     }
 }
 
+/**
+ *  Will be executed when the view loads.
+ */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
+   [self configureView];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    KBADashboardController *detail = [storyboard instantiateViewControllerWithIdentifier:@"Dashboard"];
+    [self setDetailController:detail];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,14 +65,27 @@
 
 #pragma mark - Split view
 
-- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
+/**
+ *  Will be executed by split view controller.
+ *
+ *  @param splitController   The SplitController that invokes the method.
+ *  @param viewController    The ViewController that will be hidden.
+ *  @param barButtonItem     The Bar Button.
+ *  @param popoverController The PopoverControlelr that will be displayed.
+ */
+- (void)splitViewController:(UISplitViewController *)splitController
+    willHideViewController:(UIViewController *)viewController
+    withBarButtonItem:(UIBarButtonItem *)barButtonItem
+    forPopoverController:(UIPopoverController *)popoverController
 {
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
+    barButtonItem.title = @"Navigation";
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
     self.masterPopoverController = popoverController;
 }
 
-- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+- (void)splitViewController:(UISplitViewController *)splitController
+    willShowViewController:(UIViewController *)viewController
+    invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
 {
     // Called when the view is shown again in the split view, invalidating the button and popover controller.
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
