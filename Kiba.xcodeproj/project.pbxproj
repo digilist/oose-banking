@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0A893764183BA118003495A4 /* KBADashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A893763183BA118003495A4 /* KBADashboardController.m */; };
-		2173F370183E702300882F3D /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 2173F36C183E702300882F3D /* Account.m */; };
-		2173F371183E702300882F3D /* Adress.m in Sources */ = {isa = PBXBuildFile; fileRef = 2173F36D183E702300882F3D /* Adress.m */; };
-		2173F372183E702300882F3D /* CreditRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 2173F36E183E702300882F3D /* CreditRating.m */; };
-		2173F373183E702300882F3D /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 2173F36F183E702300882F3D /* Transaction.m */; };
+		2173F380183E77E800882F3D /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 2173F37B183E77E800882F3D /* Account.m */; };
+		2173F381183E77E800882F3D /* Adress.m in Sources */ = {isa = PBXBuildFile; fileRef = 2173F37C183E77E800882F3D /* Adress.m */; };
+		2173F382183E77E800882F3D /* CreditRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 2173F37D183E77E800882F3D /* CreditRating.m */; };
+		2173F383183E77E800882F3D /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2173F37E183E77E800882F3D /* Customer.m */; };
+		2173F384183E77E800882F3D /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 2173F37F183E77E800882F3D /* Transaction.m */; };
 		3407E8B71837BD750045C014 /* iPad Controls.bmml in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8A01837BD750045C014 /* iPad Controls.bmml */; };
 		3407E8B81837BD750045C014 /* iPads.bmml in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8A11837BD750045C014 /* iPads.bmml */; };
 		3407E8B91837BD750045C014 /* Mock On.bmml in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8A21837BD750045C014 /* Mock On.bmml */; };
@@ -47,7 +48,6 @@
 		342323051837B9FD00618D7E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342322E41837B9FD00618D7E /* UIKit.framework */; };
 		3423230D1837B9FD00618D7E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3423230B1837B9FD00618D7E /* InfoPlist.strings */; };
 		3423230F1837B9FD00618D7E /* KibaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3423230E1837B9FD00618D7E /* KibaTests.m */; };
-		A8A80246183E1078005AD2C2 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A80245183E1078005AD2C2 /* Customer.m */; };
 		C10C5FBF183B877B008FAECB /* KBABranchDaoRest.m in Sources */ = {isa = PBXBuildFile; fileRef = C10C5FBE183B877B008FAECB /* KBABranchDaoRest.m */; };
 		C10C5FC2183B8A5A008FAECB /* KBADependencyInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = C10C5FC1183B8A5A008FAECB /* KBADependencyInjector.m */; };
 		C10C5FC5183B8DF7008FAECB /* KBABootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = C10C5FC4183B8DF7008FAECB /* KBABootstrap.m */; };
@@ -67,14 +67,16 @@
 /* Begin PBXFileReference section */
 		0A893762183BA118003495A4 /* KBADashboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBADashboardController.h; path = View/Dashboard/KBADashboardController.h; sourceTree = "<group>"; };
 		0A893763183BA118003495A4 /* KBADashboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBADashboardController.m; path = View/Dashboard/KBADashboardController.m; sourceTree = "<group>"; };
-		2173F368183E702300882F3D /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
-		2173F369183E702300882F3D /* Adress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Adress.h; sourceTree = "<group>"; };
-		2173F36A183E702300882F3D /* CreditRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditRating.h; sourceTree = "<group>"; };
-		2173F36B183E702300882F3D /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
-		2173F36C183E702300882F3D /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
-		2173F36D183E702300882F3D /* Adress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Adress.m; sourceTree = "<group>"; };
-		2173F36E183E702300882F3D /* CreditRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditRating.m; sourceTree = "<group>"; };
-		2173F36F183E702300882F3D /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
+		2173F376183E77E800882F3D /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Account.h; path = Entities/Account.h; sourceTree = "<group>"; };
+		2173F377183E77E800882F3D /* Adress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Adress.h; path = Entities/Adress.h; sourceTree = "<group>"; };
+		2173F378183E77E800882F3D /* CreditRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreditRating.h; path = Entities/CreditRating.h; sourceTree = "<group>"; };
+		2173F379183E77E800882F3D /* Customer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Customer.h; path = Entities/Customer.h; sourceTree = "<group>"; };
+		2173F37A183E77E800882F3D /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Transaction.h; path = Entities/Transaction.h; sourceTree = "<group>"; };
+		2173F37B183E77E800882F3D /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Account.m; path = Entities/Account.m; sourceTree = "<group>"; };
+		2173F37C183E77E800882F3D /* Adress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Adress.m; path = Entities/Adress.m; sourceTree = "<group>"; };
+		2173F37D183E77E800882F3D /* CreditRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreditRating.m; path = Entities/CreditRating.m; sourceTree = "<group>"; };
+		2173F37E183E77E800882F3D /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Customer.m; path = Entities/Customer.m; sourceTree = "<group>"; };
+		2173F37F183E77E800882F3D /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Transaction.m; path = Entities/Transaction.m; sourceTree = "<group>"; };
 		3407E8A01837BD750045C014 /* iPad Controls.bmml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "iPad Controls.bmml"; sourceTree = "<group>"; };
 		3407E8A11837BD750045C014 /* iPads.bmml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = iPads.bmml; sourceTree = "<group>"; };
 		3407E8A21837BD750045C014 /* Mock On.bmml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Mock On.bmml"; sourceTree = "<group>"; };
@@ -122,8 +124,6 @@
 		3423230A1837B9FD00618D7E /* KibaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KibaTests-Info.plist"; sourceTree = "<group>"; };
 		3423230C1837B9FD00618D7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3423230E1837B9FD00618D7E /* KibaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KibaTests.m; sourceTree = "<group>"; };
-		A8A80244183E1078005AD2C2 /* Customer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
-		A8A80245183E1078005AD2C2 /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
 		C10C5FBD183B877B008FAECB /* KBABranchDaoRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBABranchDaoRest.h; path = Library/DAO/KBABranchDaoRest.h; sourceTree = "<group>"; };
 		C10C5FBE183B877B008FAECB /* KBABranchDaoRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBABranchDaoRest.m; path = Library/DAO/KBABranchDaoRest.m; sourceTree = "<group>"; };
 		C10C5FC0183B8A5A008FAECB /* KBADependencyInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBADependencyInjector.h; path = Library/KBADependencyInjector.h; sourceTree = "<group>"; };
@@ -279,16 +279,16 @@
 			isa = PBXGroup;
 			children = (
 				3407E8E21838FC3E0045C014 /* README.md */,
-				A8A80244183E1078005AD2C2 /* Customer.h */,
-				A8A80245183E1078005AD2C2 /* Customer.m */,
-				2173F368183E702300882F3D /* Account.h */,
-				2173F36C183E702300882F3D /* Account.m */,
-				2173F369183E702300882F3D /* Adress.h */,
-				2173F36D183E702300882F3D /* Adress.m */,
-				2173F36A183E702300882F3D /* CreditRating.h */,
-				2173F36E183E702300882F3D /* CreditRating.m */,
-				2173F36B183E702300882F3D /* Transaction.h */,
-				2173F36F183E702300882F3D /* Transaction.m */,
+				2173F376183E77E800882F3D /* Account.h */,
+				2173F377183E77E800882F3D /* Adress.h */,
+				2173F378183E77E800882F3D /* CreditRating.h */,
+				2173F379183E77E800882F3D /* Customer.h */,
+				2173F37A183E77E800882F3D /* Transaction.h */,
+				2173F37B183E77E800882F3D /* Account.m */,
+				2173F37C183E77E800882F3D /* Adress.m */,
+				2173F37D183E77E800882F3D /* CreditRating.m */,
+				2173F37E183E77E800882F3D /* Customer.m */,
+				2173F37F183E77E800882F3D /* Transaction.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -503,20 +503,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2173F373183E702300882F3D /* Transaction.m in Sources */,
+				2173F383183E77E800882F3D /* Customer.m in Sources */,
 				3407E8E81838FD110045C014 /* KBADetailViewController.m in Sources */,
 				342322ED1837B9FD00618D7E /* main.m in Sources */,
-				2173F370183E702300882F3D /* Account.m in Sources */,
+				2173F380183E77E800882F3D /* Account.m in Sources */,
+				2173F384183E77E800882F3D /* Transaction.m in Sources */,
+				2173F381183E77E800882F3D /* Adress.m in Sources */,
 				C10C5FBF183B877B008FAECB /* KBABranchDaoRest.m in Sources */,
-				2173F371183E702300882F3D /* Adress.m in Sources */,
 				C10C5FC2183B8A5A008FAECB /* KBADependencyInjector.m in Sources */,
 				C13B62F4183B7D0200207422 /* KBABranchDaoDummy.m in Sources */,
 				C10C5FC5183B8DF7008FAECB /* KBABootstrap.m in Sources */,
 				342322F11837B9FD00618D7E /* KBAAppDelegate.m in Sources */,
-				2173F372183E702300882F3D /* CreditRating.m in Sources */,
+				2173F382183E77E800882F3D /* CreditRating.m in Sources */,
 				3407E8E91838FD110045C014 /* KBAMasterViewController.m in Sources */,
 				0A893764183BA118003495A4 /* KBADashboardController.m in Sources */,
-				A8A80246183E1078005AD2C2 /* Customer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
