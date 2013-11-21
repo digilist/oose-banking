@@ -43,6 +43,11 @@
 		342323051837B9FD00618D7E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342322E41837B9FD00618D7E /* UIKit.framework */; };
 		3423230D1837B9FD00618D7E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3423230B1837B9FD00618D7E /* InfoPlist.strings */; };
 		3423230F1837B9FD00618D7E /* KibaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3423230E1837B9FD00618D7E /* KibaTests.m */; };
+		A806F071183E22AF00F0C06B /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = A806F070183E22AF00F0C06B /* Account.m */; };
+		A806F074183E30DF00F0C06B /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A806F073183E30DF00F0C06B /* Transaction.m */; };
+		A806F077183E322400F0C06B /* CreditRating.m in Sources */ = {isa = PBXBuildFile; fileRef = A806F076183E322400F0C06B /* CreditRating.m */; };
+		A8A80246183E1078005AD2C2 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A80245183E1078005AD2C2 /* Customer.m */; };
+		A8A8024A183E1429005AD2C2 /* Adress.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A80249183E1429005AD2C2 /* Adress.m */; };
 		C10C5FBF183B877B008FAECB /* KBABranchDaoRest.m in Sources */ = {isa = PBXBuildFile; fileRef = C10C5FBE183B877B008FAECB /* KBABranchDaoRest.m */; };
 		C10C5FC2183B8A5A008FAECB /* KBADependencyInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = C10C5FC1183B8A5A008FAECB /* KBADependencyInjector.m */; };
 		C10C5FC5183B8DF7008FAECB /* KBABootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = C10C5FC4183B8DF7008FAECB /* KBABootstrap.m */; };
@@ -109,6 +114,16 @@
 		3423230A1837B9FD00618D7E /* KibaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KibaTests-Info.plist"; sourceTree = "<group>"; };
 		3423230C1837B9FD00618D7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3423230E1837B9FD00618D7E /* KibaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KibaTests.m; sourceTree = "<group>"; };
+		A806F06F183E22AF00F0C06B /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		A806F070183E22AF00F0C06B /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+		A806F072183E30DF00F0C06B /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
+		A806F073183E30DF00F0C06B /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
+		A806F075183E322400F0C06B /* CreditRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditRating.h; sourceTree = "<group>"; };
+		A806F076183E322400F0C06B /* CreditRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditRating.m; sourceTree = "<group>"; };
+		A8A80244183E1078005AD2C2 /* Customer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Customer.h; path = ../Kiba/Customer.h; sourceTree = "<group>"; };
+		A8A80245183E1078005AD2C2 /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Customer.m; path = ../Kiba/Customer.m; sourceTree = "<group>"; };
+		A8A80248183E1429005AD2C2 /* Adress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Adress.h; sourceTree = "<group>"; };
+		A8A80249183E1429005AD2C2 /* Adress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Adress.m; sourceTree = "<group>"; };
 		C10C5FBD183B877B008FAECB /* KBABranchDaoRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBABranchDaoRest.h; path = Library/DAO/KBABranchDaoRest.h; sourceTree = "<group>"; };
 		C10C5FBE183B877B008FAECB /* KBABranchDaoRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBABranchDaoRest.m; path = Library/DAO/KBABranchDaoRest.m; sourceTree = "<group>"; };
 		C10C5FC0183B8A5A008FAECB /* KBADependencyInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBADependencyInjector.h; path = Library/KBADependencyInjector.h; sourceTree = "<group>"; };
@@ -271,6 +286,7 @@
 		342322D41837B9FD00618D7E = {
 			isa = PBXGroup;
 			children = (
+				A8A80247183E13B2005AD2C2 /* Entities Marco */,
 				3407E8CC1837BDA20045C014 /* README.md */,
 				3407E8CB1837BD980045C014 /* LICENSE */,
 				3407E89C1837BD750045C014 /* Documentation */,
@@ -346,6 +362,23 @@
 				3423230B1837B9FD00618D7E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A8A80247183E13B2005AD2C2 /* Entities Marco */ = {
+			isa = PBXGroup;
+			children = (
+				A8A80244183E1078005AD2C2 /* Customer.h */,
+				A8A80245183E1078005AD2C2 /* Customer.m */,
+				A806F06F183E22AF00F0C06B /* Account.h */,
+				A806F070183E22AF00F0C06B /* Account.m */,
+				A8A80248183E1429005AD2C2 /* Adress.h */,
+				A8A80249183E1429005AD2C2 /* Adress.m */,
+				A806F072183E30DF00F0C06B /* Transaction.h */,
+				A806F073183E30DF00F0C06B /* Transaction.m */,
+				A806F075183E322400F0C06B /* CreditRating.h */,
+				A806F076183E322400F0C06B /* CreditRating.m */,
+			);
+			path = "Entities Marco";
 			sourceTree = "<group>";
 		};
 		C13B62EF183B7C8C00207422 /* DAO */ = {
@@ -480,13 +513,18 @@
 			files = (
 				3407E8E81838FD110045C014 /* KBADetailViewController.m in Sources */,
 				342322ED1837B9FD00618D7E /* main.m in Sources */,
+				A806F074183E30DF00F0C06B /* Transaction.m in Sources */,
 				C10C5FBF183B877B008FAECB /* KBABranchDaoRest.m in Sources */,
 				C10C5FC2183B8A5A008FAECB /* KBADependencyInjector.m in Sources */,
+				A806F077183E322400F0C06B /* CreditRating.m in Sources */,
+				A8A8024A183E1429005AD2C2 /* Adress.m in Sources */,
 				C13B62F4183B7D0200207422 /* KBABranchDaoDummy.m in Sources */,
 				C10C5FC5183B8DF7008FAECB /* KBABootstrap.m in Sources */,
 				342322F11837B9FD00618D7E /* KBAAppDelegate.m in Sources */,
 				3407E8E91838FD110045C014 /* KBAMasterViewController.m in Sources */,
+				A806F071183E22AF00F0C06B /* Account.m in Sources */,
 				0A893764183BA118003495A4 /* KBADashboardController.m in Sources */,
+				A8A80246183E1078005AD2C2 /* Customer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
