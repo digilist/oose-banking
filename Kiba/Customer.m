@@ -11,10 +11,16 @@
 
 @implementation Customer
 
--(id)initWithvname: (NSString*) newVname nname: (NSString*) newNname idintern: (int) newIdIntern pass: (NSString*) newPass ident: (NSString*) newIdent adress: (Adress*) newAdress accounts: (NSMapTable*) newAccounts cRating: (CreditRating*) newCRating{
+- (id)initWithvname: (NSString*) newVname
+              nname: (NSString*) newNname
+           idintern: (int) newIdIntern
+               pass: (NSString*) newPass
+              ident: (NSString*) newIdent
+             adress: (Adress*) newAdress
+           accounts: (NSMapTable*) newAccounts
+            cRating: (CreditRating*) newCRating {
     
-    if (self = [super init])
-    {
+    if (self = [super init]) {
         self.vname = newVname;
         self.nname = newNname;
         self.idintern = newIdIntern;
@@ -25,18 +31,17 @@
         self.cRating = newCRating;
     }
     return self;
-    
-    
-    
 }
+
 /**
  *  Fügt einen neuen Account den Accountliste hinzu.
  *
  *  @param account <#account description#>
  */
--(void)addAccount: (Account*) account{
+-(void)addAccount: (Account*) account {
     [self.accounts setObject:account forKey: account.accountnr];
 }
+
 /**
  *  Gibt ein bestimmtes Konto des Nutzers zurück
  *
@@ -44,7 +49,7 @@
  *
  *  @return Das Kontoobjekt
  */
--(Account*)gibAccount: (NSNumber*) accnr {
+-(Account*)getAccount: (NSNumber*) accnr {
     return [self.accounts objectForKey:accnr];
 }
 
