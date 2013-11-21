@@ -104,6 +104,9 @@ static NSArray * KBAMasterViewEntryNames;
 {
 //    NSDate *object = _objects[indexPath.row];
 //    self.detailViewController.detailItem = object;
+    
+    NSString* object = [KBAMasterViewEntryNames objectAtIndex:indexPath.row];
+    self.detailViewController.detailItem = object;
 }
 
 @end

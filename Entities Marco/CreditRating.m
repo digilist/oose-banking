@@ -16,7 +16,7 @@
     {
         self.status = newStatus;
         self.creditLimit = newCreditLimit;
-        self.risklevel = newRiskLevel;
+        self.riskLevel = newRiskLevel;
         
     }
     return self;

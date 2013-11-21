@@ -18,18 +18,20 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailController:(UIViewController *)newDetailController
+- (void)setDetailItem:(id)newDetailItem
 {
-    if (self.detailController != newDetailController) {
-        _detailController = newDetailController;
-    
+    if (_detailItem != newDetailItem) {
+        _detailItem = newDetailItem;
+        
+        self.detailDescriptionLabel.text = _detailItem;
+        
         // Update the view.
         [self configureView];
     }
-
+    
     if (self.masterPopoverController != nil) {
         [self.masterPopoverController dismissPopoverAnimated:YES];
-    }        
+    }
 }
 
 /**
@@ -52,9 +54,9 @@
 	// Do any additional setup after loading the view, typically from a nib.
    [self configureView];
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    KBADashboardController *detail = [storyboard instantiateViewControllerWithIdentifier:@"Dashboard"];
-    [self setDetailController:detail];
+    //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //KBADashboardController *detail = [storyboard instantiateViewControllerWithIdentifier:@"Dashboard"];
+    //[self setDetailController:detail];
 }
 
 - (void)didReceiveMemoryWarning
