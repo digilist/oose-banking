@@ -13,28 +13,11 @@
 		2173F382183E77E800882F3D /* CreditRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 2173F37D183E77E800882F3D /* CreditRating.m */; };
 		2173F383183E77E800882F3D /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2173F37E183E77E800882F3D /* Customer.m */; };
 		2173F384183E77E800882F3D /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 2173F37F183E77E800882F3D /* Transaction.m */; };
-		3407E8B71837BD750045C014 /* iPad Controls.bmml in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8A01837BD750045C014 /* iPad Controls.bmml */; };
-		3407E8B81837BD750045C014 /* iPads.bmml in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8A11837BD750045C014 /* iPads.bmml */; };
-		3407E8B91837BD750045C014 /* Mock On.bmml in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8A21837BD750045C014 /* Mock On.bmml */; };
-		3407E8BA1837BD750045C014 /* Dashboard.bmml in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8A31837BD750045C014 /* Dashboard.bmml */; };
-		3407E8BB1837BD750045C014 /* Filialfinder.bmml in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8A41837BD750045C014 /* Filialfinder.bmml */; };
-		3407E8BC1837BD750045C014 /* Finanzierung.bmml in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8A51837BD750045C014 /* Finanzierung.bmml */; };
-		3407E8BD1837BD750045C014 /* papi.sty in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8A71837BD750045C014 /* papi.sty */; };
-		3407E8BE1837BD750045C014 /* papi.sty.bak in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8A81837BD750045C014 /* papi.sty.bak */; };
-		3407E8BF1837BD750045C014 /* Quationnaire.aux in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8A91837BD750045C014 /* Quationnaire.aux */; };
-		3407E8C01837BD750045C014 /* Quationnaire.dvi in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8AA1837BD750045C014 /* Quationnaire.dvi */; };
-		3407E8C11837BD750045C014 /* Quationnaire.log in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8AB1837BD750045C014 /* Quationnaire.log */; };
-		3407E8C21837BD750045C014 /* Quationnaire.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8AC1837BD750045C014 /* Quationnaire.pdf */; };
-		3407E8C31837BD750045C014 /* Quationnaire.ps in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8AD1837BD750045C014 /* Quationnaire.ps */; };
-		3407E8C41837BD750045C014 /* Quationnaire.synctex.gz in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8AE1837BD750045C014 /* Quationnaire.synctex.gz */; };
-		3407E8C51837BD750045C014 /* Quationnaire.tex in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8AF1837BD750045C014 /* Quationnaire.tex */; };
-		3407E8C61837BD750045C014 /* Quationnaire.tex.bak in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8B01837BD750045C014 /* Quationnaire.tex.bak */; };
-		3407E8C71837BD750045C014 /* texput.log in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8B11837BD750045C014 /* texput.log */; };
-		3407E8C81837BD750045C014 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8B21837BD750045C014 /* README.md */; };
-		3407E8C91837BD750045C014 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8B41837BD750045C014 /* README.md */; };
-		3407E8CA1837BD750045C014 /* psp.tex in Resources */ = {isa = PBXBuildFile; fileRef = 3407E8B61837BD750045C014 /* psp.tex */; };
 		3407E8E81838FD110045C014 /* KBADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3407E8E51838FD110045C014 /* KBADetailViewController.m */; };
 		3407E8E91838FD110045C014 /* KBAMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3407E8E71838FD110045C014 /* KBAMasterViewController.m */; };
+		34199A881841710C00F574D5 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 34199A871841710C00F574D5 /* Assets */; };
+		34199A8A18417A6F00F574D5 /* Documentation in Resources */ = {isa = PBXBuildFile; fileRef = 34199A8918417A6F00F574D5 /* Documentation */; };
+		34199A8C18417A9D00F574D5 /* general.js in Sources */ = {isa = PBXBuildFile; fileRef = 34199A8B18417A9D00F574D5 /* general.js */; };
 		342322E11837B9FD00618D7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342322E01837B9FD00618D7E /* Foundation.framework */; };
 		342322E31837B9FD00618D7E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342322E21837B9FD00618D7E /* CoreGraphics.framework */; };
 		342322E51837B9FD00618D7E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342322E41837B9FD00618D7E /* UIKit.framework */; };
@@ -77,26 +60,6 @@
 		2173F37D183E77E800882F3D /* CreditRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreditRating.m; path = Entities/CreditRating.m; sourceTree = "<group>"; };
 		2173F37E183E77E800882F3D /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Customer.m; path = Entities/Customer.m; sourceTree = "<group>"; };
 		2173F37F183E77E800882F3D /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Transaction.m; path = Entities/Transaction.m; sourceTree = "<group>"; };
-		3407E8A01837BD750045C014 /* iPad Controls.bmml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "iPad Controls.bmml"; sourceTree = "<group>"; };
-		3407E8A11837BD750045C014 /* iPads.bmml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = iPads.bmml; sourceTree = "<group>"; };
-		3407E8A21837BD750045C014 /* Mock On.bmml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Mock On.bmml"; sourceTree = "<group>"; };
-		3407E8A31837BD750045C014 /* Dashboard.bmml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Dashboard.bmml; sourceTree = "<group>"; };
-		3407E8A41837BD750045C014 /* Filialfinder.bmml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Filialfinder.bmml; sourceTree = "<group>"; };
-		3407E8A51837BD750045C014 /* Finanzierung.bmml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Finanzierung.bmml; sourceTree = "<group>"; };
-		3407E8A71837BD750045C014 /* papi.sty */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = papi.sty; sourceTree = "<group>"; };
-		3407E8A81837BD750045C014 /* papi.sty.bak */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = papi.sty.bak; sourceTree = "<group>"; };
-		3407E8A91837BD750045C014 /* Quationnaire.aux */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Quationnaire.aux; sourceTree = "<group>"; };
-		3407E8AA1837BD750045C014 /* Quationnaire.dvi */ = {isa = PBXFileReference; lastKnownFileType = file; path = Quationnaire.dvi; sourceTree = "<group>"; };
-		3407E8AB1837BD750045C014 /* Quationnaire.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Quationnaire.log; sourceTree = "<group>"; };
-		3407E8AC1837BD750045C014 /* Quationnaire.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Quationnaire.pdf; sourceTree = "<group>"; };
-		3407E8AD1837BD750045C014 /* Quationnaire.ps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Quationnaire.ps; sourceTree = "<group>"; };
-		3407E8AE1837BD750045C014 /* Quationnaire.synctex.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = Quationnaire.synctex.gz; sourceTree = "<group>"; };
-		3407E8AF1837BD750045C014 /* Quationnaire.tex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Quationnaire.tex; sourceTree = "<group>"; };
-		3407E8B01837BD750045C014 /* Quationnaire.tex.bak */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Quationnaire.tex.bak; sourceTree = "<group>"; };
-		3407E8B11837BD750045C014 /* texput.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = texput.log; sourceTree = "<group>"; };
-		3407E8B21837BD750045C014 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		3407E8B41837BD750045C014 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		3407E8B61837BD750045C014 /* psp.tex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = psp.tex; sourceTree = "<group>"; };
 		3407E8CB1837BD980045C014 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3407E8CC1837BDA20045C014 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		3407E8D91838FA200045C014 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = View/README.md; sourceTree = "<group>"; };
@@ -107,6 +70,9 @@
 		3407E8E51838FD110045C014 /* KBADetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBADetailViewController.m; path = View/KBADetailViewController.m; sourceTree = "<group>"; };
 		3407E8E61838FD110045C014 /* KBAMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAMasterViewController.h; path = View/KBAMasterViewController.h; sourceTree = "<group>"; };
 		3407E8E71838FD110045C014 /* KBAMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAMasterViewController.m; path = View/KBAMasterViewController.m; sourceTree = "<group>"; };
+		34199A871841710C00F574D5 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
+		34199A8918417A6F00F574D5 /* Documentation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Documentation; sourceTree = "<group>"; };
+		34199A8B18417A9D00F574D5 /* general.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = general.js; path = Assets/js/general.js; sourceTree = "<group>"; };
 		342322DD1837B9FD00618D7E /* Kiba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		342322E01837B9FD00618D7E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		342322E21837B9FD00618D7E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -168,81 +134,6 @@
 			name = Dashboard;
 			sourceTree = "<group>";
 		};
-		3407E89C1837BD750045C014 /* Documentation */ = {
-			isa = PBXGroup;
-			children = (
-				3407E89D1837BD750045C014 /* Concept */,
-				3407E8B31837BD750045C014 /* Development */,
-				3407E8B51837BD750045C014 /* Planning */,
-			);
-			path = Documentation;
-			sourceTree = SOURCE_ROOT;
-		};
-		3407E89D1837BD750045C014 /* Concept */ = {
-			isa = PBXGroup;
-			children = (
-				3407E89E1837BD750045C014 /* Balsamiq */,
-				3407E8A61837BD750045C014 /* Questionnaire */,
-				3407E8B21837BD750045C014 /* README.md */,
-			);
-			path = Concept;
-			sourceTree = "<group>";
-		};
-		3407E89E1837BD750045C014 /* Balsamiq */ = {
-			isa = PBXGroup;
-			children = (
-				3407E89F1837BD750045C014 /* assets */,
-				3407E8A31837BD750045C014 /* Dashboard.bmml */,
-				3407E8A41837BD750045C014 /* Filialfinder.bmml */,
-				3407E8A51837BD750045C014 /* Finanzierung.bmml */,
-			);
-			path = Balsamiq;
-			sourceTree = "<group>";
-		};
-		3407E89F1837BD750045C014 /* assets */ = {
-			isa = PBXGroup;
-			children = (
-				3407E8A01837BD750045C014 /* iPad Controls.bmml */,
-				3407E8A11837BD750045C014 /* iPads.bmml */,
-				3407E8A21837BD750045C014 /* Mock On.bmml */,
-			);
-			path = assets;
-			sourceTree = "<group>";
-		};
-		3407E8A61837BD750045C014 /* Questionnaire */ = {
-			isa = PBXGroup;
-			children = (
-				3407E8A71837BD750045C014 /* papi.sty */,
-				3407E8A81837BD750045C014 /* papi.sty.bak */,
-				3407E8A91837BD750045C014 /* Quationnaire.aux */,
-				3407E8AA1837BD750045C014 /* Quationnaire.dvi */,
-				3407E8AB1837BD750045C014 /* Quationnaire.log */,
-				3407E8AC1837BD750045C014 /* Quationnaire.pdf */,
-				3407E8AD1837BD750045C014 /* Quationnaire.ps */,
-				3407E8AE1837BD750045C014 /* Quationnaire.synctex.gz */,
-				3407E8AF1837BD750045C014 /* Quationnaire.tex */,
-				3407E8B01837BD750045C014 /* Quationnaire.tex.bak */,
-				3407E8B11837BD750045C014 /* texput.log */,
-			);
-			path = Questionnaire;
-			sourceTree = "<group>";
-		};
-		3407E8B31837BD750045C014 /* Development */ = {
-			isa = PBXGroup;
-			children = (
-				3407E8B41837BD750045C014 /* README.md */,
-			);
-			path = Development;
-			sourceTree = "<group>";
-		};
-		3407E8B51837BD750045C014 /* Planning */ = {
-			isa = PBXGroup;
-			children = (
-				3407E8B61837BD750045C014 /* psp.tex */,
-			);
-			path = Planning;
-			sourceTree = "<group>";
-		};
 		3407E8CD1838F9320045C014 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,9 +187,11 @@
 		342322D41837B9FD00618D7E = {
 			isa = PBXGroup;
 			children = (
+				34199A8B18417A9D00F574D5 /* general.js */,
+				34199A8918417A6F00F574D5 /* Documentation */,
+				34199A871841710C00F574D5 /* Assets */,
 				3407E8CC1837BDA20045C014 /* README.md */,
 				3407E8CB1837BD980045C014 /* LICENSE */,
-				3407E89C1837BD750045C014 /* Documentation */,
 				342322E61837B9FD00618D7E /* Kiba */,
 				342323081837B9FD00618D7E /* KibaTests */,
 				342322DF1837B9FD00618D7E /* Frameworks */,
@@ -462,8 +355,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34199A881841710C00F574D5 /* Assets in Resources */,
 				342322FC1837B9FD00618D7E /* Images.xcassets in Resources */,
 				342322EB1837B9FD00618D7E /* InfoPlist.strings in Resources */,
+				34199A8A18417A6F00F574D5 /* Documentation in Resources */,
 				342322F41837B9FD00618D7E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,27 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3407E8BF1837BD750045C014 /* Quationnaire.aux in Resources */,
-				3407E8BD1837BD750045C014 /* papi.sty in Resources */,
-				3407E8C91837BD750045C014 /* README.md in Resources */,
-				3407E8C71837BD750045C014 /* texput.log in Resources */,
-				3407E8C31837BD750045C014 /* Quationnaire.ps in Resources */,
-				3407E8B71837BD750045C014 /* iPad Controls.bmml in Resources */,
-				3407E8CA1837BD750045C014 /* psp.tex in Resources */,
-				3407E8B91837BD750045C014 /* Mock On.bmml in Resources */,
-				3407E8C21837BD750045C014 /* Quationnaire.pdf in Resources */,
-				3407E8C11837BD750045C014 /* Quationnaire.log in Resources */,
-				3407E8C01837BD750045C014 /* Quationnaire.dvi in Resources */,
-				3407E8BA1837BD750045C014 /* Dashboard.bmml in Resources */,
-				3407E8B81837BD750045C014 /* iPads.bmml in Resources */,
-				3407E8C41837BD750045C014 /* Quationnaire.synctex.gz in Resources */,
-				3407E8BB1837BD750045C014 /* Filialfinder.bmml in Resources */,
-				3407E8C81837BD750045C014 /* README.md in Resources */,
 				3423230D1837B9FD00618D7E /* InfoPlist.strings in Resources */,
-				3407E8BC1837BD750045C014 /* Finanzierung.bmml in Resources */,
-				3407E8BE1837BD750045C014 /* papi.sty.bak in Resources */,
-				3407E8C51837BD750045C014 /* Quationnaire.tex in Resources */,
-				3407E8C61837BD750045C014 /* Quationnaire.tex.bak in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +380,7 @@
 			files = (
 				2173F383183E77E800882F3D /* Customer.m in Sources */,
 				3407E8E81838FD110045C014 /* KBADetailViewController.m in Sources */,
+				34199A8C18417A9D00F574D5 /* general.js in Sources */,
 				342322ED1837B9FD00618D7E /* main.m in Sources */,
 				2173F380183E77E800882F3D /* Account.m in Sources */,
 				2173F384183E77E800882F3D /* Transaction.m in Sources */,

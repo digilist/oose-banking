@@ -25,6 +25,11 @@
         
         self.detailDescriptionLabel.text = _detailItem;
         
+        // Loading the dashboard as defaut example
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        KBADashboardController *detail = [storyboard instantiateViewControllerWithIdentifier:@"Dashboard"];
+        [self.navigationController pushViewController:detail animated:YES];
+        
         // Update the view.
         [self configureView];
     }

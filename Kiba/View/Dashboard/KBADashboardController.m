@@ -23,10 +23,28 @@
     return self;
 }
 
+/**
+ *  Loads all necessary files to display the dashboard 
+ *  html view.
+ */
+- (void)loadHTMLContent
+{
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Assets/html/dashboard" withExtension:@"html"];
+    NSString *html = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+    
+    NSString *path = [[NSBundle mainBundle] bundlePath];
+    NSURL *baseURL = [NSURL fileURLWithPath:path];
+    
+    [self.webView loadHTMLString:html baseURL:baseURL];
+}
+
+/**
+ *  When the view was loaded.
+ */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [self loadHTMLContent];
 }
 
 - (void)didReceiveMemoryWarning
