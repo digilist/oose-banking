@@ -11,7 +11,7 @@
 
 @implementation Customer
 
--(id)initWithvName: (NSString*) newVName nName: (NSString*) newNName idIntern: (int) newIdIntern pass: (NSString*) newPass ident: (NSString*) newIdent adress: (Adress*) newAdress accounts: (NSMapTable*) newAccounts cRating: (CreditRating*) newCRating{
+-(id)initWithVName: (NSString*) newVName nName: (NSString*) newNName idIntern: (int) newIdIntern pass: (NSString*) newPass ident: (NSString*) newIdent adress: (Adress*) newAdress accounts: (NSMapTable*) newAccounts cRating: (CreditRating*) newCRating{
     
     if (self = [super init])
     {
@@ -23,7 +23,7 @@
         self.adress = newAdress;
         self.accounts = newAccounts;
         self.cRating = newCRating;
-        // Vllt auch als Parameter im Konstruktor  
+        // Vllt auch als Parameter im Konstruktor
         self.verificated = false;
     }
     return self;

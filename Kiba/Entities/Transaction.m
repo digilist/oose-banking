@@ -11,7 +11,7 @@
 
 @implementation Transaction
 
--(id)initWithtype: (id) newType recipient: (Account*) newRecipient sender: (Account*) newSender amount: (NSNumber*) newAmount date: (NSDate*) newDate {
+-(id)initWithType: (id) newType recipient: (Account*) newRecipient sender: (Account*) newSender amount: (NSNumber*) newAmount date: (NSDate*) newDate {
     
     if (self = [super init]) {
         self.type = newType;

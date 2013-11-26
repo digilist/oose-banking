@@ -10,7 +10,7 @@
 
 @implementation Branch
 
--(id)initWithadress: (Adress*) newAdress iBan: (NSString*) newIBan bic: (NSString*) newBic openHours: (NSArray*) NewOpenHours {
+-(id)initWithAdress: (Adress*) newAdress iBan: (NSString*) newIBan bic: (NSString*) newBic openHours: (NSArray*) NewOpenHours {
     
     if (self = [super init])
     {

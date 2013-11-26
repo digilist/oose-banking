@@ -11,7 +11,7 @@
 @implementation Adress
 
 
--(id)initWithstreet: (NSString*) newStreet houseNr: (NSString*) newHouseNr postalCode: (int) newPostalCode city: (NSString*) newCity {
+-(id)initWithStreet: (NSString*) newStreet houseNr: (NSString*) newHouseNr postalCode: (int) newPostalCode city: (NSString*) newCity {
     
     if (self = [super init])
     {
