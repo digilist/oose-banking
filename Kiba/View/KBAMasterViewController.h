@@ -8,12 +8,8 @@
 
 @import UIKit;
 
-@class KBADetailViewController;
+@interface KBAMasterViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
-@interface KBAMasterViewController : UITableViewController
-
-@property (strong, nonatomic) KBADetailViewController *detailViewController;
 @property (strong, nonatomic) IBOutlet UITableView *mainLeftView;
-
 
 @end

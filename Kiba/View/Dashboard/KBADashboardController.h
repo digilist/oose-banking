@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KBADashboardController : UIViewController <UIWebViewDelegate>
+@interface KBADashboardController : UIViewController <UIWebViewDelegate, UISplitViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end

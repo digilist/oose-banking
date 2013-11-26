@@ -7,8 +7,6 @@
 //
 
 #import "KBAMasterViewController.h"
-#import "KBADetailViewController.h"
-
 #import "Dashboard/KBADashboardController.h"
 
 static NSArray * KBAMasterViewEntryNames;
@@ -46,8 +44,6 @@ static NSArray * navigationEntryKeys;
 {
     [super viewDidLoad];
     self.title = @"KiBa App";
-    
-    self.detailViewController = (KBADetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
 - (void)didReceiveMemoryWarning
@@ -120,6 +116,7 @@ static NSArray * navigationEntryKeys;
     // Set new Splitcontroller configuration
     NSArray* splitViewControllers = @[self.navigationController,     // Master View Navigation
                                       selectedNavigationController]; // Detail View Navigation
+    self.splitViewController.delegate = (UIViewController <UISplitViewControllerDelegate> *) selectedController;
     self.splitViewController.viewControllers = splitViewControllers;
 }
 

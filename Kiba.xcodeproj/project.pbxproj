@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0A893764183BA118003495A4 /* KBADashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A893763183BA118003495A4 /* KBADashboardController.m */; };
-		3407E8E81838FD110045C014 /* KBADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3407E8E51838FD110045C014 /* KBADetailViewController.m */; };
 		3407E8E91838FD110045C014 /* KBAMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3407E8E71838FD110045C014 /* KBAMasterViewController.m */; };
 		34199A881841710C00F574D5 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 34199A871841710C00F574D5 /* Assets */; };
 		34199A8A18417A6F00F574D5 /* Documentation in Resources */ = {isa = PBXBuildFile; fileRef = 34199A8918417A6F00F574D5 /* Documentation */; };
@@ -60,8 +59,6 @@
 		3407E8D91838FA200045C014 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = View/README.md; sourceTree = "<group>"; };
 		3407E8DB1838FA420045C014 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = Services/README.md; sourceTree = "<group>"; };
 		3407E8DD1838FA790045C014 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = Library/README.md; sourceTree = "<group>"; };
-		3407E8E41838FD110045C014 /* KBADetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBADetailViewController.h; path = View/KBADetailViewController.h; sourceTree = "<group>"; };
-		3407E8E51838FD110045C014 /* KBADetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBADetailViewController.m; path = View/KBADetailViewController.m; sourceTree = "<group>"; };
 		3407E8E61838FD110045C014 /* KBAMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAMasterViewController.h; path = View/KBAMasterViewController.h; sourceTree = "<group>"; };
 		3407E8E71838FD110045C014 /* KBAMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAMasterViewController.m; path = View/KBAMasterViewController.m; sourceTree = "<group>"; };
 		34199A871841710C00F574D5 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
@@ -178,8 +175,6 @@
 				0A893761183BA0BE003495A4 /* Dashboard */,
 				3407E8E61838FD110045C014 /* KBAMasterViewController.h */,
 				3407E8E71838FD110045C014 /* KBAMasterViewController.m */,
-				3407E8E41838FD110045C014 /* KBADetailViewController.h */,
-				3407E8E51838FD110045C014 /* KBADetailViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -419,12 +414,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3407E8E81838FD110045C014 /* KBADetailViewController.m in Sources */,
 				342322ED1837B9FD00618D7E /* main.m in Sources */,
-				2173F380183E77E800882F3D /* Account.m in Sources */,
-				2173F384183E77E800882F3D /* Transaction.m in Sources */,
 				C1F00E731844E08C009EFE4F /* KBAAuthController.m in Sources */,
-				2173F381183E77E800882F3D /* Adress.m in Sources */,
 				C10C5FBF183B877B008FAECB /* KBABranchDaoRest.m in Sources */,
 				A8F81C8C1844B51D00E55C75 /* Customer.m in Sources */,
 				C10C5FC2183B8A5A008FAECB /* KBADependencyInjector.m in Sources */,
