@@ -12,14 +12,16 @@
 @interface Account : NSObject
 
 @property NSNumber* balance;
-@property NSNumber* overdraft;
-@property NSNumber* accountnr;
+@property NSNumber* overDraft;
+@property NSNumber* accountNr;
 @property Customer* owner;
 
+-(void)sendMoney: (NSNumber*) amount;
 
--(id)initWithbalance: (NSNumber*) newBalance
-           overdraft: (NSNumber*) newOverdraft
-           accountnr: (NSNumber*) newAccountnr
+
+-(id)initWithBalance: (NSNumber*) newBalance
+           overDraft: (NSNumber*) newOverDraft
+           accountNr: (NSNumber*) newAccountNr
                owner: (Customer*) newOwner;
 
 @end

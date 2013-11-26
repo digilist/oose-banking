@@ -11,13 +11,13 @@
 @implementation Adress
 
 
--(id)initWithstreet: (NSString*) newStreet housenr: (NSString*) newHousenr postalcode: (int) newPostalcode city: (NSString*) newCity {
+-(id)initWithstreet: (NSString*) newStreet houseNr: (NSString*) newHouseNr postalCode: (int) newPostalCode city: (NSString*) newCity {
     
     if (self = [super init])
     {
         self.street = newStreet;
-        self.housenr = newHousenr;
-        self.postalcode = newPostalcode;
+        self.houseNr = newHouseNr;
+        self.postalCode = newPostalCode;
         self.city = newCity;
     }
     return self;

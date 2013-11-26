@@ -11,10 +11,10 @@
 @interface Adress : NSObject
 
 @property NSString* street;
-@property NSString* housenr;
+@property NSString* houseNr;
 
 // Fachwert?
-@property int postalcode;
+@property int postalCode;
 
 // Fachwert!
 @property NSString* city;

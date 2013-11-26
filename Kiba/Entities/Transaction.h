@@ -7,15 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#include "Customer.h"
+#import "Account.h"
+
 
 @interface Transaction : NSObject
 
 @property id type;
 
 // TODO: Recipient von andere bank? what what? :D
-@property Customer* recipient;
-@property Customer* sender;
+@property Account* recipient;
+@property Account* sender;
 @property NSNumber* amount;
 @property NSDate* date;
 
