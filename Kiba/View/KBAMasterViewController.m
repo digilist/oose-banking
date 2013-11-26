@@ -9,6 +9,8 @@
 #import "KBAMasterViewController.h"
 #import "KBADetailViewController.h"
 
+#import "Dashboard/KBADashboardController.h"
+
 static NSArray * KBAMasterViewEntryNames;
 static NSMutableDictionary * navigationEntries;
 static NSArray * navigationEntryKeys;
@@ -44,6 +46,7 @@ static NSArray * navigationEntryKeys;
 {
     [super viewDidLoad];
     self.title = @"KiBa App";
+    
     self.detailViewController = (KBADetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
@@ -96,35 +99,20 @@ static NSArray * navigationEntryKeys;
     return YES;
 }
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    NSDate *object = _objects[indexPath.row];
-//    self.detailViewController.detailItem = object;
-    
-    [self.detailViewController.navigationController popToRootViewControllerAnimated:NO];
-    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     NSString *selectedKey = [navigationEntryKeys objectAtIndex:indexPath.row];
-    self.detailViewController.detailControllerName = selectedKey;
+    UIViewController *selectedController = (UIViewController*) [storyboard instantiateViewControllerWithIdentifier:selectedKey];
     
-    // NSString* object = [KBAMasterViewEntryNames objectAtIndex:selectedKey];
-    // self.detailViewController.detailItem = object;
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:selectedController];
+    navigationController.navigationBar.topItem.title = [navigationEntries valueForKey:selectedKey];
+    
+    NSArray* viewControllers = @[[self.splitViewController.viewControllers objectAtIndex:0], // left view / menu
+                                 navigationController];
+    
+    self.splitViewController.viewControllers = viewControllers;
 }
 
 @end

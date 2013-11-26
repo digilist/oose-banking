@@ -94,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="-836" y="1470"/>
         </scene>
-        <!--View Controller-->
+        <!--Auth Controller - Authentifizierung-->
         <scene sceneID="QGJ-Ue-2PS">
             <objects>
-                <viewController storyboardIdentifier="auth" id="QNU-Gf-9Rc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="auth" title="Authentifizierung" id="QNU-Gf-9Rc" customClass="KBAAuthController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Kk-an-a1H"/>
                         <viewControllerLayoutGuide type="bottom" id="s4k-q1-zNd"/>
@@ -111,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RNV-9D-2cE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136" y="1470"/>
+            <point key="canvasLocation" x="156" y="1450"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -187,6 +187,120 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-366" y="248"/>
+        </scene>
+        <!--Account Controller-->
+        <scene sceneID="Aca-sw-fWt">
+            <objects>
+                <viewController storyboardIdentifier="account" id="hBZ-dQ-VuA" customClass="KBAAccountController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="td1-Wj-jrF"/>
+                        <viewControllerLayoutGuide type="bottom" id="MT4-pO-YUq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9PT-UZ-Lfz">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nrM-GV-zBW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1092" y="1450"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7OJ-6z-vLD">
+            <objects>
+                <viewController storyboardIdentifier="finder" id="tzr-U1-LDn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OEc-3v-2G4"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Ji-Km-1ab"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7JW-qY-df3">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NCv-Xl-wx1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-828" y="2610"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="odF-JF-1Va">
+            <objects>
+                <viewController storyboardIdentifier="center" id="ykd-ay-3x0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RTv-Wo-FIq"/>
+                        <viewControllerLayoutGuide type="bottom" id="HaD-Zy-j7h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pyd-ap-2ZN">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6SP-hy-Fhs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="156" y="2610"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Il2-Qh-Dnv">
+            <objects>
+                <viewController storyboardIdentifier="finance" id="7QG-TT-5KV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0v6-6k-oBZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="cTW-yL-T7V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xqw-Ew-4Cb">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="csg-pM-Bnp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1092" y="2610"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ykX-dz-3oR">
+            <objects>
+                <viewController storyboardIdentifier="private" id="j8O-bo-peH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X7d-I8-rUh"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Id-oL-kqm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FKe-Il-Gfp">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DFl-50-r1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-836" y="3782"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ej7-iV-3pO">
+            <objects>
+                <viewController storyboardIdentifier="about" id="3uM-zs-r2e" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nxC-SH-iP4"/>
+                        <viewControllerLayoutGuide type="bottom" id="LjC-1O-m6C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uxI-sZ-ror">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qzL-9E-5jX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="156" y="3782"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
