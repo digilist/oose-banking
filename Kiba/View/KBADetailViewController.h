@@ -11,6 +11,7 @@
 @interface KBADetailViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (nonatomic) id detailItem;
+@property (nonatomic) NSString *detailControllerName;
 
 @property (strong, nonatomic) UIViewController *detailController;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
