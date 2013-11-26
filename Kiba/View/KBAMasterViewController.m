@@ -99,20 +99,28 @@ static NSArray * navigationEntryKeys;
     return YES;
 }
 
+/**
+ *  Contains the logic to open the right detail controller when a table cell was selected.
+ *
+ *  @param tableView The involved table view.
+ *  @param indexPath The selected index path.
+ */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
+    // Resolve the controller for the cell
     NSString *selectedKey = [navigationEntryKeys objectAtIndex:indexPath.row];
     UIViewController *selectedController = (UIViewController*) [storyboard instantiateViewControllerWithIdentifier:selectedKey];
+    UINavigationController *selectedNavigationController = [[UINavigationController alloc] initWithRootViewController:selectedController];
+
+    // Adjust navigation title
+    selectedNavigationController.navigationBar.topItem.title = [navigationEntries valueForKey:selectedKey];
     
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:selectedController];
-    navigationController.navigationBar.topItem.title = [navigationEntries valueForKey:selectedKey];
-    
-    NSArray* viewControllers = @[[self.splitViewController.viewControllers objectAtIndex:0], // left view / menu
-                                 navigationController];
-    
-    self.splitViewController.viewControllers = viewControllers;
+    // Set new Splitcontroller configuration
+    NSArray* splitViewControllers = @[self.navigationController,     // Master View Navigation
+                                      selectedNavigationController]; // Detail View Navigation
+    self.splitViewController.viewControllers = splitViewControllers;
 }
 
 @end
