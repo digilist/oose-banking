@@ -9,7 +9,11 @@
 #import "KBAMasterViewController.h"
 #import "KBADetailViewController.h"
 
+#import "Dashboard/KBADashboardController.h"
+
 static NSArray * KBAMasterViewEntryNames;
+static NSMutableDictionary * navigationEntries;
+static NSArray * navigationEntryKeys;
 
 @implementation KBAMasterViewController
 
@@ -17,9 +21,18 @@ static NSArray * KBAMasterViewEntryNames;
  *  Initializes object values.
  */
 + (void)initialize {
-    KBAMasterViewEntryNames = @[@"Dashboard", @"Girokonto", @"Filialfinder", @"KiBa-Center",
-                               @"Finanzierung", @"Immobilien", @"Mein Bereich", @"Über die App"];
-
+    navigationEntries = [NSMutableDictionary new];
+    [navigationEntries setValue:@"Dashboard" forKey:@"dashboard"];
+    [navigationEntries setValue:@"Authentifizierung" forKey:@"auth"];
+    [navigationEntries setValue:@"Girokonto" forKey:@"account"];
+    [navigationEntries setValue:@"Filialfinder" forKey:@"finder"];
+    [navigationEntries setValue:@"KiBa-Center" forKey:@"center"];
+    [navigationEntries setValue:@"Finanzierung" forKey:@"finance"];
+    [navigationEntries setValue:@"Mein Bereich" forKey:@"private"];
+    [navigationEntries setValue:@"Über die App" forKey:@"about"];
+    
+    navigationEntryKeys = @[@"dashboard", @"auth", @"account", @"finder", @"center",
+                            @"finance", @"private", @"about"];
 }
 
 - (void)awakeFromNib
@@ -33,6 +46,7 @@ static NSArray * KBAMasterViewEntryNames;
 {
     [super viewDidLoad];
     self.title = @"KiBa App";
+    
     self.detailViewController = (KBADetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
@@ -59,7 +73,7 @@ static NSArray * KBAMasterViewEntryNames;
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return KBAMasterViewEntryNames.count;
+    return navigationEntryKeys.count;
 }
 
 /**
@@ -73,8 +87,9 @@ static NSArray * KBAMasterViewEntryNames;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    cell.textLabel.text = KBAMasterViewEntryNames[indexPath.row];
+    
+    NSString *key = navigationEntryKeys[indexPath.row];
+    cell.textLabel.text = [navigationEntries valueForKey:key];
     return cell;
 }
 
@@ -84,29 +99,20 @@ static NSArray * KBAMasterViewEntryNames;
     return YES;
 }
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    NSDate *object = _objects[indexPath.row];
-//    self.detailViewController.detailItem = object;
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    NSString* object = [KBAMasterViewEntryNames objectAtIndex:indexPath.row];
-    self.detailViewController.detailItem = object;
+    NSString *selectedKey = [navigationEntryKeys objectAtIndex:indexPath.row];
+    UIViewController *selectedController = (UIViewController*) [storyboard instantiateViewControllerWithIdentifier:selectedKey];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:selectedController];
+    navigationController.navigationBar.topItem.title = [navigationEntries valueForKey:selectedKey];
+    
+    NSArray* viewControllers = @[[self.splitViewController.viewControllers objectAtIndex:0], // left view / menu
+                                 navigationController];
+    
+    self.splitViewController.viewControllers = viewControllers;
 }
 
 @end

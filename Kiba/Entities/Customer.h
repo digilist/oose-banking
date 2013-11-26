@@ -10,11 +10,12 @@
 #import "Adress.h"
 #import "CreditRating.h"
 
+
 @interface Customer : NSObject
 
-@property NSString* vname;
-@property NSString* nname;
-@property int idintern;
+@property NSString* vName;
+@property NSString* nName;
+@property int idIntern;
 @property NSString* pass;
 
 // Perso Ident Einloggkennung!
@@ -22,5 +23,9 @@
 @property Adress* adress;
 @property NSMapTable* accounts;
 @property CreditRating* cRating;
+@property Boolean verificated;
+
+
+
 
 @end

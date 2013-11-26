@@ -18,19 +18,14 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
-{
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+- (void)setDetailControllerName:(NSString *)detailControllerName {
+    if (_detailControllerName != detailControllerName) {
+        _detailControllerName = detailControllerName;
         
-        self.detailDescriptionLabel.text = _detailItem;
-        
-        // Loading the dashboard as defaut example
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        KBADashboardController *detail = [storyboard instantiateViewControllerWithIdentifier:@"Dashboard"];
-        [self.navigationController pushViewController:detail animated:YES];
+        id detailController = [storyboard instantiateViewControllerWithIdentifier:detailControllerName];
         
-        // Update the view.
+        self.detailController = detailController;
         [self configureView];
     }
     
@@ -39,14 +34,15 @@
     }
 }
 
+
 /**
  *  Configures the view. Update the user interface for the detail item.
  */
 - (void)configureView
 {
     if (self.detailController) {
-        [self.navigationController pushViewController:self.detailController animated:NO];
-        self.detailDescriptionLabel.text = [self.detailController description];
+        [self.navigationController pushViewController:self.detailController animated:YES];
+        
     }
 }
 
@@ -59,8 +55,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
    [self configureView];
     
-    //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    //KBADashboardController *detail = [storyboard instantiateViewControllerWithIdentifier:@"Dashboard"];
+    
     //[self setDetailController:detail];
 }
 

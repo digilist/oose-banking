@@ -10,7 +10,7 @@
 
 @implementation CreditRating
 
--(id)initWithstatus: (NSString*) newStatus creditLimit: (NSNumber*) newCreditLimit riskLevel: (NSNumber*) newRiskLevel {
+-(id)initWithStatus: (NSString*) newStatus creditLimit: (NSNumber*) newCreditLimit riskLevel: (NSNumber*) newRiskLevel {
     
     if (self = [super init])
     {
