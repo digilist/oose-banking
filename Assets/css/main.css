@@ -1,14 +1,22 @@
-@import "reset.css";
 @import "roboto.css";
 
 body {
-    background-image: -webkit-linear-gradient(50%, white, #F9BD9F);
+    background-image: -webkit-linear-gradient(top, white, white 50%, #F9BD9F 100%);
+}
+
+.align-center {
+    text-align: center;
 }
 
 h1 {
-    background-image: -webkit-linear-gradient(bottom, #FFFFFF 63%, #F05A0F 100%);
     font-weight: 100;
     font-size: 36pt;
     font-family: 'Roboto', sans-serif;
     text-align: center;
+}
+
+img.kiba {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
 }
