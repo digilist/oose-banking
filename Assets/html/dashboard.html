@@ -10,14 +10,17 @@
         <div class="row">
             <div class="col-xs-4 align-center">
                 <h3>Einnahmen</h3>
+                <div id="income" class="chart"></div>
                 <a class="btn btn-primary">Details <span class="glyphicon glyphicon-arrow-right"></span> </a>
             </div>
             <div class="col-xs-4 align-center">
                 <h3>Verhältnis</h3>
+                <div id="proportion" class="chart"></div>
                 <a class="btn btn-primary">Details <span class="glyphicon glyphicon-arrow-right"></span> </a>
             </div>
             <div class="col-xs-4 align-center">
                 <h3>Ausgaben</h3>
+                <div id="expenditure" class="chart"></div>
                 <a class="btn btn-primary">Details <span class="glyphicon glyphicon-arrow-right"></span> </a>
             </div>
         </div>
@@ -25,7 +28,27 @@
         <img class="kiba" src="Assets/img/glas.png" width="200" height="200" alt="Ein Glas Kiba.">
 
         <!-- Java Script -->
-        <script src="Assets/js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript">
+            var incomeData = [
+                {label: 'Gehalt', data: 45.0},
+                {label: 'Unterhalt', data: 25.0},
+                {label: 'Sonstige', data: 30.0, color: '#999'}
+            ];
+            var proportionData = [
+                {label: 'Ausgaben', data: 34.0, color: '#b94a48'},
+                {label: 'Einnahmen', data: 66.0, color: '#468847'}
+            ];
+            var expenditureData = [
+                {label: 'Lebensmittel', data: 25.0},
+                {label: 'Amazon', data: 15.0},
+                {label: 'Freizeit', data: 12.0},
+                {label: 'Miete', data: 38.0},
+                {label: 'Sonstige', data: 10.0, color: '#999'}
+            ];
+        </script>
+        <script src="Assets/js/jquery.min.js"></script>
+        <script src="Assets/js/jquery.flot.js"></script>
+        <script src="Assets/js/jquery.flot.pie.js"></script>
         <script src="Assets/js/bootstrap.min.js"></script>
         <script src="Assets/js/general.js"></script>
     </body>
