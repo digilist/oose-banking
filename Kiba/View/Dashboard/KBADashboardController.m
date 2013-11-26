@@ -36,6 +36,9 @@
     NSURL *baseURL = [NSURL fileURLWithPath:path];
     
     [self.webView loadHTMLString:html baseURL:baseURL];
+    
+    self.webView.scalesPageToFit = NO;
+    self.webView.multipleTouchEnabled = NO;
 }
 
 /**
@@ -45,6 +48,9 @@
 {
     [super viewDidLoad];
     [self loadHTMLContent];
+    
+//    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self.webView attribute:NSLayoutAttributeHeight relatedBy:0 toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
+//    [self.view addConstraint:constraint];
 }
 
 - (void)didReceiveMemoryWarning
