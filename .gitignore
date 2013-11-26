@@ -37,4 +37,6 @@ Pods
 *.pdf
 *.synctex.gz
 
-
+# HTML
+index.html
+atlassian-ide-plugin.xml
