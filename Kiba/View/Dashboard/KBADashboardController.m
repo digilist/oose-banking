@@ -8,10 +8,6 @@
 
 #import "KBADashboardController.h"
 
-@interface KBADashboardController ()
-
-@end
-
 @implementation KBADashboardController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -39,6 +35,7 @@
     
     self.webView.scalesPageToFit = NO;
     self.webView.multipleTouchEnabled = NO;
+    self.webView.delegate = self;
 }
 
 /**
@@ -48,15 +45,33 @@
 {
     [super viewDidLoad];
     [self loadHTMLContent];
-    
-//    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self.webView attribute:NSLayoutAttributeHeight relatedBy:0 toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
-//    [self.view addConstraint:constraint];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+    
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
+    navigationType:(UIWebViewNavigationType)navigationType
+{
+    NSString *action = request.mainDocumentURL.lastPathComponent;
+    return [self onWebViewLinkClickedWithAction:action];
+}
+    
+/**
+ *  Will be executed when the User performs an action in the web view.
+ *
+ *  @param action The action called by the user.
+ *
+ *  @return If YES, the request will be performed.
+ */
+- (BOOL)onWebViewLinkClickedWithAction:(NSString *)action
+{
+    // Check the detail buttos here …
+    
+    return YES;
 }
 
 @end
