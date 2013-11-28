@@ -9,5 +9,16 @@
 #import "KBAViewController.h"
 
 @interface KBAAccountController : KBAViewController
+@property IBOutlet UITextField* reciever;
+@property IBOutlet UITextField* accountNr;
+@property IBOutlet UITextField* blz;
+
+@property (nonatomic, weak) IBOutlet UITextField* tan1;
+@property (nonatomic,weak) IBOutlet UILabel* tanLabel;
+
+
+-(IBAction)sendTransaction:(UIButton*)sender;
+
+-(IBAction)coloringField:(id)sender;
 
 @end
