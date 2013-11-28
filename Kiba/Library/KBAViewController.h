@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KBAViewController : UIViewController
+@interface KBAViewController : UIViewController<UISplitViewControllerDelegate>
 
 @end

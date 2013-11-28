@@ -34,6 +34,7 @@
 		C10C5FC2183B8A5A008FAECB /* KBADependencyInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = C10C5FC1183B8A5A008FAECB /* KBADependencyInjector.m */; };
 		C10C5FC5183B8DF7008FAECB /* KBABootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = C10C5FC4183B8DF7008FAECB /* KBABootstrap.m */; };
 		C13B62F4183B7D0200207422 /* KBABranchDaoDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C13B62F3183B7D0200207422 /* KBABranchDaoDummy.m */; };
+		C1A6D4071847661A00AFB665 /* KBADashboardController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1A6D4061847661A00AFB665 /* KBADashboardController.xib */; };
 		C1F00E631844DAEB009EFE4F /* KBAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F00E621844DAEB009EFE4F /* KBAViewController.m */; };
 		C1F00E731844E08C009EFE4F /* KBAAuthController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F00E711844E08C009EFE4F /* KBAAuthController.m */; };
 		C1F00E741844E08C009EFE4F /* KBAAuthController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1F00E721844E08C009EFE4F /* KBAAuthController.xib */; };
@@ -102,6 +103,7 @@
 		C13B62F1183B7CC600207422 /* KBABranchDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KBABranchDao.h; path = Library/DAO/KBABranchDao.h; sourceTree = "<group>"; };
 		C13B62F2183B7D0200207422 /* KBABranchDaoDummy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBABranchDaoDummy.h; path = Library/DAO/KBABranchDaoDummy.h; sourceTree = "<group>"; };
 		C13B62F3183B7D0200207422 /* KBABranchDaoDummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBABranchDaoDummy.m; path = Library/DAO/KBABranchDaoDummy.m; sourceTree = "<group>"; };
+		C1A6D4061847661A00AFB665 /* KBADashboardController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KBADashboardController.xib; sourceTree = "<group>"; };
 		C1F00E611844DAEB009EFE4F /* KBAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAViewController.h; path = Library/KBAViewController.h; sourceTree = "<group>"; };
 		C1F00E621844DAEB009EFE4F /* KBAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAViewController.m; path = Library/KBAViewController.m; sourceTree = "<group>"; };
 		C1F00E701844E08C009EFE4F /* KBAAuthController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAAuthController.h; path = View/Auth/KBAAuthController.h; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				0A893762183BA118003495A4 /* KBADashboardController.h */,
 				0A893763183BA118003495A4 /* KBADashboardController.m */,
+				C1A6D4061847661A00AFB665 /* KBADashboardController.xib */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				C1F00E741844E08C009EFE4F /* KBAAuthController.xib in Resources */,
 				342322FC1837B9FD00618D7E /* Images.xcassets in Resources */,
 				342322EB1837B9FD00618D7E /* InfoPlist.strings in Resources */,
+				C1A6D4071847661A00AFB665 /* KBADashboardController.xib in Resources */,
 				34199A8A18417A6F00F574D5 /* Documentation in Resources */,
 				342322F41837B9FD00618D7E /* Main.storyboard in Resources */,
 			);

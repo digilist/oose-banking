@@ -14,6 +14,22 @@
 
 @implementation KBAAuthController
 
+/**
+ *  Validates the auth code.
+ *
+ *  @param sender
+ */
+- (IBAction)validate:(id)sender {
+    [self.authMessage setHidden:NO];
+    
+    if([self.authCodeField.text isEqualToString:@"123"]){
+        self.authMessage.text = @"Validierung erfolgreich!";
+    } else {
+        self.authMessage.text = @"falsche Eingabe";
+    }
+    //TODO : user auf authed = true setzen
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
