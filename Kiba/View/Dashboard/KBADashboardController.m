@@ -74,32 +74,5 @@
     
     return YES;
 }
-    
-#pragma mark - Split view
-    
-/**
- *  Will be executed by split view controller.
- *
- *  @param splitController   The SplitController that invokes the method.
- *  @param viewController    The ViewController that will be hidden.
- *  @param barButtonItem     The Bar Button.
- *  @param popoverController The PopoverControlelr that will be displayed.
- */
-- (void)splitViewController:(UISplitViewController *)splitController
-     willHideViewController:(UIViewController *)viewController
-          withBarButtonItem:(UIBarButtonItem *)barButtonItem
-       forPopoverController:(UIPopoverController *)popoverController
-{
-    barButtonItem.title = @"Navigation";
-    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
-}
-    
-- (void)splitViewController:(UISplitViewController *)splitController
-     willShowViewController:(UIViewController *)viewController
-  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
-{
-    // Called when the view is shown again in the split view, invalidating the button and popover controller.
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-}
 
 @end
