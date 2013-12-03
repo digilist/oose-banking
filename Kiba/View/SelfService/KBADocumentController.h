@@ -10,4 +10,6 @@
 
 @interface KBADocumentController : KBAViewController
 
+@property (nonatomic,weak) IBOutlet UIScrollView *scrollView2;
+
 @end
