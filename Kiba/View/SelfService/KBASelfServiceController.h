@@ -14,7 +14,9 @@
 @property (nonatomic, weak) IBOutlet UIButton *transferButton;
 @property (nonatomic, weak) IBOutlet UIButton *transactionOverviewButton;
 @property (nonatomic, weak) IBOutlet UIButton *documentsButton;
+@property (nonatomic, weak) IBOutlet UIView *transferView;
 
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *circle;
+
 
 @end
