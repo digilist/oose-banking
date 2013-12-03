@@ -10,6 +10,12 @@
 		0A893764183BA118003495A4 /* KBADashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A893763183BA118003495A4 /* KBADashboardController.m */; };
 		0AAD7964184DC600002B1D0B /* KBASelfServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD7962184DC600002B1D0B /* KBASelfServiceController.m */; };
 		0AAD7965184DC600002B1D0B /* KBASelfServiceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAD7963184DC600002B1D0B /* KBASelfServiceController.xib */; };
+		0AAD7969184E07FB002B1D0B /* KBATransferController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD7967184E07FB002B1D0B /* KBATransferController.m */; };
+		0AAD796A184E07FB002B1D0B /* KBATransferController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAD7968184E07FB002B1D0B /* KBATransferController.xib */; };
+		0AAD796E184E0AD6002B1D0B /* KBAStatementController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD796C184E0AD6002B1D0B /* KBAStatementController.m */; };
+		0AAD796F184E0AD6002B1D0B /* KBAStatementController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAD796D184E0AD6002B1D0B /* KBAStatementController.xib */; };
+		0AAD7973184E0C11002B1D0B /* KBADocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD7971184E0C11002B1D0B /* KBADocumentController.m */; };
+		0AAD7974184E0C11002B1D0B /* KBADocumentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAD7972184E0C11002B1D0B /* KBADocumentController.xib */; };
 		3407E8E91838FD110045C014 /* KBAMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3407E8E71838FD110045C014 /* KBAMasterViewController.m */; };
 		34199A881841710C00F574D5 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 34199A871841710C00F574D5 /* Assets */; };
 		34199A8A18417A6F00F574D5 /* Documentation in Resources */ = {isa = PBXBuildFile; fileRef = 34199A8918417A6F00F574D5 /* Documentation */; };
@@ -60,6 +66,15 @@
 		0AAD7961184DC600002B1D0B /* KBASelfServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBASelfServiceController.h; path = View/SelfService/KBASelfServiceController.h; sourceTree = "<group>"; };
 		0AAD7962184DC600002B1D0B /* KBASelfServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBASelfServiceController.m; path = View/SelfService/KBASelfServiceController.m; sourceTree = "<group>"; };
 		0AAD7963184DC600002B1D0B /* KBASelfServiceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBASelfServiceController.xib; path = View/SelfService/KBASelfServiceController.xib; sourceTree = "<group>"; };
+		0AAD7966184E07FB002B1D0B /* KBATransferController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBATransferController.h; path = View/SelfService/KBATransferController.h; sourceTree = "<group>"; };
+		0AAD7967184E07FB002B1D0B /* KBATransferController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBATransferController.m; path = View/SelfService/KBATransferController.m; sourceTree = "<group>"; };
+		0AAD7968184E07FB002B1D0B /* KBATransferController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBATransferController.xib; path = View/SelfService/KBATransferController.xib; sourceTree = "<group>"; };
+		0AAD796B184E0AD6002B1D0B /* KBAStatementController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAStatementController.h; path = View/SelfService/KBAStatementController.h; sourceTree = "<group>"; };
+		0AAD796C184E0AD6002B1D0B /* KBAStatementController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAStatementController.m; path = View/SelfService/KBAStatementController.m; sourceTree = "<group>"; };
+		0AAD796D184E0AD6002B1D0B /* KBAStatementController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAStatementController.xib; path = View/SelfService/KBAStatementController.xib; sourceTree = "<group>"; };
+		0AAD7970184E0C11002B1D0B /* KBADocumentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBADocumentController.h; path = View/SelfService/KBADocumentController.h; sourceTree = "<group>"; };
+		0AAD7971184E0C11002B1D0B /* KBADocumentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBADocumentController.m; path = View/SelfService/KBADocumentController.m; sourceTree = "<group>"; };
+		0AAD7972184E0C11002B1D0B /* KBADocumentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBADocumentController.xib; path = View/SelfService/KBADocumentController.xib; sourceTree = "<group>"; };
 		3407E8CB1837BD980045C014 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3407E8CC1837BDA20045C014 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		3407E8D91838FA200045C014 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = View/README.md; sourceTree = "<group>"; };
@@ -159,6 +174,15 @@
 				0AAD7961184DC600002B1D0B /* KBASelfServiceController.h */,
 				0AAD7962184DC600002B1D0B /* KBASelfServiceController.m */,
 				0AAD7963184DC600002B1D0B /* KBASelfServiceController.xib */,
+				0AAD7966184E07FB002B1D0B /* KBATransferController.h */,
+				0AAD7967184E07FB002B1D0B /* KBATransferController.m */,
+				0AAD7968184E07FB002B1D0B /* KBATransferController.xib */,
+				0AAD796B184E0AD6002B1D0B /* KBAStatementController.h */,
+				0AAD796C184E0AD6002B1D0B /* KBAStatementController.m */,
+				0AAD796D184E0AD6002B1D0B /* KBAStatementController.xib */,
+				0AAD7970184E0C11002B1D0B /* KBADocumentController.h */,
+				0AAD7971184E0C11002B1D0B /* KBADocumentController.m */,
+				0AAD7972184E0C11002B1D0B /* KBADocumentController.xib */,
 			);
 			name = SelfService;
 			sourceTree = "<group>";
@@ -410,13 +434,16 @@
 			files = (
 				34199A881841710C00F574D5 /* Assets in Resources */,
 				C1F00E791844E0FA009EFE4F /* KBAAccountController.xib in Resources */,
+				0AAD796F184E0AD6002B1D0B /* KBAStatementController.xib in Resources */,
 				C1F00E741844E08C009EFE4F /* KBAAuthController.xib in Resources */,
 				342322FC1837B9FD00618D7E /* Images.xcassets in Resources */,
 				342322EB1837B9FD00618D7E /* InfoPlist.strings in Resources */,
 				0AAD7965184DC600002B1D0B /* KBASelfServiceController.xib in Resources */,
+				0AAD7974184E0C11002B1D0B /* KBADocumentController.xib in Resources */,
 				C1A6D4071847661A00AFB665 /* KBADashboardController.xib in Resources */,
 				34199A8A18417A6F00F574D5 /* Documentation in Resources */,
 				342322F41837B9FD00618D7E /* Main.storyboard in Resources */,
+				0AAD796A184E07FB002B1D0B /* KBATransferController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,12 +473,15 @@
 				A8F81C8A1844B51D00E55C75 /* Branch.m in Sources */,
 				C1F00E631844DAEB009EFE4F /* KBAViewController.m in Sources */,
 				C13B62F4183B7D0200207422 /* KBABranchDaoDummy.m in Sources */,
+				0AAD7973184E0C11002B1D0B /* KBADocumentController.m in Sources */,
 				C10C5FC5183B8DF7008FAECB /* KBABootstrap.m in Sources */,
 				342322F11837B9FD00618D7E /* KBAAppDelegate.m in Sources */,
 				3407E8E91838FD110045C014 /* KBAMasterViewController.m in Sources */,
 				A8F81C881844B51D00E55C75 /* Account.m in Sources */,
 				A8F81C8D1844B51D00E55C75 /* Transaction.m in Sources */,
+				0AAD7969184E07FB002B1D0B /* KBATransferController.m in Sources */,
 				C1F00E781844E0FA009EFE4F /* KBAAccountController.m in Sources */,
+				0AAD796E184E0AD6002B1D0B /* KBAStatementController.m in Sources */,
 				0A893764183BA118003495A4 /* KBADashboardController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

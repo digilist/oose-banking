@@ -7,6 +7,9 @@
 //
 
 #import "KBASelfServiceController.h"
+#import "KBATransferController.h"
+#import "KBAStatementController.h"
+#import "KBADocumentController.h"
 
 @interface KBASelfServiceController ()
 
@@ -42,17 +45,52 @@
  */
 - (IBAction)connect:(id)sender
 {
-    [self.circle startAnimating];
     self.circle.hidden = NO;
-    [self.circle stopAnimating];
+    [self.circle startAnimating];
+
+
+    dispatch_queue_t work = dispatch_queue_create("work", NULL);
+    dispatch_async(work, ^{
+        [NSThread sleepForTimeInterval:2];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+    
+            [self.circle stopAnimating];
+            self.circle.hidden = YES;
+        });
+    
+    });
     
 }
 
-
-
--(IBAction)changeView:(UIButton*)sender
+/**
+ *  Changes view to transfer view.
+ *
+ *  @param sender
+ */
+- (IBAction)changeToTransferView:(id)sender
 {
-   
+    [self.navigationController pushViewController:[KBATransferController new] animated:YES];
+}
+
+/**
+ *  Changes view to statement view.
+ *
+ *  @param sender
+ */
+- (IBAction)changeToStatementView:(id)sender
+{
+    [self.navigationController pushViewController:[KBAStatementController new] animated:YES];
+}
+
+/**
+ *  Changes view to statement view.
+ *
+ *  @param sender
+ */
+- (IBAction)changeToDocumentView:(id)sender
+{
+    [self.navigationController pushViewController:[KBADocumentController new] animated:YES];
 }
 
 @end
