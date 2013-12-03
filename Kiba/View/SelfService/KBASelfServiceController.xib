@@ -6,6 +6,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KBASelfServiceController">
             <connections>
+                <outlet property="circle" destination="wva-gp-6nP" id="bMH-Zh-hoQ"/>
+                <outlet property="connectButton" destination="TrA-BV-FUy" id="kVQ-py-hnT"/>
+                <outlet property="documentsButton" destination="RzH-By-5M4" id="jlx-74-6Ys"/>
+                <outlet property="transactionOverviewButton" destination="VXW-8c-iZJ" id="npY-2m-IsE"/>
+                <outlet property="transferButton" destination="Jc2-nY-JlY" id="JWS-w5-5js"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
         </placeholder>
@@ -27,6 +32,9 @@
                     <state key="normal" title="mit KiBa-Station verbinden">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="connect:" destination="-1" eventType="touchUpInside" id="bWF-pU-zbT"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jc2-nY-JlY">
                     <rect key="frame" x="69" y="210" width="232" height="30"/>

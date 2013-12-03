@@ -35,9 +35,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+/**
+ *  Connects to a KiBa-station.
+ *
+ *  @param sender
+ */
+- (IBAction)connect:(id)sender
+{
+    [self.circle startAnimating];
+    self.circle.hidden = NO;
+    [self.circle stopAnimating];
+    
+}
+
+
+
 -(IBAction)changeView:(UIButton*)sender
 {
-    
+   
 }
 
 @end
