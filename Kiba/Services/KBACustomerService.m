@@ -13,6 +13,8 @@
 @implementation KBACustomerService
 
 
-
+-(NSMapTable*)getAccountsForCurrentUser{
+    return nil;
+}
 
 @end
