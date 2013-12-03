@@ -48,7 +48,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1tE-bi-Kop">
-                            <rect key="frame" x="360" y="413" width="270" height="112"/>
+                            <rect key="frame" x="363" y="413" width="245" height="120"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </tableView>
@@ -60,7 +60,7 @@
                             </state>
                         </button>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xkv-ch-zgH">
-                            <rect key="frame" x="362" y="51" width="242" height="118"/>
+                            <rect key="frame" x="363" y="51" width="245" height="120"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </tableView>
@@ -71,21 +71,21 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" text="Hier können sie Ihre Kontoauszüge für einen beliebigen Zeitraum drucken." translatesAutoresizingMaskIntoConstraints="NO" id="g53-X4-pif">
-                            <rect key="frame" x="53" y="246" width="262" height="53"/>
+                            <rect key="frame" x="53" y="240" width="260" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" text="Jetzt bequem Bescheinigungen z.B. (Bonitätsbescheinigung) ausdrucken." translatesAutoresizingMaskIntoConstraints="NO" id="ag2-gB-WWg">
-                            <rect key="frame" x="53" y="428" width="257" height="57"/>
+                            <rect key="frame" x="53" y="411" width="249" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" text="Buchen Sie ohne Verzögerung Geld von ihrem Sparkonto auf ihr Tageskonto." translatesAutoresizingMaskIntoConstraints="NO" id="bKL-Ph-cm2">
-                            <rect key="frame" x="53" y="51" width="271" height="50"/>
+                            <rect key="frame" x="53" y="47" width="271" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
