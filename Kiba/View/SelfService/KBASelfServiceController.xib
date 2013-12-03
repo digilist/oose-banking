@@ -36,8 +36,8 @@
                         <action selector="connect:" destination="-1" eventType="touchUpInside" id="bWF-pU-zbT"/>
                     </connections>
                 </button>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="wva-gp-6nP">
-                    <rect key="frame" x="641" y="136" width="20" height="20"/>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="wva-gp-6nP">
+                    <rect key="frame" x="629" y="136" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="hidden" value="YES"/>
@@ -125,6 +125,8 @@
                 <constraint firstAttribute="centerX" secondItem="TrA-BV-FUy" secondAttribute="centerX" constant="-0.5" id="lbQ-vI-hrN"/>
                 <constraint firstAttribute="bottom" secondItem="cIz-kq-YHM" secondAttribute="bottom" constant="20" symbolic="YES" id="o1k-PC-Sue"/>
                 <constraint firstAttribute="centerX" secondItem="fQo-AD-f5o" secondAttribute="centerX" constant="-0.5" id="o2j-lT-dsS"/>
+                <constraint firstItem="cIz-kq-YHM" firstAttribute="top" secondItem="wva-gp-6nP" secondAttribute="bottom" constant="34" id="wpc-ak-v75"/>
+                <constraint firstItem="wva-gp-6nP" firstAttribute="leading" secondItem="TrA-BV-FUy" secondAttribute="trailing" constant="13" id="wxj-y8-9nC"/>
                 <constraint firstItem="cIz-kq-YHM" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="30" id="ySh-Lt-zJ5"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
