@@ -8,14 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
-#import "Adress.h"
+#import "Address.h"
 
 @interface Branch : NSObject
 
-@property Adress* adress;
-@property NSString* iBan;
-@property NSString* bic;
-@property NSArray* openHours;
-@property CLLocationCoordinate2D coordinates;
+@property NSString *name;
+@property Address *adress;
+@property NSString *iBan;
+@property NSString *bic;
+@property NSArray *openHours;
+
+-(id)initWithName: (NSString*) name
+          address: (Address*) address
+             iBan: (NSString*) iBan
+              bic: (NSString*) bic
+        openHours: (NSArray*) openHours;
 
 @end

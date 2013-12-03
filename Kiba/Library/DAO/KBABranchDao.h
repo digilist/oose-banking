@@ -12,6 +12,6 @@
 
 @protocol KBABranchDao <NSObject>
 
-- (Branch *)getBranchesNearPoint:(CGPoint)location;
+- (NSArray *)getBranchesNearPoint:(CGPoint)location;
 
 @end

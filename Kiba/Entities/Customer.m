@@ -11,7 +11,7 @@
 
 @implementation Customer
 
--(id)initWithVName: (NSString*) newVName nName: (NSString*) newNName idIntern: (int) newIdIntern pass: (NSString*) newPass ident: (NSString*) newIdent adress: (Adress*) newAdress accounts: (NSMapTable*) newAccounts cRating: (CreditRating*) newCRating{
+-(id)initWithVName: (NSString*) newVName nName: (NSString*) newNName idIntern: (int) newIdIntern pass: (NSString*) newPass ident: (NSString*) newIdent adress: (Address*) newAdress accounts: (NSMapTable*) newAccounts cRating: (CreditRating*) newCRating{
     
     if (self = [super init])
     {

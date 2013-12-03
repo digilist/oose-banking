@@ -10,19 +10,19 @@
 
 @implementation Branch
 
--(id)initWithAdress: (Adress*) address
-               iBan: (NSString*) iBan
+-(id)initWithName: (NSString*) name
+                address: (Address*) address
+                iBan: (NSString*) iBan
                 bic: (NSString*) bic
-                openHours: (NSArray*) openHours
-                coordinates: (CLLocationCoordinate2D) coordinates {
+                openHours: (NSArray*) openHours {
     
     if (self = [super init])
     {
+        self.name = name;
         self.adress = address;
         self.iBan = iBan;
         self.bic = bic;
         self.openHours = openHours;
-        self.coordinates = coordinates;
     }
     return self;
 }
