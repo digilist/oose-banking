@@ -10,4 +10,9 @@
 
 @interface KBASelfServiceController : KBAViewController
 
+@property (nonatomic, weak) IBOutlet UIButton *connectButton;
+@property (nonatomic, weak) IBOutlet UIButton *transferButton;
+@property (nonatomic, weak) IBOutlet UIButton *transactionOverviewButton;
+@property (nonatomic, weak) IBOutlet UIButton *documentsButton;
+
 @end
