@@ -102,7 +102,7 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Arm-wq-HPj" style="IBUITableViewCellStyleDefault" id="WCw-Qf-5nD">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="Yec-RQ-AiU">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -169,10 +169,10 @@
             </objects>
             <point key="canvasLocation" x="1068" y="1450"/>
         </scene>
-        <!--View Controller-->
+        <!--Finder Controller-->
         <scene sceneID="7OJ-6z-vLD">
             <objects>
-                <viewController storyboardIdentifier="finder" id="tzr-U1-LDn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="finder" id="tzr-U1-LDn" customClass="KBAFinderController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OEc-3v-2G4"/>
                         <viewControllerLayoutGuide type="bottom" id="9Ji-Km-1ab"/>
@@ -267,7 +267,6 @@
         <!--Self Service Controller-->
         <scene sceneID="fov-EU-bul">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VhN-js-y0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="selfservice" id="Z7c-nq-S2o" customClass="KBASelfServiceController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QHb-CT-JUY"/>
@@ -280,6 +279,7 @@
                     </view>
                     <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VhN-js-y0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1910" y="1450"/>
         </scene>

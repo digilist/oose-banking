@@ -35,6 +35,9 @@
 		C10C5FBF183B877B008FAECB /* KBABranchDaoRest.m in Sources */ = {isa = PBXBuildFile; fileRef = C10C5FBE183B877B008FAECB /* KBABranchDaoRest.m */; };
 		C10C5FC2183B8A5A008FAECB /* KBADependencyInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = C10C5FC1183B8A5A008FAECB /* KBADependencyInjector.m */; };
 		C10C5FC5183B8DF7008FAECB /* KBABootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = C10C5FC4183B8DF7008FAECB /* KBABootstrap.m */; };
+		C12D347E184DC2F7006EED2A /* KBAFinderController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12D347C184DC2F7006EED2A /* KBAFinderController.m */; };
+		C12D347F184DC2F7006EED2A /* KBAFinderController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C12D347D184DC2F7006EED2A /* KBAFinderController.xib */; };
+		C12D3481184DC4BA006EED2A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12D3480184DC4BA006EED2A /* MapKit.framework */; };
 		C13B62F4183B7D0200207422 /* KBABranchDaoDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C13B62F3183B7D0200207422 /* KBABranchDaoDummy.m */; };
 		C1A6D4071847661A00AFB665 /* KBADashboardController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1A6D4061847661A00AFB665 /* KBADashboardController.xib */; };
 		C1F00E631844DAEB009EFE4F /* KBAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F00E621844DAEB009EFE4F /* KBAViewController.m */; };
@@ -105,6 +108,10 @@
 		C10C5FC1183B8A5A008FAECB /* KBADependencyInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBADependencyInjector.m; path = Library/KBADependencyInjector.m; sourceTree = "<group>"; };
 		C10C5FC3183B8DF7008FAECB /* KBABootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBABootstrap.h; sourceTree = "<group>"; };
 		C10C5FC4183B8DF7008FAECB /* KBABootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBABootstrap.m; sourceTree = "<group>"; };
+		C12D347B184DC2F7006EED2A /* KBAFinderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAFinderController.h; path = View/Finder/KBAFinderController.h; sourceTree = "<group>"; };
+		C12D347C184DC2F7006EED2A /* KBAFinderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAFinderController.m; path = View/Finder/KBAFinderController.m; sourceTree = "<group>"; };
+		C12D347D184DC2F7006EED2A /* KBAFinderController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAFinderController.xib; path = View/Finder/KBAFinderController.xib; sourceTree = "<group>"; };
+		C12D3480184DC4BA006EED2A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C13B62F1183B7CC600207422 /* KBABranchDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KBABranchDao.h; path = Library/DAO/KBABranchDao.h; sourceTree = "<group>"; };
 		C13B62F2183B7D0200207422 /* KBABranchDaoDummy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBABranchDaoDummy.h; path = Library/DAO/KBABranchDaoDummy.h; sourceTree = "<group>"; };
 		C13B62F3183B7D0200207422 /* KBABranchDaoDummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBABranchDaoDummy.m; path = Library/DAO/KBABranchDaoDummy.m; sourceTree = "<group>"; };
@@ -124,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C12D3481184DC4BA006EED2A /* MapKit.framework in Frameworks */,
 				342322E31837B9FD00618D7E /* CoreGraphics.framework in Frameworks */,
 				342322E51837B9FD00618D7E /* UIKit.framework in Frameworks */,
 				342322E11837B9FD00618D7E /* Foundation.framework in Frameworks */,
@@ -187,6 +195,7 @@
 		3407E8CF1838F9400045C014 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C12D347A184DC2D3006EED2A /* Finder */,
 				0AAD7958184DBEF6002B1D0B /* SelfService */,
 				C1F00E6F1844E047009EFE4F /* Auth */,
 				3407E8D91838FA200045C014 /* README.md */,
@@ -244,6 +253,7 @@
 		342322DF1837B9FD00618D7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C12D3480184DC4BA006EED2A /* MapKit.framework */,
 				342322E01837B9FD00618D7E /* Foundation.framework */,
 				342322E21837B9FD00618D7E /* CoreGraphics.framework */,
 				342322E41837B9FD00618D7E /* UIKit.framework */,
@@ -297,6 +307,16 @@
 				3423230B1837B9FD00618D7E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C12D347A184DC2D3006EED2A /* Finder */ = {
+			isa = PBXGroup;
+			children = (
+				C12D347B184DC2F7006EED2A /* KBAFinderController.h */,
+				C12D347C184DC2F7006EED2A /* KBAFinderController.m */,
+				C12D347D184DC2F7006EED2A /* KBAFinderController.xib */,
+			);
+			name = Finder;
 			sourceTree = "<group>";
 		};
 		C13B62EF183B7C8C00207422 /* DAO */ = {
@@ -411,6 +431,7 @@
 				34199A881841710C00F574D5 /* Assets in Resources */,
 				C1F00E791844E0FA009EFE4F /* KBAAccountController.xib in Resources */,
 				C1F00E741844E08C009EFE4F /* KBAAuthController.xib in Resources */,
+				C12D347F184DC2F7006EED2A /* KBAFinderController.xib in Resources */,
 				342322FC1837B9FD00618D7E /* Images.xcassets in Resources */,
 				342322EB1837B9FD00618D7E /* InfoPlist.strings in Resources */,
 				0AAD7960184DC0A3002B1D0B /* KBASelfServiceController.xib in Resources */,
@@ -450,6 +471,7 @@
 				342322F11837B9FD00618D7E /* KBAAppDelegate.m in Sources */,
 				3407E8E91838FD110045C014 /* KBAMasterViewController.m in Sources */,
 				A8F81C881844B51D00E55C75 /* Account.m in Sources */,
+				C12D347E184DC2F7006EED2A /* KBAFinderController.m in Sources */,
 				A8F81C8D1844B51D00E55C75 /* Transaction.m in Sources */,
 				C1F00E781844E0FA009EFE4F /* KBAAccountController.m in Sources */,
 				0A893764183BA118003495A4 /* KBADashboardController.m in Sources */,
