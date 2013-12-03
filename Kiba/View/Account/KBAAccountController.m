@@ -18,6 +18,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    //regex
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -31,19 +33,29 @@
     self.tanLabel.hidden = NO;
 }
 
--(IBAction)coloringField:(id)sender{
+-(IBAction)coloringField:(UITextField*)sender{
 
-    if([self isValidInput:self.accountNr.text]){
-                self.accountNr.backgroundColor = [UIColor greenColor];
+    //regex
+    NSPredicate* regexAccountNr = [NSPredicate predicateWithFormat: @"SELF MATCHES '\\\\d{10}'"];
+    NSPredicate* regexBlz = [NSPredicate predicateWithFormat: @"SELF MATCHES '\\\\d{8}'"];
+    
+    
+    self.regexMap = [NSMapTable mapTableWithKeyOptions:NSMapTableStrongMemory
+                                          valueOptions:NSMapTableWeakMemory];
+    [self.regexMap setObject:regexAccountNr forKey:self.accountNr];
+    [self.regexMap setObject:regexBlz forKey:self.blz];
+    
+
+    if([self isValidInput:sender.text forTextfield: [self.regexMap objectForKey:sender]]){
+                sender.backgroundColor = [UIColor greenColor];
     }
     
-    else self.accountNr.backgroundColor = [UIColor redColor];
+    else sender.backgroundColor = [UIColor redColor];
               }
-
--(Boolean)isValidInput:(NSString*)input{
-    NSPredicate* regex = [NSPredicate predicateWithFormat: @"SELF MATCHES '\\\\d{13}'"];
+-(Boolean)isValidInput:(NSString*)input forTextfield:(NSPredicate*)regex{
     
     
+    // TODO: Eine Map mit Regex Ausdücken als Value, die Textfieldobjekte werden als Key reingeworfen.
     
     if([regex evaluateWithObject:input]){
         

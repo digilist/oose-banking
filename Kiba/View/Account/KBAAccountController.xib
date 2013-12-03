@@ -7,10 +7,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KBAAccountController">
             <connections>
                 <outlet property="accountNr" destination="dbf-tY-AVh" id="5Y9-y8-40g"/>
+                <outlet property="amount" destination="wT6-B8-8s5" id="Nwm-Kn-RlK"/>
                 <outlet property="blz" destination="c6D-Be-5G4" id="XR9-wv-tzE"/>
                 <outlet property="reciever" destination="R0u-uv-yIp" id="InO-8O-LyR"/>
                 <outlet property="tan1" destination="nEb-Xx-HFX" id="O2M-5I-EuX"/>
                 <outlet property="tanLabel" destination="isK-lN-W5I" id="v6W-DP-bqP"/>
+                <outlet property="use" destination="0Ah-rh-lbz" id="04s-0C-tF6"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
         </placeholder>
@@ -52,6 +54,9 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="coloringField:" destination="-1" eventType="editingChanged" id="MDE-4d-csF"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Betrag" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jh2-Ys-6dc">
                     <rect key="frame" x="60" y="360" width="52" height="21"/>
