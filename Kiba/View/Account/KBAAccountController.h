@@ -9,12 +9,15 @@
 #import "KBAViewController.h"
 
 @interface KBAAccountController : KBAViewController
-@property IBOutlet UITextField* reciever;
-@property IBOutlet UITextField* accountNr;
-@property IBOutlet UITextField* blz;
-
+@property (nonatomic, weak) IBOutlet UITextField* reciever;
+@property (nonatomic, weak) IBOutlet UITextField* accountNr;
+@property (nonatomic, weak) IBOutlet UITextField* blz;
+@property (nonatomic, weak) IBOutlet UITextField* amount;
+@property (nonatomic, weak) IBOutlet UITextField* use;
 @property (nonatomic, weak) IBOutlet UITextField* tan1;
 @property (nonatomic,weak) IBOutlet UILabel* tanLabel;
+
+@property NSMapTable* regexMap;
 
 
 -(IBAction)sendTransaction:(UIButton*)sender;
