@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0A893764183BA118003495A4 /* KBADashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A893763183BA118003495A4 /* KBADashboardController.m */; };
+		0AAD795F184DC0A3002B1D0B /* KBASelfServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD795D184DC0A3002B1D0B /* KBASelfServiceController.m */; };
+		0AAD7960184DC0A3002B1D0B /* KBASelfServiceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAD795E184DC0A3002B1D0B /* KBASelfServiceController.xib */; };
 		3407E8E91838FD110045C014 /* KBAMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3407E8E71838FD110045C014 /* KBAMasterViewController.m */; };
 		34199A881841710C00F574D5 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 34199A871841710C00F574D5 /* Assets */; };
 		34199A8A18417A6F00F574D5 /* Documentation in Resources */ = {isa = PBXBuildFile; fileRef = 34199A8918417A6F00F574D5 /* Documentation */; };
@@ -55,6 +57,9 @@
 /* Begin PBXFileReference section */
 		0A893762183BA118003495A4 /* KBADashboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBADashboardController.h; path = View/Dashboard/KBADashboardController.h; sourceTree = "<group>"; };
 		0A893763183BA118003495A4 /* KBADashboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBADashboardController.m; path = View/Dashboard/KBADashboardController.m; sourceTree = "<group>"; };
+		0AAD795C184DC0A3002B1D0B /* KBASelfServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBASelfServiceController.h; path = View/SelfService/KBASelfServiceController.h; sourceTree = "<group>"; };
+		0AAD795D184DC0A3002B1D0B /* KBASelfServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBASelfServiceController.m; path = View/SelfService/KBASelfServiceController.m; sourceTree = "<group>"; };
+		0AAD795E184DC0A3002B1D0B /* KBASelfServiceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBASelfServiceController.xib; path = View/SelfService/KBASelfServiceController.xib; sourceTree = "<group>"; };
 		3407E8CB1837BD980045C014 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3407E8CC1837BDA20045C014 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		3407E8D91838FA200045C014 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = View/README.md; sourceTree = "<group>"; };
@@ -148,6 +153,16 @@
 			name = Dashboard;
 			sourceTree = "<group>";
 		};
+		0AAD7958184DBEF6002B1D0B /* SelfService */ = {
+			isa = PBXGroup;
+			children = (
+				0AAD795C184DC0A3002B1D0B /* KBASelfServiceController.h */,
+				0AAD795D184DC0A3002B1D0B /* KBASelfServiceController.m */,
+				0AAD795E184DC0A3002B1D0B /* KBASelfServiceController.xib */,
+			);
+			name = SelfService;
+			sourceTree = "<group>";
+		};
 		3407E8CD1838F9320045C014 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +187,7 @@
 		3407E8CF1838F9400045C014 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0AAD7958184DBEF6002B1D0B /* SelfService */,
 				C1F00E6F1844E047009EFE4F /* Auth */,
 				3407E8D91838FA200045C014 /* README.md */,
 				C1F00E6E1844E03D009EFE4F /* Account */,
@@ -397,6 +413,7 @@
 				C1F00E741844E08C009EFE4F /* KBAAuthController.xib in Resources */,
 				342322FC1837B9FD00618D7E /* Images.xcassets in Resources */,
 				342322EB1837B9FD00618D7E /* InfoPlist.strings in Resources */,
+				0AAD7960184DC0A3002B1D0B /* KBASelfServiceController.xib in Resources */,
 				C1A6D4071847661A00AFB665 /* KBADashboardController.xib in Resources */,
 				34199A8A18417A6F00F574D5 /* Documentation in Resources */,
 				342322F41837B9FD00618D7E /* Main.storyboard in Resources */,
@@ -422,6 +439,7 @@
 				C1F00E731844E08C009EFE4F /* KBAAuthController.m in Sources */,
 				C10C5FBF183B877B008FAECB /* KBABranchDaoRest.m in Sources */,
 				A8F81C8C1844B51D00E55C75 /* Customer.m in Sources */,
+				0AAD795F184DC0A3002B1D0B /* KBASelfServiceController.m in Sources */,
 				C10C5FC2183B8A5A008FAECB /* KBADependencyInjector.m in Sources */,
 				A8F81C8B1844B51D00E55C75 /* CreditRating.m in Sources */,
 				A8F81C891844B51D00E55C75 /* Adress.m in Sources */,

@@ -167,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nrM-GV-zBW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092" y="1450"/>
+            <point key="canvasLocation" x="1068" y="1450"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="7OJ-6z-vLD">
@@ -263,6 +263,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qzL-9E-5jX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="156" y="3782"/>
+        </scene>
+        <!--Self Service Controller-->
+        <scene sceneID="fov-EU-bul">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VhN-js-y0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="selfservice" id="Z7c-nq-S2o" customClass="KBASelfServiceController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QHb-CT-JUY"/>
+                        <viewControllerLayoutGuide type="bottom" id="u5f-ag-4uF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YxN-z2-6gk">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1910" y="1450"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

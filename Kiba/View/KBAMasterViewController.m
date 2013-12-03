@@ -23,13 +23,14 @@ static NSArray * navigationEntryKeys;
     [navigationEntries setValue:@"Dashboard" forKey:@"dashboard"];
     [navigationEntries setValue:@"Authentifizierung" forKey:@"auth"];
     [navigationEntries setValue:@"Girokonto" forKey:@"account"];
+    [navigationEntries setValue:@"Self Service" forKey:@"selfservice"];
     [navigationEntries setValue:@"Filialfinder" forKey:@"finder"];
     [navigationEntries setValue:@"KiBa-Center" forKey:@"center"];
     [navigationEntries setValue:@"Finanzierung" forKey:@"finance"];
     [navigationEntries setValue:@"Mein Bereich" forKey:@"private"];
     [navigationEntries setValue:@"Über die App" forKey:@"about"];
     
-    navigationEntryKeys = @[@"dashboard", @"auth", @"account", @"finder", @"center",
+    navigationEntryKeys = @[@"dashboard", @"auth", @"account", @"selfservice", @"finder", @"center",
                             @"finance", @"private", @"about"];
 }
 
