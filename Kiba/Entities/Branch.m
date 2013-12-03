@@ -10,20 +10,21 @@
 
 @implementation Branch
 
--(id)initWithAdress: (Adress*) newAdress iBan: (NSString*) newIBan bic: (NSString*) newBic openHours: (NSArray*) NewOpenHours {
+-(id)initWithAdress: (Adress*) address
+               iBan: (NSString*) iBan
+                bic: (NSString*) bic
+                openHours: (NSArray*) openHours
+                coordinates: (CLLocationCoordinate2D) coordinates {
     
     if (self = [super init])
     {
-        self.adress = newAdress;
-        self.iBan = newIBan;
-        self.bic = newBic;
-        self.openHours = NewOpenHours;
+        self.adress = address;
+        self.iBan = iBan;
+        self.bic = bic;
+        self.openHours = openHours;
+        self.coordinates = coordinates;
     }
     return self;
-    
-    
-    
 }
-
 
 @end

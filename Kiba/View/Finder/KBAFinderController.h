@@ -11,7 +11,6 @@
 
 @interface KBAFinderController : KBAViewController<MKMapViewDelegate>
 
-
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
 @end

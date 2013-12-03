@@ -40,6 +40,9 @@
 		C16A7B7A184DC9D3005DC504 /* KBAFinderController.m in Sources */ = {isa = PBXBuildFile; fileRef = C16A7B78184DC9D3005DC504 /* KBAFinderController.m */; };
 		C16A7B7B184DC9D3005DC504 /* KBAFinderController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C16A7B79184DC9D3005DC504 /* KBAFinderController.xib */; };
 		C16A7B80184DCDAB005DC504 /* KBAStoreLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = C16A7B7F184DCDAB005DC504 /* KBAStoreLocation.m */; };
+		C1704208184DF3A00019F929 /* KBAFinderService.m in Sources */ = {isa = PBXBuildFile; fileRef = C1704207184DF3A00019F929 /* KBAFinderService.m */; };
+		C170420C184DFE900019F929 /* KBABranchController.m in Sources */ = {isa = PBXBuildFile; fileRef = C170420A184DFE900019F929 /* KBABranchController.m */; };
+		C170420D184DFE900019F929 /* KBABranchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C170420B184DFE900019F929 /* KBABranchController.xib */; };
 		C1A6D4071847661A00AFB665 /* KBADashboardController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1A6D4061847661A00AFB665 /* KBADashboardController.xib */; };
 		C1F00E631844DAEB009EFE4F /* KBAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F00E621844DAEB009EFE4F /* KBAViewController.m */; };
 		C1F00E731844E08C009EFE4F /* KBAAuthController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F00E711844E08C009EFE4F /* KBAAuthController.m */; };
@@ -118,6 +121,11 @@
 		C16A7B79184DC9D3005DC504 /* KBAFinderController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAFinderController.xib; path = View/Finder/KBAFinderController.xib; sourceTree = "<group>"; };
 		C16A7B7E184DCDAB005DC504 /* KBAStoreLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAStoreLocation.h; path = View/Finder/KBAStoreLocation.h; sourceTree = "<group>"; };
 		C16A7B7F184DCDAB005DC504 /* KBAStoreLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAStoreLocation.m; path = View/Finder/KBAStoreLocation.m; sourceTree = "<group>"; };
+		C1704206184DF3A00019F929 /* KBAFinderService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAFinderService.h; path = Services/Finder/KBAFinderService.h; sourceTree = "<group>"; };
+		C1704207184DF3A00019F929 /* KBAFinderService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAFinderService.m; path = Services/Finder/KBAFinderService.m; sourceTree = "<group>"; };
+		C1704209184DFE900019F929 /* KBABranchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBABranchController.h; path = View/Finder/KBABranchController.h; sourceTree = "<group>"; };
+		C170420A184DFE900019F929 /* KBABranchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBABranchController.m; path = View/Finder/KBABranchController.m; sourceTree = "<group>"; };
+		C170420B184DFE900019F929 /* KBABranchController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBABranchController.xib; path = View/Finder/KBABranchController.xib; sourceTree = "<group>"; };
 		C1A6D4061847661A00AFB665 /* KBADashboardController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KBADashboardController.xib; sourceTree = "<group>"; };
 		C1F00E611844DAEB009EFE4F /* KBAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAViewController.h; path = Library/KBAViewController.h; sourceTree = "<group>"; };
 		C1F00E621844DAEB009EFE4F /* KBAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAViewController.m; path = Library/KBAViewController.m; sourceTree = "<group>"; };
@@ -190,6 +198,7 @@
 		3407E8CE1838F93C0045C014 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C1704205184DF2F90019F929 /* Finder */,
 				3407E8DB1838FA420045C014 /* README.md */,
 			);
 			name = Services;
@@ -320,6 +329,9 @@
 				C16A7B79184DC9D3005DC504 /* KBAFinderController.xib */,
 				C16A7B7E184DCDAB005DC504 /* KBAStoreLocation.h */,
 				C16A7B7F184DCDAB005DC504 /* KBAStoreLocation.m */,
+				C1704209184DFE900019F929 /* KBABranchController.h */,
+				C170420A184DFE900019F929 /* KBABranchController.m */,
+				C170420B184DFE900019F929 /* KBABranchController.xib */,
 			);
 			name = Finder;
 			sourceTree = "<group>";
@@ -334,6 +346,15 @@
 				C10C5FBE183B877B008FAECB /* KBABranchDaoRest.m */,
 			);
 			name = DAO;
+			sourceTree = "<group>";
+		};
+		C1704205184DF2F90019F929 /* Finder */ = {
+			isa = PBXGroup;
+			children = (
+				C1704206184DF3A00019F929 /* KBAFinderService.h */,
+				C1704207184DF3A00019F929 /* KBAFinderService.m */,
+			);
+			name = Finder;
 			sourceTree = "<group>";
 		};
 		C1F00E6E1844E03D009EFE4F /* Account */ = {
@@ -443,6 +464,7 @@
 				C1A6D4071847661A00AFB665 /* KBADashboardController.xib in Resources */,
 				34199A8A18417A6F00F574D5 /* Documentation in Resources */,
 				342322F41837B9FD00618D7E /* Main.storyboard in Resources */,
+				C170420D184DFE900019F929 /* KBABranchController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,10 +486,12 @@
 				342322ED1837B9FD00618D7E /* main.m in Sources */,
 				C1F00E731844E08C009EFE4F /* KBAAuthController.m in Sources */,
 				C10C5FBF183B877B008FAECB /* KBABranchDaoRest.m in Sources */,
+				C1704208184DF3A00019F929 /* KBAFinderService.m in Sources */,
 				A8F81C8C1844B51D00E55C75 /* Customer.m in Sources */,
 				0AAD795F184DC0A3002B1D0B /* KBASelfServiceController.m in Sources */,
 				C10C5FC2183B8A5A008FAECB /* KBADependencyInjector.m in Sources */,
 				A8F81C8B1844B51D00E55C75 /* CreditRating.m in Sources */,
+				C170420C184DFE900019F929 /* KBABranchController.m in Sources */,
 				A8F81C891844B51D00E55C75 /* Adress.m in Sources */,
 				A8F81C8A1844B51D00E55C75 /* Branch.m in Sources */,
 				C16A7B80184DCDAB005DC504 /* KBAStoreLocation.m in Sources */,

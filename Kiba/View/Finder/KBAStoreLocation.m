@@ -19,6 +19,15 @@
 
 @implementation KBAStoreLocation
 
+/**
+ *  Initializes a store location.
+ *
+ *  @param name       The name of the store.
+ *  @param address    The store address.
+ *  @param coordinate The coordinates.
+ *
+ *  @return A new instance.
+ */
 - (id)initWithName:(NSString*)name address:(NSString*)address coordinate:(CLLocationCoordinate2D)coordinate {
     self = [super init];
     
