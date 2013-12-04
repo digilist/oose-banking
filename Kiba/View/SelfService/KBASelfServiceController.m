@@ -23,9 +23,6 @@
     if (self) {
         // Custom initialization
     }
-    
-//    [self respondToOrientation:[[UIDevice currentDevice] orientation]];
-
     return self;
 }
 
@@ -43,7 +40,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+/**
+ *  Set constraints and show/hide kiba icon
+ *  based on iPad-orientation
+ *
+ *  @param orientation orientation to respond to
+ */
 -(void)respondToOrientation:(UIInterfaceOrientation)orientation
 {
     [self.subMoneyTransferContr.tableView reloadData];
@@ -53,12 +55,16 @@
         [UIView animateWithDuration:0.5
                          animations:^{
                              [self.imageView setHidden:NO];
+                             //set height between elements
                              self.firstToSecondElement.constant = 110;
                              self.secondToThirdElement.constant = 110;
+                             //height of top element to top of view
                              self.topConstraintElements.constant = 290;
+                             //width to left of elements
+                             self.leftConstraintElements.constant = 70;
+                             //table-view sizes
                              self.subDocTableHeight.constant = 150;
                              self.subMoneyTableHeight.constant = 150;
-                             self.leftConstraintElements.constant = 70;
 //                             self.topConstraintTitle.constant = 90;
                              [self.view layoutIfNeeded];
                          }];
@@ -68,13 +74,17 @@
         [UIView animateWithDuration:0.5
                          animations:^{
                              [self.imageView setHidden:YES];
+                             //set height between elements
                              self.firstToSecondElement.constant = 98;
                              self.secondToThirdElement.constant = 98;
+                             //height of top element to top  of view
                              self.topConstraintElements.constant = 200;
+                             //width to left of elements
+                             self.leftConstraintElements.constant = 54;
+                             //table-view sizes
                              self.subDocTableHeight.constant = 120;
                              self.subMoneyTableHeight.constant = 120;
-                             self.leftConstraintElements.constant = 54;
-//                                     self.topConstraintTitle.constant = 90;
+//                              self.topConstraintTitle.constant = 90;
                              [self.view layoutIfNeeded];
                          }];
 
@@ -89,7 +99,7 @@
 }
 
 /**
- *  Connects to a KiBa-station.
+ *  Action to connect to KiBa-station.
  *
  *  @param sender
  */
@@ -115,11 +125,6 @@
     
     });
     
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [indexPath row] * 5;
 }
 
 /**

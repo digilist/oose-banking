@@ -35,4 +35,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)chooseDailyAccount:(id)sender
+{
+    //create uipopover-controller
+    //init controller with uiviewcontroller (delivers the content)
+    //..->show controller
+    
+}
+-(IBAction)chooseTermAccount:(id)sender
+{
+    //create uipopover-controller
+    //init controller with uiviewcontroller (delivers the content)
+    //..->show controller
+}
+
 @end
