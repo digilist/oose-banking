@@ -33,6 +33,8 @@
 @property UIPopoverController* popController;
 @property  (nonatomic, weak) IBOutlet UIButton* chooseTermButton;
 @property  (nonatomic, weak) IBOutlet UIButton* chooseDailyButton;
+@property  (nonatomic, weak) IBOutlet UILabel* termAccountLabel;
+@property  (nonatomic, weak) IBOutlet UILabel* dailyAccountLabel;
 @end
 
 @implementation KBATransContr
@@ -43,8 +45,32 @@
     if (self) {
         self.chooseTermAccContr = [KBAChooseTermAccountContr new];
         self.chooseDailyAccContr = [KBAChooseDailyAccountContr new];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(respondToChosenTermAccountEntry:)
+                                                     name:@"termAccountEntryChosen"
+                                                   object:nil];
+       
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(respondToChosenDailyAccountEntry:)
+                                                     name:@"dailyAccountEntryChosen"
+                                                   object:nil];
+        
+
     }
     return self;
+}
+
+-(void)respondToChosenTermAccountEntry:(NSNotification *)notification
+{
+    [self.popController dismissPopoverAnimated:YES];
+    self.termAccountLabel.text = (NSString*)[notification object];
+}
+
+-(void)respondToChosenDailyAccountEntry:(NSNotification *)notification
+{
+    [self.popController dismissPopoverAnimated:YES];
+    self.dailyAccountLabel.text = (NSString*)[notification object];
 }
 
 -(IBAction)chooseAccount:(UIButton*)sender

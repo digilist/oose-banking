@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 KiBa App. All rights reserved.
 //
 
-#import "KBAChooseAccountContr.h"
+#import "KBATableChooseAccountContr.h"
 
-@interface KBAChooseAccountContr ()
+@interface KBATableChooseAccountContr ()
 @end
 
-@implementation KBAChooseAccountContr
+@implementation KBATableChooseAccountContr
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -66,5 +66,6 @@
 {
     return @"Wählen sie ihr Konto";
 }
+
 
 @end

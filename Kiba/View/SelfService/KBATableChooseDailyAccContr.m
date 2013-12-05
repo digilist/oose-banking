@@ -8,10 +8,6 @@
 
 #import "KBATableChooseDailyAccContr.h"
 
-@interface KBATableChooseDailyAccContr ()
-@property NSArray* accounts;
-@end
-
 @implementation KBATableChooseDailyAccContr
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -25,8 +21,12 @@
                           @"Konto15",
                           @"Konto16",
                           @"Konto17"];
-        
     }
     return self;
+}
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"dailyAccountEntryChosen"
+                                                        object: [self.accounts objectAtIndex: indexPath.row]];
 }
 @end

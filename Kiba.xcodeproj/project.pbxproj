@@ -18,7 +18,7 @@
 		2120C63018509770003799A2 /* KBAChooseTermAccountContr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2120C62F18509770003799A2 /* KBAChooseTermAccountContr.xib */; };
 		213EE696185118EB00F13746 /* KBATableChooseDailyAccContr.m in Sources */ = {isa = PBXBuildFile; fileRef = 213EE695185118EB00F13746 /* KBATableChooseDailyAccContr.m */; };
 		213EE69818511A6800F13746 /* KBAChooseDailyAccountContr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213EE69718511A6800F13746 /* KBAChooseDailyAccountContr.xib */; };
-		213EE69B185121B100F13746 /* KBAChooseAccountContr.m in Sources */ = {isa = PBXBuildFile; fileRef = 213EE69A185121B100F13746 /* KBAChooseAccountContr.m */; };
+		213EE69B185121B100F13746 /* KBATableChooseAccountContr.m in Sources */ = {isa = PBXBuildFile; fileRef = 213EE69A185121B100F13746 /* KBATableChooseAccountContr.m */; };
 		21502711184F828B00E5338E /* KBASelfServContr.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD7962184DC600002B1D0B /* KBASelfServContr.m */; };
 		21502716184F9AC100E5338E /* KBATransTableContr.m in Sources */ = {isa = PBXBuildFile; fileRef = 21502715184F9AC100E5338E /* KBATransTableContr.m */; };
 		21A49F3F184FA78100FFC91D /* KBADocTableContr.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A49F3E184FA78100FFC91D /* KBADocTableContr.m */; };
@@ -88,8 +88,8 @@
 		213EE694185118EB00F13746 /* KBATableChooseDailyAccContr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBATableChooseDailyAccContr.h; path = View/SelfService/KBATableChooseDailyAccContr.h; sourceTree = "<group>"; };
 		213EE695185118EB00F13746 /* KBATableChooseDailyAccContr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBATableChooseDailyAccContr.m; path = View/SelfService/KBATableChooseDailyAccContr.m; sourceTree = "<group>"; };
 		213EE69718511A6800F13746 /* KBAChooseDailyAccountContr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KBAChooseDailyAccountContr.xib; sourceTree = "<group>"; };
-		213EE699185121B100F13746 /* KBAChooseAccountContr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBAChooseAccountContr.h; sourceTree = "<group>"; };
-		213EE69A185121B100F13746 /* KBAChooseAccountContr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBAChooseAccountContr.m; sourceTree = "<group>"; };
+		213EE699185121B100F13746 /* KBATableChooseAccountContr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBATableChooseAccountContr.h; sourceTree = "<group>"; };
+		213EE69A185121B100F13746 /* KBATableChooseAccountContr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBATableChooseAccountContr.m; sourceTree = "<group>"; };
 		21502714184F9AC100E5338E /* KBATransTableContr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBATransTableContr.h; path = View/SelfService/KBATransTableContr.h; sourceTree = "<group>"; };
 		21502715184F9AC100E5338E /* KBATransTableContr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBATransTableContr.m; path = View/SelfService/KBATransTableContr.m; sourceTree = "<group>"; };
 		21A49F3D184FA78100FFC91D /* KBADocTableContr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBADocTableContr.h; path = View/SelfService/KBADocTableContr.h; sourceTree = "<group>"; };
@@ -234,8 +234,8 @@
 		21CB0E021850CC7B00C3B6EA /* Popovers */ = {
 			isa = PBXGroup;
 			children = (
-				213EE699185121B100F13746 /* KBAChooseAccountContr.h */,
-				213EE69A185121B100F13746 /* KBAChooseAccountContr.m */,
+				213EE699185121B100F13746 /* KBATableChooseAccountContr.h */,
+				213EE69A185121B100F13746 /* KBATableChooseAccountContr.m */,
 				21AE7B961850FF6900B46FAD /* KBATableChooseTermAccContr.h */,
 				21AE7B971850FF6900B46FAD /* KBATableChooseTermAccContr.m */,
 				2120C62F18509770003799A2 /* KBAChooseTermAccountContr.xib */,
@@ -569,7 +569,7 @@
 				A8F81C881844B51D00E55C75 /* Account.m in Sources */,
 				A8F81C8D1844B51D00E55C75 /* Transaction.m in Sources */,
 				0AAD7969184E07FB002B1D0B /* KBATransContr.m in Sources */,
-				213EE69B185121B100F13746 /* KBAChooseAccountContr.m in Sources */,
+				213EE69B185121B100F13746 /* KBATableChooseAccountContr.m in Sources */,
 				C1F00E781844E0FA009EFE4F /* KBAAccountController.m in Sources */,
 				0AAD796E184E0AD6002B1D0B /* KBAStatemContr.m in Sources */,
 				0A893764183BA118003495A4 /* KBADashboardController.m in Sources */,

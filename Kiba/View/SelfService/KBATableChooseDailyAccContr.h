@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KBAChooseAccountContr.h"
+#import "KBATableChooseAccountContr.h"
 
-@interface KBATableChooseDailyAccContr : KBAChooseAccountContr
-
+@interface KBATableChooseDailyAccContr : KBATableChooseAccountContr
 @end

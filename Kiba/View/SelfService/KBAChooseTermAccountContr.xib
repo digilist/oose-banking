@@ -17,7 +17,7 @@
             <color key="backgroundColor" red="0.71968670280612246" green="0.71968670280612246" blue="0.71968670280612246" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="dataSource" destination="h3N-0Y-L4j" id="l9M-jH-ELQ"/>
-                <outlet property="delegate" destination="-1" id="K5K-lF-DEj"/>
+                <outlet property="delegate" destination="h3N-0Y-L4j" id="afv-qk-lYm"/>
             </connections>
         </tableView>
         <customObject id="h3N-0Y-L4j" customClass="KBATableChooseTermAccContr"/>

@@ -75,14 +75,14 @@
                     </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Hier können sie Ihre Kontoauszüge für einen beliebigen Zeitraum drucken." translatesAutoresizingMaskIntoConstraints="NO" id="g53-X4-pif">
-                    <rect key="frame" x="54" y="440" width="260" height="50"/>
+                    <rect key="frame" x="54" y="440" width="260" height="65"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="E2t-Jf-86d"/>
+                        <constraint firstAttribute="height" constant="65" id="E2t-Jf-86d"/>
                         <constraint firstAttribute="width" constant="260" id="Ems-Fk-h49"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Jetzt bequem Bescheinigungen z.B. (Bonitätsbescheinigung) ausdrucken." translatesAutoresizingMaskIntoConstraints="NO" id="ag2-gB-WWg">
@@ -92,7 +92,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="78" id="1tw-bn-D7n"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RzH-By-5M4">
@@ -125,7 +125,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="65" id="Fb1-7F-wXA"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" style="plain" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="83" sectionHeaderHeight="26" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xkv-ch-zgH">
@@ -169,7 +169,7 @@
                 <constraint firstItem="xkv-ch-zgH" firstAttribute="top" secondItem="Jc2-nY-JlY" secondAttribute="top" constant="5" id="nT3-qF-nIC"/>
                 <constraint firstItem="ag2-gB-WWg" firstAttribute="trailing" secondItem="g53-X4-pif" secondAttribute="trailing" id="paX-e3-ANT"/>
                 <constraint firstItem="bKL-Ph-cm2" firstAttribute="top" secondItem="Jc2-nY-JlY" secondAttribute="bottom" constant="-5" id="sPS-Y0-NMT"/>
-                <constraint firstItem="RzH-By-5M4" firstAttribute="top" secondItem="g53-X4-pif" secondAttribute="bottom" constant="106" id="sZ9-jv-wEH"/>
+                <constraint firstItem="RzH-By-5M4" firstAttribute="top" secondItem="g53-X4-pif" secondAttribute="bottom" constant="91" id="sZ9-jv-wEH"/>
                 <constraint firstAttribute="trailing" secondItem="P4a-e9-SLS" secondAttribute="trailing" constant="2" id="tva-0a-zjk"/>
                 <constraint firstItem="fQo-AD-f5o" firstAttribute="top" secondItem="2" secondAttribute="top" constant="90" id="uGG-g8-ety"/>
                 <constraint firstItem="Jc2-nY-JlY" firstAttribute="leading" secondItem="ag2-gB-WWg" secondAttribute="leading" id="uZd-y3-J70"/>

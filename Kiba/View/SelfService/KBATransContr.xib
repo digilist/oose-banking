@@ -8,6 +8,8 @@
             <connections>
                 <outlet property="chooseDailyButton" destination="UeK-wz-qKy" id="oyz-8O-DLb"/>
                 <outlet property="chooseTermButton" destination="Awc-hp-Jnz" id="sI8-vm-Tfm"/>
+                <outlet property="dailyAccountLabel" destination="oEf-HB-bye" id="JYJ-dH-v6A"/>
+                <outlet property="termAccountLabel" destination="RPD-e3-feE" id="H8f-f4-2jr"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
         </placeholder>

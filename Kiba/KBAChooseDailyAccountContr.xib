@@ -18,6 +18,7 @@
             <color key="backgroundColor" red="0.71968670280000002" green="0.71968670280000002" blue="0.71968670280000002" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="dataSource" destination="aYy-H8-0AA" id="glM-Dc-kGf"/>
+                <outlet property="delegate" destination="aYy-H8-0AA" id="5Xe-cp-0kX"/>
             </connections>
         </tableView>
     </objects>

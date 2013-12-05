@@ -8,9 +8,6 @@
 
 #import "KBATableChooseTermAccContr.h"
 
-@interface KBATableChooseTermAccContr ()
-@end
-
 @implementation KBATableChooseTermAccContr
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -27,4 +24,12 @@
     }
     return self;
 }
+
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"termAccountEntryChosen"
+                                                        object: [self.accounts objectAtIndex: indexPath.row]];
+    
+}
+
 @end

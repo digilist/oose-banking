@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KBAChooseAccountContr : UITableViewController
+@interface KBATableChooseAccountContr : UITableViewController
 @property NSArray* accounts;
 @end
