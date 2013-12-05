@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@class Branch;
-
 @protocol KBABranchDao <NSObject>
 
 - (NSArray *)getBranchesNearPoint:(CGPoint)location;

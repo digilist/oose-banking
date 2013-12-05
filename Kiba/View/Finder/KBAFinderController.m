@@ -10,14 +10,30 @@
 #import "KBAStoreLocation.h"
 #import "KBABranchController.h"
 
+#import "KBADependencyInjector.h"
+#import "KBABranchDao.h"
+
+#import "Branch.h"
+
 #define METERS_PER_MILE 1609.344
 
 @interface KBAFinderController ()
+
+@property id<KBABranchDao> branchDao;
 
 @end
 
 @implementation KBAFinderController
 
+- (id) init {
+    self = [super init];
+    
+    if (self) {
+        self.branchDao = [KBADependencyInjector getByKey:@"branchDao"];
+    }
+    
+    return self;
+}
 
 - (void)viewDidLoad {
     
@@ -39,12 +55,19 @@
  */
 -(void)addMarkers {
     
-    CLLocationCoordinate2D coordinate;
-    coordinate.latitude = 53.581516;
-    coordinate.longitude = 10.080806;
+    CGPoint mapCenter = CGPointMake(self.mapView.region.center.latitude, self.mapView.region.center.longitude);
+    NSArray *branches = [self.branchDao getBranchesNearPoint: mapCenter];
     
-    KBAStoreLocation *annotation = [[KBAStoreLocation alloc] initWithName:@"test" address:@"Vogt-Kölln-Straße 30, 22527 Hamburg" coordinate:coordinate];
-    [_mapView addAnnotation:annotation];
+    for (Branch *branch in branches) {
+        NSString *address = [NSString stringWithFormat:@"%@ %@, %@ %@",
+                             branch.address.street,
+                             branch.address.houseNr,
+                             branch.address.postalCode,
+                             branch.address.city];
+        
+        KBAStoreLocation *annotation = [[KBAStoreLocation alloc] initWithName:branch.name address:address coordinate:branch.address.coordinates];
+        [_mapView addAnnotation:annotation];
+    }
 }
 
 /**

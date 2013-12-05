@@ -13,14 +13,12 @@
 @interface Branch : NSObject
 
 @property NSString *name;
-@property Address *adress;
-@property NSString *iBan;
+@property Address *address;
 @property NSString *bic;
 @property NSArray *openHours;
 
 -(id)initWithName: (NSString*) name
           address: (Address*) address
-             iBan: (NSString*) iBan
               bic: (NSString*) bic
         openHours: (NSArray*) openHours;
 

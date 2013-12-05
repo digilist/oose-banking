@@ -12,15 +12,13 @@
 
 -(id)initWithName: (NSString*) name
                 address: (Address*) address
-                iBan: (NSString*) iBan
                 bic: (NSString*) bic
                 openHours: (NSArray*) openHours {
     
     if (self = [super init])
     {
         self.name = name;
-        self.adress = address;
-        self.iBan = iBan;
+        self.address = address;
         self.bic = bic;
         self.openHours = openHours;
     }
