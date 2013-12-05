@@ -9,7 +9,6 @@
 #import "KBAViewController.h"
 
 @interface KBAViewController ()
-
 @end
 
 @implementation KBAViewController
