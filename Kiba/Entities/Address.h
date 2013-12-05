@@ -15,13 +15,13 @@
 @property NSString* houseNr;
 @property NSString* postalCode;
 @property NSString* city;
-
 @property CLLocationCoordinate2D coordinates;
+@property (readonly) NSString* formatted;
 
--(id)initWithStreet: (NSString*) street
-            houseNr: (NSString*) houseNr
-         postalCode: (NSString*) postalCode
-               city: (NSString*) city
-        coordinates: (CLLocationCoordinate2D) coordinates;
+-(id)initWithStreet:(NSString*) street
+            houseNr:(NSString*) houseNr
+         postalCode:(NSString*) postalCode
+               city:(NSString*) city
+        coordinates:(CLLocationCoordinate2D) coordinates;
 
 @end

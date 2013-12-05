@@ -14,6 +14,7 @@
 #import "KBABranchDao.h"
 
 #import "Branch.h"
+#import "OpenHour.h"
 
 #define METERS_PER_MILE 1609.344
 
@@ -59,11 +60,7 @@
     NSArray *branches = [self.branchDao getBranchesNearPoint: mapCenter];
     
     for (Branch *branch in branches) {
-        NSString *address = [NSString stringWithFormat:@"%@ %@, %@ %@",
-                             branch.address.street,
-                             branch.address.houseNr,
-                             branch.address.postalCode,
-                             branch.address.city];
+        NSString *address = [NSString stringWithFormat:@"%@, %@", branch.address.formatted, ((OpenHour *)branch.openHours.firstObject).formatted];
         
         KBAStoreLocation *annotation = [[KBAStoreLocation alloc] initWithName:branch.name address:address coordinate:branch.address.coordinates];
         [_mapView addAnnotation:annotation];

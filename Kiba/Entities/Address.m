@@ -16,8 +16,8 @@
             houseNr: (NSString*) houseNr
          postalCode: (NSString*) postalCode
                city: (NSString*) city
-        coordinates: (CLLocationCoordinate2D) coordinates {
-    
+        coordinates: (CLLocationCoordinate2D) coordinates
+{
     if (self = [super init])
     {
         self.street = street;
@@ -30,5 +30,13 @@
     return self;
 }
 
+-(NSString *)formatted
+{
+    return [NSString stringWithFormat:@"%@ %@, %@ %@",
+            self.street,
+            self.houseNr,
+            self.postalCode,
+            self.city];
+}
 
 @end
