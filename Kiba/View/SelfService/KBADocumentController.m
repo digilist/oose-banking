@@ -31,6 +31,20 @@
 
 }
 
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [_scrollView2 setScrollEnabled:YES];
+    [_scrollView2 setContentSize:CGSizeMake(2048, 782)];
+
+}
+
+- (void)viewDidLayoutSubviews {
+    [_scrollView2 setContentSize:CGSizeMake(2048, 782)];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

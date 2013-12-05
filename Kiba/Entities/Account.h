@@ -16,7 +16,7 @@
 @property NSNumber* accountNr;
 @property Customer* owner;
 
--(void)sendMoney: (NSNumber*) amount;
+
 
 
 -(id)initWithBalance: (NSNumber*) newBalance

@@ -22,15 +22,6 @@
     return self;
 }
 
-/**
- *  Verschickt Geld
- *
- *  @param amount Die Höhe des Betrags.
- */
--(void)sendMoney:(NSNumber *)amount {
-    self.balance = [self.balance initWithLong:[self.balance longValue] - [amount longValue]];
-}
-
 
 
 @end
