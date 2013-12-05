@@ -35,6 +35,7 @@
 		3423230D1837B9FD00618D7E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3423230B1837B9FD00618D7E /* InfoPlist.strings */; };
 		3423230F1837B9FD00618D7E /* KibaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3423230E1837B9FD00618D7E /* KibaTests.m */; };
 		A8AB8A371850883E0049778B /* AccountService.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AB8A361850883E0049778B /* AccountService.m */; };
+		A8AB8A3A185090300049778B /* BranchService.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AB8A39185090300049778B /* BranchService.m */; };
 		A8F81C881844B51D00E55C75 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F81C7D1844B51D00E55C75 /* Account.m */; };
 		A8F81C891844B51D00E55C75 /* Adress.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F81C7F1844B51D00E55C75 /* Adress.m */; };
 		A8F81C8A1844B51D00E55C75 /* Branch.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F81C811844B51D00E55C75 /* Branch.m */; };
@@ -111,6 +112,8 @@
 		3423230E1837B9FD00618D7E /* KibaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KibaTests.m; sourceTree = "<group>"; };
 		A8AB8A351850883E0049778B /* AccountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountService.h; path = Services/AccountService.h; sourceTree = "<group>"; };
 		A8AB8A361850883E0049778B /* AccountService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountService.m; path = Services/AccountService.m; sourceTree = "<group>"; };
+		A8AB8A38185090300049778B /* BranchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BranchService.h; path = Services/BranchService.h; sourceTree = "<group>"; };
+		A8AB8A39185090300049778B /* BranchService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BranchService.m; path = Services/BranchService.m; sourceTree = "<group>"; };
 		A8F81C7C1844B51D00E55C75 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Account.h; path = Entities/Account.h; sourceTree = "<group>"; };
 		A8F81C7D1844B51D00E55C75 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Account.m; path = Entities/Account.m; sourceTree = "<group>"; };
 		A8F81C7E1844B51D00E55C75 /* Adress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Adress.h; path = Entities/Adress.h; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 				3407E8DB1838FA420045C014 /* README.md */,
 				A8AB8A351850883E0049778B /* AccountService.h */,
 				A8AB8A361850883E0049778B /* AccountService.m */,
+				A8AB8A38185090300049778B /* BranchService.h */,
+				A8AB8A39185090300049778B /* BranchService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -481,6 +486,7 @@
 				C1F00E731844E08C009EFE4F /* KBAAuthController.m in Sources */,
 				C10C5FBF183B877B008FAECB /* KBABranchDaoRest.m in Sources */,
 				A8F81C8C1844B51D00E55C75 /* Customer.m in Sources */,
+				A8AB8A3A185090300049778B /* BranchService.m in Sources */,
 				C10C5FC2183B8A5A008FAECB /* KBADependencyInjector.m in Sources */,
 				A8F81C8B1844B51D00E55C75 /* CreditRating.m in Sources */,
 				21502716184F9AC100E5338E /* KBASubTransferController.m in Sources */,

@@ -7,8 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Account.h"
 
 @interface AccountService : NSObject
+
++(void)calculateBalance:(Account *)account  AfterSend:(NSNumber *)amount;
+
++(void)calculateBalance:(Account *)account  AfterReceived:(NSNumber *)amount;
+
+
+
 
 
 @end

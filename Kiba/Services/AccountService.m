@@ -10,4 +10,15 @@
 
 @implementation AccountService
 
+
+
+
++(void)calculateBalance:(Account *)account  AfterSend:(NSNumber *)amount{
+    account.balance = [account.balance initWithLong:[account.balance longValue] - [amount longValue]];
+}
+
++(void)calculateBalance:(Account *)account  AfterReceived:(NSNumber *)amount{
+    account.balance = [account.balance initWithLong:[account.balance longValue] + [amount longValue]];
+}
+
 @end
