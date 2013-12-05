@@ -6,16 +6,35 @@
 //  Copyright (c) 2013 KiBa App. All rights reserved.
 //
 
-#import "KBASelfServiceController.h"
-#import "KBATransferController.h"
-#import "KBAStatementController.h"
-#import "KBADocumentController.h"
+#import "KBASelfServContr.h"
+#import "KBATransContr.h"
+#import "KBAStatemContr.h"
+#import "KBADocContr.h"
 
-@interface KBASelfServiceController ()
+@interface KBASelfServContr ()
 
+@property (nonatomic, strong) IBOutlet KBATransTableContr *subMoneyTransferContr;
+@property (nonatomic, strong) IBOutlet KBADocTableContr *subDocContr;
+
+@property (nonatomic, weak) IBOutlet UIButton *connectButton;
+@property (nonatomic, weak) IBOutlet UIButton *transferButton;
+@property (nonatomic, weak) IBOutlet UIButton *transactionOverviewButton;
+@property (nonatomic, weak) IBOutlet UIButton *documentsButton;
+
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *firstToSecondElement;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *secondToThirdElement;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *middleWidthElements;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *subDocTableHeight;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *subMoneyTableHeight;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *topConstraintElements;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *topConstraintTitle;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *leftConstraintElements;
+
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *indicator;
 @end
 
-@implementation KBASelfServiceController
+@implementation KBASelfServContr
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,8 +48,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //additional setup after loading the view from its nib.
     [self respondToOrientation: UIApplication.sharedApplication.statusBarOrientation];
 }
 
@@ -48,8 +65,6 @@
  */
 -(void)respondToOrientation:(UIInterfaceOrientation)orientation
 {
-    [self.subMoneyTransferContr.tableView reloadData];
-    
     if (orientation == UIInterfaceOrientationPortrait ||
         orientation == UIInterfaceOrientationPortraitUpsideDown) {
         [UIView animateWithDuration:0.5
@@ -58,13 +73,14 @@
                              //set height between elements
                              self.firstToSecondElement.constant = 110;
                              self.secondToThirdElement.constant = 110;
+                             self.middleWidthElements.constant = 80;
                              //height of top element to top of view
-                             self.topConstraintElements.constant = 290;
+                             self.topConstraintElements.constant = 230;
                              //width to left of elements
-                             self.leftConstraintElements.constant = 70;
+                             self.leftConstraintElements.constant = 80;
                              //table-view sizes
-                             self.subDocTableHeight.constant = 150;
                              self.subMoneyTableHeight.constant = 150;
+                             self.subDocTableHeight.constant = 150;
 //                             self.topConstraintTitle.constant = 90;
                              [self.view layoutIfNeeded];
                          }];
@@ -77,13 +93,14 @@
                              //set height between elements
                              self.firstToSecondElement.constant = 98;
                              self.secondToThirdElement.constant = 98;
+                             self.middleWidthElements.constant = 60;
                              //height of top element to top  of view
                              self.topConstraintElements.constant = 200;
                              //width to left of elements
                              self.leftConstraintElements.constant = 54;
                              //table-view sizes
-                             self.subDocTableHeight.constant = 120;
                              self.subMoneyTableHeight.constant = 120;
+                             self.subDocTableHeight.constant = 120;
 //                              self.topConstraintTitle.constant = 90;
                              [self.view layoutIfNeeded];
                          }];
@@ -105,9 +122,8 @@
  */
 - (IBAction)connect:(id)sender
 {
-    self.circle.hidden = NO;
-    [self.circle startAnimating];
-
+    self.indicator.hidden = NO;
+    [self.indicator startAnimating];
 
     dispatch_queue_t work = dispatch_queue_create("work", NULL);
     dispatch_async(work, ^{
@@ -116,8 +132,8 @@
 
         dispatch_async(dispatch_get_main_queue(), ^{
     
-            [self.circle stopAnimating];
-            self.circle.hidden = YES;
+            [self.indicator stopAnimating];
+            self.indicator.hidden = YES;
             self.connectButton.enabled = NO;
             [self.connectButton setTitle:@"mit KiBa-Station verbunden" forState: UIControlStateNormal];
             [self.connectButton setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
@@ -134,7 +150,7 @@
  */
 - (IBAction)changeToTransferView:(id)sender
 {
-    [self.navigationController pushViewController:[KBATransferController new] animated:YES];
+    [self.navigationController pushViewController:[KBATransContr new] animated:YES];
 }
 
 /**
@@ -144,7 +160,7 @@
  */
 - (IBAction)changeToStatementView:(id)sender
 {
-    [self.navigationController pushViewController:[KBAStatementController new] animated:YES];
+    [self.navigationController pushViewController:[KBAStatemContr new] animated:YES];
 }
 
 /**
@@ -154,7 +170,7 @@
  */
 - (IBAction)changeToDocumentView:(id)sender
 {
-    [self.navigationController pushViewController:[KBADocumentController new] animated:YES];
+    [self.navigationController pushViewController:[KBADocContr new] animated:YES];
 }
 
 @end

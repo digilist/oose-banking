@@ -6,24 +6,28 @@
 //  Copyright (c) 2013 KiBa App. All rights reserved.
 //
 
-#import "KBASubTransferController.h"
+#import "KBATransTableContr.h"
 
-@interface KBASubTransferController ()
+@interface KBATransTableContr ()
 @property NSArray* moneyTransfers;
 
 @end
 
-@implementation KBASubTransferController
+@implementation KBATransTableContr
 
 
-//TODO: reload data when scrolling
 //TODO: support cell division per row
 - (id)initWithStyle:(UITableViewStyle)style
 {
+    
+
+    
     self = [super initWithStyle:style];
     if (self) {
-        self.moneyTransfers = @[@"32234,34€",
-                                @"33333,00€"];
+        self.moneyTransfers = @[@"Betrag: 32234,34€\nvon Konto: 3453762572\nnach Konto: 78886553873",
+                                @"Betrag: 654327,23€\nvon Konto: 3453762572\nnach Konto: 43572634",
+                                @"Betrag: 10,34€\nvon Konto: 762346723\nnach Konto: 3674572",
+                                @"Betrag: 364827,74€\nvon Konto: 67354327\nnach Konto: 465327347"];
     }
     return self;
 }
@@ -68,9 +72,9 @@
                 reuseIdentifier:CellIdentifier];
     }
     
-    
+    //transfer object
+    cell.textLabel.numberOfLines = 3;
     cell.textLabel.text = [self.moneyTransfers objectAtIndex:indexPath.row];
-    cell.textLabel.numberOfLines = 0;
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
    
     // Configure the cell...
@@ -80,6 +84,13 @@
     
     return cell;
 }
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+
+{
+    return @"Ihre gespeicherten Umbuchungen";
+}
+
 
 /*
 // Override to support conditional editing of the table view.

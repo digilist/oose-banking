@@ -1,5 +1,5 @@
 //
-//  KBASubDocumentController.h
+//  KBAMoneyTransferController.h
 //  Kiba
 //
 //  Created by //// on 04.12.13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KBASubDocumentController : UITableViewController
+@interface KBATransTableContr : UITableViewController
 
 @end

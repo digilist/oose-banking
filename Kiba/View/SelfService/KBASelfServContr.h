@@ -1,5 +1,5 @@
 //
-//  KBATransferController.h
+//  KBASelfServiceController.h
 //  Kiba
 //
 //  Created by Schaarschmidt, Kevin Michael on 03.12.13.
@@ -7,8 +7,10 @@
 //
 
 #import "KBAViewController.h"
+#import "KBATransTableContr.h"
+#import "KBADocTableContr.h"
 
-@interface KBATransferController : KBAViewController
+
+@interface KBASelfServContr : KBAViewController
+
 @end
-
-

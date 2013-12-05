@@ -1,5 +1,5 @@
 //
-//  KBADocumentController.h
+//  KBATransferController.h
 //  Kiba
 //
 //  Created by Schaarschmidt, Kevin Michael on 03.12.13.
@@ -8,8 +8,6 @@
 
 #import "KBAViewController.h"
 
-@interface KBADocumentController : KBAViewController
-
-@property (nonatomic,weak) IBOutlet UIScrollView *scrollView2;
-
+@interface KBATransContr : KBAViewController
 @end
+

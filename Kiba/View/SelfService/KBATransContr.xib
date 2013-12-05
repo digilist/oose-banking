@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KBATransferController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KBATransContr">
             <connections>
+                <outlet property="chooseDailyButton" destination="UeK-wz-qKy" id="oyz-8O-DLb"/>
+                <outlet property="chooseTermButton" destination="Awc-hp-Jnz" id="sI8-vm-Tfm"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
         </placeholder>
@@ -45,35 +47,35 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zielkonto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCD-6m-f2h">
-                    <rect key="frame" x="693" y="178" width="71" height="21"/>
+                    <rect key="frame" x="685" y="178" width="71" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IBAN: DE68 3223 9386 3842 0992 21" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEf-HB-bye">
-                    <rect key="frame" x="693" y="207" width="287" height="21"/>
+                    <rect key="frame" x="685" y="207" width="287" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Awc-hp-Jnz">
-                    <rect key="frame" x="245" y="169" width="86" height="30"/>
+                    <rect key="frame" x="245" y="169" width="94" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="wähle Konto">
+                    <state key="normal" title="Konto wählen">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="chooseTermAccount:" destination="-1" eventType="touchUpInside" id="duG-4w-aBL"/>
+                        <action selector="chooseAccount:" destination="-1" eventType="touchUpInside" id="J5b-vD-IRD"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UeK-wz-qKy">
-                    <rect key="frame" x="894" y="174" width="86" height="30"/>
+                    <rect key="frame" x="878" y="174" width="94" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="wähle Konto">
+                    <state key="normal" title="Konto wählen">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="chooseDailyAccount:" destination="-1" eventType="touchUpInside" id="A6b-9F-MP5"/>
+                        <action selector="chooseAccount:" destination="-1" eventType="touchUpInside" id="GMi-QX-r8N"/>
                     </connections>
                 </button>
             </subviews>
@@ -84,16 +86,17 @@
                 <constraint firstAttribute="centerX" secondItem="HWU-It-Onn" secondAttribute="centerX" constant="-14.5" id="7oQ-pa-nI9"/>
                 <constraint firstItem="UeK-wz-qKy" firstAttribute="top" secondItem="2" secondAttribute="top" constant="174" id="8Eb-QA-yeg"/>
                 <constraint firstItem="RPD-e3-feE" firstAttribute="top" secondItem="kC5-qh-hnZ" secondAttribute="bottom" constant="8" id="AOG-mt-237"/>
-                <constraint firstItem="oEf-HB-bye" firstAttribute="trailing" secondItem="UeK-wz-qKy" secondAttribute="trailing" id="Bmx-gi-H7z"/>
                 <constraint firstItem="oEf-HB-bye" firstAttribute="top" secondItem="UeK-wz-qKy" secondAttribute="bottom" constant="3" id="Fjr-AS-kvR"/>
+                <constraint firstItem="UeK-wz-qKy" firstAttribute="trailing" secondItem="oEf-HB-bye" secondAttribute="trailing" id="LkI-ce-YHI"/>
                 <constraint firstItem="kC5-qh-hnZ" firstAttribute="top" secondItem="2" secondAttribute="top" constant="178" id="M5q-M0-ifJ"/>
-                <constraint firstAttribute="trailing" secondItem="UeK-wz-qKy" secondAttribute="trailing" constant="44" id="RSp-Ey-AqR"/>
+                <constraint firstAttribute="trailing" secondItem="UeK-wz-qKy" secondAttribute="trailing" constant="52" id="RSp-Ey-AqR"/>
                 <constraint firstItem="HWU-It-Onn" firstAttribute="top" secondItem="2" secondAttribute="top" constant="90" id="Tbl-Yp-AMN"/>
+                <constraint firstItem="VCD-6m-f2h" firstAttribute="leading" secondItem="oEf-HB-bye" secondAttribute="leading" id="X8P-yu-WWt"/>
                 <constraint firstItem="kC5-qh-hnZ" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="44" id="bAJ-og-g7v"/>
                 <constraint firstItem="VCD-6m-f2h" firstAttribute="top" secondItem="2" secondAttribute="top" constant="178" id="bCA-j2-n8B"/>
                 <constraint firstAttribute="centerX" secondItem="HlV-KU-fyO" secondAttribute="centerX" constant="32" id="hto-9r-wgj"/>
                 <constraint firstAttribute="trailing" secondItem="HlV-KU-fyO" secondAttribute="trailing" constant="144" id="lXy-sz-lkb"/>
-                <constraint firstItem="UeK-wz-qKy" firstAttribute="leading" secondItem="VCD-6m-f2h" secondAttribute="trailing" constant="130" id="oEe-8u-Bvz"/>
+                <constraint firstItem="UeK-wz-qKy" firstAttribute="leading" secondItem="VCD-6m-f2h" secondAttribute="trailing" constant="122" id="oEe-8u-Bvz"/>
                 <constraint firstItem="RPD-e3-feE" firstAttribute="top" secondItem="Awc-hp-Jnz" secondAttribute="bottom" constant="8" symbolic="YES" id="sCv-1y-eBQ"/>
                 <constraint firstItem="Awc-hp-Jnz" firstAttribute="leading" secondItem="kC5-qh-hnZ" secondAttribute="trailing" constant="118" id="zzT-Gl-zT3"/>
             </constraints>

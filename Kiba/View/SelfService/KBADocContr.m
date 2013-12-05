@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 KiBa App. All rights reserved.
 //
 
-#import "KBADocumentController.h"
+#import "KBADocContr.h"
 
-@interface KBADocumentController ()
+@interface KBADocContr ()
 
 @end
 
-@implementation KBADocumentController
+@implementation KBADocContr
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

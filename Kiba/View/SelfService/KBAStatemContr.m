@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 KiBa App. All rights reserved.
 //
 
-#import "KBAStatementController.h"
+#import "KBAStatemContr.h"
 
-@interface KBAStatementController ()
+@interface KBAStatemContr ()
 
 @end
 
-@implementation KBAStatementController
+@implementation KBAStatemContr
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
     if (self) {
         // Custom initialization
     }

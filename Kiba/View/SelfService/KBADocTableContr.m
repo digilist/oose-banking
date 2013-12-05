@@ -6,21 +6,25 @@
 //  Copyright (c) 2013 KiBa App. All rights reserved.
 //
 
-#import "KBASubDocumentController.h"
+#import "KBADocTableContr.h"
 
-@interface KBASubDocumentController ()
+@interface KBADocTableContr ()
 @property NSArray* documents;
-
 @end
 
-@implementation KBASubDocumentController
+@implementation KBADocTableContr
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        self.documents = @[@"Freistellungsauftrag",
-                                @"xy-Auftrag"];
+        self.documents = @[@"Bonusbescheinigung",
+                           @"B",
+                           @"C",
+                           @"D",
+                           @"E",
+                           @"F",
+                           @"G"];
     }
     return self;
 }
@@ -77,6 +81,13 @@
     
     return cell;
 }
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+
+{
+    return @"Ihre gespeicherten Bescheinigungen";
+}
+
 
 /*
  // Override to support conditional editing of the table view.
