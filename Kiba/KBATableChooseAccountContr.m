@@ -8,9 +8,6 @@
 
 #import "KBATableChooseAccountContr.h"
 
-@interface KBATableChooseAccountContr ()
-@end
-
 @implementation KBATableChooseAccountContr
 
 - (id)initWithStyle:(UITableViewStyle)style

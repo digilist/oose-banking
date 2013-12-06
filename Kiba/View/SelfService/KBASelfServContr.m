@@ -81,7 +81,6 @@
                              //table-view sizes
                              self.subMoneyTableHeight.constant = 150;
                              self.subDocTableHeight.constant = 150;
-//                             self.topConstraintTitle.constant = 90;
                              [self.view layoutIfNeeded];
                          }];
 
@@ -101,7 +100,6 @@
                              //table-view sizes
                              self.subMoneyTableHeight.constant = 120;
                              self.subDocTableHeight.constant = 120;
-//                              self.topConstraintTitle.constant = 90;
                              [self.view layoutIfNeeded];
                          }];
 

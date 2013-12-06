@@ -7,6 +7,8 @@
 //
 
 #import "KBATableChooseDailyAccContr.h"
+const extern NSString* dailyAccountEntryChosen;
+extern NSNotificationCenter* transferChooseAccountNotifCenter;
 
 @implementation KBATableChooseDailyAccContr
 
@@ -26,7 +28,7 @@
 }
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"dailyAccountEntryChosen"
-                                                        object: [self.accounts objectAtIndex: indexPath.row]];
+    [transferChooseAccountNotifCenter postNotificationName: (NSString*)dailyAccountEntryChosen
+                                                    object: [self.accounts objectAtIndex: indexPath.row]];
 }
 @end

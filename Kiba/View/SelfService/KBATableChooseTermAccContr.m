@@ -7,6 +7,9 @@
 //
 
 #import "KBATableChooseTermAccContr.h"
+const extern NSString* termAccountEntryChosen;
+extern NSNotificationCenter* transferChooseAccountNotifCenter;
+
 
 @implementation KBATableChooseTermAccContr
 
@@ -27,8 +30,8 @@
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"termAccountEntryChosen"
-                                                        object: [self.accounts objectAtIndex: indexPath.row]];
+    [transferChooseAccountNotifCenter postNotificationName: (NSString*)termAccountEntryChosen
+                                                    object: [self.accounts objectAtIndex: indexPath.row]];
     
 }
 

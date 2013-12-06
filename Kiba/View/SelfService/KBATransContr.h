@@ -9,5 +9,6 @@
 #import "KBAViewController.h"
 
 @interface KBATransContr : KBAViewController
+
 @end
 

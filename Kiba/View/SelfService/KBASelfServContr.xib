@@ -31,13 +31,13 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Self Service - jetzt in allen KiBa Filialen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQo-AD-f5o">
-                    <rect key="frame" x="364" y="90" width="297" height="21"/>
+                    <rect key="frame" x="326" y="90" width="373" height="27"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrA-BV-FUy">
-                    <rect key="frame" x="410" y="130" width="205" height="32"/>
+                    <rect key="frame" x="410" y="136" width="205" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                     <state key="normal" title="mit KiBa-Station verbinden"/>
@@ -46,14 +46,14 @@
                     </connections>
                 </button>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="wva-gp-6nP">
-                    <rect key="frame" x="628" y="137" width="20" height="20"/>
+                    <rect key="frame" x="628" y="143" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="hidden" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </activityIndicatorView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="33" sectionHeaderHeight="26" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1tE-bi-Kop">
-                    <rect key="frame" x="374" y="595" width="274" height="142"/>
+                    <rect key="frame" x="367" y="598" width="274" height="142"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="142" id="Iby-sK-8xz"/>
@@ -64,7 +64,7 @@
                     </connections>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXW-8c-iZJ">
-                    <rect key="frame" x="54" y="416" width="187" height="34"/>
+                    <rect key="frame" x="54" y="414" width="187" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Kontoauszüge drucken">
@@ -75,28 +75,28 @@
                     </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Hier können sie Ihre Kontoauszüge für einen beliebigen Zeitraum drucken." translatesAutoresizingMaskIntoConstraints="NO" id="g53-X4-pif">
-                    <rect key="frame" x="54" y="440" width="260" height="65"/>
+                    <rect key="frame" x="54" y="443" width="253" height="70"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="65" id="E2t-Jf-86d"/>
-                        <constraint firstAttribute="width" constant="260" id="Ems-Fk-h49"/>
+                        <constraint firstAttribute="height" constant="70" id="E2t-Jf-86d"/>
+                        <constraint firstAttribute="width" constant="253" id="Ems-Fk-h49"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Jetzt bequem Bescheinigungen z.B. (Bonitätsbescheinigung) ausdrucken." translatesAutoresizingMaskIntoConstraints="NO" id="ag2-gB-WWg">
-                    <rect key="frame" x="54" y="619" width="260" height="78"/>
+                    <rect key="frame" x="54" y="628" width="253" height="70"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="78" id="1tw-bn-D7n"/>
+                        <constraint firstAttribute="height" constant="70" id="1tw-bn-D7n"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RzH-By-5M4">
-                    <rect key="frame" x="54" y="596" width="139" height="34"/>
+                    <rect key="frame" x="54" y="599" width="139" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Bescheinigungen">
@@ -119,7 +119,7 @@
                     </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Buchen Sie ohne Verzögerung Geld von ihrem Sparkonto auf ihr Tageskonto." translatesAutoresizingMaskIntoConstraints="NO" id="bKL-Ph-cm2">
-                    <rect key="frame" x="54" y="260" width="260" height="65"/>
+                    <rect key="frame" x="54" y="260" width="253" height="65"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -129,7 +129,7 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" style="plain" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="83" sectionHeaderHeight="26" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xkv-ch-zgH">
-                    <rect key="frame" x="374" y="236" width="254" height="142"/>
+                    <rect key="frame" x="367" y="236" width="254" height="142"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="254" id="7Pz-Ig-7Oc"/>
@@ -150,14 +150,14 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="ag2-gB-WWg" firstAttribute="top" secondItem="RzH-By-5M4" secondAttribute="bottom" constant="-11" id="3TZ-mO-uRN"/>
+                <constraint firstItem="ag2-gB-WWg" firstAttribute="top" secondItem="RzH-By-5M4" secondAttribute="bottom" constant="-5" id="3TZ-mO-uRN"/>
                 <constraint firstItem="TrA-BV-FUy" firstAttribute="top" secondItem="fQo-AD-f5o" secondAttribute="bottom" constant="19" id="53g-jN-3mW"/>
-                <constraint firstItem="g53-X4-pif" firstAttribute="top" secondItem="VXW-8c-iZJ" secondAttribute="bottom" constant="-10" id="AUW-Gf-nv8"/>
                 <constraint firstAttribute="bottom" secondItem="P4a-e9-SLS" secondAttribute="bottom" constant="8" id="BNK-gR-ktK"/>
-                <constraint firstItem="VXW-8c-iZJ" firstAttribute="top" secondItem="bKL-Ph-cm2" secondAttribute="bottom" constant="91" id="Bpm-lg-Ps1"/>
+                <constraint firstItem="VXW-8c-iZJ" firstAttribute="top" secondItem="bKL-Ph-cm2" secondAttribute="bottom" constant="89" id="Bpm-lg-Ps1"/>
                 <constraint firstItem="Jc2-nY-JlY" firstAttribute="leading" secondItem="VXW-8c-iZJ" secondAttribute="leading" id="Mti-Qt-T7n"/>
                 <constraint firstItem="wva-gp-6nP" firstAttribute="top" secondItem="fQo-AD-f5o" secondAttribute="bottom" constant="26" id="NiI-yQ-u9z"/>
                 <constraint firstItem="Jc2-nY-JlY" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="54" id="OYL-Ss-S8a"/>
+                <constraint firstItem="g53-X4-pif" firstAttribute="top" secondItem="VXW-8c-iZJ" secondAttribute="bottom" constant="-5" id="Xld-0z-Dd4"/>
                 <constraint firstItem="wva-gp-6nP" firstAttribute="leading" secondItem="TrA-BV-FUy" secondAttribute="trailing" constant="13" id="bor-mQ-nQp"/>
                 <constraint firstItem="1tE-bi-Kop" firstAttribute="leading" secondItem="xkv-ch-zgH" secondAttribute="leading" id="cvw-VI-pKf"/>
                 <constraint firstItem="ag2-gB-WWg" firstAttribute="trailing" secondItem="bKL-Ph-cm2" secondAttribute="trailing" id="ecN-jM-Ql8"/>
@@ -169,7 +169,7 @@
                 <constraint firstItem="xkv-ch-zgH" firstAttribute="top" secondItem="Jc2-nY-JlY" secondAttribute="top" constant="5" id="nT3-qF-nIC"/>
                 <constraint firstItem="ag2-gB-WWg" firstAttribute="trailing" secondItem="g53-X4-pif" secondAttribute="trailing" id="paX-e3-ANT"/>
                 <constraint firstItem="bKL-Ph-cm2" firstAttribute="top" secondItem="Jc2-nY-JlY" secondAttribute="bottom" constant="-5" id="sPS-Y0-NMT"/>
-                <constraint firstItem="RzH-By-5M4" firstAttribute="top" secondItem="g53-X4-pif" secondAttribute="bottom" constant="91" id="sZ9-jv-wEH"/>
+                <constraint firstItem="RzH-By-5M4" firstAttribute="top" secondItem="g53-X4-pif" secondAttribute="bottom" constant="86" id="sZ9-jv-wEH"/>
                 <constraint firstAttribute="trailing" secondItem="P4a-e9-SLS" secondAttribute="trailing" constant="2" id="tva-0a-zjk"/>
                 <constraint firstItem="fQo-AD-f5o" firstAttribute="top" secondItem="2" secondAttribute="top" constant="90" id="uGG-g8-ety"/>
                 <constraint firstItem="Jc2-nY-JlY" firstAttribute="leading" secondItem="ag2-gB-WWg" secondAttribute="leading" id="uZd-y3-J70"/>

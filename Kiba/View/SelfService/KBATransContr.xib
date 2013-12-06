@@ -19,50 +19,47 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="BsC-ak-ex1">
-                    <rect key="frame" x="207" y="-39" width="94" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </stepper>
-                <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="s6T-sK-dFK">
-                    <rect key="frame" x="706" y="-39" width="94" height="29"/>
+                    <rect key="frame" x="-97" y="53" width="94" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </stepper>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Umbuchung " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWU-It-Onn">
-                    <rect key="frame" x="469" y="90" width="115" height="24"/>
+                    <rect key="frame" x="464" y="90" width="126" height="27"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IBAN: DE68 2105 0170 0012 3456 78" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPD-e3-feE">
-                    <rect key="frame" x="44" y="207" width="287" height="21"/>
+                    <rect key="frame" x="44" y="208" width="287" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Scheck" translatesAutoresizingMaskIntoConstraints="NO" id="HlV-KU-fyO">
-                    <rect key="frame" x="80" y="252" width="800" height="291"/>
+                    <rect key="frame" x="112" y="303" width="800" height="291"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quellkonto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kC5-qh-hnZ">
-                    <rect key="frame" x="44" y="178" width="83" height="21"/>
+                    <rect key="frame" x="44" y="178" width="88" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zielkonto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCD-6m-f2h">
-                    <rect key="frame" x="685" y="178" width="71" height="21"/>
+                    <rect key="frame" x="692" y="178" width="75" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IBAN: DE68 3223 9386 3842 0992 21" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEf-HB-bye">
-                    <rect key="frame" x="685" y="207" width="287" height="21"/>
+                    <rect key="frame" x="692" y="211" width="287" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Awc-hp-Jnz">
-                    <rect key="frame" x="245" y="169" width="94" height="30"/>
+                    <rect key="frame" x="225" y="172" width="111" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Konto wählen">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -71,8 +68,9 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UeK-wz-qKy">
-                    <rect key="frame" x="878" y="174" width="94" height="30"/>
+                    <rect key="frame" x="869" y="172" width="111" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Konto wählen">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -83,24 +81,24 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="HlV-KU-fyO" firstAttribute="top" secondItem="2" secondAttribute="top" constant="252" id="0sq-iy-Ljv"/>
+                <constraint firstItem="HlV-KU-fyO" firstAttribute="top" secondItem="2" secondAttribute="top" constant="303" id="0sq-iy-Ljv"/>
                 <constraint firstItem="RPD-e3-feE" firstAttribute="leading" secondItem="kC5-qh-hnZ" secondAttribute="leading" id="5pd-DJ-8Xq"/>
                 <constraint firstAttribute="centerX" secondItem="HWU-It-Onn" secondAttribute="centerX" constant="-14.5" id="7oQ-pa-nI9"/>
-                <constraint firstItem="UeK-wz-qKy" firstAttribute="top" secondItem="2" secondAttribute="top" constant="174" id="8Eb-QA-yeg"/>
+                <constraint firstItem="UeK-wz-qKy" firstAttribute="top" secondItem="2" secondAttribute="top" constant="172" id="8Eb-QA-yeg"/>
                 <constraint firstItem="RPD-e3-feE" firstAttribute="top" secondItem="kC5-qh-hnZ" secondAttribute="bottom" constant="8" id="AOG-mt-237"/>
-                <constraint firstItem="oEf-HB-bye" firstAttribute="top" secondItem="UeK-wz-qKy" secondAttribute="bottom" constant="3" id="Fjr-AS-kvR"/>
-                <constraint firstItem="UeK-wz-qKy" firstAttribute="trailing" secondItem="oEf-HB-bye" secondAttribute="trailing" id="LkI-ce-YHI"/>
+                <constraint firstItem="oEf-HB-bye" firstAttribute="top" secondItem="UeK-wz-qKy" secondAttribute="bottom" constant="5" id="Fjr-AS-kvR"/>
+                <constraint firstItem="Awc-hp-Jnz" firstAttribute="leading" secondItem="kC5-qh-hnZ" secondAttribute="trailing" constant="93" id="Jgz-fE-sD5"/>
                 <constraint firstItem="kC5-qh-hnZ" firstAttribute="top" secondItem="2" secondAttribute="top" constant="178" id="M5q-M0-ifJ"/>
-                <constraint firstAttribute="trailing" secondItem="UeK-wz-qKy" secondAttribute="trailing" constant="52" id="RSp-Ey-AqR"/>
+                <constraint firstAttribute="trailing" secondItem="UeK-wz-qKy" secondAttribute="trailing" priority="509" constant="44" id="RSp-Ey-AqR"/>
+                <constraint firstItem="VCD-6m-f2h" firstAttribute="baseline" secondItem="UeK-wz-qKy" secondAttribute="baseline" id="ShS-Vk-2gh"/>
                 <constraint firstItem="HWU-It-Onn" firstAttribute="top" secondItem="2" secondAttribute="top" constant="90" id="Tbl-Yp-AMN"/>
                 <constraint firstItem="VCD-6m-f2h" firstAttribute="leading" secondItem="oEf-HB-bye" secondAttribute="leading" id="X8P-yu-WWt"/>
-                <constraint firstItem="kC5-qh-hnZ" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="44" id="bAJ-og-g7v"/>
-                <constraint firstItem="VCD-6m-f2h" firstAttribute="top" secondItem="2" secondAttribute="top" constant="178" id="bCA-j2-n8B"/>
-                <constraint firstAttribute="centerX" secondItem="HlV-KU-fyO" secondAttribute="centerX" constant="32" id="hto-9r-wgj"/>
-                <constraint firstAttribute="trailing" secondItem="HlV-KU-fyO" secondAttribute="trailing" constant="144" id="lXy-sz-lkb"/>
-                <constraint firstItem="UeK-wz-qKy" firstAttribute="leading" secondItem="VCD-6m-f2h" secondAttribute="trailing" constant="122" id="oEe-8u-Bvz"/>
-                <constraint firstItem="RPD-e3-feE" firstAttribute="top" secondItem="Awc-hp-Jnz" secondAttribute="bottom" constant="8" symbolic="YES" id="sCv-1y-eBQ"/>
-                <constraint firstItem="Awc-hp-Jnz" firstAttribute="leading" secondItem="kC5-qh-hnZ" secondAttribute="trailing" constant="118" id="zzT-Gl-zT3"/>
+                <constraint firstItem="kC5-qh-hnZ" firstAttribute="leading" secondItem="2" secondAttribute="leading" priority="488" constant="44" id="bAJ-og-g7v"/>
+                <constraint firstAttribute="centerX" secondItem="HlV-KU-fyO" secondAttribute="centerX" id="hto-9r-wgj"/>
+                <constraint firstItem="VCD-6m-f2h" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Awc-hp-Jnz" secondAttribute="trailing" constant="50" id="kbD-7Q-LmN"/>
+                <constraint firstAttribute="trailing" secondItem="HlV-KU-fyO" secondAttribute="trailing" constant="112" id="lXy-sz-lkb"/>
+                <constraint firstItem="RPD-e3-feE" firstAttribute="top" secondItem="Awc-hp-Jnz" secondAttribute="bottom" constant="2" id="sCv-1y-eBQ"/>
+                <constraint firstAttribute="trailing" secondItem="VCD-6m-f2h" secondAttribute="trailing" constant="257" id="wqZ-04-2rL"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>

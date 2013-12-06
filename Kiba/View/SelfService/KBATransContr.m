@@ -10,6 +10,7 @@
 #import "KBATableChooseTermAccContr.h"
 #import "KBATableChooseDailyAccContr.h"
 
+
 //help-classes––––––––––––––––––––––––––––––––––
 @interface KBAChooseTermAccountContr: UIViewController
 @property (nonatomic, strong) IBOutlet KBATableChooseTermAccContr* chooseTermAccTableContr;
@@ -37,26 +38,34 @@
 @property  (nonatomic, weak) IBOutlet UILabel* dailyAccountLabel;
 @end
 
+//global string identifier
+NSNotificationCenter* transferChooseAccountNotifCenter;
+const NSString* termAccountEntryChosen = @"termAccountEntryChosen";
+const NSString* dailyAccountEntryChosen = @"dailyAccountEntryChosen";
+
 @implementation KBATransContr
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+
         self.chooseTermAccContr = [KBAChooseTermAccountContr new];
         self.chooseDailyAccContr = [KBAChooseDailyAccountContr new];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(respondToChosenTermAccountEntry:)
-                                                     name:@"termAccountEntryChosen"
-                                                   object:nil];
        
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(respondToChosenDailyAccountEntry:)
-                                                     name:@"dailyAccountEntryChosen"
-                                                   object:nil];
+        //needs to be created everytime with this controller
+        //(gets freed everytime view gets closed)
+        transferChooseAccountNotifCenter = [NSNotificationCenter new];
         
-
+        [transferChooseAccountNotifCenter addObserver:self
+                                             selector:@selector(respondToChosenTermAccountEntry:)
+                                                 name:(NSString*)termAccountEntryChosen
+                                               object:nil];
+       
+        [transferChooseAccountNotifCenter addObserver:self
+                                             selector:@selector(respondToChosenDailyAccountEntry:)
+                                                 name:(NSString*)dailyAccountEntryChosen
+                                               object:nil];
     }
     return self;
 }
@@ -73,6 +82,12 @@
     self.dailyAccountLabel.text = (NSString*)[notification object];
 }
 
+/**
+ *  Display accounts to select from in popover-tableview.
+ *  Depends on used button (daily or term).
+ *
+ *  @param sender pressed button
+ */
 -(IBAction)chooseAccount:(UIButton*)sender
 {
     if ([sender isEqual:self.chooseTermButton]) {
@@ -86,14 +101,10 @@
     
     CGPoint buttonPosition = sender.frame.origin;
     
-    [self.popController presentPopoverFromRect: CGRectMake(buttonPosition.x, buttonPosition.y, 100, 100)
+    [self.popController presentPopoverFromRect:CGRectMake(buttonPosition.x, buttonPosition.y, 100, 100)
                                         inView:self.view
                       permittedArrowDirections:UIPopoverArrowDirectionDown
                                       animated:YES];
     
 }
 @end
-
-
-
-

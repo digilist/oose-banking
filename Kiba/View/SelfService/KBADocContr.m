@@ -26,9 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
-
+    self.scrollView.contentSize = CGSizeMake(2000, 0);
 }
 
 
@@ -36,13 +35,11 @@
 {
     [super viewDidAppear:animated];
     
-    [_scrollView2 setScrollEnabled:YES];
-    [_scrollView2 setContentSize:CGSizeMake(2048, 782)];
+    [_scrollView setScrollEnabled:YES];
 
 }
 
 - (void)viewDidLayoutSubviews {
-    [_scrollView2 setContentSize:CGSizeMake(2048, 782)];
 }
 
 - (void)didReceiveMemoryWarning
