@@ -12,6 +12,11 @@
 @property NSArray* documents;
 @end
 
+/*
+ Table-view-controller subclass to present documents to print
+ in self-service top-view.
+*/
+
 @implementation KBADocTableContr
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -58,9 +63,6 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc]
@@ -77,7 +79,6 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-
 {
     return @"Ihre gespeicherten Bescheinigungen";
 }

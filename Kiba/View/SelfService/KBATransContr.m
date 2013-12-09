@@ -11,7 +11,7 @@
 #import "KBATableChooseDailyAccContr.h"
 
 
-//help-classes––––––––––––––––––––––––––––––––––
+//help-classes–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 @interface KBAChooseTermAccountContr: UIViewController
 @property (nonatomic, strong) IBOutlet KBATableChooseTermAccContr* chooseTermAccTableContr;
 @end
@@ -25,7 +25,7 @@
 
 @implementation KBAChooseDailyAccountContr
 @end
-//–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 //private interface
 @interface KBATransContr()
@@ -36,10 +36,13 @@
 @property  (nonatomic, weak) IBOutlet UIButton* chooseDailyButton;
 @property  (nonatomic, weak) IBOutlet UILabel* termAccountLabel;
 @property  (nonatomic, weak) IBOutlet UILabel* dailyAccountLabel;
+@property  (nonatomic, weak) IBOutlet UILabel* subTitleLabel;
+@property  (nonatomic, weak) IBOutlet UIImageView* checkImageView;
 @end
 
-//global string identifier
+//notification center to inform about chosen accounts in popover-table-view
 NSNotificationCenter* transferChooseAccountNotifCenter;
+//global string identifier needed to send/recv notifications
 const NSString* termAccountEntryChosen = @"termAccountEntryChosen";
 const NSString* dailyAccountEntryChosen = @"dailyAccountEntryChosen";
 
@@ -49,14 +52,19 @@ const NSString* dailyAccountEntryChosen = @"dailyAccountEntryChosen";
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-
+        //set view title displayed at very top
+        self.title = @"Umbuchung von ihrem Sparkonto";
+        
+        //account controller which own the table views
+        //used in popover
         self.chooseTermAccContr = [KBAChooseTermAccountContr new];
         self.chooseDailyAccContr = [KBAChooseDailyAccountContr new];
        
-        //needs to be created everytime with this controller
-        //(gets freed everytime view gets closed)
+       
+        /*add observer/listener to receive chosen accounts in popup-tableviews */
+    
+        //needs to be created everytime with this controller(is freed everytime view gets closed)
         transferChooseAccountNotifCenter = [NSNotificationCenter new];
-        
         [transferChooseAccountNotifCenter addObserver:self
                                              selector:@selector(respondToChosenTermAccountEntry:)
                                                  name:(NSString*)termAccountEntryChosen
@@ -70,16 +78,48 @@ const NSString* dailyAccountEntryChosen = @"dailyAccountEntryChosen";
     return self;
 }
 
+-(void)respondToOrientation:(UIInterfaceOrientation)orientation
+{
+    
+}
+
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+                               duration:(NSTimeInterval)duration
+{
+    [self respondToOrientation:toInterfaceOrientation];
+}
+
+-(void)viewDidLoad
+{
+    self.subTitleLabel.numberOfLines = 2;
+    //title set programatically to realise linebreak in label. (2 lines needed)
+    self.subTitleLabel.text = @"Buchen Sie Geld von ihrem Sparkonto\nohne Verzögerung auf ihr Tageskonto.";
+}
+
+/**
+ *  Receive term-account chosen in popover-tableview.
+ *  Accounts are at moment send as string values
+ *
+ *
+ *  @param notification the notification send
+ */
 -(void)respondToChosenTermAccountEntry:(NSNotification *)notification
 {
     [self.popController dismissPopoverAnimated:YES];
-    self.termAccountLabel.text = (NSString*)[notification object];
+    self.termAccountLabel.text = [NSString stringWithFormat:@"IBAN: %@",(NSString*)[notification object]];
 }
 
+/**
+ *  Receive daily-account chosen in popover-tableview.
+ *  Accounts are at moment send as string values
+ *
+ *
+ *  @param notification the notification send
+ */
 -(void)respondToChosenDailyAccountEntry:(NSNotification *)notification
 {
     [self.popController dismissPopoverAnimated:YES];
-    self.dailyAccountLabel.text = (NSString*)[notification object];
+    self.dailyAccountLabel.text = [NSString stringWithFormat:@"IBAN: %@",(NSString*)[notification object]];
 }
 
 /**

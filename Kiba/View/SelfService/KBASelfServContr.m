@@ -133,7 +133,7 @@
             [self.indicator stopAnimating];
             self.indicator.hidden = YES;
             self.connectButton.enabled = NO;
-            [self.connectButton setTitle:@"mit KiBa-Station verbunden" forState: UIControlStateNormal];
+            [self.connectButton setTitle:@"mit KiBa-Station verbunden" forState:UIControlStateDisabled];
             [self.connectButton setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
         });
     

@@ -18,7 +18,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.title = @"Bescheinigungen";
     }
     return self;
 }
@@ -26,8 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.scrollView.contentSize = CGSizeMake(2000, 0);
 }
 
 
@@ -39,15 +37,10 @@
 
 }
 
-- (void)viewDidLayoutSubviews {
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 @end

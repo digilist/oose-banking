@@ -10,20 +10,21 @@
 
 @interface KBATransTableContr ()
 @property NSArray* moneyTransfers;
-
 @end
+
+/*
+ Table-view-controller subclass to present transactions
+ in self-service top-view.
+*/
+
 
 @implementation KBATransTableContr
 
-
-//TODO: support cell division per row
 - (id)initWithStyle:(UITableViewStyle)style
 {
-    
-
-    
     self = [super initWithStyle:style];
     if (self) {
+        //table-view supports display of multiple lines, why \n is used here
         self.moneyTransfers = @[@"Betrag: 32234,34€\nvon Konto: 3453762572\nnach Konto: 78886553873",
                                 @"Betrag: 654327,23€\nvon Konto: 3453762572\nnach Konto: 43572634",
                                 @"Betrag: 10,34€\nvon Konto: 762346723\nnach Konto: 3674572",
@@ -62,9 +63,6 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    
 
     if (cell == nil) {
         cell = [[UITableViewCell alloc]
@@ -77,70 +75,12 @@
     cell.textLabel.text = [self.moneyTransfers objectAtIndex:indexPath.row];
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
    
-    // Configure the cell...
-//    cell.latitude.text = [[[self.tableData objectAtIndex:indexPath.section objectAtIndex:indexPath.row] objectForKey: @"lat"];
-//    cell.longitude.text = [[[self.tableData objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectForKey:@"long"];
-//.
-    
     return cell;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-
 {
     return @"Ihre gespeicherten Umbuchungen";
 }
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end

@@ -6,9 +6,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KBATransContr">
             <connections>
+                <outlet property="checkImageView" destination="g6M-6s-9yG" id="XcT-6B-usW"/>
                 <outlet property="chooseDailyButton" destination="UeK-wz-qKy" id="oyz-8O-DLb"/>
                 <outlet property="chooseTermButton" destination="Awc-hp-Jnz" id="sI8-vm-Tfm"/>
                 <outlet property="dailyAccountLabel" destination="oEf-HB-bye" id="JYJ-dH-v6A"/>
+                <outlet property="subTitleLabel" destination="HWU-It-Onn" id="3td-Wl-i5l"/>
                 <outlet property="termAccountLabel" destination="RPD-e3-feE" id="H8f-f4-2jr"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
@@ -18,46 +20,38 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="BsC-ak-ex1">
-                    <rect key="frame" x="-97" y="53" width="94" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </stepper>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Umbuchung " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWU-It-Onn">
-                    <rect key="frame" x="464" y="90" width="126" height="27"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWU-It-Onn">
+                    <rect key="frame" x="493" y="90" width="67" height="24"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IBAN: DE68 2105 0170 0012 3456 78" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPD-e3-feE">
-                    <rect key="frame" x="44" y="208" width="287" height="21"/>
+                    <rect key="frame" x="44" y="241" width="287" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Scheck" translatesAutoresizingMaskIntoConstraints="NO" id="HlV-KU-fyO">
-                    <rect key="frame" x="112" y="303" width="800" height="291"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quellkonto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kC5-qh-hnZ">
-                    <rect key="frame" x="44" y="178" width="88" height="22"/>
+                    <rect key="frame" x="44" y="211" width="88" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zielkonto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCD-6m-f2h">
-                    <rect key="frame" x="692" y="178" width="75" height="22"/>
+                    <rect key="frame" x="692" y="211" width="75" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IBAN: DE68 3223 9386 3842 0992 21" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEf-HB-bye">
-                    <rect key="frame" x="692" y="211" width="287" height="21"/>
+                    <rect key="frame" x="692" y="244" width="287" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Awc-hp-Jnz">
-                    <rect key="frame" x="225" y="172" width="111" height="34"/>
+                    <rect key="frame" x="225" y="205" width="111" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Konto wählen">
@@ -68,7 +62,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UeK-wz-qKy">
-                    <rect key="frame" x="869" y="172" width="111" height="34"/>
+                    <rect key="frame" x="868" y="205" width="111" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Konto wählen">
@@ -78,26 +72,61 @@
                         <action selector="chooseAccount:" destination="-1" eventType="touchUpInside" id="GMi-QX-r8N"/>
                     </connections>
                 </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scheck hier hinüberziehen!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bj1-HR-lY3">
+                    <rect key="frame" x="0.0" y="656" width="1024" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.88671875" green="0.88671875" blue="0.88671875" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="251" verticalCompressionResistancePriority="251" image="Scheck" translatesAutoresizingMaskIntoConstraints="NO" id="g6M-6s-9yG">
+                    <rect key="frame" x="44" y="317" width="935" height="273"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="273" id="5YG-FU-PUP"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="scheck_test_muster.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="0nI-VG-N1N">
+                    <rect key="frame" x="1088" y="677" width="157" height="91"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ors-Dk-Zlt">
+                    <rect key="frame" x="0.0" y="677" width="1024" height="91"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.92863121810000004" green="0.92863121810000004" blue="0.92863121810000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="HlV-KU-fyO" firstAttribute="top" secondItem="2" secondAttribute="top" constant="303" id="0sq-iy-Ljv"/>
-                <constraint firstItem="RPD-e3-feE" firstAttribute="leading" secondItem="kC5-qh-hnZ" secondAttribute="leading" id="5pd-DJ-8Xq"/>
+                <constraint firstItem="RPD-e3-feE" firstAttribute="leading" secondItem="kC5-qh-hnZ" secondAttribute="leading" id="0wR-uY-643"/>
+                <constraint firstItem="g6M-6s-9yG" firstAttribute="leading" secondItem="RPD-e3-feE" secondAttribute="leading" id="5Kf-Bq-QZ0"/>
+                <constraint firstAttribute="bottom" secondItem="ors-Dk-Zlt" secondAttribute="bottom" id="5pl-Mi-3oM"/>
                 <constraint firstAttribute="centerX" secondItem="HWU-It-Onn" secondAttribute="centerX" constant="-14.5" id="7oQ-pa-nI9"/>
-                <constraint firstItem="UeK-wz-qKy" firstAttribute="top" secondItem="2" secondAttribute="top" constant="172" id="8Eb-QA-yeg"/>
+                <constraint firstItem="UeK-wz-qKy" firstAttribute="top" secondItem="2" secondAttribute="top" constant="205" id="8Eb-QA-yeg"/>
                 <constraint firstItem="RPD-e3-feE" firstAttribute="top" secondItem="kC5-qh-hnZ" secondAttribute="bottom" constant="8" id="AOG-mt-237"/>
+                <constraint firstItem="oEf-HB-bye" firstAttribute="trailing" secondItem="g6M-6s-9yG" secondAttribute="trailing" id="AWM-yO-zmu"/>
                 <constraint firstItem="oEf-HB-bye" firstAttribute="top" secondItem="UeK-wz-qKy" secondAttribute="bottom" constant="5" id="Fjr-AS-kvR"/>
                 <constraint firstItem="Awc-hp-Jnz" firstAttribute="leading" secondItem="kC5-qh-hnZ" secondAttribute="trailing" constant="93" id="Jgz-fE-sD5"/>
-                <constraint firstItem="kC5-qh-hnZ" firstAttribute="top" secondItem="2" secondAttribute="top" constant="178" id="M5q-M0-ifJ"/>
-                <constraint firstAttribute="trailing" secondItem="UeK-wz-qKy" secondAttribute="trailing" priority="509" constant="44" id="RSp-Ey-AqR"/>
+                <constraint firstItem="kC5-qh-hnZ" firstAttribute="top" secondItem="2" secondAttribute="top" constant="211" id="M5q-M0-ifJ"/>
+                <constraint firstAttribute="trailing" secondItem="UeK-wz-qKy" secondAttribute="trailing" priority="509" constant="45" id="RSp-Ey-AqR"/>
                 <constraint firstItem="VCD-6m-f2h" firstAttribute="baseline" secondItem="UeK-wz-qKy" secondAttribute="baseline" id="ShS-Vk-2gh"/>
+                <constraint firstItem="oEf-HB-bye" firstAttribute="trailing" secondItem="UeK-wz-qKy" secondAttribute="trailing" id="TEb-zD-byr"/>
                 <constraint firstItem="HWU-It-Onn" firstAttribute="top" secondItem="2" secondAttribute="top" constant="90" id="Tbl-Yp-AMN"/>
+                <constraint firstAttribute="trailing" secondItem="ors-Dk-Zlt" secondAttribute="trailing" id="U9I-ZX-UmB"/>
+                <constraint firstAttribute="trailing" secondItem="Bj1-HR-lY3" secondAttribute="trailing" id="Unv-7q-aPG"/>
+                <constraint firstItem="oEf-HB-bye" firstAttribute="trailing" secondItem="Bj1-HR-lY3" secondAttribute="trailing" constant="-45" id="WvA-9o-7HZ"/>
                 <constraint firstItem="VCD-6m-f2h" firstAttribute="leading" secondItem="oEf-HB-bye" secondAttribute="leading" id="X8P-yu-WWt"/>
                 <constraint firstItem="kC5-qh-hnZ" firstAttribute="leading" secondItem="2" secondAttribute="leading" priority="488" constant="44" id="bAJ-og-g7v"/>
-                <constraint firstAttribute="centerX" secondItem="HlV-KU-fyO" secondAttribute="centerX" id="hto-9r-wgj"/>
+                <constraint firstItem="Bj1-HR-lY3" firstAttribute="top" secondItem="g6M-6s-9yG" secondAttribute="bottom" constant="66" id="gC0-q3-cpA"/>
                 <constraint firstItem="VCD-6m-f2h" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Awc-hp-Jnz" secondAttribute="trailing" constant="50" id="kbD-7Q-LmN"/>
-                <constraint firstAttribute="trailing" secondItem="HlV-KU-fyO" secondAttribute="trailing" constant="112" id="lXy-sz-lkb"/>
+                <constraint firstItem="Bj1-HR-lY3" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="oNO-eW-ZTx"/>
+                <constraint firstItem="g6M-6s-9yG" firstAttribute="leading" secondItem="kC5-qh-hnZ" secondAttribute="leading" id="otm-vl-Kah"/>
+                <constraint firstItem="ors-Dk-Zlt" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="pzw-pf-qhh"/>
                 <constraint firstItem="RPD-e3-feE" firstAttribute="top" secondItem="Awc-hp-Jnz" secondAttribute="bottom" constant="2" id="sCv-1y-eBQ"/>
+                <constraint firstItem="ors-Dk-Zlt" firstAttribute="top" secondItem="Bj1-HR-lY3" secondAttribute="bottom" constant="-1" id="uvH-OQ-utV"/>
+                <constraint firstItem="g6M-6s-9yG" firstAttribute="top" secondItem="RPD-e3-feE" secondAttribute="bottom" constant="55" id="wm3-BE-Jdv"/>
                 <constraint firstAttribute="trailing" secondItem="VCD-6m-f2h" secondAttribute="trailing" constant="257" id="wqZ-04-2rL"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -106,5 +135,6 @@
     </objects>
     <resources>
         <image name="Scheck" width="800" height="291"/>
+        <image name="scheck_test_muster.jpg" width="400" height="385"/>
     </resources>
 </document>

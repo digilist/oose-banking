@@ -9,7 +9,6 @@
 #import "KBAStatemContr.h"
 
 @interface KBAStatemContr ()
-
 @end
 
 @implementation KBAStatemContr
@@ -18,7 +17,7 @@
 {
     self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
     if (self) {
-        // Custom initialization
+        self.title = @"Kontoauszüge drucken";
     }
     return self;
 }
