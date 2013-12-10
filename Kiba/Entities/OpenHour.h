@@ -33,4 +33,6 @@ typedef NS_ENUM(NSInteger, KBAWeekDay) {
 
 //+(enum KBAWeekday) currentWeekDay;
 
+-(NSString *) formatted;
+
 @end

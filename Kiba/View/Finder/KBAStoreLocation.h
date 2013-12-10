@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+#import "Branch.h"
 
 @interface KBAStoreLocation : NSObject <MKAnnotation>
 
-- (id)initWithName:(NSString*)name address:(NSString*)address coordinate:(CLLocationCoordinate2D)coordinate;
+@property (nonatomic, retain) Branch *branch;
+
+- (id)initWithBranch: (Branch*)branch;
 - (MKMapItem*)mapItem;
 
 @end

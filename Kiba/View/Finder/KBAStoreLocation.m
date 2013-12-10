@@ -7,13 +7,10 @@
 //
 
 #import "KBAStoreLocation.h"
+#import "OpenHour.h"
 #import <AddressBook/AddressBook.h>
 
 @interface KBAStoreLocation ()
-
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *address;
-@property (nonatomic, assign) CLLocationCoordinate2D theCoordinate;
 
 @end
 
@@ -22,37 +19,32 @@
 /**
  *  Initializes a store location.
  *
- *  @param name       The name of the store.
- *  @param address    The store address.
- *  @param coordinate The coordinates.
- *
+ *  @param branch       The branch
  *  @return A new instance.
  */
-- (id)initWithName:(NSString*)name address:(NSString*)address coordinate:(CLLocationCoordinate2D)coordinate {
+- (id)initWithBranch:(Branch*)branch {
     self = [super init];
     
     if (self) {
-        self.name = name;
-        self.address = address;
-        self.theCoordinate = coordinate;
+        self.branch = branch;
     }
     return self;
 }
 
 - (NSString *)title {
-    return _name;
+    return self.branch.name;
 }
 
 - (NSString *)subtitle {
-    return _address;
+    return [NSString stringWithFormat:@"%@, %@", self.branch.address.formatted, ((OpenHour *) self.branch.openHours.firstObject).formatted];
 }
 
 - (CLLocationCoordinate2D)coordinate {
-    return _theCoordinate;
+    return self.branch.address.coordinates;
 }
 
 - (MKMapItem*)mapItem {
-    NSDictionary *addressDict = @{(NSString*)kABPersonAddressStreetKey : _address};
+    NSDictionary *addressDict = @{(NSString*)kABPersonAddressStreetKey : self.branch.address};
     
     MKPlacemark *placemark = [[MKPlacemark alloc]
                               initWithCoordinate:self.coordinate

@@ -62,9 +62,7 @@
     NSArray *branches = [self.branchDao getBranchesNearPoint: mapCenter];
     
     for (Branch *branch in branches) {
-        NSString *address = [NSString stringWithFormat:@"%@, %@", branch.address.formatted, ((OpenHour *)branch.openHours.firstObject).formatted];
-        
-        KBAStoreLocation *annotation = [[KBAStoreLocation alloc] initWithName:branch.name address:address coordinate:branch.address.coordinates];
+        KBAStoreLocation *annotation = [[KBAStoreLocation alloc] initWithBranch:branch];
         [_mapView addAnnotation:annotation];
     }
 }
@@ -112,7 +110,7 @@
     
     // annotation bubble (accessory) clicked
     
-    [self.navigationController pushViewController:[KBABranchController new] animated:YES];
+    [self.navigationController pushViewController:[[KBABranchController alloc] initWithBranch: location.branch] animated:YES];
 }
 
 @end

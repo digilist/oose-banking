@@ -7,7 +7,16 @@
 //
 
 #import "KBAViewController.h"
+#import "Branch.h"
 
 @interface KBABranchController : KBAViewController
+
+@property (nonatomic, weak) IBOutlet UILabel *openingHoursLabel;
+@property (nonatomic, weak) IBOutlet UILabel *contactPersonLabel;
+@property (nonatomic, weak) IBOutlet UILabel *branchNameLabel;
+@property (nonatomic, weak) IBOutlet UIPickerView *currencyPickerView;
+@property (weak, nonatomic) IBOutlet UIDatePicker *appointmentPicker;
+
+- (id) initWithBranch: (Branch*) branch;
 
 @end
