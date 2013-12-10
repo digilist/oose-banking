@@ -42,10 +42,12 @@
     
     // set map center
     CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = 53.581516;
-    zoomLocation.longitude = 10.080806;
-     
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 100 * METERS_PER_MILE, 100 * METERS_PER_MILE);
+    zoomLocation.latitude = 53.57953999999999;
+    zoomLocation.longitude = 9.963533099999999;
+    
+    int radius = 10;
+    
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, radius * METERS_PER_MILE, radius * METERS_PER_MILE);
     [_mapView setRegion:viewRegion animated:YES];
     
     [self addMarkers];
