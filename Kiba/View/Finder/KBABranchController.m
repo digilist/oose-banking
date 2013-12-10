@@ -6,22 +6,28 @@
 //  Copyright (c) 2013 KiBa App. All rights reserved.
 //
 
+#import "KBAExchangeRateDao.h"
+#import "KBADependencyInjector.h"
+
 #import "KBABranchController.h"
+
 #import "Branch.h"
+#import "Currency.h"
 
 static NSArray *currencies;
 
 @interface KBABranchController ()
 
 @property Branch *branch;
-@property NSString *selectedCurrency;
+@property Currency *selectedCurrency;
 
 @end
 
 @implementation KBABranchController
 
 + (void)initialize {
-    currencies = @[@"$ - USD", @"¥ - Yen", @"£ - GBP", @"₨ - Rupee", @"﷼ - Rial", @"₩ - Won", @"S₣ - CHF", @"₯ - Drachme"];
+    id<KBAExchangeRateDao> exchangeRateDao = [KBADependencyInjector getByKey:@"exchangeRateDao"];
+    currencies = [exchangeRateDao getExchangeRates];
 }
 
 - (id) initWithBranch: (Branch*) branch {
@@ -70,7 +76,9 @@ static NSArray *currencies;
 }
 
 - (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return currencies[row];
+    Currency *currency = currencies[row];
+    
+    return [[NSString alloc] initWithFormat:@"%@ - %@", currency.symbol, currency.code];
 }
 
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {

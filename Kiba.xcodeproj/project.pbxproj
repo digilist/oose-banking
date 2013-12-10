@@ -49,6 +49,8 @@
 		C1F00E741844E08C009EFE4F /* KBAAuthController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1F00E721844E08C009EFE4F /* KBAAuthController.xib */; };
 		C1F00E781844E0FA009EFE4F /* KBAAccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F00E761844E0FA009EFE4F /* KBAAccountController.m */; };
 		C1F00E791844E0FA009EFE4F /* KBAAccountController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1F00E771844E0FA009EFE4F /* KBAAccountController.xib */; };
+		C1F12CBA185742EB001AA21E /* KBAExchangeRateDaoRest.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F12CB9185742EB001AA21E /* KBAExchangeRateDaoRest.m */; };
+		C1F12CC11857499F001AA21E /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F12CC01857499F001AA21E /* Currency.m */; };
 		D929E547185093B1008FC26E /* OpenHour.m in Sources */ = {isa = PBXBuildFile; fileRef = D929E546185093B1008FC26E /* OpenHour.m */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +138,11 @@
 		C1F00E751844E0FA009EFE4F /* KBAAccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAAccountController.h; path = View/Account/KBAAccountController.h; sourceTree = "<group>"; };
 		C1F00E761844E0FA009EFE4F /* KBAAccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAAccountController.m; path = View/Account/KBAAccountController.m; sourceTree = "<group>"; };
 		C1F00E771844E0FA009EFE4F /* KBAAccountController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAAccountController.xib; path = View/Account/KBAAccountController.xib; sourceTree = "<group>"; };
+		C1F12CB8185742EB001AA21E /* KBAExchangeRateDaoRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAExchangeRateDaoRest.h; path = Library/DAO/KBAExchangeRateDaoRest.h; sourceTree = "<group>"; };
+		C1F12CB9185742EB001AA21E /* KBAExchangeRateDaoRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAExchangeRateDaoRest.m; path = Library/DAO/KBAExchangeRateDaoRest.m; sourceTree = "<group>"; };
+		C1F12CBB18574377001AA21E /* KBAExchangeRateDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KBAExchangeRateDao.h; path = Library/DAO/KBAExchangeRateDao.h; sourceTree = "<group>"; };
+		C1F12CBF1857499F001AA21E /* Currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Currency.h; path = Entities/Currency.h; sourceTree = "<group>"; };
+		C1F12CC01857499F001AA21E /* Currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Currency.m; path = Entities/Currency.m; sourceTree = "<group>"; };
 		D929E545185093B1008FC26E /* OpenHour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenHour.h; path = Entities/OpenHour.h; sourceTree = "<group>"; };
 		D929E546185093B1008FC26E /* OpenHour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenHour.m; path = Entities/OpenHour.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -239,6 +246,8 @@
 				A8F81C871844B51D00E55C75 /* Transaction.m */,
 				D929E545185093B1008FC26E /* OpenHour.h */,
 				D929E546185093B1008FC26E /* OpenHour.m */,
+				C1F12CBF1857499F001AA21E /* Currency.h */,
+				C1F12CC01857499F001AA21E /* Currency.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -349,6 +358,9 @@
 				C13B62F3183B7D0200207422 /* KBABranchDaoDummy.m */,
 				C10C5FBD183B877B008FAECB /* KBABranchDaoRest.h */,
 				C10C5FBE183B877B008FAECB /* KBABranchDaoRest.m */,
+				C1F12CBB18574377001AA21E /* KBAExchangeRateDao.h */,
+				C1F12CB8185742EB001AA21E /* KBAExchangeRateDaoRest.h */,
+				C1F12CB9185742EB001AA21E /* KBAExchangeRateDaoRest.m */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -498,6 +510,7 @@
 				A8F81C8B1844B51D00E55C75 /* CreditRating.m in Sources */,
 				C170420C184DFE900019F929 /* KBABranchController.m in Sources */,
 				A8F81C891844B51D00E55C75 /* Address.m in Sources */,
+				C1F12CC11857499F001AA21E /* Currency.m in Sources */,
 				A8F81C8A1844B51D00E55C75 /* Branch.m in Sources */,
 				C16A7B80184DCDAB005DC504 /* KBAStoreLocation.m in Sources */,
 				C1F00E631844DAEB009EFE4F /* KBAViewController.m in Sources */,
@@ -506,6 +519,7 @@
 				D929E547185093B1008FC26E /* OpenHour.m in Sources */,
 				342322F11837B9FD00618D7E /* KBAAppDelegate.m in Sources */,
 				C16A7B7A184DC9D3005DC504 /* KBAFinderController.m in Sources */,
+				C1F12CBA185742EB001AA21E /* KBAExchangeRateDaoRest.m in Sources */,
 				3407E8E91838FD110045C014 /* KBAMasterViewController.m in Sources */,
 				A8F81C881844B51D00E55C75 /* Account.m in Sources */,
 				A8F81C8D1844B51D00E55C75 /* Transaction.m in Sources */,
