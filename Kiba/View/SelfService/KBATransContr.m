@@ -94,6 +94,13 @@ const NSString* dailyAccountEntryChosen = @"dailyAccountEntryChosen";
     self.subTitleLabel.numberOfLines = 2;
     //title set programatically to realise linebreak in label. (2 lines needed)
     self.subTitleLabel.text = @"Buchen Sie Geld von ihrem Sparkonto\nohne Verzögerung auf ihr Tageskonto.";
+    
+    NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
+    [DateFormatter setDateFormat:@"dd.MM.yyyy"];
+    
+    self.dateLabel.text =[DateFormatter stringFromDate:[NSDate date]];
+    
+    self.amountField.text = [NSString stringWithFormat:@"%.2f", 0.0];
 }
 
 /**
@@ -147,4 +154,15 @@ const NSString* dailyAccountEntryChosen = @"dailyAccountEntryChosen";
                                       animated:YES];
     
 }
+
+/**
+ *  Changes view to transfer view.
+ *
+ *  @param sender
+ */
+- (IBAction)chooseAmount:(UITextField*)sender
+{
+    self.amountField.text = [NSString stringWithFormat:@"%@", sender.text];
+}
+
 @end

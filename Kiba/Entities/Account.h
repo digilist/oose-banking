@@ -14,6 +14,7 @@
 @property NSNumber* balance;
 @property NSNumber* overDraft;
 @property NSNumber* accountNr;
+@property NSString* name;
 @property Customer* owner;
 
 
@@ -22,6 +23,7 @@
 -(id)initWithBalance: (NSNumber*) newBalance
            overDraft: (NSNumber*) newOverDraft
            accountNr: (NSNumber*) newAccountNr
+                name: (NSString*) name
                owner: (Customer*) newOwner;
 
 @end

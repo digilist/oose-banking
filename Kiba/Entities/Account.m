@@ -11,12 +11,17 @@
 
 @implementation Account
 
--(id)initWithBalance: (NSNumber*) newBalance overDraft: (NSNumber*) newOverDraft accountNr: (NSNumber*) newAccountNr owner: (Customer*) newOwner {
+-(id)initWithBalance: (NSNumber*) newBalance
+           overDraft: (NSNumber*) newOverDraft
+           accountNr: (NSNumber*) newAccountNr
+                name: (NSString*) name
+               owner: (Customer*) newOwner {
     
     if (self = [super init]) {
         self.balance = newBalance;
         self.overDraft = newOverDraft;
         self.accountNr = newAccountNr;
+        self.name = name;
         self.owner = newOwner;
     }
     return self;
