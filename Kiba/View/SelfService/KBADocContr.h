@@ -8,8 +8,8 @@
 
 #import "KBAViewController.h"
 
-@interface KBADocumentController : KBAViewController
+@interface KBADocContr : KBAViewController <UIScrollViewDelegate>
 
-@property (nonatomic,weak) IBOutlet UIScrollView *scrollView2;
+@property (nonatomic,weak) IBOutlet UIScrollView *scrollView;
 
 @end

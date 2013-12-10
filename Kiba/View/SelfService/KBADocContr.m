@@ -6,19 +6,19 @@
 //  Copyright (c) 2013 KiBa App. All rights reserved.
 //
 
-#import "KBADocumentController.h"
+#import "KBADocContr.h"
 
-@interface KBADocumentController ()
+@interface KBADocContr ()
 
 @end
 
-@implementation KBADocumentController
+@implementation KBADocContr
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.title = @"Bescheinigungen";
     }
     return self;
 }
@@ -26,8 +26,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+}
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
+    [_scrollView setScrollEnabled:YES];
 
 }
 
@@ -36,7 +42,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 @end

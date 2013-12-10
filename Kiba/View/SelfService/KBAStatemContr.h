@@ -8,6 +8,6 @@
 
 #import "KBAViewController.h"
 
-@interface KBAStatementController : KBAViewController
+@interface KBAStatemContr : KBAViewController
 
 @end

@@ -1,24 +1,23 @@
 //
-//  KBATransferController.m
+//  KBAStatementController.m
 //  Kiba
 //
 //  Created by Schaarschmidt, Michael on 03.12.13.
 //  Copyright (c) 2013 KiBa App. All rights reserved.
 //
 
-#import "KBATransferController.h"
+#import "KBAStatemContr.h"
 
-@interface KBATransferController ()
-
+@interface KBAStatemContr ()
 @end
 
-@implementation KBATransferController
+@implementation KBAStatemContr
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
     if (self) {
-        // Custom initialization
+        self.title = @"Kontoauszüge drucken";
     }
     return self;
 }
