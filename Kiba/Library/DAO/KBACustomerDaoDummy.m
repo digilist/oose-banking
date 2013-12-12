@@ -7,11 +7,23 @@
 //
 
 #import "KBACustomerDaoDummy.h"
+#import "Customer.h"
 
 @implementation KBACustomerDaoDummy
 
-- (NSArray*) getAccounts: (Customer*)customer {
-    NSArray* accounts;
+- (Customer *) getCustomer: (NSString*)name :(NSString*)password {
+    
+    Customer *customer = [[Customer alloc] initWithForeName: @"Max"
+                                                    surname: @"Mustermann"
+                                                 customerId: 1
+                                                       pass: @"test"
+                                                      ident: @"maxm"
+                                                     adress: nil
+                                                   accounts: nil
+                                               creditRating: nil];
+    
+    return customer;
+                          
 }
 
 @end

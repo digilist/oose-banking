@@ -88,7 +88,7 @@
                 reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [self.accounts objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[self.accounts objectAtIndex:indexPath.row] name];
     cell.textLabel.numberOfLines = 1;
     
     return cell;

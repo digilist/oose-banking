@@ -7,9 +7,10 @@
 //
 
 #import "KBAAuth.h"
+#import "KBACustomerDao.h"
+#import "KBADependencyInjector.h"
 
 @interface KBAAuth ()
-
 
 @property (weak, nonatomic) Customer* identity;
 
@@ -23,7 +24,7 @@
  *
  *  @return customer
  */
--(Customer*)getIdentity {
+-(Customer *)getIdentity {
     return self.identity;
 }
 
@@ -42,10 +43,12 @@
  *
  *  @return
  */
--(BOOL) login:(NSString*) name :(NSString*) password {
+-(BOOL) login:(NSString *)name withPassword:(NSString *)password {
+    
+    id<KBACustomerDao> customerDao = [KBADependencyInjector getByKey:@"customerDao"];
+    self.identity = [customerDao getCustomer:@"mustermann" : @"test"];
     return YES;
 }
-
 
 /**
  *  Returns whether the user is logged in.
@@ -54,16 +57,6 @@
  */
 -(BOOL) isLoggedIn {
     return self.identity != NULL;
-}
-
-/**
- *  Updates the identity.
- *
- *  @param identity 
- */
--(void) setIdentity: (Customer*) identity {
-    self.identity = identity;
-
 }
 
 @end

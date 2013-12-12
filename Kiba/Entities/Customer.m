@@ -11,18 +11,24 @@
 
 @implementation Customer
 
--(id)initWithVName: (NSString*) newVName nName: (NSString*) newNName idIntern: (int) newIdIntern pass: (NSString*) newPass ident: (NSString*) newIdent adress: (Adress*) newAdress accounts: (NSMapTable*) newAccounts cRating: (CreditRating*) newCRating{
-    
+-(id)initWithForeName: (NSString*) forename
+              surname: (NSString*) surname
+             customerId: (int) customerId
+                 pass: (NSString*) pass
+                ident: (NSString*) ident
+               adress: (Adress*) adress
+             accounts: (NSMapTable*) accounts
+         creditRating: (CreditRating*) creditRating {
     if (self = [super init])
     {
-        self.vName = newVName;
-        self.nName = newNName;
-        self.idIntern = newIdIntern;
-        self.pass = newPass;
-        self.ident = newIdent;
-        self.adress = newAdress;
-        self.accounts = newAccounts;
-        self.cRating = newCRating;
+        self.forename = forename;
+        self.surmame = surname;
+        self.customerId = customerId;
+        self.pass = pass;
+        self.ident = ident;
+        self.adress = adress;
+        self.accounts = accounts;
+        self.creditRating = creditRating;
         // Vllt auch als Parameter im Konstruktor
         self.verificated = false;
     }

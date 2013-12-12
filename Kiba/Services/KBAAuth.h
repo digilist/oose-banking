@@ -14,8 +14,7 @@
 
 -(Customer*)getIdentity;
 -(void) logout;
--(BOOL) login:(NSString*) name :(NSString*) password;
+-(BOOL) login:(NSString*) name withPassword:(NSString*) password;
 -(BOOL) isLoggedIn;
--(void) setIdentity: (Customer*) identity;
 
 @end

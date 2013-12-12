@@ -1,5 +1,5 @@
 //
-//  KBACustomerDao.h
+//  KBAAccountDaoDummy.h
 //  Kiba
 //
 //  Created by Schaarschmidt, Michael on 12.12.13.
@@ -7,12 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Customer.h"
+#import "KBAAccountDao.h"
 
-@protocol KBACustomerDao <NSObject>
-
-
-- (Customer *) getCustomer: (NSString*) name :(NSString*) password;
-
+@interface KBAAccountDaoDummy : NSObject<KBAAccountDao>
 
 @end

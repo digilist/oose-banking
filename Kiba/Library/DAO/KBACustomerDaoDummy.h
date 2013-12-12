@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KBACustomerDao.h"
 
 @interface KBACustomerDaoDummy : NSObject<KBACustomerDao>
 
