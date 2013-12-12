@@ -16,7 +16,9 @@
 @property (nonatomic, weak) IBOutlet UILabel *branchNameLabel;
 @property (nonatomic, weak) IBOutlet UIPickerView *currencyPickerView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *appointmentPicker;
+@property (weak, nonatomic) IBOutlet UITextField *currencyField;
 
 - (id) initWithBranch: (Branch*) branch;
+- (IBAction)onCurrencyReturned:(UITextField *)sender;
 
 @end
