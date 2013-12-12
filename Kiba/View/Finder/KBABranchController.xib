@@ -9,6 +9,7 @@
                 <outlet property="appointmentPicker" destination="H5R-ey-ifi" id="S6V-Sg-56q"/>
                 <outlet property="branchNameLabel" destination="V7X-y3-2w6" id="qvB-ht-eKf"/>
                 <outlet property="contactPersonLabel" destination="cyL-sQ-CiQ" id="7xk-pv-gBh"/>
+                <outlet property="currencyField" destination="N6e-h3-rue" id="cUn-Ce-tFK"/>
                 <outlet property="currencyPickerView" destination="z0K-9g-rXi" id="3ug-mE-IGz"/>
                 <outlet property="openingHoursLabel" destination="BJp-yH-aKM" id="9MZ-Lu-2Gc"/>
                 <outlet property="view" destination="2" id="tbX-ws-QrM"/>
@@ -58,11 +59,14 @@
                     <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N6e-h3-rue">
-                    <rect key="frame" x="478" y="515" width="109" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="42,00" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N6e-h3-rue">
+                    <rect key="frame" x="478" y="517" width="102" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                    <connections>
+                        <action selector="onCurrencyReturned:" destination="-1" eventType="editingDidEndOnExit" id="Pl5-G9-cnZ"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Betrag" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbq-Id-AAD">
                     <rect key="frame" x="478" y="486" width="52" height="21"/>
@@ -71,7 +75,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7r-ob-em8">
-                    <rect key="frame" x="598" y="515" width="125" height="30"/>
+                    <rect key="frame" x="588" y="515" width="131" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Devisen anfordern">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -153,6 +157,19 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0,00 €" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mae-1w-UKg">
+                    <rect key="frame" x="588" y="553" width="131" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="umgerechnet" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0C-cV-xBJ">
+                    <rect key="frame" x="478" y="553" width="102" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
