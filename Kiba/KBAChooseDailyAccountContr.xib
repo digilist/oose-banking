@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KBAChooseDailyAccountContr">
+            <connections>
+                <outlet property="chooseAccTableContr" destination="aYy-H8-0AA" id="Ohe-X2-2Lb"/>
+                <outlet property="view" destination="NF1-RQ-GKM" id="iFD-mK-uJb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <customObject id="aYy-H8-0AA" customClass="KBATableChooseDailyAccContr"/>
+        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="NF1-RQ-GKM">
+            <rect key="frame" x="0.0" y="0.0" width="365" height="384"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" red="0.71968670280000002" green="0.71968670280000002" blue="0.71968670280000002" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="dataSource" destination="aYy-H8-0AA" id="glM-Dc-kGf"/>
+                <outlet property="delegate" destination="aYy-H8-0AA" id="5Xe-cp-0kX"/>
+            </connections>
+        </tableView>
+    </objects>
+</document>
