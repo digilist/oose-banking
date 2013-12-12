@@ -10,6 +10,7 @@
                 <outlet property="amountLabel" destination="bp5-aO-qaZ" id="Jul-Ka-iQO"/>
                 <outlet property="bottomConstraint" destination="VDA-zv-kQE" id="wUf-yU-fZ8"/>
                 <outlet property="checkImageView" destination="g6M-6s-9yG" id="XcT-6B-usW"/>
+                <outlet property="checkLine" destination="Bj1-HR-lY3" id="xVv-6x-gLm"/>
                 <outlet property="chooseDailyButton" destination="UeK-wz-qKy" id="oyz-8O-DLb"/>
                 <outlet property="chooseTermButton" destination="Awc-hp-Jnz" id="sI8-vm-Tfm"/>
                 <outlet property="currencyLabel" destination="UY2-yR-iE9" id="WTM-eS-Lht"/>

@@ -42,6 +42,9 @@
 @property (nonatomic, weak) IBOutlet UILabel* amountLabel;
 @property (nonatomic, weak) IBOutlet UILabel* nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel* dateLabel;
+
+@property (nonatomic, weak) IBOutlet UILabel* checkLine;
+
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint* bottomConstraint;
 @property (nonatomic, weak) IBOutlet UILabel* currencyLabel;
 @property (nonatomic, weak) IBOutlet UITextField* amountField;
@@ -268,6 +271,17 @@ const NSString* dailyAccountEntryChosen = @"dailyAccountEntryChosen";
     if(recognizer.state == UIGestureRecognizerStateEnded ||
        recognizer.state == UIGestureRecognizerStateCancelled) {
         [UIView animateWithDuration:0.25 animations:^{
+            
+            if (self.checkLine.center.y < self.checkImageView.center.y) {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Bestätige Transaktion"
+                                                                    message:@"Bitte bestätigen sie ihre Transaktion"
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"Abbrechen"
+                                                          otherButtonTitles:@"Bestätigen", nil];
+                [alertView setAlertViewStyle:UIAlertViewStyleDefault];
+                [alertView show];
+            }
+            
             self.checkImageView.center = initialCheckCenter;
             self.nameLabel.center = initialNameLabelCenter;
             self.chooseTermButton.center= initialTermButtonCenter;
@@ -280,6 +294,12 @@ const NSString* dailyAccountEntryChosen = @"dailyAccountEntryChosen";
             self.dailyAccountLabel.center = initialDailyAccountLabelCenter;
             self.amountLabel.center = initialAmountLabelCenter;
             self.currencyLabel.center = initialCurrencyLabelCenter;
+            
+
+
+                
+       
+            
         }];
     }
 }
