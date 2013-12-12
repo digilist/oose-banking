@@ -102,6 +102,9 @@
 		0AAD7971184E0C11002B1D0B /* KBADocContr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBADocContr.m; path = View/SelfService/KBADocContr.m; sourceTree = "<group>"; };
 		0AAD7972184E0C11002B1D0B /* KBADocContr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBADocContr.xib; path = View/SelfService/KBADocContr.xib; sourceTree = "<group>"; };
 		2120C62F18509770003799A2 /* KBAChooseTermAccountContr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAChooseTermAccountContr.xib; path = View/SelfService/KBAChooseTermAccountContr.xib; sourceTree = "<group>"; };
+		21303E8E18579FFA00DD4FD7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		21303E8F18579FFA00DD4FD7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		21303E9018579FFB00DD4FD7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		213EE694185118EB00F13746 /* KBATableChooseDailyAccContr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBATableChooseDailyAccContr.h; path = View/SelfService/KBATableChooseDailyAccContr.h; sourceTree = "<group>"; };
 		213EE695185118EB00F13746 /* KBATableChooseDailyAccContr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBATableChooseDailyAccContr.m; path = View/SelfService/KBATableChooseDailyAccContr.m; sourceTree = "<group>"; };
 		213EE69718511A6800F13746 /* KBAChooseDailyAccountContr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KBAChooseDailyAccountContr.xib; sourceTree = "<group>"; };
@@ -128,17 +131,14 @@
 		342322E21837B9FD00618D7E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		342322E41837B9FD00618D7E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		342322E81837B9FD00618D7E /* Kiba-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Kiba-Info.plist"; sourceTree = "<group>"; };
-		342322EA1837B9FD00618D7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		342322EC1837B9FD00618D7E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		342322EE1837B9FD00618D7E /* Kiba-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kiba-Prefix.pch"; sourceTree = "<group>"; };
 		342322EF1837B9FD00618D7E /* KBAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KBAAppDelegate.h; sourceTree = "<group>"; };
 		342322F01837B9FD00618D7E /* KBAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KBAAppDelegate.m; sourceTree = "<group>"; };
-		342322F31837B9FD00618D7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		342322FB1837B9FD00618D7E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		342323011837B9FD00618D7E /* KibaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KibaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		342323021837B9FD00618D7E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3423230A1837B9FD00618D7E /* KibaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KibaTests-Info.plist"; sourceTree = "<group>"; };
-		3423230C1837B9FD00618D7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3423230E1837B9FD00618D7E /* KibaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KibaTests.m; sourceTree = "<group>"; };
 		A8AB8A351850883E0049778B /* AccountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountService.h; path = Services/AccountService.h; sourceTree = "<group>"; };
 		A8AB8A361850883E0049778B /* AccountService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountService.m; path = Services/AccountService.m; sourceTree = "<group>"; };
@@ -525,6 +525,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 342322D41837B9FD00618D7E;
 			productRefGroup = 342322DE1837B9FD00618D7E /* Products */;
@@ -632,7 +633,7 @@
 		342322E91837B9FD00618D7E /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				342322EA1837B9FD00618D7E /* en */,
+				21303E8F18579FFA00DD4FD7 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -640,7 +641,7 @@
 		342322F21837B9FD00618D7E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				342322F31837B9FD00618D7E /* Base */,
+				21303E8E18579FFA00DD4FD7 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -648,7 +649,7 @@
 		3423230B1837B9FD00618D7E /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3423230C1837B9FD00618D7E /* en */,
+				21303E9018579FFB00DD4FD7 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
