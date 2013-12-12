@@ -10,20 +10,19 @@
 
 @implementation Branch
 
--(id)initWithAdress: (Adress*) newAdress iBan: (NSString*) newIBan bic: (NSString*) newBic openHours: (NSArray*) NewOpenHours {
+-(id)initWithName: (NSString*) name
+                address: (Address*) address
+                bic: (NSString*) bic
+                openHours: (NSArray*) openHours {
     
     if (self = [super init])
     {
-        self.adress = newAdress;
-        self.iBan = newIBan;
-        self.bic = newBic;
-        self.openHours = NewOpenHours;
+        self.name = name;
+        self.address = address;
+        self.bic = bic;
+        self.openHours = openHours;
     }
     return self;
-    
-    
-    
 }
-
 
 @end

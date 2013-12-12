@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Adress.h"
+#import "Address.h"
 #import "CreditRating.h"
 
 
@@ -20,7 +20,7 @@
 
 // Perso Ident Einloggkennung!
 @property NSString* ident;
-@property Adress* adress;
+@property Address* adress;
 @property NSMapTable* accounts;
 @property CreditRating* cRating;
 @property Boolean verificated;

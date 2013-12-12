@@ -1,5 +1,5 @@
 //
-//  KBAFinanceController.h
+//  KBAFinderController.h
 //  Kiba
 //
 //  Created by 1fasselt on 03.12.13.
@@ -7,7 +7,10 @@
 //
 
 #import "KBAViewController.h"
+#import <MapKit/MapKit.h>
 
-@interface KBAFinderController : KBAViewController
+@interface KBAFinderController : KBAViewController<MKMapViewDelegate>
+
+@property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
 @end

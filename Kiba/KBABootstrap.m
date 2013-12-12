@@ -12,6 +12,8 @@
 #import "KBABranchDao.h"
 #import "KBABranchDaoDummy.h"
 #import "KBABranchDaoRest.h"
+#import "KBAExchangeRateDao.h"
+#import "KBAExchangeRateDaoRest.h"
 
 @implementation KBABootstrap
 
@@ -30,6 +32,9 @@
 + (void) initDependencyInjector {
     
     id<KBABranchDao> branchDao;
+    id<KBAExchangeRateDao> exchangeRateDao;
+    
+    exchangeRateDao = [KBAExchangeRateDaoRest new];
     
     if (true) { // if development / click dummy
         branchDao = [KBABranchDaoDummy new];
@@ -39,6 +44,7 @@
     }
     
     [KBADependencyInjector setObject:branchDao withKey:@"branchDao"];
+    [KBADependencyInjector setObject:exchangeRateDao withKey:@"exchangeRateDao"];
 }
 
 @end

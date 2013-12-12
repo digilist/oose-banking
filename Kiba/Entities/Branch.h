@@ -7,13 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Adress.h"
+#import <MapKit/MapKit.h>
+#import "Address.h"
 
 @interface Branch : NSObject
 
-@property Adress* adress;
-@property NSString* iBan;
-@property NSString* bic;
-@property NSArray* openHours;
+@property NSString *name;
+@property Address *address;
+@property NSString *bic;
+@property NSArray *openHours;
+
+-(id)initWithName: (NSString*) name
+          address: (Address*) address
+              bic: (NSString*) bic
+        openHours: (NSArray*) openHours;
 
 @end
