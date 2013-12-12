@@ -31,7 +31,6 @@ extern NSNotificationCenter *transferChooseAccountNotifCenter;
 {
     self = [super initWithStyle:style];
     if (self) {
-        [[NSBundle mainBundle] loadNibNamed:@"KBAChooseAccountTableContr" owner:self options:nil];
         id<KBAAccountDao> accountDao = [KBADependencyInjector getByKey:@"accountDao"];
         KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
         self.customer = [auth getIdentity];

@@ -20,6 +20,7 @@
 @property  (nonatomic, weak) IBOutlet UIButton *chooseDestinationAccountButton; //daily == destination
 @property  (nonatomic, weak) IBOutlet UILabel *sourceAccountLabel; //term == source
 @property  (nonatomic, weak) IBOutlet UILabel *destinationAccountLabel; //daily == destination
+@property  (nonatomic, weak) UILabel *labelToSet; //one of those above
 @property  (nonatomic, weak) IBOutlet UILabel *subTitleLabel;
 @property  (nonatomic, weak) IBOutlet UIImageView *checkImageView;
 @property (nonatomic, weak) IBOutlet UILabel *amountLabel;
@@ -53,7 +54,7 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
         //needs to be created everytime with this controller(is freed everytime view gets closed)
         transferChooseAccountNotifCenter = [NSNotificationCenter new];
         [transferChooseAccountNotifCenter addObserver:self
-                                             selector:@selector(respondToChosenDailyAccountEntry:)
+                                             selector:@selector(respondToChosenAccountEntry:)
                                                  name:(NSString *)accountEntryChosen
                                                object:nil];
     }
@@ -143,19 +144,7 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
 -(void)respondToChosenAccountEntry:(NSNotification *)notification
 {
     [self.popController dismissPopoverAnimated:YES];
-    self.sourceAccountLabel.text = [NSString stringWithFormat:@": %@",(NSString*)[notification object]];
-}
-
-/**
- *  Receive daily-account chosen in popover-tableview.
- *  Accounts are at moment send as string values
- *
- *  @param notification the notification send
- */
--(void)respondToChosenDailyAccountEntry:(NSNotification *)notification
-{
-    [self.popController dismissPopoverAnimated:YES];
-    self.destinationAccountLabel.text = [NSString stringWithFormat:@": %@",(NSString*)[notification object]];
+    self.labelToSet.text = [NSString stringWithFormat:@": %@",(NSString*)[notification object]];
 }
 
 /**
@@ -177,6 +166,13 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
                                         inView:self.view
                       permittedArrowDirections:UIPopoverArrowDirectionDown
                                       animated:YES];
+    
+    if ([sender isEqual:self.chooseSourceAccountButton]) {
+        self.labelToSet = self.sourceAccountLabel;
+    }
+    else{
+        self.labelToSet = self.destinationAccountLabel;
+    }
 }
 
 
