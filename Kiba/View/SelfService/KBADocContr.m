@@ -1,24 +1,24 @@
 //
-//  KBASelfServiceController.m
+//  KBADocumentController.m
 //  Kiba
 //
-//  Created by Schaarschmidt, Kevin Michael on 03.12.13.
+//  Created by Schaarschmidt, Michael on 03.12.13.
 //  Copyright (c) 2013 KiBa App. All rights reserved.
 //
 
-#import "KBASelfServiceController.h"
+#import "KBADocContr.h"
 
-@interface KBASelfServiceController ()
+@interface KBADocContr ()
 
 @end
 
-@implementation KBASelfServiceController
+@implementation KBADocContr
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.title = @"Bescheinigungen";
     }
     return self;
 }
@@ -26,7 +26,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+}
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [_scrollView setScrollEnabled:YES];
+
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,7 +7,10 @@
 //
 
 #import "KBAViewController.h"
+#import "KBATransTableContr.h"
+#import "KBADocTableContr.h"
 
-@interface KBASelfServiceController : KBAViewController
+
+@interface KBASelfServContr : KBAViewController
 
 @end

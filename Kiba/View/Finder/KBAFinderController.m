@@ -100,8 +100,7 @@
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
-    KBAStoreLocation *location = (KBAStoreLocation*) view.annotation;
-    
+    // KBAStoreLocation *location = (KBAStoreLocation*) view.annotation;
     // annotation clicked
 }
 

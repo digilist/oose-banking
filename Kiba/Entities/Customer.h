@@ -12,17 +12,25 @@
 
 
 @interface Customer : NSObject
+-(id)initWithForeName: (NSString*) forename
+             surname: (NSString*) surname
+             customerId: (int) customerId
+             pass: (NSString*) pass
+             ident: (NSString*) ident
+             adress: (Address*) address
+             accounts: (NSMapTable*) accounts
+             creditRating: (CreditRating*) creditRating;
 
-@property NSString* vName;
-@property NSString* nName;
-@property int idIntern;
-@property NSString* pass;
+@property NSString *forename;
+@property NSString *surmame;
+@property int customerId;
+@property NSString *pass;
 
 // Perso Ident Einloggkennung!
-@property NSString* ident;
-@property Address* adress;
-@property NSMapTable* accounts;
-@property CreditRating* cRating;
+@property NSString *ident;
+@property Address *address;
+@property NSMapTable *accounts;
+@property CreditRating *creditRating;
 @property Boolean verificated;
 
 
