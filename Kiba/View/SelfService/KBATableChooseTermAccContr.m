@@ -24,6 +24,7 @@ extern NSNotificationCenter* transferChooseAccountNotifCenter;
                            @"DE63 3653 3278 2190 4589 19",
                            @"DE22 3733 3782 4873 2218 59",
                            @"DE68 2105 0170 0012 3456 78"];
+        //TO DO load accounts for user.
     }
     return self;
 }

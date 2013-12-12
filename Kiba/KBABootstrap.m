@@ -12,6 +12,9 @@
 #import "KBABranchDao.h"
 #import "KBABranchDaoDummy.h"
 #import "KBABranchDaoRest.h"
+#import "KBACustomerDao.h"
+#import "KBACustomerDaoDummy.h"
+#import "KBACustomerDaoRest.h"
 
 @implementation KBABootstrap
 
@@ -30,15 +33,20 @@
 + (void) initDependencyInjector {
     
     id<KBABranchDao> branchDao;
+    id<KBACustomerDao> customerDao;
     
     if (true) { // if development / click dummy
         branchDao = [KBABranchDaoDummy new];
+        customerDao = [KBACustomerDaoDummy new];
+        
     }
     else {
         branchDao = [KBABranchDaoRest new];
+        customerDao = [KBACustomerDaoRest new] ;
     }
     
     [KBADependencyInjector setObject:branchDao withKey:@"branchDao"];
+    [KBADependencyInjector setObject:customerDao withKey:@"customer"];
 }
 
 @end
