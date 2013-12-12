@@ -41,8 +41,89 @@
                                            address:address2
                                                bic:@"456"
                                          openHours:openHours];
+    Address *address3 = [[Address alloc] initWithStreet:@"Jungfernstieg"
+                                                houseNr:@"7"
+                                             postalCode:@"20534"
+                                                   city:@"Hamburg"
+                                            coordinates:CLLocationCoordinate2DMake(53.55281, 9.99326)];
+    Branch *branch3 = [[Branch alloc] initWithName:@"KiBa Filiale Jungfernstieg"
+                                           address:address3
+                                               bic:@"456"
+                                         openHours:openHours];
     
-    return @[branch1, branch2];
+    Address *address4 = [[Address alloc] initWithStreet:@"Steintorwall"
+                                                houseNr:@"10"
+                                             postalCode:@"20534"
+                                                   city:@"Hamburg"
+                                            coordinates:CLLocationCoordinate2DMake(53.55108, 9.99368)];
+    Branch *branch4 = [[Branch alloc] initWithName:@"KiBa Filiale Rathaus"
+                                           address:address4
+                                               bic:@"456"
+                                         openHours:openHours];
+    Address *address5 = [[Address alloc] initWithStreet:@"Rothenbaumchaussee"
+                                                houseNr:@"27"
+                                             postalCode:@"20144"
+                                                   city:@"Hamburg"
+                                            coordinates:CLLocationCoordinate2DMake(53.56594, 9.98837)];
+    Branch *branch5 = [[Branch alloc] initWithName:@"KiBa Filiale Rothenbaum"
+                                           address:address5
+                                               bic:@"456"
+                                         openHours:openHours];
+    
+    Address *address6 = [[Address alloc] initWithStreet:@"Grindelhof"
+                                                houseNr:@"57"
+                                             postalCode:@"20144"
+                                                   city:@"Hamburg"
+                                            coordinates:CLLocationCoordinate2DMake(53.56969, 9.98393)];
+    Branch *branch6 = [[Branch alloc] initWithName:@"KiBa Filiale Grindelhof"
+                                           address:address6
+                                               bic:@"456"
+                                         openHours:openHours];
+    
+    
+    Address *address7 = [[Address alloc] initWithStreet:@"Lesserstraße"
+                                                houseNr:@"7"
+                                             postalCode:@"22049"
+                                                   city:@"Hamburg"
+                                            coordinates:CLLocationCoordinate2DMake(53.58003, 10.07188)];
+    Branch *branch7 = [[Branch alloc] initWithName:@"KiBa Filiale Wandsbek"
+                                           address:address7
+                                               bic:@"456"
+                                         openHours:openHours];
+    
+    Address *address8 = [[Address alloc] initWithStreet:@"Max-Brauer-Allee"
+                                                houseNr:@"51"
+                                             postalCode:@"22767"
+                                                   city:@"Hamburg"
+                                            coordinates:CLLocationCoordinate2DMake(53.55135, 9.93579)];
+    Branch *branch8 = [[Branch alloc] initWithName:@"KiBa Filiale Altona"
+                                           address:address8
+                                               bic:@"456"
+                                         openHours:openHours];
+    
+    Address *address9 = [[Address alloc] initWithStreet:@"Reeperbahn"
+                                                houseNr:@"83"
+                                             postalCode:@"20359"
+                                                   city:@"Hamburg"
+                                            coordinates:CLLocationCoordinate2DMake(53.54921, 9.96192)];
+    Branch *branch9 = [[Branch alloc] initWithName:@"KiBa Filiale Reeperbahn"
+                                           address:address9
+                                               bic:@"456"
+                                         openHours:openHours];
+    
+    Address *address10 = [[Address alloc] initWithStreet:@"Osterstraße"
+                                                 houseNr:@"104"
+                                              postalCode:@"20255"
+                                                    city:@"Hamburg"
+                                             coordinates:CLLocationCoordinate2DMake(53.57629, 9.95262)];
+    Branch *branch10 = [[Branch alloc] initWithName:@"KiBa Filiale Osterstraße"
+                                            address:address10
+                                                bic:@"456"
+                                          openHours:openHours];
+    
+    
+    
+    return @[branch1, branch2, branch3, branch4, branch5, branch6, branch7, branch8, branch9, branch10];
 }
 
 @end
