@@ -66,4 +66,8 @@ static NSMutableDictionary *currencySymbols;
     return [currencySymbols valueForKey:self.code];
 }
 
+- (float)euroWithCurrency:(float)otherCurrency {
+    return otherCurrency / self.rate;
+}
+
 @end

@@ -17,5 +17,6 @@
                rate:(float) rate;
 
 - (NSString*) symbol;
+- (float)euroWithCurrency:(float) otherCurrency;
 
 @end
