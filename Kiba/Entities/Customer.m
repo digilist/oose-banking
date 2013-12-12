@@ -11,16 +11,16 @@
 
 @implementation Customer
 
--(id)initWithForeName: (NSString*) forename
-              surname: (NSString*) surname
-             customerId: (int) customerId
-                 pass: (NSString*) pass
-                ident: (NSString*) ident
-               adress: (Adress*) adress
-             accounts: (NSMapTable*) accounts
-         creditRating: (CreditRating*) creditRating {
-    if (self = [super init])
-    {
+-(id)initWithForeName: (NSString *)forename
+              surname: (NSString *)surname
+           customerId: (int) customerId
+                 pass: (NSString *)pass
+                ident: (NSString *)ident
+               adress: (Adress *)adress
+             accounts: (NSMapTable *)accounts
+         creditRating: (CreditRating *)creditRating {
+    
+    if (self = [super init]) {
         self.forename = forename;
         self.surmame = surname;
         self.customerId = customerId;
