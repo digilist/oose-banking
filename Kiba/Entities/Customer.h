@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "User.h"
 #import "Address.h"
 #import "CreditRating.h"
 
 
-@interface Customer : NSObject
+@interface Customer : User
 -(id)initWithForeName: (NSString*) forename
              surname: (NSString*) surname
              customerId: (int) customerId
@@ -21,19 +22,11 @@
              accounts: (NSMapTable*) accounts
              creditRating: (CreditRating*) creditRating;
 
-@property NSString *forename;
-@property NSString *surmame;
-@property int customerId;
-@property NSString *pass;
-
 // Perso Ident Einloggkennung!
 @property NSString *ident;
 @property Address *address;
 @property NSMapTable *accounts;
 @property CreditRating *creditRating;
 @property Boolean verificated;
-
-
-
 
 @end

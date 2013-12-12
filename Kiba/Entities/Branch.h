@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <MapKit/MapKit.h>
 #import "Address.h"
+#import "Consultant.h"
 
 @interface Branch : NSObject
 
@@ -16,10 +16,12 @@
 @property Address *address;
 @property NSString *bic;
 @property NSArray *openHours;
+@property Consultant *consultant;
 
--(id)initWithName: (NSString*) name
-          address: (Address*) address
-              bic: (NSString*) bic
-        openHours: (NSArray*) openHours;
+-(id)initWithName:(NSString *)name
+          address:(Address *)address
+              bic:(NSString *)bic
+        openHours:(NSArray *)openHours
+       consultant:(Consultant *)consultant;
 
 @end

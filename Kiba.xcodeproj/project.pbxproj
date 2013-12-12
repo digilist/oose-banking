@@ -73,6 +73,8 @@
 		D93C6A481859DA800004E51A /* KBAAccountDaoRest.m in Sources */ = {isa = PBXBuildFile; fileRef = D93C6A411859DA800004E51A /* KBAAccountDaoRest.m */; };
 		D93C6A491859DA800004E51A /* KBACustomerDaoDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D93C6A441859DA800004E51A /* KBACustomerDaoDummy.m */; };
 		D93C6A4A1859DA800004E51A /* KBACustomerDaoRest.m in Sources */ = {isa = PBXBuildFile; fileRef = D93C6A461859DA800004E51A /* KBACustomerDaoRest.m */; };
+		D93C6A4D1859E5170004E51A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D93C6A4C1859E5170004E51A /* User.m */; };
+		D93C6A501859E5F50004E51A /* Consultant.m in Sources */ = {isa = PBXBuildFile; fileRef = D93C6A4F1859E5F50004E51A /* Consultant.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,6 +207,10 @@
 		D93C6A441859DA800004E51A /* KBACustomerDaoDummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBACustomerDaoDummy.m; path = Library/DAO/KBACustomerDaoDummy.m; sourceTree = "<group>"; };
 		D93C6A451859DA800004E51A /* KBACustomerDaoRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBACustomerDaoRest.h; path = Library/DAO/KBACustomerDaoRest.h; sourceTree = "<group>"; };
 		D93C6A461859DA800004E51A /* KBACustomerDaoRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBACustomerDaoRest.m; path = Library/DAO/KBACustomerDaoRest.m; sourceTree = "<group>"; };
+		D93C6A4B1859E5170004E51A /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Entities/User.h; sourceTree = "<group>"; };
+		D93C6A4C1859E5170004E51A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Entities/User.m; sourceTree = "<group>"; };
+		D93C6A4E1859E5F50004E51A /* Consultant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Consultant.h; path = Entities/Consultant.h; sourceTree = "<group>"; };
+		D93C6A4F1859E5F50004E51A /* Consultant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Consultant.m; path = Entities/Consultant.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +327,8 @@
 		3407E8DF1838FA950045C014 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				D93C6A4B1859E5170004E51A /* User.h */,
+				D93C6A4C1859E5170004E51A /* User.m */,
 				A8F81C7C1844B51D00E55C75 /* Account.h */,
 				A8F81C7D1844B51D00E55C75 /* Account.m */,
 				A8F81C7E1844B51D00E55C75 /* Address.h */,
@@ -337,6 +345,8 @@
 				D929E546185093B1008FC26E /* OpenHour.m */,
 				C1F12CBF1857499F001AA21E /* Currency.h */,
 				C1F12CC01857499F001AA21E /* Currency.m */,
+				D93C6A4E1859E5F50004E51A /* Consultant.h */,
+				D93C6A4F1859E5F50004E51A /* Consultant.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -612,6 +622,8 @@
 				D93C6A351859D94A0004E51A /* BranchService.m in Sources */,
 				D93C6A291859D8E90004E51A /* KBATransContr.m in Sources */,
 				D93C6A4A1859DA800004E51A /* KBACustomerDaoRest.m in Sources */,
+				D93C6A4D1859E5170004E51A /* User.m in Sources */,
+				D93C6A501859E5F50004E51A /* Consultant.m in Sources */,
 				C10C5FC2183B8A5A008FAECB /* KBADependencyInjector.m in Sources */,
 				D93C6A491859DA800004E51A /* KBACustomerDaoDummy.m in Sources */,
 				D93C6A371859D94A0004E51A /* KBACustomerService.m in Sources */,

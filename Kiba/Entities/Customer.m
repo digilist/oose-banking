@@ -13,7 +13,7 @@
 
 -(id)initWithForeName: (NSString *)forename
               surname: (NSString *)surname
-           customerId: (int) customerId
+           customerId: (int)userId
                  pass: (NSString *)pass
                 ident: (NSString *)ident
                adress: (Address *)address
@@ -22,8 +22,8 @@
     
     if (self = [super init]) {
         self.forename = forename;
-        self.surmame = surname;
-        self.customerId = customerId;
+        self.surname = surname;
+        self.userId = userId;
         self.pass = pass;
         self.ident = ident;
         self.address = address;
