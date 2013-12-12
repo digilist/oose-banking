@@ -50,7 +50,6 @@
 		C1F12CBA185742EB001AA21E /* KBAExchangeRateDaoRest.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F12CB9185742EB001AA21E /* KBAExchangeRateDaoRest.m */; };
 		C1F12CC11857499F001AA21E /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F12CC01857499F001AA21E /* Currency.m */; };
 		D929E547185093B1008FC26E /* OpenHour.m in Sources */ = {isa = PBXBuildFile; fileRef = D929E546185093B1008FC26E /* OpenHour.m */; };
-		D93C6A1F1859D8E90004E51A /* KBAChooseTermAccountContr.xib in Resources */ = {isa = PBXBuildFile; fileRef = D93C6A0A1859D8E90004E51A /* KBAChooseTermAccountContr.xib */; };
 		D93C6A201859D8E90004E51A /* KBADocContr.m in Sources */ = {isa = PBXBuildFile; fileRef = D93C6A0C1859D8E90004E51A /* KBADocContr.m */; };
 		D93C6A211859D8E90004E51A /* KBADocContr.xib in Resources */ = {isa = PBXBuildFile; fileRef = D93C6A0D1859D8E90004E51A /* KBADocContr.xib */; };
 		D93C6A221859D8E90004E51A /* KBADocTableContr.m in Sources */ = {isa = PBXBuildFile; fileRef = D93C6A0F1859D8E90004E51A /* KBADocTableContr.m */; };
@@ -58,8 +57,6 @@
 		D93C6A241859D8E90004E51A /* KBASelfServContr.xib in Resources */ = {isa = PBXBuildFile; fileRef = D93C6A121859D8E90004E51A /* KBASelfServContr.xib */; };
 		D93C6A251859D8E90004E51A /* KBAStatemContr.m in Sources */ = {isa = PBXBuildFile; fileRef = D93C6A141859D8E90004E51A /* KBAStatemContr.m */; };
 		D93C6A261859D8E90004E51A /* KBAStatemContr.xib in Resources */ = {isa = PBXBuildFile; fileRef = D93C6A151859D8E90004E51A /* KBAStatemContr.xib */; };
-		D93C6A271859D8E90004E51A /* KBATableChooseDailyAccContr.m in Sources */ = {isa = PBXBuildFile; fileRef = D93C6A171859D8E90004E51A /* KBATableChooseDailyAccContr.m */; };
-		D93C6A281859D8E90004E51A /* KBATableChooseTermAccContr.m in Sources */ = {isa = PBXBuildFile; fileRef = D93C6A191859D8E90004E51A /* KBATableChooseTermAccContr.m */; };
 		D93C6A291859D8E90004E51A /* KBATransContr.m in Sources */ = {isa = PBXBuildFile; fileRef = D93C6A1B1859D8E90004E51A /* KBATransContr.m */; };
 		D93C6A2A1859D8E90004E51A /* KBATransContr.xib in Resources */ = {isa = PBXBuildFile; fileRef = D93C6A1C1859D8E90004E51A /* KBATransContr.xib */; };
 		D93C6A2B1859D8E90004E51A /* KBATransTableContr.m in Sources */ = {isa = PBXBuildFile; fileRef = D93C6A1E1859D8E90004E51A /* KBATransTableContr.m */; };
@@ -67,8 +64,8 @@
 		D93C6A351859D94A0004E51A /* BranchService.m in Sources */ = {isa = PBXBuildFile; fileRef = D93C6A2F1859D94A0004E51A /* BranchService.m */; };
 		D93C6A361859D94A0004E51A /* KBAAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = D93C6A311859D94A0004E51A /* KBAAuth.m */; };
 		D93C6A371859D94A0004E51A /* KBACustomerService.m in Sources */ = {isa = PBXBuildFile; fileRef = D93C6A331859D94A0004E51A /* KBACustomerService.m */; };
-		D93C6A3B1859DA190004E51A /* KBAChooseDailyAccountContr.xib in Resources */ = {isa = PBXBuildFile; fileRef = D93C6A381859DA190004E51A /* KBAChooseDailyAccountContr.xib */; };
-		D93C6A3C1859DA190004E51A /* KBATableChooseAccountContr.m in Sources */ = {isa = PBXBuildFile; fileRef = D93C6A3A1859DA190004E51A /* KBATableChooseAccountContr.m */; };
+		D93C6A3B1859DA190004E51A /* KBAChooseAccountTableContr.xib in Resources */ = {isa = PBXBuildFile; fileRef = D93C6A381859DA190004E51A /* KBAChooseAccountTableContr.xib */; };
+		D93C6A3C1859DA190004E51A /* KBAChooseAccountTableContr.m in Sources */ = {isa = PBXBuildFile; fileRef = D93C6A3A1859DA190004E51A /* KBAChooseAccountTableContr.m */; };
 		D93C6A471859DA800004E51A /* KBAAccountDaoDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D93C6A3F1859DA800004E51A /* KBAAccountDaoDummy.m */; };
 		D93C6A481859DA800004E51A /* KBAAccountDaoRest.m in Sources */ = {isa = PBXBuildFile; fileRef = D93C6A411859DA800004E51A /* KBAAccountDaoRest.m */; };
 		D93C6A491859DA800004E51A /* KBACustomerDaoDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D93C6A441859DA800004E51A /* KBACustomerDaoDummy.m */; };
@@ -165,7 +162,6 @@
 		C1F12CC01857499F001AA21E /* Currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Currency.m; path = Entities/Currency.m; sourceTree = "<group>"; };
 		D929E545185093B1008FC26E /* OpenHour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenHour.h; path = Entities/OpenHour.h; sourceTree = "<group>"; };
 		D929E546185093B1008FC26E /* OpenHour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenHour.m; path = Entities/OpenHour.m; sourceTree = "<group>"; };
-		D93C6A0A1859D8E90004E51A /* KBAChooseTermAccountContr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAChooseTermAccountContr.xib; path = View/SelfService/KBAChooseTermAccountContr.xib; sourceTree = "<group>"; };
 		D93C6A0B1859D8E90004E51A /* KBADocContr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBADocContr.h; path = View/SelfService/KBADocContr.h; sourceTree = "<group>"; };
 		D93C6A0C1859D8E90004E51A /* KBADocContr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBADocContr.m; path = View/SelfService/KBADocContr.m; sourceTree = "<group>"; };
 		D93C6A0D1859D8E90004E51A /* KBADocContr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBADocContr.xib; path = View/SelfService/KBADocContr.xib; sourceTree = "<group>"; };
@@ -177,10 +173,6 @@
 		D93C6A131859D8E90004E51A /* KBAStatemContr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAStatemContr.h; path = View/SelfService/KBAStatemContr.h; sourceTree = "<group>"; };
 		D93C6A141859D8E90004E51A /* KBAStatemContr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAStatemContr.m; path = View/SelfService/KBAStatemContr.m; sourceTree = "<group>"; };
 		D93C6A151859D8E90004E51A /* KBAStatemContr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAStatemContr.xib; path = View/SelfService/KBAStatemContr.xib; sourceTree = "<group>"; };
-		D93C6A161859D8E90004E51A /* KBATableChooseDailyAccContr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBATableChooseDailyAccContr.h; path = View/SelfService/KBATableChooseDailyAccContr.h; sourceTree = "<group>"; };
-		D93C6A171859D8E90004E51A /* KBATableChooseDailyAccContr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBATableChooseDailyAccContr.m; path = View/SelfService/KBATableChooseDailyAccContr.m; sourceTree = "<group>"; };
-		D93C6A181859D8E90004E51A /* KBATableChooseTermAccContr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBATableChooseTermAccContr.h; path = View/SelfService/KBATableChooseTermAccContr.h; sourceTree = "<group>"; };
-		D93C6A191859D8E90004E51A /* KBATableChooseTermAccContr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBATableChooseTermAccContr.m; path = View/SelfService/KBATableChooseTermAccContr.m; sourceTree = "<group>"; };
 		D93C6A1A1859D8E90004E51A /* KBATransContr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBATransContr.h; path = View/SelfService/KBATransContr.h; sourceTree = "<group>"; };
 		D93C6A1B1859D8E90004E51A /* KBATransContr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBATransContr.m; path = View/SelfService/KBATransContr.m; sourceTree = "<group>"; };
 		D93C6A1C1859D8E90004E51A /* KBATransContr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBATransContr.xib; path = View/SelfService/KBATransContr.xib; sourceTree = "<group>"; };
@@ -194,9 +186,9 @@
 		D93C6A311859D94A0004E51A /* KBAAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAAuth.m; path = Services/KBAAuth.m; sourceTree = "<group>"; };
 		D93C6A321859D94A0004E51A /* KBACustomerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBACustomerService.h; path = Services/KBACustomerService.h; sourceTree = "<group>"; };
 		D93C6A331859D94A0004E51A /* KBACustomerService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBACustomerService.m; path = Services/KBACustomerService.m; sourceTree = "<group>"; };
-		D93C6A381859DA190004E51A /* KBAChooseDailyAccountContr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KBAChooseDailyAccountContr.xib; sourceTree = "<group>"; };
-		D93C6A391859DA190004E51A /* KBATableChooseAccountContr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBATableChooseAccountContr.h; sourceTree = "<group>"; };
-		D93C6A3A1859DA190004E51A /* KBATableChooseAccountContr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBATableChooseAccountContr.m; sourceTree = "<group>"; };
+		D93C6A381859DA190004E51A /* KBAChooseAccountTableContr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KBAChooseAccountTableContr.xib; sourceTree = "<group>"; };
+		D93C6A391859DA190004E51A /* KBAChooseAccountTableContr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBAChooseAccountTableContr.h; sourceTree = "<group>"; };
+		D93C6A3A1859DA190004E51A /* KBAChooseAccountTableContr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBAChooseAccountTableContr.m; sourceTree = "<group>"; };
 		D93C6A3D1859DA800004E51A /* KBAAccountDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAAccountDao.h; path = Library/DAO/KBAAccountDao.h; sourceTree = "<group>"; };
 		D93C6A3E1859DA800004E51A /* KBAAccountDaoDummy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAAccountDaoDummy.h; path = Library/DAO/KBAAccountDaoDummy.h; sourceTree = "<group>"; };
 		D93C6A3F1859DA800004E51A /* KBAAccountDaoDummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAAccountDaoDummy.m; path = Library/DAO/KBAAccountDaoDummy.m; sourceTree = "<group>"; };
@@ -251,12 +243,9 @@
 		0AAD7958184DBEF6002B1D0B /* SelfService */ = {
 			isa = PBXGroup;
 			children = (
-				D93C6A381859DA190004E51A /* KBAChooseDailyAccountContr.xib */,
-				D93C6A391859DA190004E51A /* KBATableChooseAccountContr.h */,
-				D93C6A3A1859DA190004E51A /* KBATableChooseAccountContr.m */,
-				D93C6A0A1859D8E90004E51A /* KBAChooseTermAccountContr.xib */,
 				D93C6A0B1859D8E90004E51A /* KBADocContr.h */,
 				D93C6A0C1859D8E90004E51A /* KBADocContr.m */,
+				2174A5E2185A6CB80055C35F /* Transactions */,
 				D93C6A0D1859D8E90004E51A /* KBADocContr.xib */,
 				D93C6A0E1859D8E90004E51A /* KBADocTableContr.h */,
 				D93C6A0F1859D8E90004E51A /* KBADocTableContr.m */,
@@ -266,17 +255,23 @@
 				D93C6A131859D8E90004E51A /* KBAStatemContr.h */,
 				D93C6A141859D8E90004E51A /* KBAStatemContr.m */,
 				D93C6A151859D8E90004E51A /* KBAStatemContr.xib */,
-				D93C6A161859D8E90004E51A /* KBATableChooseDailyAccContr.h */,
-				D93C6A171859D8E90004E51A /* KBATableChooseDailyAccContr.m */,
-				D93C6A181859D8E90004E51A /* KBATableChooseTermAccContr.h */,
-				D93C6A191859D8E90004E51A /* KBATableChooseTermAccContr.m */,
-				D93C6A1A1859D8E90004E51A /* KBATransContr.h */,
-				D93C6A1B1859D8E90004E51A /* KBATransContr.m */,
-				D93C6A1C1859D8E90004E51A /* KBATransContr.xib */,
 				D93C6A1D1859D8E90004E51A /* KBATransTableContr.h */,
 				D93C6A1E1859D8E90004E51A /* KBATransTableContr.m */,
 			);
 			name = SelfService;
+			sourceTree = "<group>";
+		};
+		2174A5E2185A6CB80055C35F /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				D93C6A1A1859D8E90004E51A /* KBATransContr.h */,
+				D93C6A1B1859D8E90004E51A /* KBATransContr.m */,
+				D93C6A1C1859D8E90004E51A /* KBATransContr.xib */,
+				D93C6A381859DA190004E51A /* KBAChooseAccountTableContr.xib */,
+				D93C6A391859DA190004E51A /* KBAChooseAccountTableContr.h */,
+				D93C6A3A1859DA190004E51A /* KBAChooseAccountTableContr.m */,
+			);
+			name = Transactions;
 			sourceTree = "<group>";
 		};
 		3407E8CD1838F9320045C014 /* Library */ = {
@@ -584,11 +579,10 @@
 				C1F00E791844E0FA009EFE4F /* KBAAccountController.xib in Resources */,
 				C1F00E741844E08C009EFE4F /* KBAAuthController.xib in Resources */,
 				342322FC1837B9FD00618D7E /* Images.xcassets in Resources */,
-				D93C6A3B1859DA190004E51A /* KBAChooseDailyAccountContr.xib in Resources */,
+				D93C6A3B1859DA190004E51A /* KBAChooseAccountTableContr.xib in Resources */,
 				C16A7B7B184DC9D3005DC504 /* KBAFinderController.xib in Resources */,
 				342322EB1837B9FD00618D7E /* InfoPlist.strings in Resources */,
 				C1A6D4071847661A00AFB665 /* KBADashboardController.xib in Resources */,
-				D93C6A1F1859D8E90004E51A /* KBAChooseTermAccountContr.xib in Resources */,
 				D93C6A241859D8E90004E51A /* KBASelfServContr.xib in Resources */,
 				34199A8A18417A6F00F574D5 /* Documentation in Resources */,
 				342322F41837B9FD00618D7E /* Main.storyboard in Resources */,
@@ -628,14 +622,12 @@
 				D93C6A491859DA800004E51A /* KBACustomerDaoDummy.m in Sources */,
 				D93C6A371859D94A0004E51A /* KBACustomerService.m in Sources */,
 				A8F81C8B1844B51D00E55C75 /* CreditRating.m in Sources */,
-				D93C6A281859D8E90004E51A /* KBATableChooseTermAccContr.m in Sources */,
 				C170420C184DFE900019F929 /* KBABranchController.m in Sources */,
 				D93C6A481859DA800004E51A /* KBAAccountDaoRest.m in Sources */,
 				A8F81C891844B51D00E55C75 /* Address.m in Sources */,
 				D93C6A2B1859D8E90004E51A /* KBATransTableContr.m in Sources */,
-				D93C6A3C1859DA190004E51A /* KBATableChooseAccountContr.m in Sources */,
+				D93C6A3C1859DA190004E51A /* KBAChooseAccountTableContr.m in Sources */,
 				D93C6A221859D8E90004E51A /* KBADocTableContr.m in Sources */,
-				D93C6A271859D8E90004E51A /* KBATableChooseDailyAccContr.m in Sources */,
 				D93C6A231859D8E90004E51A /* KBASelfServContr.m in Sources */,
 				D93C6A201859D8E90004E51A /* KBADocContr.m in Sources */,
 				C1F12CC11857499F001AA21E /* Currency.m in Sources */,

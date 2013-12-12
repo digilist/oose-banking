@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Customer.h"
 
-@interface KBATableChooseAccountContr : UITableViewController
+@interface KBAChooseAccountTableContr : UITableViewController
 @property NSArray *accounts;
 @property Customer *customer;
 @end

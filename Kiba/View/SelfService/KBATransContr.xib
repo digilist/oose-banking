@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -11,15 +11,16 @@
                 <outlet property="bottomConstraint" destination="VDA-zv-kQE" id="wUf-yU-fZ8"/>
                 <outlet property="checkImageView" destination="g6M-6s-9yG" id="XcT-6B-usW"/>
                 <outlet property="checkLine" destination="Bj1-HR-lY3" id="xVv-6x-gLm"/>
-                <outlet property="chooseDailyButton" destination="UeK-wz-qKy" id="oyz-8O-DLb"/>
-                <outlet property="chooseTermButton" destination="Awc-hp-Jnz" id="sI8-vm-Tfm"/>
+                <outlet property="chooseAccContr" destination="CMM-aM-WVo" id="zSk-Jz-2YK"/>
+                <outlet property="chooseDestinationAccountButton" destination="UeK-wz-qKy" id="fHW-eu-r3n"/>
+                <outlet property="chooseSourceAccountButton" destination="Awc-hp-Jnz" id="juF-V3-XrX"/>
                 <outlet property="currencyLabel" destination="UY2-yR-iE9" id="WTM-eS-Lht"/>
-                <outlet property="dailyAccountLabel" destination="LkT-ep-9ML" id="mcx-5P-xAI"/>
                 <outlet property="dateLabel" destination="r0k-Wz-fXj" id="I8y-94-JeZ"/>
+                <outlet property="destinationAccountLabel" destination="LkT-ep-9ML" id="hZ0-Qp-Od7"/>
                 <outlet property="nameLabel" destination="k4I-72-20Y" id="fGL-wv-Q0x"/>
                 <outlet property="panRecognizer" destination="IXU-I8-AWH" id="4xV-wU-J9b"/>
+                <outlet property="sourceAccountLabel" destination="hvO-N5-tXc" id="Aad-VE-ZeD"/>
                 <outlet property="subTitleLabel" destination="HWU-It-Onn" id="3td-Wl-i5l"/>
-                <outlet property="termAccountLabel" destination="hvO-N5-tXc" id="dQS-NH-emn"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
         </placeholder>
@@ -180,6 +181,7 @@
                 <action selector="checkDragged:" destination="-1" id="r4Z-XT-P8w"/>
             </connections>
         </panGestureRecognizer>
+        <customObject id="CMM-aM-WVo" customClass="KBAChooseAccountTableContr"/>
     </objects>
     <resources>
         <image name="Scheck_Design" width="800" height="273"/>

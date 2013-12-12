@@ -13,8 +13,8 @@
 @end
 
 /*
- Table-view-controller subclass to present transactions
- in self-service top-view.
+    Table-view-controller subclass to present transactions
+    in self-service top-view.
 */
 
 

@@ -7,56 +7,38 @@
 //
 
 #import "KBATransContr.h"
-#import "KBATableChooseTermAccContr.h"
-#import "KBATableChooseDailyAccContr.h"
+#import "KBAChooseAccountTableContr.h"
 
-
-//help-classes–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-@interface KBAChooseTermAccountContr: UIViewController
-@property (nonatomic, strong) IBOutlet KBATableChooseTermAccContr* chooseTermAccTableContr;
-@end
-
-@implementation KBAChooseTermAccountContr
-@end
-//–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-@interface KBAChooseDailyAccountContr: UIViewController
-@property (nonatomic, strong) IBOutlet KBATableChooseDailyAccContr* chooseAccTableContr;
-@end
-
-@implementation KBAChooseDailyAccountContr
-@end
-//–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 //private interface
 @interface KBATransContr()
-@property KBAChooseTermAccountContr* chooseTermAccContr;
-@property KBAChooseDailyAccountContr* chooseDailyAccContr;
-@property NSArray* checkElements;
+@property (nonatomic, strong) IBOutlet KBAChooseAccountTableContr *chooseAccContr;
+@property NSArray *checkElements;
+@property NSMutableArray *checkElementsPositions;
 @property UIPopoverController* popController;
-@property  (nonatomic, weak) IBOutlet UIButton* chooseTermButton; //term == source
-@property  (nonatomic, weak) IBOutlet UIButton* chooseDailyButton; //daily == destination
-@property  (nonatomic, weak) IBOutlet UILabel* termAccountLabel; //term == source
-@property  (nonatomic, weak) IBOutlet UILabel* dailyAccountLabel; //daily == destination
-@property  (nonatomic, weak) IBOutlet UILabel* subTitleLabel;
-@property  (nonatomic, weak) IBOutlet UIImageView* checkImageView;
-@property (nonatomic, weak) IBOutlet UILabel* amountLabel;
-@property (nonatomic, weak) IBOutlet UILabel* nameLabel;
-@property (nonatomic, weak) IBOutlet UILabel* dateLabel;
+@property  (nonatomic, weak) IBOutlet UIButton *chooseSourceAccountButton; //term == source
+@property  (nonatomic, weak) IBOutlet UIButton *chooseDestinationAccountButton; //daily == destination
+@property  (nonatomic, weak) IBOutlet UILabel *sourceAccountLabel; //term == source
+@property  (nonatomic, weak) IBOutlet UILabel *destinationAccountLabel; //daily == destination
+@property  (nonatomic, weak) IBOutlet UILabel *subTitleLabel;
+@property  (nonatomic, weak) IBOutlet UIImageView *checkImageView;
+@property (nonatomic, weak) IBOutlet UILabel *amountLabel;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *dateLabel;
 
-@property (nonatomic, weak) IBOutlet UILabel* checkLine;
+@property (nonatomic, weak) IBOutlet UILabel *checkLine;
 
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint* bottomConstraint;
-@property (nonatomic, weak) IBOutlet UILabel* currencyLabel;
-@property (nonatomic, weak) IBOutlet UITextField* amountField;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *bottomConstraint;
+@property (nonatomic, weak) IBOutlet UILabel *currencyLabel;
+@property (nonatomic, weak) IBOutlet UITextField *amountField;
 
-@property (nonatomic, strong) IBOutlet UIPanGestureRecognizer* panRecognizer;
+@property (nonatomic, strong) IBOutlet UIPanGestureRecognizer *panRecognizer;
 @end
 
 //notification center to inform about chosen accounts in popover-table-view
-NSNotificationCenter* transferChooseAccountNotifCenter;
+NSNotificationCenter *transferChooseAccountNotifCenter;
 //global string identifier needed to send/recv notifications
-const NSString* termAccountEntryChosen = @"termAccountEntryChosen";
-const NSString* dailyAccountEntryChosen = @"dailyAccountEntryChosen";
+const NSString *accountEntryChosen = @"accountEntryChosen";
 
 @implementation KBATransContr
 
@@ -67,23 +49,12 @@ const NSString* dailyAccountEntryChosen = @"dailyAccountEntryChosen";
         //set view title displayed at very top
         self.title = @"Umbuchung von ihrem Sparkonto";
         
-        //account controller which own the table views
-        //used in popover
-        self.chooseTermAccContr = [KBAChooseTermAccountContr new];
-        self.chooseDailyAccContr = [KBAChooseDailyAccountContr new];
-       
         /*add observer/listener to receive chosen accounts in popup-tableviews */
-    
         //needs to be created everytime with this controller(is freed everytime view gets closed)
         transferChooseAccountNotifCenter = [NSNotificationCenter new];
         [transferChooseAccountNotifCenter addObserver:self
-                                             selector:@selector(respondToChosenTermAccountEntry:)
-                                                 name:(NSString*)termAccountEntryChosen
-                                               object:nil];
-       
-        [transferChooseAccountNotifCenter addObserver:self
                                              selector:@selector(respondToChosenDailyAccountEntry:)
-                                                 name:(NSString*)dailyAccountEntryChosen
+                                                 name:(NSString *)accountEntryChosen
                                                object:nil];
     }
     return self;
@@ -119,12 +90,6 @@ const NSString* dailyAccountEntryChosen = @"dailyAccountEntryChosen";
     }
 }
 
--(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-                               duration:(NSTimeInterval)duration
-{
-    [self respondToOrientation:toInterfaceOrientation];
-}
-
 -(void)viewDidLoad
 {
     self.subTitleLabel.numberOfLines = 2;
@@ -144,13 +109,23 @@ const NSString* dailyAccountEntryChosen = @"dailyAccountEntryChosen";
     
     [self respondToOrientation: UIApplication.sharedApplication.statusBarOrientation];
     
-    //create array with elements belonging to the check
-    //needed in checkDragged
-    self.checkElements = @[self.checkImageView, self.nameLabel,self.chooseTermButton,
-                           self.chooseDailyButton, self.dateLabel,self.amountField,
-                           self.termAccountLabel, self.dailyAccountLabel, self.amountLabel,
+    //create array with elements belonging to the check needed in checkDragged
+    self.checkElements = @[self.checkImageView, self.nameLabel,self.chooseSourceAccountButton,
+                           self.chooseDestinationAccountButton, self.dateLabel,self.amountField,
+                           self.sourceAccountLabel, self.destinationAccountLabel, self.amountLabel,
                            self.currencyLabel];
+    
+    //array to remember center positions
+    self.checkElementsPositions = [NSMutableArray new];
 }
+
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+                               duration:(NSTimeInterval)duration
+{
+    [self respondToOrientation:toInterfaceOrientation];
+}
+
+
 
 -(void)dismissKeyboard
 {
@@ -165,10 +140,10 @@ const NSString* dailyAccountEntryChosen = @"dailyAccountEntryChosen";
  *
  *  @param notification the notification send
  */
--(void)respondToChosenTermAccountEntry:(NSNotification *)notification
+-(void)respondToChosenAccountEntry:(NSNotification *)notification
 {
     [self.popController dismissPopoverAnimated:YES];
-    self.termAccountLabel.text = [NSString stringWithFormat:@": %@",(NSString*)[notification object]];
+    self.sourceAccountLabel.text = [NSString stringWithFormat:@": %@",(NSString*)[notification object]];
 }
 
 /**
@@ -180,7 +155,7 @@ const NSString* dailyAccountEntryChosen = @"dailyAccountEntryChosen";
 -(void)respondToChosenDailyAccountEntry:(NSNotification *)notification
 {
     [self.popController dismissPopoverAnimated:YES];
-    self.dailyAccountLabel.text = [NSString stringWithFormat:@": %@",(NSString*)[notification object]];
+    self.destinationAccountLabel.text = [NSString stringWithFormat:@": %@",(NSString*)[notification object]];
 }
 
 /**
@@ -191,14 +166,8 @@ const NSString* dailyAccountEntryChosen = @"dailyAccountEntryChosen";
  */
 -(IBAction)chooseAccount:(UIButton*)sender
 {
-    if ([sender isEqual:self.chooseTermButton]) {
-        self.popController = [[UIPopoverController alloc]
-                              initWithContentViewController:self.chooseTermAccContr];
-    }
-    else if([sender isEqual:self.chooseDailyButton]){
-        self.popController = [[UIPopoverController alloc]
-                              initWithContentViewController:self.chooseDailyAccContr];
-    }
+    self.popController = [[UIPopoverController alloc]
+                          initWithContentViewController:self.chooseAccContr];
     
     CGPoint buttonPosition = sender.frame.origin;
     
@@ -233,22 +202,10 @@ const NSString* dailyAccountEntryChosen = @"dailyAccountEntryChosen";
  */
 -(IBAction)checkDragged:(UIPanGestureRecognizer*)recognizer
 {
-    static CGPoint initialCheckCenter, initialNameLabelCenter, initialTermButtonCenter,
-    initialDailyButtonCenter, initialDateLabelCenter, initialAmountFieldCenter,
-    initialTermAccountLabelCenter, initialDailyAccountLabelCenter, initialAmountLabelCenter,
-    initialCurrencyLabelCenter;
-    
     if(recognizer.state == UIGestureRecognizerStateBegan){
-        initialCheckCenter = self.checkImageView.center;
-        initialNameLabelCenter = self.nameLabel.center;
-        initialTermButtonCenter = self.chooseTermButton.center;
-        initialDailyButtonCenter = self.chooseDailyButton.center;
-        initialDateLabelCenter = self.dateLabel.center;
-        initialAmountFieldCenter = self.amountField.center;
-        initialTermAccountLabelCenter = self.termAccountLabel.center;
-        initialDailyAccountLabelCenter = self.dailyAccountLabel.center;
-        initialAmountLabelCenter = self.amountLabel.center;
-        initialCurrencyLabelCenter = self.currencyLabel.center;
+        for (UIView* element in self.checkElements) {
+            [self.checkElementsPositions addObject:[NSValue valueWithCGPoint: element.center]];
+        }
     }
     
     //get amount of dragged points
@@ -282,24 +239,12 @@ const NSString* dailyAccountEntryChosen = @"dailyAccountEntryChosen";
                 [alertView show];
             }
             
-            self.checkImageView.center = initialCheckCenter;
-            self.nameLabel.center = initialNameLabelCenter;
-            self.chooseTermButton.center= initialTermButtonCenter;
-            self.chooseDailyButton.center = initialDailyButtonCenter;
-            self.dateLabel.center= initialDateLabelCenter;
-            self.chooseDailyButton.center = initialDailyButtonCenter;
-            self.dateLabel.center= initialDateLabelCenter;
-            self.amountField.center = initialAmountFieldCenter;
-            self.termAccountLabel.center = initialTermAccountLabelCenter;
-            self.dailyAccountLabel.center = initialDailyAccountLabelCenter;
-            self.amountLabel.center = initialAmountLabelCenter;
-            self.currencyLabel.center = initialCurrencyLabelCenter;
-            
-
-
-                
-       
-            
+            for (int i = 0; i < [self.checkElements count]; ++i) {
+                UIView *element = [self.checkElements objectAtIndex:i];
+                NSValue *centerPos = [self.checkElementsPositions objectAtIndex:i];
+                element.center = [centerPos CGPointValue];
+            }
+            [self.checkElementsPositions removeAllObjects];
         }];
     }
 }
@@ -327,8 +272,8 @@ const NSString* dailyAccountEntryChosen = @"dailyAccountEntryChosen";
     NSNumber *centValue = [NSNumber numberWithInt: cents];
     
     //spell out single parts
-    NSString* wordEuro = [numberFormatter stringFromNumber:euroValue];
-    NSString* wordCent = [numberFormatter stringFromNumber:centValue];
+    NSString *wordEuro = [numberFormatter stringFromNumber:euroValue];
+    NSString *wordCent = [numberFormatter stringFromNumber:centValue];
     
     //combine parts and set label-text
     self.amountLabel.text = [NSString stringWithFormat:@"%@ Euro und %@ Cent", wordEuro, wordCent];

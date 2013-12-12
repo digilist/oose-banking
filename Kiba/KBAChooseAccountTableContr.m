@@ -6,15 +6,21 @@
 //  Copyright (c) 2013 KiBa App. All rights reserved.
 //
 
-#import "KBATableChooseAccountContr.h"
-
+#import "KBAChooseAccountTableContr.h"
+#import "KBADependencyInjector.h"
+#import "KBAAccountDao.h"
+#import "Account.h"
+#import "KBAAuth.h"
 /* 
    Datasource and delegate superclass for account table-views.
    KBATableChooseTermAccContr & KBATableChooseDailyAccContr inherit from this controller.
    Datasource is given through NSArray* accounts 
  */
 
-@implementation KBATableChooseAccountContr
+const extern NSString *accountEntryChosen;
+extern NSNotificationCenter *transferChooseAccountNotifCenter;
+
+@implementation KBAChooseAccountTableContr
 
 /**
  *  Default/designated init method for table-view-contr.
@@ -25,10 +31,14 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        [[NSBundle mainBundle] loadNibNamed:@"KBAChooseAccountTableContr" owner:self options:nil];
+        id<KBAAccountDao> accountDao = [KBADependencyInjector getByKey:@"accountDao"];
+        KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
+        self.customer = [auth getIdentity];
+        self.accounts = [accountDao getAccounts:self.customer];
+        
     }
-    return self;
-}
+    return self;}
 
 - (void)viewDidLoad
 {
@@ -41,6 +51,14 @@
 }
 
 #pragma mark - Table view data source
+
+
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
+{
+    Account *account = [self.accounts objectAtIndex: indexPath.row];
+    [transferChooseAccountNotifCenter postNotificationName: (NSString*)accountEntryChosen
+                                                    object: account.name];
+}
 
 /**
  *  Specifies the number of section per in table-view. (see iOS-Docs)
