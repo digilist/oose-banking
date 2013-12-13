@@ -11,5 +11,7 @@
 @interface KBAMasterViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *mainLeftView;
+@property(nonatomic, retain) UIColor *barTintColor;
+@property(nonatomic, retain) UIColor *tintColor;
 
 @end

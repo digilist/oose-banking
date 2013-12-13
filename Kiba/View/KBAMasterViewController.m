@@ -44,6 +44,12 @@ static NSArray * navigationEntryKeys;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.barTintColor = [UIColor colorWithRed:139.0f/255.0f green:173.0f/255.0f blue:163.0f/255.0f alpha:1.0f];
+    self.tintColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:248.0f/255.0f alpha:1.0f];
+    self.navigationController.navigationBar.barTintColor = self.barTintColor;
+    self.tableView.backgroundColor = self.tintColor;
+    
     self.title = @"KiBa App";
 }
 

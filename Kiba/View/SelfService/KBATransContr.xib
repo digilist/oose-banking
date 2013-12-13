@@ -49,8 +49,8 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="251" verticalCompressionResistancePriority="251" image="Scheck_Design" translatesAutoresizingMaskIntoConstraints="NO" id="g6M-6s-9yG">
-                    <rect key="frame" x="35" y="249" width="969" height="273"/>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="251" verticalCompressionResistancePriority="251" misplaced="YES" image="Scheck_Design" translatesAutoresizingMaskIntoConstraints="NO" id="g6M-6s-9yG">
+                    <rect key="frame" x="35" y="247" width="969" height="273"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <gestureRecognizers/>
                     <constraints>
@@ -127,12 +127,18 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <state key="normal" title="Quellkonto">
+                        <color key="titleColor" red="0.85882352941176465" green="0.42352941176470588" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="chooseAccount:" destination="-1" eventType="touchUpInside" id="J5b-vD-IRD"/>
                     </connections>
                 </button>
+                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="down3-100" translatesAutoresizingMaskIntoConstraints="NO" id="xoD-Q7-hhF">
+                    <rect key="frame" x="348" y="550" width="68" height="71"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <gestureRecognizers/>
@@ -185,5 +191,6 @@
     </objects>
     <resources>
         <image name="Scheck_Design" width="800" height="273"/>
+        <image name="down3-100" width="100" height="100"/>
     </resources>
 </document>
