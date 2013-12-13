@@ -16,11 +16,11 @@
 @property NSArray *checkElements;
 @property NSMutableArray *checkElementsPositions;
 @property UIPopoverController* popController;
-@property  (nonatomic, weak) IBOutlet UIButton *chooseSourceAccountButton; //term == source
-@property  (nonatomic, weak) IBOutlet UIButton *chooseDestinationAccountButton; //daily == destination
-@property  (nonatomic, weak) IBOutlet UILabel *sourceAccountLabel; //term == source
-@property  (nonatomic, weak) IBOutlet UILabel *destinationAccountLabel; //daily == destination
-@property  (nonatomic, weak) UILabel *labelToSet; //one of those above
+@property  (nonatomic, weak) IBOutlet UIButton *chooseSourceAccountButton;
+@property  (nonatomic, weak) IBOutlet UIButton *chooseDestinationAccountButton;
+@property  (nonatomic, weak) IBOutlet UILabel *sourceAccountLabel;
+@property  (nonatomic, weak) IBOutlet UILabel *destinationAccountLabel;
+@property  (nonatomic, weak) UILabel *labelToSet; //label set in chooseAccount (points to source or dest)
 @property  (nonatomic, weak) IBOutlet UILabel *subTitleLabel;
 @property  (nonatomic, weak) IBOutlet UIImageView *checkImageView;
 @property (nonatomic, weak) IBOutlet UILabel *amountLabel;
@@ -61,36 +61,6 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
     return self;
 }
 
--(void)respondToOrientation:(UIInterfaceOrientation)orientation
-{
-    static BOOL initialResponse = YES;
-    
-    double duration;
-    if (initialResponse) {
-        duration = 0;
-        initialResponse = NO;
-    }
-    else{
-        duration = 0.5;
-    }
-    
-    if (orientation == UIInterfaceOrientationPortrait ||
-        orientation == UIInterfaceOrientationPortraitUpsideDown) {
-        [UIView animateWithDuration:duration
-                         animations:^{
-                             self.bottomConstraint.constant = 110;
-                             [self.view layoutIfNeeded];
-                         }];
-    }
-    else{
-        [UIView animateWithDuration:duration
-                         animations:^{
-                             self.bottomConstraint.constant = 40;
-                             [self.view layoutIfNeeded];
-                         }];
-    }
-}
-
 -(void)viewDidLoad
 {
     self.subTitleLabel.numberOfLines = 2;
@@ -108,7 +78,7 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
     
     self.amountField.text = [NSString stringWithFormat:@"%.2f", 0.0];
     
-    [self respondToOrientation: UIApplication.sharedApplication.statusBarOrientation];
+    [self respondToOrientation: UIApplication.sharedApplication.statusBarOrientation inAnimatedDurationTime: 0];
     
     //create array with elements belonging to the check needed in checkDragged
     self.checkElements = @[self.checkImageView, self.nameLabel,self.chooseSourceAccountButton,
@@ -120,10 +90,30 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
     self.checkElementsPositions = [NSMutableArray new];
 }
 
+-(void)respondToOrientation:(UIInterfaceOrientation)orientation
+     inAnimatedDurationTime:(double)duration
+{
+    if (orientation == UIInterfaceOrientationPortrait ||
+        orientation == UIInterfaceOrientationPortraitUpsideDown) {
+        [UIView animateWithDuration:duration
+                         animations:^{
+                             self.bottomConstraint.constant = 110;
+                             [self.view layoutIfNeeded];
+                         }];
+    }
+    else{
+        [UIView animateWithDuration:duration
+                         animations:^{
+                             self.bottomConstraint.constant = 40;
+                             [self.view layoutIfNeeded];
+                         }];
+    }
+}
+
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
                                duration:(NSTimeInterval)duration
 {
-    [self respondToOrientation:toInterfaceOrientation];
+    [self respondToOrientation:toInterfaceOrientation inAnimatedDurationTime:0.5];
 }
 
 
@@ -200,6 +190,8 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
 {
     if(recognizer.state == UIGestureRecognizerStateBegan){
         for (UIView* element in self.checkElements) {
+            //capture positions at start of dragging
+            //all elements inherit from UIView (they all have a center attribute)
             [self.checkElementsPositions addObject:[NSValue valueWithCGPoint: element.center]];
         }
     }
@@ -213,28 +205,29 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
     }
     
     //shift all elements belonging to check
-    //all elements inherit from UIView (they all have a center attribute)
     for (UIView* element in self.checkElements) {
         element.center = CGPointMake(element.center.x, element.center.y + translation.y);
     }
     [recognizer setTranslation:CGPointMake(0, 0) inView:recognizer.view];
 
     
-    //put elements back to their initial postion
+    //if dragging ended
     if(recognizer.state == UIGestureRecognizerStateEnded ||
        recognizer.state == UIGestureRecognizerStateCancelled) {
+        
+        //if check-y-center was dragged below label "..hier hinüberziehen"
+        if (self.checkLine.center.y < self.checkImageView.center.y) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Bestätige Transaktion"
+                                                                message:@"Bitte bestätigen sie ihre Transaktion"
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Abbrechen"
+                                                      otherButtonTitles:@"Bestätigen", nil];
+            [alertView setAlertViewStyle:UIAlertViewStyleDefault];
+            [alertView show];
+        }
+        
         [UIView animateWithDuration:0.25 animations:^{
-            
-            if (self.checkLine.center.y < self.checkImageView.center.y) {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Bestätige Transaktion"
-                                                                    message:@"Bitte bestätigen sie ihre Transaktion"
-                                                                   delegate:self
-                                                          cancelButtonTitle:@"Abbrechen"
-                                                          otherButtonTitles:@"Bestätigen", nil];
-                [alertView setAlertViewStyle:UIAlertViewStyleDefault];
-                [alertView show];
-            }
-            
+            //put back elements to original position
             for (int i = 0; i < [self.checkElements count]; ++i) {
                 UIView *element = [self.checkElements objectAtIndex:i];
                 NSValue *centerPos = [self.checkElementsPositions objectAtIndex:i];
@@ -257,7 +250,7 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
     NSLocale *german = [[NSLocale alloc] initWithLocaleIdentifier:@"de_DE"];
     NSNumberFormatter *numberFormatter = [NSNumberFormatter new];
     [numberFormatter setLocale:german];
-    [numberFormatter setNumberStyle:NSNumberFormatterSpellOutStyle];
+    [numberFormatter setNumberStyle: NSNumberFormatterSpellOutStyle];
     
     //TODO: regex to check if inserted value is in correct format
     

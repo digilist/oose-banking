@@ -243,20 +243,20 @@
 		0AAD7958184DBEF6002B1D0B /* SelfService */ = {
 			isa = PBXGroup;
 			children = (
-				D93C6A0B1859D8E90004E51A /* KBADocContr.h */,
-				D93C6A0C1859D8E90004E51A /* KBADocContr.m */,
-				2174A5E2185A6CB80055C35F /* Transactions */,
-				D93C6A0D1859D8E90004E51A /* KBADocContr.xib */,
-				D93C6A0E1859D8E90004E51A /* KBADocTableContr.h */,
-				D93C6A0F1859D8E90004E51A /* KBADocTableContr.m */,
 				D93C6A101859D8E90004E51A /* KBASelfServContr.h */,
 				D93C6A111859D8E90004E51A /* KBASelfServContr.m */,
 				D93C6A121859D8E90004E51A /* KBASelfServContr.xib */,
+				D93C6A1D1859D8E90004E51A /* KBATransTableContr.h */,
+				D93C6A1E1859D8E90004E51A /* KBATransTableContr.m */,
+				D93C6A0E1859D8E90004E51A /* KBADocTableContr.h */,
+				D93C6A0F1859D8E90004E51A /* KBADocTableContr.m */,
+				2174A5E2185A6CB80055C35F /* Transactions */,
+				D93C6A0B1859D8E90004E51A /* KBADocContr.h */,
+				D93C6A0C1859D8E90004E51A /* KBADocContr.m */,
+				D93C6A0D1859D8E90004E51A /* KBADocContr.xib */,
 				D93C6A131859D8E90004E51A /* KBAStatemContr.h */,
 				D93C6A141859D8E90004E51A /* KBAStatemContr.m */,
 				D93C6A151859D8E90004E51A /* KBAStatemContr.xib */,
-				D93C6A1D1859D8E90004E51A /* KBATransTableContr.h */,
-				D93C6A1E1859D8E90004E51A /* KBATransTableContr.m */,
 			);
 			name = SelfService;
 			sourceTree = "<group>";

@@ -11,10 +11,9 @@
 #import "KBAAccountDao.h"
 #import "Account.h"
 #import "KBAAuth.h"
-/* 
-   Datasource and delegate superclass for account table-views.
-   KBATableChooseTermAccContr & KBATableChooseDailyAccContr inherit from this controller.
-   Datasource is given through NSArray* accounts 
+
+/*
+    Datasource is given through NSArray* accounts
  */
 
 const extern NSString *accountEntryChosen;
@@ -37,20 +36,11 @@ extern NSNotificationCenter *transferChooseAccountNotifCenter;
         self.accounts = [accountDao getAccounts:self.customer];
         
     }
-    return self;}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+    return self;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
 
 #pragma mark - Table view data source
-
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
@@ -60,7 +50,7 @@ extern NSNotificationCenter *transferChooseAccountNotifCenter;
 }
 
 /**
- *  Specifies the number of section per in table-view. (see iOS-Docs)
+ *  Specifies the number of sections in table-view. (see iOS-Docs)
  *  Value is set to const 1. No variable section value needed. This is a framework method.
  *
  *  @param tableView given table-view

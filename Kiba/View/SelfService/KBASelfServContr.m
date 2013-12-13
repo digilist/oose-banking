@@ -36,25 +36,11 @@
 
 @implementation KBASelfServContr
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self respondToOrientation: UIApplication.sharedApplication.statusBarOrientation];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self respondToOrientation: UIApplication.sharedApplication.statusBarOrientation
+        inAnimatedDurationTime: 0.5];
 }
 
 /**
@@ -64,10 +50,12 @@
  *  @param orientation orientation to respond to
  */
 -(void)respondToOrientation:(UIInterfaceOrientation)orientation
+     inAnimatedDurationTime:(double)duration
 {
+    //animations if switch to portrait-mode
     if (orientation == UIInterfaceOrientationPortrait ||
         orientation == UIInterfaceOrientationPortraitUpsideDown) {
-        [UIView animateWithDuration:0.5
+        [UIView animateWithDuration:duration
                          animations:^{
                              [self.imageView setHidden:NO];
                              //set height between elements
@@ -85,8 +73,9 @@
                          }];
 
     }
+    //animations if switch to landscape-mode
     else{
-        [UIView animateWithDuration:0.5
+        [UIView animateWithDuration:duration
                          animations:^{
                              [self.imageView setHidden:YES];
                              //set height between elements
@@ -110,7 +99,8 @@
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
                                duration:(NSTimeInterval)duration
 {
-    [self respondToOrientation:toInterfaceOrientation];
+    [self respondToOrientation:toInterfaceOrientation
+        inAnimatedDurationTime:0.2];
 }
 
 /**
@@ -127,18 +117,14 @@
     dispatch_async(work, ^{
         [NSThread sleepForTimeInterval:2];
         //connect here
-
         dispatch_async(dispatch_get_main_queue(), ^{
-    
             [self.indicator stopAnimating];
             self.indicator.hidden = YES;
             self.connectButton.enabled = NO;
             [self.connectButton setTitle:@"mit KiBa-Station verbunden" forState:UIControlStateDisabled];
             [self.connectButton setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
         });
-    
     });
-    
 }
 
 /**
