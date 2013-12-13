@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0A893764183BA118003495A4 /* KBADashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A893763183BA118003495A4 /* KBADashboardController.m */; };
-		0ABCD3A7185B67A5004E4BED /* OCR A Std.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0ABCD3A6185B67A5004E4BED /* OCR A Std.ttf */; };
 		3407E8E91838FD110045C014 /* KBAMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3407E8E71838FD110045C014 /* KBAMasterViewController.m */; };
 		34199A881841710C00F574D5 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 34199A871841710C00F574D5 /* Assets */; };
 		34199A8A18417A6F00F574D5 /* Documentation in Resources */ = {isa = PBXBuildFile; fileRef = 34199A8918417A6F00F574D5 /* Documentation */; };
@@ -88,7 +87,6 @@
 /* Begin PBXFileReference section */
 		0A893762183BA118003495A4 /* KBADashboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBADashboardController.h; path = View/Dashboard/KBADashboardController.h; sourceTree = "<group>"; };
 		0A893763183BA118003495A4 /* KBADashboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBADashboardController.m; path = View/Dashboard/KBADashboardController.m; sourceTree = "<group>"; };
-		0ABCD3A6185B67A5004E4BED /* OCR A Std.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OCR A Std.ttf"; path = "../../Downloads/OCR A Std.ttf"; sourceTree = "<group>"; };
 		3407E8CB1837BD980045C014 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3407E8CC1837BDA20045C014 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		3407E8D91838FA200045C014 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = View/README.md; sourceTree = "<group>"; };
@@ -116,6 +114,7 @@
 		3423230A1837B9FD00618D7E /* KibaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KibaTests-Info.plist"; sourceTree = "<group>"; };
 		3423230C1837B9FD00618D7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3423230E1837B9FD00618D7E /* KibaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KibaTests.m; sourceTree = "<group>"; };
+		34F3B62E185B8D27003E8040 /* OCR A Std.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OCR A Std.ttf"; sourceTree = "<group>"; };
 		A8F81C7C1844B51D00E55C75 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Account.h; path = Entities/Account.h; sourceTree = "<group>"; };
 		A8F81C7D1844B51D00E55C75 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Account.m; path = Entities/Account.m; sourceTree = "<group>"; };
 		A8F81C7E1844B51D00E55C75 /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Address.h; path = Entities/Address.h; sourceTree = "<group>"; };
@@ -405,7 +404,7 @@
 		342322E71837B9FD00618D7E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0ABCD3A6185B67A5004E4BED /* OCR A Std.ttf */,
+				34F3B62E185B8D27003E8040 /* OCR A Std.ttf */,
 				342322E81837B9FD00618D7E /* Kiba-Info.plist */,
 				342322E91837B9FD00618D7E /* InfoPlist.strings */,
 				342322EC1837B9FD00618D7E /* main.m */,
@@ -587,7 +586,6 @@
 				342322EB1837B9FD00618D7E /* InfoPlist.strings in Resources */,
 				C1A6D4071847661A00AFB665 /* KBADashboardController.xib in Resources */,
 				D93C6A241859D8E90004E51A /* KBASelfServContr.xib in Resources */,
-				0ABCD3A7185B67A5004E4BED /* OCR A Std.ttf in Resources */,
 				34199A8A18417A6F00F574D5 /* Documentation in Resources */,
 				342322F41837B9FD00618D7E /* Main.storyboard in Resources */,
 				C170420D184DFE900019F929 /* KBABranchController.xib in Resources */,
