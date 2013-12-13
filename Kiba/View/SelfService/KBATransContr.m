@@ -88,6 +88,15 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
     
     //array to remember center positions
     self.checkElementsPositions = [NSMutableArray new];
+    
+    // Custom Cheque fonts
+    UIFont *chequeFont = [UIFont fontWithName:@"OCR A Std" size:18];
+    self.nameLabel.font = chequeFont;
+    self.amountLabel.font = chequeFont;
+    self.sourceAccountLabel.font = chequeFont;
+    self.dateLabel.font = chequeFont;
+    self.amountField.font = chequeFont;
+    self.destinationAccountLabel.font = chequeFont;
 }
 
 -(void)respondToOrientation:(UIInterfaceOrientation)orientation
