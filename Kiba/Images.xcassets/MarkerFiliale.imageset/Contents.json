@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "KiBa512_small-1.png"
+      "filename" : "KiBaTrans.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "KiBa512_small.png"
+      "filename" : "KiBaTrans-1.png"
     }
   ],
   "info" : {
