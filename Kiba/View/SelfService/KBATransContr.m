@@ -64,8 +64,7 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
 -(void)viewDidLoad
 {
     self.subTitleLabel.numberOfLines = 2;
-    //title set programatically to realise linebreak in label. (2 lines needed)
-    self.subTitleLabel.text = @"Führen Sie eine Umbuchung durch!";
+    self.subTitleLabel.text = @"Nehmen Sie eine Umbuchung vor!";
     
     NSDateFormatter *DateFormatter = [NSDateFormatter new];
     [DateFormatter setDateFormat:@"dd.MM.yyyy"];
