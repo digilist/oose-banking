@@ -154,8 +154,8 @@
                         <constraint firstAttribute="height" constant="50" id="sS6-4g-Gif"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Wwh-8d-WNB">
-                    <rect key="frame" x="979" y="20" width="25" height="25"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info_orange" translatesAutoresizingMaskIntoConstraints="NO" id="Wwh-8d-WNB">
+                    <rect key="frame" x="999" y="743" width="25" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="tintColor" red="0.85882352939999995" green="0.42352941179999998" blue="0.058823529409999999" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
@@ -170,6 +170,7 @@
                 <constraint firstItem="TrA-BV-FUy" firstAttribute="top" secondItem="fQo-AD-f5o" secondAttribute="bottom" constant="19" id="53g-jN-3mW"/>
                 <constraint firstItem="xkv-ch-zgH" firstAttribute="top" secondItem="Jc2-nY-JlY" secondAttribute="bottom" constant="8" symbolic="YES" id="6XL-OV-Ew6"/>
                 <constraint firstAttribute="bottom" secondItem="xkv-ch-zgH" secondAttribute="bottom" constant="20" symbolic="YES" id="AJk-Fp-8ah"/>
+                <constraint firstAttribute="trailing" secondItem="Wwh-8d-WNB" secondAttribute="trailing" id="Ay4-4X-4ZT"/>
                 <constraint firstItem="VXW-8c-iZJ" firstAttribute="baseline" secondItem="RzH-By-5M4" secondAttribute="baseline" id="Bze-kE-wPw"/>
                 <constraint firstItem="1tE-bi-Kop" firstAttribute="top" secondItem="v5C-FJ-aBY" secondAttribute="top" id="EjJ-Zf-hiZ"/>
                 <constraint firstAttribute="bottom" secondItem="1tE-bi-Kop" secondAttribute="bottom" constant="20" symbolic="YES" id="HHI-BF-jdS"/>
@@ -179,6 +180,7 @@
                 <constraint firstItem="BX8-fG-G3Q" firstAttribute="centerY" secondItem="RzH-By-5M4" secondAttribute="centerY" constant="0.5" id="MDT-HT-oqZ"/>
                 <constraint firstItem="wva-gp-6nP" firstAttribute="top" secondItem="fQo-AD-f5o" secondAttribute="bottom" constant="26" id="NiI-yQ-u9z"/>
                 <constraint firstItem="VXW-8c-iZJ" firstAttribute="leading" secondItem="GRJ-qB-IFQ" secondAttribute="trailing" constant="8" symbolic="YES" id="Pm2-5C-yK3"/>
+                <constraint firstAttribute="bottom" secondItem="Wwh-8d-WNB" secondAttribute="bottom" id="QWe-3G-GFK"/>
                 <constraint firstItem="v5C-FJ-aBY" firstAttribute="top" secondItem="xkv-ch-zgH" secondAttribute="top" id="QgV-TT-rie"/>
                 <constraint firstItem="Jc2-nY-JlY" firstAttribute="leading" secondItem="nJQ-Ck-JcJ" secondAttribute="trailing" constant="8" symbolic="YES" id="SDI-ml-Esk"/>
                 <constraint firstAttribute="bottom" secondItem="v5C-FJ-aBY" secondAttribute="bottom" constant="20" symbolic="YES" id="Xih-sT-yrC"/>
@@ -190,10 +192,8 @@
                 <constraint firstAttribute="centerX" secondItem="TrA-BV-FUy" secondAttribute="centerX" constant="-0.5" id="hbc-la-kjq"/>
                 <constraint firstItem="1tE-bi-Kop" firstAttribute="leading" secondItem="BX8-fG-G3Q" secondAttribute="leading" id="hk2-Sg-2IT"/>
                 <constraint firstItem="VXW-8c-iZJ" firstAttribute="baseline" secondItem="Jc2-nY-JlY" secondAttribute="baseline" id="in6-X1-aBO"/>
-                <constraint firstItem="Wwh-8d-WNB" firstAttribute="top" secondItem="2" secondAttribute="top" constant="20" symbolic="YES" id="k5z-3Q-Ztk"/>
                 <constraint firstItem="1tE-bi-Kop" firstAttribute="top" secondItem="xkv-ch-zgH" secondAttribute="top" id="noK-tS-pe2"/>
                 <constraint firstItem="v5C-FJ-aBY" firstAttribute="trailing" secondItem="VXW-8c-iZJ" secondAttribute="trailing" id="ny1-iA-YTp"/>
-                <constraint firstAttribute="trailing" secondItem="Wwh-8d-WNB" secondAttribute="trailing" constant="20" symbolic="YES" id="ryg-F5-7Z3"/>
                 <constraint firstItem="VXW-8c-iZJ" firstAttribute="top" secondItem="TrA-BV-FUy" secondAttribute="bottom" constant="8" symbolic="YES" id="uEw-5q-1nt"/>
                 <constraint firstItem="fQo-AD-f5o" firstAttribute="top" secondItem="2" secondAttribute="top" constant="90" id="uGG-g8-ety"/>
                 <constraint firstItem="v5C-FJ-aBY" firstAttribute="leading" secondItem="GRJ-qB-IFQ" secondAttribute="leading" id="w9w-Qi-81N"/>
@@ -208,7 +208,7 @@
     </objects>
     <resources>
         <image name="doc1" width="512" height="512"/>
-        <image name="info_icon" width="25" height="25"/>
+        <image name="info_orange" width="50" height="50"/>
         <image name="printer" width="512" height="512"/>
         <image name="put in" width="512" height="512"/>
     </resources>
