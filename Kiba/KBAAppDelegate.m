@@ -11,6 +11,7 @@
 #import "Library/DAO/KBABranchDao.h"
 #import "Library/KBADependencyInjector.h"
 
+
 @implementation KBAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -20,6 +21,9 @@
     // Override point for customization after application launch.
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
+
+    UIColor *barTintColor = [UIColor colorWithRed:90.0f/255.0f green:200.0f/255.0f blue:250.0f/255.0f alpha:1.0f];
+    navigationController.navigationBar.barTintColor = barTintColor;
     splitViewController.delegate = (id)navigationController.topViewController;
     return YES;
 }

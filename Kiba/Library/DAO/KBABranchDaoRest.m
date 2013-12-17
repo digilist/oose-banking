@@ -10,7 +10,7 @@
 
 @implementation KBABranchDaoRest
 
-- (Branch *)getBranchesNearPoint:(CGPoint)location {
+- (NSArray *)getBranchesNearPoint:(CGPoint)location {
     return nil;
 }
 

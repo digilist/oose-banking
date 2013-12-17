@@ -44,6 +44,13 @@ static NSArray * navigationEntryKeys;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.barTintColor = [UIColor colorWithRed:90.0f/255.0f green:200.0f/255.0f blue:250.0f/255.0f alpha:1.0f];
+    self.tintColor = [UIColor colorWithRed:245.0f/255.0f green:245.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
+    self.navigationController.navigationBar.barTintColor = self.barTintColor;
+    self.tableView.backgroundColor = self.tintColor;
+
+
     self.title = @"KiBa App";
 }
 
@@ -86,7 +93,7 @@ static NSArray * navigationEntryKeys;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
+    cell.backgroundColor = self.tintColor;
     NSString *key = navigationEntryKeys[indexPath.row];
     cell.textLabel.text = [navigationEntries valueForKey:key];
     return cell;
@@ -115,6 +122,8 @@ static NSArray * navigationEntryKeys;
 
     // Adjust navigation title
     selectedNavigationController.navigationBar.topItem.title = [navigationEntries valueForKey:selectedKey];
+    
+    selectedNavigationController.navigationBar.barTintColor = self.barTintColor;
     
     // Set new Splitcontroller configuration
     NSArray* splitViewControllers = @[self.navigationController,     // Master View Navigation
