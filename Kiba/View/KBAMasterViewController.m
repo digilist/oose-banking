@@ -45,9 +45,9 @@ static NSArray * navigationEntryKeys;
 {
     [super viewDidLoad];
     
-    self.barTintColor = [UIColor colorWithRed:90.0f/255.0f green:200.0f/255.0f blue:250.0f/255.0f alpha:1.0f];
-    self.tintColor = [UIColor colorWithRed:245.0f/255.0f green:245.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
-    self.navigationController.navigationBar.barTintColor = self.barTintColor;
+    self.barTintColor = [UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:114.0f/255.0f alpha:1.0f];
+    self.tintColor = [UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0f];
+   //  self.navigationController.navigationBar.barTintColor = self.barTintColor;
     self.tableView.backgroundColor = self.tintColor;
 
 
@@ -122,8 +122,19 @@ static NSArray * navigationEntryKeys;
 
     // Adjust navigation title
     selectedNavigationController.navigationBar.topItem.title = [navigationEntries valueForKey:selectedKey];
+    selectedNavigationController.navigationBar.tintColor = [UIColor colorWithRed:219.0f/255.0f green:108.0f/255.0f blue:15.0f/255.0f alpha:1.0f];
     
-    selectedNavigationController.navigationBar.barTintColor = self.barTintColor;
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+     [UIColor colorWithRed:219.0f/255.0f green:108.0f/255.0f blue:15.0f/255.0f alpha:1.0f],
+      NSForegroundColorAttributeName,
+     [UIColor colorWithRed:219.0f/255.0f green:108.0f/255.0f blue:15.0f/255.0f alpha:1.0f],
+      NSForegroundColorAttributeName,
+      [NSValue valueWithUIOffset:UIOffsetMake(0, -1)],
+      NSForegroundColorAttributeName,
+     [UIFont fontWithName:@"Arial-Bold" size:0.0],
+      NSFontAttributeName,
+      nil]];
     
     // Set new Splitcontroller configuration
     NSArray* splitViewControllers = @[self.navigationController,     // Master View Navigation

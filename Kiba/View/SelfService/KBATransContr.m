@@ -48,7 +48,7 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         //set view title displayed at very top
-        self.title = @"Umbuchung von ihrem Sparkonto";
+        self.title = @"Umbuchungen";
         
         /*add observer/listener to receive chosen accounts in popup-tableviews */
         //needs to be created everytime with this controller(is freed everytime view gets closed)
@@ -65,7 +65,7 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
 {
     self.subTitleLabel.numberOfLines = 2;
     //title set programatically to realise linebreak in label. (2 lines needed)
-    self.subTitleLabel.text = @"Buchen Sie Geld von ihrem Sparkonto\nohne Verzögerung auf ihr Tageskonto.";
+    self.subTitleLabel.text = @"Führen Sie eine Umbuchung durch!";
     
     NSDateFormatter *DateFormatter = [NSDateFormatter new];
     [DateFormatter setDateFormat:@"dd.MM.yyyy"];
