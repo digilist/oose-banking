@@ -1,7 +1,7 @@
 @import "roboto.css";
 
 body {
-    background-image: -webkit-linear-gradient(top, white, white 50%, #F9BD9F 100%);
+    background-image: -webkit-linear-gradient(top, #8bada3 0%, #3b6670 100%);
 }
 
 .align-center {
@@ -9,16 +9,23 @@ body {
 }
 
 h1 {
-    font-weight: 100;
-    font-size: 36pt;
-    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    font-size: 48pt;
+    font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     text-align: center;
+    color: white;
+}
+
+h3 {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    color: white;
 }
 
 img.kiba {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
+    display: block;
+    margin: 20px auto;
+    width: 220px;
+    height: 220px;
 }
 
 .chart {
@@ -29,7 +36,7 @@ img.kiba {
 }
 
 .chart-label {
-    font-family: 'Roboto', sans-serif;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 10pt;
     text-align: center;
     padding: 2px;
