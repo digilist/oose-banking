@@ -21,6 +21,8 @@
 #import "KBAAuth.h"
 #import "KBAExchangeRateDao.h"
 #import "KBAExchangeRateDaoRest.h"
+#import "KBAColorHelper.h"
+#import "KBAKiBaColorHelper.h"
 #import "KBATransactionDao.h"
 #import "KBATransactionDaoDummy.h"
 #import "KBATransactionDaoRest.h"
@@ -70,6 +72,7 @@
     [KBADependencyInjector setObject:customerDao withKey:@"customerDao"];
     [KBADependencyInjector setObject:accountDAo withKey:@"accountDao"];
     [KBADependencyInjector setObject:auth withKey:@"auth"];
+    [KBADependencyInjector setObject:colorHelper withKey:@"colorHelper"];
     [KBADependencyInjector setObject:transDao withKey:@"transDao"];
     [auth login: @"max" withPassword:@"test"];
     
