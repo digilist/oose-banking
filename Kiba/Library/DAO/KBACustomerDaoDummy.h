@@ -11,4 +11,6 @@
 
 @interface KBACustomerDaoDummy : NSObject<KBACustomerDao>
 
+@property NSArray* accounts;
+
 @end

@@ -71,7 +71,7 @@
     }
     
     //transfer object
-    cell.textLabel.numberOfLines = 3;
+     cell.textLabel.numberOfLines = 0;
     cell.textLabel.text = [self.moneyTransfers objectAtIndex:indexPath.row];
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
    

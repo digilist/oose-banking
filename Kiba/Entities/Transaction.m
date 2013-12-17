@@ -19,7 +19,16 @@
         self.sender = newSender;
         self.amount = newAmount;
         self.date = newDate;
+        
     }
     return self;
+   
+  
+    
+}
+
+- (NSString *)printTransactionTiny {
+    NSString *string = [NSString stringWithFormat: @"Sender: %@, %@ \nEmpfänger: %@, %@ \nBetrag: %@ €" , self.sender.owner.surname, self.sender.owner.forename, self.recipient.owner.surname, self.recipient.owner.forename, self.amount];
+    return string;
 }
 @end

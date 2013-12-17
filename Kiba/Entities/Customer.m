@@ -17,7 +17,7 @@
                  pass: (NSString *)pass
                 ident: (NSString *)ident
                adress: (Address *)address
-             accounts: (NSMapTable *)accounts
+             accounts: (NSArray *)accounts
          creditRating: (CreditRating *)creditRating {
     
     if (self = [super init]) {

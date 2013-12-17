@@ -20,5 +20,13 @@
 @property NSNumber* amount;
 @property NSDate* date;
 
+-(id)initWithType: (id) newType
+        recipient: (Account*) newRecipient
+           sender: (Account*) newSender
+           amount: (NSNumber*) newAmount
+             date: (NSDate*) newDate;
+
+-(NSString *)printTransactionTiny;
+
 
 @end

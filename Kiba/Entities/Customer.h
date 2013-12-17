@@ -19,13 +19,13 @@
              pass: (NSString*) pass
              ident: (NSString*) ident
              adress: (Address*) address
-             accounts: (NSMapTable*) accounts
+             accounts: (NSArray*) accounts
              creditRating: (CreditRating*) creditRating;
 
 // Perso Ident Einloggkennung!
 @property NSString *ident;
 @property Address *address;
-@property NSMapTable *accounts;
+@property NSArray *accounts;
 @property CreditRating *creditRating;
 @property Boolean verificated;
 

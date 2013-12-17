@@ -7,9 +7,15 @@
 //
 
 #import "KBAStatemTableContr.h"
+#import "KBADependencyInjector.h"
+#import "KBATransactionDao.h"
+#import "KBAAuth.h"
+
+#import "Account.h"
+#import "Transaction.h"
 
 @interface KBAStatemTableContr ()
-@property NSArray* statem;
+@property NSMutableArray *statem;
 @end
 
 @implementation KBAStatemTableContr
@@ -19,14 +25,24 @@
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
+    
+    
     if (self) {
-        self.statem = @[@"Bewegung 1",
-                           @"Bewegung 2",
-                           @"CADASDAS",
-                           @"DADASDASD",
-                           @"EaSDASDA",
-                           @"FaSDASD",
-                           @"GADASD"];
+        
+        id<KBATransactionDao> transDao = [KBADependencyInjector getByKey:@"transDao"];
+        
+        KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
+        Customer *customer = [auth getIdentity];
+        self.statem = [NSMutableArray new];
+        NSArray *trans = [transDao getTransaction: customer];
+       
+        for (int i = 0; i < ([trans count]); i++) {
+            NSString *string = [[trans objectAtIndex:i]printTransactionTiny];
+            [self.statem addObject: string];
+
+    
+        }
+
     }
     return self;
 }

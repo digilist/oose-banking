@@ -23,13 +23,13 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        self.documents = @[@"Bonusbescheinigung",
-                           @"B",
-                           @"C",
-                           @"D",
-                           @"E",
-                           @"F",
-                           @"G"];
+        self.documents = @[@"Bonität",
+                           @"Kontoeröffnung",
+                           @"TAN",
+                           @"Steuer",
+                           @"PIN-Sperre",
+                           @"Zweitschriften",
+                           ];
     }
     return self;
 }
@@ -80,7 +80,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"Bescheinigungen";
+    return @"Service";
 }
 
 @end

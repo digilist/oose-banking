@@ -21,6 +21,9 @@
 #import "KBAAuth.h"
 #import "KBAExchangeRateDao.h"
 #import "KBAExchangeRateDaoRest.h"
+#import "KBATransactionDao.h"
+#import "KBATransactionDaoDummy.h"
+#import "KBATransactionDaoRest.h"
 
 @implementation KBABootstrap
 
@@ -42,6 +45,7 @@
     id<KBAExchangeRateDao> exchangeRateDao;
     id<KBACustomerDao> customerDao;
     id<KBAAccountDao> accountDAo;
+    id<KBATransactionDao> transDao;
     KBAAuth *auth = [KBAAuth new];
     
     exchangeRateDao = [KBAExchangeRateDaoRest new];
@@ -50,11 +54,13 @@
         branchDao = [KBABranchDaoDummy new];
         customerDao = [KBACustomerDaoDummy new];
         accountDAo = [KBAAccountDaoDummy new];
+        transDao = [KBATransactionDaoDummy new];
     }
     else {
         branchDao = [KBABranchDaoRest new];
         customerDao = [KBACustomerDaoRest new];
         accountDAo = [KBAAccountDaoRest new];
+        transDao = [KBATransactionDaoRest new];
     }
     
     [KBADependencyInjector setObject:branchDao withKey:@"branchDao"];
@@ -62,6 +68,7 @@
     [KBADependencyInjector setObject:customerDao withKey:@"customerDao"];
     [KBADependencyInjector setObject:accountDAo withKey:@"accountDao"];
     [KBADependencyInjector setObject:auth withKey:@"auth"];
+    [KBADependencyInjector setObject:transDao withKey:@"transDao"];
     [auth login: @"max" withPassword:@"test"];
     
 }
