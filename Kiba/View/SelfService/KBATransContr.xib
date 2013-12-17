@@ -127,18 +127,18 @@
                         <action selector="chooseAccount:" destination="-1" eventType="touchUpInside" id="J5b-vD-IRD"/>
                     </connections>
                 </button>
-                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="info-512" translatesAutoresizingMaskIntoConstraints="NO" id="F5Z-Kz-oZt">
-                    <rect key="frame" x="919" y="550" width="68" height="71"/>
+                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="info_orange" translatesAutoresizingMaskIntoConstraints="NO" id="F5Z-Kz-oZt">
+                    <rect key="frame" x="539" y="511" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="down4-512" translatesAutoresizingMaskIntoConstraints="NO" id="Csz-Tr-2Nd">
-                    <rect key="frame" x="340" y="488" width="68" height="71"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="down_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Csz-Tr-2Nd">
+                    <rect key="frame" x="340" y="499" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="down4-512" translatesAutoresizingMaskIntoConstraints="NO" id="Jex-fs-8WL">
-                    <rect key="frame" x="340" y="544" width="68" height="71"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="down_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Jex-fs-8WL">
+                    <rect key="frame" x="340" y="544" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </imageView>
@@ -157,7 +157,7 @@
     </objects>
     <resources>
         <image name="Scheck_Design" width="800" height="273"/>
-        <image name="down4-512" width="512" height="512"/>
-        <image name="info-512" width="512" height="512"/>
+        <image name="down_arrow" width="50" height="50"/>
+        <image name="info_orange" width="50" height="50"/>
     </resources>
 </document>
