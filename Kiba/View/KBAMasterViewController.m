@@ -54,6 +54,10 @@ static NSArray * navigationEntryKeys;
     self.tableView.backgroundColor = self.tintColor;
 
     self.title = @"KiBa App";
+    
+    // hack to show the first detail view with the right settings!
+    NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self tableView: self.tableView didSelectRowAtIndexPath:path];
 }
 
 - (void)didReceiveMemoryWarning
