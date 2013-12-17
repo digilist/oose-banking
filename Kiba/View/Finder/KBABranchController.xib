@@ -91,15 +91,15 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0,00 €" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mae-1w-UKg">
-                            <rect key="frame" x="108" y="259" width="148" height="21"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,00 €" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mae-1w-UKg">
+                            <rect key="frame" x="211" y="259" width="45" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="umgerechnet" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0C-cV-xBJ">
-                            <rect key="frame" x="0.0" y="259" width="102" height="21"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="umgerechnet" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0C-cV-xBJ">
+                            <rect key="frame" x="0.0" y="259" width="205" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
@@ -137,8 +137,10 @@
                         <constraint firstItem="N6e-h3-rue" firstAttribute="trailing" secondItem="z0K-9g-rXi" secondAttribute="trailing" id="R5G-R8-I4o"/>
                         <constraint firstItem="cbq-Id-AAD" firstAttribute="leading" secondItem="b5B-WJ-Iw5" secondAttribute="leading" id="X4P-oP-2jc"/>
                         <constraint firstAttribute="bottom" secondItem="J7r-ob-em8" secondAttribute="bottom" constant="194" id="XLl-jn-z7L"/>
+                        <constraint firstItem="mae-1w-UKg" firstAttribute="leading" secondItem="F0C-cV-xBJ" secondAttribute="trailing" constant="6" id="XTN-jY-aoU"/>
                         <constraint firstAttribute="trailing" secondItem="z0K-9g-rXi" secondAttribute="trailing" id="beH-E4-piF"/>
                         <constraint firstItem="F0C-cV-xBJ" firstAttribute="top" secondItem="N6e-h3-rue" secondAttribute="bottom" constant="8" symbolic="YES" id="cI9-9U-qr2"/>
+                        <constraint firstAttribute="trailing" secondItem="mae-1w-UKg" secondAttribute="trailing" id="fdU-RY-Oz7"/>
                         <constraint firstItem="N6e-h3-rue" firstAttribute="leading" secondItem="cbq-Id-AAD" secondAttribute="trailing" constant="8" symbolic="YES" id="hRM-tf-SLu"/>
                         <constraint firstItem="z0K-9g-rXi" firstAttribute="leading" secondItem="b5B-WJ-Iw5" secondAttribute="leading" id="htV-sB-cCS"/>
                         <constraint firstItem="J7r-ob-em8" firstAttribute="top" secondItem="mae-1w-UKg" secondAttribute="bottom" constant="8" symbolic="YES" id="kYC-H8-MvE"/>
@@ -205,8 +207,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ihr Ansprechpartner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSO-o3-3Yf">
-                            <rect key="frame" x="0.0" y="148" width="153" height="21"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ihr Ansprechpartner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSO-o3-3Yf">
+                            <rect key="frame" x="0.0" y="156" width="398" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
@@ -223,8 +225,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Öffnungszeiten" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jb9-qJ-3kZ">
-                            <rect key="frame" x="0.0" y="0.0" width="365" height="21"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Öffnungszeiten" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jb9-qJ-3kZ">
+                            <rect key="frame" x="0.0" y="0.0" width="398" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                             <nil key="highlightedColor"/>
@@ -237,7 +239,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <constraint firstItem="Jb9-qJ-3kZ" firstAttribute="top" secondItem="dbB-PX-3Fm" secondAttribute="top" id="Dym-ds-jdD"/>
                         <constraint firstItem="cyL-sQ-CiQ" firstAttribute="top" secondItem="kqK-pX-ysd" secondAttribute="bottom" constant="8" id="Dz8-wa-Z1m"/>
                         <constraint firstItem="BJp-yH-aKM" firstAttribute="top" secondItem="dbB-PX-3Fm" secondAttribute="top" constant="16" id="LTf-CA-yCM"/>
-                        <constraint firstItem="cyL-sQ-CiQ" firstAttribute="leading" secondItem="jSO-o3-3Yf" secondAttribute="trailing" id="O7N-DP-JkE"/>
                         <constraint firstAttribute="trailing" secondItem="Jb9-qJ-3kZ" secondAttribute="trailing" id="WdE-K8-ilB"/>
                         <constraint firstItem="BJp-yH-aKM" firstAttribute="leading" secondItem="dbB-PX-3Fm" secondAttribute="leading" id="YL9-eD-iiO"/>
                         <constraint firstItem="jSO-o3-3Yf" firstAttribute="top" secondItem="BJp-yH-aKM" secondAttribute="bottom" constant="16" id="YMj-CH-uum"/>
