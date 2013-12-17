@@ -8,7 +8,6 @@
             <connections>
                 <outlet property="connectButton" destination="TrA-BV-FUy" id="kVQ-py-hnT"/>
                 <outlet property="documentsButton" destination="RzH-By-5M4" id="jlx-74-6Ys"/>
-                <outlet property="imageView" destination="P4a-e9-SLS" id="1XH-me-bk3"/>
                 <outlet property="indicator" destination="wva-gp-6nP" id="4Kw-M6-oFB"/>
                 <outlet property="subDocContr" destination="4WH-48-ANY" id="X4u-kU-vld"/>
                 <outlet property="subMoneyTransferContr" destination="IHt-Ar-9XJ" id="C17-Qs-Foh"/>
@@ -34,7 +33,9 @@
                     <rect key="frame" x="410" y="136" width="205" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                    <state key="normal" title="mit KiBa-Station verbinden"/>
+                    <state key="normal" title="mit KiBa-Station verbinden">
+                        <color key="titleColor" red="0.85882352939999995" green="0.42352941179999998" blue="0.058823529409999999" alpha="1" colorSpace="deviceRGB"/>
+                    </state>
                     <connections>
                         <action selector="connect:" destination="-1" eventType="touchUpInside" id="bWF-pU-zbT"/>
                     </connections>
@@ -65,6 +66,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Kontoauszug">
+                        <color key="titleColor" red="0.85882352939999995" green="0.42352941179999998" blue="0.058823529409999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -80,6 +82,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Bescheinigungen">
+                        <color key="titleColor" red="0.85882352941176465" green="0.42352941176470588" blue="0.058823529411764705" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -99,6 +102,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Umbuchungen">
+                        <color key="titleColor" red="0.85882352939999995" green="0.42352941179999998" blue="0.058823529409999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -115,14 +119,6 @@
                         <outlet property="dataSource" destination="IHt-Ar-9XJ" id="WpN-HI-jVE"/>
                     </connections>
                 </tableView>
-                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glas" translatesAutoresizingMaskIntoConstraints="NO" id="P4a-e9-SLS">
-                    <rect key="frame" x="895" y="645" width="127" height="115"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="127" id="8wV-eE-6fL"/>
-                        <constraint firstAttribute="height" constant="115" id="hUX-kO-BcD"/>
-                    </constraints>
-                </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" style="plain" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="26" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="v5C-FJ-aBY">
                     <rect key="frame" x="412" y="267" width="200" height="481"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,6 +154,15 @@
                         <constraint firstAttribute="height" constant="50" id="sS6-4g-Gif"/>
                     </constraints>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info_orange" translatesAutoresizingMaskIntoConstraints="NO" id="Wwh-8d-WNB">
+                    <rect key="frame" x="999" y="743" width="25" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="tintColor" red="0.85882352939999995" green="0.42352941179999998" blue="0.058823529409999999" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="oDa-7q-D3H"/>
+                        <constraint firstAttribute="width" constant="25" id="tWA-fq-iO2"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -165,7 +170,7 @@
                 <constraint firstItem="TrA-BV-FUy" firstAttribute="top" secondItem="fQo-AD-f5o" secondAttribute="bottom" constant="19" id="53g-jN-3mW"/>
                 <constraint firstItem="xkv-ch-zgH" firstAttribute="top" secondItem="Jc2-nY-JlY" secondAttribute="bottom" constant="8" symbolic="YES" id="6XL-OV-Ew6"/>
                 <constraint firstAttribute="bottom" secondItem="xkv-ch-zgH" secondAttribute="bottom" constant="20" symbolic="YES" id="AJk-Fp-8ah"/>
-                <constraint firstAttribute="bottom" secondItem="P4a-e9-SLS" secondAttribute="bottom" constant="8" id="BNK-gR-ktK"/>
+                <constraint firstAttribute="trailing" secondItem="Wwh-8d-WNB" secondAttribute="trailing" id="Ay4-4X-4ZT"/>
                 <constraint firstItem="VXW-8c-iZJ" firstAttribute="baseline" secondItem="RzH-By-5M4" secondAttribute="baseline" id="Bze-kE-wPw"/>
                 <constraint firstItem="1tE-bi-Kop" firstAttribute="top" secondItem="v5C-FJ-aBY" secondAttribute="top" id="EjJ-Zf-hiZ"/>
                 <constraint firstAttribute="bottom" secondItem="1tE-bi-Kop" secondAttribute="bottom" constant="20" symbolic="YES" id="HHI-BF-jdS"/>
@@ -175,6 +180,7 @@
                 <constraint firstItem="BX8-fG-G3Q" firstAttribute="centerY" secondItem="RzH-By-5M4" secondAttribute="centerY" constant="0.5" id="MDT-HT-oqZ"/>
                 <constraint firstItem="wva-gp-6nP" firstAttribute="top" secondItem="fQo-AD-f5o" secondAttribute="bottom" constant="26" id="NiI-yQ-u9z"/>
                 <constraint firstItem="VXW-8c-iZJ" firstAttribute="leading" secondItem="GRJ-qB-IFQ" secondAttribute="trailing" constant="8" symbolic="YES" id="Pm2-5C-yK3"/>
+                <constraint firstAttribute="bottom" secondItem="Wwh-8d-WNB" secondAttribute="bottom" id="QWe-3G-GFK"/>
                 <constraint firstItem="v5C-FJ-aBY" firstAttribute="top" secondItem="xkv-ch-zgH" secondAttribute="top" id="QgV-TT-rie"/>
                 <constraint firstItem="Jc2-nY-JlY" firstAttribute="leading" secondItem="nJQ-Ck-JcJ" secondAttribute="trailing" constant="8" symbolic="YES" id="SDI-ml-Esk"/>
                 <constraint firstAttribute="bottom" secondItem="v5C-FJ-aBY" secondAttribute="bottom" constant="20" symbolic="YES" id="Xih-sT-yrC"/>
@@ -188,7 +194,6 @@
                 <constraint firstItem="VXW-8c-iZJ" firstAttribute="baseline" secondItem="Jc2-nY-JlY" secondAttribute="baseline" id="in6-X1-aBO"/>
                 <constraint firstItem="1tE-bi-Kop" firstAttribute="top" secondItem="xkv-ch-zgH" secondAttribute="top" id="noK-tS-pe2"/>
                 <constraint firstItem="v5C-FJ-aBY" firstAttribute="trailing" secondItem="VXW-8c-iZJ" secondAttribute="trailing" id="ny1-iA-YTp"/>
-                <constraint firstAttribute="trailing" secondItem="P4a-e9-SLS" secondAttribute="trailing" constant="2" id="tva-0a-zjk"/>
                 <constraint firstItem="VXW-8c-iZJ" firstAttribute="top" secondItem="TrA-BV-FUy" secondAttribute="bottom" constant="8" symbolic="YES" id="uEw-5q-1nt"/>
                 <constraint firstItem="fQo-AD-f5o" firstAttribute="top" secondItem="2" secondAttribute="top" constant="90" id="uGG-g8-ety"/>
                 <constraint firstItem="v5C-FJ-aBY" firstAttribute="leading" secondItem="GRJ-qB-IFQ" secondAttribute="leading" id="w9w-Qi-81N"/>
@@ -203,7 +208,7 @@
     </objects>
     <resources>
         <image name="doc1" width="512" height="512"/>
-        <image name="glas" width="200" height="200"/>
+        <image name="info_orange" width="50" height="50"/>
         <image name="printer" width="512" height="512"/>
         <image name="put in" width="512" height="512"/>
     </resources>

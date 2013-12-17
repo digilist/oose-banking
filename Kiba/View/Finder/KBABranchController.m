@@ -56,6 +56,11 @@ static NSArray *currencies;
     self.openingHoursLabel.text = openingHours;
     [self.openingHoursLabel sizeToFit];
     
+    self.branchLabel.text = self.branch.name;
+    [self.branchLabel sizeToFit];
+    
+    self.contactImage.image = self.branch.consultant.image;
+    self.contactPersonLabel.text = self.branch.consultant.fullName;
 }
 
 - (void)didReceiveMemoryWarning

@@ -8,6 +8,8 @@
 
 #import "KBAMasterViewController.h"
 #import "Dashboard/KBADashboardController.h"
+#import "KBADependencyInjector.h"
+#import "KBAColorHelper.h"
 
 static NSArray * KBAMasterViewEntryNames;
 static NSMutableDictionary * navigationEntries;
@@ -45,11 +47,11 @@ static NSArray * navigationEntryKeys;
 {
     [super viewDidLoad];
     
-    self.barTintColor = [UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:114.0f/255.0f alpha:1.0f];
-    self.tintColor = [UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0f];
+    id<KBAColorHelper> colorHelper = [KBADependencyInjector getByKey:@"colorHelper"];
+    self.barTintColor = colorHelper.barTintColor;
+    self.tintColor = [UIColor whiteColor];
    //  self.navigationController.navigationBar.barTintColor = self.barTintColor;
     self.tableView.backgroundColor = self.tintColor;
-
 
     self.title = @"KiBa App";
 }
@@ -93,7 +95,12 @@ static NSArray * navigationEntryKeys;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    id<KBAColorHelper> colorHelper = [KBADependencyInjector getByKey:@"colorHelper"];
+    
     cell.backgroundColor = self.tintColor;
+    UIView *v = [[UIView alloc] init];
+    v.backgroundColor = colorHelper.tintColor;
+    cell.selectedBackgroundView = v;
     NSString *key = navigationEntryKeys[indexPath.row];
     cell.textLabel.text = [navigationEntries valueForKey:key];
     return cell;
@@ -124,17 +131,17 @@ static NSArray * navigationEntryKeys;
     selectedNavigationController.navigationBar.topItem.title = [navigationEntries valueForKey:selectedKey];
     selectedNavigationController.navigationBar.tintColor = [UIColor colorWithRed:219.0f/255.0f green:108.0f/255.0f blue:15.0f/255.0f alpha:1.0f];
     
+    id<KBAColorHelper> colorHelper = [KBADependencyInjector getByKey:@"colorHelper"];
+    
     [[UINavigationBar appearance] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
-     [UIColor colorWithRed:219.0f/255.0f green:108.0f/255.0f blue:15.0f/255.0f alpha:1.0f],
-      NSForegroundColorAttributeName,
-     [UIColor colorWithRed:219.0f/255.0f green:108.0f/255.0f blue:15.0f/255.0f alpha:1.0f],
-      NSForegroundColorAttributeName,
-      [NSValue valueWithUIOffset:UIOffsetMake(0, -1)],
-      NSForegroundColorAttributeName,
-     [UIFont fontWithName:@"Arial-Bold" size:0.0],
-      NSFontAttributeName,
-      nil]];
+          // Tint color of top bar icons
+          colorHelper.tintColor,
+          NSForegroundColorAttributeName,
+          // Top bar font
+          [UIFont systemFontOfSize:0.0],
+          NSFontAttributeName,
+          nil]];
     
     // Set new Splitcontroller configuration
     NSArray* splitViewControllers = @[self.navigationController,     // Master View Navigation

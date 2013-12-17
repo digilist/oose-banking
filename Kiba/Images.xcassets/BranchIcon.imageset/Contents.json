@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "data_in_both_directions-512.png"
+      "filename" : "BranchIcon.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "data_in_both_directions-512-1.png"
+      "filename" : "BranchIcon64.png"
     }
   ],
   "info" : {

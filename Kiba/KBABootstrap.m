@@ -21,6 +21,8 @@
 #import "KBAAuth.h"
 #import "KBAExchangeRateDao.h"
 #import "KBAExchangeRateDaoRest.h"
+#import "KBAColorHelper.h"
+#import "KBAKiBaColorHelper.h"
 
 @implementation KBABootstrap
 
@@ -57,11 +59,14 @@
         accountDAo = [KBAAccountDaoRest new];
     }
     
+    id<KBAColorHelper> colorHelper = [KBAKiBaColorHelper new];
+    
     [KBADependencyInjector setObject:branchDao withKey:@"branchDao"];
     [KBADependencyInjector setObject:exchangeRateDao withKey:@"exchangeRateDao"];
     [KBADependencyInjector setObject:customerDao withKey:@"customerDao"];
     [KBADependencyInjector setObject:accountDAo withKey:@"accountDao"];
     [KBADependencyInjector setObject:auth withKey:@"auth"];
+    [KBADependencyInjector setObject:colorHelper withKey:@"colorHelper"];
     [auth login: @"max" withPassword:@"test"];
     
 }
