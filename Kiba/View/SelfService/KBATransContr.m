@@ -63,8 +63,8 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
 
 -(void)viewDidLoad
 {
-    self.subTitleLabel.numberOfLines = 2;
-    self.subTitleLabel.text = @"Nehmen Sie eine Umbuchung vor!";
+    //self.subTitleLabel.numberOfLines = 2;
+    //self.subTitleLabel.text = @"Umbuchung vornehmen!";
     
     NSDateFormatter *DateFormatter = [NSDateFormatter new];
     [DateFormatter setDateFormat:@"dd.MM.yyyy"];
@@ -142,7 +142,7 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
 -(void)respondToChosenAccountEntry:(NSNotification *)notification
 {
     [self.popController dismissPopoverAnimated:YES];
-    self.labelToSet.text = [NSString stringWithFormat:@": %@",(NSString*)[notification object]];
+    self.labelToSet.text = [NSString stringWithFormat:@"%@",(NSString*)[notification object]];
 }
 
 /**
