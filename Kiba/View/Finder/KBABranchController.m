@@ -21,6 +21,9 @@ static NSArray *currencies;
 @property Branch *branch;
 @property Currency *selectedCurrency;
 
+// popovercontroller
+@property (strong) UIPopoverController *popController;
+@property (strong) UIViewController *popoverViewController;
 @end
 
 @implementation KBABranchController
@@ -61,6 +64,9 @@ static NSArray *currencies;
     
     self.contactImage.image = self.branch.consultant.image;
     self.contactPersonLabel.text = self.branch.consultant.fullName;
+    
+    Currency *currency = currencies[0];
+    [self.currencySelectButton setTitle:currency.formattedLabel forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,7 +89,7 @@ static NSArray *currencies;
 - (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     Currency *currency = currencies[row];
     
-    return [[NSString alloc] initWithFormat:@"%@ - %@", currency.symbol, currency.code];
+    return currency.formattedLabel;
 }
 
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
@@ -93,6 +99,34 @@ static NSArray *currencies;
 }
 
 #pragma mark Currency Logic
+
+- (IBAction)showCurrencyPicker:(UIButton *)sender {
+    
+//    UIView *uiView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+//    uiView.backgroundColor = [UIColor blackColor];
+//    
+//    UILabel *testLabel = [UILabel new];
+//    testLabel.text = @"foo";
+//    testLabel.frame = CGRectMake(0, 0, 100, 100);
+//    [uiView addSubview:testLabel];
+//    
+//    // create popover view
+//    self.popoverViewController = [UIViewController new];
+//    self.preferredContentSize = CGSizeMake(320, 300);
+//    self.popoverViewController.view = uiView;
+//    
+//    
+//    // create popover
+//    self.popController = [[UIPopoverController alloc] initWithContentViewController:self.popoverViewController];
+//    //self.popoverController.delegate=self;
+//    
+//    [self.popController setPopoverContentSize:CGSizeMake(320, 264) animated:NO];
+//    [self.popController presentPopoverFromRect:sender.frame
+//                                            inView:self.view
+//                          permittedArrowDirections:UIPopoverArrowDirectionDown
+//                                          animated:YES];
+    
+}
 
 /**
  *  Will be executed when the user enters a new currency value.
