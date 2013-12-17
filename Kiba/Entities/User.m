@@ -26,4 +26,14 @@
     return self;
 }
 
+/**
+ *  Returns the full name of the user.
+ *
+ *  @return A string containing fore- and surname.
+ */
+- (NSString *)fullName
+{
+    return [NSString stringWithFormat:@"%@ %@", self.forename, self.surname];
+}
+
 @end

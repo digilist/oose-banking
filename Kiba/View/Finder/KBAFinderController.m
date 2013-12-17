@@ -12,6 +12,7 @@
 
 #import "KBADependencyInjector.h"
 #import "KBABranchDao.h"
+#import "KBAColorHelper.h"
 
 #import "Branch.h"
 #import "OpenHour.h"
@@ -89,6 +90,9 @@
             
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
             annotationView.rightCalloutAccessoryView = rightButton;
+            
+            id<KBAColorHelper> colors = [KBADependencyInjector getByKey:@"colorHelper"];
+            annotationView.tintColor = colors.tintColor;
         } else {
             annotationView.annotation = annotation;
         }

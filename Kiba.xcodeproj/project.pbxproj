@@ -24,6 +24,7 @@
 		342323051837B9FD00618D7E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342322E41837B9FD00618D7E /* UIKit.framework */; };
 		3423230D1837B9FD00618D7E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3423230B1837B9FD00618D7E /* InfoPlist.strings */; };
 		3423230F1837B9FD00618D7E /* KibaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3423230E1837B9FD00618D7E /* KibaTests.m */; };
+		344029EF18607999008B31A2 /* KBAKiBaColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 344029EE18607999008B31A2 /* KBAKiBaColorHelper.m */; };
 		A8F81C881844B51D00E55C75 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F81C7D1844B51D00E55C75 /* Account.m */; };
 		A8F81C891844B51D00E55C75 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F81C7F1844B51D00E55C75 /* Address.m */; };
 		A8F81C8A1844B51D00E55C75 /* Branch.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F81C811844B51D00E55C75 /* Branch.m */; };
@@ -114,6 +115,9 @@
 		3423230A1837B9FD00618D7E /* KibaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KibaTests-Info.plist"; sourceTree = "<group>"; };
 		3423230C1837B9FD00618D7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3423230E1837B9FD00618D7E /* KibaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KibaTests.m; sourceTree = "<group>"; };
+		344029EA1860773D008B31A2 /* KBAColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAColorHelper.h; path = Library/KBAColorHelper.h; sourceTree = "<group>"; };
+		344029ED18607999008B31A2 /* KBAKiBaColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAKiBaColorHelper.h; path = Library/KBAKiBaColorHelper.h; sourceTree = "<group>"; };
+		344029EE18607999008B31A2 /* KBAKiBaColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAKiBaColorHelper.m; path = Library/KBAKiBaColorHelper.m; sourceTree = "<group>"; };
 		34F3B62E185B8D27003E8040 /* OCR A Std.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OCR A Std.ttf"; sourceTree = "<group>"; };
 		A8F81C7C1844B51D00E55C75 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Account.h; path = Entities/Account.h; sourceTree = "<group>"; };
 		A8F81C7D1844B51D00E55C75 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Account.m; path = Entities/Account.m; sourceTree = "<group>"; };
@@ -284,6 +288,9 @@
 				C10C5FC1183B8A5A008FAECB /* KBADependencyInjector.m */,
 				C1F00E611844DAEB009EFE4F /* KBAViewController.h */,
 				C1F00E621844DAEB009EFE4F /* KBAViewController.m */,
+				344029EA1860773D008B31A2 /* KBAColorHelper.h */,
+				344029ED18607999008B31A2 /* KBAKiBaColorHelper.h */,
+				344029EE18607999008B31A2 /* KBAKiBaColorHelper.m */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -613,6 +620,7 @@
 				342322ED1837B9FD00618D7E /* main.m in Sources */,
 				C1F00E731844E08C009EFE4F /* KBAAuthController.m in Sources */,
 				C10C5FBF183B877B008FAECB /* KBABranchDaoRest.m in Sources */,
+				344029EF18607999008B31A2 /* KBAKiBaColorHelper.m in Sources */,
 				C1704208184DF3A00019F929 /* KBAFinderService.m in Sources */,
 				A8F81C8C1844B51D00E55C75 /* Customer.m in Sources */,
 				D93C6A351859D94A0004E51A /* BranchService.m in Sources */,

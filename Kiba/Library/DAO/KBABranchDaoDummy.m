@@ -23,7 +23,9 @@
     OpenHour *openHour5 = [[OpenHour alloc] initWithWeekDay:KBAFriday openingTime:600 closingTime:720];
     
     NSArray *openHours = @[openHour1, openHour2, openHour3, openHour4, openHour5];
-    Consultant *consultant = [[Consultant alloc] initWithId:1 forename:@"Max" surname:@"Mustermann" pass:@"passwort" phoneNumber:@"040 12 34 56" image:nil businessPosition:@"Kundenberater"];
+    
+    UIImage *consultantImage = [UIImage imageNamed:@"Consultant"];
+    Consultant *consultant = [[Consultant alloc] initWithId:1 forename:@"Georg" surname:@"Schmidt" pass:@"passwort" phoneNumber:@"040 12 34 56" image:consultantImage businessPosition:@"Kundenberater"];
     
     Address *address1 = [[Address alloc] initWithStreet:@"Schulterblatt"
                                                 houseNr:@"65" postalCode:@"20357"
