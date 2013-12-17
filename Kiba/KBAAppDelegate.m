@@ -21,9 +21,17 @@
     // Override point for customization after application launch.
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-
-    UIColor *barTintColor = [UIColor colorWithRed:90.0f/255.0f green:200.0f/255.0f blue:250.0f/255.0f alpha:1.0f];
-    navigationController.navigationBar.barTintColor = barTintColor;
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+    [UIColor colorWithRed:219.0f/255.0f green:108.0f/255.0f blue:15.0f/255.0f alpha:1.0f],
+      NSForegroundColorAttributeName,
+    [UIColor colorWithRed:219.0f/255.0f green:108.0f/255.0f blue:15.0f/255.0f alpha:1.0f],
+      NSForegroundColorAttributeName,
+    [NSValue valueWithUIOffset:UIOffsetMake(0, -1)],
+      NSForegroundColorAttributeName,
+    [UIFont fontWithName:@"Arial-Bold" size:0.0],
+      NSFontAttributeName,
+     nil]];
     splitViewController.delegate = (id)navigationController.topViewController;
     return YES;
 }
