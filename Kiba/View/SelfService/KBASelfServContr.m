@@ -10,11 +10,13 @@
 #import "KBATransContr.h"
 #import "KBAStatemContr.h"
 #import "KBADocContr.h"
+#import "KBAStatemTableContr.h"
 
 @interface KBASelfServContr ()
 
 @property (nonatomic, strong) IBOutlet KBATransTableContr *subMoneyTransferContr;
 @property (nonatomic, strong) IBOutlet KBADocTableContr *subDocContr;
+@property (nonatomic, strong) IBOutlet KBAStatemTableContr *subStatemContr;
 
 @property (nonatomic, weak) IBOutlet UIButton *connectButton;
 @property (nonatomic, weak) IBOutlet UIButton *transferButton;

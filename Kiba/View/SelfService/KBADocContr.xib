@@ -45,7 +45,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Mit dem Freistellungsauftrag können Sie Kapitalerträge von der Kapitalertragssteuer freistellen. " translatesAutoresizingMaskIntoConstraints="NO" id="3Fz-lo-Vp8">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Mit dem Freistellungsauftrag können Sie Kapitalerträge von der Kapitalertragssteuer freistellen. " translatesAutoresizingMaskIntoConstraints="NO" id="3Fz-lo-Vp8">
                     <rect key="frame" x="50" y="502" width="280" height="83"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

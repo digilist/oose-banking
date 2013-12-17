@@ -24,6 +24,7 @@
 		342323051837B9FD00618D7E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342322E41837B9FD00618D7E /* UIKit.framework */; };
 		3423230D1837B9FD00618D7E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3423230B1837B9FD00618D7E /* InfoPlist.strings */; };
 		3423230F1837B9FD00618D7E /* KibaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3423230E1837B9FD00618D7E /* KibaTests.m */; };
+		A8D883161860463B006DD296 /* KBAStatemTableContr.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D883151860463B006DD296 /* KBAStatemTableContr.m */; };
 		A8F81C881844B51D00E55C75 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F81C7D1844B51D00E55C75 /* Account.m */; };
 		A8F81C891844B51D00E55C75 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F81C7F1844B51D00E55C75 /* Address.m */; };
 		A8F81C8A1844B51D00E55C75 /* Branch.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F81C811844B51D00E55C75 /* Branch.m */; };
@@ -115,6 +116,8 @@
 		3423230C1837B9FD00618D7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3423230E1837B9FD00618D7E /* KibaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KibaTests.m; sourceTree = "<group>"; };
 		34F3B62E185B8D27003E8040 /* OCR A Std.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OCR A Std.ttf"; sourceTree = "<group>"; };
+		A8D883141860463B006DD296 /* KBAStatemTableContr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAStatemTableContr.h; path = View/SelfService/KBAStatemTableContr.h; sourceTree = "<group>"; };
+		A8D883151860463B006DD296 /* KBAStatemTableContr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAStatemTableContr.m; path = View/SelfService/KBAStatemTableContr.m; sourceTree = "<group>"; };
 		A8F81C7C1844B51D00E55C75 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Account.h; path = Entities/Account.h; sourceTree = "<group>"; };
 		A8F81C7D1844B51D00E55C75 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Account.m; path = Entities/Account.m; sourceTree = "<group>"; };
 		A8F81C7E1844B51D00E55C75 /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Address.h; path = Entities/Address.h; sourceTree = "<group>"; };
@@ -251,6 +254,8 @@
 				D93C6A1E1859D8E90004E51A /* KBATransTableContr.m */,
 				D93C6A0E1859D8E90004E51A /* KBADocTableContr.h */,
 				D93C6A0F1859D8E90004E51A /* KBADocTableContr.m */,
+				A8D883141860463B006DD296 /* KBAStatemTableContr.h */,
+				A8D883151860463B006DD296 /* KBAStatemTableContr.m */,
 				2174A5E2185A6CB80055C35F /* Transactions */,
 				D93C6A0B1859D8E90004E51A /* KBADocContr.h */,
 				D93C6A0C1859D8E90004E51A /* KBADocContr.m */,
@@ -618,6 +623,7 @@
 				D93C6A351859D94A0004E51A /* BranchService.m in Sources */,
 				D93C6A291859D8E90004E51A /* KBATransContr.m in Sources */,
 				D93C6A4A1859DA800004E51A /* KBACustomerDaoRest.m in Sources */,
+				A8D883161860463B006DD296 /* KBAStatemTableContr.m in Sources */,
 				D93C6A4D1859E5170004E51A /* User.m in Sources */,
 				D93C6A501859E5F50004E51A /* Consultant.m in Sources */,
 				C10C5FC2183B8A5A008FAECB /* KBADependencyInjector.m in Sources */,
