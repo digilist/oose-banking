@@ -13,11 +13,13 @@
 @property int userId;
 @property NSString *forename;
 @property NSString *surname;
+@property (readonly) NSString *fullName;
 @property NSString *pass;
 
 - (id)initWithId:(int)userId
         forename:(NSString *)forename
          surname:(NSString *)surname
         password:(NSString *)password;
+- (NSString *)fullName;
 
 @end

@@ -63,6 +63,8 @@
         transDao = [KBATransactionDaoRest new];
     }
     
+    id<KBAColorHelper> colorHelper = [KBAKiBaColorHelper new];
+    
     [KBADependencyInjector setObject:branchDao withKey:@"branchDao"];
     [KBADependencyInjector setObject:exchangeRateDao withKey:@"exchangeRateDao"];
     [KBADependencyInjector setObject:customerDao withKey:@"customerDao"];

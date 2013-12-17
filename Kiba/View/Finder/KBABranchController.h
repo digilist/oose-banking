@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *appointmentPicker;
 @property (weak, nonatomic) IBOutlet UITextField *currencyField;
 @property (weak, nonatomic) IBOutlet UILabel *euroLabel;
+@property (weak, nonatomic) IBOutlet UILabel *branchLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *contactImage;
 
 - (id) initWithBranch: (Branch*) branch;
 - (IBAction)onCurrencyReturned:(UITextField *)sender;
