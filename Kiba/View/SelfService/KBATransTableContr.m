@@ -80,7 +80,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"Ihre gespeicherten Umbuchungen";
+    return @"Umbuchungen";
 }
 
 @end

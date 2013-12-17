@@ -1,35 +1,32 @@
 //
-//  KBASubDocumentController.m
+//  KBAStatemTableContr.m
 //  Kiba
 //
-//  Created by //// on 04.12.13.
+//  Created by 1jendryc on 17.12.13.
 //  Copyright (c) 2013 KiBa App. All rights reserved.
 //
 
-#import "KBADocTableContr.h"
+#import "KBAStatemTableContr.h"
 
-@interface KBADocTableContr ()
-@property NSArray* documents;
+@interface KBAStatemTableContr ()
+@property NSArray* statem;
 @end
 
-/*
- Table-view-controller subclass to present documents to print
- in self-service top-view.
-*/
+@implementation KBAStatemTableContr
 
-@implementation KBADocTableContr
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        self.documents = @[@"Bonusbescheinigung",
-                           @"B",
-                           @"C",
-                           @"D",
-                           @"E",
-                           @"F",
-                           @"G"];
+        self.statem = @[@"Bewegung 1",
+                           @"Bewegung 2",
+                           @"CADASDAS",
+                           @"DADASDASD",
+                           @"EaSDASDA",
+                           @"FaSDASD",
+                           @"GADASD"];
     }
     return self;
 }
@@ -56,7 +53,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.documents count];
+    return [self.statem count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -71,7 +68,7 @@
     }
     
     
-    cell.textLabel.text = [self.documents objectAtIndex:indexPath.row];
+    cell.textLabel.text = [self.statem objectAtIndex:indexPath.row];
     cell.textLabel.numberOfLines = 0;
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     
@@ -80,7 +77,9 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"Bescheinigungen";
+    return @"Transaktionen";
 }
 
 @end
+
+
