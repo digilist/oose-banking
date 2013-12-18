@@ -24,6 +24,9 @@ static NSArray *currencies;
 // popovercontroller
 @property (strong) UIPopoverController *popController;
 @property (strong) UIViewController *popoverViewController;
+
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *topConstraint;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *middleConstraint;
 @end
 
 @implementation KBABranchController
@@ -67,6 +70,9 @@ static NSArray *currencies;
     
     Currency *currency = currencies[0];
     [self.currencySelectButton setTitle:currency.formattedLabel forState:UIControlStateNormal];
+    
+    [self respondToOrientation: UIApplication.sharedApplication.statusBarOrientation
+        inAnimatedDurationTime: 0.0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -175,6 +181,44 @@ static NSArray *currencies;
     }
     
     return subject;
+}
+
+/**
+ *  Set constraints and show/hide kiba icon
+ *  based on iPad-orientation
+ *
+ *  @param orientation orientation to respond to
+ */
+-(void)respondToOrientation:(UIInterfaceOrientation)orientation
+     inAnimatedDurationTime:(double)duration
+{
+    //animations if switch to portrait-mode
+    if (orientation == UIInterfaceOrientationPortrait ||
+        orientation == UIInterfaceOrientationPortraitUpsideDown) {
+        [UIView animateWithDuration:duration
+                         animations:^{
+                             self.topConstraint.constant = 70;
+                             self.middleConstraint.constant = 95;
+                         }];
+        
+    }
+    //animations if switch to landscape-mode
+    else{
+        [UIView animateWithDuration:duration
+                         animations:^{
+                             self.topConstraint.constant = 44;
+                             self.middleConstraint.constant = 50;
+                         }];
+        
+    }
+}
+
+
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+                               duration:(NSTimeInterval)duration
+{
+    [self respondToOrientation:toInterfaceOrientation
+        inAnimatedDurationTime:0.2];
 }
 
 @end
