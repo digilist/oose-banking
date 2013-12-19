@@ -21,6 +21,12 @@ static NSArray *currencies;
 @property Branch *branch;
 @property Currency *selectedCurrency;
 
+// popovercontroller
+@property (strong) UIPopoverController *popController;
+@property (strong) UIViewController *popoverViewController;
+
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *topConstraint;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *middleConstraint;
 @end
 
 @implementation KBABranchController
@@ -61,6 +67,12 @@ static NSArray *currencies;
     
     self.contactImage.image = self.branch.consultant.image;
     self.contactPersonLabel.text = self.branch.consultant.fullName;
+    
+    Currency *currency = currencies[0];
+    [self.currencySelectButton setTitle:currency.formattedLabel forState:UIControlStateNormal];
+    
+    [self respondToOrientation: UIApplication.sharedApplication.statusBarOrientation
+        inAnimatedDurationTime: 0.0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,7 +95,7 @@ static NSArray *currencies;
 - (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     Currency *currency = currencies[row];
     
-    return [[NSString alloc] initWithFormat:@"%@ - %@", currency.symbol, currency.code];
+    return currency.formattedLabel;
 }
 
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
@@ -93,6 +105,34 @@ static NSArray *currencies;
 }
 
 #pragma mark Currency Logic
+
+- (IBAction)showCurrencyPicker:(UIButton *)sender {
+    
+//    UIView *uiView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+//    uiView.backgroundColor = [UIColor blackColor];
+//    
+//    UILabel *testLabel = [UILabel new];
+//    testLabel.text = @"foo";
+//    testLabel.frame = CGRectMake(0, 0, 100, 100);
+//    [uiView addSubview:testLabel];
+//    
+//    // create popover view
+//    self.popoverViewController = [UIViewController new];
+//    self.preferredContentSize = CGSizeMake(320, 300);
+//    self.popoverViewController.view = uiView;
+//    
+//    
+//    // create popover
+//    self.popController = [[UIPopoverController alloc] initWithContentViewController:self.popoverViewController];
+//    //self.popoverController.delegate=self;
+//    
+//    [self.popController setPopoverContentSize:CGSizeMake(320, 264) animated:NO];
+//    [self.popController presentPopoverFromRect:sender.frame
+//                                            inView:self.view
+//                          permittedArrowDirections:UIPopoverArrowDirectionDown
+//                                          animated:YES];
+    
+}
 
 /**
  *  Will be executed when the user enters a new currency value.
@@ -141,6 +181,44 @@ static NSArray *currencies;
     }
     
     return subject;
+}
+
+/**
+ *  Set constraints and show/hide kiba icon
+ *  based on iPad-orientation
+ *
+ *  @param orientation orientation to respond to
+ */
+-(void)respondToOrientation:(UIInterfaceOrientation)orientation
+     inAnimatedDurationTime:(double)duration
+{
+    //animations if switch to portrait-mode
+    if (orientation == UIInterfaceOrientationPortrait ||
+        orientation == UIInterfaceOrientationPortraitUpsideDown) {
+        [UIView animateWithDuration:duration
+                         animations:^{
+                             self.topConstraint.constant = 70;
+                             self.middleConstraint.constant = 95;
+                         }];
+        
+    }
+    //animations if switch to landscape-mode
+    else{
+        [UIView animateWithDuration:duration
+                         animations:^{
+                             self.topConstraint.constant = 44;
+                             self.middleConstraint.constant = 50;
+                         }];
+        
+    }
+}
+
+
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+                               duration:(NSTimeInterval)duration
+{
+    [self respondToOrientation:toInterfaceOrientation
+        inAnimatedDurationTime:0.2];
 }
 
 @end

@@ -11,15 +11,17 @@
 
 @interface KBABranchController : KBAViewController<UIPickerViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *branchLabel;
+
 @property (nonatomic, weak) IBOutlet UILabel *openingHoursLabel;
 @property (nonatomic, weak) IBOutlet UILabel *contactPersonLabel;
-@property (nonatomic, weak) IBOutlet UILabel *branchNameLabel;
-@property (nonatomic, weak) IBOutlet UIPickerView *currencyPickerView;
+@property (weak, nonatomic) IBOutlet UIImageView *contactImage;
 @property (weak, nonatomic) IBOutlet UIDatePicker *appointmentPicker;
+
+@property (weak, nonatomic) IBOutlet UIButton *currencySelectButton;
+@property (nonatomic, weak) IBOutlet UIPickerView *currencyPickerView;
 @property (weak, nonatomic) IBOutlet UITextField *currencyField;
 @property (weak, nonatomic) IBOutlet UILabel *euroLabel;
-@property (weak, nonatomic) IBOutlet UILabel *branchLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *contactImage;
 
 - (id) initWithBranch: (Branch*) branch;
 - (IBAction)onCurrencyReturned:(UITextField *)sender;

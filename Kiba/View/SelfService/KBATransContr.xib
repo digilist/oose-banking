@@ -28,10 +28,10 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Umbuchung vornehmen!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWU-It-Onn">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Umbuchung vornehmen!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWU-It-Onn">
                     <rect key="frame" x="403" y="100" width="219" height="24"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scheck hier hinüberziehen!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bj1-HR-lY3">
@@ -90,7 +90,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.1.1970" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0k-Wz-fXj">
-                    <rect key="frame" x="635" y="323" width="71" height="22"/>
+                    <rect key="frame" x="655" y="323" width="71" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="highlightedColor"/>
@@ -144,7 +144,7 @@
                         <action selector="chooseAccount:" destination="-1" eventType="touchUpInside" id="J5b-vD-IRD"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money_box" translatesAutoresizingMaskIntoConstraints="NO" id="5dk-1T-1XU">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="money_box" translatesAutoresizingMaskIntoConstraints="NO" id="5dk-1T-1XU">
                     <rect key="frame" x="330" y="87" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -182,7 +182,7 @@
                 <constraint firstItem="hvO-N5-tXc" firstAttribute="leading" secondItem="Awc-hp-Jnz" secondAttribute="trailing" constant="8" id="aat-kb-Z7V"/>
                 <constraint firstItem="k4I-72-20Y" firstAttribute="top" secondItem="g6M-6s-9yG" secondAttribute="top" constant="46" id="c0S-AA-ei4"/>
                 <constraint firstItem="HWU-It-Onn" firstAttribute="leading" secondItem="5dk-1T-1XU" secondAttribute="trailing" constant="23" id="cUe-Sf-TIA"/>
-                <constraint firstItem="g6M-6s-9yG" firstAttribute="leading" secondItem="r0k-Wz-fXj" secondAttribute="leading" constant="-467" id="fVd-CJ-hWb"/>
+                <constraint firstItem="g6M-6s-9yG" firstAttribute="leading" secondItem="r0k-Wz-fXj" secondAttribute="leading" constant="-487" id="fVd-CJ-hWb"/>
                 <constraint firstAttribute="centerX" secondItem="Jex-fs-8WL" secondAttribute="centerX" constant="9" id="fde-fZ-08i"/>
                 <constraint firstItem="ors-Dk-Zlt" firstAttribute="top" secondItem="Bj1-HR-lY3" secondAttribute="bottom" id="gNF-cK-vBF"/>
                 <constraint firstAttribute="trailing" secondItem="Bj1-HR-lY3" secondAttribute="trailing" id="gqF-03-5jE"/>

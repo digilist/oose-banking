@@ -7,8 +7,11 @@
 //
 
 #import "KBAStatemContr.h"
+#import "KBAFlatDatePicker.h"
 
 @interface KBAStatemContr ()
+@property (nonatomic, weak) IBOutlet KBAFlatDatePicker *datePickerBegin;
+@property (nonatomic, weak) IBOutlet KBAFlatDatePicker *datePickerEnd;
 @end
 
 @implementation KBAStatemContr
@@ -25,7 +28,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
