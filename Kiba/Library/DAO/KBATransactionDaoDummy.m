@@ -24,6 +24,9 @@
     
     Account *acc1 = [customer.accounts firstObject];
     
+    
+    Account *acc2 = [customer.accounts objectAtIndex:1];
+    
     //Erzeugung von FakeCustomer
     Customer *custo2 = [[Customer alloc] initWithId:2 forename:@"Susanne" surname:@"Strebsam" password:nil];
     
@@ -107,9 +110,15 @@
                                                      amount:[self generateRandomAmount]
                                                        date:dateB];
     
+    Transaction *trans7 = [[Transaction alloc] initWithType:nil
+                                                  recipient:acc1
+                                                     sender:acc2
+                                                     amount:[self generateRandomAmount]
+                                                       date:dateB];
+    
 
     
-    NSArray *transactions = @[trans1, trans2, trans3, trans4, trans5, trans6];
+    NSArray *transactions = @[trans1, trans2, trans3, trans4, trans5, trans6, trans7];
     return transactions;
     
 

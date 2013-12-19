@@ -32,5 +32,7 @@
 
 -(NSString *)printTransactionTinySender;
 
+-(NSString *)printTransactionTinyOwn;
+
 
 @end

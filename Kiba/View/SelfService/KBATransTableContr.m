@@ -7,9 +7,16 @@
 //
 
 #import "KBATransTableContr.h"
+#import "KBADependencyInjector.h"
+#import "KBATransactionDao.h"
+#import "KBAAuth.h"
+
+#import "Account.h"
+#import "Transaction.h"
+#import "Customer.h"
 
 @interface KBATransTableContr ()
-@property NSArray* moneyTransfers;
+@property NSMutableArray* moneyTransfers;
 @end
 
 /*
@@ -24,11 +31,43 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        //table-view supports display of multiple lines, why \n is used here
-        self.moneyTransfers = @[@"Betrag: 32234,34€\nvon Konto: 3453762572\nnach Konto: 78886553873",
-                                @"Betrag: 654327,23€\nvon Konto: 3453762572\nnach Konto: 43572634",
-                                @"Betrag: 10,34€\nvon Konto: 762346723\nnach Konto: 3674572",
-                                @"Betrag: 364827,74€\nvon Konto: 67354327\nnach Konto: 465327347"];
+        
+        
+        
+        id<KBATransactionDao> transDao = [KBADependencyInjector getByKey:@"transDao"];
+        
+        KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
+        Customer *customer = [auth getIdentity];
+        self.moneyTransfers = [NSMutableArray new];
+        NSArray *trans = [transDao getTransaction: customer];
+        
+        
+        for (int i = 0; i < ([trans count]); i++)
+        {
+            
+            NSString *string = @"";
+            Account *sender = [[trans objectAtIndex:i]sender];
+            Account *recipient = [[trans objectAtIndex:i]recipient];
+            
+            if ((sender.owner.userId == customer.userId) && (recipient.owner.userId == customer.userId )) {
+                
+                string = [[trans objectAtIndex:i]printTransactionTinyOwn];
+                [self.moneyTransfers addObject: string];
+                
+                
+            }
+            }
+         
+            
+            
+            
+         
+
+        
+        
+        
+    
+        
     }
     return self;
 }

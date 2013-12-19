@@ -41,4 +41,9 @@
     NSString *string = [NSString stringWithFormat: @"%@, %@ \n%.2f €" ,  self.recipient.owner.surname, self.recipient.owner.forename, [self.amount doubleValue] ];
     return string;
 }
+
+- (NSString *)printTransactionTinyOwn {
+    NSString *string = [NSString stringWithFormat: @"%@\n%.2f €\n%@" ,  self.recipient.name ,[self.amount doubleValue], self.sender.name ];
+    return string;
+}
 @end

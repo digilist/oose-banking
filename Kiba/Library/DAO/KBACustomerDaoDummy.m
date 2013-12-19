@@ -28,8 +28,9 @@
                                                    accounts: nil
                                                creditRating: nil];
     
-    Account *acc1 = [[Account alloc] initWithBalance:balacne overDraft:nil accountNr:accountnr name:nil owner:customer];
-    NSArray *accs = [[NSArray alloc] initWithObjects:(id) acc1, nil];
+    Account *acc1 = [[Account alloc] initWithBalance:balacne overDraft:nil accountNr:accountnr name:@"Girokonto" owner:customer];
+    Account *acc2 = [[Account alloc] initWithBalance:balacne overDraft:nil accountNr:accountnr name:@"Sparkonto" owner:customer];
+    NSArray *accs = [[NSArray alloc] initWithObjects:(id) acc1, acc2, nil];
     customer.accounts = accs;
     
     return customer;
