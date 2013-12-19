@@ -116,9 +116,39 @@
                                                      amount:[self generateRandomAmount]
                                                        date:dateB];
     
+    Transaction *trans8 = [[Transaction alloc] initWithType:nil
+                                                  recipient:acc2
+                                                     sender:acc1
+                                                     amount:[self generateRandomAmount]
+                                                       date:dateB];
+    
+    Transaction *trans9 = [[Transaction alloc] initWithType:nil
+                                                  recipient:acc1
+                                                     sender:acc2
+                                                     amount:[self generateRandomAmount]
+                                                       date:dateB];
+    
+    Transaction *trans10 = [[Transaction alloc] initWithType:nil
+                                                  recipient:acc1
+                                                     sender:acc2
+                                                     amount:[self generateRandomAmount]
+                                                       date:dateB];
+    
+    Transaction *trans11 = [[Transaction alloc] initWithType:nil
+                                                  recipient:acc2
+                                                     sender:acc1
+                                                     amount:[self generateRandomAmount]
+                                                       date:dateB];
+    
+    Transaction *trans12 = [[Transaction alloc] initWithType:nil
+                                                  recipient:acc2
+                                                     sender:acc1
+                                                     amount:[self generateRandomAmount]
+                                                       date:dateB];
+    
 
     
-    NSArray *transactions = @[trans1, trans2, trans3, trans4, trans5, trans6, trans7];
+    NSArray *transactions = @[trans1, trans2, trans3, trans4, trans5, trans6, trans7, trans8, trans9, trans10, trans11, trans12];
     return transactions;
     
 

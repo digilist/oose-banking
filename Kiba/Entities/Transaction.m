@@ -32,13 +32,13 @@
     return string;
 }
 
-- (NSString *)printTransactionTinyRecipient {
-    NSString *string = [NSString stringWithFormat: @"%@, %@ \n%.2f €" , self.sender.owner.surname, self.sender.owner.forename, [self.amount doubleValue]];
+- (NSString *)printTransactionTinyRecipient: (NSString*) indicator {
+    NSString *string = [NSString stringWithFormat: @"%@, \n%@ \n%@ %.2f €" , self.sender.owner.surname, self.sender.owner.forename,indicator, [self.amount doubleValue]];
     return string;
 }
 
-- (NSString *)printTransactionTinySender {
-    NSString *string = [NSString stringWithFormat: @"%@, %@ \n%.2f €" ,  self.recipient.owner.surname, self.recipient.owner.forename, [self.amount doubleValue] ];
+- (NSString *)printTransactionTinySender: (NSString *) indicator {
+    NSString *string = [NSString stringWithFormat: @"%@, \n%@ \n%@ %.2f €" ,  self.recipient.owner.surname, self.recipient.owner.forename,indicator, [self.amount doubleValue] ];
     return string;
 }
 

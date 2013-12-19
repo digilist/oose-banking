@@ -28,9 +28,9 @@
 
 -(NSString *)printTransactionTiny;
 
--(NSString *)printTransactionTinyRecipient;
+-(NSString *)printTransactionTinyRecipient: (NSString *)indicator;
 
--(NSString *)printTransactionTinySender;
+-(NSString *)printTransactionTinySender: (NSString *)indicator;
 
 -(NSString *)printTransactionTinyOwn;
 

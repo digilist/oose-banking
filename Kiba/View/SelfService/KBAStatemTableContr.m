@@ -47,18 +47,18 @@
             Account *recipient = [[trans objectAtIndex:i]recipient];
             if ((user.owner.userId == customer.userId) && (recipient.owner.userId != customer.userId) ) {
                 [indicator setString:@"-"];
-                string = [[trans objectAtIndex:i]printTransactionTinySender];
-                [indicator appendString:string];
-                [self.statem addObject: indicator];
+                string = [[trans objectAtIndex:i]printTransactionTinySender:indicator];
+                
+                [self.statem addObject: string];
 
                 
             }
             else if ((recipient.owner.userId == customer.userId) && (user.owner.userId != customer.userId))
             {
                 [indicator setString:@"+"];
-                string = [[trans objectAtIndex:i]printTransactionTinyRecipient];
-                [indicator appendString:string];
-                [self.statem addObject: indicator];
+                string = [[trans objectAtIndex:i]printTransactionTinyRecipient:indicator];
+                
+                [self.statem addObject: string];
 
             }
                 
@@ -108,16 +108,16 @@
     
     
   
-    if ([[self.statem objectAtIndex:indexPath.row]characterAtIndex:0] == '-')
-    {
-        cell.imageView.image = [UIImage imageNamed:@"minus.png"];
-        [[self.statem objectAtIndex:indexPath.row] deleteCharactersInRange: NSMakeRange(0, 1)];
-    }
-    else if ([[self.statem objectAtIndex:indexPath.row]characterAtIndex:0] == '+')
-    {
-        cell.imageView.image = [UIImage imageNamed:@"plus.png"];
-        [[self.statem objectAtIndex:indexPath.row] deleteCharactersInRange: NSMakeRange(0, 1)];
-    }
+//    if ([[self.statem objectAtIndex:indexPath.row]characterAtIndex:0] == '-')
+//    {
+//        cell.imageView.image = [UIImage imageNamed:@"minus.png"];
+//        [[self.statem objectAtIndex:indexPath.row] deleteCharactersInRange: NSMakeRange(0, 1)];
+//    }
+//    else if ([[self.statem objectAtIndex:indexPath.row]characterAtIndex:0] == '+')
+//    {
+//        cell.imageView.image = [UIImage imageNamed:@"plus.png"];
+//        [[self.statem objectAtIndex:indexPath.row] deleteCharactersInRange: NSMakeRange(0, 1)];
+//    }
    
     cell.textLabel.text = [self.statem objectAtIndex:indexPath.row];
     cell.textLabel.numberOfLines = 0;
