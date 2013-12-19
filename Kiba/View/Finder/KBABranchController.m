@@ -36,7 +36,7 @@ static NSArray *currencies;
     currencies = [exchangeRateDao getExchangeRates];
 }
 
-- (id) initWithBranch: (Branch *) branch {
+- (id)initWithBranch: (Branch *) branch {
     self = [self init];
     
     if (self)
@@ -59,6 +59,8 @@ static NSArray *currencies;
     {
         [openingHours appendFormat:@"%@\n", [self.branch.openHours[i] formatted]];
     }
+    
+    // Fill labels
     self.openingHoursLabel.text = openingHours;
     [self.openingHoursLabel sizeToFit];
     
@@ -68,6 +70,7 @@ static NSArray *currencies;
     self.contactImage.image = self.branch.consultant.image;
     self.contactPersonLabel.text = self.branch.consultant.fullName;
     
+    // Initialize currencies
     Currency *currency = currencies[0];
     [self.currencySelectButton setTitle:currency.formattedLabel forState:UIControlStateNormal];
     
