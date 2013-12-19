@@ -15,7 +15,7 @@
 @interface Customer : User
 -(id)initWithForeName: (NSString*) forename
              surname: (NSString*) surname
-             customerId: (int) customerId
+             customerId: (int) userId
              pass: (NSString*) pass
              ident: (NSString*) ident
              adress: (Address*) address
@@ -28,5 +28,6 @@
 @property NSArray *accounts;
 @property CreditRating *creditRating;
 @property Boolean verificated;
+
 
 @end

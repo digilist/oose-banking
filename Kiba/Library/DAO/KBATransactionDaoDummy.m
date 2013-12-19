@@ -25,9 +25,14 @@
     Account *acc1 = [customer.accounts firstObject];
     
     //Erzeugung von FakeCustomer
-    Customer *custo2 = [[Customer alloc] initWithId:1 forename:@"Susanne" surname:@"Strebsam" password:nil];
+    Customer *custo2 = [[Customer alloc] initWithId:2 forename:@"Susanne" surname:@"Strebsam" password:nil];
     
-    Customer *custo3 = [[Customer alloc] initWithId:2 forename:@"Yolander" surname:@"Batzteki" password:nil];
+    Customer *custo3 = [[Customer alloc] initWithId:3 forename:@"Yolander" surname:@"Batzteki" password:nil];
+    
+    Customer *custo4 = [[Customer alloc] initWithId:3 forename:@"Michael" surname:@"Schmidt" password:nil];
+    
+    Customer *custo5 = [[Customer alloc] initWithId:3 forename:@"Ralf" surname:@"Reichelt" password:nil];
+    
     
     
     // Interaktion Accounts
@@ -49,6 +54,18 @@
                                                     name: @"mein Girokonto"
                                                    owner: custo3];
     
+    Account *accountC = [[Account alloc] initWithBalance: balanceB
+                                               overDraft: 0
+                                               accountNr: accountNrB
+                                                    name: @"mein Girokonto"
+                                                   owner: custo4];
+    
+    Account *accountD = [[Account alloc] initWithBalance: balanceB
+                                               overDraft: 0
+                                               accountNr: accountNrB
+                                                    name: @"mein Girokonto"
+                                                   owner: custo5];
+    
     
     // Die eigentlichen Transaktionen
     Transaction *trans1 = [[Transaction alloc] initWithType:nil
@@ -57,20 +74,55 @@
                                                      amount:amountA
                                                        date:dateA];
     
-    NSNumber *amountB = [NSNumber numberWithDouble:42.23];
+    
     NSDate *dateB = [NSDate dateWithTimeIntervalSinceNow:-1212];
     
     Transaction *trans2 = [[Transaction alloc] initWithType:nil
                                                   recipient:acc1
                                                      sender:accountA
-                                                     amount:amountB
+                                                     amount:[self generateRandomAmount]
                                                        date:dateB];
     
-    NSArray *transactions = @[trans1, trans2];
+    Transaction *trans3 = [[Transaction alloc] initWithType:nil
+                                                  recipient:accountB
+                                                     sender:acc1
+                                                     amount:[self generateRandomAmount]
+                                                       date:dateB];
+    
+    Transaction *trans4 = [[Transaction alloc] initWithType:nil
+                                                  recipient:acc1
+                                                     sender:accountC
+                                                     amount:[self generateRandomAmount]
+                                                       date:dateB];
+    
+    Transaction *trans5 = [[Transaction alloc] initWithType:nil
+                                                  recipient:acc1
+                                                     sender:accountD
+                                                     amount:[self generateRandomAmount]
+                                                       date:dateB];
+    
+    Transaction *trans6 = [[Transaction alloc] initWithType:nil
+                                                  recipient:acc1
+                                                     sender:accountD
+                                                     amount:[self generateRandomAmount]
+                                                       date:dateB];
+    
+
+    
+    NSArray *transactions = @[trans1, trans2, trans3, trans4, trans5, trans6];
     return transactions;
     
 
                            
+}
+
+- (NSNumber *)generateRandomAmount{
+    srand48(time(0));
+    int multi = arc4random_uniform(100000)+10;
+    double r = drand48();
+
+    double sum = (multi * r);
+    return [NSNumber numberWithDouble: sum];
 }
 
 @end

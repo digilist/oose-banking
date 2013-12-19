@@ -28,7 +28,17 @@
 }
 
 - (NSString *)printTransactionTiny {
-    NSString *string = [NSString stringWithFormat: @"Sender: %@, %@ \nEmpfänger: %@, %@ \nBetrag: %@ €" , self.sender.owner.surname, self.sender.owner.forename, self.recipient.owner.surname, self.recipient.owner.forename, self.amount];
+    NSString *string = [NSString stringWithFormat: @"Sender: %@, %@ \nEmpfänger: %@, %@ \nBetrag: %.2f €" , self.sender.owner.surname, self.sender.owner.forename, self.recipient.owner.surname, self.recipient.owner.forename, [self.amount doubleValue]];
+    return string;
+}
+
+- (NSString *)printTransactionTinyRecipient {
+    NSString *string = [NSString stringWithFormat: @"%@, %@ \n%.2f €" , self.sender.owner.surname, self.sender.owner.forename, [self.amount doubleValue]];
+    return string;
+}
+
+- (NSString *)printTransactionTinySender {
+    NSString *string = [NSString stringWithFormat: @"%@, %@ \n%.2f €" ,  self.recipient.owner.surname, self.recipient.owner.forename, [self.amount doubleValue] ];
     return string;
 }
 @end

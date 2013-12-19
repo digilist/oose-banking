@@ -29,6 +29,7 @@
         self.address = address;
         self.accounts = accounts;
         self.creditRating = creditRating;
+        
         // Vllt auch als Parameter im Konstruktor
         self.verificated = false;
     }

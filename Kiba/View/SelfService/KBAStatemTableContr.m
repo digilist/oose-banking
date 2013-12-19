@@ -13,6 +13,8 @@
 
 #import "Account.h"
 #import "Transaction.h"
+#import "Customer.h"
+#import "User.h"
 
 @interface KBAStatemTableContr ()
 @property NSMutableArray *statem;
@@ -35,10 +37,31 @@
         Customer *customer = [auth getIdentity];
         self.statem = [NSMutableArray new];
         NSArray *trans = [transDao getTransaction: customer];
+        
        
-        for (int i = 0; i < ([trans count]); i++) {
-            NSString *string = [[trans objectAtIndex:i]printTransactionTiny];
-            [self.statem addObject: string];
+        for (int i = 0; i < ([trans count]); i++)
+        {
+        NSMutableString *indicator = [[NSMutableString alloc]initWithString:@""];
+        NSString *string = @"";
+            Account *user = [[trans objectAtIndex:i]sender];
+            if (user.owner.userId == customer.userId) {
+                [indicator setString:@"-"];
+                string = [[trans objectAtIndex:i]printTransactionTinySender];
+
+                
+            }
+            else
+            {
+                [indicator setString:@"+"];
+                string = [[trans objectAtIndex:i]printTransactionTinyRecipient];
+
+            }
+            
+                     
+            [indicator appendString:string];
+            
+            [self.statem addObject: indicator];
+            
 
     
         }
@@ -84,6 +107,20 @@
     }
     
     
+    
+    
+  
+    if ([[self.statem objectAtIndex:indexPath.row]characterAtIndex:0] == '-')
+    {
+        cell.imageView.image = [UIImage imageNamed:@"minus.png"];
+        [[self.statem objectAtIndex:indexPath.row] deleteCharactersInRange: NSMakeRange(0, 1)];
+    }
+    else if ([[self.statem objectAtIndex:indexPath.row]characterAtIndex:0] == '+')
+    {
+        cell.imageView.image = [UIImage imageNamed:@"plus.png"];
+        [[self.statem objectAtIndex:indexPath.row] deleteCharactersInRange: NSMakeRange(0, 1)];
+    }
+   
     cell.textLabel.text = [self.statem objectAtIndex:indexPath.row];
     cell.textLabel.numberOfLines = 0;
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
