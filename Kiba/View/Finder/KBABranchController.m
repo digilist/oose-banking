@@ -81,6 +81,7 @@ static NSArray *currencies;
     // Dispose of any resources that can be recreated.
 }
 
+
 #pragma mark UIPickerView
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
@@ -211,6 +212,13 @@ static NSArray *currencies;
                          }];
         
     }
+    
+    float newWidth = self.view.bounds.size.width / 4;
+    
+    [self.navigationView setFrame:CGRectMake(0, 205, newWidth, 192)];
+    [self.phoneView setFrame:CGRectMake(newWidth, 205, newWidth, 192)];
+    [self.emailView setFrame:CGRectMake(2 * newWidth, 205, newWidth, 192)];
+    [self.currencyView setFrame:CGRectMake(3 * newWidth, 205, newWidth, 192)];
 }
 
 

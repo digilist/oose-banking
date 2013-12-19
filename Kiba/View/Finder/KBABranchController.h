@@ -23,6 +23,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *currencyField;
 @property (weak, nonatomic) IBOutlet UILabel *euroLabel;
 
+@property (weak, nonatomic) IBOutlet UIView *navigationView;
+@property (weak, nonatomic) IBOutlet UIView *phoneView;
+@property (weak, nonatomic) IBOutlet UIView *emailView;
+@property (weak, nonatomic) IBOutlet UIView *currencyView;
+
 - (id) initWithBranch: (Branch*) branch;
 - (IBAction)onCurrencyReturned:(UITextField *)sender;
 
