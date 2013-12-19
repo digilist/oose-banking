@@ -44,26 +44,24 @@
         NSMutableString *indicator = [[NSMutableString alloc]initWithString:@""];
         NSString *string = @"";
             Account *user = [[trans objectAtIndex:i]sender];
-            if (user.owner.userId == customer.userId) {
+            Account *recipient = [[trans objectAtIndex:i]recipient];
+            if ((user.owner.userId == customer.userId) && (recipient.owner.userId != customer.userId) ) {
                 [indicator setString:@"-"];
                 string = [[trans objectAtIndex:i]printTransactionTinySender];
+                [indicator appendString:string];
+                [self.statem addObject: indicator];
 
                 
             }
-            else
+            else if ((recipient.owner.userId == customer.userId) && (user.owner.userId != customer.userId))
             {
                 [indicator setString:@"+"];
                 string = [[trans objectAtIndex:i]printTransactionTinyRecipient];
+                [indicator appendString:string];
+                [self.statem addObject: indicator];
 
             }
-            
-                     
-            [indicator appendString:string];
-            
-            [self.statem addObject: indicator];
-            
-
-    
+                
         }
 
     }
