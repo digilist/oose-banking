@@ -20,19 +20,24 @@
     
     // Override point for customization after application launch.
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+    [splitViewController setValue:[NSNumber numberWithFloat:250.0] forKey:@"_masterColumnWidth"];
+    
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-    [[UINavigationBar appearance] setTitleTextAttributes:
-     [NSDictionary dictionaryWithObjectsAndKeys:
-    [UIColor colorWithRed:219.0f/255.0f green:108.0f/255.0f blue:15.0f/255.0f alpha:1.0f],
-      NSForegroundColorAttributeName,
-    [UIColor colorWithRed:219.0f/255.0f green:108.0f/255.0f blue:15.0f/255.0f alpha:1.0f],
-      NSForegroundColorAttributeName,
-    [NSValue valueWithUIOffset:UIOffsetMake(0, -1)],
-      NSForegroundColorAttributeName,
-    [UIFont fontWithName:@"Arial-Bold" size:0.0],
-      NSFontAttributeName,
-     nil]];
     splitViewController.delegate = (id)navigationController.topViewController;
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIColor colorWithRed:219.0f/255.0f
+                                                                                                                     green:108.0f/255.0f
+                                                                                                                      blue:15.0f/255.0f
+                                                                                                                     alpha:1.0f],
+                                                          NSForegroundColorAttributeName,
+                                                          [UIColor colorWithRed:219.0f/255.0f green:108.0f/255.0f blue:15.0f/255.0f alpha:1.0f],
+                                                          NSForegroundColorAttributeName,
+                                                          [NSValue valueWithUIOffset:UIOffsetMake(0, -1)],
+                                                          NSForegroundColorAttributeName,
+                                                          [UIFont fontWithName:@"Arial-Bold" size:0.0],
+                                                          NSFontAttributeName,
+                                                          nil]];
+    
     return YES;
 }
 							
