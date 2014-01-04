@@ -101,21 +101,18 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
 -(void)respondToOrientation:(UIInterfaceOrientation)orientation
      inAnimatedDurationTime:(double)duration
 {
-    if (orientation == UIInterfaceOrientationPortrait ||
-        orientation == UIInterfaceOrientationPortraitUpsideDown) {
-        [UIView animateWithDuration:duration
-                         animations:^{
-                             self.bottomConstraint.constant = 110;
-                             [self.view layoutIfNeeded];
-                         }];
-    }
-    else{
-        [UIView animateWithDuration:duration
-                         animations:^{
-                             self.bottomConstraint.constant = 40;
-                             [self.view layoutIfNeeded];
-                         }];
-    }
+    [UIView animateWithDuration:duration
+                     animations:^{
+                        if (orientation == UIInterfaceOrientationPortrait ||
+                             orientation == UIInterfaceOrientationPortraitUpsideDown) {
+                                 
+                                self.bottomConstraint.constant = 110;
+                        }
+                        else{
+                                self.bottomConstraint.constant = 40;
+                        }
+                        [self.view layoutIfNeeded];
+                     }];
 }
 
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation

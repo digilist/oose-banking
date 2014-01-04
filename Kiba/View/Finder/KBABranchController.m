@@ -196,25 +196,22 @@ static NSArray *currencies;
 -(void)respondToOrientation:(UIInterfaceOrientation)orientation
      inAnimatedDurationTime:(double)duration
 {
-    //animations if switch to portrait-mode
-    if (orientation == UIInterfaceOrientationPortrait ||
-        orientation == UIInterfaceOrientationPortraitUpsideDown) {
-        [UIView animateWithDuration:duration
-                         animations:^{
+    [UIView animateWithDuration:duration
+                     animations:^{
+                         //animations if switch to portrait-mode
+                         if (orientation == UIInterfaceOrientationPortrait ||
+                             orientation == UIInterfaceOrientationPortraitUpsideDown) {
+                             
                              self.topConstraint.constant = 70;
                              self.middleConstraint.constant = 95;
-                         }];
-        
-    }
-    //animations if switch to landscape-mode
-    else{
-        [UIView animateWithDuration:duration
-                         animations:^{
+                         }
+                         else{
                              self.topConstraint.constant = 44;
                              self.middleConstraint.constant = 50;
-                         }];
-        
-    }
+                         }
+                         [self.view layoutIfNeeded];
+                     }];
+    
     
     float newWidth = self.view.bounds.size.width / 4;
     

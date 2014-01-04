@@ -54,11 +54,12 @@
 -(void)respondToOrientation:(UIInterfaceOrientation)orientation
      inAnimatedDurationTime:(double)duration
 {
-    //animations if switch to portrait-mode
-    if (orientation == UIInterfaceOrientationPortrait ||
-        orientation == UIInterfaceOrientationPortraitUpsideDown) {
-        [UIView animateWithDuration:duration
-                         animations:^{
+    [UIView animateWithDuration:duration
+                     animations:^{
+                         //animations if switch to portrait-mode
+                         if (orientation == UIInterfaceOrientationPortrait ||
+                             orientation == UIInterfaceOrientationPortraitUpsideDown) {
+                             
                              [self.imageView setHidden:NO];
                              //set height between elements
                              self.firstToSecondElement.constant = 110;
@@ -71,14 +72,9 @@
                              //table-view sizes
                              self.subMoneyTableHeight.constant = 150;
                              self.subDocTableHeight.constant = 150;
-                             [self.view layoutIfNeeded];
-                         }];
-
-    }
-    //animations if switch to landscape-mode
-    else{
-        [UIView animateWithDuration:duration
-                         animations:^{
+                         }
+                         //animations if switch to landscape-mode
+                         else{
                              [self.imageView setHidden:YES];
                              //set height between elements
                              self.firstToSecondElement.constant = 98;
@@ -91,10 +87,9 @@
                              //table-view sizes
                              self.subMoneyTableHeight.constant = 120;
                              self.subDocTableHeight.constant = 120;
-                             [self.view layoutIfNeeded];
-                         }];
-
-    }
+                         }
+                         [self.view layoutIfNeeded];
+                     }];
 }
 
 

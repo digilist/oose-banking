@@ -46,27 +46,22 @@
 -(void)respondToOrientation:(UIInterfaceOrientation)orientation
      inAnimatedDurationTime:(double)duration
 {
-    //animations if switch to portrait-mode
-    if (orientation == UIInterfaceOrientationPortrait ||
-        orientation == UIInterfaceOrientationPortraitUpsideDown) {
-        [UIView animateWithDuration:duration
-                         animations:^{
+    [UIView animateWithDuration:duration
+                     animations:^{
+                         //animations if switch to portrait-mode
+                         if (orientation == UIInterfaceOrientationPortrait ||
+                             orientation == UIInterfaceOrientationPortraitUpsideDown) {
+                             
                              self.topConstraint.constant = 240;
                              self.leftConstraint.constant = 190;
-                             [self.view layoutIfNeeded];
-                         }];
-        
-    }
-    //animations if switch to landscape-mode
-    else{
-        [UIView animateWithDuration:duration
-                         animations:^{
+                         }
+                          //animations if switch to landscape-mode
+                         else{
                              self.topConstraint.constant = 137;
                              self.leftConstraint.constant = 145;
-                             [self.view layoutIfNeeded];
-                         }];
-        
-    }
+                         }
+                         [self.view layoutIfNeeded];
+                     }];
 }
 
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
