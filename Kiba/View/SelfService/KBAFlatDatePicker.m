@@ -259,7 +259,7 @@
     [[KBAFlatDatePicker appearance] setFont:[UIFont fontWithName:Nil size:22]];
     
     [[KBAFlatDatePicker appearance] setTextColor:[UIColor blackColor]];
-    [[KBAFlatDatePicker appearance] setBackgroundColor:[UIColor colorWithRed:0.859 green:0.424 blue:0.059 alpha:1.000]];
+    [[KBAFlatDatePicker appearance] setBackgroundColor: KBATintColor];
     [[KBAFlatDatePicker appearance] setGradientColor:[UIColor whiteColor]];
     
 //    [[KBAFlatDatePicker appearance] setTextColor:[UIColor blackColor]];

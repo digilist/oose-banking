@@ -16,13 +16,13 @@
 @property NSArray *checkElements;
 @property NSMutableArray *checkElementsPositions;
 @property UIPopoverController* popController;
-@property  (nonatomic, weak) IBOutlet UIButton *chooseSourceAccountButton;
-@property  (nonatomic, weak) IBOutlet UIButton *chooseDestinationAccountButton;
-@property  (nonatomic, weak) IBOutlet UILabel *sourceAccountLabel;
-@property  (nonatomic, weak) IBOutlet UILabel *destinationAccountLabel;
-@property  (nonatomic, weak) UILabel *labelToSet; //label set in chooseAccount (points to source or dest)
-@property  (nonatomic, weak) IBOutlet UILabel *subTitleLabel;
-@property  (nonatomic, weak) IBOutlet UIImageView *checkImageView;
+@property (nonatomic, weak) IBOutlet UIButton *chooseSourceAccountButton;
+@property (nonatomic, weak) IBOutlet UIButton *chooseDestinationAccountButton;
+@property (nonatomic, weak) IBOutlet UILabel *sourceAccountLabel;
+@property (nonatomic, weak) IBOutlet UILabel *destinationAccountLabel;
+@property (nonatomic, weak) UILabel *labelToSet; //label set in chooseAccount (points to source or dest)
+@property (nonatomic, weak) IBOutlet UILabel *subTitleLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *checkImageView;
 @property (nonatomic, weak) IBOutlet UILabel *amountLabel;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *dateLabel;
@@ -111,7 +111,7 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
                         else{
                                 self.bottomConstraint.constant = 40;
                         }
-                        [self.view layoutIfNeeded];
+                        [self.view setNeedsLayout];
                      }];
 }
 
@@ -126,8 +126,12 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
 -(void)dismissKeyboard
 {
     UITextField *activeTextField = nil;
-    if ([self.amountField isEditing]) activeTextField = self.amountField;
-    if (activeTextField) [activeTextField resignFirstResponder];
+    if ([self.amountField isEditing]){
+        activeTextField = self.amountField;
+    }
+    if (activeTextField){
+        [activeTextField resignFirstResponder];
+    }
 }
 
 /**

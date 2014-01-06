@@ -25,12 +25,9 @@
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
     splitViewController.delegate = (id)navigationController.topViewController;
     
-    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIColor colorWithRed:219.0f/255.0f
-                                                                                                                     green:108.0f/255.0f
-                                                                                                                      blue:15.0f/255.0f
-                                                                                                                     alpha:1.0f],
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: KBATintColor,
                                                           NSForegroundColorAttributeName,
-                                                          [UIColor colorWithRed:219.0f/255.0f green:108.0f/255.0f blue:15.0f/255.0f alpha:1.0f],
+                                                          KBATintColor,
                                                           NSForegroundColorAttributeName,
                                                           [NSValue valueWithUIOffset:UIOffsetMake(0, -1)],
                                                           NSForegroundColorAttributeName,

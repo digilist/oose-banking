@@ -60,7 +60,7 @@
                              self.topConstraint.constant = 137;
                              self.leftConstraint.constant = 145;
                          }
-                         [self.view layoutIfNeeded];
+                         [self.view setNeedsLayout];
                      }];
 }
 

@@ -69,7 +69,7 @@
 }
 
 /**
- *  create a alternative marker icon.
+ *  create an alternative marker icon.
  *
  *  @param mapView
  *  @param annotation
@@ -91,8 +91,7 @@
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
             annotationView.rightCalloutAccessoryView = rightButton;
             
-            id<KBAColorHelper> colors = [KBADependencyInjector getByKey:@"colorHelper"];
-            annotationView.tintColor = colors.tintColor;
+            annotationView.tintColor = KBATintColor;
         } else {
             annotationView.annotation = annotation;
         }

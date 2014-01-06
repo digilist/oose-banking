@@ -188,8 +188,7 @@ static NSArray *currencies;
 }
 
 /**
- *  Set constraints and show/hide kiba icon
- *  based on iPad-orientation
+ *  Set constraints based on iPad-orientation
  *
  *  @param orientation orientation to respond to
  */
@@ -209,7 +208,7 @@ static NSArray *currencies;
                              self.topConstraint.constant = 44;
                              self.middleConstraint.constant = 50;
                          }
-                         [self.view layoutIfNeeded];
+                         [self.view setNeedsLayout];
                      }];
     
     

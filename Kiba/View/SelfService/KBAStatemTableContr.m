@@ -27,8 +27,6 @@
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
-    
-    
     if (self) {
         
         id<KBATransactionDao> transDao = [KBADependencyInjector getByKey:@"transDao"];
@@ -38,11 +36,10 @@
         self.statem = [NSMutableArray new];
         NSArray *trans = [transDao getTransaction: customer];
         
-       
         for (int i = 0; i < ([trans count]); i++)
         {
-        NSMutableString *indicator = [[NSMutableString alloc]initWithString:@""];
-        NSString *string = @"";
+            NSMutableString *indicator = [[NSMutableString alloc]initWithString:@""];
+            NSString *string = @"";
             Account *user = [[trans objectAtIndex:i]sender];
             Account *recipient = [[trans objectAtIndex:i]recipient];
             if ((user.owner.userId == customer.userId) && (recipient.owner.userId != customer.userId) ) {
@@ -50,7 +47,6 @@
                 string = [[trans objectAtIndex:i]printTransactionTinySender:indicator];
                 
                 [self.statem addObject: string];
-
                 
             }
             else if ((recipient.owner.userId == customer.userId) && (user.owner.userId != customer.userId))
@@ -61,9 +57,7 @@
                 [self.statem addObject: string];
 
             }
-                
         }
-
     }
     return self;
 }
@@ -103,11 +97,6 @@
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:CellIdentifier];
     }
-    
-    
-    
-    
-  
 //    if ([[self.statem objectAtIndex:indexPath.row]characterAtIndex:0] == '-')
 //    {
 //        cell.imageView.image = [UIImage imageNamed:@"minus.png"];
@@ -132,5 +121,3 @@
 }
 
 @end
-
-

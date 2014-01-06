@@ -46,8 +46,7 @@
 }
 
 /**
- *  Set constraints and show/hide kiba icon
- *  based on iPad-orientation
+ *  Set constraints based on iPad-orientation
  *
  *  @param orientation orientation to respond to
  */
@@ -88,7 +87,7 @@
                              self.subMoneyTableHeight.constant = 120;
                              self.subDocTableHeight.constant = 120;
                          }
-                         [self.view layoutIfNeeded];
+                         [self.view setNeedsLayout];
                      }];
 }
 

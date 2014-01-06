@@ -31,9 +31,6 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        
-        
-        
         id<KBATransactionDao> transDao = [KBADependencyInjector getByKey:@"transDao"];
         
         KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
@@ -41,10 +38,8 @@
         self.moneyTransfers = [NSMutableArray new];
         NSArray *trans = [transDao getTransaction: customer];
         
-        
         for (int i = 0; i < ([trans count]); i++)
         {
-            
             NSString *string = @"";
             Account *sender = [[trans objectAtIndex:i]sender];
             Account *recipient = [[trans objectAtIndex:i]recipient];
@@ -53,21 +48,8 @@
                 
                 string = [[trans objectAtIndex:i]printTransactionTinyOwn];
                 [self.moneyTransfers addObject: string];
-                
-                
             }
-            }
-         
-            
-            
-            
-         
-
-        
-        
-        
-    
-        
+        }
     }
     return self;
 }
@@ -87,7 +69,6 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-//#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
@@ -109,8 +90,8 @@
                 reuseIdentifier:CellIdentifier];
     }
     
-    //transfer object
-     cell.textLabel.numberOfLines = 0;
+    //0 means an arbitrary number of lines [1 - ~)
+    cell.textLabel.numberOfLines = 0;
     cell.textLabel.text = [self.moneyTransfers objectAtIndex:indexPath.row];
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
    

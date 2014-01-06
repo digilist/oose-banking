@@ -47,8 +47,7 @@ static NSArray * navigationEntryKeys;
 {
     [super viewDidLoad];
     
-    id<KBAColorHelper> colorHelper = [KBADependencyInjector getByKey:@"colorHelper"];
-    self.barTintColor = colorHelper.barTintColor;
+    self.barTintColor = KBABarTintColor;
     self.tintColor = [UIColor whiteColor];
    //  self.navigationController.navigationBar.barTintColor = self.barTintColor;
     self.tableView.backgroundColor = self.tintColor;
@@ -99,11 +98,10 @@ static NSArray * navigationEntryKeys;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    id<KBAColorHelper> colorHelper = [KBADependencyInjector getByKey:@"colorHelper"];
     
     cell.backgroundColor = self.tintColor;
     UIView *v = [[UIView alloc] init];
-    v.backgroundColor = colorHelper.tintColor;
+    v.backgroundColor = KBATintColor;
     cell.selectedBackgroundView = v;
     NSString *key = navigationEntryKeys[indexPath.row];
     cell.textLabel.text = [navigationEntries valueForKey:key];
@@ -133,14 +131,12 @@ static NSArray * navigationEntryKeys;
 
     // Adjust navigation title
     selectedNavigationController.navigationBar.topItem.title = [navigationEntries valueForKey:selectedKey];
-    selectedNavigationController.navigationBar.tintColor = [UIColor colorWithRed:219.0f/255.0f green:108.0f/255.0f blue:15.0f/255.0f alpha:1.0f];
-    
-    id<KBAColorHelper> colorHelper = [KBADependencyInjector getByKey:@"colorHelper"];
+    selectedNavigationController.navigationBar.tintColor = KBATintColor;
     
     [[UINavigationBar appearance] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
           // Tint color of top bar icons
-          colorHelper.tintColor,
+          KBATintColor,
           NSForegroundColorAttributeName,
           // Top bar font
           [UIFont systemFontOfSize:0.0],
