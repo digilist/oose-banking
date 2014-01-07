@@ -11,8 +11,12 @@
 
 @implementation KBAAccountDaoRest
 
--(NSArray *) getAccounts:(Customer *)customer {
+- (NSArray *)getAccounts:(Customer *)customer {
     return nil;
+}
+
+- (NSArray *)turnoverForAccount:(Account *)account {
+    return @[];
 }
 
 @end

@@ -10,7 +10,4 @@
 
 @interface KBAAuthController : KBAViewController
 
-@property (nonatomic, weak) IBOutlet UITextField *authCodeField;
-@property (nonatomic, weak) IBOutlet UILabel *authMessage;
-
 @end

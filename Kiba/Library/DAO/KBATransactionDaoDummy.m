@@ -14,20 +14,24 @@
 
 @implementation KBATransactionDaoDummy
 
-- (NSArray *) getTransaction:(Customer *)customer {
+/**
+ *  Returns the transactions associated with a customer.
+ *
+ *  @param customer The associated customer.
+ *
+ *  @return An array of Transactions.
+ */
+- (NSArray *)transactionsForCustomer:(Customer *)customer {
 
-    
-    
     // Transactiondummy
     NSNumber *amountA = [NSNumber numberWithInt:2];
     NSDate *dateA = [NSDate dateWithTimeIntervalSinceNow:23489284];
     
+    // Get Accounts by a customer
     Account *acc1 = [customer.accounts firstObject];
-    
-    
     Account *acc2 = [customer.accounts objectAtIndex:1];
     
-    //Erzeugung von FakeCustomer
+    // Create fake recipients
     Customer *custo2 = [[Customer alloc] initWithId:2 forename:@"Susanne" surname:@"Strebsam" password:nil];
     
     Customer *custo3 = [[Customer alloc] initWithId:3 forename:@"Yolander" surname:@"Batzteki" password:nil];
@@ -155,7 +159,12 @@
                            
 }
 
-- (NSNumber *)generateRandomAmount{
+/**
+ *  Generates a random amount for a transaction.
+ *
+ *  @return a random number
+ */
+- (NSNumber *)generateRandomAmount {
     srand48(time(0));
     int multi = arc4random_uniform(100000)+10;
     double r = drand48();

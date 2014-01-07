@@ -70,6 +70,10 @@ static NSMutableDictionary *currencySymbols;
     return otherCurrency / self.rate;
 }
 
+- (float)convertFromEuro:(float) euro {
+    return euro * self.rate;
+}
+
 - (NSString *)formattedLabel {
     return [[NSString alloc] initWithFormat:@"%@ - %@", self.symbol, self.code];
 }

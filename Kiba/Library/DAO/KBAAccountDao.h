@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "Customer.h"
+#import "Account.h"
 
 @protocol KBAAccountDao <NSObject>
 
 - (NSArray *) getAccounts: (Customer *)customer;
+- (NSArray *)turnoverForAccount:(Account *)account;
 
 @end

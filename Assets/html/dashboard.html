@@ -5,12 +5,16 @@
         <link rel="stylesheet" href="Assets/css/main.css">
     </head>
     <body>
-        <h1>Willkommen bei KiBa.</h1>
-        
-        <img class="kiba" src="Assets/img/glas.png" width="200" height="200" alt="Ein Glas Kiba.">
+        <h1>Ihr Dashboard</h1>
 
         <div class="container">
             <div class="row">
+                <div class="col-xs-12 col-sm-12 align-center">
+                    <div id="line" class="chart"></div>
+                </div>
+            </div>
+            
+            <!--<div class="row">
                 <div class="col-xs-4 col-sm-4 align-center">
                     <h3>Einnahmen</h3>
                     <div id="income" class="chart"></div>
@@ -26,7 +30,7 @@
                     <div id="expenditure" class="chart"></div>
                     <a class="btn btn-primary" href="bla">Details <span class="glyphicon glyphicon-arrow-right"></span> </a>
                 </div>
-            </div>
+            </div>-->
         </div>
 
         <!-- Java Script -->
@@ -50,6 +54,7 @@
         </script>
         <script src="Assets/js/jquery.min.js"></script>
         <script src="Assets/js/jquery.flot.js"></script>
+        <script src="Assets/js/jquery.flot.time.js"></script>
         <script src="Assets/js/jquery.flot.pie.js"></script>
         <script src="Assets/js/bootstrap.min.js"></script>
         <script src="Assets/js/general.js"></script>
