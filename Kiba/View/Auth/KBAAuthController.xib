@@ -7,7 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KBAAuthController">
             <connections>
                 <outlet property="authCodeField" destination="ggk-1H-ANl" id="k93-SF-XeT"/>
-                <outlet property="authMessage" destination="tbo-VE-TlS" id="D5h-iP-J1c"/>
+                <outlet property="comicView" destination="Dru-38-HID" id="id4-Xl-kzv"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
         </placeholder>
@@ -16,36 +16,17 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="falsche Eingabe!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbo-VE-TlS">
-                    <rect key="frame" x="629" y="430" width="187" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Jetzt Authentifizieren!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BJ-4b-CL8">
-                    <rect key="frame" x="409" y="90" width="207" height="27"/>
+                    <rect key="frame" x="301" y="90" width="207" height="27"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Vorteil für Sie: verlieren Sie ihr Gerät, können Sie bequem die App deaktivieren lassen." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="605" translatesAutoresizingMaskIntoConstraints="NO" id="s8D-Q2-STV">
-                    <rect key="frame" x="208" y="318" width="605" height="41"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="608" translatesAutoresizingMaskIntoConstraints="NO" id="QWH-fP-4rE">
-                    <rect key="frame" x="208" y="191" width="608" height="61"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <string key="text">Mithilfe der Authentifizierung können Sie alle Features der KiBa App nutzen. Sie können ihre App in jeder beliebigen KiBa-Filiale freischalten lassen. Dafür muss lediglich ein Sicherheitscode von einem Berater eingegeben werden. </string>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTi-eO-wPU">
-                    <rect key="frame" x="208" y="473" width="93" height="38"/>
+                    <rect key="frame" x="600" y="626" width="94" height="38"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                    <state key="normal" title="validieren!">
+                    <state key="normal" title="Validieren!">
                         <color key="titleColor" red="0.85882352939999995" green="0.42352941179999998" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -54,34 +35,105 @@
                     </connections>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ggk-1H-ANl">
-                    <rect key="frame" x="208" y="430" width="413" height="30"/>
+                    <rect key="frame" x="84" y="630" width="493" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="493" id="vDJ-Fy-Ogh"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAR-Iq-eRw">
+                    <rect key="frame" x="622" y="693" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="info_orange">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dru-38-HID">
+                    <rect key="frame" x="84" y="169" width="700" height="410"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2. Auf zur nächsten KiBa Filiale" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgS-gb-wYA">
+                            <rect key="frame" x="314" y="164" width="250" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pairing4" translatesAutoresizingMaskIntoConstraints="NO" id="xAw-P6-FSF">
+                            <rect key="frame" x="377" y="252" width="75" height="75"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pairing1" translatesAutoresizingMaskIntoConstraints="NO" id="32y-Zn-hPS">
+                            <rect key="frame" x="46" y="36" width="128" height="100"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3. App authentifizieren" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0g-1S-0l5">
+                            <rect key="frame" x="20" y="364" width="192" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pairing2a" translatesAutoresizingMaskIntoConstraints="NO" id="iuu-Q2-HwY">
+                            <rect key="frame" x="328" y="58" width="100" height="100"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1. iPad einstecken" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azx-YA-t67">
+                            <rect key="frame" x="20" y="164" width="162" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pairing3" translatesAutoresizingMaskIntoConstraints="NO" id="FAD-QZ-oLK">
+                            <rect key="frame" x="49" y="240" width="105" height="100"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pairing2b" translatesAutoresizingMaskIntoConstraints="NO" id="xAs-wv-9gD">
+                            <rect key="frame" x="456" y="46" width="58" height="100"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHe-cw-ESG">
+                            <rect key="frame" x="328" y="359" width="173" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="4. Vorteile genießen">
+                                <color key="titleColor" red="0.85882352939999995" green="0.42352941179999998" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="410" id="37M-ij-tsZ"/>
+                        <constraint firstAttribute="width" constant="700" id="VJ7-T2-CT7"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="3BJ-4b-CL8" firstAttribute="top" secondItem="2" secondAttribute="top" constant="90" id="1Ki-6L-YbL"/>
-                <constraint firstItem="RTi-eO-wPU" firstAttribute="leading" secondItem="ggk-1H-ANl" secondAttribute="trailing" constant="-413" id="3gj-lw-7nl"/>
-                <constraint firstItem="tbo-VE-TlS" firstAttribute="leading" secondItem="ggk-1H-ANl" secondAttribute="trailing" constant="8" id="4pE-4r-YhM"/>
-                <constraint firstItem="QWH-fP-4rE" firstAttribute="top" secondItem="3BJ-4b-CL8" secondAttribute="bottom" constant="74" id="7GM-9f-QwW"/>
-                <constraint firstItem="RTi-eO-wPU" firstAttribute="top" secondItem="ggk-1H-ANl" secondAttribute="bottom" constant="13" id="7Wj-JQ-Hyl"/>
-                <constraint firstItem="RTi-eO-wPU" firstAttribute="leading" secondItem="ggk-1H-ANl" secondAttribute="leading" id="AiS-WZ-hmD"/>
-                <constraint firstItem="s8D-Q2-STV" firstAttribute="top" secondItem="QWH-fP-4rE" secondAttribute="bottom" constant="66" id="EB1-mO-CQl"/>
-                <constraint firstAttribute="centerX" secondItem="3BJ-4b-CL8" secondAttribute="centerX" constant="-0.5" id="JAM-dZ-W5z"/>
-                <constraint firstItem="tbo-VE-TlS" firstAttribute="trailing" secondItem="QWH-fP-4rE" secondAttribute="trailing" id="Lmw-DI-0li"/>
-                <constraint firstItem="s8D-Q2-STV" firstAttribute="leading" secondItem="QWH-fP-4rE" secondAttribute="trailing" constant="-608" id="R2Z-Pt-Nea"/>
-                <constraint firstItem="tbo-VE-TlS" firstAttribute="bottom" secondItem="ggk-1H-ANl" secondAttribute="bottom" id="ZyW-di-4ua"/>
-                <constraint firstItem="ggk-1H-ANl" firstAttribute="top" secondItem="s8D-Q2-STV" secondAttribute="bottom" constant="71" id="eMj-f5-riR"/>
-                <constraint firstItem="ggk-1H-ANl" firstAttribute="leading" secondItem="s8D-Q2-STV" secondAttribute="leading" id="gMm-hU-zAm"/>
-                <constraint firstAttribute="centerX" secondItem="QWH-fP-4rE" secondAttribute="centerX" id="ggN-a5-7CK"/>
-                <constraint firstItem="QWH-fP-4rE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2" secondAttribute="leading" constant="50" id="iB6-ng-esx"/>
-                <constraint firstItem="tbo-VE-TlS" firstAttribute="leading" secondItem="s8D-Q2-STV" secondAttribute="trailing" constant="-184" id="wbV-fs-EwM"/>
-                <constraint firstItem="tbo-VE-TlS" firstAttribute="top" secondItem="ggk-1H-ANl" secondAttribute="top" id="zMh-Tj-6sj"/>
+                <constraint firstItem="RTi-eO-wPU" firstAttribute="leading" secondItem="ggk-1H-ANl" secondAttribute="trailing" constant="23" id="3Ew-wM-1xF"/>
+                <constraint firstAttribute="centerX" secondItem="Dru-38-HID" secondAttribute="centerX" constant="78" id="GL3-56-tHN"/>
+                <constraint firstItem="ggk-1H-ANl" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="84" id="I0A-Vk-o6n"/>
+                <constraint firstItem="Dru-38-HID" firstAttribute="top" secondItem="3BJ-4b-CL8" secondAttribute="bottom" constant="52" id="Lz6-lc-3CF"/>
+                <constraint firstItem="Dru-38-HID" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="84" id="V5z-t3-uhn"/>
+                <constraint firstItem="ggk-1H-ANl" firstAttribute="top" secondItem="Dru-38-HID" secondAttribute="bottom" constant="51" id="Z00-Ku-Hzx"/>
+                <constraint firstItem="RTi-eO-wPU" firstAttribute="top" secondItem="ggk-1H-ANl" secondAttribute="bottom" constant="-34" id="Z8J-K4-bxt"/>
+                <constraint firstItem="3BJ-4b-CL8" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="301" id="oME-Oj-MZX"/>
+                <constraint firstItem="3BJ-4b-CL8" firstAttribute="top" secondItem="2" secondAttribute="top" constant="90" id="pze-NC-mCy"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
         </view>
     </objects>
+    <resources>
+        <image name="info_orange" width="50" height="50"/>
+        <image name="pairing1" width="128" height="100"/>
+        <image name="pairing2a" width="100" height="100"/>
+        <image name="pairing2b" width="58" height="100"/>
+        <image name="pairing3" width="105" height="100"/>
+        <image name="pairing4" width="75" height="75"/>
+    </resources>
 </document>

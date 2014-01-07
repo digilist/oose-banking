@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0A893764183BA118003495A4 /* KBADashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A893763183BA118003495A4 /* KBADashboardController.m */; };
+		0AAEEE2F187BED9F00C1F767 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAEEE2C187BED9F00C1F767 /* SVProgressHUD.m */; };
+		0AAEEE30187BED9F00C1F767 /* SVProgressHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAEEE2E187BED9F00C1F767 /* SVProgressHUDViewController.m */; };
+		0AAEEE33187C173500C1F767 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0AAEEE32187C173500C1F767 /* SVProgressHUD.bundle */; };
 		2139AC5F18610DB0008FB712 /* KBAFlatDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2139AC5E18610DB0008FB712 /* KBAFlatDatePicker.m */; };
 		2139AC6118610DD3008FB712 /* KBAChooseAccountTableContr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2139AC6018610DD3008FB712 /* KBAChooseAccountTableContr.xib */; };
 		2139AC6318610DF1008FB712 /* KBAChooseAccountTableContr.m in Sources */ = {isa = PBXBuildFile; fileRef = 2139AC6218610DF1008FB712 /* KBAChooseAccountTableContr.m */; };
@@ -91,6 +94,11 @@
 /* Begin PBXFileReference section */
 		0A893762183BA118003495A4 /* KBADashboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBADashboardController.h; path = View/Dashboard/KBADashboardController.h; sourceTree = "<group>"; };
 		0A893763183BA118003495A4 /* KBADashboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBADashboardController.m; path = View/Dashboard/KBADashboardController.m; sourceTree = "<group>"; };
+		0AAEEE2B187BED9F00C1F767 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = "View/Custom - GUI/SVProgressHUD.h"; sourceTree = "<group>"; };
+		0AAEEE2C187BED9F00C1F767 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = "View/Custom - GUI/SVProgressHUD.m"; sourceTree = "<group>"; };
+		0AAEEE2D187BED9F00C1F767 /* SVProgressHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUDViewController.h; path = "View/Custom - GUI/SVProgressHUDViewController.h"; sourceTree = "<group>"; };
+		0AAEEE2E187BED9F00C1F767 /* SVProgressHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUDViewController.m; path = "View/Custom - GUI/SVProgressHUDViewController.m"; sourceTree = "<group>"; };
+		0AAEEE32187C173500C1F767 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = "View/Custom - GUI/SVProgressHUD.bundle"; sourceTree = "<group>"; };
 		2139AC5D18610DB0008FB712 /* KBAFlatDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAFlatDatePicker.h; path = View/SelfService/KBAFlatDatePicker.h; sourceTree = "<group>"; };
 		2139AC5E18610DB0008FB712 /* KBAFlatDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAFlatDatePicker.m; path = View/SelfService/KBAFlatDatePicker.m; sourceTree = "<group>"; };
 		2139AC6018610DD3008FB712 /* KBAChooseAccountTableContr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAChooseAccountTableContr.xib; path = View/SelfService/KBAChooseAccountTableContr.xib; sourceTree = "<group>"; };
@@ -280,6 +288,18 @@
 			name = SelfService;
 			sourceTree = "<group>";
 		};
+		0AAEEE2A187BE9BA00C1F767 /* Custom - GUI */ = {
+			isa = PBXGroup;
+			children = (
+				0AAEEE2B187BED9F00C1F767 /* SVProgressHUD.h */,
+				0AAEEE2C187BED9F00C1F767 /* SVProgressHUD.m */,
+				0AAEEE2D187BED9F00C1F767 /* SVProgressHUDViewController.h */,
+				0AAEEE2E187BED9F00C1F767 /* SVProgressHUDViewController.m */,
+				0AAEEE32187C173500C1F767 /* SVProgressHUD.bundle */,
+			);
+			name = "Custom - GUI";
+			sourceTree = "<group>";
+		};
 		2174A5E2185A6CB80055C35F /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +353,7 @@
 				3407E8D91838FA200045C014 /* README.md */,
 				C1F00E6E1844E03D009EFE4F /* Account */,
 				0A893761183BA0BE003495A4 /* Dashboard */,
+				0AAEEE2A187BE9BA00C1F767 /* Custom - GUI */,
 				3407E8E61838FD110045C014 /* KBAMasterViewController.h */,
 				3407E8E71838FD110045C014 /* KBAMasterViewController.m */,
 			);
@@ -612,6 +633,7 @@
 				2139AC6118610DD3008FB712 /* KBAChooseAccountTableContr.xib in Resources */,
 				34199A8A18417A6F00F574D5 /* Documentation in Resources */,
 				342322F41837B9FD00618D7E /* Main.storyboard in Resources */,
+				0AAEEE33187C173500C1F767 /* SVProgressHUD.bundle in Resources */,
 				C170420D184DFE900019F929 /* KBABranchController.xib in Resources */,
 				D93C6A211859D8E90004E51A /* KBADocContr.xib in Resources */,
 				D93C6A2A1859D8E90004E51A /* KBATransContr.xib in Resources */,
@@ -663,10 +685,12 @@
 				C16A7B80184DCDAB005DC504 /* KBAStoreLocation.m in Sources */,
 				C1F00E631844DAEB009EFE4F /* KBAViewController.m in Sources */,
 				2139AC6318610DF1008FB712 /* KBAChooseAccountTableContr.m in Sources */,
+				0AAEEE30187BED9F00C1F767 /* SVProgressHUDViewController.m in Sources */,
 				C13B62F4183B7D0200207422 /* KBABranchDaoDummy.m in Sources */,
 				C10C5FC5183B8DF7008FAECB /* KBABootstrap.m in Sources */,
 				D929E547185093B1008FC26E /* OpenHour.m in Sources */,
 				2139AC5F18610DB0008FB712 /* KBAFlatDatePicker.m in Sources */,
+				0AAEEE2F187BED9F00C1F767 /* SVProgressHUD.m in Sources */,
 				D93C6A471859DA800004E51A /* KBAAccountDaoDummy.m in Sources */,
 				D93C6A251859D8E90004E51A /* KBAStatemContr.m in Sources */,
 				342322F11837B9FD00618D7E /* KBAAppDelegate.m in Sources */,
