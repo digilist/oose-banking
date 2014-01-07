@@ -18,6 +18,7 @@
 
 - (NSString*) symbol;
 - (float)euroWithCurrency:(float) otherCurrency;
+- (float)convertFromEuro:(float) euro;
 - (NSString *)formattedLabel;
 
 @end
