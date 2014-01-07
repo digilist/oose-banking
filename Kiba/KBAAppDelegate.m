@@ -16,6 +16,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [NSThread sleepForTimeInterval:2.0]; // Used For Showing Splash Screen for More Time
+    
     [KBABootstrap bootstrap];
     
     // Override point for customization after application launch.
