@@ -11,7 +11,7 @@
 
 @implementation KBATransactionDaoRest
 
--(NSArray *) getTransaction:(Customer *)customer {
+-(NSArray *) transactionsForCustomer:(Customer *)customer {
     return nil;
 }
 

@@ -20,15 +20,6 @@
 @implementation KBAAuth
 
 /**
- *  Returns the currently logged in user.
- *
- *  @return customer
- */
--(Customer *)getIdentity {
-    return self.identity;
-}
-
-/**
  *  Logs the user out.
  */
 -(void) logout {

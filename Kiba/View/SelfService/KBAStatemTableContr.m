@@ -32,9 +32,9 @@
         id<KBATransactionDao> transDao = [KBADependencyInjector getByKey:@"transDao"];
         
         KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
-        Customer *customer = [auth getIdentity];
+        Customer *customer = [auth identity];
         self.statem = [NSMutableArray new];
-        NSArray *trans = [transDao getTransaction: customer];
+        NSArray *trans = [transDao transactionsForCustomer: customer];
         
         for (int i = 0; i < ([trans count]); i++)
         {

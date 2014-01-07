@@ -11,6 +11,6 @@
 
 @protocol KBATransactionDao <NSObject>
 
-- (NSArray *) getTransaction: (Customer *)account;
+- (NSArray *) transactionsForCustomer: (Customer *)account;
 
 @end
