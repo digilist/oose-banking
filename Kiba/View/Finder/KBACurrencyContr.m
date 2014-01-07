@@ -125,4 +125,20 @@ static NSArray *currencies;
     return subject;
 }
 
+- (void)requestButtonPressed:(UIButton *)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    UIAlertView *alert = [[UIAlertView alloc]
+                          
+                          initWithTitle:@"Sortenanfrage"
+                          message:@"Der angefragte Betrag ist verfügbar. Bitte vereinbaren Sie einen Termin!"
+                          delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil];
+    
+    [alert show];
+
+}
+
 @end

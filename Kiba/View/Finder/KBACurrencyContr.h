@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *foreignCurrencyAmountLabel;
 
 - (IBAction)onEuroFieldReturned:(UITextField *)sender;
+- (IBAction)requestButtonPressed:(UIButton *)sender;
 
 @end

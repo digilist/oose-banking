@@ -110,6 +110,13 @@
     [self.phoneView setFrame:CGRectMake(newWidth, 205, newWidth, 192)];
     [self.appointmentView setFrame:CGRectMake(2 * newWidth, 205, newWidth, 192)];
     [self.currencyView setFrame:CGRectMake(3 * newWidth, 205, newWidth, 192)];
+    
+    if(orientation == UIInterfaceOrientationPortrait ||
+       orientation == UIInterfaceOrientationPortraitUpsideDown)
+        self.bottomConstraint.constant = 200;
+    else
+        self.bottomConstraint.constant = 20;
+    
 }
 
 
@@ -125,21 +132,27 @@
  *  Show the currency exhange view.
  */
 - (IBAction)showCurrencyPopover:(UIButton *)sender {
-    [self showPopover:sender popoverController:self.currencyContr];
+    [self showPopover:sender withPopoverController:self.currencyContr
+         andDirection:UIPopoverArrowDirectionAny
+            andOffset:CGPointMake(0, 15)];
 }
 
 /**
  *  Show the appointment request view.
  */
 - (IBAction)showAppointmentPopover:(UIButton *)sender {
-    [self showPopover:sender popoverController:self.appointmentContr];
+    [self showPopover:sender withPopoverController:self.appointmentContr
+         andDirection:UIPopoverArrowDirectionUp
+            andOffset:CGPointMake(60, 23)];
 }
 
 
 /**
  *  Show a Popover
  */
-- (void)showPopover:(UIButton *)sender popoverController:(UIViewController *)popoverController{
+- (void)showPopover:(UIButton *)sender withPopoverController:(UIViewController *)popoverController
+       andDirection: (UIPopoverArrowDirection) popoverDirection
+          andOffset: (CGPoint) offset{
     self.popController = [[UIPopoverController alloc]
                           initWithContentViewController:popoverController];
     
@@ -147,11 +160,14 @@
     buttonPosition.x += sender.superview.frame.origin.x;
     buttonPosition.y += sender.superview.frame.origin.y;
     
+    buttonPosition.x += offset.x;
+    buttonPosition.y += offset.y;
+    
     //given size as arg. is irrelevant
     //size is defined through size of view in popover
     [self.popController presentPopoverFromRect:CGRectMake(buttonPosition.x, buttonPosition.y, 1, 1)
                                         inView:self.view
-                      permittedArrowDirections:UIPopoverArrowDirectionAny
+                      permittedArrowDirections:popoverDirection
                                       animated:YES];
 }
 
