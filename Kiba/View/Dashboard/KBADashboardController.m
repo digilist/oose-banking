@@ -7,6 +7,8 @@
 //
 
 #import "KBADashboardController.h"
+#import "KBADependencyInjector.h"
+#import "KBAAccountDao.h"
 
 @implementation KBADashboardController
 
@@ -71,8 +73,22 @@
 - (BOOL)onWebViewLinkClickedWithAction:(NSString *)action
 {
     // Check the detail buttos here …
-    
     return YES;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    id<KBAAccountDao> accountDao = [KBADependencyInjector getByKey:@"accountDao"];
+    NSArray *data = [accountDao turnoverForAccount:nil];
+    
+    NSError *error;
+    NSData *json = [NSJSONSerialization dataWithJSONObject:data options:NSJSONWritingPrettyPrinted error:&error];
+    
+    if (!error) {
+        NSString *jsonString = [[NSString alloc] initWithData:json encoding:NSUTF8StringEncoding];
+        NSLog(@"%@", jsonString);
+        [self.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"lineChartIt(%@)", jsonString]];
+    }
 }
 
 @end
