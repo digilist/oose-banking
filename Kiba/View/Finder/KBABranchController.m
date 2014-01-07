@@ -10,11 +10,11 @@
 #import "KBADependencyInjector.h"
 
 #import "KBABranchController.h"
+#import "KBACurrencyContr.h"
+#import "KBAAppointmentContr.h"
 
 #import "Branch.h"
 #import "Currency.h"
-
-static NSArray *currencies;
 
 @interface KBABranchController ()
 
@@ -25,16 +25,14 @@ static NSArray *currencies;
 @property (strong) UIPopoverController *popController;
 @property (strong) UIViewController *popoverViewController;
 
+@property (nonatomic, strong) KBACurrencyContr *currencyContr;
+@property (nonatomic, strong) KBAAppointmentContr *appointmentContr;
+
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *topConstraint;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *middleConstraint;
 @end
 
 @implementation KBABranchController
-
-+ (void)initialize {
-    id<KBAExchangeRateDao> exchangeRateDao = [KBADependencyInjector getByKey:@"exchangeRateDao"];
-    currencies = [exchangeRateDao getExchangeRates];
-}
 
 - (id)initWithBranch: (Branch *) branch {
     self = [self init];
@@ -52,7 +50,8 @@ static NSArray *currencies;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self pickerView:self.currencyPickerView didSelectRow:0 inComponent:0];
+    self.currencyContr = [KBACurrencyContr new];
+    self.appointmentContr = [KBAAppointmentContr new];
     
     NSMutableString *openingHours = [NSMutableString new];
     for (int i = 0; i < self.branch.openHours.count; i++)
@@ -70,10 +69,6 @@ static NSArray *currencies;
     self.contactImage.image = self.branch.consultant.image;
     self.contactPersonLabel.text = self.branch.consultant.fullName;
     
-    // Initialize currencies
-    Currency *currency = currencies[0];
-    [self.currencySelectButton setTitle:currency.formattedLabel forState:UIControlStateNormal];
-    
     [self respondToOrientation: UIApplication.sharedApplication.statusBarOrientation
         inAnimatedDurationTime: 0.0];
 }
@@ -82,109 +77,6 @@ static NSArray *currencies;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-
-#pragma mark UIPickerView
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
-    return 1;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component {
-    
-    return currencies.count;
-}
-
-- (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    Currency *currency = currencies[row];
-    
-    return currency.formattedLabel;
-}
-
-- (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    // value of picker view has changed
-    self.selectedCurrency = currencies[row];
-    [self onCurrencyReturned:self.currencyField];
-}
-
-#pragma mark Currency Logic
-
-- (IBAction)showCurrencyPicker:(UIButton *)sender {
-    
-//    UIView *uiView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-//    uiView.backgroundColor = [UIColor blackColor];
-//    
-//    UILabel *testLabel = [UILabel new];
-//    testLabel.text = @"foo";
-//    testLabel.frame = CGRectMake(0, 0, 100, 100);
-//    [uiView addSubview:testLabel];
-//    
-//    // create popover view
-//    self.popoverViewController = [UIViewController new];
-//    self.preferredContentSize = CGSizeMake(320, 300);
-//    self.popoverViewController.view = uiView;
-//    
-//    
-//    // create popover
-//    self.popController = [[UIPopoverController alloc] initWithContentViewController:self.popoverViewController];
-//    //self.popoverController.delegate=self;
-//    
-//    [self.popController setPopoverContentSize:CGSizeMake(320, 264) animated:NO];
-//    [self.popController presentPopoverFromRect:sender.frame
-//                                            inView:self.view
-//                          permittedArrowDirections:UIPopoverArrowDirectionDown
-//                                          animated:YES];
-    
-}
-
-/**
- *  Will be executed when the user enters a new currency value.
- *
- *  @param sender The currency field.
- */
-- (IBAction)onCurrencyReturned:(UITextField *)sender {
-    if (sender == self.currencyField) {
-        NSString *currencyValue = sender.text;
-        NSString *cleanCurrency = [self cleanCurrencyString:currencyValue];
-        sender.text = cleanCurrency;
-        
-        float currency = cleanCurrency.floatValue;
-        float euro = [self.selectedCurrency euroWithCurrency:currency];
-        
-        NSString *euroString = [NSString stringWithFormat:@"%.2f €", euro];
-        
-        [self.euroLabel setText:[euroString stringByReplacingOccurrencesOfString:@"." withString:@","]];
-    }
-}
-
-/**
- *  Cleans a string to have a valid currency value.
- *
- *  @param subject The string to be cleaned.
- *
- *  @return A clean currency value.
- */
-- (NSString *)cleanCurrencyString:(NSString *)subject {
-    NSError *error = NULL;
-    NSRegularExpression *forbiddenCharsRegex = [NSRegularExpression regularExpressionWithPattern:@"[^\\d,]+"
-                                                                                         options:0
-                                                                                           error:&error];
-    if (!error) {
-        NSString *cleanedString = [forbiddenCharsRegex stringByReplacingMatchesInString:subject options:0 range:NSMakeRange(0, subject.length) withTemplate:@""];
-        NSRegularExpression *firstTrueMatchRegex = [NSRegularExpression regularExpressionWithPattern:@"\\d+(,\\d{2})?" options:0 error:&error];
-        
-        NSTextCheckingResult *match = [firstTrueMatchRegex firstMatchInString:cleanedString options:0 range:NSMakeRange(0, cleanedString.length)];
-        
-        if (match) {
-            NSRange matchRange = match.range;
-            return [cleanedString substringWithRange:matchRange];
-        }
-        
-        return @"0,00";
-    }
-    
-    return subject;
 }
 
 /**
@@ -216,7 +108,7 @@ static NSArray *currencies;
     
     [self.navigationView setFrame:CGRectMake(0, 205, newWidth, 192)];
     [self.phoneView setFrame:CGRectMake(newWidth, 205, newWidth, 192)];
-    [self.emailView setFrame:CGRectMake(2 * newWidth, 205, newWidth, 192)];
+    [self.appointmentView setFrame:CGRectMake(2 * newWidth, 205, newWidth, 192)];
     [self.currencyView setFrame:CGRectMake(3 * newWidth, 205, newWidth, 192)];
 }
 
@@ -226,6 +118,41 @@ static NSArray *currencies;
 {
     [self respondToOrientation:toInterfaceOrientation
         inAnimatedDurationTime:0.2];
+}
+
+
+/**
+ *  Show the currency exhange view.
+ */
+- (IBAction)showCurrencyPopover:(UIButton *)sender {
+    [self showPopover:sender popoverController:self.currencyContr];
+}
+
+/**
+ *  Show the appointment request view.
+ */
+- (IBAction)showAppointmentPopover:(UIButton *)sender {
+    [self showPopover:sender popoverController:self.appointmentContr];
+}
+
+
+/**
+ *  Show a Popover
+ */
+- (void)showPopover:(UIButton *)sender popoverController:(UIViewController *)popoverController{
+    self.popController = [[UIPopoverController alloc]
+                          initWithContentViewController:popoverController];
+    
+    CGPoint buttonPosition = sender.frame.origin;
+    buttonPosition.x += sender.superview.frame.origin.x;
+    buttonPosition.y += sender.superview.frame.origin.y;
+    
+    //given size as arg. is irrelevant
+    //size is defined through size of view in popover
+    [self.popController presentPopoverFromRect:CGRectMake(buttonPosition.x, buttonPosition.y, 1, 1)
+                                        inView:self.view
+                      permittedArrowDirections:UIPopoverArrowDirectionAny
+                                      animated:YES];
 }
 
 @end

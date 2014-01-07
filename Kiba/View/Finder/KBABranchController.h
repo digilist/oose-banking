@@ -18,17 +18,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *contactImage;
 @property (weak, nonatomic) IBOutlet UIDatePicker *appointmentPicker;
 
-@property (weak, nonatomic) IBOutlet UIButton *currencySelectButton;
-@property (nonatomic, weak) IBOutlet UIPickerView *currencyPickerView;
-@property (weak, nonatomic) IBOutlet UITextField *currencyField;
-@property (weak, nonatomic) IBOutlet UILabel *euroLabel;
-
 @property (weak, nonatomic) IBOutlet UIView *navigationView;
 @property (weak, nonatomic) IBOutlet UIView *phoneView;
-@property (weak, nonatomic) IBOutlet UIView *emailView;
+@property (weak, nonatomic) IBOutlet UIView *appointmentView;
 @property (weak, nonatomic) IBOutlet UIView *currencyView;
 
 - (id) initWithBranch: (Branch*) branch;
-- (IBAction)onCurrencyReturned:(UITextField *)sender;
 
 @end
