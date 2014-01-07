@@ -679,7 +679,6 @@
 				D93C6A211859D8E90004E51A /* KBADocContr.xib in Resources */,
 				D93C6A2A1859D8E90004E51A /* KBATransContr.xib in Resources */,
 				D93C6A261859D8E90004E51A /* KBAStatemContr.xib in Resources */,
-				A8AE9A65187BE73E00ACC653 /* KBAFinanceController.xib in Resources */,
 				C17AFBCA187BF9E2009C0CE9 /* KBACurrencyContr.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
