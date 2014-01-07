@@ -30,11 +30,6 @@
 //    $.plot('#expenditure', exports['expenditureData'], options);
 
     exports.lineChartIt = function (data) {
-
-        var lineChartData = [
-            {label: 'Umsatz', data: data}
-        ];
-
         var lineChartOptions = {
             series: {
                 lines: {
@@ -54,8 +49,7 @@
             },
             colors: ['#3b6670', '#428bca', '#b94a48', '#468847']
         };
-        $.plot('#line', lineChartData, lineChartOptions);
-
+        $.plot('#line', data, lineChartOptions);
     }
 
 })(window);

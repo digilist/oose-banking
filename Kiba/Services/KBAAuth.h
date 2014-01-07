@@ -12,9 +12,10 @@
 
 @interface KBAAuth : NSObject
 
--(Customer*)getIdentity;
--(void) logout;
--(BOOL) login:(NSString*) name withPassword:(NSString*) password;
--(BOOL) isLoggedIn;
+@property (readonly, nonatomic) Customer *identity;
+
+- (void) logout;
+- (BOOL) login:(NSString*) name withPassword:(NSString*) password;
+- (BOOL) isLoggedIn;
 
 @end

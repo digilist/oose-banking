@@ -32,7 +32,7 @@ extern NSNotificationCenter *transferChooseAccountNotifCenter;
     if (self) {
         id<KBAAccountDao> accountDao = [KBADependencyInjector getByKey:@"accountDao"];
         KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
-        self.customer = [auth getIdentity];
+        self.customer = [auth identity];
         self.accounts = [accountDao getAccounts:self.customer];
         
     }

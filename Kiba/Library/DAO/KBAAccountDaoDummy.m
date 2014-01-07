@@ -42,6 +42,13 @@
     return accounts;
 }
 
+/**
+ *  Returns the turnover for an account.
+ *
+ *  @param account The account.
+ *
+ *  @return an array over 30 days.
+ */
 - (NSArray *)turnoverForAccount:(Account *)account {
     NSMutableArray *mutableData = [[NSMutableArray alloc] init];
     double balance = (arc4random() % 50000) / 100.0;
