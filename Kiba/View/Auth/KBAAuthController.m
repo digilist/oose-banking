@@ -9,9 +9,17 @@
 #import "KBAAuthController.h"
 #import "SVProgressHUDViewController.h"
 #import "SVProgressHUD.h"
+#import "JVFloatLabeledTextField.h"
+#import "JVFloatLabeledTextView.h"
+
+
+const static CGFloat kJVFieldHeight = 44.0f;
+const static CGFloat kJVFieldHMargin = 10.0f;
+const static CGFloat kJVFieldFontSize = 16.0f;
+const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 
 @interface KBAAuthController ()
-@property (nonatomic, weak) IBOutlet UITextField *authCodeField;
+@property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *authCodeField;
 @property (nonatomic, weak) IBOutlet UIView *comicView;
 @property NSTimer *timer;
 @end
@@ -32,7 +40,6 @@
                                        userInfo:nil
                                         repeats:YES];
     [r addTimer: self.timer forMode:NSDefaultRunLoopMode];
-    
 }
 
 
@@ -58,30 +65,17 @@
         }
         
     }
-    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    CGRect cgr = self.comicView.bounds;
-//    cgr.origin.x += 1.5f/2;
-//    cgr.origin.y += 1.5f/2;
-//    
-//    cgr.size.width -= 1.5f;
-//    cgr.size.height -= 1.5f;
-//    
-//    UIBezierPath *borderpath = [UIBezierPath bezierPathWithRect:cgr];
-//    [borderpath setLineWidth:1.5f];
-//    [[UIColor blackColor] set];
-//    [borderpath stroke];
     
-//    self.comicView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-//    self.comicView.layer.borderWidth = 1.0;
-//    self.comicView.layer.shadowColor = (__bridge CGColorRef)([UIColor clearColor]);
-//    self.comicView.layer.shadowOffset = CGSizeMake(0, 0);
-//    self.comicView.layer.shadowRadius = 0.0;
-
+    //setup titlefield properties
+    JVFloatLabeledTextField *titleField = self.authCodeField;
+    titleField.placeholder = @"Validierungscode hier eingeben";
+    titleField.floatingLabel.text = @"Ihr Validierungscode";
+    
 }
 
 - (void)didReceiveMemoryWarning
