@@ -50,7 +50,7 @@
                             self.frame.size.width, 2.f);
     
     //insert line as subview
-    div1.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3f];
+    div1.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3f];
     [(UIView *)self.superview addSubview:div1];
 }
 
@@ -75,13 +75,13 @@
     [self addSubview:_floatingLabel];
 	
     // some basic default fonts/colors
-    _floatingLabel.font = [UIFont systemFontOfSize:16.0f];
-    _floatingLabelTextColor = [UIColor grayColor];
+    _floatingLabel.font = [UIFont systemFontOfSize:17.0f];
+    _floatingLabelTextColor = [UIColor blackColor];
     _animateEvenIfNotFirstResponder = NO;
     [self setBorderStyle:UITextBorderStyleNone];
     
-    self.floatingLabelTextColor = [UIColor grayColor];
-    self.floatingLabelActiveTextColor = [UIColor grayColor];
+    self.floatingLabelTextColor = [UIColor blackColor];
+    self.floatingLabelActiveTextColor = [UIColor blackColor];
     self.tintColor = KBATintColor;
 
 }
@@ -101,7 +101,7 @@
 
 - (void) setFloatingLabelFont:(UIFont *)floatingLabelFont {
     _floatingLabelFont = floatingLabelFont;
-    _floatingLabel.font = (_floatingLabelFont ? _floatingLabelFont : [UIFont systemFontOfSize:16.0f]);
+    _floatingLabel.font = (_floatingLabelFont ? _floatingLabelFont : [UIFont systemFontOfSize:17.0f]);
     self.placeholder = self.placeholder; // Force the label to lay itself out with the new font.
 }
 

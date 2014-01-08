@@ -7,10 +7,11 @@
 //
 
 #import "KBAViewController.h"
+#import "JVFloatLabeledTextField.h"
 
 @interface KBAAccountController : KBAViewController
-@property (nonatomic, weak) IBOutlet UITextField* reciever;
-@property (nonatomic, weak) IBOutlet UITextField* accountNr;
+@property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *receiver;
+@property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *accountNr;
 @property (nonatomic, weak) IBOutlet UITextField* blz;
 @property (nonatomic, weak) IBOutlet UITextField* amount;
 @property (nonatomic, weak) IBOutlet UITextField* use;

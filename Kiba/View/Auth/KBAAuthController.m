@@ -71,6 +71,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     
     //setup titlefield properties
     JVFloatLabeledTextField *titleField = self.authCodeField;
+//    [titleField setFont:[UIFont fo
     titleField.placeholder = @"Validierungscode hier eingeben";
     titleField.floatingLabel.text = @"Ihr Validierungscode";
     [titleField setup];

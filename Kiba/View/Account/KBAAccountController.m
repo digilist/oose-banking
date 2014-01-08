@@ -17,8 +17,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    //regex
+    _receiver.placeholder = @"Empfänger hier eingeben";
+    _receiver.floatingLabel.text = @"Empfänger";
+    [_receiver setup];
+    
+    _accountNr.placeholder = @"Kontonummer";
+    _accountNr.floatingLabel.text = @"Kontonummer";
+    [_accountNr setup];
+ 
 
 }
 
@@ -33,7 +39,7 @@
     self.tanLabel.hidden = NO;
 }
 
--(IBAction)coloringField:(UITextField*)sender{
+-(IBAction)coloringField:(JVFloatLabeledTextField *)sender{
 
     //regex
     NSPredicate* regexAccountNr = [NSPredicate predicateWithFormat: @"SELF MATCHES '\\\\d{10}'"];
@@ -47,11 +53,16 @@
     
 
     if([self isValidInput:sender.text forTextfield: [self.regexMap objectForKey:sender]]){
-                sender.backgroundColor = [UIColor greenColor];
+        sender.floatingLabelTextColor  =
+            [UIColor colorWithRed:0.316 green:0.560 blue:0.380 alpha:1.000];
     }
     
-    else sender.backgroundColor = [UIColor redColor];
-              }
+    else{
+        sender.floatingLabelTextColor  =
+            [UIColor colorWithRed:0.560 green:0.131 blue:0.173 alpha:1.000];
+    }
+}
+
 -(Boolean)isValidInput:(NSString*)input forTextfield:(NSPredicate*)regex{
     
     
