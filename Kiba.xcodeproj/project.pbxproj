@@ -15,7 +15,6 @@
 		2139AC6118610DD3008FB712 /* KBAChooseAccountTableContr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2139AC6018610DD3008FB712 /* KBAChooseAccountTableContr.xib */; };
 		2139AC6318610DF1008FB712 /* KBAChooseAccountTableContr.m in Sources */ = {isa = PBXBuildFile; fileRef = 2139AC6218610DF1008FB712 /* KBAChooseAccountTableContr.m */; };
 		21BB5D1D187D5FC400460EE9 /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BB5D1B187D5FC400460EE9 /* JVFloatLabeledTextField.m */; };
-		21BB5D1E187D5FC400460EE9 /* JVFloatLabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BB5D1C187D5FC400460EE9 /* JVFloatLabeledTextView.m */; };
 		3407E8E91838FD110045C014 /* KBAMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3407E8E71838FD110045C014 /* KBAMasterViewController.m */; };
 		34199A881841710C00F574D5 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 34199A871841710C00F574D5 /* Assets */; };
 		34199A8A18417A6F00F574D5 /* Documentation in Resources */ = {isa = PBXBuildFile; fileRef = 34199A8918417A6F00F574D5 /* Documentation */; };
@@ -112,9 +111,7 @@
 		2139AC6218610DF1008FB712 /* KBAChooseAccountTableContr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAChooseAccountTableContr.m; path = View/SelfService/KBAChooseAccountTableContr.m; sourceTree = "<group>"; };
 		2139AC6418610E00008FB712 /* KBAChooseAccountTableContr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KBAChooseAccountTableContr.h; path = View/SelfService/KBAChooseAccountTableContr.h; sourceTree = "<group>"; };
 		21BB5D19187D5FC400460EE9 /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JVFloatLabeledTextField.h; path = "View/Custom - GUI/JVFloatLabeledTextField.h"; sourceTree = "<group>"; };
-		21BB5D1A187D5FC400460EE9 /* JVFloatLabeledTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JVFloatLabeledTextView.h; path = "View/Custom - GUI/JVFloatLabeledTextView.h"; sourceTree = "<group>"; };
 		21BB5D1B187D5FC400460EE9 /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JVFloatLabeledTextField.m; path = "View/Custom - GUI/JVFloatLabeledTextField.m"; sourceTree = "<group>"; };
-		21BB5D1C187D5FC400460EE9 /* JVFloatLabeledTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JVFloatLabeledTextView.m; path = "View/Custom - GUI/JVFloatLabeledTextView.m"; sourceTree = "<group>"; };
 		3407E8CB1837BD980045C014 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3407E8CC1837BDA20045C014 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		3407E8D91838FA200045C014 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = View/README.md; sourceTree = "<group>"; };
@@ -310,9 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				21BB5D19187D5FC400460EE9 /* JVFloatLabeledTextField.h */,
-				21BB5D1A187D5FC400460EE9 /* JVFloatLabeledTextView.h */,
 				21BB5D1B187D5FC400460EE9 /* JVFloatLabeledTextField.m */,
-				21BB5D1C187D5FC400460EE9 /* JVFloatLabeledTextView.m */,
 				2139AC5D18610DB0008FB712 /* KBAFlatDatePicker.h */,
 				2139AC5E18610DB0008FB712 /* KBAFlatDatePicker.m */,
 				0AAEEE2B187BED9F00C1F767 /* SVProgressHUD.h */,
@@ -737,7 +732,6 @@
 				C1F12CC11857499F001AA21E /* Currency.m in Sources */,
 				A8F81C8A1844B51D00E55C75 /* Branch.m in Sources */,
 				C16A7B80184DCDAB005DC504 /* KBAStoreLocation.m in Sources */,
-				21BB5D1E187D5FC400460EE9 /* JVFloatLabeledTextView.m in Sources */,
 				C1F00E631844DAEB009EFE4F /* KBAViewController.m in Sources */,
 				2139AC6318610DF1008FB712 /* KBAChooseAccountTableContr.m in Sources */,
 				0AAEEE30187BED9F00C1F767 /* SVProgressHUDViewController.m in Sources */,

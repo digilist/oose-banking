@@ -109,13 +109,13 @@
 {
     void (^showBlock)() = ^{
         _floatingLabel.alpha = 1.0f;
-        _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
+        _floatingLabel.frame = CGRectMake(self.bounds.origin.x,
                                           2.0f,
                                           _floatingLabel.frame.size.width,
                                           _floatingLabel.frame.size.height);
     };
     
-    if (animated || _animateEvenIfNotFirstResponder) {
+    if ((animated || _animateEvenIfNotFirstResponder) && [self.text length] == 1) {
         [UIView animateWithDuration:0.3f
                               delay:0.0f
                             options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionCurveEaseOut
