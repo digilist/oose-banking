@@ -16,8 +16,8 @@
 @property NSArray *checkElements;
 @property NSMutableArray *checkElementsPositions;
 @property UIPopoverController* popController;
-@property (nonatomic, weak) IBOutlet UIButton *chooseSourceAccountButton;
-@property (nonatomic, weak) IBOutlet UIButton *chooseDestinationAccountButton;
+@property (nonatomic, weak) IBOutlet KBAButton *chooseSourceAccountButton;
+@property (nonatomic, weak) IBOutlet KBAButton *chooseDestinationAccountButton;
 @property (nonatomic, weak) IBOutlet UILabel *sourceAccountLabel;
 @property (nonatomic, weak) IBOutlet UILabel *destinationAccountLabel;
 @property (nonatomic, weak) UILabel *labelToSet; //label set in chooseAccount (points to source or dest)
@@ -152,7 +152,7 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
  *
  *  @param sender pressed button
  */
--(IBAction)chooseAccount:(UIButton*)sender
+-(IBAction)chooseAccount:(KBAButton *)sender
 {
     self.popController = [[UIPopoverController alloc]
                           initWithContentViewController:self.chooseAccContr];

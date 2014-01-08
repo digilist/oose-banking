@@ -15,6 +15,7 @@
 		2139AC6118610DD3008FB712 /* KBAChooseAccountTableContr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2139AC6018610DD3008FB712 /* KBAChooseAccountTableContr.xib */; };
 		2139AC6318610DF1008FB712 /* KBAChooseAccountTableContr.m in Sources */ = {isa = PBXBuildFile; fileRef = 2139AC6218610DF1008FB712 /* KBAChooseAccountTableContr.m */; };
 		21BB5D1D187D5FC400460EE9 /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BB5D1B187D5FC400460EE9 /* JVFloatLabeledTextField.m */; };
+		21F8EE89187DFA1D00025C42 /* KBAButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F8EE88187DFA1D00025C42 /* KBAButton.m */; };
 		3407E8E91838FD110045C014 /* KBAMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3407E8E71838FD110045C014 /* KBAMasterViewController.m */; };
 		34199A881841710C00F574D5 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 34199A871841710C00F574D5 /* Assets */; };
 		34199A8A18417A6F00F574D5 /* Documentation in Resources */ = {isa = PBXBuildFile; fileRef = 34199A8918417A6F00F574D5 /* Documentation */; };
@@ -112,6 +113,8 @@
 		2139AC6418610E00008FB712 /* KBAChooseAccountTableContr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KBAChooseAccountTableContr.h; path = View/SelfService/KBAChooseAccountTableContr.h; sourceTree = "<group>"; };
 		21BB5D19187D5FC400460EE9 /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JVFloatLabeledTextField.h; path = "View/Custom - GUI/JVFloatLabeledTextField.h"; sourceTree = "<group>"; };
 		21BB5D1B187D5FC400460EE9 /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JVFloatLabeledTextField.m; path = "View/Custom - GUI/JVFloatLabeledTextField.m"; sourceTree = "<group>"; };
+		21F8EE87187DFA1D00025C42 /* KBAButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAButton.h; path = View/KBAButton.h; sourceTree = "<group>"; };
+		21F8EE88187DFA1D00025C42 /* KBAButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAButton.m; path = View/KBAButton.m; sourceTree = "<group>"; };
 		3407E8CB1837BD980045C014 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3407E8CC1837BDA20045C014 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		3407E8D91838FA200045C014 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = View/README.md; sourceTree = "<group>"; };
@@ -376,6 +379,8 @@
 				0AAEEE2A187BE9BA00C1F767 /* Custom - GUI */,
 				3407E8E61838FD110045C014 /* KBAMasterViewController.h */,
 				3407E8E71838FD110045C014 /* KBAMasterViewController.m */,
+				21F8EE87187DFA1D00025C42 /* KBAButton.h */,
+				21F8EE88187DFA1D00025C42 /* KBAButton.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -742,6 +747,7 @@
 				2139AC5F18610DB0008FB712 /* KBAFlatDatePicker.m in Sources */,
 				0AAEEE2F187BED9F00C1F767 /* SVProgressHUD.m in Sources */,
 				D93C6A471859DA800004E51A /* KBAAccountDaoDummy.m in Sources */,
+				21F8EE89187DFA1D00025C42 /* KBAButton.m in Sources */,
 				D93C6A251859D8E90004E51A /* KBAStatemContr.m in Sources */,
 				342322F11837B9FD00618D7E /* KBAAppDelegate.m in Sources */,
 				C16A7B7A184DC9D3005DC504 /* KBAFinderController.m in Sources */,

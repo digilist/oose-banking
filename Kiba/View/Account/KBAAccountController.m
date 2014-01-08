@@ -34,7 +34,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction)sendTransaction:(UIButton*)sender{
+-(IBAction)sendTransaction:(KBAButton *)sender{
     self.tan1.hidden = NO;
     self.tanLabel.hidden = NO;
 }
