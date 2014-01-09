@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0A893764183BA118003495A4 /* KBADashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A893763183BA118003495A4 /* KBADashboardController.m */; };
+		0AABAA30187E892B00E067EE /* KBAAuthAdvantagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AABAA2E187E892B00E067EE /* KBAAuthAdvantagesController.m */; };
+		0AABAA31187E892B00E067EE /* KBAAuthAdvantagesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AABAA2F187E892B00E067EE /* KBAAuthAdvantagesController.xib */; };
 		0AAEEE2F187BED9F00C1F767 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAEEE2C187BED9F00C1F767 /* SVProgressHUD.m */; };
 		0AAEEE30187BED9F00C1F767 /* SVProgressHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAEEE2E187BED9F00C1F767 /* SVProgressHUDViewController.m */; };
 		0AAEEE33187C173500C1F767 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0AAEEE32187C173500C1F767 /* SVProgressHUD.bundle */; };
@@ -100,6 +102,9 @@
 /* Begin PBXFileReference section */
 		0A893762183BA118003495A4 /* KBADashboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBADashboardController.h; path = View/Dashboard/KBADashboardController.h; sourceTree = "<group>"; };
 		0A893763183BA118003495A4 /* KBADashboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBADashboardController.m; path = View/Dashboard/KBADashboardController.m; sourceTree = "<group>"; };
+		0AABAA2D187E892B00E067EE /* KBAAuthAdvantagesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAAuthAdvantagesController.h; path = View/Auth/KBAAuthAdvantagesController.h; sourceTree = "<group>"; };
+		0AABAA2E187E892B00E067EE /* KBAAuthAdvantagesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAAuthAdvantagesController.m; path = View/Auth/KBAAuthAdvantagesController.m; sourceTree = "<group>"; };
+		0AABAA2F187E892B00E067EE /* KBAAuthAdvantagesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAAuthAdvantagesController.xib; path = View/Auth/KBAAuthAdvantagesController.xib; sourceTree = "<group>"; };
 		0AAEEE2B187BED9F00C1F767 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = "View/Custom - GUI/SVProgressHUD.h"; sourceTree = "<group>"; };
 		0AAEEE2C187BED9F00C1F767 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = "View/Custom - GUI/SVProgressHUD.m"; sourceTree = "<group>"; };
 		0AAEEE2D187BED9F00C1F767 /* SVProgressHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUDViewController.h; path = "View/Custom - GUI/SVProgressHUDViewController.h"; sourceTree = "<group>"; };
@@ -121,7 +126,6 @@
 		3407E8E71838FD110045C014 /* KBAMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAMasterViewController.m; path = View/KBAMasterViewController.m; sourceTree = "<group>"; };
 		34199A871841710C00F574D5 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		34199A8918417A6F00F574D5 /* Documentation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Documentation; sourceTree = "<group>"; };
-		34199A8B18417A9D00F574D5 /* general.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = general.js; path = Assets/js/general.js; sourceTree = "<group>"; };
 		342322DD1837B9FD00618D7E /* Kiba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		342322E01837B9FD00618D7E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		342322E21837B9FD00618D7E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -410,7 +414,6 @@
 		342322D41837B9FD00618D7E = {
 			isa = PBXGroup;
 			children = (
-				34199A8B18417A9D00F574D5 /* general.js */,
 				34199A8918417A6F00F574D5 /* Documentation */,
 				34199A871841710C00F574D5 /* Assets */,
 				3407E8CC1837BDA20045C014 /* README.md */,
@@ -585,6 +588,9 @@
 				C1F00E701844E08C009EFE4F /* KBAAuthController.h */,
 				C1F00E711844E08C009EFE4F /* KBAAuthController.m */,
 				C1F00E721844E08C009EFE4F /* KBAAuthController.xib */,
+				0AABAA2D187E892B00E067EE /* KBAAuthAdvantagesController.h */,
+				0AABAA2E187E892B00E067EE /* KBAAuthAdvantagesController.m */,
+				0AABAA2F187E892B00E067EE /* KBAAuthAdvantagesController.xib */,
 			);
 			name = Auth;
 			sourceTree = "<group>";
@@ -677,6 +683,7 @@
 				D93C6A241859D8E90004E51A /* KBASelfServContr.xib in Resources */,
 				2139AC6118610DD3008FB712 /* KBAChooseAccountTableContr.xib in Resources */,
 				34199A8A18417A6F00F574D5 /* Documentation in Resources */,
+				0AABAA31187E892B00E067EE /* KBAAuthAdvantagesController.xib in Resources */,
 				342322F41837B9FD00618D7E /* Main.storyboard in Resources */,
 				0AAEEE33187C173500C1F767 /* SVProgressHUD.bundle in Resources */,
 				C170420D184DFE900019F929 /* KBABranchController.xib in Resources */,
@@ -740,6 +747,7 @@
 				D929E547185093B1008FC26E /* OpenHour.m in Sources */,
 				21BB5D1D187D5FC400460EE9 /* JVFloatLabeledTextField.m in Sources */,
 				2139AC5F18610DB0008FB712 /* KBAFlatDatePicker.m in Sources */,
+				0AABAA30187E892B00E067EE /* KBAAuthAdvantagesController.m in Sources */,
 				0AAEEE2F187BED9F00C1F767 /* SVProgressHUD.m in Sources */,
 				D93C6A471859DA800004E51A /* KBAAccountDaoDummy.m in Sources */,
 				D93C6A251859D8E90004E51A /* KBAStatemContr.m in Sources */,
