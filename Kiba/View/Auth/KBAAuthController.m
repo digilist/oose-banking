@@ -10,6 +10,7 @@
 #import "SVProgressHUDViewController.h"
 #import "SVProgressHUD.h"
 #import "JVFloatLabeledTextField.h"
+#import "KBAAuthAdvantagesController.h"
 
 const static CGFloat kJVFieldHeight = 44.0f;
 const static CGFloat kJVFieldHMargin = 10.0f;
@@ -17,12 +18,18 @@ const static CGFloat kJVFieldFontSize = 16.0f;
 const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 
 @interface KBAAuthController ()
+
+@property (strong) UIPopoverController *popController;
 @property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *authCodeField;
 @property (nonatomic, weak) IBOutlet UIView *comicView;
+@property (nonatomic, strong) KBAAuthAdvantagesController *advantagesController;
 @property NSTimer *timer;
+
 @end
 
 @implementation KBAAuthController
+
+
 
 /**
  *  Validates the auth code.
@@ -41,6 +48,21 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 }
 
 
+/**
+ *  Shows the auth info popover.
+ *
+ *  @param sender
+ */
+- (IBAction)showAuthPopOver:(UIButton*)sender
+{
+    [self showPopover:sender withPopoverController: self.advantagesController
+            andDirection:UIPopoverArrowDirectionAny
+            andOffset:CGPointMake(0, 15)];
+}
+
+/**
+ *  Will be executed when the timer fires an event.
+ */
 -(void)respondToTimer
 {
     static float time = 0.00;
@@ -68,18 +90,44 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.advantagesController = [KBAAuthAdvantagesController new];
+
     //setup titlefield properties
     JVFloatLabeledTextField *titleField = self.authCodeField;
-//    [titleField setFont:[UIFont fo
-    titleField.placeholder = @"Validierungscode hier eingeben";
-    titleField.floatingLabel.text = @"Ihr Validierungscode";
+    
+    titleField.placeholder = @"Validierungscode";
+    titleField.floatingLabel.text = @"Validierungscode";
     [titleField setup];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+/**
+ *  Show a Popover
+ */
+- (void)showPopover:(UIButton *)sender withPopoverController:(UIViewController *)popoverController
+       andDirection: (UIPopoverArrowDirection) popoverDirection
+          andOffset: (CGPoint) offset{
+
+    self.popController = [[UIPopoverController alloc]
+                          initWithContentViewController:popoverController];
+    
+    CGPoint buttonPosition = sender.frame.origin;
+    buttonPosition.x += sender.superview.frame.origin.x;
+    buttonPosition.y += sender.superview.frame.origin.y;
+    
+    buttonPosition.x += offset.x;
+    buttonPosition.y += offset.y;
+    
+    //given size as arg. is irrelevant
+    //size is defined through size of view in popover
+    [self.popController presentPopoverFromRect:CGRectMake(buttonPosition.x, buttonPosition.y, 1, 1)
+                                        inView:self.view
+                      permittedArrowDirections:popoverDirection
+                                      animated:YES];
 }
 
 @end
