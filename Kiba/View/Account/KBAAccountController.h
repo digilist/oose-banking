@@ -21,7 +21,7 @@
 @property NSMapTable* regexMap;
 
 
--(IBAction)sendTransaction:(UIButton*)sender;
+-(IBAction)sendTransaction:(KBAButton *)sender;
 
 -(IBAction)coloringField:(id)sender;
 
