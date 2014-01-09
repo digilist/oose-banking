@@ -12,10 +12,10 @@
 @interface KBAAccountController : KBAViewController
 @property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *receiver;
 @property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *accountNr;
-@property (nonatomic, weak) IBOutlet UITextField* blz;
-@property (nonatomic, weak) IBOutlet UITextField* amount;
-@property (nonatomic, weak) IBOutlet UITextField* use;
-@property (nonatomic, weak) IBOutlet UITextField* tan1;
+@property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *blz;
+@property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *amount;
+@property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *use;
+@property (nonatomic, weak) IBOutlet UITextField *tan1;
 @property (nonatomic,weak) IBOutlet UILabel* tanLabel;
 
 @property NSMapTable* regexMap;

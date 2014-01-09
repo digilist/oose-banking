@@ -24,7 +24,7 @@ static NSArray * navigationEntryKeys;
     navigationEntries = [NSMutableDictionary new];
     [navigationEntries setValue:@"Dashboard" forKey:@"dashboard"];
     [navigationEntries setValue:@"Authentifizierung" forKey:@"auth"];
-    [navigationEntries setValue:@"Girokonto" forKey:@"account"];
+    [navigationEntries setValue:@"Überweisung" forKey:@"account"];
     [navigationEntries setValue:@"Self Service" forKey:@"selfservice"];
     [navigationEntries setValue:@"Filialfinder" forKey:@"finder"];
     [navigationEntries setValue:@"KiBa-Center" forKey:@"center"];
