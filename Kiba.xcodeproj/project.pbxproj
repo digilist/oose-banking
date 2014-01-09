@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A579660187EC43D005EFC73 /* KBAUISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A57965F187EC43D005EFC73 /* KBAUISegmentedControl.m */; };
 		0A893764183BA118003495A4 /* KBADashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A893763183BA118003495A4 /* KBADashboardController.m */; };
 		0AABAA30187E892B00E067EE /* KBAAuthAdvantagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AABAA2E187E892B00E067EE /* KBAAuthAdvantagesController.m */; };
 		0AABAA31187E892B00E067EE /* KBAAuthAdvantagesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AABAA2F187E892B00E067EE /* KBAAuthAdvantagesController.xib */; };
@@ -101,6 +102,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A57965E187EC43D005EFC73 /* KBAUISegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAUISegmentedControl.h; path = View/KBAUISegmentedControl.h; sourceTree = "<group>"; };
+		0A57965F187EC43D005EFC73 /* KBAUISegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAUISegmentedControl.m; path = View/KBAUISegmentedControl.m; sourceTree = "<group>"; };
 		0A893762183BA118003495A4 /* KBADashboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBADashboardController.h; path = View/Dashboard/KBADashboardController.h; sourceTree = "<group>"; };
 		0A893763183BA118003495A4 /* KBADashboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBADashboardController.m; path = View/Dashboard/KBADashboardController.m; sourceTree = "<group>"; };
 		0AABAA2D187E892B00E067EE /* KBAAuthAdvantagesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAAuthAdvantagesController.h; path = View/Auth/KBAAuthAdvantagesController.h; sourceTree = "<group>"; };
@@ -382,6 +385,8 @@
 				0A893761183BA0BE003495A4 /* Dashboard */,
 				0AAEEE2A187BE9BA00C1F767 /* Custom - GUI */,
 				3407E8E61838FD110045C014 /* KBAMasterViewController.h */,
+				0A57965E187EC43D005EFC73 /* KBAUISegmentedControl.h */,
+				0A57965F187EC43D005EFC73 /* KBAUISegmentedControl.m */,
 				3407E8E71838FD110045C014 /* KBAMasterViewController.m */,
 				21F8EE87187DFA1D00025C42 /* KBAButton.h */,
 				21F8EE88187DFA1D00025C42 /* KBAButton.m */,
@@ -715,6 +720,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				342322ED1837B9FD00618D7E /* main.m in Sources */,
+				0A579660187EC43D005EFC73 /* KBAUISegmentedControl.m in Sources */,
 				C1F00E731844E08C009EFE4F /* KBAAuthController.m in Sources */,
 				C10C5FBF183B877B008FAECB /* KBABranchDaoRest.m in Sources */,
 				C17AFBCF187C1017009C0CE9 /* KBAAppointmentContr.m in Sources */,
