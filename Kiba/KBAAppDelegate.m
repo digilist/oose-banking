@@ -11,7 +11,6 @@
 #import "Library/DAO/KBABranchDao.h"
 #import "Library/KBADependencyInjector.h"
 
-
 @implementation KBAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

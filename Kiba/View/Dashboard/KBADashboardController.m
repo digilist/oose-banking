@@ -90,7 +90,21 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
+    [self passIdentityToWebView];
     [self passTurnoverToWebView];
+}
+
+/**
+ *  Passes the current logged in identity to the web view.
+ */
+- (void)passIdentityToWebView
+{
+    Customer *identity = self.auth.identity;
+    NSDictionary *identityDic = @{@"id": [NSNumber numberWithInt:identity.userId],
+                                  @"forename": identity.forename,
+                                  @"surname": identity.surname,
+                                  @"fullName": identity.fullName};
+    [self passDataToWebView:@"setIdentity" withParameter:identityDic];
 }
 
 /**
@@ -124,6 +138,7 @@
     
     if (!error) {
         NSString *jsonString = [[NSString alloc] initWithData:json encoding:NSUTF8StringEncoding];
+        NSLog(@"%@", jsonString);
         NSString *jsCall = [NSString stringWithFormat:@"%@(%@)", method, jsonString];
         [self.webView stringByEvaluatingJavaScriptFromString:jsCall];
         

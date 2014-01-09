@@ -121,7 +121,6 @@
 		3407E8E71838FD110045C014 /* KBAMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAMasterViewController.m; path = View/KBAMasterViewController.m; sourceTree = "<group>"; };
 		34199A871841710C00F574D5 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		34199A8918417A6F00F574D5 /* Documentation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Documentation; sourceTree = "<group>"; };
-		34199A8B18417A9D00F574D5 /* general.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = general.js; path = Assets/js/general.js; sourceTree = "<group>"; };
 		342322DD1837B9FD00618D7E /* Kiba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		342322E01837B9FD00618D7E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		342322E21837B9FD00618D7E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -410,7 +409,6 @@
 		342322D41837B9FD00618D7E = {
 			isa = PBXGroup;
 			children = (
-				34199A8B18417A9D00F574D5 /* general.js */,
 				34199A8918417A6F00F574D5 /* Documentation */,
 				34199A871841710C00F574D5 /* Assets */,
 				3407E8CC1837BDA20045C014 /* README.md */,
