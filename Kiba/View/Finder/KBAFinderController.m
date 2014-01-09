@@ -88,7 +88,7 @@
             annotationView.canShowCallout = YES;
             annotationView.image = [UIImage imageNamed:@"MarkerFiliale"];
             
-            UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            KBAButton *rightButton = [KBAButton buttonWithType:UIButtonTypeDetailDisclosure];
             annotationView.rightCalloutAccessoryView = rightButton;
             
             annotationView.tintColor = KBATintColor;

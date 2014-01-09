@@ -131,7 +131,7 @@
 /**
  *  Show the currency exhange view.
  */
-- (IBAction)showCurrencyPopover:(UIButton *)sender {
+- (IBAction)showCurrencyPopover:(KBAButton *)sender {
     [self showPopover:sender withPopoverController:self.currencyContr
          andDirection:UIPopoverArrowDirectionAny
             andOffset:CGPointMake(0, 15)];
@@ -140,7 +140,7 @@
 /**
  *  Show the appointment request view.
  */
-- (IBAction)showAppointmentPopover:(UIButton *)sender {
+- (IBAction)showAppointmentPopover:(KBAButton *)sender {
     [self showPopover:sender withPopoverController:self.appointmentContr
          andDirection:UIPopoverArrowDirectionUp
             andOffset:CGPointMake(60, 23)];
@@ -150,7 +150,7 @@
 /**
  *  Show a Popover
  */
-- (void)showPopover:(UIButton *)sender withPopoverController:(UIViewController *)popoverController
+- (void)showPopover:(KBAButton *)sender withPopoverController:(UIViewController *)popoverController
        andDirection: (UIPopoverArrowDirection) popoverDirection
           andOffset: (CGPoint) offset{
     self.popController = [[UIPopoverController alloc]

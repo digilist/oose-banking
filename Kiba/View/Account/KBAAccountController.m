@@ -24,9 +24,28 @@
     _accountNr.placeholder = @"Kontonummer";
     _accountNr.floatingLabel.text = @"Kontonummer";
     [_accountNr setup];
+    
+    _blz.placeholder = @"BLZ";
+    _blz.floatingLabel.text = @"BLZ";
+    [_blz setup];
+    
+    _amount.placeholder = @"Betrag";
+    _amount.floatingLabel.text = @"Betrag";
+    [_amount setup];
+    
+    _use.placeholder = @"Verwendungszweck";
+    _use.floatingLabel.text = @"Verwendungszweck";
+    [_use setup];
+    
+ //   _tan1.placeholder = @"TAN";
+ //   _tan1.floatingLabel.text = @"TAN";
+ //  [_tan1 setup];
+    _tan1.hidden = YES;
+    _tan1.placeholder = @"Bitte geben Sie die TAN an";
  
 
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -34,9 +53,11 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction)sendTransaction:(UIButton*)sender{
+-(IBAction)sendTransaction:(KBAButton *)sender{
     self.tan1.hidden = NO;
     self.tanLabel.hidden = NO;
+    
+    
 }
 
 -(IBAction)coloringField:(JVFloatLabeledTextField *)sender{

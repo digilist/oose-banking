@@ -18,10 +18,10 @@
 @property (nonatomic, strong) IBOutlet KBADocTableContr *subDocContr;
 @property (nonatomic, strong) IBOutlet KBAStatemTableContr *subStatemContr;
 
-@property (nonatomic, weak) IBOutlet UIButton *connectButton;
-@property (nonatomic, weak) IBOutlet UIButton *transferButton;
-@property (nonatomic, weak) IBOutlet UIButton *transactionOverviewButton;
-@property (nonatomic, weak) IBOutlet UIButton *documentsButton;
+@property (nonatomic, weak) IBOutlet KBAButton *connectButton;
+@property (nonatomic, weak) IBOutlet KBAButton *transferButton;
+@property (nonatomic, weak) IBOutlet KBAButton *transactionOverviewButton;
+@property (nonatomic, weak) IBOutlet KBAButton *documentsButton;
 
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *firstToSecondElement;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *secondToThirdElement;

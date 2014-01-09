@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A579660187EC43D005EFC73 /* KBAUISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A57965F187EC43D005EFC73 /* KBAUISegmentedControl.m */; };
 		0A893764183BA118003495A4 /* KBADashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A893763183BA118003495A4 /* KBADashboardController.m */; };
+		0AABAA30187E892B00E067EE /* KBAAuthAdvantagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AABAA2E187E892B00E067EE /* KBAAuthAdvantagesController.m */; };
+		0AABAA31187E892B00E067EE /* KBAAuthAdvantagesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AABAA2F187E892B00E067EE /* KBAAuthAdvantagesController.xib */; };
 		0AAEEE2F187BED9F00C1F767 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAEEE2C187BED9F00C1F767 /* SVProgressHUD.m */; };
 		0AAEEE30187BED9F00C1F767 /* SVProgressHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAEEE2E187BED9F00C1F767 /* SVProgressHUDViewController.m */; };
 		0AAEEE33187C173500C1F767 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0AAEEE32187C173500C1F767 /* SVProgressHUD.bundle */; };
@@ -15,6 +18,7 @@
 		2139AC6118610DD3008FB712 /* KBAChooseAccountTableContr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2139AC6018610DD3008FB712 /* KBAChooseAccountTableContr.xib */; };
 		2139AC6318610DF1008FB712 /* KBAChooseAccountTableContr.m in Sources */ = {isa = PBXBuildFile; fileRef = 2139AC6218610DF1008FB712 /* KBAChooseAccountTableContr.m */; };
 		21BB5D1D187D5FC400460EE9 /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BB5D1B187D5FC400460EE9 /* JVFloatLabeledTextField.m */; };
+		21F8EE89187DFA1D00025C42 /* KBAButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F8EE88187DFA1D00025C42 /* KBAButton.m */; };
 		3407E8E91838FD110045C014 /* KBAMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3407E8E71838FD110045C014 /* KBAMasterViewController.m */; };
 		34199A881841710C00F574D5 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 34199A871841710C00F574D5 /* Assets */; };
 		34199A8A18417A6F00F574D5 /* Documentation in Resources */ = {isa = PBXBuildFile; fileRef = 34199A8918417A6F00F574D5 /* Documentation */; };
@@ -98,8 +102,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A57965E187EC43D005EFC73 /* KBAUISegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAUISegmentedControl.h; path = View/KBAUISegmentedControl.h; sourceTree = "<group>"; };
+		0A57965F187EC43D005EFC73 /* KBAUISegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAUISegmentedControl.m; path = View/KBAUISegmentedControl.m; sourceTree = "<group>"; };
 		0A893762183BA118003495A4 /* KBADashboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBADashboardController.h; path = View/Dashboard/KBADashboardController.h; sourceTree = "<group>"; };
 		0A893763183BA118003495A4 /* KBADashboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBADashboardController.m; path = View/Dashboard/KBADashboardController.m; sourceTree = "<group>"; };
+		0AABAA2D187E892B00E067EE /* KBAAuthAdvantagesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAAuthAdvantagesController.h; path = View/Auth/KBAAuthAdvantagesController.h; sourceTree = "<group>"; };
+		0AABAA2E187E892B00E067EE /* KBAAuthAdvantagesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAAuthAdvantagesController.m; path = View/Auth/KBAAuthAdvantagesController.m; sourceTree = "<group>"; };
+		0AABAA2F187E892B00E067EE /* KBAAuthAdvantagesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAAuthAdvantagesController.xib; path = View/Auth/KBAAuthAdvantagesController.xib; sourceTree = "<group>"; };
 		0AAEEE2B187BED9F00C1F767 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = "View/Custom - GUI/SVProgressHUD.h"; sourceTree = "<group>"; };
 		0AAEEE2C187BED9F00C1F767 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = "View/Custom - GUI/SVProgressHUD.m"; sourceTree = "<group>"; };
 		0AAEEE2D187BED9F00C1F767 /* SVProgressHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUDViewController.h; path = "View/Custom - GUI/SVProgressHUDViewController.h"; sourceTree = "<group>"; };
@@ -112,6 +121,8 @@
 		2139AC6418610E00008FB712 /* KBAChooseAccountTableContr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KBAChooseAccountTableContr.h; path = View/SelfService/KBAChooseAccountTableContr.h; sourceTree = "<group>"; };
 		21BB5D19187D5FC400460EE9 /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JVFloatLabeledTextField.h; path = "View/Custom - GUI/JVFloatLabeledTextField.h"; sourceTree = "<group>"; };
 		21BB5D1B187D5FC400460EE9 /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JVFloatLabeledTextField.m; path = "View/Custom - GUI/JVFloatLabeledTextField.m"; sourceTree = "<group>"; };
+		21F8EE87187DFA1D00025C42 /* KBAButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAButton.h; path = View/KBAButton.h; sourceTree = "<group>"; };
+		21F8EE88187DFA1D00025C42 /* KBAButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAButton.m; path = View/KBAButton.m; sourceTree = "<group>"; };
 		3407E8CB1837BD980045C014 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3407E8CC1837BDA20045C014 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		3407E8D91838FA200045C014 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = View/README.md; sourceTree = "<group>"; };
@@ -374,7 +385,11 @@
 				0A893761183BA0BE003495A4 /* Dashboard */,
 				0AAEEE2A187BE9BA00C1F767 /* Custom - GUI */,
 				3407E8E61838FD110045C014 /* KBAMasterViewController.h */,
+				0A57965E187EC43D005EFC73 /* KBAUISegmentedControl.h */,
+				0A57965F187EC43D005EFC73 /* KBAUISegmentedControl.m */,
 				3407E8E71838FD110045C014 /* KBAMasterViewController.m */,
+				21F8EE87187DFA1D00025C42 /* KBAButton.h */,
+				21F8EE88187DFA1D00025C42 /* KBAButton.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -583,6 +598,9 @@
 				C1F00E701844E08C009EFE4F /* KBAAuthController.h */,
 				C1F00E711844E08C009EFE4F /* KBAAuthController.m */,
 				C1F00E721844E08C009EFE4F /* KBAAuthController.xib */,
+				0AABAA2D187E892B00E067EE /* KBAAuthAdvantagesController.h */,
+				0AABAA2E187E892B00E067EE /* KBAAuthAdvantagesController.m */,
+				0AABAA2F187E892B00E067EE /* KBAAuthAdvantagesController.xib */,
 			);
 			name = Auth;
 			sourceTree = "<group>";
@@ -675,6 +693,7 @@
 				D93C6A241859D8E90004E51A /* KBASelfServContr.xib in Resources */,
 				2139AC6118610DD3008FB712 /* KBAChooseAccountTableContr.xib in Resources */,
 				34199A8A18417A6F00F574D5 /* Documentation in Resources */,
+				0AABAA31187E892B00E067EE /* KBAAuthAdvantagesController.xib in Resources */,
 				342322F41837B9FD00618D7E /* Main.storyboard in Resources */,
 				0AAEEE33187C173500C1F767 /* SVProgressHUD.bundle in Resources */,
 				C170420D184DFE900019F929 /* KBABranchController.xib in Resources */,
@@ -701,6 +720,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				342322ED1837B9FD00618D7E /* main.m in Sources */,
+				0A579660187EC43D005EFC73 /* KBAUISegmentedControl.m in Sources */,
 				C1F00E731844E08C009EFE4F /* KBAAuthController.m in Sources */,
 				C10C5FBF183B877B008FAECB /* KBABranchDaoRest.m in Sources */,
 				C17AFBCF187C1017009C0CE9 /* KBAAppointmentContr.m in Sources */,
@@ -738,8 +758,10 @@
 				D929E547185093B1008FC26E /* OpenHour.m in Sources */,
 				21BB5D1D187D5FC400460EE9 /* JVFloatLabeledTextField.m in Sources */,
 				2139AC5F18610DB0008FB712 /* KBAFlatDatePicker.m in Sources */,
+				0AABAA30187E892B00E067EE /* KBAAuthAdvantagesController.m in Sources */,
 				0AAEEE2F187BED9F00C1F767 /* SVProgressHUD.m in Sources */,
 				D93C6A471859DA800004E51A /* KBAAccountDaoDummy.m in Sources */,
+				21F8EE89187DFA1D00025C42 /* KBAButton.m in Sources */,
 				D93C6A251859D8E90004E51A /* KBAStatemContr.m in Sources */,
 				342322F11837B9FD00618D7E /* KBAAppDelegate.m in Sources */,
 				C16A7B7A184DC9D3005DC504 /* KBAFinderController.m in Sources */,

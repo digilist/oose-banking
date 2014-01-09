@@ -125,7 +125,7 @@ static NSArray *currencies;
     return subject;
 }
 
-- (void)requestButtonPressed:(UIButton *)sender {
+- (void)requestButtonPressed:(KBAButton *)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
