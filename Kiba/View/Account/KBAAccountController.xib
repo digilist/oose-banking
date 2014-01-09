@@ -100,9 +100,27 @@
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xf-ZH-M5k" customClass="KBAButton">
+                    <rect key="frame" x="688" y="944" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="TCc-Wf-RcV"/>
+                        <constraint firstAttribute="width" constant="50" id="zjF-Nx-fJv"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="info_orange">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="4Xf-ZH-M5k" secondAttribute="trailing" constant="30" id="Hsp-7p-R9Z"/>
+                <constraint firstAttribute="bottom" secondItem="4Xf-ZH-M5k" secondAttribute="bottom" constant="30" id="ktk-dX-Wgq"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
         </view>
     </objects>
+    <resources>
+        <image name="info_orange" width="50" height="50"/>
+    </resources>
 </document>
