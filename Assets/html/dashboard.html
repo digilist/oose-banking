@@ -38,7 +38,7 @@
         </style>
     </head>
     <body>
-        <h1>Ihr Dashboard</h1>
+        <h1>Willkommen …</h1>
 
         <div class="container">
             <div class="row">
@@ -143,7 +143,8 @@
         </script>
         <script type="text/javascript">
             (function ($) {
-                window.lineChartIt = function (data) {
+                this.lineChartIt = function (data)
+                {
                     var lineChartOptions = {
                         series: {
                             lines: {
@@ -168,6 +169,12 @@
                     };
                     $.plot('#line', data, lineChartOptions);
                 };
+             
+                this.setIdentity = function (identity)
+                {
+                    this._identity = identity;
+                    $('h1').text("Willkommen, " + identity.fullName + "!");
+                }
             })(jQuery);
         </script>
     </body>
