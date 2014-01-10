@@ -136,7 +136,6 @@ static NSArray *currencies;
                           delegate:nil
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil];
-    
     [alert show];
 
 }
