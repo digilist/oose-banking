@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -8,7 +8,6 @@
             <connections>
                 <outlet property="connectButton" destination="TrA-BV-FUy" id="kVQ-py-hnT"/>
                 <outlet property="documentsButton" destination="RzH-By-5M4" id="jlx-74-6Ys"/>
-                <outlet property="indicator" destination="wva-gp-6nP" id="4Kw-M6-oFB"/>
                 <outlet property="subDocContr" destination="4WH-48-ANY" id="X4u-kU-vld"/>
                 <outlet property="subMoneyTransferContr" destination="IHt-Ar-9XJ" id="C17-Qs-Foh"/>
                 <outlet property="subStatemContr" destination="lsi-lH-djG" id="AHM-wa-eOz"/>
@@ -34,19 +33,12 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="mit KiBa-Station verbinden">
-                        <color key="titleColor" red="0.85882352939999995" green="0.42352941179999998" blue="0.058823529409999999" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
                     <connections>
                         <action selector="connect:" destination="-1" eventType="touchUpInside" id="bWF-pU-zbT"/>
                     </connections>
                 </button>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="wva-gp-6nP">
-                    <rect key="frame" x="634" y="143" width="20" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="hidden" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                </activityIndicatorView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="35" sectionHeaderHeight="26" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1tE-bi-Kop">
                     <rect key="frame" x="633" y="284" width="200" height="250"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,7 +54,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Kontoauszug">
-                        <color key="titleColor" red="0.85882352939999995" green="0.42352941179999998" blue="0.058823529409999999" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -74,7 +66,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Bescheinigungen">
-                        <color key="titleColor" red="0.85882352941176465" green="0.42352941176470588" blue="0.058823529411764705" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -90,7 +82,7 @@
                     </accessibility>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Umbuchungen">
-                        <color key="titleColor" red="0.85882352939999995" green="0.42352941179999998" blue="0.058823529409999999" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -164,7 +156,6 @@
                 <constraint firstItem="BX8-fG-G3Q" firstAttribute="leading" secondItem="VXW-8c-iZJ" secondAttribute="trailing" constant="32" id="LjR-eh-C8S"/>
                 <constraint firstItem="v5C-FJ-aBY" firstAttribute="centerX" secondItem="TrA-BV-FUy" secondAttribute="centerX" constant="-0.5" id="LmM-Zk-ObS"/>
                 <constraint firstItem="BX8-fG-G3Q" firstAttribute="centerY" secondItem="RzH-By-5M4" secondAttribute="centerY" constant="0.5" id="MDT-HT-oqZ"/>
-                <constraint firstItem="wva-gp-6nP" firstAttribute="top" secondItem="fQo-AD-f5o" secondAttribute="bottom" constant="26" id="NiI-yQ-u9z"/>
                 <constraint firstItem="GRJ-qB-IFQ" firstAttribute="centerY" secondItem="VXW-8c-iZJ" secondAttribute="centerY" id="PAy-7x-sGl"/>
                 <constraint firstItem="VXW-8c-iZJ" firstAttribute="leading" secondItem="GRJ-qB-IFQ" secondAttribute="trailing" constant="14" id="Pm2-5C-yK3"/>
                 <constraint firstItem="v5C-FJ-aBY" firstAttribute="bottom" secondItem="1tE-bi-Kop" secondAttribute="bottom" constant="101" id="Q1x-cL-CQ1"/>
@@ -175,7 +166,6 @@
                 <constraint firstItem="nJQ-Ck-JcJ" firstAttribute="top" secondItem="2" secondAttribute="top" constant="210" id="XMA-2T-Pf5"/>
                 <constraint firstItem="RzH-By-5M4" firstAttribute="leading" secondItem="BX8-fG-G3Q" secondAttribute="trailing" constant="11" id="Yli-wc-fUj"/>
                 <constraint firstItem="GRJ-qB-IFQ" firstAttribute="leading" secondItem="Jc2-nY-JlY" secondAttribute="trailing" constant="57" id="ar5-y5-XbU"/>
-                <constraint firstItem="wva-gp-6nP" firstAttribute="leading" secondItem="TrA-BV-FUy" secondAttribute="trailing" constant="13" id="bor-mQ-nQp"/>
                 <constraint firstItem="GRJ-qB-IFQ" firstAttribute="top" secondItem="BX8-fG-G3Q" secondAttribute="top" id="cui-6q-ZCc"/>
                 <constraint firstAttribute="bottom" secondItem="DJk-eS-jpR" secondAttribute="bottom" constant="30" id="fJK-GY-GaC"/>
                 <constraint firstAttribute="centerX" secondItem="fQo-AD-f5o" secondAttribute="centerX" constant="-0.5" id="gYP-cF-eQo"/>

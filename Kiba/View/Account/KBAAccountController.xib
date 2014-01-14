@@ -57,7 +57,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHG-PR-O08" customClass="KBAButton">
-                    <rect key="frame" x="542" y="616" width="101" height="56"/>
+                    <rect key="frame" x="535" y="486" width="89" height="36"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="Ausführen">
@@ -69,7 +69,7 @@
                     </connections>
                 </button>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PfA-T9-MJU" customClass="KBAUISegmentedControl">
-                    <rect key="frame" x="269" y="493" width="111" height="29"/>
+                    <rect key="frame" x="404" y="493" width="111" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <segments>
                         <segment title="mobile"/>
@@ -78,7 +78,7 @@
                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                 </segmentedControl>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TAN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFF-jL-awa">
-                    <rect key="frame" x="269" y="461" width="32" height="21"/>
+                    <rect key="frame" x="404" y="461" width="32" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
@@ -95,14 +95,32 @@
                     <color key="backgroundColor" red="0.90306122448979598" green="0.90306122448979598" blue="0.90306122448979598" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <textField opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jEQ-05-xJO">
-                    <rect key="frame" x="423" y="491" width="220" height="30"/>
+                    <rect key="frame" x="404" y="530" width="220" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xf-ZH-M5k" customClass="KBAButton">
+                    <rect key="frame" x="688" y="944" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="TCc-Wf-RcV"/>
+                        <constraint firstAttribute="width" constant="50" id="zjF-Nx-fJv"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="info_orange">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="4Xf-ZH-M5k" secondAttribute="trailing" constant="30" id="Hsp-7p-R9Z"/>
+                <constraint firstAttribute="bottom" secondItem="4Xf-ZH-M5k" secondAttribute="bottom" constant="30" id="ktk-dX-Wgq"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
         </view>
     </objects>
+    <resources>
+        <image name="info_orange" width="50" height="50"/>
+    </resources>
 </document>

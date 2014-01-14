@@ -41,6 +41,8 @@
  //   _tan1.floatingLabel.text = @"TAN";
  //  [_tan1 setup];
     _tan1.hidden = YES;
+    [_tan1 setTintColor:KBATintColor];
+    
     _tan1.placeholder = @"Bitte geben Sie die TAN an";
  
 
