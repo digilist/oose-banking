@@ -86,7 +86,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
             KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
             Customer *customer = [auth identity];
             customer.authenticated = true;
-            
+            [super setBackBarButton];
         }
         else{
             [SVProgressHUD showErrorWithStatus:@"Fehlgeschlagen!"];

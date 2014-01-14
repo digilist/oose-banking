@@ -7,6 +7,9 @@
 //
 
 #import "KBAViewController.h"
+#import "Customer.h"
+#import "KBADependencyInjector.h"
+#import "KBAAuth.h"
 
 @interface KBAViewController ()
 @end
@@ -36,13 +39,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     
-    UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"security"]]];
+    [self setBackBarButton];
+}
+
+-(void)setBackBarButton {
+    KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
+    Customer *customer = [auth identity];
+    UIBarButtonItem *item;
+    
+    
+    if (customer.authenticated) {
+        item = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"security_checked"]]];
+    } else {
+        item = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"security_warning"]]];
+    }
     self.navigationItem.rightBarButtonItem = item;
     [item setAction:@selector(clickedBarButtonItem)];
-    
-	// Do any additional setup after loading the view.
+
 }
 
 - (void)clickedBarButtonItem
