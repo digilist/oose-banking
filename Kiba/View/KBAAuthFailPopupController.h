@@ -1,15 +1,13 @@
 //
-//  KBAAuthAdvantagesController.h
+//  KBAAuthPopupController.h
 //  Kiba
 //
-//  Created by Schaarschmidt, Michael on 09.01.14.
+//  Created by Schaarschmidt, Kevin Michael on 14.01.14.
 //  Copyright (c) 2014 KiBa App. All rights reserved.
 //
 
 #import "KBAViewController.h"
 
-@interface KBAAuthAdvantagesController : KBAViewController
-
+@interface KBAAuthFailPopupController : KBAViewController
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
-
 @end

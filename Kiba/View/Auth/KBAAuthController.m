@@ -11,6 +11,9 @@
 #import "SVProgressHUD.h"
 #import "JVFloatLabeledTextField.h"
 #import "KBAAuthAdvantagesController.h"
+#import "KBADependencyInjector.h"
+#import "Customer.h"
+#import "KBAAuth.h"
 
 const static CGFloat kJVFieldHeight = 44.0f;
 const static CGFloat kJVFieldHMargin = 10.0f;
@@ -79,17 +82,23 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
         
         if ([self.authCodeField.text isEqualToString: @"123"]){
             [SVProgressHUD showSuccessWithStatus:@"Erfoglreich" ];
+            [self dismissKeyboard];
+            
+            KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
+            Customer *customer = [auth identity];
+            customer.authenticated = true;
+            [super setBackBarButton];
         }
         else{
             [SVProgressHUD showErrorWithStatus:@"Fehlgeschlagen!"];
         }
-        
     }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     self.advantagesController = [KBAAuthAdvantagesController new];
 
     //setup titlefield properties
@@ -98,6 +107,23 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     titleField.placeholder = @"Validierungscode";
     titleField.floatingLabel.text = @"Validierungscode";
     [titleField setup];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+}
+
+-(void)dismissKeyboard
+{
+    UITextField *activeTextField = nil;
+    if ([self.authCodeField isEditing]){
+        activeTextField = self.authCodeField;
+    }
+    
+    if (activeTextField){
+        [activeTextField resignFirstResponder];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -108,7 +134,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 /**
  *  Show a Popover
  */
-- (void)showPopover:(UIButton *)sender withPopoverController:(UIViewController *)popoverController
+- (void)showPopover: (UIButton *)sender withPopoverController:(UIViewController *)popoverController
        andDirection: (UIPopoverArrowDirection) popoverDirection
           andOffset: (CGPoint) offset{
 

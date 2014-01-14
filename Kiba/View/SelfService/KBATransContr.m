@@ -63,6 +63,7 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
 
 -(void)viewDidLoad
 {
+    [super viewDidLoad];
     //self.subTitleLabel.numberOfLines = 2;
     //self.subTitleLabel.text = @"Umbuchung vornehmen!";
     

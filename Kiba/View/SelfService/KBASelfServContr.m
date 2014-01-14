@@ -32,6 +32,15 @@
 
 @implementation KBASelfServContr
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.needsAuthentification = YES;
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

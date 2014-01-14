@@ -39,6 +39,14 @@
 
 @implementation KBAFinanceController
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.needsAuthentification = YES;
+    }
+    return self;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
