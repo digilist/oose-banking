@@ -10,6 +10,7 @@
 #import "KBAAuth.h"
 #import "Customer.h"
 #import "KBADependencyInjector.h"
+#import "KBAAuth.h"
 
 @interface KBAViewController ()
 @end
@@ -40,9 +41,11 @@
 {
     [super viewDidLoad];
     KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
-    if (self.needsAuthentification && !auth.identity.verificated) {
+    if (self.needsAuthentification && !auth.identity.authenticated) {
         [self disableViewHierachy:self.view];
     }
+    
+    [self setBackBarButton];
 }
 
 -(void)disableViewHierachy:(UIView *)view
@@ -51,6 +54,27 @@
         [subview setUserInteractionEnabled: NO];
         [self disableViewHierachy:subview];
     }
+}
+
+-(void)setBackBarButton {
+    KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
+    Customer *customer = [auth identity];
+    UIBarButtonItem *item;
+    
+    
+    if (customer.authenticated) {
+        item = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"security_checked"]]];
+    } else {
+        item = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"security_warning"]]];
+    }
+    self.navigationItem.rightBarButtonItem = item;
+    [item setAction:@selector(clickedBarButtonItem)];
+
+}
+
+- (void)clickedBarButtonItem
+{
+    
 }
 
 - (void)didReceiveMemoryWarning

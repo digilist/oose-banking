@@ -83,6 +83,11 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
         if ([self.authCodeField.text isEqualToString: @"123"]){
             [SVProgressHUD showSuccessWithStatus:@"Erfoglreich" ];
             [self dismissKeyboard];
+            
+            KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
+            Customer *customer = [auth identity];
+            customer.authenticated = true;
+            [super setBackBarButton];
         }
         else{
             [SVProgressHUD showErrorWithStatus:@"Fehlgeschlagen!"];
