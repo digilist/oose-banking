@@ -11,6 +11,9 @@
 #import "SVProgressHUD.h"
 #import "JVFloatLabeledTextField.h"
 #import "KBAAuthAdvantagesController.h"
+#import "KBADependencyInjector.h"
+#import "Customer.h"
+#import "KBAAuth.h"
 
 const static CGFloat kJVFieldHeight = 44.0f;
 const static CGFloat kJVFieldHMargin = 10.0f;
@@ -79,6 +82,11 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
         
         if ([self.authCodeField.text isEqualToString: @"123"]){
             [SVProgressHUD showSuccessWithStatus:@"Erfoglreich" ];
+            
+            KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
+            Customer *customer = [auth identity];
+            customer.authenticated = true;
+            
         }
         else{
             [SVProgressHUD showErrorWithStatus:@"Fehlgeschlagen!"];
@@ -90,6 +98,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     self.advantagesController = [KBAAuthAdvantagesController new];
 
     //setup titlefield properties
