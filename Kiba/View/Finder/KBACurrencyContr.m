@@ -18,6 +18,12 @@ static NSArray *currencies;
 @interface KBACurrencyContr ()
 
 @property Currency *selectedCurrency;
+@property (nonatomic, weak) IBOutlet UIPickerView *currencyPickerView;
+@property (weak, nonatomic) IBOutlet UITextField *euroField;
+@property (weak, nonatomic) IBOutlet UILabel *foreignCurrencyAmountLabel;
+
+- (IBAction)onEuroFieldReturned:(UITextField *)sender;
+- (IBAction)requestButtonPressed:(KBAButton *)sender;
 
 @end
 
@@ -45,8 +51,22 @@ static NSArray *currencies;
     
     self.currencyPickerView.delegate = self;
     [self pickerView:self.currencyPickerView didSelectRow:0 inComponent:0];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
 }
 
+-(void)dismissKeyboard
+{
+    UITextField *activeTextField = nil;
+    if ([self.euroField isEditing]){
+        activeTextField = self.euroField;
+    }
+    if (activeTextField){
+        [activeTextField resignFirstResponder];
+    }
+}
 
 #pragma mark UIPickerView
 
@@ -136,7 +156,6 @@ static NSArray *currencies;
                           delegate:nil
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil];
-    
     [alert show];
 
 }

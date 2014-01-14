@@ -11,6 +11,8 @@
 #import "KBAStatemContr.h"
 #import "KBADocContr.h"
 #import "KBAStatemTableContr.h"
+#import "SVProgressHUDViewController.h"
+#import "SVProgressHUD.h"
 
 @interface KBASelfServContr ()
 
@@ -23,20 +25,21 @@
 @property (nonatomic, weak) IBOutlet KBAButton *transactionOverviewButton;
 @property (nonatomic, weak) IBOutlet KBAButton *documentsButton;
 
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint *firstToSecondElement;
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint *secondToThirdElement;
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint *middleWidthElements;
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint *subDocTableHeight;
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint *subMoneyTableHeight;
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint *topConstraintElements;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *topConstraintTitle;
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint *leftConstraintElements;
+@property NSTimer *timer;
 
-@property (nonatomic, weak) IBOutlet UIImageView *imageView;
-@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *indicator;
 @end
 
 @implementation KBASelfServContr
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.needsAuthentification = YES;
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -59,33 +62,10 @@
                          if (orientation == UIInterfaceOrientationPortrait ||
                              orientation == UIInterfaceOrientationPortraitUpsideDown) {
                              
-                             [self.imageView setHidden:NO];
-                             //set height between elements
-                             self.firstToSecondElement.constant = 110;
-                             self.secondToThirdElement.constant = 110;
-                             self.middleWidthElements.constant = 80;
-                             //height of top element to top of view
-                             self.topConstraintElements.constant = 230;
-                             //width to left of elements
-                             self.leftConstraintElements.constant = 80;
-                             //table-view sizes
-                             self.subMoneyTableHeight.constant = 150;
-                             self.subDocTableHeight.constant = 150;
                          }
                          //animations if switch to landscape-mode
                          else{
-                             [self.imageView setHidden:YES];
-                             //set height between elements
-                             self.firstToSecondElement.constant = 98;
-                             self.secondToThirdElement.constant = 98;
-                             self.middleWidthElements.constant = 60;
-                             //height of top element to top  of view
-                             self.topConstraintElements.constant = 200;
-                             //width to left of elements
-                             self.leftConstraintElements.constant = 54;
-                             //table-view sizes
-                             self.subMoneyTableHeight.constant = 120;
-                             self.subDocTableHeight.constant = 120;
+                             
                          }
                          [self.view setNeedsLayout];
                      }];
@@ -106,21 +86,43 @@
  */
 - (IBAction)connect:(id)sender
 {
-    self.indicator.hidden = NO;
-    [self.indicator startAnimating];
+    NSRunLoop *r = [NSRunLoop mainRunLoop];
+    self.timer = [NSTimer timerWithTimeInterval:0.01
+                                         target:self
+                                       selector:@selector(respondToTimer)
+                                       userInfo:nil
+                                        repeats:YES];
+    [r addTimer: self.timer forMode:NSDefaultRunLoopMode];
+}
 
-    dispatch_queue_t work = dispatch_queue_create("work", NULL);
-    dispatch_async(work, ^{
-        [NSThread sleepForTimeInterval:2];
-        //connect here
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.indicator stopAnimating];
-            self.indicator.hidden = YES;
+/**
+ *  Will be executed when the timer fires an event.
+ */
+-(void)respondToTimer
+{
+    static float time = 0.00;
+    if (time <= 1.5) {
+        [SVProgressHUD showProgress:time
+                             status:@"Verbinden..."
+                           maskType:SVProgressHUDMaskTypeGradient];
+        time += 0.01;
+    }
+    else{
+        [SVProgressHUD dismiss];
+        time = 0;
+        [self.timer invalidate];
+        
+        if (true){
+            [SVProgressHUD showSuccessWithStatus:@"Erfolgreich" ];
             self.connectButton.enabled = NO;
             [self.connectButton setTitle:@"mit KiBa-Station verbunden" forState:UIControlStateDisabled];
             [self.connectButton setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
-        });
-    });
+        }
+        else{
+            [SVProgressHUD showErrorWithStatus:@"Fehlgeschlagen!"];
+        }
+        
+    }
 }
 
 /**

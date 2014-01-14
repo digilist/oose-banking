@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A433FF61885575A00F1DF5E /* KBAAuthSuccessPopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A433FF41885575A00F1DF5E /* KBAAuthSuccessPopController.m */; };
+		0A433FF71885575A00F1DF5E /* KBAAuthSuccessPopController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A433FF51885575A00F1DF5E /* KBAAuthSuccessPopController.xib */; };
 		0A579660187EC43D005EFC73 /* KBAUISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A57965F187EC43D005EFC73 /* KBAUISegmentedControl.m */; };
 		0A893764183BA118003495A4 /* KBADashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A893763183BA118003495A4 /* KBADashboardController.m */; };
+		0AA94D8E188543D1001D1465 /* KBAAuthFailPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA94D8C188543D1001D1465 /* KBAAuthFailPopupController.m */; };
+		0AA94D8F188543D1001D1465 /* KBAAuthFailPopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AA94D8D188543D1001D1465 /* KBAAuthFailPopupController.xib */; };
 		0AABAA30187E892B00E067EE /* KBAAuthAdvantagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AABAA2E187E892B00E067EE /* KBAAuthAdvantagesController.m */; };
 		0AABAA31187E892B00E067EE /* KBAAuthAdvantagesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AABAA2F187E892B00E067EE /* KBAAuthAdvantagesController.xib */; };
 		0AAEEE2F187BED9F00C1F767 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAEEE2C187BED9F00C1F767 /* SVProgressHUD.m */; };
 		0AAEEE30187BED9F00C1F767 /* SVProgressHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAEEE2E187BED9F00C1F767 /* SVProgressHUDViewController.m */; };
 		0AAEEE33187C173500C1F767 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0AAEEE32187C173500C1F767 /* SVProgressHUD.bundle */; };
+		0ACCD54218857D8200EB05BE /* KBAAbout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACCD54018857D8200EB05BE /* KBAAbout.m */; };
+		0ACCD54318857D8200EB05BE /* KBAAbout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ACCD54118857D8200EB05BE /* KBAAbout.xib */; };
 		2139AC5F18610DB0008FB712 /* KBAFlatDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2139AC5E18610DB0008FB712 /* KBAFlatDatePicker.m */; };
 		2139AC6118610DD3008FB712 /* KBAChooseAccountTableContr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2139AC6018610DD3008FB712 /* KBAChooseAccountTableContr.xib */; };
 		2139AC6318610DF1008FB712 /* KBAChooseAccountTableContr.m in Sources */ = {isa = PBXBuildFile; fileRef = 2139AC6218610DF1008FB712 /* KBAChooseAccountTableContr.m */; };
@@ -35,9 +41,11 @@
 		342323051837B9FD00618D7E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342322E41837B9FD00618D7E /* UIKit.framework */; };
 		3423230D1837B9FD00618D7E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3423230B1837B9FD00618D7E /* InfoPlist.strings */; };
 		3423230F1837B9FD00618D7E /* KibaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3423230E1837B9FD00618D7E /* KibaTests.m */; };
+		A83F99A8187ECB5B001E3F5B /* KBAFinanceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83F99A7187ECB5B001E3F5B /* KBAFinanceController.xib */; };
 		A8610F181860830600E3093E /* KBATransactionDaoDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A8610F171860830600E3093E /* KBATransactionDaoDummy.m */; };
 		A8610F1F1860934500E3093E /* KBATransactionDaoRest.m in Sources */ = {isa = PBXBuildFile; fileRef = A8610F1E1860934500E3093E /* KBATransactionDaoRest.m */; };
 		A8AE9A64187BE73E00ACC653 /* KBAFinanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AE9A62187BE73E00ACC653 /* KBAFinanceController.m */; };
+		A8B693501885501300AD8DA3 /* KBAUISlider.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B6934F1885501300AD8DA3 /* KBAUISlider.m */; };
 		A8D883161860463B006DD296 /* KBAStatemTableContr.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D883151860463B006DD296 /* KBAStatemTableContr.m */; };
 		A8F81C881844B51D00E55C75 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F81C7D1844B51D00E55C75 /* Account.m */; };
 		A8F81C891844B51D00E55C75 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F81C7F1844B51D00E55C75 /* Address.m */; };
@@ -102,10 +110,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A433FF31885575A00F1DF5E /* KBAAuthSuccessPopController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAAuthSuccessPopController.h; path = View/KBAAuthSuccessPopController.h; sourceTree = "<group>"; };
+		0A433FF41885575A00F1DF5E /* KBAAuthSuccessPopController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAAuthSuccessPopController.m; path = View/KBAAuthSuccessPopController.m; sourceTree = "<group>"; };
+		0A433FF51885575A00F1DF5E /* KBAAuthSuccessPopController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAAuthSuccessPopController.xib; path = View/KBAAuthSuccessPopController.xib; sourceTree = "<group>"; };
 		0A57965E187EC43D005EFC73 /* KBAUISegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAUISegmentedControl.h; path = View/KBAUISegmentedControl.h; sourceTree = "<group>"; };
 		0A57965F187EC43D005EFC73 /* KBAUISegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAUISegmentedControl.m; path = View/KBAUISegmentedControl.m; sourceTree = "<group>"; };
 		0A893762183BA118003495A4 /* KBADashboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBADashboardController.h; path = View/Dashboard/KBADashboardController.h; sourceTree = "<group>"; };
 		0A893763183BA118003495A4 /* KBADashboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBADashboardController.m; path = View/Dashboard/KBADashboardController.m; sourceTree = "<group>"; };
+		0AA94D8B188543D1001D1465 /* KBAAuthFailPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAAuthFailPopupController.h; path = View/KBAAuthFailPopupController.h; sourceTree = "<group>"; };
+		0AA94D8C188543D1001D1465 /* KBAAuthFailPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAAuthFailPopupController.m; path = View/KBAAuthFailPopupController.m; sourceTree = "<group>"; };
+		0AA94D8D188543D1001D1465 /* KBAAuthFailPopupController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAAuthFailPopupController.xib; path = View/KBAAuthFailPopupController.xib; sourceTree = "<group>"; };
 		0AABAA2D187E892B00E067EE /* KBAAuthAdvantagesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAAuthAdvantagesController.h; path = View/Auth/KBAAuthAdvantagesController.h; sourceTree = "<group>"; };
 		0AABAA2E187E892B00E067EE /* KBAAuthAdvantagesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAAuthAdvantagesController.m; path = View/Auth/KBAAuthAdvantagesController.m; sourceTree = "<group>"; };
 		0AABAA2F187E892B00E067EE /* KBAAuthAdvantagesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAAuthAdvantagesController.xib; path = View/Auth/KBAAuthAdvantagesController.xib; sourceTree = "<group>"; };
@@ -114,6 +128,9 @@
 		0AAEEE2D187BED9F00C1F767 /* SVProgressHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUDViewController.h; path = "View/Custom - GUI/SVProgressHUDViewController.h"; sourceTree = "<group>"; };
 		0AAEEE2E187BED9F00C1F767 /* SVProgressHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUDViewController.m; path = "View/Custom - GUI/SVProgressHUDViewController.m"; sourceTree = "<group>"; };
 		0AAEEE32187C173500C1F767 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = "View/Custom - GUI/SVProgressHUD.bundle"; sourceTree = "<group>"; };
+		0ACCD53F18857D8200EB05BE /* KBAAbout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAAbout.h; path = View/About/KBAAbout.h; sourceTree = "<group>"; };
+		0ACCD54018857D8200EB05BE /* KBAAbout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAAbout.m; path = View/About/KBAAbout.m; sourceTree = "<group>"; };
+		0ACCD54118857D8200EB05BE /* KBAAbout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAAbout.xib; path = View/About/KBAAbout.xib; sourceTree = "<group>"; };
 		2139AC5D18610DB0008FB712 /* KBAFlatDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAFlatDatePicker.h; path = View/SelfService/KBAFlatDatePicker.h; sourceTree = "<group>"; };
 		2139AC5E18610DB0008FB712 /* KBAFlatDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAFlatDatePicker.m; path = View/SelfService/KBAFlatDatePicker.m; sourceTree = "<group>"; };
 		2139AC6018610DD3008FB712 /* KBAChooseAccountTableContr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAChooseAccountTableContr.xib; path = View/SelfService/KBAChooseAccountTableContr.xib; sourceTree = "<group>"; };
@@ -151,6 +168,7 @@
 		3423230E1837B9FD00618D7E /* KibaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KibaTests.m; sourceTree = "<group>"; };
 		344029EA1860773D008B31A2 /* KBAColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAColorHelper.h; path = Library/KBAColorHelper.h; sourceTree = "<group>"; };
 		34F3B62E185B8D27003E8040 /* OCR A Std.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OCR A Std.ttf"; sourceTree = "<group>"; };
+		A83F99A7187ECB5B001E3F5B /* KBAFinanceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAFinanceController.xib; path = View/Finance/KBAFinanceController.xib; sourceTree = "<group>"; };
 		A8610F161860830600E3093E /* KBATransactionDaoDummy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBATransactionDaoDummy.h; path = Library/DAO/KBATransactionDaoDummy.h; sourceTree = "<group>"; };
 		A8610F171860830600E3093E /* KBATransactionDaoDummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBATransactionDaoDummy.m; path = Library/DAO/KBATransactionDaoDummy.m; sourceTree = "<group>"; };
 		A8610F1C1860847900E3093E /* KBATransactionDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KBATransactionDao.h; path = Library/DAO/KBATransactionDao.h; sourceTree = "<group>"; };
@@ -158,7 +176,9 @@
 		A8610F1E1860934500E3093E /* KBATransactionDaoRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBATransactionDaoRest.m; path = Library/DAO/KBATransactionDaoRest.m; sourceTree = "<group>"; };
 		A8AE9A61187BE73E00ACC653 /* KBAFinanceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAFinanceController.h; path = View/Finance/KBAFinanceController.h; sourceTree = "<group>"; };
 		A8AE9A62187BE73E00ACC653 /* KBAFinanceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAFinanceController.m; path = View/Finance/KBAFinanceController.m; sourceTree = "<group>"; };
-		A8AE9A63187BE73E00ACC653 /* KBAFinanceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAFinanceController.xib; path = View/Finance/KBAFinanceController.xib; sourceTree = "<group>"; };
+		A8AE9A63187BE73E00ACC653 /* KBAFinanceControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAFinanceControl.xib; path = View/Finance/KBAFinanceControl.xib; sourceTree = "<group>"; };
+		A8B6934E1885501300AD8DA3 /* KBAUISlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAUISlider.h; path = View/KBAUISlider.h; sourceTree = "<group>"; };
+		A8B6934F1885501300AD8DA3 /* KBAUISlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAUISlider.m; path = View/KBAUISlider.m; sourceTree = "<group>"; };
 		A8D883141860463B006DD296 /* KBAStatemTableContr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAStatemTableContr.h; path = View/SelfService/KBAStatemTableContr.h; sourceTree = "<group>"; };
 		A8D883151860463B006DD296 /* KBAStatemTableContr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAStatemTableContr.m; path = View/SelfService/KBAStatemTableContr.m; sourceTree = "<group>"; };
 		A8F81C7C1844B51D00E55C75 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Account.h; path = Entities/Account.h; sourceTree = "<group>"; };
@@ -329,6 +349,16 @@
 			name = "Custom - GUI";
 			sourceTree = "<group>";
 		};
+		0ACCD53E18857D5F00EB05BE /* About */ = {
+			isa = PBXGroup;
+			children = (
+				0ACCD53F18857D8200EB05BE /* KBAAbout.h */,
+				0ACCD54018857D8200EB05BE /* KBAAbout.m */,
+				0ACCD54118857D8200EB05BE /* KBAAbout.xib */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
 		2174A5E2185A6CB80055C35F /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +406,7 @@
 		3407E8CF1838F9400045C014 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0ACCD53E18857D5F00EB05BE /* About */,
 				A8AE9A5B187BE3A700ACC653 /* Finance */,
 				C12D347A184DC2D3006EED2A /* Finder */,
 				0AAD7958184DBEF6002B1D0B /* SelfService */,
@@ -390,6 +421,14 @@
 				3407E8E71838FD110045C014 /* KBAMasterViewController.m */,
 				21F8EE87187DFA1D00025C42 /* KBAButton.h */,
 				21F8EE88187DFA1D00025C42 /* KBAButton.m */,
+				A8B6934E1885501300AD8DA3 /* KBAUISlider.h */,
+				A8B6934F1885501300AD8DA3 /* KBAUISlider.m */,
+				0AA94D8B188543D1001D1465 /* KBAAuthFailPopupController.h */,
+				0AA94D8C188543D1001D1465 /* KBAAuthFailPopupController.m */,
+				0AA94D8D188543D1001D1465 /* KBAAuthFailPopupController.xib */,
+				0A433FF31885575A00F1DF5E /* KBAAuthSuccessPopController.h */,
+				0A433FF41885575A00F1DF5E /* KBAAuthSuccessPopController.m */,
+				0A433FF51885575A00F1DF5E /* KBAAuthSuccessPopController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -509,7 +548,8 @@
 			children = (
 				A8AE9A61187BE73E00ACC653 /* KBAFinanceController.h */,
 				A8AE9A62187BE73E00ACC653 /* KBAFinanceController.m */,
-				A8AE9A63187BE73E00ACC653 /* KBAFinanceController.xib */,
+				A83F99A7187ECB5B001E3F5B /* KBAFinanceController.xib */,
+				A8AE9A63187BE73E00ACC653 /* KBAFinanceControl.xib */,
 			);
 			name = Finance;
 			sourceTree = "<group>";
@@ -682,8 +722,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A433FF71885575A00F1DF5E /* KBAAuthSuccessPopController.xib in Resources */,
 				34199A881841710C00F574D5 /* Assets in Resources */,
 				C1F00E791844E0FA009EFE4F /* KBAAccountController.xib in Resources */,
+				A83F99A8187ECB5B001E3F5B /* KBAFinanceController.xib in Resources */,
 				C1F00E741844E08C009EFE4F /* KBAAuthController.xib in Resources */,
 				342322FC1837B9FD00618D7E /* Images.xcassets in Resources */,
 				C17AFBD0187C1017009C0CE9 /* KBAAppointmentContr.xib in Resources */,
@@ -697,10 +739,12 @@
 				342322F41837B9FD00618D7E /* Main.storyboard in Resources */,
 				0AAEEE33187C173500C1F767 /* SVProgressHUD.bundle in Resources */,
 				C170420D184DFE900019F929 /* KBABranchController.xib in Resources */,
+				0ACCD54318857D8200EB05BE /* KBAAbout.xib in Resources */,
 				D93C6A211859D8E90004E51A /* KBADocContr.xib in Resources */,
 				D93C6A2A1859D8E90004E51A /* KBATransContr.xib in Resources */,
 				D93C6A261859D8E90004E51A /* KBAStatemContr.xib in Resources */,
 				C17AFBCA187BF9E2009C0CE9 /* KBACurrencyContr.xib in Resources */,
+				0AA94D8F188543D1001D1465 /* KBAAuthFailPopupController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,6 +767,7 @@
 				0A579660187EC43D005EFC73 /* KBAUISegmentedControl.m in Sources */,
 				C1F00E731844E08C009EFE4F /* KBAAuthController.m in Sources */,
 				C10C5FBF183B877B008FAECB /* KBABranchDaoRest.m in Sources */,
+				0A433FF61885575A00F1DF5E /* KBAAuthSuccessPopController.m in Sources */,
 				C17AFBCF187C1017009C0CE9 /* KBAAppointmentContr.m in Sources */,
 				C1704208184DF3A00019F929 /* KBAFinderService.m in Sources */,
 				A8F81C8C1844B51D00E55C75 /* Customer.m in Sources */,
@@ -753,8 +798,10 @@
 				C1F00E631844DAEB009EFE4F /* KBAViewController.m in Sources */,
 				2139AC6318610DF1008FB712 /* KBAChooseAccountTableContr.m in Sources */,
 				0AAEEE30187BED9F00C1F767 /* SVProgressHUDViewController.m in Sources */,
+				A8B693501885501300AD8DA3 /* KBAUISlider.m in Sources */,
 				C13B62F4183B7D0200207422 /* KBABranchDaoDummy.m in Sources */,
 				C10C5FC5183B8DF7008FAECB /* KBABootstrap.m in Sources */,
+				0ACCD54218857D8200EB05BE /* KBAAbout.m in Sources */,
 				D929E547185093B1008FC26E /* OpenHour.m in Sources */,
 				21BB5D1D187D5FC400460EE9 /* JVFloatLabeledTextField.m in Sources */,
 				2139AC5F18610DB0008FB712 /* KBAFlatDatePicker.m in Sources */,
@@ -771,6 +818,7 @@
 				A8F81C881844B51D00E55C75 /* Account.m in Sources */,
 				A8F81C8D1844B51D00E55C75 /* Transaction.m in Sources */,
 				C1F00E781844E0FA009EFE4F /* KBAAccountController.m in Sources */,
+				0AA94D8E188543D1001D1465 /* KBAAuthFailPopupController.m in Sources */,
 				0A893764183BA118003495A4 /* KBADashboardController.m in Sources */,
 				D93C6A341859D94A0004E51A /* AccountService.m in Sources */,
 			);

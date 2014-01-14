@@ -10,11 +10,13 @@
 
 @interface KBAFinanceController : KBAViewController
 
-- (IBAction)updateValue: (UISlider *) slider;
+-(IBAction)scheduleYears;
+ 
+-(IBAction)scheduleInterest;
 
--(IBAction)mortgageOver: (UISlider *) slider;
+-(IBAction)scheduleCreditSum;
 
--(IBAction)calculateRates;
+-(IBAction)scheduleRate;
 
 
 @end

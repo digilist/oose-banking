@@ -11,11 +11,14 @@
 #import "SVProgressHUD.h"
 #import "JVFloatLabeledTextField.h"
 #import "KBAAuthAdvantagesController.h"
+#import "KBADependencyInjector.h"
+#import "Customer.h"
+#import "KBAAuth.h"
 
-const static CGFloat kJVFieldHeight = 44.0f;
-const static CGFloat kJVFieldHMargin = 10.0f;
-const static CGFloat kJVFieldFontSize = 16.0f;
-const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
+//const static CGFloat kJVFieldHeight = 44.0f;
+//const static CGFloat kJVFieldHMargin = 10.0f;
+//const static CGFloat kJVFieldFontSize = 16.0f;
+//const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 
 @interface KBAAuthController ()
 
@@ -23,8 +26,10 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 @property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *authCodeField;
 @property (nonatomic, weak) IBOutlet UIView *comicView;
 @property (nonatomic, strong) KBAAuthAdvantagesController *advantagesController;
-@property NSTimer *timer;
+@property (atomic, strong) NSTimer *timer;
+//@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 
+- (IBAction)showAuthPopOver:(UIButton*)sender;
 @end
 
 @implementation KBAAuthController
@@ -79,17 +84,23 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
         
         if ([self.authCodeField.text isEqualToString: @"123"]){
             [SVProgressHUD showSuccessWithStatus:@"Erfoglreich" ];
+            [self dismissKeyboard];
+            
+            KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
+            Customer *customer = [auth identity];
+            customer.authenticated = true;
+            [super setBackBarButton];
         }
         else{
             [SVProgressHUD showErrorWithStatus:@"Fehlgeschlagen!"];
         }
-        
     }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     self.advantagesController = [KBAAuthAdvantagesController new];
 
     //setup titlefield properties
@@ -98,6 +109,103 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     titleField.placeholder = @"Validierungscode";
     titleField.floatingLabel.text = @"Validierungscode";
     [titleField setup];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+
+	
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidShow:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardDidHideNotification
+                                               object:nil];
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+                                duration:(NSTimeInterval)duration
+{
+}
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+//    if ([self.authCodeField isFirstResponder]) {
+//        int height = 0;
+//        
+//        if ((UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationLandscapeLeft
+//            || UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationLandscapeRight)) {
+//            height = 200;
+//        }
+//        
+//        [UIView beginAnimations:nil context:nil];
+//        [UIView setAnimationDuration:0.3];
+//        [UIView setAnimationDelay:0.1];
+//        [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+//        
+//        self.view.frame = CGRectOffset(self.view.frame, 0, height);
+//        
+//        [UIView commitAnimations];
+//    }
+}
+
+//TODO: remove observer view did close
+
+bool keyboardShown;
+
+-(void)keyboardDidShow:(NSNotification *)note
+{
+//    keyboardShown = YES;
+//    NSDictionary *userInfo = [note userInfo];
+//    CGSize kbSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+//    
+//    int height = 0;
+//    
+//    if (UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationLandscapeLeft
+//        || UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationLandscapeRight
+//        || UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationUnknown) {
+//        height = kbSize.width;
+//    }
+//
+//    
+//    [UIView beginAnimations:nil context:nil];
+//    [UIView setAnimationDuration:0.3];
+//    [UIView setAnimationDelay:0.1];
+//    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+//    
+//    self.view.frame = CGRectOffset(self.view.frame, 0, -height);
+//    
+//    [UIView commitAnimations];
+}
+
+-(void)keyboardWillHide:(NSNotification *)note
+{
+//    keyboardShown = NO;
+//    NSDictionary *userInfo = [note userInfo];
+//    CGSize kbSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+//    
+//    int height = 0;
+//    if (UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationLandscapeLeft
+//        || UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationLandscapeRight
+//        || UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationUnknown) {
+//        height = kbSize.width;
+//    }
+//    [UIView beginAnimations:nil context:nil];
+//    [UIView setAnimationDuration:0.3];
+//    [UIView setAnimationDelay:0.1];
+//    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+//    
+//    self.view.frame = CGRectOffset(self.view.frame, 0, height);
+//    
+//    [UIView commitAnimations];
+}
+
+-(void)dismissKeyboard
+{
+    [self.authCodeField resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -108,7 +216,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 /**
  *  Show a Popover
  */
-- (void)showPopover:(UIButton *)sender withPopoverController:(UIViewController *)popoverController
+- (void)showPopover: (UIButton *)sender withPopoverController:(UIViewController *)popoverController
        andDirection: (UIPopoverArrowDirection) popoverDirection
           andOffset: (CGPoint) offset{
 

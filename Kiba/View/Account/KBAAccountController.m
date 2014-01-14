@@ -14,6 +14,15 @@
 
 @implementation KBAAccountController
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.needsAuthentification = YES;
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -41,11 +50,43 @@
  //   _tan1.floatingLabel.text = @"TAN";
  //  [_tan1 setup];
     _tan1.hidden = YES;
+    [_tan1 setTintColor:KBATintColor];
+    
     _tan1.placeholder = @"Bitte geben Sie die TAN an";
  
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
 
 }
 
+-(void)dismissKeyboard
+{
+    UITextField *activeTextField = nil;
+    if ([self.receiver isEditing]){
+        activeTextField = self.receiver;
+    }
+    else if ([self.accountNr isEditing]){
+        activeTextField = self.accountNr;
+    }
+    else if ([self.blz isEditing]){
+        activeTextField = self.blz;
+    }
+    else if ([self.amount isEditing]){
+        activeTextField = self.amount;
+    }
+    else if ([self.use isEditing]){
+        activeTextField = self.use;
+    }
+    else if ([self.tan1 isEditing]){
+        activeTextField = self.tan1;
+    }
+    
+    if (activeTextField){
+        [activeTextField resignFirstResponder];
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {

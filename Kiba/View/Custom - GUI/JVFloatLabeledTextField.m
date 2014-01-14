@@ -54,6 +54,8 @@
     [(UIView *)self.superview addSubview:div1];
 }
 
+
+
 - (id)initWithCoder:(NSCoder *)aDecoder 
 {
     self = [super initWithCoder:aDecoder];

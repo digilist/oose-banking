@@ -31,7 +31,7 @@
         self.creditRating = creditRating;
         
         // Vllt auch als Parameter im Konstruktor
-        self.verificated = false;
+        self.authenticated = false;
     }
     return self;
 }

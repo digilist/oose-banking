@@ -28,8 +28,6 @@
 @property (nonatomic, strong) KBACurrencyContr *currencyContr;
 @property (nonatomic, strong) KBAAppointmentContr *appointmentContr;
 
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint *topConstraint;
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint *middleConstraint;
 @end
 
 @implementation KBABranchController
@@ -93,30 +91,13 @@
                          if (orientation == UIInterfaceOrientationPortrait ||
                              orientation == UIInterfaceOrientationPortraitUpsideDown) {
                              
-                             self.topConstraint.constant = 70;
-                             self.middleConstraint.constant = 95;
+                             self.bottomConstraint.constant = 200;
                          }
                          else{
-                             self.topConstraint.constant = 44;
-                             self.middleConstraint.constant = 50;
+                             self.bottomConstraint.constant = 20;
                          }
                          [self.view setNeedsLayout];
                      }];
-    
-    
-    float newWidth = self.view.bounds.size.width / 4;
-    
-    [self.navigationView setFrame:CGRectMake(0, 205, newWidth, 192)];
-    [self.phoneView setFrame:CGRectMake(newWidth, 205, newWidth, 192)];
-    [self.appointmentView setFrame:CGRectMake(2 * newWidth, 205, newWidth, 192)];
-    [self.currencyView setFrame:CGRectMake(3 * newWidth, 205, newWidth, 192)];
-    
-    if(orientation == UIInterfaceOrientationPortrait ||
-       orientation == UIInterfaceOrientationPortraitUpsideDown)
-        self.bottomConstraint.constant = 200;
-    else
-        self.bottomConstraint.constant = 20;
-    
 }
 
 
