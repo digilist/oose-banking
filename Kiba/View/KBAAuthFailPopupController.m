@@ -6,19 +6,20 @@
 //  Copyright (c) 2014 KiBa App. All rights reserved.
 //
 
-#import "KBAAuthPopupController.h"
+#import "KBAAuthFailPopupController.h"
 
-@interface KBAAuthPopupController ()
+@interface KBAAuthFailPopupController ()
 
 @end
 
-@implementation KBAAuthPopupController
+@implementation KBAAuthFailPopupController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:@"KBAAuthPopupController" bundle:nibBundleOrNil];
+    self = [super initWithNibName:@"KBAAuthFailPopupController" bundle:nibBundleOrNil];
     if (self) {
-        self.preferredContentSize = self.view.frame.size;
+        
+       self.preferredContentSize = CGSizeMake(400.0, 210.0);
     }
     return self;
 }

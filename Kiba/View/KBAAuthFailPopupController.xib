@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KBAAuthPopupController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KBAAuthFailPopupController">
             <connections>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
@@ -21,9 +21,9 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="293" translatesAutoresizingMaskIntoConstraints="NO" id="mXA-65-hP8">
-                    <rect key="frame" x="54" y="32" width="293" height="145"/>
+                    <rect key="frame" x="54" y="40" width="293" height="145"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <string key="text">Um die ausgewählte Funktionalität nutzen zu können, müssen Sie ihre App erst in einer KiBa-Filiale authentifizieren (Siehe Authentifizierung).</string>
+                    <string key="text">Um die volle Funktionalität nutzen zu können, müssen Sie ihre App erst in einer KiBa-Filiale authentifizieren (Siehe Authentifizierung).</string>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="highlightedColor"/>
                 </label>

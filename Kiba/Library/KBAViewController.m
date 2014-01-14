@@ -11,8 +11,16 @@
 #import "Customer.h"
 #import "KBADependencyInjector.h"
 #import "KBAAuth.h"
+#import "KBAAuthFailPopupController.h"
+#import "KBAAuthSuccessPopController.h"
+
 
 @interface KBAViewController ()
+@property UIPopoverController *popController;
+@property (nonatomic, strong) KBAAuthFailPopupController *failPopupController;
+@property (nonatomic, strong) KBAAuthSuccessPopController *succesPopupController;
+
+
 @end
 
 @implementation KBAViewController
@@ -40,12 +48,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.failPopupController = [KBAAuthFailPopupController new];
+    self.succesPopupController = [KBAAuthSuccessPopController new];
+    
+    
     KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
+    [self setBackBarButton];
+    
     if (self.needsAuthentification && !auth.identity.authenticated) {
         [self disableViewHierachy:self.view];
+        [self showPopover];
     }
-    
-    [self setBackBarButton];
+
 }
 
 -(void)disableViewHierachy:(UIView *)view
@@ -60,21 +74,35 @@
     KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
     Customer *customer = [auth identity];
     UIBarButtonItem *item;
-    
-    
-    if (customer.authenticated) {
-        item = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"security_checked"]]];
-    } else {
-        item = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"security_warning"]]];
-    }
-    self.navigationItem.rightBarButtonItem = item;
-    [item setAction:@selector(clickedBarButtonItem)];
+    UIButton * button = [UIButton new];
 
+    [button addTarget:self
+               action:@selector(clickedBarButtonItem)
+     forControlEvents:UIControlEventTouchUpInside];
+
+    if (customer.authenticated) {
+
+        UIImage *image = [UIImage imageNamed:@"security_checked"];
+        [button setBackgroundImage:image forState:UIControlStateNormal];
+        button.frame = CGRectMake(0.0, 0.0, image.size.width, image.size.height);
+        item = [[UIBarButtonItem alloc] initWithCustomView: button];
+        
+        //
+    }
+    else {
+        UIImage *image = [UIImage imageNamed:@"security_warning"];
+        [button setBackgroundImage:image forState:UIControlStateNormal];
+        button.frame = CGRectMake(0.0, 0.0, image.size.width, image.size.height);
+        item = [[UIBarButtonItem alloc] initWithCustomView: button];
+        //
+    }
+    
+    self.navigationItem.rightBarButtonItem = item;
 }
 
 - (void)clickedBarButtonItem
 {
-    
+    [self showPopover];
 }
 
 - (void)didReceiveMemoryWarning
@@ -108,6 +136,27 @@
 {
     // Called when the view is shown again in the split view, invalidating the button and popover controller.
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+}
+
+/**
+ *  Show a Popover
+ */
+- (void)showPopover
+{
+    KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
+    Customer *customer = [auth identity];
+    
+    if (customer.authenticated) {
+          self.popController = [[UIPopoverController alloc] initWithContentViewController: self.succesPopupController];
+    } else {
+           self.popController = [[UIPopoverController alloc] initWithContentViewController: self.failPopupController];
+    }
+    
+    UIBarButtonItem *view = self.navigationItem.rightBarButtonItem;
+    
+    [self.popController presentPopoverFromBarButtonItem:view
+                               permittedArrowDirections:UIPopoverArrowDirectionAny
+                                               animated:YES];
 }
 
 @end

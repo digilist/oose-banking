@@ -18,7 +18,8 @@
 {
     self = [super initWithNibName:@"KBAAuthSuccessPopController" bundle:nibBundleOrNil];
     if (self) {
-        self.preferredContentSize = self.view.frame.size;
+        
+        self.preferredContentSize = CGSizeMake(293.0, 119.0);
     }
     return self;
 }

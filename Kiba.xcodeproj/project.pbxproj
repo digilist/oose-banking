@@ -11,8 +11,8 @@
 		0A433FF71885575A00F1DF5E /* KBAAuthSuccessPopController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A433FF51885575A00F1DF5E /* KBAAuthSuccessPopController.xib */; };
 		0A579660187EC43D005EFC73 /* KBAUISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A57965F187EC43D005EFC73 /* KBAUISegmentedControl.m */; };
 		0A893764183BA118003495A4 /* KBADashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A893763183BA118003495A4 /* KBADashboardController.m */; };
-		0AA94D8E188543D1001D1465 /* KBAAuthPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA94D8C188543D1001D1465 /* KBAAuthPopupController.m */; };
-		0AA94D8F188543D1001D1465 /* KBAAuthPopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AA94D8D188543D1001D1465 /* KBAAuthPopupController.xib */; };
+		0AA94D8E188543D1001D1465 /* KBAAuthFailPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA94D8C188543D1001D1465 /* KBAAuthFailPopupController.m */; };
+		0AA94D8F188543D1001D1465 /* KBAAuthFailPopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AA94D8D188543D1001D1465 /* KBAAuthFailPopupController.xib */; };
 		0AABAA30187E892B00E067EE /* KBAAuthAdvantagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AABAA2E187E892B00E067EE /* KBAAuthAdvantagesController.m */; };
 		0AABAA31187E892B00E067EE /* KBAAuthAdvantagesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AABAA2F187E892B00E067EE /* KBAAuthAdvantagesController.xib */; };
 		0AAEEE2F187BED9F00C1F767 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAEEE2C187BED9F00C1F767 /* SVProgressHUD.m */; };
@@ -114,9 +114,9 @@
 		0A57965F187EC43D005EFC73 /* KBAUISegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAUISegmentedControl.m; path = View/KBAUISegmentedControl.m; sourceTree = "<group>"; };
 		0A893762183BA118003495A4 /* KBADashboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBADashboardController.h; path = View/Dashboard/KBADashboardController.h; sourceTree = "<group>"; };
 		0A893763183BA118003495A4 /* KBADashboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBADashboardController.m; path = View/Dashboard/KBADashboardController.m; sourceTree = "<group>"; };
-		0AA94D8B188543D1001D1465 /* KBAAuthPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAAuthPopupController.h; path = View/KBAAuthPopupController.h; sourceTree = "<group>"; };
-		0AA94D8C188543D1001D1465 /* KBAAuthPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAAuthPopupController.m; path = View/KBAAuthPopupController.m; sourceTree = "<group>"; };
-		0AA94D8D188543D1001D1465 /* KBAAuthPopupController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAAuthPopupController.xib; path = View/KBAAuthPopupController.xib; sourceTree = "<group>"; };
+		0AA94D8B188543D1001D1465 /* KBAAuthFailPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAAuthFailPopupController.h; path = View/KBAAuthFailPopupController.h; sourceTree = "<group>"; };
+		0AA94D8C188543D1001D1465 /* KBAAuthFailPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAAuthFailPopupController.m; path = View/KBAAuthFailPopupController.m; sourceTree = "<group>"; };
+		0AA94D8D188543D1001D1465 /* KBAAuthFailPopupController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAAuthFailPopupController.xib; path = View/KBAAuthFailPopupController.xib; sourceTree = "<group>"; };
 		0AABAA2D187E892B00E067EE /* KBAAuthAdvantagesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAAuthAdvantagesController.h; path = View/Auth/KBAAuthAdvantagesController.h; sourceTree = "<group>"; };
 		0AABAA2E187E892B00E067EE /* KBAAuthAdvantagesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAAuthAdvantagesController.m; path = View/Auth/KBAAuthAdvantagesController.m; sourceTree = "<group>"; };
 		0AABAA2F187E892B00E067EE /* KBAAuthAdvantagesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAAuthAdvantagesController.xib; path = View/Auth/KBAAuthAdvantagesController.xib; sourceTree = "<group>"; };
@@ -402,9 +402,9 @@
 				3407E8E71838FD110045C014 /* KBAMasterViewController.m */,
 				21F8EE87187DFA1D00025C42 /* KBAButton.h */,
 				21F8EE88187DFA1D00025C42 /* KBAButton.m */,
-				0AA94D8B188543D1001D1465 /* KBAAuthPopupController.h */,
-				0AA94D8C188543D1001D1465 /* KBAAuthPopupController.m */,
-				0AA94D8D188543D1001D1465 /* KBAAuthPopupController.xib */,
+				0AA94D8B188543D1001D1465 /* KBAAuthFailPopupController.h */,
+				0AA94D8C188543D1001D1465 /* KBAAuthFailPopupController.m */,
+				0AA94D8D188543D1001D1465 /* KBAAuthFailPopupController.xib */,
 				0A433FF31885575A00F1DF5E /* KBAAuthSuccessPopController.h */,
 				0A433FF41885575A00F1DF5E /* KBAAuthSuccessPopController.m */,
 				0A433FF51885575A00F1DF5E /* KBAAuthSuccessPopController.xib */,
@@ -722,7 +722,7 @@
 				D93C6A2A1859D8E90004E51A /* KBATransContr.xib in Resources */,
 				D93C6A261859D8E90004E51A /* KBAStatemContr.xib in Resources */,
 				C17AFBCA187BF9E2009C0CE9 /* KBACurrencyContr.xib in Resources */,
-				0AA94D8F188543D1001D1465 /* KBAAuthPopupController.xib in Resources */,
+				0AA94D8F188543D1001D1465 /* KBAAuthFailPopupController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -794,7 +794,7 @@
 				A8F81C881844B51D00E55C75 /* Account.m in Sources */,
 				A8F81C8D1844B51D00E55C75 /* Transaction.m in Sources */,
 				C1F00E781844E0FA009EFE4F /* KBAAccountController.m in Sources */,
-				0AA94D8E188543D1001D1465 /* KBAAuthPopupController.m in Sources */,
+				0AA94D8E188543D1001D1465 /* KBAAuthFailPopupController.m in Sources */,
 				0A893764183BA118003495A4 /* KBADashboardController.m in Sources */,
 				D93C6A341859D94A0004E51A /* AccountService.m in Sources */,
 			);

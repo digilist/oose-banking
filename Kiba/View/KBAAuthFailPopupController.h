@@ -8,6 +8,6 @@
 
 #import "KBAViewController.h"
 
-@interface KBAAuthPopupController : KBAViewController
-
+@interface KBAAuthFailPopupController : KBAViewController
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
 @end

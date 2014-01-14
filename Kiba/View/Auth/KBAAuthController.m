@@ -134,7 +134,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 /**
  *  Show a Popover
  */
-- (void)showPopover:(UIButton *)sender withPopoverController:(UIViewController *)popoverController
+- (void)showPopover: (UIButton *)sender withPopoverController:(UIViewController *)popoverController
        andDirection: (UIPopoverArrowDirection) popoverDirection
           andOffset: (CGPoint) offset{
 
