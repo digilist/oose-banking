@@ -15,10 +15,10 @@
 #import "Customer.h"
 #import "KBAAuth.h"
 
-const static CGFloat kJVFieldHeight = 44.0f;
-const static CGFloat kJVFieldHMargin = 10.0f;
-const static CGFloat kJVFieldFontSize = 16.0f;
-const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
+//const static CGFloat kJVFieldHeight = 44.0f;
+//const static CGFloat kJVFieldHMargin = 10.0f;
+//const static CGFloat kJVFieldFontSize = 16.0f;
+//const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 
 @interface KBAAuthController ()
 
@@ -26,8 +26,10 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 @property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *authCodeField;
 @property (nonatomic, weak) IBOutlet UIView *comicView;
 @property (nonatomic, strong) KBAAuthAdvantagesController *advantagesController;
-@property NSTimer *timer;
+@property (atomic, strong) NSTimer *timer;
+//@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 
+- (IBAction)showAuthPopOver:(UIButton*)sender;
 @end
 
 @implementation KBAAuthController
@@ -112,18 +114,98 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+
+	
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidShow:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardDidHideNotification
+                                               object:nil];
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+                                duration:(NSTimeInterval)duration
+{
+}
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+//    if ([self.authCodeField isFirstResponder]) {
+//        int height = 0;
+//        
+//        if ((UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationLandscapeLeft
+//            || UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationLandscapeRight)) {
+//            height = 200;
+//        }
+//        
+//        [UIView beginAnimations:nil context:nil];
+//        [UIView setAnimationDuration:0.3];
+//        [UIView setAnimationDelay:0.1];
+//        [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+//        
+//        self.view.frame = CGRectOffset(self.view.frame, 0, height);
+//        
+//        [UIView commitAnimations];
+//    }
+}
+
+//TODO: remove observer view did close
+
+bool keyboardShown;
+
+-(void)keyboardDidShow:(NSNotification *)note
+{
+//    keyboardShown = YES;
+//    NSDictionary *userInfo = [note userInfo];
+//    CGSize kbSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+//    
+//    int height = 0;
+//    
+//    if (UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationLandscapeLeft
+//        || UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationLandscapeRight
+//        || UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationUnknown) {
+//        height = kbSize.width;
+//    }
+//
+//    
+//    [UIView beginAnimations:nil context:nil];
+//    [UIView setAnimationDuration:0.3];
+//    [UIView setAnimationDelay:0.1];
+//    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+//    
+//    self.view.frame = CGRectOffset(self.view.frame, 0, -height);
+//    
+//    [UIView commitAnimations];
+}
+
+-(void)keyboardWillHide:(NSNotification *)note
+{
+//    keyboardShown = NO;
+//    NSDictionary *userInfo = [note userInfo];
+//    CGSize kbSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+//    
+//    int height = 0;
+//    if (UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationLandscapeLeft
+//        || UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationLandscapeRight
+//        || UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationUnknown) {
+//        height = kbSize.width;
+//    }
+//    [UIView beginAnimations:nil context:nil];
+//    [UIView setAnimationDuration:0.3];
+//    [UIView setAnimationDelay:0.1];
+//    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+//    
+//    self.view.frame = CGRectOffset(self.view.frame, 0, height);
+//    
+//    [UIView commitAnimations];
 }
 
 -(void)dismissKeyboard
 {
-    UITextField *activeTextField = nil;
-    if ([self.authCodeField isEditing]){
-        activeTextField = self.authCodeField;
-    }
-    
-    if (activeTextField){
-        [activeTextField resignFirstResponder];
-    }
+    [self.authCodeField resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning

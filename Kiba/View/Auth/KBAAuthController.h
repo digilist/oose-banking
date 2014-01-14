@@ -9,7 +9,4 @@
 #import "KBAViewController.h"
 
 @interface KBAAuthController : KBAViewController
-
-- (IBAction)showAuthPopOver:(UIButton*)sender;
-
 @end
