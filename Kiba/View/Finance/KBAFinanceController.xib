@@ -23,10 +23,9 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="length" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="3" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="qU7-V7-Hrp">
+                <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="length" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="3" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="qU7-V7-Hrp" customClass="KBAUISlider">
                     <rect key="frame" x="203" y="279" width="798" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="tintColor" red="0.85882352939999995" green="0.42352941179999998" blue="0.058823529409999999" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="bRn-RF-g0R"/>
                     </constraints>
@@ -34,10 +33,12 @@
                         <action selector="scheduleYears" destination="-1" eventType="valueChanged" id="PXp-0c-Zqs"/>
                     </connections>
                 </slider>
-                <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" restorationIdentifier="interest" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="75" minValue="10" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="wds-WO-fY0">
+                <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="249" restorationIdentifier="interest" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="75" minValue="10" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="wds-WO-fY0" customClass="KBAUISlider">
                     <rect key="frame" x="203" y="363" width="798" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="tintColor" red="0.85882352939999995" green="0.42352941179999998" blue="0.058823529409999999" alpha="1" colorSpace="deviceRGB"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
+                    </accessibility>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="vzF-Su-FF5"/>
                     </constraints>
@@ -78,10 +79,9 @@
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="rate" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="600" minValue="200" maxValue="5000" translatesAutoresizingMaskIntoConstraints="NO" id="4EO-O0-bfw">
+                <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="rate" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="3" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="4EO-O0-bfw" customClass="KBAUISlider">
                     <rect key="frame" x="203" y="447" width="798" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="tintColor" red="0.85882352939999995" green="0.42352941179999998" blue="0.058823529409999999" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="2w7-EW-kPB"/>
                     </constraints>
@@ -120,10 +120,9 @@
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="sum" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12000" minValue="2000" maxValue="20000" translatesAutoresizingMaskIntoConstraints="NO" id="Lco-ql-rRP">
+                <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="sum" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12000" minValue="2000" maxValue="20000" translatesAutoresizingMaskIntoConstraints="NO" id="Lco-ql-rRP" customClass="KBAUISlider">
                     <rect key="frame" x="203" y="194" width="798" height="36"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="tintColor" red="0.85882352939999995" green="0.42352941179999998" blue="0.058823529409999999" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="ufK-tC-cio"/>
                     </constraints>

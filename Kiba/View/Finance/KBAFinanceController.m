@@ -26,11 +26,13 @@
 @property int sum;
 @property float rate;
 @property float credit;
-
+@property int sliderValue;
 
 @property NSDictionary *sliderLabel;
 @property NSDictionary *sliderLabel2;
 @property NSDictionary *creditInterest;
+@property NSMutableArray *sliderSteps;
+
 
 
 @end
@@ -51,18 +53,54 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    //Datenstruktur
+    self.sliderSteps = [[NSMutableArray alloc] init];
+  
+    
     [self updateValue:self.sumSlider];
     [self updateValue:self.lengthSlider];
     [self updateValue:self.interestSlider];
-    [self updateValue:self.rateSlider];
+    
+    [self initUpdate];
+    
+    [self calculateSliderSteps];
+    
     [self updateAllValues];
+    [self updateValue:self.rateSlider];
+    
+    
     [self calculateCreditSum];
     [self calculateRate];
+    NSLog(@"%f" ,self.rate);
+    [self calculateInterest];
+    //[self calculateRateLimits];
+    
+    self.rateSlider.minimumValue = 0;
+    self.rateSlider.maximumValue = self.lengthSlider.maximumValue - self.lengthSlider.minimumValue;
+    NSLog(@"%f, %f",self.rateSlider.minimumValue, self.rateSlider.maximumValue );
+
+    
+    self.rate = [[self.sliderSteps objectAtIndex:self.length] floatValue] ;
     
 
     
-    NSLog(@"%f, %d, %d, %f" , self.interest, self. length, self.sum, self.rate);
+        for (NSNumber *a in self.sliderSteps) {
+            NSLog(@"%f %d",a.floatValue, self.sliderSteps.count);
+    
+    }
+    
 
+    
+    NSLog(@"%f, %d, %d, %f" , self.rateSlider.value, self. length, self.sum, self.rate);
+
+}
+
+-(void)initUpdate {
+    
+    self.interest = (double)(round(self.interestSlider.value)/1000);
+    self.length = self.lengthSlider.value;
+    self.sum = (int)self.sumSlider.value;
+    
 }
 
 
@@ -125,13 +163,13 @@
         label.text = [NSString stringWithFormat: @"%0.1f %%", (double)slider.value/10];
     }
     else if ([slider isEqual:self.rateSlider]) {
-        label.text = [NSString stringWithFormat: @"%0.2f €", (double)slider.value];
+        label.text = [NSString stringWithFormat: @"%0.2f €", [[self.sliderSteps objectAtIndex: ((int)slider.value)] floatValue] ];
     }
     else {
         label.text = value;
     }
-  int lab2 = [[self.sliderLabel allValues]count];
-   NSLog(@"%@ , %d", value, lab2);
+ 
+ // NSLog(@"%@" , value);
     
   
     
@@ -143,18 +181,22 @@
     self.interest = (double)(round(self.interestSlider.value)/1000);
     self.length = self.lengthSlider.value;
     self.sum = (int)self.sumSlider.value;
-    self.rate = self.rateSlider.value;
+    self.rate = [[self.sliderSteps objectAtIndex: ((int) self.rateSlider.value)]floatValue];
     
+  //  NSLog(@"%f, %d, %d, %f" , self.interest, self. length, self.sum, self.rate);
     
 }
 /**
  *  Calculates the other values when the rate slider is moved
  */
 -(void)calculateYears{
- //   float b = (self.sum/((1/self.interest)*(1-(1/(pow((1+self.interest),self.length))))));
-    int length = - (log(1-((self.interest*self.sum)/self.rate))/(log(1+self.interest)));
-    self.lengthSlider.value = length;
+ 
+  
+     // int length = - (log(1-((self.interest*self.sum)/self.rate))/(log(1+self.interest)));
+    self.length = self.lengthSlider.maximumValue - (int) self.rateSlider.value;;
+    self.lengthSlider.value = self.length;
     [self updateValue:self.lengthSlider];
+     NSLog(@"%f, %d %f" , self.rate,self.length, self.rateSlider.value);
     
     
         
@@ -171,30 +213,32 @@
 
 -(void)calculateRate{
     
-    self.rate = (float) self.credit / self.length;
-    self.rateSlider.value = self.rate;
+//    self.rate = (float) self.credit / self.length;
+//    self.rateSlider.value = self.rate;
+  //  NSLog(@"%f, %d %f" , self.rate,self.length, self.rateSlider.value);
+    self.rate = [[self.sliderSteps objectAtIndex:(self.lengthSlider.maximumValue - (int)self.length)] floatValue] ;
+    self.rateSlider.value = self.lengthSlider.maximumValue - (int)self.length;
     [self updateValue:self.rateSlider];
-    
+   // NSLog(@"%f, %d %f" , self.rate,self.length, self.rateSlider.value);
     
 }
 
 -(void)calculateInterest{
-//Kalkulation
-   self.interestSlider.value = [[self.creditInterest objectForKey: [NSNumber numberWithInt:self.length ]] doubleValue];
+    self.interest = [[self.creditInterest objectForKey: [NSNumber numberWithInt:self.length ]] doubleValue]/1000;
+    self.interestSlider.value = [[self.creditInterest objectForKey: [NSNumber numberWithInt:self.length ]] doubleValue];
     [self updateValue:self.interestSlider];
-    
-      NSLog(@"%f@" , self.interest);
-
     
     
 }
 
 -(IBAction)scheduleYears{
     [self updateAllValues];
-    [self calculateRate];
     [self calculateInterest];
+    [self calculateRate];
     [self calculateCreditSum];
     [self updateValue:self.lengthSlider];
+    
+
 }
 
 -(IBAction)scheduleInterest{
@@ -207,21 +251,63 @@
 
 -(IBAction)scheduleCreditSum{
     [self updateAllValues];
+    [self calculateSliderSteps];
     [self calculateRate];
     [self calculateInterest];
   //  [self calculateYears];
     [self calculateCreditSum];
     self.creditSum.text = [NSString stringWithFormat:@"%0.f €", self.credit];
+   // [self calculateRateLimits];
     [self updateValue:self.sumSlider];
 }
 
 -(IBAction)scheduleRate{
     [self updateAllValues];
-    [self calculateYears];
-    [self calculateInterest];
+  // NSLog(@" 1 -> %d", self.length);
     [self calculateCreditSum];
+    //  NSLog(@" 2 -> %d", self.length);
+    [self calculateYears];
+     //  NSLog(@" 3 -> %d", self.length);
+    [self calculateInterest];
+     //   NSLog(@" 4 -> %d", self.length);
     [self updateValue:self.rateSlider];
 }
+
+-(void)calculateRateLimits{
+    
+    double longInterest = [[self.creditInterest objectForKey: [NSNumber numberWithInt:self.lengthSlider.maximumValue ]] doubleValue]/1000;
+    double shortInterest = [[self.creditInterest objectForKey: [NSNumber numberWithInt:self.lengthSlider.minimumValue ]] doubleValue]/1000;
+    
+    float longCredit = self.sum * (longInterest*pow((1+longInterest),30) )/(pow((1+longInterest),30) -1) * 30;
+    float shortCredit = self.sum * (shortInterest*pow((1+shortInterest),3) )/(pow((1+shortInterest),3) -1) * 3;
+    
+    float minRate = (float) longCredit / 30;
+    float maxRate = (float) shortCredit / 3;
+    
+    self.rateSlider.minimumValue = minRate;
+    self.rateSlider.maximumValue = maxRate;
+  //  NSLog(@"MinRate: %f ; MaxRate: %f", minRate, maxRate);
+}
+
+-(void)calculateSliderSteps{
+    NSMutableArray *newSteps = [[NSMutableArray alloc]init];
+    for (int a = self.lengthSlider.maximumValue; a>=0; a--) {
+        if(a >= (self.lengthSlider.minimumValue))
+        {
+            double currenInterest = [[self.creditInterest objectForKey: [NSNumber numberWithInt:a ]] doubleValue]/1000;
+            
+        float c = self.sum * (currenInterest*pow((1+currenInterest),a) )/(pow((1+currenInterest),a) -1) * a / a;
+            [newSteps insertObject:[NSNumber numberWithFloat:c] atIndex:30-a];
+        }
+        else
+        {
+            [newSteps insertObject:[NSNumber numberWithFloat:0] atIndex:30-a];
+        }
+        }
+    self.sliderSteps = newSteps;
+    
+}
+
 
 
 @end
