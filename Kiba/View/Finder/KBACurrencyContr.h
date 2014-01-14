@@ -10,11 +10,5 @@
 
 @interface KBACurrencyContr : UIViewController<UIPickerViewDelegate>
 
-@property (nonatomic, weak) IBOutlet UIPickerView *currencyPickerView;
-@property (weak, nonatomic) IBOutlet UITextField *euroField;
-@property (weak, nonatomic) IBOutlet UILabel *foreignCurrencyAmountLabel;
-
-- (IBAction)onEuroFieldReturned:(UITextField *)sender;
-- (IBAction)requestButtonPressed:(KBAButton *)sender;
 
 @end

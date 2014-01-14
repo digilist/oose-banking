@@ -7,6 +7,7 @@
 //
 
 #import "KBAViewController.h"
+#import "KBAAuth.h"
 #import "Customer.h"
 #import "KBADependencyInjector.h"
 #import "KBAAuth.h"
@@ -19,7 +20,7 @@
 - (id) init {
     NSString *className = NSStringFromClass([self class]);
     self = [self initWithNibName:className bundle:Nil];
-    
+    self.needsAuthentification = NO;
     if (self) {
         
     }
@@ -39,8 +40,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
+    if (self.needsAuthentification && !auth.identity.authenticated) {
+        [self disableViewHierachy:self.view];
+    }
     
     [self setBackBarButton];
+}
+
+-(void)disableViewHierachy:(UIView *)view
+{
+    for (UIView * subview in [view subviews]) {
+        [subview setUserInteractionEnabled: NO];
+        [self disableViewHierachy:subview];
+    }
 }
 
 -(void)setBackBarButton {

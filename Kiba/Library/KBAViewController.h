@@ -10,4 +10,5 @@
 
 @interface KBAViewController : UIViewController<UISplitViewControllerDelegate>
 -(void)setBackBarButton;
+@property BOOL needsAuthentification;
 @end
