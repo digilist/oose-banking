@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface KBAViewController : UIViewController<UISplitViewControllerDelegate>
-
+@property BOOL needsAuthentification;
 @end

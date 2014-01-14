@@ -79,11 +79,11 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
         
         if ([self.authCodeField.text isEqualToString: @"123"]){
             [SVProgressHUD showSuccessWithStatus:@"Erfoglreich" ];
+            [self dismissKeyboard];
         }
         else{
             [SVProgressHUD showErrorWithStatus:@"Fehlgeschlagen!"];
         }
-        
     }
 }
 
@@ -98,6 +98,23 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     titleField.placeholder = @"Validierungscode";
     titleField.floatingLabel.text = @"Validierungscode";
     [titleField setup];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+}
+
+-(void)dismissKeyboard
+{
+    UITextField *activeTextField = nil;
+    if ([self.authCodeField isEditing]){
+        activeTextField = self.authCodeField;
+    }
+    
+    if (activeTextField){
+        [activeTextField resignFirstResponder];
+    }
 }
 
 - (void)didReceiveMemoryWarning
