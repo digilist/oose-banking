@@ -38,7 +38,7 @@
 }
 
 - (void)viewDidLoad {
-    
+    [super viewDidLoad];
     self.mapView.delegate = self;
     
     // set map center

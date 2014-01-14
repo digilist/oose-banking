@@ -27,7 +27,7 @@
 @property Address *address;
 @property NSArray *accounts;
 @property CreditRating *creditRating;
-@property Boolean verificated;
+@property Boolean authenticated;
 
 
 @end

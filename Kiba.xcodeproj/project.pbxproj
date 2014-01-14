@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0A579660187EC43D005EFC73 /* KBAUISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A57965F187EC43D005EFC73 /* KBAUISegmentedControl.m */; };
 		0A893764183BA118003495A4 /* KBADashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A893763183BA118003495A4 /* KBADashboardController.m */; };
+		0AA94D8E188543D1001D1465 /* KBAAuthPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA94D8C188543D1001D1465 /* KBAAuthPopupController.m */; };
+		0AA94D8F188543D1001D1465 /* KBAAuthPopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AA94D8D188543D1001D1465 /* KBAAuthPopupController.xib */; };
 		0AABAA30187E892B00E067EE /* KBAAuthAdvantagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AABAA2E187E892B00E067EE /* KBAAuthAdvantagesController.m */; };
 		0AABAA31187E892B00E067EE /* KBAAuthAdvantagesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AABAA2F187E892B00E067EE /* KBAAuthAdvantagesController.xib */; };
 		0AAEEE2F187BED9F00C1F767 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAEEE2C187BED9F00C1F767 /* SVProgressHUD.m */; };
@@ -35,6 +37,7 @@
 		342323051837B9FD00618D7E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342322E41837B9FD00618D7E /* UIKit.framework */; };
 		3423230D1837B9FD00618D7E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3423230B1837B9FD00618D7E /* InfoPlist.strings */; };
 		3423230F1837B9FD00618D7E /* KibaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3423230E1837B9FD00618D7E /* KibaTests.m */; };
+		A83F99A8187ECB5B001E3F5B /* KBAFinanceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83F99A7187ECB5B001E3F5B /* KBAFinanceController.xib */; };
 		A8610F181860830600E3093E /* KBATransactionDaoDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A8610F171860830600E3093E /* KBATransactionDaoDummy.m */; };
 		A8610F1F1860934500E3093E /* KBATransactionDaoRest.m in Sources */ = {isa = PBXBuildFile; fileRef = A8610F1E1860934500E3093E /* KBATransactionDaoRest.m */; };
 		A8AE9A64187BE73E00ACC653 /* KBAFinanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AE9A62187BE73E00ACC653 /* KBAFinanceController.m */; };
@@ -106,6 +109,9 @@
 		0A57965F187EC43D005EFC73 /* KBAUISegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAUISegmentedControl.m; path = View/KBAUISegmentedControl.m; sourceTree = "<group>"; };
 		0A893762183BA118003495A4 /* KBADashboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBADashboardController.h; path = View/Dashboard/KBADashboardController.h; sourceTree = "<group>"; };
 		0A893763183BA118003495A4 /* KBADashboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBADashboardController.m; path = View/Dashboard/KBADashboardController.m; sourceTree = "<group>"; };
+		0AA94D8B188543D1001D1465 /* KBAAuthPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAAuthPopupController.h; path = View/KBAAuthPopupController.h; sourceTree = "<group>"; };
+		0AA94D8C188543D1001D1465 /* KBAAuthPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAAuthPopupController.m; path = View/KBAAuthPopupController.m; sourceTree = "<group>"; };
+		0AA94D8D188543D1001D1465 /* KBAAuthPopupController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAAuthPopupController.xib; path = View/KBAAuthPopupController.xib; sourceTree = "<group>"; };
 		0AABAA2D187E892B00E067EE /* KBAAuthAdvantagesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAAuthAdvantagesController.h; path = View/Auth/KBAAuthAdvantagesController.h; sourceTree = "<group>"; };
 		0AABAA2E187E892B00E067EE /* KBAAuthAdvantagesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAAuthAdvantagesController.m; path = View/Auth/KBAAuthAdvantagesController.m; sourceTree = "<group>"; };
 		0AABAA2F187E892B00E067EE /* KBAAuthAdvantagesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAAuthAdvantagesController.xib; path = View/Auth/KBAAuthAdvantagesController.xib; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 		3423230E1837B9FD00618D7E /* KibaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KibaTests.m; sourceTree = "<group>"; };
 		344029EA1860773D008B31A2 /* KBAColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAColorHelper.h; path = Library/KBAColorHelper.h; sourceTree = "<group>"; };
 		34F3B62E185B8D27003E8040 /* OCR A Std.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OCR A Std.ttf"; sourceTree = "<group>"; };
+		A83F99A7187ECB5B001E3F5B /* KBAFinanceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAFinanceController.xib; path = View/Finance/KBAFinanceController.xib; sourceTree = "<group>"; };
 		A8610F161860830600E3093E /* KBATransactionDaoDummy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBATransactionDaoDummy.h; path = Library/DAO/KBATransactionDaoDummy.h; sourceTree = "<group>"; };
 		A8610F171860830600E3093E /* KBATransactionDaoDummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBATransactionDaoDummy.m; path = Library/DAO/KBATransactionDaoDummy.m; sourceTree = "<group>"; };
 		A8610F1C1860847900E3093E /* KBATransactionDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KBATransactionDao.h; path = Library/DAO/KBATransactionDao.h; sourceTree = "<group>"; };
@@ -158,7 +165,7 @@
 		A8610F1E1860934500E3093E /* KBATransactionDaoRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBATransactionDaoRest.m; path = Library/DAO/KBATransactionDaoRest.m; sourceTree = "<group>"; };
 		A8AE9A61187BE73E00ACC653 /* KBAFinanceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAFinanceController.h; path = View/Finance/KBAFinanceController.h; sourceTree = "<group>"; };
 		A8AE9A62187BE73E00ACC653 /* KBAFinanceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAFinanceController.m; path = View/Finance/KBAFinanceController.m; sourceTree = "<group>"; };
-		A8AE9A63187BE73E00ACC653 /* KBAFinanceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAFinanceController.xib; path = View/Finance/KBAFinanceController.xib; sourceTree = "<group>"; };
+		A8AE9A63187BE73E00ACC653 /* KBAFinanceControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAFinanceControl.xib; path = View/Finance/KBAFinanceControl.xib; sourceTree = "<group>"; };
 		A8D883141860463B006DD296 /* KBAStatemTableContr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAStatemTableContr.h; path = View/SelfService/KBAStatemTableContr.h; sourceTree = "<group>"; };
 		A8D883151860463B006DD296 /* KBAStatemTableContr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAStatemTableContr.m; path = View/SelfService/KBAStatemTableContr.m; sourceTree = "<group>"; };
 		A8F81C7C1844B51D00E55C75 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Account.h; path = Entities/Account.h; sourceTree = "<group>"; };
@@ -390,6 +397,9 @@
 				3407E8E71838FD110045C014 /* KBAMasterViewController.m */,
 				21F8EE87187DFA1D00025C42 /* KBAButton.h */,
 				21F8EE88187DFA1D00025C42 /* KBAButton.m */,
+				0AA94D8B188543D1001D1465 /* KBAAuthPopupController.h */,
+				0AA94D8C188543D1001D1465 /* KBAAuthPopupController.m */,
+				0AA94D8D188543D1001D1465 /* KBAAuthPopupController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -509,7 +519,8 @@
 			children = (
 				A8AE9A61187BE73E00ACC653 /* KBAFinanceController.h */,
 				A8AE9A62187BE73E00ACC653 /* KBAFinanceController.m */,
-				A8AE9A63187BE73E00ACC653 /* KBAFinanceController.xib */,
+				A83F99A7187ECB5B001E3F5B /* KBAFinanceController.xib */,
+				A8AE9A63187BE73E00ACC653 /* KBAFinanceControl.xib */,
 			);
 			name = Finance;
 			sourceTree = "<group>";
@@ -684,6 +695,7 @@
 			files = (
 				34199A881841710C00F574D5 /* Assets in Resources */,
 				C1F00E791844E0FA009EFE4F /* KBAAccountController.xib in Resources */,
+				A83F99A8187ECB5B001E3F5B /* KBAFinanceController.xib in Resources */,
 				C1F00E741844E08C009EFE4F /* KBAAuthController.xib in Resources */,
 				342322FC1837B9FD00618D7E /* Images.xcassets in Resources */,
 				C17AFBD0187C1017009C0CE9 /* KBAAppointmentContr.xib in Resources */,
@@ -701,6 +713,7 @@
 				D93C6A2A1859D8E90004E51A /* KBATransContr.xib in Resources */,
 				D93C6A261859D8E90004E51A /* KBAStatemContr.xib in Resources */,
 				C17AFBCA187BF9E2009C0CE9 /* KBACurrencyContr.xib in Resources */,
+				0AA94D8F188543D1001D1465 /* KBAAuthPopupController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,6 +784,7 @@
 				A8F81C881844B51D00E55C75 /* Account.m in Sources */,
 				A8F81C8D1844B51D00E55C75 /* Transaction.m in Sources */,
 				C1F00E781844E0FA009EFE4F /* KBAAccountController.m in Sources */,
+				0AA94D8E188543D1001D1465 /* KBAAuthPopupController.m in Sources */,
 				0A893764183BA118003495A4 /* KBADashboardController.m in Sources */,
 				D93C6A341859D94A0004E51A /* AccountService.m in Sources */,
 			);
