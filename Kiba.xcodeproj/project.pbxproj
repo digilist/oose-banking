@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A433FF61885575A00F1DF5E /* KBAAuthSuccessPopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A433FF41885575A00F1DF5E /* KBAAuthSuccessPopController.m */; };
+		0A433FF71885575A00F1DF5E /* KBAAuthSuccessPopController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A433FF51885575A00F1DF5E /* KBAAuthSuccessPopController.xib */; };
 		0A579660187EC43D005EFC73 /* KBAUISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A57965F187EC43D005EFC73 /* KBAUISegmentedControl.m */; };
 		0A893764183BA118003495A4 /* KBADashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A893763183BA118003495A4 /* KBADashboardController.m */; };
 		0AA94D8E188543D1001D1465 /* KBAAuthPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA94D8C188543D1001D1465 /* KBAAuthPopupController.m */; };
@@ -105,6 +107,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A433FF31885575A00F1DF5E /* KBAAuthSuccessPopController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAAuthSuccessPopController.h; path = View/KBAAuthSuccessPopController.h; sourceTree = "<group>"; };
+		0A433FF41885575A00F1DF5E /* KBAAuthSuccessPopController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAAuthSuccessPopController.m; path = View/KBAAuthSuccessPopController.m; sourceTree = "<group>"; };
+		0A433FF51885575A00F1DF5E /* KBAAuthSuccessPopController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAAuthSuccessPopController.xib; path = View/KBAAuthSuccessPopController.xib; sourceTree = "<group>"; };
 		0A57965E187EC43D005EFC73 /* KBAUISegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAUISegmentedControl.h; path = View/KBAUISegmentedControl.h; sourceTree = "<group>"; };
 		0A57965F187EC43D005EFC73 /* KBAUISegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAUISegmentedControl.m; path = View/KBAUISegmentedControl.m; sourceTree = "<group>"; };
 		0A893762183BA118003495A4 /* KBADashboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBADashboardController.h; path = View/Dashboard/KBADashboardController.h; sourceTree = "<group>"; };
@@ -400,6 +405,9 @@
 				0AA94D8B188543D1001D1465 /* KBAAuthPopupController.h */,
 				0AA94D8C188543D1001D1465 /* KBAAuthPopupController.m */,
 				0AA94D8D188543D1001D1465 /* KBAAuthPopupController.xib */,
+				0A433FF31885575A00F1DF5E /* KBAAuthSuccessPopController.h */,
+				0A433FF41885575A00F1DF5E /* KBAAuthSuccessPopController.m */,
+				0A433FF51885575A00F1DF5E /* KBAAuthSuccessPopController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -693,6 +701,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A433FF71885575A00F1DF5E /* KBAAuthSuccessPopController.xib in Resources */,
 				34199A881841710C00F574D5 /* Assets in Resources */,
 				C1F00E791844E0FA009EFE4F /* KBAAccountController.xib in Resources */,
 				A83F99A8187ECB5B001E3F5B /* KBAFinanceController.xib in Resources */,
@@ -736,6 +745,7 @@
 				0A579660187EC43D005EFC73 /* KBAUISegmentedControl.m in Sources */,
 				C1F00E731844E08C009EFE4F /* KBAAuthController.m in Sources */,
 				C10C5FBF183B877B008FAECB /* KBABranchDaoRest.m in Sources */,
+				0A433FF61885575A00F1DF5E /* KBAAuthSuccessPopController.m in Sources */,
 				C17AFBCF187C1017009C0CE9 /* KBAAppointmentContr.m in Sources */,
 				C1704208184DF3A00019F929 /* KBAFinderService.m in Sources */,
 				A8F81C8C1844B51D00E55C75 /* Customer.m in Sources */,
