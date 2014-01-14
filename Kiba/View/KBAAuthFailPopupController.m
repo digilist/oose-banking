@@ -19,7 +19,7 @@
     self = [super initWithNibName:@"KBAAuthFailPopupController" bundle:nibBundleOrNil];
     if (self) {
         
-       self.preferredContentSize = CGSizeMake(400.0, 210.0);
+       self.preferredContentSize = CGSizeMake(324.0, 190.0);
     }
     return self;
 }
