@@ -16,7 +16,7 @@
 
 
 @interface KBAViewController ()
-@property UIPopoverController *popController;
+@property (retain, nonatomic) UIPopoverController *popController;
 @property (nonatomic, strong) KBAAuthFailPopupController *failPopupController;
 @property (nonatomic, strong) KBAAuthSuccessPopController *succesPopupController;
 
@@ -51,10 +51,8 @@
     self.failPopupController = [KBAAuthFailPopupController new];
     self.succesPopupController = [KBAAuthSuccessPopController new];
     
-    
     KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
     [self setBackBarButton];
-    
     if (self.needsAuthentification && !auth.identity.authenticated) {
         [self disableViewHierachy:self.view];
         [self showPopover];
@@ -102,6 +100,7 @@
 
 - (void)clickedBarButtonItem
 {
+    [self.popController dismissPopoverAnimated:YES];
     [self showPopover];
 }
 
@@ -145,18 +144,18 @@
 {
     KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
     Customer *customer = [auth identity];
-    
+
     if (customer.authenticated) {
           self.popController = [[UIPopoverController alloc] initWithContentViewController: self.succesPopupController];
     } else {
-           self.popController = [[UIPopoverController alloc] initWithContentViewController: self.failPopupController];
+          self.popController = [[UIPopoverController alloc] initWithContentViewController: self.failPopupController];
     }
     
     UIBarButtonItem *view = self.navigationItem.rightBarButtonItem;
-    
     [self.popController presentPopoverFromBarButtonItem:view
-                               permittedArrowDirections:UIPopoverArrowDirectionAny
-                                               animated:YES];
+                       permittedArrowDirections:UIPopoverArrowDirectionAny
+                                                   animated:YES];
+
 }
 
 @end
