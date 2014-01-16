@@ -27,9 +27,9 @@
 }
 
 /**
- *  Tries to login with a name and password
+ *  Tries to login with a description and password
  *
- *  @param name     
+ *  @param description
  *  @param password
  *
  *  @return

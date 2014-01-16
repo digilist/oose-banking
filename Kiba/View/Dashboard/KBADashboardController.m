@@ -85,7 +85,7 @@
  */
 - (BOOL)onWebViewLinkClickedWithAction:(NSString *)action
 {
-    // Check the detail buttos here …
+    // Check the detail buttons here …
     return YES;
 }
 
@@ -120,36 +120,27 @@
  *
  *  @return <#return value description#>
  */
-- (NSMutableDictionary *)dateAmountArraybyIdentity:(Customer *)identity
-                  andTransactions:(NSArray *)transactions
-                   havingAccounts:(NSMutableArray *)accounts
+- (NSMutableDictionary *)dateAmountArrayByIdentity:(Customer *)identity
+                                   andTransactions:(NSArray *)transactions
+                                    havingAccounts:(NSMutableArray *)accounts
 {
     NSMutableDictionary *jsonableTransactions = [NSMutableDictionary new];
     
     for (Transaction *transaction in transactions) {
-        NSString *key;
-        NSNumber *amount;
-        Account *account;
-        
         if (identity == transaction.sender.owner) {
-            amount = transaction.amount;
-            account = transaction.sender;
+            [self addToAccounts:accounts
+           jsonableTransactions:jsonableTransactions
+                    transaction:transaction
+                         amount:transaction.amount
+                        account:transaction.sender];
         }
-        else {
-            amount = [NSNumber numberWithDouble:-transaction.amount.doubleValue];
-            account = transaction.recipient;
+        if (identity == transaction.recipient.owner) {
+            [self addToAccounts:accounts
+           jsonableTransactions:jsonableTransactions
+                    transaction:transaction
+                         amount:[NSNumber numberWithDouble:-transaction.amount.doubleValue]
+                        account:transaction.recipient];
         }
-        
-        key = account.name;
-        
-        NSMutableArray *values = [jsonableTransactions valueForKey:key];
-        if (!values) {
-            values = [NSMutableArray new];
-            [accounts addObject:account];
-            [jsonableTransactions setValue:values forKey:key];
-        }
-        
-        [values addObject:@[@(transaction.date.timeIntervalSince1970 * 1000), amount]];
     }
     
     // Sort transactions
@@ -170,6 +161,26 @@
 }
 
 /**
+ *
+ */
+- (void)addToAccounts:(NSMutableArray *)accounts
+ jsonableTransactions:(NSMutableDictionary *)jsonableTransactions
+          transaction:(Transaction *)transaction
+               amount:(NSNumber *)amount
+              account:(Account *)account
+{
+    NSString *key = account.description;
+    NSMutableArray *values = [jsonableTransactions valueForKey:key];
+    if (!values) {
+        values = [NSMutableArray new];
+        [accounts addObject:account];
+        [jsonableTransactions setValue:values forKey:key];
+    }
+
+    [values addObject:@[@(transaction.date.timeIntervalSince1970 * 1000), amount]];
+}
+
+/**
  *  Passes the turn over to web view.
  *
  *  @param transactions
@@ -182,14 +193,14 @@
     Customer *identity = self.auth.identity;
     
     // Finds transactions by an identity for transactions.
-    NSMutableDictionary *jsonableTransactions = [self dateAmountArraybyIdentity:identity andTransactions:transactions havingAccounts:accounts];
+    NSMutableDictionary *jsonableTransactions = [self dateAmountArrayByIdentity:identity andTransactions:transactions havingAccounts:accounts];
     
     double currentDate = floor([[NSDate new] timeIntervalSince1970] / 86400) * 86400000;
     double lastDate = currentDate - 2592000000;
     
     // Inits the result dictionary with the account balance
     for (Account *account in accounts) {
-        [results addObject:[NSMutableDictionary dictionaryWithDictionary:@{@"label": account.name,
+        [results addObject:[NSMutableDictionary dictionaryWithDictionary:@{@"label": account.description,
                              @"data": [NSMutableArray new],
                              @"lastValue": account.balance}]];
     }
@@ -210,7 +221,7 @@
                 NSNumber *foundDate = [firstData firstObject];
                 shallContinue = NO;
                 
-                if (foundDate.doubleValue >= currentDate) {
+                if (foundDate.doubleValue >= currentDate + 86400000) {
                     NSNumber *firstDataAmount = [firstData lastObject];
                     lastValue = [NSNumber numberWithDouble:lastValue.doubleValue + firstDataAmount.doubleValue];
                     
@@ -256,14 +267,22 @@
         NSNumber *debit, *credit;
         
         if (identity == transaction.recipient.owner) {
-            name = transaction.sender.owner.fullName;
-            account = transaction.recipient.name;
-            credit = transaction.amount;
-            debit = @0.0;
+            if (identity == transaction.sender.owner) {
+                name = identity.fullName;
+                account = [NSString stringWithFormat:@"Umbuchung auf %@", transaction.recipient];
+                credit = transaction.amount;
+                debit = transaction.amount;
+            }
+            else {
+                name = transaction.sender.owner.fullName;
+                account = transaction.recipient.description;
+                credit = transaction.amount;
+                debit = @0.0;
+            }
         }
         else {
             name = transaction.recipient.owner.fullName;
-            account = transaction.sender.name;
+            account = transaction.sender.description;
             debit = transaction.amount;
             credit = @0.0;
         }

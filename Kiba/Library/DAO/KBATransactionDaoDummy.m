@@ -22,7 +22,7 @@
  *  @return An array of Transactions.
  */
 - (NSArray *)transactionsForCustomer:(Customer *)customer {
-    // Get Accounts by a customer
+    // Get Accounts from a customer
     Account *acc1 = [customer.accounts firstObject];
     Account *acc2 = [customer.accounts objectAtIndex:1];
     
@@ -32,41 +32,39 @@
     Customer *custo4 = [[Customer alloc] initWithId:3 forename:@"Michael" surname:@"Schmidt" password:nil];
     Customer *custo5 = [[Customer alloc] initWithId:3 forename:@"Ralf" surname:@"Reichelt" password:nil];
     
-    
-    
-    // Interaktion Accounts
+    // Interaction Accounts
     NSNumber *balanceA = [self generateRandomAmount];
     NSNumber *accountNrA = [NSNumber numberWithLongLong: 1004006661111];
     
     Account *accountA = [[Account alloc] initWithBalance: balanceA
-                                               overDraft: 0
+                                               overDraft: @0
                                                accountNr: accountNrA
-                                                    name: @"mein Sparkonto"
+                                                    name: @"Susannes Konto"
                                                    owner: custo2];
     
     NSNumber *balanceB = [self generateRandomAmount];
     NSNumber *accountNrB = [NSNumber numberWithLongLong:10040066611145];
     
     Account *accountB = [[Account alloc] initWithBalance: balanceB
-                                               overDraft: 0
+                                               overDraft: @0
                                                accountNr: accountNrB
-                                                    name: @"mein Girokonto"
+                                                    name: @"Yolanders Konto"
                                                    owner: custo3];
     
     Account *accountC = [[Account alloc] initWithBalance: balanceB
-                                               overDraft: 0
+                                               overDraft: @0
                                                accountNr: accountNrB
-                                                    name: @"mein Girokonto"
+                                                    name: @"Michaels Konto"
                                                    owner: custo4];
     
     Account *accountD = [[Account alloc] initWithBalance: balanceB
-                                               overDraft: 0
+                                               overDraft: @0
                                                accountNr: accountNrB
-                                                    name: @"mein Girokonto"
+                                                    name: @"Ralfs Konto"
                                                    owner: custo5];
     
     
-    // Die eigentlichen Transaktionen
+    // Add transactions
     Transaction *trans1 = [[Transaction alloc] initWithType:nil
                                                   recipient:accountB
                                                      sender:acc1
@@ -162,7 +160,7 @@
  */
 - (NSDate *)generateRandomDate
 {
-    int randomShift = -(arc4random() % 2592000);
+    int randomShift = (int) -(arc4random() % 2592000);
     return [[NSDate alloc] initWithTimeIntervalSinceNow:randomShift];
 }
 
