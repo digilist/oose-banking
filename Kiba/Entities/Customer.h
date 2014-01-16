@@ -24,6 +24,9 @@
 
 // Perso Ident Einloggkennung!
 @property NSString *ident;
+
+- (NSNumber *)balance;
+
 @property Address *address;
 @property NSArray *accounts;
 @property CreditRating *creditRating;

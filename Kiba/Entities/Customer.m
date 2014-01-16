@@ -57,5 +57,16 @@
 }
 */
 
+/**
+ * Returns this customers balance.
+ */
+- (NSNumber *)balance
+{
+    double sum = 0.0;
+    for (Account *account in self.accounts) {
+        sum += account.balance.doubleValue;
+    }
+    return @(sum);
+}
 
 @end

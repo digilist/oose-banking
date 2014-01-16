@@ -56,6 +56,12 @@
             .align-right { text-align: right; }
             .debit, .red { color: #FF3B30; }
             .credit { color: #4CD964; }
+            .pull-right { float: right; }
+
+            #balance {
+                color: black;
+                font-weight: bold;
+            }
         </style>
     </head>
     <body>
@@ -63,7 +69,7 @@
 
         <div id="line" class="chart"></div>
 
-        <h2>Meine letzten Konto-Aktivitäten</h2>
+        <h2>Meine letzten Konto-Aktivitäten <span class="pull-right align-right" id="balance"></span></h2>
         <table class="table">
             <thead>
                 <tr>
@@ -1510,16 +1516,20 @@
                     $.plot('#line', data, lineChartOptions);
                 };
              
-                this.setIdentity = function (identity)
-                {
+                this.setIdentity = function (identity) {
                     this._identity = identity;
                     $('h1').text("Willkommen, " + identity.fullName + "!");
-                }
+                };
+
+                this.setBalance = function (balance)
+                {
+                    $('#balance').text(balance.balance);
+                };
 
                 this.setTransactions = function (transactions)
                 {
                     _.each(transactions, addTransaction, this);
-                }
+                };
 
                 this.addTransaction = function (transaction)
                 {
@@ -1534,7 +1544,7 @@
 
 
                     $transactions.append(template(transaction));
-                }
+                };
             })(jQuery, _);
         </script>
     </body>

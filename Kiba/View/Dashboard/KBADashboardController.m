@@ -96,6 +96,17 @@
     [self passIdentityToWebView];
     [self passTurnoverToWebViewWithTransactions:transactions];
     [self passTransactionsToWebView:transactions];
+    [self passBalanceToWebView];
+}
+
+- (void)passBalanceToWebView {
+    NSNumberFormatter *formatter = [NSNumberFormatter new];
+    formatter.decimalSeparator = @",";
+    formatter.minimumFractionDigits = 2;
+    formatter.maximumFractionDigits = 2;
+    [self passDataToWebView:@"setBalance"
+              withParameter:@{@"balance":[NSString stringWithFormat:@"%@ €",
+                              [formatter stringFromNumber:self.auth.identity.balance]]}];
 }
 
 /**
@@ -313,7 +324,7 @@
  *  @param method The java script method.
  *  @param data   The data to pass.
  *
- *  @return whther passing succeeded.
+ *  @return whether passing succeeded.
  */
 - (BOOL)passDataToWebView:(NSString *)method withParameter:(id)data
 {
