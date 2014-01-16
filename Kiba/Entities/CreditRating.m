@@ -10,14 +10,17 @@
 
 @implementation CreditRating
 
--(id)initWithStatus: (NSString*) newStatus creditLimit: (NSNumber*) newCreditLimit riskLevel: (NSNumber*) newRiskLevel {
+-(id)initWithStatus: (NSString*) newStatus
+        creditLimit: (NSNumber*) newCreditLimit
+          riskLevel: (NSNumber*) newRiskLevel
+    financingMatrix: (NSDictionary*) newFinancingMatrix{
     
     if (self = [super init])
     {
         self.status = newStatus;
         self.creditLimit = newCreditLimit;
         self.riskLevel = newRiskLevel;
-        
+        self.financingMatrix = newFinancingMatrix;
     }
     return self;
     

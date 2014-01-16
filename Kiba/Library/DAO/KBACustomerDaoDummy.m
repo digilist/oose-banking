@@ -8,6 +8,8 @@
 
 #import "KBACustomerDaoDummy.h"
 #import "KBAAccountDao.h"
+#import "KBACreditRatingDao.h"
+#import "KBACreditRatingDaoDummy.h"
 #import "KBADependencyInjector.h"
 #import "Customer.h"
 #import "Account.h"
@@ -15,8 +17,7 @@
 
 - (Customer *) getCustomer: (NSString*)name :(NSString*)password {
     
-    NSNumber *balacne = [[NSNumber alloc] initWithDouble:2000.00];
-    NSNumber *accountnr = [[NSNumber alloc] initWithLongLong:4584796321589];
+
     
                          
 
@@ -32,9 +33,14 @@
     
     id<KBAAccountDao> accountDao = [KBADependencyInjector getByKey:@"accountDao"];
     customer.accounts = [accountDao getAccounts:customer];
-    
+    id<KBACreditRatingDao> creditDao = [KBADependencyInjector getByKey:@"creditDao"];
+    customer.creditRating = [creditDao getCreditRating];
     return customer;
                           
 }
+
+
+    
+
 
 @end

@@ -24,6 +24,9 @@
 #import "KBATransactionDao.h"
 #import "KBATransactionDaoDummy.h"
 #import "KBATransactionDaoRest.h"
+#import "KBACreditRatingDao.h"
+#import "KBACreditRatingDaoDummy.h"
+#import "KBACreditRatingDaoRest.h"
 
 @implementation KBABootstrap
 
@@ -46,6 +49,7 @@
     id<KBACustomerDao> customerDao;
     id<KBAAccountDao> accountDAo;
     id<KBATransactionDao> transDao;
+    id<KBACreditRatingDao> creditDao;
     KBAAuth *auth = [KBAAuth new];
     
     exchangeRateDao = [KBAExchangeRateDaoRest new];
@@ -55,8 +59,10 @@
         customerDao = [KBACustomerDaoDummy new];
         accountDAo = [KBAAccountDaoDummy new];
         transDao = [KBATransactionDaoDummy new];
+        creditDao = [KBACreditRatingDaoDummy new];
     }
     else {
+        creditDao = [KBACreditRatingDaoRest new];
         branchDao = [KBABranchDaoRest new];
         customerDao = [KBACustomerDaoRest new];
         accountDAo = [KBAAccountDaoRest new];
@@ -69,6 +75,7 @@
     [KBADependencyInjector setObject:accountDAo withKey:@"accountDao"];
     [KBADependencyInjector setObject:auth withKey:@"auth"];
     [KBADependencyInjector setObject:transDao withKey:@"transDao"];
+    [KBADependencyInjector setObject:creditDao withKey:@"creditDao"];
     [auth login: @"max" withPassword:@"test"];
     
 }
