@@ -421,14 +421,14 @@
 				3407E8E71838FD110045C014 /* KBAMasterViewController.m */,
 				21F8EE87187DFA1D00025C42 /* KBAButton.h */,
 				21F8EE88187DFA1D00025C42 /* KBAButton.m */,
-				A8B6934E1885501300AD8DA3 /* KBAUISlider.h */,
-				A8B6934F1885501300AD8DA3 /* KBAUISlider.m */,
 				0AA94D8B188543D1001D1465 /* KBAAuthFailPopupController.h */,
 				0AA94D8C188543D1001D1465 /* KBAAuthFailPopupController.m */,
 				0AA94D8D188543D1001D1465 /* KBAAuthFailPopupController.xib */,
 				0A433FF31885575A00F1DF5E /* KBAAuthSuccessPopController.h */,
 				0A433FF41885575A00F1DF5E /* KBAAuthSuccessPopController.m */,
 				0A433FF51885575A00F1DF5E /* KBAAuthSuccessPopController.xib */,
+				A8B6934E1885501300AD8DA3 /* KBAUISlider.h */,
+				A8B6934F1885501300AD8DA3 /* KBAUISlider.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
