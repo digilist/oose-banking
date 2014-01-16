@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0A66CC1888071A00A74AA4 /* KBAMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A66CA1888071A00A74AA4 /* KBAMessageController.m */; };
+		0A0A66CD1888071A00A74AA4 /* KBAMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0A66CB1888071A00A74AA4 /* KBAMessageController.xib */; };
 		0A433FF61885575A00F1DF5E /* KBAAuthSuccessPopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A433FF41885575A00F1DF5E /* KBAAuthSuccessPopController.m */; };
 		0A433FF71885575A00F1DF5E /* KBAAuthSuccessPopController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A433FF51885575A00F1DF5E /* KBAAuthSuccessPopController.xib */; };
 		0A579660187EC43D005EFC73 /* KBAUISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A57965F187EC43D005EFC73 /* KBAUISegmentedControl.m */; };
@@ -117,6 +119,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A0A66C91888071A00A74AA4 /* KBAMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAMessageController.h; path = View/Private/KBAMessageController.h; sourceTree = "<group>"; };
+		0A0A66CA1888071A00A74AA4 /* KBAMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAMessageController.m; path = View/Private/KBAMessageController.m; sourceTree = "<group>"; };
+		0A0A66CB1888071A00A74AA4 /* KBAMessageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAMessageController.xib; path = View/Private/KBAMessageController.xib; sourceTree = "<group>"; };
 		0A433FF31885575A00F1DF5E /* KBAAuthSuccessPopController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAAuthSuccessPopController.h; path = View/KBAAuthSuccessPopController.h; sourceTree = "<group>"; };
 		0A433FF41885575A00F1DF5E /* KBAAuthSuccessPopController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAAuthSuccessPopController.m; path = View/KBAAuthSuccessPopController.m; sourceTree = "<group>"; };
 		0A433FF51885575A00F1DF5E /* KBAAuthSuccessPopController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAAuthSuccessPopController.xib; path = View/KBAAuthSuccessPopController.xib; sourceTree = "<group>"; };
@@ -387,6 +392,9 @@
 				0AF730F11887D4C600733AB2 /* KBAPrivateController.h */,
 				0AF730F21887D4C600733AB2 /* KBAPrivateController.m */,
 				0AF730F31887D4C600733AB2 /* KBAPrivateController.xib */,
+				0A0A66C91888071A00A74AA4 /* KBAMessageController.h */,
+				0A0A66CA1888071A00A74AA4 /* KBAMessageController.m */,
+				0A0A66CB1888071A00A74AA4 /* KBAMessageController.xib */,
 			);
 			name = Private;
 			sourceTree = "<group>";
@@ -631,16 +639,16 @@
 				A8610F1D1860934500E3093E /* KBATransactionDaoRest.h */,
 				A8610F1E1860934500E3093E /* KBATransactionDaoRest.m */,
 				A8610F1C1860847900E3093E /* KBATransactionDao.h */,
-				0AF730F91887DF8B00733AB2 /* KBAMessageDao.h */,
-				0AF730FA1887E07900733AB2 /* KBAMessageDaoDummy.h */,
-				0AF730FB1887E07900733AB2 /* KBAMessageDaoDummy.m */,
-				0AF730FD1887E10C00733AB2 /* KBAMessageDaoRest.h */,
-				0AF730FE1887E10C00733AB2 /* KBAMessageDaoRest.m */,
 				A8A909DD1887DEE800435343 /* KBACreditRatingDao.h */,
 				A8A909DE1887E06B00435343 /* KBACreditRatingDaoDummy.h */,
 				A8A909DF1887E06B00435343 /* KBACreditRatingDaoDummy.m */,
 				A8A909E11887E29500435343 /* KBACreditRatingDaoRest.h */,
 				A8A909E21887E29500435343 /* KBACreditRatingDaoRest.m */,
+				0AF730F91887DF8B00733AB2 /* KBAMessageDao.h */,
+				0AF730FA1887E07900733AB2 /* KBAMessageDaoDummy.h */,
+				0AF730FB1887E07900733AB2 /* KBAMessageDaoDummy.m */,
+				0AF730FD1887E10C00733AB2 /* KBAMessageDaoRest.h */,
+				0AF730FE1887E10C00733AB2 /* KBAMessageDaoRest.m */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -775,6 +783,7 @@
 				342322FC1837B9FD00618D7E /* Images.xcassets in Resources */,
 				0AF730F51887D4C600733AB2 /* KBAPrivateController.xib in Resources */,
 				C17AFBD0187C1017009C0CE9 /* KBAAppointmentContr.xib in Resources */,
+				0A0A66CD1888071A00A74AA4 /* KBAMessageController.xib in Resources */,
 				C16A7B7B184DC9D3005DC504 /* KBAFinderController.xib in Resources */,
 				342322EB1837B9FD00618D7E /* InfoPlist.strings in Resources */,
 				C1A6D4071847661A00AFB665 /* KBADashboardController.xib in Resources */,
@@ -818,6 +827,7 @@
 				C17AFBCF187C1017009C0CE9 /* KBAAppointmentContr.m in Sources */,
 				C1704208184DF3A00019F929 /* KBAFinderService.m in Sources */,
 				A8F81C8C1844B51D00E55C75 /* Customer.m in Sources */,
+				0A0A66CC1888071A00A74AA4 /* KBAMessageController.m in Sources */,
 				A8AE9A64187BE73E00ACC653 /* KBAFinanceController.m in Sources */,
 				D93C6A351859D94A0004E51A /* BranchService.m in Sources */,
 				D93C6A291859D8E90004E51A /* KBATransContr.m in Sources */,
@@ -847,8 +857,8 @@
 				0AAEEE30187BED9F00C1F767 /* SVProgressHUDViewController.m in Sources */,
 				A8B693501885501300AD8DA3 /* KBAUISlider.m in Sources */,
 				C13B62F4183B7D0200207422 /* KBABranchDaoDummy.m in Sources */,
-				0AF730F81887D9C100733AB2 /* Message.m in Sources */,
 				A8A909E01887E06B00435343 /* KBACreditRatingDaoDummy.m in Sources */,
+				0AF730F81887D9C100733AB2 /* Message.m in Sources */,
 				C10C5FC5183B8DF7008FAECB /* KBABootstrap.m in Sources */,
 				0ACCD54218857D8200EB05BE /* KBAAbout.m in Sources */,
 				D929E547185093B1008FC26E /* OpenHour.m in Sources */,

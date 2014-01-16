@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KBAPrivateController">
             <connections>
+                <outlet property="messageTableView" destination="zh3-sX-KyB" id="oDm-HS-xIg"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
         </placeholder>
@@ -28,17 +29,21 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zh3-sX-KyB">
-                    <rect key="frame" x="83" y="157" width="632" height="477"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zh3-sX-KyB">
+                    <rect key="frame" x="0.0" y="161" width="1024" height="607"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="zh3-sX-KyB" secondAttribute="bottom" id="CLS-Fl-BHW"/>
                 <constraint firstItem="RCk-pe-vta" firstAttribute="top" secondItem="2" secondAttribute="top" constant="90" id="TTp-3L-tp3"/>
                 <constraint firstAttribute="centerX" secondItem="RCk-pe-vta" secondAttribute="centerX" id="bEn-4T-Iic"/>
+                <constraint firstAttribute="trailing" secondItem="zh3-sX-KyB" secondAttribute="trailing" id="cNg-i0-iKN"/>
                 <constraint firstAttribute="trailing" secondItem="hX5-sr-JY4" secondAttribute="trailing" constant="30" id="f8S-EJ-as8"/>
+                <constraint firstItem="zh3-sX-KyB" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="kh9-hZ-qxn"/>
+                <constraint firstItem="zh3-sX-KyB" firstAttribute="top" secondItem="RCk-pe-vta" secondAttribute="bottom" constant="44" id="qOt-eS-xAA"/>
                 <constraint firstAttribute="bottom" secondItem="hX5-sr-JY4" secondAttribute="bottom" constant="30" id="yQ1-ny-DD1"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>

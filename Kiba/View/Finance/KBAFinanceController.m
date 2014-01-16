@@ -138,7 +138,7 @@
 
 
     
-    self.creditInterest =  [[KBADependencyInjector getByKey:@"customerDao"] getCustomer:nil :nil].creditRating.financingMatrix ;
+    self.creditInterest =  [[KBADependencyInjector getByKey:@"customerDao"] customerWithName:nil andPassword:nil].creditRating.financingMatrix ;
 }
 /**
  *  updates the label values of given slider.
