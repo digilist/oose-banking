@@ -15,6 +15,10 @@
 
 static NSArray *currencies;
 
+extern NSNotificationCenter *dismissNotifCenter;
+const extern NSString *dismissPopover;
+
+
 @interface KBACurrencyContr ()
 
 @property Currency *selectedCurrency;
@@ -157,6 +161,9 @@ static NSArray *currencies;
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil];
     [alert show];
+    
+    [dismissNotifCenter postNotificationName:(NSString *) dismissPopover
+                                    object:Nil];
 
 }
 

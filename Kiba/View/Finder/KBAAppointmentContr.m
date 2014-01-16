@@ -8,6 +8,9 @@
 
 #import "KBAAppointmentContr.h"
 
+extern NSNotificationCenter *dismissNotifCenter;
+const extern NSString *dismissPopover;
+
 @interface KBAAppointmentContr ()
 
 @end
@@ -25,16 +28,15 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+- (IBAction)requestButtonClicked:(id)sender {
+    
+    
+    [dismissNotifCenter postNotificationName:(NSString *) dismissPopover
+                                      object:Nil];
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 @end
