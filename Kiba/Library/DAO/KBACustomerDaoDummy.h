@@ -12,5 +12,6 @@
 @interface KBACustomerDaoDummy : NSObject<KBACustomerDao>
 
 @property NSArray* accounts;
+@property CreditRating* creditRating;
 
 @end

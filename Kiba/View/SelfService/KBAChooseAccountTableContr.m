@@ -45,8 +45,8 @@ extern NSNotificationCenter *transferChooseAccountNotifCenter;
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
     Account *account = [self.accounts objectAtIndex: indexPath.row];
-    [transferChooseAccountNotifCenter postNotificationName: (NSString*)accountEntryChosen
-                                                    object: account.name];
+    [transferChooseAccountNotifCenter postNotificationName:(NSString *) accountEntryChosen
+                                                    object:account.description];
 }
 
 /**
@@ -95,7 +95,7 @@ extern NSNotificationCenter *transferChooseAccountNotifCenter;
                 reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [[self.accounts objectAtIndex:indexPath.row] name];
+    cell.textLabel.text = [[self.accounts objectAtIndex:indexPath.row] description];
     cell.textLabel.numberOfLines = 1;
     
     return cell;

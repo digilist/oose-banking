@@ -14,5 +14,6 @@
 @property NSString* status;
 @property NSNumber* creditLimit;
 @property NSNumber* riskLevel;
+@property NSDictionary* financingMatrix;
 
 @end

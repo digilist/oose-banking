@@ -49,6 +49,8 @@
 		A83F99A8187ECB5B001E3F5B /* KBAFinanceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83F99A7187ECB5B001E3F5B /* KBAFinanceController.xib */; };
 		A8610F181860830600E3093E /* KBATransactionDaoDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A8610F171860830600E3093E /* KBATransactionDaoDummy.m */; };
 		A8610F1F1860934500E3093E /* KBATransactionDaoRest.m in Sources */ = {isa = PBXBuildFile; fileRef = A8610F1E1860934500E3093E /* KBATransactionDaoRest.m */; };
+		A8A909E01887E06B00435343 /* KBACreditRatingDaoDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A909DF1887E06B00435343 /* KBACreditRatingDaoDummy.m */; };
+		A8A909E31887E29500435343 /* KBACreditRatingDaoRest.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A909E21887E29500435343 /* KBACreditRatingDaoRest.m */; };
 		A8AE9A64187BE73E00ACC653 /* KBAFinanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AE9A62187BE73E00ACC653 /* KBAFinanceController.m */; };
 		A8B693501885501300AD8DA3 /* KBAUISlider.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B6934F1885501300AD8DA3 /* KBAUISlider.m */; };
 		A8D883161860463B006DD296 /* KBAStatemTableContr.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D883151860463B006DD296 /* KBAStatemTableContr.m */; };
@@ -189,6 +191,11 @@
 		A8610F1C1860847900E3093E /* KBATransactionDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KBATransactionDao.h; path = Library/DAO/KBATransactionDao.h; sourceTree = "<group>"; };
 		A8610F1D1860934500E3093E /* KBATransactionDaoRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBATransactionDaoRest.h; path = Library/DAO/KBATransactionDaoRest.h; sourceTree = "<group>"; };
 		A8610F1E1860934500E3093E /* KBATransactionDaoRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBATransactionDaoRest.m; path = Library/DAO/KBATransactionDaoRest.m; sourceTree = "<group>"; };
+		A8A909DD1887DEE800435343 /* KBACreditRatingDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBACreditRatingDao.h; path = Library/DAO/KBACreditRatingDao.h; sourceTree = "<group>"; };
+		A8A909DE1887E06B00435343 /* KBACreditRatingDaoDummy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBACreditRatingDaoDummy.h; path = Library/DAO/KBACreditRatingDaoDummy.h; sourceTree = "<group>"; };
+		A8A909DF1887E06B00435343 /* KBACreditRatingDaoDummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBACreditRatingDaoDummy.m; path = Library/DAO/KBACreditRatingDaoDummy.m; sourceTree = "<group>"; };
+		A8A909E11887E29500435343 /* KBACreditRatingDaoRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBACreditRatingDaoRest.h; path = Library/DAO/KBACreditRatingDaoRest.h; sourceTree = "<group>"; };
+		A8A909E21887E29500435343 /* KBACreditRatingDaoRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBACreditRatingDaoRest.m; path = Library/DAO/KBACreditRatingDaoRest.m; sourceTree = "<group>"; };
 		A8AE9A61187BE73E00ACC653 /* KBAFinanceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAFinanceController.h; path = View/Finance/KBAFinanceController.h; sourceTree = "<group>"; };
 		A8AE9A62187BE73E00ACC653 /* KBAFinanceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAFinanceController.m; path = View/Finance/KBAFinanceController.m; sourceTree = "<group>"; };
 		A8AE9A63187BE73E00ACC653 /* KBAFinanceControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAFinanceControl.xib; path = View/Finance/KBAFinanceControl.xib; sourceTree = "<group>"; };
@@ -629,6 +636,11 @@
 				0AF730FB1887E07900733AB2 /* KBAMessageDaoDummy.m */,
 				0AF730FD1887E10C00733AB2 /* KBAMessageDaoRest.h */,
 				0AF730FE1887E10C00733AB2 /* KBAMessageDaoRest.m */,
+				A8A909DD1887DEE800435343 /* KBACreditRatingDao.h */,
+				A8A909DE1887E06B00435343 /* KBACreditRatingDaoDummy.h */,
+				A8A909DF1887E06B00435343 /* KBACreditRatingDaoDummy.m */,
+				A8A909E11887E29500435343 /* KBACreditRatingDaoRest.h */,
+				A8A909E21887E29500435343 /* KBACreditRatingDaoRest.m */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -836,6 +848,7 @@
 				A8B693501885501300AD8DA3 /* KBAUISlider.m in Sources */,
 				C13B62F4183B7D0200207422 /* KBABranchDaoDummy.m in Sources */,
 				0AF730F81887D9C100733AB2 /* Message.m in Sources */,
+				A8A909E01887E06B00435343 /* KBACreditRatingDaoDummy.m in Sources */,
 				C10C5FC5183B8DF7008FAECB /* KBABootstrap.m in Sources */,
 				0ACCD54218857D8200EB05BE /* KBAAbout.m in Sources */,
 				D929E547185093B1008FC26E /* OpenHour.m in Sources */,
@@ -850,6 +863,7 @@
 				342322F11837B9FD00618D7E /* KBAAppDelegate.m in Sources */,
 				C16A7B7A184DC9D3005DC504 /* KBAFinderController.m in Sources */,
 				D93C6A361859D94A0004E51A /* KBAAuth.m in Sources */,
+				A8A909E31887E29500435343 /* KBACreditRatingDaoRest.m in Sources */,
 				C1F12CBA185742EB001AA21E /* KBAExchangeRateDaoRest.m in Sources */,
 				3407E8E91838FD110045C014 /* KBAMasterViewController.m in Sources */,
 				A8F81C881844B51D00E55C75 /* Account.m in Sources */,
