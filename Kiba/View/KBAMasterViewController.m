@@ -35,6 +35,7 @@ static NSArray * navigationEntryKeys;
                             @"finance", @"private", @"about"];
 }
 
+
 - (void)awakeFromNib
 {
     self.clearsSelectionOnViewWillAppear = NO;
