@@ -10,6 +10,7 @@
 #import "User.h"
 #import "Address.h"
 #import "CreditRating.h"
+#import "Message.h"
 
 
 @interface Customer : User
@@ -29,6 +30,7 @@
 
 @property Address *address;
 @property NSArray *accounts;
+@property NSMutableArray *messages;
 @property CreditRating *creditRating;
 @property Boolean authenticated;
 

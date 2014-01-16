@@ -28,6 +28,7 @@
         self.ident = ident;
         self.address = address;
         self.accounts = accounts;
+        self.messages = nil;
         self.creditRating = creditRating;
         
         // Vllt auch als Parameter im Konstruktor

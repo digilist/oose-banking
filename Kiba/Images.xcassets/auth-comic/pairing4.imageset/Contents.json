@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "cool-75.png"
+      "filename" : "cool75.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "cool-150.png"
+      "filename" : "cool150.png"
     }
   ],
   "info" : {
