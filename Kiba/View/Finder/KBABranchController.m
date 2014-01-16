@@ -16,6 +16,12 @@
 #import "Branch.h"
 #import "Currency.h"
 
+
+//notification center to inform about chosen accounts in popover-table-view
+NSNotificationCenter *dismissNotifCenter;
+//global string identifier needed to send/recv notifications
+const NSString *dismissPopover = @"dismissPopover";
+
 @interface KBABranchController ()
 
 @property Branch *branch;
@@ -69,6 +75,15 @@
     
     [self respondToOrientation: UIApplication.sharedApplication.statusBarOrientation
         inAnimatedDurationTime: 0.0];
+    
+    
+    /*add observer/listener to receive message in popup-tableviews */
+    //needs to be created everytime with this controller(is freed everytime view gets closed)
+    dismissNotifCenter = [NSNotificationCenter new];
+    [dismissNotifCenter addObserver:self
+                           selector:@selector(closePopover)
+                               name:(NSString *)dismissPopover
+                             object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -123,8 +138,8 @@
  */
 - (IBAction)showAppointmentPopover:(KBAButton *)sender {
     [self showPopover:sender withPopoverController:self.appointmentContr
-         andDirection:UIPopoverArrowDirectionUp
-            andOffset:CGPointMake(60, 23)];
+         andDirection:UIPopoverArrowDirectionDown
+            andOffset:CGPointMake(60, 3)];
 }
 
 
@@ -150,6 +165,10 @@
                                         inView:self.view
                       permittedArrowDirections:popoverDirection
                                       animated:YES];
+}
+
+-(void)closePopover {
+    [self.popController dismissPopoverAnimated:YES];
 }
 
 @end
