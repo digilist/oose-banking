@@ -100,6 +100,10 @@
 
     
     NSLog(@"%f, %d, %d, %f" , self.rateSlider.value, self. length, self.sum, self.rate);
+    
+    
+    //UI Label Attributes
+    [self.creditSum setFont:[UIFont boldSystemFontOfSize:18]];
 
 }
 
