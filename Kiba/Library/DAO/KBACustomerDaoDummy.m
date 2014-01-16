@@ -7,6 +7,8 @@
 //
 
 #import "KBACustomerDaoDummy.h"
+#import "KBAAccountDao.h"
+#import "KBADependencyInjector.h"
 #import "Customer.h"
 #import "Account.h"
 @implementation KBACustomerDaoDummy
@@ -28,10 +30,8 @@
                                                    accounts: nil
                                                creditRating: nil];
     
-    Account *acc1 = [[Account alloc] initWithBalance:balacne overDraft:nil accountNr:accountnr name:@"Girokonto" owner:customer];
-    Account *acc2 = [[Account alloc] initWithBalance:balacne overDraft:nil accountNr:accountnr name:@"Sparkonto" owner:customer];
-    NSArray *accs = [[NSArray alloc] initWithObjects:(id) acc1, acc2, nil];
-    customer.accounts = accs;
+    id<KBAAccountDao> accountDao = [KBADependencyInjector getByKey:@"accountDao"];
+    customer.accounts = [accountDao getAccounts:customer];
     
     return customer;
                           

@@ -22,28 +22,20 @@
  *  @return An array of Transactions.
  */
 - (NSArray *)transactionsForCustomer:(Customer *)customer {
-
-    // Transactiondummy
-    NSNumber *amountA = [NSNumber numberWithInt:2];
-    NSDate *dateA = [NSDate dateWithTimeIntervalSinceNow:23489284];
-    
     // Get Accounts by a customer
     Account *acc1 = [customer.accounts firstObject];
     Account *acc2 = [customer.accounts objectAtIndex:1];
     
     // Create fake recipients
     Customer *custo2 = [[Customer alloc] initWithId:2 forename:@"Susanne" surname:@"Strebsam" password:nil];
-    
     Customer *custo3 = [[Customer alloc] initWithId:3 forename:@"Yolander" surname:@"Batzteki" password:nil];
-    
     Customer *custo4 = [[Customer alloc] initWithId:3 forename:@"Michael" surname:@"Schmidt" password:nil];
-    
     Customer *custo5 = [[Customer alloc] initWithId:3 forename:@"Ralf" surname:@"Reichelt" password:nil];
     
     
     
     // Interaktion Accounts
-    NSNumber *balanceA = [NSNumber numberWithInt:5000];
+    NSNumber *balanceA = [self generateRandomAmount];
     NSNumber *accountNrA = [NSNumber numberWithLongLong: 1004006661111];
     
     Account *accountA = [[Account alloc] initWithBalance: balanceA
@@ -52,7 +44,7 @@
                                                     name: @"mein Sparkonto"
                                                    owner: custo2];
     
-    NSNumber *balanceB = [NSNumber numberWithInt:453];
+    NSNumber *balanceB = [self generateRandomAmount];
     NSNumber *accountNrB = [NSNumber numberWithLongLong:10040066611145];
     
     Account *accountB = [[Account alloc] initWithBalance: balanceB
@@ -78,85 +70,78 @@
     Transaction *trans1 = [[Transaction alloc] initWithType:nil
                                                   recipient:accountB
                                                      sender:acc1
-                                                     amount:amountA
-                                                       date:dateA];
-    
-    
-    NSDate *dateB = [NSDate dateWithTimeIntervalSinceNow:-1212];
+                                                     amount:[self generateRandomAmount]
+                                                       date:[self generateRandomDate]];
     
     Transaction *trans2 = [[Transaction alloc] initWithType:nil
                                                   recipient:acc1
                                                      sender:accountA
                                                      amount:[self generateRandomAmount]
-                                                       date:dateB];
+                                                       date:[self generateRandomDate]];
     
     Transaction *trans3 = [[Transaction alloc] initWithType:nil
                                                   recipient:accountB
                                                      sender:acc1
                                                      amount:[self generateRandomAmount]
-                                                       date:dateB];
+                                                       date:[self generateRandomDate]];
     
     Transaction *trans4 = [[Transaction alloc] initWithType:nil
                                                   recipient:acc1
                                                      sender:accountC
                                                      amount:[self generateRandomAmount]
-                                                       date:dateB];
+                                                       date:[self generateRandomDate]];
     
     Transaction *trans5 = [[Transaction alloc] initWithType:nil
                                                   recipient:acc1
                                                      sender:accountD
                                                      amount:[self generateRandomAmount]
-                                                       date:dateB];
+                                                       date:[self generateRandomDate]];
     
     Transaction *trans6 = [[Transaction alloc] initWithType:nil
                                                   recipient:acc1
                                                      sender:accountD
                                                      amount:[self generateRandomAmount]
-                                                       date:dateB];
+                                                       date:[self generateRandomDate]];
     
     Transaction *trans7 = [[Transaction alloc] initWithType:nil
                                                   recipient:acc1
                                                      sender:acc2
                                                      amount:[self generateRandomAmount]
-                                                       date:dateB];
+                                                       date:[self generateRandomDate]];
     
     Transaction *trans8 = [[Transaction alloc] initWithType:nil
-                                                  recipient:acc2
+                                                  recipient:accountA
                                                      sender:acc1
                                                      amount:[self generateRandomAmount]
-                                                       date:dateB];
+                                                       date:[self generateRandomDate]];
     
     Transaction *trans9 = [[Transaction alloc] initWithType:nil
-                                                  recipient:acc1
+                                                  recipient:accountA
                                                      sender:acc2
                                                      amount:[self generateRandomAmount]
-                                                       date:dateB];
+                                                       date:[self generateRandomDate]];
     
     Transaction *trans10 = [[Transaction alloc] initWithType:nil
                                                   recipient:acc1
                                                      sender:acc2
                                                      amount:[self generateRandomAmount]
-                                                       date:dateB];
+                                                       date:[self generateRandomDate]];
     
     Transaction *trans11 = [[Transaction alloc] initWithType:nil
                                                   recipient:acc2
                                                      sender:acc1
                                                      amount:[self generateRandomAmount]
-                                                       date:dateB];
+                                                       date:[self generateRandomDate]];
     
     Transaction *trans12 = [[Transaction alloc] initWithType:nil
-                                                  recipient:acc2
-                                                     sender:acc1
+                                                  recipient:accountB
+                                                     sender:acc2
                                                      amount:[self generateRandomAmount]
-                                                       date:dateB];
-    
-
+                                                       date:[self generateRandomDate]];
     
     NSArray *transactions = @[trans1, trans2, trans3, trans4, trans5, trans6, trans7, trans8, trans9, trans10, trans11, trans12];
-    return transactions;
     
-
-                           
+    return transactions;
 }
 
 /**
@@ -164,13 +149,21 @@
  *
  *  @return a random number
  */
-- (NSNumber *)generateRandomAmount {
-    srand48(time(0));
-    int multi = arc4random_uniform(100000)+10;
-    double r = drand48();
+- (NSNumber *)generateRandomAmount
+{
+    double randomAmount = (arc4random() % 50000) / 100.0;
+    return [NSNumber numberWithDouble: randomAmount];
+}
 
-    double sum = (multi * r);
-    return [NSNumber numberWithDouble: sum];
+/**
+ *  Generates a random date in the last 30 days.
+ *
+ *  @return a date representation
+ */
+- (NSDate *)generateRandomDate
+{
+    int randomShift = -(arc4random() % 2592000);
+    return [[NSDate alloc] initWithTimeIntervalSinceNow:randomShift];
 }
 
 @end

@@ -11,6 +11,7 @@
 #import "KBAAccountDao.h"
 #import "KBATransactionDao.h"
 #import "KBAAuth.h"
+#import "Transaction.h"
 
 @interface KBADashboardController ()
 
@@ -90,8 +91,11 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
+    NSArray *transactions = [self.transactionDao transactionsForCustomer:self.auth.identity];
+
     [self passIdentityToWebView];
-    [self passTurnoverToWebView];
+    [self passTurnoverToWebViewWithTransactions:transactions];
+    [self passTransactionsToWebView:transactions];
 }
 
 /**
@@ -108,19 +112,180 @@
 }
 
 /**
- *  Passes the turn over to web view.
+ *  Finds an date amount array by transactions.
+ *
+ *  @param identity     <#identity description#>
+ *  @param transactions <#transactions description#>
+ *  @param accounts     <#accounts description#>
+ *
+ *  @return <#return value description#>
  */
-- (void)passTurnoverToWebView
+- (NSMutableDictionary *)dateAmountArraybyIdentity:(Customer *)identity
+                  andTransactions:(NSArray *)transactions
+                   havingAccounts:(NSMutableArray *)accounts
 {
-    NSArray *accounts = [self.accountDao getAccounts:self.auth.identity];
+    NSMutableDictionary *jsonableTransactions = [NSMutableDictionary new];
     
-    NSMutableArray *data = [NSMutableArray new];
-    for (Account *account in accounts) {
-        NSArray *accountData = [self.accountDao turnoverForAccount:account];
-        [data addObject:@{@"label": account.name, @"data": accountData}];
+    for (Transaction *transaction in transactions) {
+        NSString *key;
+        NSNumber *amount;
+        Account *account;
+        
+        if (identity == transaction.sender.owner) {
+            amount = transaction.amount;
+            account = transaction.sender;
+        }
+        else {
+            amount = [NSNumber numberWithDouble:-transaction.amount.doubleValue];
+            account = transaction.recipient;
+        }
+        
+        key = account.name;
+        
+        NSMutableArray *values = [jsonableTransactions valueForKey:key];
+        if (!values) {
+            values = [NSMutableArray new];
+            [accounts addObject:account];
+            [jsonableTransactions setValue:values forKey:key];
+        }
+        
+        [values addObject:@[@(transaction.date.timeIntervalSince1970 * 1000), amount]];
     }
     
-    [self passDataToWebView:@"lineChartIt" withParameter:data];
+    // Sort transactions
+    NSMutableDictionary *result = [NSMutableDictionary new];
+    for (NSString *key in jsonableTransactions) {
+        NSMutableArray *values = [jsonableTransactions valueForKey:key];
+        NSArray *sortedValues = [values sortedArrayUsingComparator:^NSComparisonResult(NSArray *a, NSArray *b) {
+            NSNumber *first, *second;
+            first = [a firstObject];
+            second = [b firstObject];
+            
+            return [second compare:first];
+        }];
+        [result setValue:[NSMutableArray arrayWithArray:sortedValues] forKey:key];
+    }
+    
+    return result;
+}
+
+/**
+ *  Passes the turn over to web view.
+ *
+ *  @param transactions
+ */
+- (void)passTurnoverToWebViewWithTransactions:(NSArray *)transactions
+{
+    NSMutableArray *accounts    = [NSMutableArray new];
+    NSMutableArray *results     = [NSMutableArray new];
+    
+    Customer *identity = self.auth.identity;
+    
+    // Finds transactions by an identity for transactions.
+    NSMutableDictionary *jsonableTransactions = [self dateAmountArraybyIdentity:identity andTransactions:transactions havingAccounts:accounts];
+    
+    double currentDate = floor([[NSDate new] timeIntervalSince1970] / 86400) * 86400000;
+    double lastDate = currentDate - 2592000000;
+    
+    // Inits the result dictionary with the account balance
+    for (Account *account in accounts) {
+        [results addObject:[NSMutableDictionary dictionaryWithDictionary:@{@"label": account.name,
+                             @"data": [NSMutableArray new],
+                             @"lastValue": account.balance}]];
+    }
+    
+    // Iterate over all dates
+    while (currentDate >= lastDate) {
+
+        // Iterate over all accounts
+        for (NSDictionary *accountDic in results) {
+            NSString *accountName = [accountDic valueForKey:@"label"];
+            NSNumber *lastValue = [accountDic valueForKey:@"lastValue"];
+            NSMutableArray *array = [jsonableTransactions valueForKey:accountName];
+            BOOL shallContinue;
+            
+            // Find all transactions of an account for currentDate
+            do {
+                NSArray *firstData = [array firstObject];
+                NSNumber *foundDate = [firstData firstObject];
+                shallContinue = NO;
+                
+                if (foundDate.doubleValue >= currentDate) {
+                    NSNumber *firstDataAmount = [firstData lastObject];
+                    lastValue = [NSNumber numberWithDouble:lastValue.doubleValue + firstDataAmount.doubleValue];
+                    
+                    [array removeObject:firstData];
+                    
+                    shallContinue = YES;
+                }
+            } while (shallContinue);
+            
+            // Add data entry for currentDate
+            NSMutableArray *data = [accountDic valueForKey:@"data"];
+            [data addObject:@[@(currentDate), lastValue]];
+            
+            [accountDic setValue:lastValue forKey:@"lastValue"];
+        }
+
+        currentDate -= 86400000;
+    }
+    
+    [self passDataToWebView:@"lineChartIt" withParameter:results];
+}
+
+/**
+ *  Passes Transactions to web view.
+ */
+- (void)passTransactionsToWebView:(NSArray *)transactions
+{
+    NSArray *sortedArray;
+    NSMutableArray *jsonableTransactions = [NSMutableArray arrayWithCapacity:transactions.count];
+    Customer *identity = self.auth.identity;
+    
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateFormat:@"dd.MM.yyyy"];
+    
+    NSNumberFormatter *numberFormatter = [NSNumberFormatter new];
+    [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [numberFormatter setMaximumFractionDigits:2];
+    [numberFormatter setMinimumFractionDigits:2];
+    [numberFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"de_DE"]];
+    
+    for (Transaction *transaction in transactions) {
+        NSString *name, *account;
+        NSNumber *debit, *credit;
+        
+        if (identity == transaction.recipient.owner) {
+            name = transaction.sender.owner.fullName;
+            account = transaction.recipient.name;
+            credit = transaction.amount;
+            debit = @0.0;
+        }
+        else {
+            name = transaction.recipient.owner.fullName;
+            account = transaction.sender.name;
+            debit = transaction.amount;
+            credit = @0.0;
+        }
+            
+        [jsonableTransactions addObject:@{
+            @"date": [dateFormatter stringFromDate:transaction.date],
+            @"account": account,
+            @"debit": [numberFormatter stringFromNumber:debit],
+            @"credit": [numberFormatter stringFromNumber:credit],
+            @"name": name
+        }];
+    }
+    
+    sortedArray = [jsonableTransactions sortedArrayUsingComparator:^NSComparisonResult(NSDictionary *a, NSDictionary *b) {
+        NSString *first, *second;
+        first = [a valueForKey:@"date"];
+        second = [b valueForKey:@"date"];
+        
+        return [[dateFormatter dateFromString:second] compare:[dateFormatter dateFromString:first]];
+    }];
+    
+    [self passDataToWebView:@"setTransactions" withParameter:sortedArray];
 }
 
 /**
@@ -138,7 +303,6 @@
     
     if (!error) {
         NSString *jsonString = [[NSString alloc] initWithData:json encoding:NSUTF8StringEncoding];
-        NSLog(@"%@", jsonString);
         NSString *jsCall = [NSString stringWithFormat:@"%@(%@)", method, jsonString];
         [self.webView stringByEvaluatingJavaScriptFromString:jsCall];
         
