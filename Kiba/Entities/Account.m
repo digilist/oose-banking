@@ -21,7 +21,7 @@
         self.balance = newBalance;
         self.overDraft = newOverDraft;
         self.accountNr = newAccountNr;
-        self.name = name;
+        self.description = name;
         self.owner = newOwner;
     }
     return self;

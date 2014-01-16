@@ -27,7 +27,7 @@
 }
 
 /**
- *  Returns the full name of the user.
+ *  Returns the full description of the user.
  *
  *  @return A string containing fore- and surname.
  */

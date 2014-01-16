@@ -20,26 +20,19 @@
  *  @return the accounts
  */
 - (NSArray *) getAccounts:(Customer *)customer {
-    NSNumber *balanceA = [NSNumber numberWithInt:5000];
-    NSNumber *accountNrA = [NSNumber numberWithLongLong: 1004006661111];
-    
-    Account *accountA = [[Account alloc] initWithBalance: balanceA
-                                               overDraft: 0
-                                               accountNr: accountNrA
+    Account *accountA = [[Account alloc] initWithBalance: @1000
+                                               overDraft: @0
+                                               accountNr: @1004006661111
                                                     name: @"mein Sparkonto"
                                                    owner: customer];
     
-    NSNumber *balanceB = [NSNumber numberWithInt:453];
-    NSNumber *accountNrB = [NSNumber numberWithLongLong:10040066611145];
-    
-    Account *accountB = [[Account alloc] initWithBalance: balanceB
-                                               overDraft: 0
-                                               accountNr: accountNrB
+    Account *accountB = [[Account alloc] initWithBalance: @500
+                                               overDraft: @0
+                                               accountNr: @10040066611145
                                                     name: @"mein Girokonto"
                                                    owner: customer];
     
-    NSArray *accounts = @[accountA, accountB];
-    return accounts;
+    return @[accountA, accountB];
 }
 
 /**
