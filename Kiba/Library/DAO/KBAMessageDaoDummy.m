@@ -14,11 +14,14 @@
 -(NSMutableArray *) messagesForCustomer:(Customer *)customer
 {
     Message *msg1, *msg2, *msg3;
-    NSString *loremIpsum = @"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.";
+    NSString *content1= @"Sehr geehrter Herr Mustermann, Sie können die von Ihnen gewünschten Sorten nun jederzeit in der Kiba Filiale am Informatikum abholen";
+    NSString *content2= @"Sehr geehrter Herr Mustermann, gerne trifft sich Ihr Berater Herr Müller am 30.1. um 14:15 in der KiBa-Filiale Binderstraße mit Ihnen.";
+    NSString *content3= @"Sehr geehrter Herr Mustermann, im Zuge der Anpassung des europäischen Leitzins können wir Ihnen nun verbesserte Konditionen anbieten. Im Finanzierungsrechner können Sie jetzt mit den entsprechend angepassten Zinsen eigene Finanzerungen planen.";
     
-    msg1 = [[Message alloc] initWithDescription:@"Ihre Sortenanfrage" content:loremIpsum date:[NSDate new] msgId:@1];
-    msg2 = [[Message alloc] initWithDescription:@"Ihre Terminanfrage" content:loremIpsum date:[NSDate new] msgId:@2];
-    msg3 = [[Message alloc] initWithDescription:@"Ihr verbesserter Zins" content:loremIpsum date:[NSDate new] msgId:@3];
+    
+    msg1 = [[Message alloc] initWithDescription:@"Ihre Sortenanfrage" content:content1 date:[NSDate new] msgId:@1];
+    msg2 = [[Message alloc] initWithDescription:@"Ihre Terminanfrage" content:content2 date:[NSDate new] msgId:@2];
+    msg3 = [[Message alloc] initWithDescription:@"Ihr verbesserter Zins" content:content3 date:[NSDate new] msgId:@3];
     
     return [NSMutableArray arrayWithArray:@[msg1, msg2, msg3]];
 }
