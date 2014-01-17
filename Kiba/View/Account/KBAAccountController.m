@@ -109,26 +109,30 @@
         //if not all fields valid
         if (!([self isValidInput:self.accountNr.text forTextfield:self.regexAccountNr]
              || [self isValidInput:self.blz.text forTextfield:self.regexBlz])) {
-            UIAlertView *alert = [[UIAlertView alloc]
-                                  initWithTitle:@"Eingaben prüfen"
-                                  message:@"Nicht alle Felder wurden korrekt ausgefüllt. Bitte prüfen sie ihre Eingaben."
-                                  delegate:nil
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles:nil];
-            [alert show];
+            KBAAlertView *alertView = [KBAAlertView new];
+            alertView.titleLabel.text = @"Eingaben prüfen";
+            alertView.subTextLabel.text = @"Bitte prüfen sie ihre Eingaben.";
+            
+            //set buttons
+            [alertView setButtonTitles:@[@"Ok"]];
+            
+            // And launch the dialog
+            [self dismissKeyboard]; //needed
+            [alertView show];
             [self.receiver becomeFirstResponder];
             return;
         }
         
         //if tan not correct
         else if ([self.tan1.text isEqualToString:@""]) {
-                UIAlertView *alert = [[UIAlertView alloc]
-                                      initWithTitle:@"TAN"
-                                      message:@"Die von ihnen eingegebene TAN war nicht korrekt."
-                                      delegate:nil
-                                      cancelButtonTitle:@"OK"
-                                        otherButtonTitles:nil];
-            [alert show];
+            KBAAlertView *alertView = [KBAAlertView new];
+            alertView.titleLabel.text = @"TAN";
+            alertView.subTextLabel.text = @"Die eingegebene TAN war nicht korrekt.";
+            [alertView setDelegate:(id)self];
+            //set buttons
+            [alertView setButtonTitles:@[@"OK"]];
+            [self dismissKeyboard]; //needed
+            [alertView show];
             [self.tan1 becomeFirstResponder];
             return;
         }
@@ -136,13 +140,15 @@
         //if tan correct & input valid, execute transaction
         else{
             [self.tan1 resignFirstResponder];
-            UIAlertView *alert = [[UIAlertView alloc]
-                                  initWithTitle:@"Überweisung"
-                                  message:@"Bitte bestätigen sie ihre Überweisung!"
-                                  delegate:self
-                                  cancelButtonTitle:@"Abbrechen"
-                                  otherButtonTitles:@"Bestätigen", nil];
-            [alert show];
+            KBAAlertView *alertView = [KBAAlertView new];
+            alertView.titleLabel.text = @"Überweisung";
+            alertView.subTextLabel.text = @"Bitte bestätigen sie ihre Überweisung!";
+            [alertView setDelegate:(id)self];
+            //set buttons
+            [alertView setButtonTitles:@[@"Abbrechen", @"Bestätigen"]];
+            
+            // And launch the dialog
+            [alertView show];
             return;
         }
     }
@@ -154,7 +160,7 @@
  *  @param alertView  the alert view
  *  @param buttonIndex clicked button
  */
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)kbaAlertView: (KBAAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
         self.tan1.hidden = YES;
@@ -166,6 +172,7 @@
         }
         [self.executeButton setTitle:@"Weiter" forState:UIControlStateNormal];
     }
+    [alertView close];
 }
 
 /**

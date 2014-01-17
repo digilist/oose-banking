@@ -8,6 +8,7 @@
 
 #import "KBATransContr.h"
 #import "KBAChooseAccountTableContr.h"
+#import "KBAAlertView.h"
 
 
 //private interface
@@ -227,12 +228,11 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
         
         //if check-y-center was dragged below label "..hier hinüberziehen"
         if (self.checkLine.center.y < self.checkImageView.center.y) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Bestätige Transaktion"
-                                                                message:@"Bitte bestätigen sie ihre Transaktion"
-                                                               delegate:self
-                                                      cancelButtonTitle:@"Abbrechen"
-                                                      otherButtonTitles:@"Bestätigen", nil];
-            [alertView setAlertViewStyle:UIAlertViewStyleDefault];
+            KBAAlertView *alertView = [KBAAlertView new];
+            alertView.titleLabel.text = @"Transaktion";
+            alertView.subTextLabel.text = @"Bitte bestätigen sie ihre Transaktion.";
+            //set buttons
+            [alertView setButtonTitles:@[@"Abbrechen", @"Bestätigen"]];
             [alertView show];
         }
         

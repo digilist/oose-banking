@@ -9,8 +9,10 @@
 #import "KBAViewController.h"
 #import "JVFloatLabeledTextField.h"
 #import "TPKeyboardAvoidingScrollView.h"
+#import "KBAAlertView.h"
 
-@interface KBAAccountController : KBAViewController
+@interface KBAAccountController : KBAViewController <KBAAlertViewDelegate>
+
 @property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *receiver;
 @property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *accountNr;
 @property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *blz;

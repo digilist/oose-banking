@@ -30,6 +30,7 @@
 		2139AC5F18610DB0008FB712 /* KBAFlatDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2139AC5E18610DB0008FB712 /* KBAFlatDatePicker.m */; };
 		2139AC6118610DD3008FB712 /* KBAChooseAccountTableContr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2139AC6018610DD3008FB712 /* KBAChooseAccountTableContr.xib */; };
 		2139AC6318610DF1008FB712 /* KBAChooseAccountTableContr.m in Sources */ = {isa = PBXBuildFile; fileRef = 2139AC6218610DF1008FB712 /* KBAChooseAccountTableContr.m */; };
+		213BC4741889E5F300E12598 /* KBAAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BC4731889E5F300E12598 /* KBAAlertView.m */; };
 		21BB5D1D187D5FC400460EE9 /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BB5D1B187D5FC400460EE9 /* JVFloatLabeledTextField.m */; };
 		21BBE56618895E350014DCF2 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BBE56418895E350014DCF2 /* TPKeyboardAvoidingScrollView.m */; };
 		21BBE56718895E350014DCF2 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BBE56518895E350014DCF2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
@@ -160,6 +161,8 @@
 		2139AC6018610DD3008FB712 /* KBAChooseAccountTableContr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAChooseAccountTableContr.xib; path = View/SelfService/KBAChooseAccountTableContr.xib; sourceTree = "<group>"; };
 		2139AC6218610DF1008FB712 /* KBAChooseAccountTableContr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAChooseAccountTableContr.m; path = View/SelfService/KBAChooseAccountTableContr.m; sourceTree = "<group>"; };
 		2139AC6418610E00008FB712 /* KBAChooseAccountTableContr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KBAChooseAccountTableContr.h; path = View/SelfService/KBAChooseAccountTableContr.h; sourceTree = "<group>"; };
+		213BC4721889E5F300E12598 /* KBAAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAAlertView.h; path = "View/Custom - GUI/KBAAlertView.h"; sourceTree = "<group>"; };
+		213BC4731889E5F300E12598 /* KBAAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAAlertView.m; path = "View/Custom - GUI/KBAAlertView.m"; sourceTree = "<group>"; };
 		21BB5D19187D5FC400460EE9 /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JVFloatLabeledTextField.h; path = "View/Custom - GUI/JVFloatLabeledTextField.h"; sourceTree = "<group>"; };
 		21BB5D1B187D5FC400460EE9 /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JVFloatLabeledTextField.m; path = "View/Custom - GUI/JVFloatLabeledTextField.m"; sourceTree = "<group>"; };
 		21BBE56218895E350014DCF2 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingScrollView.h; path = View/TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
@@ -377,6 +380,8 @@
 				0AAEEE2C187BED9F00C1F767 /* SVProgressHUD.m */,
 				0AAEEE2D187BED9F00C1F767 /* SVProgressHUDViewController.h */,
 				0AAEEE2E187BED9F00C1F767 /* SVProgressHUDViewController.m */,
+				213BC4721889E5F300E12598 /* KBAAlertView.h */,
+				213BC4731889E5F300E12598 /* KBAAlertView.m */,
 				0AAEEE32187C173500C1F767 /* SVProgressHUD.bundle */,
 			);
 			name = "Custom - GUI";
@@ -886,6 +891,7 @@
 				C16A7B7A184DC9D3005DC504 /* KBAFinderController.m in Sources */,
 				D93C6A361859D94A0004E51A /* KBAAuth.m in Sources */,
 				A8A909E31887E29500435343 /* KBACreditRatingDaoRest.m in Sources */,
+				213BC4741889E5F300E12598 /* KBAAlertView.m in Sources */,
 				C1F12CBA185742EB001AA21E /* KBAExchangeRateDaoRest.m in Sources */,
 				3407E8E91838FD110045C014 /* KBAMasterViewController.m in Sources */,
 				A8F81C881844B51D00E55C75 /* Account.m in Sources */,
