@@ -31,6 +31,8 @@
 		2139AC6118610DD3008FB712 /* KBAChooseAccountTableContr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2139AC6018610DD3008FB712 /* KBAChooseAccountTableContr.xib */; };
 		2139AC6318610DF1008FB712 /* KBAChooseAccountTableContr.m in Sources */ = {isa = PBXBuildFile; fileRef = 2139AC6218610DF1008FB712 /* KBAChooseAccountTableContr.m */; };
 		21BB5D1D187D5FC400460EE9 /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BB5D1B187D5FC400460EE9 /* JVFloatLabeledTextField.m */; };
+		21BBE56618895E350014DCF2 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BBE56418895E350014DCF2 /* TPKeyboardAvoidingScrollView.m */; };
+		21BBE56718895E350014DCF2 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BBE56518895E350014DCF2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		21F8EE89187DFA1D00025C42 /* KBAButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F8EE88187DFA1D00025C42 /* KBAButton.m */; };
 		3407E8E91838FD110045C014 /* KBAMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3407E8E71838FD110045C014 /* KBAMasterViewController.m */; };
 		34199A881841710C00F574D5 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 34199A871841710C00F574D5 /* Assets */; };
@@ -160,6 +162,10 @@
 		2139AC6418610E00008FB712 /* KBAChooseAccountTableContr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KBAChooseAccountTableContr.h; path = View/SelfService/KBAChooseAccountTableContr.h; sourceTree = "<group>"; };
 		21BB5D19187D5FC400460EE9 /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JVFloatLabeledTextField.h; path = "View/Custom - GUI/JVFloatLabeledTextField.h"; sourceTree = "<group>"; };
 		21BB5D1B187D5FC400460EE9 /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JVFloatLabeledTextField.m; path = "View/Custom - GUI/JVFloatLabeledTextField.m"; sourceTree = "<group>"; };
+		21BBE56218895E350014DCF2 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingScrollView.h; path = View/TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		21BBE56318895E350014DCF2 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+TPKeyboardAvoidingAdditions.h"; path = "View/UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		21BBE56418895E350014DCF2 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingScrollView.m; path = View/TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		21BBE56518895E350014DCF2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+TPKeyboardAvoidingAdditions.m"; path = "View/UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		21F8EE87187DFA1D00025C42 /* KBAButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAButton.h; path = View/KBAButton.h; sourceTree = "<group>"; };
 		21F8EE88187DFA1D00025C42 /* KBAButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAButton.m; path = View/KBAButton.m; sourceTree = "<group>"; };
 		3407E8CB1837BD980045C014 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -470,6 +476,10 @@
 				0A433FF51885575A00F1DF5E /* KBAAuthSuccessPopController.xib */,
 				A8B6934E1885501300AD8DA3 /* KBAUISlider.h */,
 				A8B6934F1885501300AD8DA3 /* KBAUISlider.m */,
+				21BBE56218895E350014DCF2 /* TPKeyboardAvoidingScrollView.h */,
+				21BBE56418895E350014DCF2 /* TPKeyboardAvoidingScrollView.m */,
+				21BBE56318895E350014DCF2 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				21BBE56518895E350014DCF2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -845,6 +855,7 @@
 				D93C6A481859DA800004E51A /* KBAAccountDaoRest.m in Sources */,
 				A8610F181860830600E3093E /* KBATransactionDaoDummy.m in Sources */,
 				A8F81C891844B51D00E55C75 /* Address.m in Sources */,
+				21BBE56618895E350014DCF2 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				D93C6A2B1859D8E90004E51A /* KBATransTableContr.m in Sources */,
 				D93C6A221859D8E90004E51A /* KBADocTableContr.m in Sources */,
 				D93C6A231859D8E90004E51A /* KBASelfServContr.m in Sources */,
@@ -865,6 +876,7 @@
 				21BB5D1D187D5FC400460EE9 /* JVFloatLabeledTextField.m in Sources */,
 				2139AC5F18610DB0008FB712 /* KBAFlatDatePicker.m in Sources */,
 				0AABAA30187E892B00E067EE /* KBAAuthAdvantagesController.m in Sources */,
+				21BBE56718895E350014DCF2 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				0AF730F41887D4C600733AB2 /* KBAPrivateController.m in Sources */,
 				0AAEEE2F187BED9F00C1F767 /* SVProgressHUD.m in Sources */,
 				D93C6A471859DA800004E51A /* KBAAccountDaoDummy.m in Sources */,
