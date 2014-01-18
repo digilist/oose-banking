@@ -58,6 +58,8 @@
     
     _tan1.hidden = YES;
     [_tan1 setTintColor:KBATintColor];
+    //set textfield to secure/password type
+    _tan1.secureTextEntry = YES;
     _tan1.placeholder = @"Bitte geben Sie die TAN an";
  
     //to dismiss keyboard if user taps outside of textfields
@@ -97,7 +99,6 @@
     //if "Weiter" was pressed progress/set focus to tan textfield
     if ([sender.titleLabel.text isEqualToString:@"Weiter"]) {
         self.tan1.hidden = NO;
-        self.tanLabel.hidden = NO;
         [sender setTitle:@"Bestätigen" forState:UIControlStateNormal];
         [self.tan1 becomeFirstResponder];
         return;
@@ -109,70 +110,80 @@
         //if not all fields valid
         if (!([self isValidInput:self.accountNr.text forTextfield:self.regexAccountNr]
              || [self isValidInput:self.blz.text forTextfield:self.regexBlz])) {
+            
+            [self dismissKeyboard];
+            //prepare alertview
             KBAAlertView *alertView = [KBAAlertView new];
             alertView.titleLabel.text = @"Eingaben prüfen";
             alertView.subTextLabel.text = @"Bitte prüfen sie ihre Eingaben.";
-            
             //set buttons
             [alertView setButtonTitles:@[@"Ok"]];
             
-            // And launch the dialog
-            [self dismissKeyboard]; //needed
+            //block triggered when button is pressed in alertview
+            void(^respondToClick)(KBAAlertView *, NSInteger) =
+            ^(KBAAlertView * alertV, NSInteger bIndex) {
+                //show keyboard, focus receiver textfield
+                [self.receiver becomeFirstResponder];
+            };
+            //–––––––––––––––––––––––––––––––––––––––––
+            
+            alertView.onButtonTouchUpInside = respondToClick;
             [alertView show];
-            [self.receiver becomeFirstResponder];
             return;
         }
         
         //if tan not correct
         else if ([self.tan1.text isEqualToString:@""]) {
+            [self dismissKeyboard];
+            //prepare alertview
             KBAAlertView *alertView = [KBAAlertView new];
             alertView.titleLabel.text = @"TAN";
             alertView.subTextLabel.text = @"Die eingegebene TAN war nicht korrekt.";
-            [alertView setDelegate:(id)self];
             //set buttons
             [alertView setButtonTitles:@[@"OK"]];
-            [self dismissKeyboard]; //needed
+            
+            //block triggered when button is pressed in alertview
+            void(^respondToClick)(KBAAlertView *, NSInteger) =
+            ^(KBAAlertView * alertV, NSInteger bIndex) {
+                //show keyboard, focus tan textfield
+                [self.tan1 becomeFirstResponder];
+            };
+            //–––––––––––––––––––––––––––––––––––––––––
+            
+            alertView.onButtonTouchUpInside = respondToClick;
             [alertView show];
-            [self.tan1 becomeFirstResponder];
             return;
         }
         
         //if tan correct & input valid, execute transaction
         else{
-            [self.tan1 resignFirstResponder];
+            [self dismissKeyboard];
+            //prepare alertview
             KBAAlertView *alertView = [KBAAlertView new];
             alertView.titleLabel.text = @"Überweisung";
             alertView.subTextLabel.text = @"Bitte bestätigen sie ihre Überweisung!";
-            [alertView setDelegate:(id)self];
             //set buttons
             [alertView setButtonTitles:@[@"Abbrechen", @"Bestätigen"]];
             
-            // And launch the dialog
+            //block triggered when button is pressed in alertview
+            void(^respondToClick)(KBAAlertView *, NSInteger) =
+            ^(KBAAlertView * alertV, NSInteger bIndex) {
+                if (bIndex == 1) {
+                    self.tan1.hidden = YES;
+                    for (JVFloatLabeledTextField *textfield in self.scrollView.subviews ) {
+                        if ([textfield isKindOfClass:[UITextField class]]) {
+                            textfield.text = @"";
+                        }
+                    }
+                    [self.executeButton setTitle:@"Weiter" forState:UIControlStateNormal];
+                }
+            };
+            //–––––––––––––––––––––––––––––––––––––––––
+            alertView.onButtonTouchUpInside = respondToClick;
             [alertView show];
             return;
         }
     }
-}
-
-/**
- *  Respond to succeeded transaction, after user clicked "ok" in alertview
- *
- *  @param alertView  the alert view
- *  @param buttonIndex clicked button
- */
-- (void)kbaAlertView: (KBAAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 1) {
-        self.tan1.hidden = YES;
-        self.tanLabel.hidden = YES;
-        for (JVFloatLabeledTextField *textfield in self.scrollView.subviews ) {
-            if ([textfield isKindOfClass:[UITextField class]]) {
-                textfield.text = @"";
-            }
-        }
-        [self.executeButton setTitle:@"Weiter" forState:UIControlStateNormal];
-    }
-    [alertView close];
 }
 
 /**

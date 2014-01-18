@@ -11,7 +11,7 @@
 #import "TPKeyboardAvoidingScrollView.h"
 #import "KBAAlertView.h"
 
-@interface KBAAccountController : KBAViewController <KBAAlertViewDelegate>
+@interface KBAAccountController : KBAViewController
 
 @property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *receiver;
 @property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *accountNr;
@@ -20,14 +20,12 @@
 @property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *use;
 @property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *tan1;
 @property (nonatomic, retain) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
-@property (nonatomic,weak) IBOutlet UILabel* tanLabel;
+//@property (nonatomic,weak) IBOutlet UILabel* tanLabel;
 @property (nonatomic,weak) IBOutlet UIButton* executeButton;
 
 @property NSMapTable* regexMap;
 
-
 -(IBAction)progressTransaction:(KBAButton *)sender;
-
 -(IBAction)coloringField:(id)sender;
 
 @end

@@ -16,8 +16,6 @@
     self = [super initWithFrame:frame];
     if (self) {
        self.tintColor = KBATintColor;
-//     [self setMinimumTrackTintColor: KBATintColor];
-        //[self setMaximumTrackTintColor:KBATintColor];
     }
     return self;
 }
@@ -29,13 +27,4 @@
     }
     return self;
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
-
 @end
