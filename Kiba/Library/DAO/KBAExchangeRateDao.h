@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Account.h"
 
 @protocol KBAExchangeRateDao <NSObject>
 
 - (NSArray*) getExchangeRates;
+
+- (void) transferWithSender: (Account *) sender ToRecipient: (Account *) recipient withAmount: (NSNumber *) amount;
 
 @end

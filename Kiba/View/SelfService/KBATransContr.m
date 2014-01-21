@@ -10,6 +10,11 @@
 #import "KBAChooseAccountTableContr.h"
 #import "KBAAlertView.h"
 
+#import "KBATransactionDao.h"
+#import "KBADependencyInjector.h"
+
+#import "KBAAccountDao.h"
+#import "KBAAuth.h"
 
 //private interface
 @interface KBATransContr()
@@ -35,6 +40,11 @@
 @property (nonatomic, weak) IBOutlet UITextField *amountField;
 
 @property (nonatomic, strong) IBOutlet UIPanGestureRecognizer *panRecognizer;
+
+@property (nonatomic, strong) Account *sender;
+@property (nonatomic, strong) Account *recipient;
+@property (nonatomic, strong) NSNumber *selectedAmount;
+
 @end
 
 //notification center to inform about chosen accounts in popover-table-view
@@ -58,6 +68,7 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
                                              selector:@selector(respondToChosenAccountEntry:)
                                                  name:(NSString *)accountEntryChosen
                                                object:nil];
+
     }
     return self;
 }
@@ -98,6 +109,23 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
     self.dateLabel.font = chequeFont;
     self.amountField.font = chequeFont;
     self.destinationAccountLabel.font = chequeFont;
+    
+    // set initial accounts
+    id<KBAAccountDao> accountDao = [KBADependencyInjector getByKey:@"accountDao"];
+    KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
+    Customer *customer = [auth identity];
+    NSArray *accounts = [accountDao getAccounts:customer];
+    
+    // source account
+    self.labelToSet = self.sourceAccountLabel;
+    [transferChooseAccountNotifCenter postNotificationName:(NSString *) accountEntryChosen
+                                                    object:[accounts objectAtIndex:0]];
+    
+    
+    // recipient
+    self.labelToSet = self.destinationAccountLabel;
+    [transferChooseAccountNotifCenter postNotificationName:(NSString *) accountEntryChosen
+                                                    object:[accounts objectAtIndex:1]];
 }
 
 -(void)respondToOrientation:(UIInterfaceOrientation)orientation
@@ -145,7 +173,14 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
 -(void)respondToChosenAccountEntry:(NSNotification *)notification
 {
     [self.popController dismissPopoverAnimated:YES];
-    self.labelToSet.text = [NSString stringWithFormat:@"%@",(NSString*)[notification object]];
+    
+    Account *account = [notification object];
+    self.labelToSet.text = [NSString stringWithFormat:@"%@",account.description];
+    
+    if(self.labelToSet == self.sourceAccountLabel) // decide which account has been selected
+        self.sender = account;
+    else
+        self.recipient = account;
 }
 
 /**
@@ -233,6 +268,7 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
             alertView.subTextLabel.text = @"Bitte bestätigen sie ihre Transaktion.";
             //set buttons
             [alertView setButtonTitles:@[@"Abbrechen", @"Bestätigen"]];
+            alertView.delegate = self;
             [alertView show];
         }
         
@@ -245,6 +281,16 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
             }
             [self.checkElementsPositions removeAllObjects];
         }];
+    }
+}
+
+- (void)kbaAlertView: (KBAAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(buttonIndex == 1)
+    {
+        id<KBATransactionDao> transactionDao = [KBADependencyInjector getByKey:@"transDao"];
+        [transactionDao transferWithSender:self.sender ToRecipient:self.recipient withAmount:self.selectedAmount];
+        
+        [alertView close];
     }
 }
 
@@ -273,6 +319,9 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
     //spell out single parts
     NSString *wordEuro = [numberFormatter stringFromNumber:euroValue];
     NSString *wordCent = [numberFormatter stringFromNumber:centValue];
+    
+    self.selectedAmount = [NSNumber numberWithDouble:[sender.text doubleValue]];
+    NSLog(@"%f", [self.selectedAmount doubleValue]);
     
     //combine parts and set label-text
     self.amountLabel.text = [NSString stringWithFormat:@"%@ Euro und %@ Cent", wordEuro, wordCent];
