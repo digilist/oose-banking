@@ -6,43 +6,68 @@
 //  Copyright (c) 2013 KiBa App. All rights reserved.
 //
 
+#import "KBAMasterViewController.h"
 #import "KBAAuthController.h"
 #import "SVProgressHUDViewController.h"
 #import "SVProgressHUD.h"
 #import "JVFloatLabeledTextField.h"
 #import "KBAAuthAdvantagesController.h"
 #import "KBADependencyInjector.h"
-#import "Customer.h"
 #import "KBAAuth.h"
-
-//const static CGFloat kJVFieldHeight = 44.0f;
-//const static CGFloat kJVFieldHMargin = 10.0f;
-//const static CGFloat kJVFieldFontSize = 16.0f;
-//const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
+#import "TPKeyboardAvoidingScrollView.h"
 
 @interface KBAAuthController ()
 
 @property (strong) UIPopoverController *popController;
 @property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *authCodeField;
 @property (nonatomic, weak) IBOutlet UIView *comicView;
+@property (nonatomic, weak) IBOutlet KBAButton *validateButton;
 @property (nonatomic, strong) KBAAuthAdvantagesController *advantagesController;
 @property (atomic, strong) NSTimer *timer;
-//@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, retain) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
 
 - (IBAction)showAuthPopOver:(UIButton*)sender;
 @end
 
 @implementation KBAAuthController
 
-
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
+    Customer *customer = [auth identity];
+    if (customer.authenticated) {
+        [self setAuthenticated];
+    }
+    //init scrollview
+    [self.scrollView contentSizeToFit];
+    //set initial scroll position
+    CGPoint bottomOffset = CGPointMake(0, [self.scrollView contentSize].height);
+    [self.scrollView setContentOffset:bottomOffset animated:YES];
+    //set textfield to secure/password type
+    self.authCodeField.secureTextEntry = YES;
+    
+    self.advantagesController = [KBAAuthAdvantagesController new];
+    //setup titlefield properties
+    JVFloatLabeledTextField *titleField = self.authCodeField;
+    titleField.placeholder = @"Authentifikationscode";
+    titleField.floatingLabel.text = @"Authentifikationscode";
+    [titleField setup];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+}
 
 /**
  *  Validates the auth code.
  *
  *  @param sender
  */
-- (IBAction)validate:(id)sender {
+- (IBAction)authenticate:(id)sender {
     
+    [self dismissKeyboard];
     NSRunLoop *r = [NSRunLoop mainRunLoop];
     self.timer = [NSTimer timerWithTimeInterval:0.01
                                          target:self
@@ -50,19 +75,6 @@
                                        userInfo:nil
                                         repeats:YES];
     [r addTimer: self.timer forMode:NSDefaultRunLoopMode];
-}
-
-
-/**
- *  Shows the auth info popover.
- *
- *  @param sender
- */
-- (IBAction)showAuthPopOver:(UIButton*)sender
-{
-    [self showPopover:sender withPopoverController: self.advantagesController
-            andDirection:UIPopoverArrowDirectionAny
-            andOffset:CGPointMake(0, 15)];
 }
 
 /**
@@ -83,134 +95,56 @@
         [self.timer invalidate];
         
         if ([self.authCodeField.text isEqualToString: @"123"]){
-            [SVProgressHUD showSuccessWithStatus:@"Erfoglreich" ];
+            [SVProgressHUD showSuccessWithStatus:@"Erfolgreich" ];
             [self dismissKeyboard];
             
             KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
             Customer *customer = [auth identity];
             customer.authenticated = true;
             [super setBackBarButton];
+            [self setAuthenticated];
         }
         else{
             [SVProgressHUD showErrorWithStatus:@"Fehlgeschlagen!"];
+            [self.authCodeField becomeFirstResponder];
         }
     }
 }
 
-- (void)viewDidLoad
+/**
+ *  Shows the auth info popover.
+ *
+ *  @param sender
+ */
+- (IBAction)showAuthPopOver:(UIButton*)sender
 {
-    [super viewDidLoad];
+    [self showPopover:sender withPopoverController: self.advantagesController
+            andDirection:UIPopoverArrowDirectionAny
+            andOffset:CGPointMake(0, 15)];
+}
 
-    self.advantagesController = [KBAAuthAdvantagesController new];
-
-    //setup titlefield properties
-    JVFloatLabeledTextField *titleField = self.authCodeField;
+/**
+ *  Setup view regarding authentication.
+ */
+-(void)setAuthenticated
+{
+    [self.validateButton setTitle:@"Authentifiziert!" forState:UIControlStateDisabled];
+    self.validateButton.enabled = NO;
+    [self.validateButton setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
+    self.authCodeField.userInteractionEnabled = NO;
+    self.authCodeField.text = @"supersecurelength";
     
-    titleField.placeholder = @"Validierungscode";
-    titleField.floatingLabel.text = @"Validierungscode";
-    [titleField setup];
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissKeyboard)];
-    [self.view addGestureRecognizer:tap];
-
-	
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardDidShow:)
-                                                 name:UIKeyboardDidShowNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide:)
-                                                 name:UIKeyboardDidHideNotification
-                                               object:nil];
+    // change locked icon in navigation
+    UINavigationController *navController = self.splitViewController.viewControllers[0];
+    KBAMasterViewController *controller = (KBAMasterViewController *)navController.topViewController;
+    [controller.tableView reloadData];
 }
 
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-                                duration:(NSTimeInterval)duration
-{
-}
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
-//    if ([self.authCodeField isFirstResponder]) {
-//        int height = 0;
-//        
-//        if ((UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationLandscapeLeft
-//            || UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationLandscapeRight)) {
-//            height = 200;
-//        }
-//        
-//        [UIView beginAnimations:nil context:nil];
-//        [UIView setAnimationDuration:0.3];
-//        [UIView setAnimationDelay:0.1];
-//        [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
-//        
-//        self.view.frame = CGRectOffset(self.view.frame, 0, height);
-//        
-//        [UIView commitAnimations];
-//    }
-}
 
-//TODO: remove observer view did close
-
-bool keyboardShown;
-
--(void)keyboardDidShow:(NSNotification *)note
-{
-//    keyboardShown = YES;
-//    NSDictionary *userInfo = [note userInfo];
-//    CGSize kbSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-//    
-//    int height = 0;
-//    
-//    if (UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationLandscapeLeft
-//        || UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationLandscapeRight
-//        || UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationUnknown) {
-//        height = kbSize.width;
-//    }
-//
-//    
-//    [UIView beginAnimations:nil context:nil];
-//    [UIView setAnimationDuration:0.3];
-//    [UIView setAnimationDelay:0.1];
-//    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
-//    
-//    self.view.frame = CGRectOffset(self.view.frame, 0, -height);
-//    
-//    [UIView commitAnimations];
-}
-
--(void)keyboardWillHide:(NSNotification *)note
-{
-//    keyboardShown = NO;
-//    NSDictionary *userInfo = [note userInfo];
-//    CGSize kbSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-//    
-//    int height = 0;
-//    if (UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationLandscapeLeft
-//        || UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationLandscapeRight
-//        || UIApplication.sharedApplication.statusBarOrientation == UIDeviceOrientationUnknown) {
-//        height = kbSize.width;
-//    }
-//    [UIView beginAnimations:nil context:nil];
-//    [UIView setAnimationDuration:0.3];
-//    [UIView setAnimationDelay:0.1];
-//    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
-//    
-//    self.view.frame = CGRectOffset(self.view.frame, 0, height);
-//    
-//    [UIView commitAnimations];
-}
 
 -(void)dismissKeyboard
 {
     [self.authCodeField resignFirstResponder];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
 }
 
 /**

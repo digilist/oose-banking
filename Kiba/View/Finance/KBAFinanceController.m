@@ -37,6 +37,9 @@
 @property NSMutableArray *sliderSteps;
 
 
+extern NSNotificationCenter *dismissNotifCenter;
+const extern NSString *dismissPopover;
+
 
 //popover
 @property (strong) UIPopoverController *popController;
@@ -107,6 +110,14 @@
     
     //UI Label Attributes
     [self.creditSum setFont:[UIFont boldSystemFontOfSize:18]];
+    
+    /*add observer/listener to receive message in popup-tableviews */
+    //needs to be created everytime with this controller(is freed everytime view gets closed)
+    dismissNotifCenter = [NSNotificationCenter new];
+    [dismissNotifCenter addObserver:self
+                           selector:@selector(closePopover)
+                               name:(NSString *)dismissPopover
+                             object:nil];
 
 }
 
@@ -133,7 +144,7 @@
 
 
     
-    self.creditInterest =  [[KBADependencyInjector getByKey:@"customerDao"] getCustomer:nil :nil].creditRating.financingMatrix ;
+    self.creditInterest =  [[KBADependencyInjector getByKey:@"customerDao"] customerWithName:nil andPassword:nil].creditRating.financingMatrix ;
 }
 /**
  *  updates the label values of given slider.
@@ -324,6 +335,8 @@
                                       animated:YES];
 }
 
-
+-(void)closePopover {
+    [self.popController dismissPopoverAnimated:YES];
+}
 
 @end

@@ -12,6 +12,13 @@
 
 @protocol KBAMessageDao <NSObject>
 
-- (NSMutableArray *) messagesForCustomer: (Customer *)customer;
+/**
+ *  Returns messages for a customer.
+ *
+ *  @param customer The customer to check.
+ *
+ *  @return A bunch of messages.
+ */
+- (NSMutableArray *)messagesForCustomer:(Customer *)customer;
 
 @end

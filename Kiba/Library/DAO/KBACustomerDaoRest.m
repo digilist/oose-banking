@@ -10,7 +10,7 @@
 
 @implementation KBACustomerDaoRest
 
-- (Customer *) getCustomer: (NSString *) name :(NSString* ) password {
+- (Customer *) customerWithName: (NSString *) name andPassword:(NSString* ) password {
     return nil;
 }
 

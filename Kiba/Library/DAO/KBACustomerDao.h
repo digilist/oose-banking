@@ -12,7 +12,7 @@
 @protocol KBACustomerDao <NSObject>
 
 
-- (Customer *) getCustomer: (NSString*) name :(NSString*) password;
+- (Customer *) customerWithName:(NSString*)name andPassword:(NSString*)password;
 
 
 @end

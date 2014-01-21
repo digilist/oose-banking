@@ -37,7 +37,7 @@
 -(BOOL) login:(NSString *)name withPassword:(NSString *)password {
     
     id<KBACustomerDao> customerDao = [KBADependencyInjector getByKey:@"customerDao"];
-    self.identity = [customerDao getCustomer:@"mustermann" : @"test"];
+    self.identity = [customerDao customerWithName:@"mustermann" andPassword: @"test"];
     return YES;
 }
 
