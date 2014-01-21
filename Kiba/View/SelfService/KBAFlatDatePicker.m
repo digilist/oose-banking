@@ -496,6 +496,10 @@
 	cell.textLabel.font = self.font;
 	cell.textLabel.textColor = self.textColor;
     
+//to ignore unsigned int converted to unsigned long warning
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wall"
+    
 	if (collectionView == self.scrollerYear) {
 		cell.textLabel.text = [NSString stringWithFormat:@"%u", (self.yearRange.location + indexPath.row)];
 	}
@@ -514,6 +518,7 @@
 	else if (collectionView == self.scrollerMinute) {
 		cell.textLabel.text = [NSString stringWithFormat:@"%02ld", (long)indexPath.row];
 	}
+#pragma clang diagnostic pop
 	else {
 		NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
 		formatter.locale = [NSLocale currentLocale];
