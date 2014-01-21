@@ -90,27 +90,22 @@ const extern NSString *dismissPopover;
     
     [self calculateCreditSum];
     [self calculateRate];
-    NSLog(@"%f" ,self.rate);
+   
     [self calculateInterest];
     //[self calculateRateLimits];
     
     self.rateSlider.minimumValue = 0;
     self.rateSlider.maximumValue = self.lengthSlider.maximumValue - self.lengthSlider.minimumValue;
-    NSLog(@"%f, %f",self.rateSlider.minimumValue, self.rateSlider.maximumValue );
+   
 
     
     self.rate = [[self.sliderSteps objectAtIndex:self.length] floatValue] ;
     
 
     
-        for (NSNumber *a in self.sliderSteps) {
-            NSLog(@"%f %d",a.floatValue, self.sliderSteps.count);
-    
-    }
-    
 
     
-    NSLog(@"%f, %d, %d, %f" , self.rateSlider.value, self. length, self.sum, self.rate);
+   
     
     
     //UI Label Attributes
@@ -198,8 +193,7 @@ const extern NSString *dismissPopover;
     self.length = self.lengthSlider.maximumValue - (int) self.rateSlider.value;;
     self.lengthSlider.value = self.length;
     [self updateValue:self.lengthSlider];
-     NSLog(@"%f, %d %f" , self.rate,self.length, self.rateSlider.value);
-    
+       
     
         
     

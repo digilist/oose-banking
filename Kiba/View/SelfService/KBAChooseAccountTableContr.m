@@ -46,7 +46,7 @@ extern NSNotificationCenter *transferChooseAccountNotifCenter;
 {
     Account *account = [self.accounts objectAtIndex: indexPath.row];
     [transferChooseAccountNotifCenter postNotificationName:(NSString *) accountEntryChosen
-                                                    object:account.description];
+                                                    object:account];
 }
 
 /**

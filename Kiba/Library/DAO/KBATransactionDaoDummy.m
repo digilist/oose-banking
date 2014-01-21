@@ -12,6 +12,12 @@
 #import "KBAAuth.h"
 #import "KBADependencyInjector.h"
 
+@interface KBATransactionDaoDummy ()
+
+@property NSMutableArray *transactions;
+
+@end
+
 @implementation KBATransactionDaoDummy
 
 /**
@@ -22,124 +28,141 @@
  *  @return An array of Transactions.
  */
 - (NSArray *)transactionsForCustomer:(Customer *)customer {
-    // Get Accounts from a customer
-    Account *acc1 = [customer.accounts firstObject];
-    Account *acc2 = [customer.accounts objectAtIndex:1];
     
-    // Create fake recipients
-    Customer *custo2 = [[Customer alloc] initWithId:2 forename:@"Susanne" surname:@"Strebsam" password:nil];
-    Customer *custo3 = [[Customer alloc] initWithId:3 forename:@"Yolander" surname:@"Batzteki" password:nil];
-    Customer *custo4 = [[Customer alloc] initWithId:3 forename:@"Michael" surname:@"Schmidt" password:nil];
-    Customer *custo5 = [[Customer alloc] initWithId:3 forename:@"Ralf" surname:@"Reichelt" password:nil];
+    if(self.transactions == nil)
+    {
+        
+        // Get Accounts from a customer
+        Account *acc1 = [customer.accounts firstObject];
+        Account *acc2 = [customer.accounts objectAtIndex:1];
+        
+        // Create fake recipients
+        Customer *custo2 = [[Customer alloc] initWithId:2 forename:@"Susanne" surname:@"Strebsam" password:nil];
+        Customer *custo3 = [[Customer alloc] initWithId:3 forename:@"Yolander" surname:@"Batzteki" password:nil];
+        Customer *custo4 = [[Customer alloc] initWithId:3 forename:@"Michael" surname:@"Schmidt" password:nil];
+        Customer *custo5 = [[Customer alloc] initWithId:3 forename:@"Ralf" surname:@"Reichelt" password:nil];
+        
+        // Interaction Accounts
+        NSNumber *balanceA = [self generateRandomAmount];
+        NSNumber *accountNrA = [NSNumber numberWithLongLong: 1004006661111];
+        
+        Account *accountA = [[Account alloc] initWithBalance: balanceA
+                                                   overDraft: @0
+                                                   accountNr: accountNrA
+                                                        name: @"Susannes Konto"
+                                                       owner: custo2];
+        
+        NSNumber *balanceB = [self generateRandomAmount];
+        NSNumber *accountNrB = [NSNumber numberWithLongLong:10040066611145];
+        
+        Account *accountB = [[Account alloc] initWithBalance: balanceB
+                                                   overDraft: @0
+                                                   accountNr: accountNrB
+                                                        name: @"Yolanders Konto"
+                                                       owner: custo3];
+        
+        Account *accountC = [[Account alloc] initWithBalance: balanceB
+                                                   overDraft: @0
+                                                   accountNr: accountNrB
+                                                        name: @"Michaels Konto"
+                                                       owner: custo4];
+        
+        Account *accountD = [[Account alloc] initWithBalance: balanceB
+                                                   overDraft: @0
+                                                   accountNr: accountNrB
+                                                        name: @"Ralfs Konto"
+                                                       owner: custo5];
+        
+        
+        // Add transactions
+        Transaction *trans1 = [[Transaction alloc] initWithType:nil
+                                                      recipient:accountB
+                                                         sender:acc1
+                                                         amount:[self generateRandomAmount]
+                                                           date:[self generateRandomDate]];
+        
+        Transaction *trans2 = [[Transaction alloc] initWithType:nil
+                                                      recipient:acc1
+                                                         sender:accountA
+                                                         amount:[self generateRandomAmount]
+                                                           date:[self generateRandomDate]];
+        
+        Transaction *trans3 = [[Transaction alloc] initWithType:nil
+                                                      recipient:accountB
+                                                         sender:acc1
+                                                         amount:[self generateRandomAmount]
+                                                           date:[self generateRandomDate]];
+        
+        Transaction *trans4 = [[Transaction alloc] initWithType:nil
+                                                      recipient:acc1
+                                                         sender:accountC
+                                                         amount:[self generateRandomAmount]
+                                                           date:[self generateRandomDate]];
+        
+        Transaction *trans5 = [[Transaction alloc] initWithType:nil
+                                                      recipient:acc1
+                                                         sender:accountD
+                                                         amount:[self generateRandomAmount]
+                                                           date:[self generateRandomDate]];
+        
+        Transaction *trans6 = [[Transaction alloc] initWithType:nil
+                                                      recipient:acc1
+                                                         sender:accountD
+                                                         amount:[self generateRandomAmount]
+                                                           date:[self generateRandomDate]];
+        
+        Transaction *trans7 = [[Transaction alloc] initWithType:nil
+                                                      recipient:acc1
+                                                         sender:acc2
+                                                         amount:[self generateRandomAmount]
+                                                           date:[self generateRandomDate]];
+        
+        Transaction *trans8 = [[Transaction alloc] initWithType:nil
+                                                      recipient:accountA
+                                                         sender:acc1
+                                                         amount:[self generateRandomAmount]
+                                                           date:[self generateRandomDate]];
+        
+        Transaction *trans9 = [[Transaction alloc] initWithType:nil
+                                                      recipient:accountA
+                                                         sender:acc2
+                                                         amount:[self generateRandomAmount]
+                                                           date:[self generateRandomDate]];
+        
+        Transaction *trans10 = [[Transaction alloc] initWithType:nil
+                                                      recipient:acc1
+                                                         sender:acc2
+                                                         amount:[self generateRandomAmount]
+                                                           date:[self generateRandomDate]];
+        
+        Transaction *trans11 = [[Transaction alloc] initWithType:nil
+                                                      recipient:acc2
+                                                         sender:acc1
+                                                         amount:[self generateRandomAmount]
+                                                           date:[self generateRandomDate]];
+        
+        Transaction *trans12 = [[Transaction alloc] initWithType:nil
+                                                      recipient:accountB
+                                                         sender:acc2
+                                                         amount:[self generateRandomAmount]
+                                                           date:[self generateRandomDate]];
+        
+        self.transactions = [[NSMutableArray alloc] initWithArray:@[trans1, trans2, trans3, trans4, trans5, trans6, trans7, trans8, trans9, trans10, trans11, trans12]];
+    }
+        
+    return [[NSArray alloc] initWithArray:self.transactions];
+}
+
+- (void) transferWithSender: (Account *) sender ToRecipient: (Account *) recipient withAmount: (NSNumber *) amount {
     
-    // Interaction Accounts
-    NSNumber *balanceA = [self generateRandomAmount];
-    NSNumber *accountNrA = [NSNumber numberWithLongLong: 1004006661111];
+    Transaction *transaction = [[Transaction alloc] initWithType:nil
+                                                       recipient:recipient
+                                                          sender:sender
+                                                          amount:amount date:[NSDate new]];
     
-    Account *accountA = [[Account alloc] initWithBalance: balanceA
-                                               overDraft: @0
-                                               accountNr: accountNrA
-                                                    name: @"Susannes Konto"
-                                                   owner: custo2];
+    [self transactionsForCustomer:sender.owner]; // to init transactions
+    [self.transactions addObject:transaction];
     
-    NSNumber *balanceB = [self generateRandomAmount];
-    NSNumber *accountNrB = [NSNumber numberWithLongLong:10040066611145];
-    
-    Account *accountB = [[Account alloc] initWithBalance: balanceB
-                                               overDraft: @0
-                                               accountNr: accountNrB
-                                                    name: @"Yolanders Konto"
-                                                   owner: custo3];
-    
-    Account *accountC = [[Account alloc] initWithBalance: balanceB
-                                               overDraft: @0
-                                               accountNr: accountNrB
-                                                    name: @"Michaels Konto"
-                                                   owner: custo4];
-    
-    Account *accountD = [[Account alloc] initWithBalance: balanceB
-                                               overDraft: @0
-                                               accountNr: accountNrB
-                                                    name: @"Ralfs Konto"
-                                                   owner: custo5];
-    
-    
-    // Add transactions
-    Transaction *trans1 = [[Transaction alloc] initWithType:nil
-                                                  recipient:accountB
-                                                     sender:acc1
-                                                     amount:[self generateRandomAmount]
-                                                       date:[self generateRandomDate]];
-    
-    Transaction *trans2 = [[Transaction alloc] initWithType:nil
-                                                  recipient:acc1
-                                                     sender:accountA
-                                                     amount:[self generateRandomAmount]
-                                                       date:[self generateRandomDate]];
-    
-    Transaction *trans3 = [[Transaction alloc] initWithType:nil
-                                                  recipient:accountB
-                                                     sender:acc1
-                                                     amount:[self generateRandomAmount]
-                                                       date:[self generateRandomDate]];
-    
-    Transaction *trans4 = [[Transaction alloc] initWithType:nil
-                                                  recipient:acc1
-                                                     sender:accountC
-                                                     amount:[self generateRandomAmount]
-                                                       date:[self generateRandomDate]];
-    
-    Transaction *trans5 = [[Transaction alloc] initWithType:nil
-                                                  recipient:acc1
-                                                     sender:accountD
-                                                     amount:[self generateRandomAmount]
-                                                       date:[self generateRandomDate]];
-    
-    Transaction *trans6 = [[Transaction alloc] initWithType:nil
-                                                  recipient:acc1
-                                                     sender:accountD
-                                                     amount:[self generateRandomAmount]
-                                                       date:[self generateRandomDate]];
-    
-    Transaction *trans7 = [[Transaction alloc] initWithType:nil
-                                                  recipient:acc1
-                                                     sender:acc2
-                                                     amount:[self generateRandomAmount]
-                                                       date:[self generateRandomDate]];
-    
-    Transaction *trans8 = [[Transaction alloc] initWithType:nil
-                                                  recipient:accountA
-                                                     sender:acc1
-                                                     amount:[self generateRandomAmount]
-                                                       date:[self generateRandomDate]];
-    
-    Transaction *trans9 = [[Transaction alloc] initWithType:nil
-                                                  recipient:accountA
-                                                     sender:acc2
-                                                     amount:[self generateRandomAmount]
-                                                       date:[self generateRandomDate]];
-    
-    Transaction *trans10 = [[Transaction alloc] initWithType:nil
-                                                  recipient:acc1
-                                                     sender:acc2
-                                                     amount:[self generateRandomAmount]
-                                                       date:[self generateRandomDate]];
-    
-    Transaction *trans11 = [[Transaction alloc] initWithType:nil
-                                                  recipient:acc2
-                                                     sender:acc1
-                                                     amount:[self generateRandomAmount]
-                                                       date:[self generateRandomDate]];
-    
-    Transaction *trans12 = [[Transaction alloc] initWithType:nil
-                                                  recipient:accountB
-                                                     sender:acc2
-                                                     amount:[self generateRandomAmount]
-                                                       date:[self generateRandomDate]];
-    
-    NSArray *transactions = @[trans1, trans2, trans3, trans4, trans5, trans6, trans7, trans8, trans9, trans10, trans11, trans12];
-    
-    return transactions;
 }
 
 /**

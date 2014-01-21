@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 KiBa App. All rights reserved.
 //
 
+#import "KBAMasterViewController.h"
 #import "KBAAuthController.h"
 #import "SVProgressHUDViewController.h"
 #import "SVProgressHUD.h"
@@ -132,6 +133,11 @@
     [self.validateButton setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
     self.authCodeField.userInteractionEnabled = NO;
     self.authCodeField.text = @"supersecurelength";
+    
+    // change locked icon in navigation
+    UINavigationController *navController = self.splitViewController.viewControllers[0];
+    KBAMasterViewController *controller = (KBAMasterViewController *)navController.topViewController;
+    [controller.tableView reloadData];
 }
 
 

@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="connectButton" destination="TrA-BV-FUy" id="kVQ-py-hnT"/>
                 <outlet property="documentsButton" destination="RzH-By-5M4" id="jlx-74-6Ys"/>
+                <outlet property="infoButton" destination="DJk-eS-jpR" id="WeY-G4-HwO"/>
                 <outlet property="subDocContr" destination="4WH-48-ANY" id="X4u-kU-vld"/>
                 <outlet property="subMoneyTransferContr" destination="IHt-Ar-9XJ" id="C17-Qs-Foh"/>
                 <outlet property="subStatemContr" destination="lsi-lH-djG" id="AHM-wa-eOz"/>
@@ -144,6 +145,9 @@
                     <state key="normal" backgroundImage="info_orange">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="requestInformation:" destination="-1" eventType="touchUpInside" id="s01-qP-jiZ"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

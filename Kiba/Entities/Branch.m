@@ -15,7 +15,8 @@
           address:(Address *)address
               bic:(NSString *)bic
         openHours:(NSArray *)openHours
-       consultant:(Consultant *)consultant {
+       consultant:(Consultant *)consultant
+      phoneNumber:(NSString *)phoneNumber {
     
     if (self = [super init]) {
         self.name = name;
@@ -23,6 +24,7 @@
         self.bic = bic;
         self.openHours = openHours;
         self.consultant = consultant;
+        self.phoneNumber = phoneNumber;
     }
     return self;
 }

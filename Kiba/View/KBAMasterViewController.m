@@ -6,14 +6,19 @@
 //  Copyright (c) 2013 Projekt Kiba. All rights reserved.
 //
 
+#import <UIKit/UIImageView.h>
+
 #import "KBAMasterViewController.h"
 #import "Dashboard/KBADashboardController.h"
 #import "KBADependencyInjector.h"
 #import "KBAColorHelper.h"
+#import "KBAAuth.h"
 
 static NSArray * KBAMasterViewEntryNames;
 static NSMutableDictionary * navigationEntries;
 static NSArray * navigationEntryKeys;
+
+static UIImage *lockedIcon;
 
 @implementation KBAMasterViewController
 
@@ -31,8 +36,11 @@ static NSArray * navigationEntryKeys;
     [navigationEntries setValue:@"Mein Bereich" forKey:@"private"];
     [navigationEntries setValue:@"Über die App" forKey:@"about"];
     
-    navigationEntryKeys = @[@"dashboard", @"auth", @"account", @"selfservice", @"finder",
+    navigationEntryKeys = @[@"dashboard", @"finder", @"auth", @"account", @"selfservice",
                             @"finance", @"private", @"about"];
+    
+    
+    lockedIcon = [UIImage imageNamed:@"locked"];
 }
 
 
@@ -105,13 +113,27 @@ static NSArray * navigationEntryKeys;
     cell.selectedBackgroundView = v;
     NSString *key = navigationEntryKeys[indexPath.row];
     cell.textLabel.text = [navigationEntries valueForKey:key];
+    
+    cell.accessoryView = nil;
+    if ([key isEqualToString:@"account"] || [key isEqualToString:@"selfservice"] || [key isEqualToString:@"finance"])
+    {
+        KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
+        Customer *customer = [auth identity];
+        
+        if(!customer.authenticated)
+        {
+            cell.accessoryView = [[UIImageView alloc] initWithImage:lockedIcon highlightedImage:lockedIcon];
+        }
+    }
+    
+    
     return cell;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return NO;
 }
 
 /**
