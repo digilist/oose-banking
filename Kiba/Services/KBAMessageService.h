@@ -11,6 +11,8 @@
 
 @interface KBAMessageService : NSObject
 
-+(void) sendMessageToIdentityWithDescription:(NSString *) description andContent:(NSString *) content ;
++(void) sendMessageToIdentityWithDescription:(NSString *) description
+                                  andContent:(NSString *) content
+                                  andSender:(NSString *) sender;
 
 @end
