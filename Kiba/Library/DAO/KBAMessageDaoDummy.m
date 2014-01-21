@@ -18,10 +18,16 @@
     NSString *content2= @"Sehr geehrter Herr Mustermann, gerne trifft sich Ihr Berater Herr Müller am 30.1. um 14:15 in der KiBa-Filiale Binderstraße mit Ihnen.";
     NSString *content3= @"Sehr geehrter Herr Mustermann, im Zuge der Anpassung des europäischen Leitzins können wir Ihnen nun verbesserte Konditionen anbieten. Im Finanzierungsrechner können Sie jetzt mit den entsprechend angepassten Zinsen eigene Finanzerungen planen.";
     
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setWeekday:2]; // Monday
+    [components setWeekdayOrdinal:1]; // The first Monday in the month
+    [components setMonth:5]; // May
+    [components setYear:2008];
     
     msg1 = [[Message alloc] initWithDescription:@"Ihre Sortenanfrage" content:content1 date:[NSDate new] msgId:@1];
-    msg2 = [[Message alloc] initWithDescription:@"Ihre Terminanfrage" content:content2 date:[NSDate new] msgId:@2];
-    msg3 = [[Message alloc] initWithDescription:@"Ihr verbesserter Zins" content:content3 date:[NSDate new] msgId:@3];
+    msg2 = [[Message alloc] initWithDescription:@"Ihre Terminanfrage" content:content2 date:[NSDate new]msgId:@2];
+    msg3 = [[Message alloc] initWithDescription:@"Ihr verbesserter Zins" content:content3 date:[gregorian dateFromComponents:components] msgId:@3];
     
     return [NSMutableArray arrayWithArray:@[msg1, msg2, msg3]];
 }
