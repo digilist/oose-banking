@@ -12,6 +12,7 @@
 
 - (id) initWithDescription:(NSString *) description
                    content:(NSString *) content
+                    sender: (NSString *) sender
                       date:(NSDate *) date
                      msgId:(NSNumber *) msgId {
     
@@ -21,6 +22,7 @@
         self.description = description;
         self.content = content;
         self.date = date;
+        self.sender = sender;
         self.msgId = msgId;
     }
     

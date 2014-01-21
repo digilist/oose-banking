@@ -47,6 +47,8 @@
     
     // Init view
     self.heading.text = self.message.description;
+    self.messageContent.text = self.message.content;
+    self.sender.text = self.message.sender;
 }
 
 - (void)didReceiveMemoryWarning
