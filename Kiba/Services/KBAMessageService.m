@@ -18,9 +18,11 @@
  *
  *  @param message
  */
-+(void) sendMessageToIdentityWithDescription:(NSString *) description andContent:(NSString *) content {
++(void) sendMessageToIdentityWithDescription:(NSString *) description
+                                andContent:(NSString *)  content
+                                   andSender: (NSString *) sender {
     
-    Message *message = [[Message alloc] initWithDescription:description content:content date:[NSDate new] msgId:nil];
+    Message *message = [[Message alloc] initWithDescription:description content:content sender:sender date:[NSDate new] msgId:nil];
     
     KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
     [auth.identity.messages addObject:message];

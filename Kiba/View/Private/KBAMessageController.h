@@ -12,6 +12,8 @@
 @interface KBAMessageController : KBAViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *heading;
+@property (weak, nonatomic) IBOutlet UILabel *sender;
+@property (weak, nonatomic) IBOutlet UITextView *messageContent;
 
 - (id)initWithMessage:(Message *)message;
 

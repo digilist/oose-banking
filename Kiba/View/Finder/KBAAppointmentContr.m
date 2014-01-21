@@ -32,8 +32,9 @@ const extern NSString *dismissPopover;
 
 - (IBAction)requestButtonClicked:(id)sender {
     
-    [KBAMessageService sendMessageToIdentityWithDescription:@"Terminbestätigung" andContent:@"Sehr geehrter Herr Mustermann, gerne bestätigen wir Ihre Terminamfrage am 01.01.2015 9:00."];
-    
+    [KBAMessageService sendMessageToIdentityWithDescription:@"Terminbestätigung"
+                                                 andContent:@"Sehr geehrter Herr Mustermann, \n gerne bestätigen wir Ihre Terminamfrage am 01.01.2015 9:00. \n\nherzliche Grüße, \n\nIhre KiBa-Filiale"
+                                                    andSender:@"KiBa-Filiale Informatikum"];
     
     [dismissNotifCenter postNotificationName:(NSString *) dismissPopover
                                       object:Nil];
