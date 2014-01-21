@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -22,7 +22,7 @@
                     <rect key="frame" x="105" y="90" width="611" height="575"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" text="Jetzt Authentifizieren!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BJ-4b-CL8">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" text="Jetzt Authentifizieren!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BJ-4b-CL8">
                             <rect key="frame" x="171" y="-2" width="207" height="27"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -40,53 +40,42 @@
                                 <action selector="authenticate:" destination="-1" eventType="touchUpInside" id="Y7c-gh-0xL"/>
                             </connections>
                         </button>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dru-38-HID">
+                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dru-38-HID">
                             <rect key="frame" x="20" y="86" width="571" height="384"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2. Auf zur nächsten KiBa Filiale" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgS-gb-wYA">
-                                    <rect key="frame" x="301" y="133" width="250" height="22"/>
+                                    <rect key="frame" x="275" y="153" width="250" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pairing4" translatesAutoresizingMaskIntoConstraints="NO" id="xAw-P6-FSF">
-                                    <rect key="frame" x="349" y="244" width="75" height="75"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Auth4" translatesAutoresizingMaskIntoConstraints="NO" id="xAw-P6-FSF">
+                                    <rect key="frame" x="336" y="211" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pairing1" translatesAutoresizingMaskIntoConstraints="NO" id="32y-Zn-hPS">
-                                    <rect key="frame" x="43" y="18" width="128" height="100"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Auth1" translatesAutoresizingMaskIntoConstraints="NO" id="32y-Zn-hPS">
+                                    <rect key="frame" x="49" y="18" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3. App authentifizieren" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0g-1S-0l5">
-                                    <rect key="frame" x="20" y="339" width="192" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pairing2a" translatesAutoresizingMaskIntoConstraints="NO" id="iuu-Q2-HwY">
-                                    <rect key="frame" x="301" y="35" width="100" height="100"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Auth2" translatesAutoresizingMaskIntoConstraints="NO" id="iuu-Q2-HwY">
+                                    <rect key="frame" x="336" y="18" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1. iPad einstecken" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azx-YA-t67">
-                                    <rect key="frame" x="20" y="133" width="162" height="21"/>
+                                    <rect key="frame" x="32" y="154" width="162" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pairing3" translatesAutoresizingMaskIntoConstraints="NO" id="FAD-QZ-oLK">
-                                    <rect key="frame" x="56" y="231" width="105" height="100"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pairing2b" translatesAutoresizingMaskIntoConstraints="NO" id="xAs-wv-9gD">
-                                    <rect key="frame" x="443" y="16" width="58" height="100"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Auth3" translatesAutoresizingMaskIntoConstraints="NO" id="FAD-QZ-oLK">
+                                    <rect key="frame" x="49" y="211" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHe-cw-ESG" customClass="KBAButton">
-                                    <rect key="frame" x="301" y="334" width="173" height="30"/>
+                                    <rect key="frame" x="314" y="343" width="173" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <state key="normal" title="4. Vorteile genießen">
@@ -97,6 +86,13 @@
                                         <action selector="showAuthPopOver:" destination="-1" eventType="touchUpInside" id="P7t-z3-0Oy"/>
                                     </connections>
                                 </button>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3. App authentifizieren" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0g-1S-0l5">
+                                    <rect key="frame" x="17" y="347" width="192" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         </view>
@@ -108,11 +104,13 @@
                         </textField>
                     </subviews>
                     <constraints>
+                        <constraint firstAttribute="centerX" secondItem="3BJ-4b-CL8" secondAttribute="centerX" constant="31" id="0GC-Mx-j2K"/>
                         <constraint firstAttribute="trailing" secondItem="RTi-eO-wPU" secondAttribute="trailing" constant="95" id="20D-VK-1Eh"/>
                         <constraint firstItem="RTi-eO-wPU" firstAttribute="leading" secondItem="m0c-7M-W3j" secondAttribute="leading" constant="426" id="Mwf-sP-9tw"/>
                         <constraint firstAttribute="bottom" secondItem="RTi-eO-wPU" secondAttribute="bottom" constant="12" id="T4H-YY-5qJ"/>
                         <constraint firstAttribute="width" constant="611" id="aXO-xa-HIl"/>
                         <constraint firstItem="RTi-eO-wPU" firstAttribute="top" secondItem="m0c-7M-W3j" secondAttribute="top" constant="527" id="sSI-OB-t4a"/>
+                        <constraint firstAttribute="centerX" secondItem="Dru-38-HID" secondAttribute="centerX" id="tsY-0f-vSR"/>
                         <constraint firstAttribute="height" constant="575" id="uBp-O8-h1h"/>
                     </constraints>
                 </scrollView>
@@ -136,11 +134,10 @@
         </view>
     </objects>
     <resources>
+        <image name="Auth1" width="128" height="128"/>
+        <image name="Auth2" width="128" height="128"/>
+        <image name="Auth3" width="128" height="128"/>
+        <image name="Auth4" width="128" height="128"/>
         <image name="info_orange" width="50" height="50"/>
-        <image name="pairing1" width="128" height="100"/>
-        <image name="pairing2a" width="100" height="100"/>
-        <image name="pairing2b" width="58" height="100"/>
-        <image name="pairing3" width="105" height="100"/>
-        <image name="pairing4" width="75" height="75"/>
     </resources>
 </document>
