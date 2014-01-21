@@ -16,8 +16,8 @@
     Message *msg1, *msg2, *msg3;
     NSString *sender = @"KiBa Filiale Informatikum";
     NSString *content1= @"Sehr geehrter Herr Mustermann, \n\nSie können die von Ihnen gewünschten Sorten nun jederzeit in der Kiba Filiale am Informatikum abholen. \n\nHerzliche Grüße, \n\nReiner Müller";
-    NSString *content2= @"Sehr geehrter Herr Mustermann, gerne trifft sich Ihr Berater Herr Müller am 30.1. um 14:15 in der KiBa-Filiale Binderstraße mit Ihnen.";
-    NSString *content3= @"Sehr geehrter Herr Mustermann, im Zuge der Anpassung des europäischen Leitzins können wir Ihnen nun verbesserte Konditionen anbieten. Im Finanzierungsrechner können Sie jetzt mit den entsprechend angepassten Zinsen eigene Finanzerungen planen.";
+    NSString *content2= @"Sehr geehrter Herr Mustermann, \n\ngerne trifft sich Ihr Berater Herr Müller am 30.1. um 14:15 in der KiBa-Filiale Binderstraße mit Ihnen.\n\nHerzliche Grüße, \n\nReiner Müller";
+    NSString *content3= @"Sehr geehrter Herr Mustermann, \n\nim Zuge der Anpassung des europäischen Leitzins können wir Ihnen nun verbesserte Konditionen anbieten. Im Finanzierungsrechner können Sie jetzt mit den entsprechend angepassten Zinsen eigene Finanzerungen planen.\n\nHerzliche Grüße, \n\nReiner Müller";
     
     
     msg1 = [[Message alloc] initWithDescription:@"Ihre Sortenanfrage" content:content1 sender:sender date:[NSDate new] msgId:@1];
