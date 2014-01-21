@@ -35,7 +35,8 @@
                                            address:address1
                                                bic:@"456"
                                          openHours:openHours
-                                        consultant:consultant];
+                                        consultant:consultant
+                                       phoneNumber:@"55235356"];
     
     Address *address2 = [[Address alloc] initWithStreet:@"Vogt-Kölln-Straße"
                                                 houseNr:@"30"
@@ -46,7 +47,8 @@
                                            address:address2
                                                bic:@"456"
                                          openHours:openHours
-                                        consultant:consultant];
+                                        consultant:consultant
+                                       phoneNumber:@"0405514883"];
     Address *address3 = [[Address alloc] initWithStreet:@"Jungfernstieg"
                                                 houseNr:@"7"
                                              postalCode:@"20534"
@@ -56,7 +58,8 @@
                                            address:address3
                                                bic:@"456"
                                          openHours:openHours
-                                        consultant:consultant];
+                                        consultant:consultant
+                                       phoneNumber:@"5559854"];
     
     Address *address4 = [[Address alloc] initWithStreet:@"Steintorwall"
                                                 houseNr:@"10"
@@ -67,7 +70,8 @@
                                            address:address4
                                                bic:@"456"
                                          openHours:openHours
-                                        consultant:consultant];
+                                        consultant:consultant
+                                       phoneNumber:@"5547867"];
     Address *address5 = [[Address alloc] initWithStreet:@"Rothenbaumchaussee"
                                                 houseNr:@"27"
                                              postalCode:@"20144"
@@ -77,7 +81,8 @@
                                            address:address5
                                                bic:@"456"
                                          openHours:openHours
-                                        consultant:consultant];
+                                        consultant:consultant
+                                       phoneNumber:@"5556776"];
     
     Address *address6 = [[Address alloc] initWithStreet:@"Grindelhof"
                                                 houseNr:@"57"
@@ -88,7 +93,8 @@
                                            address:address6
                                                bic:@"456"
                                          openHours:openHours
-                                        consultant:consultant];
+                                        consultant:consultant
+                                       phoneNumber:@"5549014"];
     
     
     Address *address7 = [[Address alloc] initWithStreet:@"Lesserstraße"
@@ -100,7 +106,8 @@
                                            address:address7
                                                bic:@"456"
                                          openHours:openHours
-                                        consultant:consultant];
+                                        consultant:consultant
+                                       phoneNumber:@"5508237"];
     
     Address *address8 = [[Address alloc] initWithStreet:@"Max-Brauer-Allee"
                                                 houseNr:@"51"
@@ -111,7 +118,8 @@
                                            address:address8
                                                bic:@"456"
                                          openHours:openHours
-                                        consultant:consultant];
+                                        consultant:consultant
+                                       phoneNumber:@"9764582"];
     
     Address *address9 = [[Address alloc] initWithStreet:@"Reeperbahn"
                                                 houseNr:@"83"
@@ -122,7 +130,8 @@
                                            address:address9
                                                bic:@"456"
                                          openHours:openHours
-                                        consultant:consultant];
+                                        consultant:consultant
+                                       phoneNumber:@"5525569"];
     
     Address *address10 = [[Address alloc] initWithStreet:@"Osterstraße"
                                                  houseNr:@"104"
@@ -133,7 +142,8 @@
                                             address:address10
                                                 bic:@"456"
                                           openHours:openHours
-                                         consultant:consultant];
+                                         consultant:consultant
+                                        phoneNumber:@"5569087"];
     
     
     

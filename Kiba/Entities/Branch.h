@@ -17,11 +17,13 @@
 @property NSString *bic;
 @property NSArray *openHours;
 @property Consultant *consultant;
+@property NSString *phoneNumber;
 
 -(id)initWithName:(NSString *)name
           address:(Address *)address
               bic:(NSString *)bic
         openHours:(NSArray *)openHours
-       consultant:(Consultant *)consultant;
+       consultant:(Consultant *)consultant
+      phoneNumber:(NSString *)phoneNumber;
 
 @end

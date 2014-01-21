@@ -7,6 +7,7 @@
 //
 
 #import "KBACurrencyContr.h"
+#import "KBAAlertView.h"
 
 #import "Currency.h"
 
@@ -153,14 +154,14 @@ const extern NSString *dismissPopover;
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    UIAlertView *alert = [[UIAlertView alloc]
-                          
-                          initWithTitle:@"Sortenanfrage"
-                          message:@"Der angefragte Betrag ist verfügbar. Bitte vereinbaren Sie einen Termin!"
-                          delegate:nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil];
-    [alert show];
+    KBAAlertView *alertView = [KBAAlertView new];
+    alertView.titleLabel.text = @"Sortenanfrage";
+    alertView.subTextLabel.text = @"Der angefragte Betrag ist verfügbar.\nBitte vereinbaren Sie einen Termin!";
+    
+    //set buttons
+    [alertView setButtonTitles:@[@"Ok"]];
+    
+    [alertView show];
     
     [dismissNotifCenter postNotificationName:(NSString *) dismissPopover
                                     object:Nil];
