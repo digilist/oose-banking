@@ -151,5 +151,14 @@
                       permittedArrowDirections:popoverDirection
                                       animated:YES];
 }
+/**
+ *  Start a phone call
+ *
+ */
+-(IBAction)makeCall:(KBAButton *)sender{
+        NSLog(@"Call %@", self.branch.phoneNumber);
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:self.branch.phoneNumber]];
+    }
+
 
 @end

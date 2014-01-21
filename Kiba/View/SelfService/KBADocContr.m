@@ -8,9 +8,12 @@
 
 #import "KBADocContr.h"
 
+
 @interface KBADocContr ()
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint* topConstraint;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint* leftConstraint;
+
+
 @end
 
 @implementation KBADocContr
@@ -70,5 +73,11 @@
     [self respondToOrientation:toInterfaceOrientation
         inAnimatedDurationTime: 0.2];
 }
+
+-(IBAction)generatePDF:(id)sender{
+   
+    NSLog(@"pdf");
+}
+
 
 @end

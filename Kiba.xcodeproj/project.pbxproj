@@ -49,6 +49,8 @@
 		A83F99A8187ECB5B001E3F5B /* KBAFinanceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83F99A7187ECB5B001E3F5B /* KBAFinanceController.xib */; };
 		A8610F181860830600E3093E /* KBATransactionDaoDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A8610F171860830600E3093E /* KBATransactionDaoDummy.m */; };
 		A8610F1F1860934500E3093E /* KBATransactionDaoRest.m in Sources */ = {isa = PBXBuildFile; fileRef = A8610F1E1860934500E3093E /* KBATransactionDaoRest.m */; };
+		A8A5A26B188E618B0055B18C /* KBAInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A5A269188E618B0055B18C /* KBAInfoController.m */; };
+		A8A5A26C188E618B0055B18C /* KBAInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8A5A26A188E618B0055B18C /* KBAInfoController.xib */; };
 		A8A909E01887E06B00435343 /* KBACreditRatingDaoDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A909DF1887E06B00435343 /* KBACreditRatingDaoDummy.m */; };
 		A8A909E31887E29500435343 /* KBACreditRatingDaoRest.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A909E21887E29500435343 /* KBACreditRatingDaoRest.m */; };
 		A8AE9A64187BE73E00ACC653 /* KBAFinanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AE9A62187BE73E00ACC653 /* KBAFinanceController.m */; };
@@ -191,6 +193,9 @@
 		A8610F1C1860847900E3093E /* KBATransactionDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KBATransactionDao.h; path = Library/DAO/KBATransactionDao.h; sourceTree = "<group>"; };
 		A8610F1D1860934500E3093E /* KBATransactionDaoRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBATransactionDaoRest.h; path = Library/DAO/KBATransactionDaoRest.h; sourceTree = "<group>"; };
 		A8610F1E1860934500E3093E /* KBATransactionDaoRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBATransactionDaoRest.m; path = Library/DAO/KBATransactionDaoRest.m; sourceTree = "<group>"; };
+		A8A5A268188E618B0055B18C /* KBAInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAInfoController.h; path = View/SelfService/KBAInfoController.h; sourceTree = "<group>"; };
+		A8A5A269188E618B0055B18C /* KBAInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAInfoController.m; path = View/SelfService/KBAInfoController.m; sourceTree = "<group>"; };
+		A8A5A26A188E618B0055B18C /* KBAInfoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAInfoController.xib; path = View/SelfService/KBAInfoController.xib; sourceTree = "<group>"; };
 		A8A909DD1887DEE800435343 /* KBACreditRatingDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBACreditRatingDao.h; path = Library/DAO/KBACreditRatingDao.h; sourceTree = "<group>"; };
 		A8A909DE1887E06B00435343 /* KBACreditRatingDaoDummy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBACreditRatingDaoDummy.h; path = Library/DAO/KBACreditRatingDaoDummy.h; sourceTree = "<group>"; };
 		A8A909DF1887E06B00435343 /* KBACreditRatingDaoDummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBACreditRatingDaoDummy.m; path = Library/DAO/KBACreditRatingDaoDummy.m; sourceTree = "<group>"; };
@@ -338,6 +343,9 @@
 				D93C6A111859D8E90004E51A /* KBASelfServContr.m */,
 				D93C6A101859D8E90004E51A /* KBASelfServContr.h */,
 				D93C6A121859D8E90004E51A /* KBASelfServContr.xib */,
+				A8A5A268188E618B0055B18C /* KBAInfoController.h */,
+				A8A5A269188E618B0055B18C /* KBAInfoController.m */,
+				A8A5A26A188E618B0055B18C /* KBAInfoController.xib */,
 				D93C6A1D1859D8E90004E51A /* KBATransTableContr.h */,
 				D93C6A1E1859D8E90004E51A /* KBATransTableContr.m */,
 				D93C6A0E1859D8E90004E51A /* KBADocTableContr.h */,
@@ -778,6 +786,7 @@
 				C16A7B7B184DC9D3005DC504 /* KBAFinderController.xib in Resources */,
 				342322EB1837B9FD00618D7E /* InfoPlist.strings in Resources */,
 				C1A6D4071847661A00AFB665 /* KBADashboardController.xib in Resources */,
+				A8A5A26C188E618B0055B18C /* KBAInfoController.xib in Resources */,
 				D93C6A241859D8E90004E51A /* KBASelfServContr.xib in Resources */,
 				2139AC6118610DD3008FB712 /* KBAChooseAccountTableContr.xib in Resources */,
 				34199A8A18417A6F00F574D5 /* Documentation in Resources */,
@@ -851,6 +860,7 @@
 				A8A909E01887E06B00435343 /* KBACreditRatingDaoDummy.m in Sources */,
 				C10C5FC5183B8DF7008FAECB /* KBABootstrap.m in Sources */,
 				0ACCD54218857D8200EB05BE /* KBAAbout.m in Sources */,
+				A8A5A26B188E618B0055B18C /* KBAInfoController.m in Sources */,
 				D929E547185093B1008FC26E /* OpenHour.m in Sources */,
 				21BB5D1D187D5FC400460EE9 /* JVFloatLabeledTextField.m in Sources */,
 				2139AC5F18610DB0008FB712 /* KBAFlatDatePicker.m in Sources */,

@@ -13,6 +13,7 @@
 #import "KBAStatemTableContr.h"
 #import "SVProgressHUDViewController.h"
 #import "SVProgressHUD.h"
+#import "KBAInfoController.h"
 
 @interface KBASelfServContr ()
 
@@ -24,9 +25,15 @@
 @property (nonatomic, weak) IBOutlet KBAButton *transferButton;
 @property (nonatomic, weak) IBOutlet KBAButton *transactionOverviewButton;
 @property (nonatomic, weak) IBOutlet KBAButton *documentsButton;
+@property (nonatomic, weak) IBOutlet KBAButton *infoButton;
 
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *topConstraintTitle;
 @property NSTimer *timer;
+
+//popover
+@property (strong) UIPopoverController *popController;
+@property (nonatomic, strong) KBAInfoController *serviceInfoController;
+
 
 @end
 
@@ -44,6 +51,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.serviceInfoController = [KBAInfoController new];
+    
     [self respondToOrientation: UIApplication.sharedApplication.statusBarOrientation
         inAnimatedDurationTime: 0.5];
 }
@@ -153,6 +163,37 @@
 - (IBAction)changeToDocumentView:(id)sender
 {
     [self.navigationController pushViewController:[KBADocContr new] animated:YES];
+}
+
+-(IBAction)requestInformation: (UIButton *) sender {
+    [self showPopover:sender withPopoverController: self.serviceInfoController
+         andDirection:UIPopoverArrowDirectionAny
+            andOffset:CGPointMake(0, 15)];
+}
+
+/**
+ *  Show a Popover
+ */
+- (void)showPopover: (UIButton *)sender withPopoverController:(UIViewController *)popoverController
+       andDirection: (UIPopoverArrowDirection) popoverDirection
+          andOffset: (CGPoint) offset{
+    
+    self.popController = [[UIPopoverController alloc]
+                          initWithContentViewController:popoverController];
+    
+    CGPoint buttonPosition = sender.frame.origin;
+    buttonPosition.x += sender.superview.frame.origin.x;
+    buttonPosition.y += sender.superview.frame.origin.y;
+    
+    buttonPosition.x += offset.x;
+    buttonPosition.y += offset.y;
+    
+    //given size as arg. is irrelevant
+    //size is defined through size of view in popover
+    [self.popController presentPopoverFromRect:CGRectMake(buttonPosition.x, buttonPosition.y, 1, 1)
+                                        inView:self.view
+                      permittedArrowDirections:popoverDirection
+                                      animated:YES];
 }
 
 @end
