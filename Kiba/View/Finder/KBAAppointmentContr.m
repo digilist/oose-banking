@@ -7,6 +7,7 @@
 //
 
 #import "KBAAppointmentContr.h"
+#import "KBAMessageService.h"
 
 extern NSNotificationCenter *dismissNotifCenter;
 const extern NSString *dismissPopover;
@@ -30,6 +31,8 @@ const extern NSString *dismissPopover;
 
 
 - (IBAction)requestButtonClicked:(id)sender {
+    
+    [KBAMessageService sendMessageToIdentityWithDescription:@"Terminbestätigung" andContent:@"Sehr geehrter Herr Mustermann, gerne bestätigen wir Ihre Terminamfrage am 01.01.2015 9:00."];
     
     
     [dismissNotifCenter postNotificationName:(NSString *) dismissPopover
