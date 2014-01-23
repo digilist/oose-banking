@@ -181,6 +181,8 @@
     self.popController = [[UIPopoverController alloc]
                           initWithContentViewController:popoverController];
     
+
+    
     CGPoint buttonPosition = sender.frame.origin;
     buttonPosition.x += sender.superview.frame.origin.x;
     buttonPosition.y += sender.superview.frame.origin.y;
@@ -194,6 +196,7 @@
                                         inView:self.view
                       permittedArrowDirections:popoverDirection
                                       animated:YES];
+
 }
 
 @end

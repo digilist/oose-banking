@@ -9,6 +9,6 @@
 #import "KBAViewController.h"
 #import "KBAAlertView.h"
 
-@interface KBATransContr : KBAViewController<KBAAlertViewDelegate>
+@interface KBATransContr : KBAViewController
 @end
 
