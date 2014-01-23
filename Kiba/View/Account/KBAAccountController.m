@@ -120,8 +120,8 @@
             [alertView setButtonTitles:@[@"Ok"]];
             
             //block triggered when button is pressed in alertview
-            void(^respondToClick)(KBAAlertView *, NSInteger) =
-            ^(KBAAlertView * alertV, NSInteger bIndex) {
+            void(^respondToClick)(KBAAlertView *, int) =
+            ^(KBAAlertView * alertV, int bIndex) {
                 //show keyboard, focus receiver textfield
                 [self.receiver becomeFirstResponder];
             };
@@ -143,8 +143,8 @@
             [alertView setButtonTitles:@[@"OK"]];
             
             //block triggered when button is pressed in alertview
-            void(^respondToClick)(KBAAlertView *, NSInteger) =
-            ^(KBAAlertView * alertV, NSInteger bIndex) {
+            void(^respondToClick)(KBAAlertView *, int) =
+            ^(KBAAlertView * alertV, int bIndex) {
                 //show keyboard, focus tan textfield
                 [self.tan1 becomeFirstResponder];
             };
@@ -166,8 +166,8 @@
             [alertView setButtonTitles:@[@"Abbrechen", @"Bestätigen"]];
             
             //block triggered when button is pressed in alertview
-            void(^respondToClick)(KBAAlertView *, NSInteger) =
-            ^(KBAAlertView * alertV, NSInteger bIndex) {
+            void(^respondToClick)(KBAAlertView *, int) =
+            ^(KBAAlertView * alertV, int bIndex) {
                 if (bIndex == 1) {
                     self.tan1.hidden = YES;
                     for (JVFloatLabeledTextField *textfield in self.scrollView.subviews ) {
@@ -176,6 +176,8 @@
                         }
                     }
                     [self.executeButton setTitle:@"Weiter" forState:UIControlStateNormal];
+            #warning //TODO:transaktion ausführen
+//            #error sucker
                 }
             };
             //–––––––––––––––––––––––––––––––––––––––––

@@ -12,11 +12,13 @@
 
 @property NSString *description;
 @property NSString *content;
+@property NSString *sender;
 @property NSDate *date;
 @property NSNumber *msgId;
 
 - (id) initWithDescription:(NSString *) description
                    content:(NSString *) content
+                    sender: (NSString *) sender
                       date:(NSDate *) date
                      msgId:(NSNumber *) msgId;
 

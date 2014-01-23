@@ -46,7 +46,11 @@
     [super viewDidLoad];
     
     // Init view
+    
+    self.messageContent.textContainerInset = UIEdgeInsetsMake(0, -5, 0, 0);
     self.heading.text = self.message.description;
+    self.messageContent.text = self.message.content;
+    self.sender.text = self.message.sender;
 }
 
 - (void)didReceiveMemoryWarning

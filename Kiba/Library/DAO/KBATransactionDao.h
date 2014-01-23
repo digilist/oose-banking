@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "Customer.h"
+#import "Account.h"
 
 @protocol KBATransactionDao <NSObject>
 
 - (NSArray *) transactionsForCustomer: (Customer *)account;
+
+- (void) transferWithSender: (Account *) sender ToRecipient: (Account *) recipient withAmount: (NSNumber *) amount;
 
 @end

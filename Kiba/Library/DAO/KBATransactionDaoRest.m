@@ -15,4 +15,8 @@
     return nil;
 }
 
+-(void) transferWithSender: (Account *) sender ToRecipient: (Account *) recipient withAmount: (NSNumber *) amount{
+
+}
+
 @end

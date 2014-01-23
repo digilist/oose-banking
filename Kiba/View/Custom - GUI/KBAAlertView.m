@@ -129,17 +129,17 @@ CGFloat buttonSpacerHeight = 0;
 - (IBAction)customIOS7dialogButtonTouchUpInside:(id)sender
 {
     if (_delegate != NULL) {
-        [_delegate kbaAlertView:self clickedButtonAtIndex:[sender tag]];
+        [_delegate kbaAlertView:self clickedButtonAtIndex: (int)[sender tag]];
     }
 
     if (_onButtonTouchUpInside != NULL) {
-        _onButtonTouchUpInside(self, [sender tag]);
+        _onButtonTouchUpInside(self, (int)[sender tag]);
     }
 }
 
-- (void)kbaAlertView: (KBAAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)kbaAlertView: (KBAAlertView *)alertView clickedButtonAtIndex:(int)buttonIndex
 {
-    NSLog(@"Button Clicked! %d, %d", buttonIndex, [alertView tag]);
+    NSLog(@"Button Clicked! %d, %d", buttonIndex, (int)[alertView tag]);
     [self close];
 }
 
@@ -359,7 +359,6 @@ CGFloat buttonSpacerHeight = 0;
                          dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5f * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                              UIInterfaceOrientation endInterfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
                              if (interfaceOrientation != endInterfaceOrientation) {
-                                 // TODO user moved phone again before than animation ended: rotation animation can introduce errors here
                              }
                          });
                      }
