@@ -263,24 +263,42 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
         
         //if check-y-center was dragged below label "..hier hinüberziehen"
         if (self.checkLine.center.y < self.checkImageView.center.y) {
-            KBAAlertView *alertView = [KBAAlertView new];
-            alertView.titleLabel.text = @"Transaktion";
-            alertView.subTextLabel.text = @"Bitte bestätigen sie ihre Transaktion.";
-            //set buttons
-            [alertView setButtonTitles:@[@"Abbrechen", @"Bestätigen"]];
-            alertView.delegate = self;
-            [alertView show];
-        }
-        
-        [UIView animateWithDuration:0.25 animations:^{
-            //put back elements to original position
-            for (int i = 0; i < [self.checkElements count]; ++i) {
-                UIView *element = [self.checkElements objectAtIndex:i];
-                NSValue *centerPos = [self.checkElementsPositions objectAtIndex:i];
-                element.center = [centerPos CGPointValue];
+            
+            //amount must be greater than 0
+            if (self.amountField.text.doubleValue > 0) {
+                
+                //check is customer-account has enough money
+                
+                //customer account has not enough money
+                if (0 > (self.sender.balance.doubleValue - self.amountField.text.doubleValue)) {
+                    KBAAlertView *alertView = [KBAAlertView new];
+                    alertView.titleLabel.text = @"Transaktion";
+                    alertView.subTextLabel.text = @"Das Quellkonto verfügt nicht über genügend Kapital.";
+                    //set buttons
+                    [alertView setButtonTitles:@[@"Ok"]];
+                    [alertView show];
+                }
+                //customer account has enough money
+                else{
+                    KBAAlertView *alertView = [KBAAlertView new];
+                    alertView.titleLabel.text = @"Transaktion";
+                    alertView.subTextLabel.text = @"Bitte bestätigen sie ihre Transaktion.";
+                    [alertView setButtonTitles:@[@"Abbrechen", @"Bestätigen"]];
+                    
+                    void(^respondToClick)(KBAAlertView *, int) =
+                    ^(KBAAlertView * alertV, int bIndex) {
+                        if(bIndex == 1) {
+                            id<KBATransactionDao> transactionDao = [KBADependencyInjector getByKey:@"transDao"];
+                            [transactionDao transferWithSender:self.sender ToRecipient:self.recipient withAmount:self.selectedAmount];
+                        }
+                    };
+                    alertView.onButtonTouchUpInside = respondToClick;
+                    [alertView show];
+                    
+                }
             }
-            [self.checkElementsPositions removeAllObjects];
-        }];
+        }
+        [self putBackCheckElements];
     }
 }
 

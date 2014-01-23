@@ -15,7 +15,7 @@
 @class KBAAlertView;
 @protocol KBAAlertViewDelegate
 
-- (void)kbaAlertView: (KBAAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
+- (void)kbaAlertView: (KBAAlertView *)alertView clickedButtonAtIndex:(int)buttonIndex;
 
 @end
 
