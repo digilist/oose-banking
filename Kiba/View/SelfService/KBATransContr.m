@@ -302,33 +302,19 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
     }
 }
 
-- (void)kbaAlertView: (KBAAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if(buttonIndex == 1)
-    {
-        [alertView close];
-        id<KBATransactionDao> transactionDao = [KBADependencyInjector getByKey:@"transDao"];
-        
-        double balance = [self.sender.balance doubleValue];
-        double amount = [self.amountField.text doubleValue];
-        
-        if (0.0 <= (balance - amount)) {
-            [transactionDao transferWithSender:self.sender ToRecipient:self.recipient withAmount:self.selectedAmount];
+/**
+ *  put back elements to original position
+ */
+-(void)putBackCheckElements
+{
+    [UIView animateWithDuration:0.25 animations:^{
+        for (int i = 0; i < [self.checkElements count]; ++i) {
+            UIView *element = [self.checkElements objectAtIndex:i];
+            NSValue *centerPos = [self.checkElementsPositions objectAtIndex:i];
+            element.center = [centerPos CGPointValue];
         }
-        else{
-            KBAAlertView *alertView = [KBAAlertView new];
-            alertView.titleLabel.text = @"Transaktion";
-            alertView.subTextLabel.text = @"Der gewünschte Betrag wird von Ihrem Guthaben nicht gedeckt.";
-            //set buttons
-            [alertView setButtonTitles:@[@"Ok"]];
-            alertView.delegate = self;
-            [alertView show];
-        }
-        
-    }
-    else{
-        [alertView close];
-    }
-    
+        [self.checkElementsPositions removeAllObjects];
+    }];
 }
 
 /**
