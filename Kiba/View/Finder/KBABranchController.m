@@ -84,6 +84,11 @@ const NSString *dismissPopover = @"dismissPopover";
                            selector:@selector(closePopover)
                                name:(NSString *)dismissPopover
                              object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(showAppointmentPopover:)
+                                                 name:@"SORTENANFRAGE"
+                                               object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -128,18 +133,14 @@ const NSString *dismissPopover = @"dismissPopover";
  *  Show the currency exhange view.
  */
 - (IBAction)showCurrencyPopover:(KBAButton *)sender {
-    [self showPopover:sender withPopoverController:self.currencyContr
-         andDirection:UIPopoverArrowDirectionAny
-            andOffset:CGPointMake(0, 15)];
+    [self showPopover:sender withPopoverController:self.currencyContr];
 }
 
 /**
  *  Show the appointment request view.
  */
 - (IBAction)showAppointmentPopover:(KBAButton *)sender {
-    [self showPopover:sender withPopoverController:self.appointmentContr
-         andDirection:UIPopoverArrowDirectionDown
-            andOffset:CGPointMake(60, 3)];
+    [self showPopover:sender withPopoverController:self.appointmentContr];
 }
 
 
@@ -147,23 +148,30 @@ const NSString *dismissPopover = @"dismissPopover";
  *  Show a Popover
  */
 - (void)showPopover:(KBAButton *)sender withPopoverController:(UIViewController *)popoverController
-       andDirection: (UIPopoverArrowDirection) popoverDirection
-          andOffset: (CGPoint) offset{
+{
     self.popController = [[UIPopoverController alloc]
                           initWithContentViewController:popoverController];
-    
-    CGPoint buttonPosition = sender.frame.origin;
-    buttonPosition.x += sender.superview.frame.origin.x;
-    buttonPosition.y += sender.superview.frame.origin.y;
-    
-    buttonPosition.x += offset.x;
-    buttonPosition.y += offset.y;
+
+    CGPoint buttonPosition;
+    //popover triggered after currency request
+    //custom alert view is the sender, not one of the buttons
+    if (!([sender isEqual:_currencyButton] || [sender isEqual:_appointmentButton])) {
+        buttonPosition = _appointmentButton.frame.origin;
+        buttonPosition.x += _appointmentButton.superview.frame.origin.x;
+        buttonPosition.y += _appointmentButton.superview.frame.origin.y;
+    }
+    //one of the popover-trigger-buttons called this method
+    else{
+        buttonPosition = sender.superview.frame.origin;
+        buttonPosition.x += sender.frame.origin.x;
+        buttonPosition.y += sender.frame.origin.y;
+    }
     
     //given size as arg. is irrelevant
     //size is defined through size of view in popover
     [self.popController presentPopoverFromRect:CGRectMake(buttonPosition.x, buttonPosition.y, 1, 1)
                                         inView:self.view
-                      permittedArrowDirections:popoverDirection
+                      permittedArrowDirections:UIPopoverArrowDirectionAny
                                       animated:YES];
 }
 /**

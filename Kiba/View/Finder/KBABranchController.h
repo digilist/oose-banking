@@ -23,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UIView *currencyView;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
+@property (weak, nonatomic) IBOutlet KBAButton *currencyButton;
+@property (weak, nonatomic) IBOutlet KBAButton *appointmentButton;
 
 - (id) initWithBranch: (Branch*) branch;
 

@@ -160,7 +160,11 @@ const extern NSString *dismissPopover;
     
     //set buttons
     [alertView setButtonTitles:@[@"Ok"]];
-    
+    alertView.onButtonTouchUpInside =
+    ^(KBAAlertView * alertV, int bIndex) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"SORTENANFRAGE"
+                                                            object:nil];
+    };
     [alertView show];
     
     [dismissNotifCenter postNotificationName:(NSString *) dismissPopover
