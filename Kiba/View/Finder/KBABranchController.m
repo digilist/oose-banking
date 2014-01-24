@@ -21,6 +21,7 @@
 NSNotificationCenter *dismissNotifCenter;
 //global string identifier needed to send/recv notifications
 const NSString *dismissPopover = @"dismissPopover";
+const NSString *currencyAvailability = @"currencyAvailability";
 
 @interface KBABranchController ()
 
@@ -41,8 +42,7 @@ const NSString *dismissPopover = @"dismissPopover";
 - (id)initWithBranch: (Branch *) branch {
     self = [self init];
     
-    if (self)
-    {
+    if (self) {
         self.branch = branch;
     }
     
@@ -76,7 +76,6 @@ const NSString *dismissPopover = @"dismissPopover";
     [self respondToOrientation: UIApplication.sharedApplication.statusBarOrientation
         inAnimatedDurationTime: 0.0];
     
-    
     /*add observer/listener to receive message in popup-tableviews */
     //needs to be created everytime with this controller(is freed everytime view gets closed)
     dismissNotifCenter = [NSNotificationCenter new];
@@ -84,12 +83,27 @@ const NSString *dismissPopover = @"dismissPopover";
                            selector:@selector(closePopover)
                                name:(NSString *)dismissPopover
                              object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(showAppointmentPopover:)
+                                                 name:(NSString *)currencyAvailability
+                                               object:nil];
+}
+
+- (void)dealloc
+{
+    [dismissNotifCenter removeObserver:self
+                                  name:(NSString *)dismissPopover
+                                object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:(NSString *)currencyAvailability
+                                                  object:nil];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /**
@@ -115,7 +129,6 @@ const NSString *dismissPopover = @"dismissPopover";
                      }];
 }
 
-
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
                                duration:(NSTimeInterval)duration
 {
@@ -128,18 +141,14 @@ const NSString *dismissPopover = @"dismissPopover";
  *  Show the currency exhange view.
  */
 - (IBAction)showCurrencyPopover:(KBAButton *)sender {
-    [self showPopover:sender withPopoverController:self.currencyContr
-         andDirection:UIPopoverArrowDirectionAny
-            andOffset:CGPointMake(0, 15)];
+    [self showPopover:sender withPopoverController:self.currencyContr];
 }
 
 /**
  *  Show the appointment request view.
  */
 - (IBAction)showAppointmentPopover:(KBAButton *)sender {
-    [self showPopover:sender withPopoverController:self.appointmentContr
-         andDirection:UIPopoverArrowDirectionDown
-            andOffset:CGPointMake(60, 3)];
+    [self showPopover:sender withPopoverController:self.appointmentContr];
 }
 
 
@@ -147,23 +156,30 @@ const NSString *dismissPopover = @"dismissPopover";
  *  Show a Popover
  */
 - (void)showPopover:(KBAButton *)sender withPopoverController:(UIViewController *)popoverController
-       andDirection: (UIPopoverArrowDirection) popoverDirection
-          andOffset: (CGPoint) offset{
+{
     self.popController = [[UIPopoverController alloc]
                           initWithContentViewController:popoverController];
-    
-    CGPoint buttonPosition = sender.frame.origin;
-    buttonPosition.x += sender.superview.frame.origin.x;
-    buttonPosition.y += sender.superview.frame.origin.y;
-    
-    buttonPosition.x += offset.x;
-    buttonPosition.y += offset.y;
+
+    CGPoint buttonPosition;
+    //popover triggered after currency request
+    //custom alert view is the sender, not one of the buttons
+    if (!([sender isEqual:_currencyButton] || [sender isEqual:_appointmentButton])) {
+        buttonPosition = _appointmentButton.frame.origin;
+        buttonPosition.x += _appointmentButton.superview.frame.origin.x;
+        buttonPosition.y += _appointmentButton.superview.frame.origin.y;
+    }
+    //one of the popover-trigger-buttons called this method
+    else{
+        buttonPosition = sender.superview.frame.origin;
+        buttonPosition.x += sender.frame.origin.x;
+        buttonPosition.y += sender.frame.origin.y;
+    }
     
     //given size as arg. is irrelevant
     //size is defined through size of view in popover
     [self.popController presentPopoverFromRect:CGRectMake(buttonPosition.x, buttonPosition.y, 1, 1)
                                         inView:self.view
-                      permittedArrowDirections:popoverDirection
+                      permittedArrowDirections:UIPopoverArrowDirectionAny
                                       animated:YES];
 }
 /**

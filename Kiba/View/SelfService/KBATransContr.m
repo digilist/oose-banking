@@ -76,6 +76,13 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
     return self;
 }
 
+- (void)dealloc
+{
+    [transferChooseAccountNotifCenter removeObserver:self
+                                                name:(NSString *)accountEntryChosen
+                                              object:nil];
+}
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];

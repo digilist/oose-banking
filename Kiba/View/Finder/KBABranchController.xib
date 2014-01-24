@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KBABranchController">
             <connections>
+                <outlet property="appointmentButton" destination="kuv-RZ-6nH" id="jaF-Qi-WnS"/>
                 <outlet property="appointmentView" destination="gx2-lR-cHw" id="OXg-bb-Asf"/>
                 <outlet property="bottomConstraint" destination="VVc-Vt-QH9" id="whD-BQ-wlI"/>
                 <outlet property="branchLabel" destination="V7X-y3-2w6" id="vVG-pF-QJS"/>
                 <outlet property="contactImage" destination="kqK-pX-ysd" id="R0I-fh-diq"/>
                 <outlet property="contactPersonLabel" destination="cyL-sQ-CiQ" id="7xk-pv-gBh"/>
+                <outlet property="currencyButton" destination="8R1-tj-oKo" id="ZQD-u4-Nua"/>
                 <outlet property="currencyView" destination="zmh-fq-fiH" id="u4Q-IL-olc"/>
                 <outlet property="navigationView" destination="0TK-OX-ikF" id="fH2-SR-YdF"/>
                 <outlet property="openingHoursLabel" destination="BJp-yH-aKM" id="9MZ-Lu-2Gc"/>
@@ -23,9 +25,12 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BranchImage" translatesAutoresizingMaskIntoConstraints="NO" id="5h1-uc-5Ex">
-                    <rect key="frame" x="0.0" y="0.0" width="768" height="370"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BranchImage" translatesAutoresizingMaskIntoConstraints="NO" id="5h1-uc-5Ex">
+                    <rect key="frame" x="0.0" y="65" width="768" height="305"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="305" id="jc3-FY-uZi"/>
+                    </constraints>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="KiBa-Filiale" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7X-y3-2w6">
                     <rect key="frame" x="40" y="322" width="562" height="31"/>
@@ -203,8 +208,11 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="sDe-Vu-DuY" secondAttribute="bottom" constant="30" id="9gl-Rj-83n"/>
                 <constraint firstItem="dbB-PX-3Fm" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="40" id="JSu-fv-eFr"/>
+                <constraint firstItem="5h1-uc-5Ex" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="KLk-Me-Pv1"/>
                 <constraint firstAttribute="trailing" secondItem="sDe-Vu-DuY" secondAttribute="trailing" constant="30" id="VFV-LO-pim"/>
                 <constraint firstAttribute="bottom" secondItem="dbB-PX-3Fm" secondAttribute="bottom" constant="199" id="VVc-Vt-QH9"/>
+                <constraint firstItem="5h1-uc-5Ex" firstAttribute="top" secondItem="2" secondAttribute="top" constant="65" id="c46-Yl-Syb"/>
+                <constraint firstAttribute="trailing" secondItem="5h1-uc-5Ex" secondAttribute="trailing" id="lli-ei-CVY"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
