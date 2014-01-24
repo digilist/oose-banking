@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -29,7 +29,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTi-eO-wPU" customClass="KBAButton">
-                            <rect key="frame" x="426" y="527" width="141" height="36"/>
+                            <rect key="frame" x="426" y="521" width="141" height="36"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="Authentifizieren!">
@@ -108,13 +108,13 @@
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="centerX" secondItem="3BJ-4b-CL8" secondAttribute="centerX" constant="31" id="0GC-Mx-j2K"/>
-                        <constraint firstAttribute="trailing" secondItem="RTi-eO-wPU" secondAttribute="trailing" constant="95" id="20D-VK-1Eh"/>
+                        <constraint firstAttribute="trailing" secondItem="RTi-eO-wPU" secondAttribute="trailing" constant="44" id="20D-VK-1Eh"/>
                         <constraint firstItem="RTi-eO-wPU" firstAttribute="leading" secondItem="m0c-7M-W3j" secondAttribute="leading" constant="426" id="Mwf-sP-9tw"/>
                         <constraint firstItem="Dru-38-HID" firstAttribute="top" secondItem="3BJ-4b-CL8" secondAttribute="bottom" constant="61" id="RBA-QH-Vyj"/>
-                        <constraint firstAttribute="bottom" secondItem="RTi-eO-wPU" secondAttribute="bottom" constant="12" id="T4H-YY-5qJ"/>
+                        <constraint firstAttribute="bottom" secondItem="RTi-eO-wPU" secondAttribute="bottom" constant="18" id="T4H-YY-5qJ"/>
                         <constraint firstAttribute="width" constant="611" id="aXO-xa-HIl"/>
                         <constraint firstItem="Dru-38-HID" firstAttribute="leading" secondItem="m0c-7M-W3j" secondAttribute="leading" constant="20" symbolic="YES" id="fUu-BL-K54"/>
-                        <constraint firstItem="RTi-eO-wPU" firstAttribute="top" secondItem="m0c-7M-W3j" secondAttribute="top" constant="527" id="sSI-OB-t4a"/>
+                        <constraint firstItem="RTi-eO-wPU" firstAttribute="top" secondItem="m0c-7M-W3j" secondAttribute="top" constant="521" id="sSI-OB-t4a"/>
                         <constraint firstAttribute="centerX" secondItem="Dru-38-HID" secondAttribute="centerX" id="tsY-0f-vSR"/>
                         <constraint firstAttribute="height" constant="575" id="uBp-O8-h1h"/>
                         <constraint firstItem="Dru-38-HID" firstAttribute="top" secondItem="m0c-7M-W3j" secondAttribute="top" constant="86" id="zbd-6Y-lwn"/>
