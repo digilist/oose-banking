@@ -331,6 +331,7 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
     //set "Ausführen"-button visible
     self.proceedButton.alpha = 1;
     self.amountField.text = @"0.00";
+    [self chooseAmount:self.amountField];
 }
 
 /**
