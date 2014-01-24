@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KBAAppointmentContr">
             <connections>
+                <outlet property="pickedDate" destination="LCd-2R-icP" id="wtc-Oh-UO0"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
         </placeholder>

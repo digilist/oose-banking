@@ -12,8 +12,10 @@
 extern NSNotificationCenter *dismissNotifCenter;
 const extern NSString *dismissPopover;
 
-@interface KBAAppointmentContr ()
 
+
+@interface KBAAppointmentContr ()
+@property (nonatomic, weak) IBOutlet UIDatePicker *pickedDate;
 @end
 
 @implementation KBAAppointmentContr
@@ -32,8 +34,19 @@ const extern NSString *dismissPopover;
 
 - (IBAction)requestButtonClicked:(id)sender {
     
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd.MM.yyyy 'um' HH:mm"];
+    
+    NSDate *choosenDate = self.pickedDate.date;
+    
+    NSString *formattedDateString = [dateFormatter stringFromDate:choosenDate];
+    
+    NSLog(@"%@", formattedDateString);
+    
+    NSString *contenString = [NSString stringWithFormat:@"Sehr geehrter Herr Mustermann, \ngerne bestätigen wir Ihre Terminamfrage am %@ \n\nherzliche Grüße, \n\nIhre KiBa-Filiale" , formattedDateString];
+    
     [KBAMessageService sendMessageToIdentityWithDescription:@"Terminbestätigung"
-                                                 andContent:@"Sehr geehrter Herr Mustermann, \n gerne bestätigen wir Ihre Terminamfrage am 01.01.2015 9:00. \n\nherzliche Grüße, \n\nIhre KiBa-Filiale"
+                                                 andContent:contenString
                                                     andSender:@"KiBa-Filiale Informatikum"];
     
     [dismissNotifCenter postNotificationName:(NSString *) dismissPopover

@@ -30,7 +30,14 @@
     msg2 = [[Message alloc] initWithDescription:@"Ihre Terminanfrage" content:content2 sender:sender date:[NSDate new] msgId:@2];
     msg3 = [[Message alloc] initWithDescription:@"Ihr verbesserter Zins" content:content3 sender:sender date:[gregorian dateFromComponents:components] msgId:@3];
     
+    
     return [NSMutableArray arrayWithArray:@[msg1, msg2, msg3]];
+    
+
+    
+    
 }
+
+
 
 @end
