@@ -31,6 +31,7 @@
 @property NSArray *sections;
 @property NSArray *cellValues;
 @property (readonly) NSMutableArray *messages;
+@property NSMutableDictionary *MessagesForDate;
 
 @end
 
@@ -58,6 +59,10 @@
     // Init table view
     self.messageTableView.delegate = self;
     self.messageTableView.dataSource = self;
+    
+    // split messages in dates
+    self.MessagesForDate = [NSMutableDictionary new];
+    [self structureMessagesByDate:self.messages];
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,9 +96,7 @@
 
     for (Message *msg in self.messages) {
         NSString *key;
-        if ([msg.date isToday])
-            key = @"Heute";
-        else
+
             key = [formatter stringFromDate:msg.date];
         NSUInteger indexForKey = [sections indexOfObject:key];
 
@@ -108,13 +111,16 @@
     
     self.cellValues = [NSArray arrayWithArray:cellValues];
     self.sections = [NSArray arrayWithArray:sections];
+    
 }
 
 #pragma mark Table View methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Message *selectedMessage = [self.messages objectAtIndex:(NSUInteger) indexPath.row];
+       Message *selectedMessage = [[self.MessagesForDate objectForKey: [self tableView:tableView titleForHeaderInSection:indexPath.section]]objectAtIndex:indexPath.row];
+    
+    
     [self.navigationController pushViewController:[[KBAMessageController alloc] initWithMessage:selectedMessage] animated:YES];
 }
 
@@ -131,8 +137,12 @@
     
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ci];
+
     }
     cell.textLabel.text = selectedMessage.description;
+    
+
+    
     
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:cell.textLabel.font, NSFontAttributeName, nil];
     NSUInteger textWidth = (NSUInteger) ([cell.textLabel.text sizeWithAttributes:attributes].width + 26);
@@ -142,6 +152,7 @@
                                                                tableView.frame.size.width - textWidth - 8,
                                                                cell.frame.size.height
                                                             )];
+
     label.text = selectedMessage.content;
     label.numberOfLines = 1;
     label.textColor = [UIColor lightGrayColor];
@@ -159,5 +170,29 @@
 {
     return [self.sections objectAtIndex:(NSUInteger) section];
 }
+
+-(void)structureMessagesByDate:(NSMutableArray *) msg {
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"de_DE"];
+    [dateFormatter setDateFormat:@"dd. LLLL yyyy"];
+    
+    for (Message *m in msg) {
+        
+        NSString *dateString = [dateFormatter stringFromDate:m.date];
+       
+        if(![[self.MessagesForDate allKeys] containsObject:dateString]){
+            [self.MessagesForDate setObject:[[NSMutableArray alloc]initWithObjects:m, nil]forKey:dateString];
+           
+        }
+        else {
+            [[self.MessagesForDate objectForKey:dateString]addObject:m];
+            
+        }
+     }
+}
+
+
+
 
 @end
