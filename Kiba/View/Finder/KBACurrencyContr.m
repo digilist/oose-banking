@@ -18,7 +18,7 @@ static NSArray *currencies;
 
 extern NSNotificationCenter *dismissNotifCenter;
 const extern NSString *dismissPopover;
-
+const extern NSString *currencyAvailability;
 
 @interface KBACurrencyContr ()
 
@@ -162,7 +162,7 @@ const extern NSString *dismissPopover;
     [alertView setButtonTitles:@[@"Ok"]];
     alertView.onButtonTouchUpInside =
     ^(KBAAlertView * alertV, int bIndex) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"SORTENANFRAGE"
+        [[NSNotificationCenter defaultCenter] postNotificationName:(NSString *)currencyAvailability
                                                             object:nil];
     };
     [alertView show];

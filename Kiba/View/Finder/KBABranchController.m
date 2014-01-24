@@ -21,6 +21,7 @@
 NSNotificationCenter *dismissNotifCenter;
 //global string identifier needed to send/recv notifications
 const NSString *dismissPopover = @"dismissPopover";
+const NSString *currencyAvailability = @"currencyAvailability";
 
 @interface KBABranchController ()
 
@@ -41,8 +42,7 @@ const NSString *dismissPopover = @"dismissPopover";
 - (id)initWithBranch: (Branch *) branch {
     self = [self init];
     
-    if (self)
-    {
+    if (self) {
         self.branch = branch;
     }
     
@@ -76,7 +76,6 @@ const NSString *dismissPopover = @"dismissPopover";
     [self respondToOrientation: UIApplication.sharedApplication.statusBarOrientation
         inAnimatedDurationTime: 0.0];
     
-    
     /*add observer/listener to receive message in popup-tableviews */
     //needs to be created everytime with this controller(is freed everytime view gets closed)
     dismissNotifCenter = [NSNotificationCenter new];
@@ -87,14 +86,24 @@ const NSString *dismissPopover = @"dismissPopover";
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(showAppointmentPopover:)
-                                                 name:@"SORTENANFRAGE"
+                                                 name:(NSString *)currencyAvailability
                                                object:nil];
+}
+
+- (void)dealloc
+{
+    [dismissNotifCenter removeObserver:self
+                                  name:(NSString *)dismissPopover
+                                object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:(NSString *)currencyAvailability
+                                                  object:nil];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /**
@@ -119,7 +128,6 @@ const NSString *dismissPopover = @"dismissPopover";
                          [self.view setNeedsLayout];
                      }];
 }
-
 
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
                                duration:(NSTimeInterval)duration

@@ -96,17 +96,7 @@ const extern NSString *dismissPopover;
     
     self.rateSlider.minimumValue = 0;
     self.rateSlider.maximumValue = self.lengthSlider.maximumValue - self.lengthSlider.minimumValue;
-   
-
-    
-    self.rate = [[self.sliderSteps objectAtIndex:self.length] floatValue] ;
-    
-
-    
-
-    
-   
-    
+    self.rate = [[self.sliderSteps objectAtIndex:self.length] floatValue];
     
     //UI Label Attributes
     [self.creditSum setFont:[UIFont boldSystemFontOfSize:18]];
@@ -119,6 +109,12 @@ const extern NSString *dismissPopover;
                                name:(NSString *)dismissPopover
                              object:nil];
 
+}
+- (void)dealloc
+{
+    [dismissNotifCenter removeObserver:self
+                                  name:(NSString *)dismissPopover
+                                object:nil];
 }
 
 -(void)initUpdate {
