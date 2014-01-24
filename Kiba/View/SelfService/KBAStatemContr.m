@@ -9,9 +9,22 @@
 #import "KBAStatemContr.h"
 #import "KBAFlatDatePicker.h"
 
+#import "KBADependencyInjector.h"
+#import "KBATransactionDao.h"
+#import "KBAAuth.h"
+
+#import "Account.h"
+#import "Transaction.h"
+#import "Customer.h"
+#import "User.h"
+
+#import "KBAStatemTableController.h"
+
 @interface KBAStatemContr ()
 @property (nonatomic, weak) IBOutlet KBAFlatDatePicker *datePickerBegin;
 @property (nonatomic, weak) IBOutlet KBAFlatDatePicker *datePickerEnd;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) IBOutlet KBAStatemTableController *subStatemContr;
 @end
 
 @implementation KBAStatemContr
@@ -21,7 +34,10 @@
     self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
     if (self) {
         self.title = @"Kontoauszüge drucken";
-    }
+        
+
+        
+         }
     return self;
 }
 
@@ -35,5 +51,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+
+
+
 
 @end

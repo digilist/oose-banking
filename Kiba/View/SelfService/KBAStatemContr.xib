@@ -8,6 +8,8 @@
             <connections>
                 <outlet property="datePickerBegin" destination="TEd-wp-XEL" id="KfI-m4-VR3"/>
                 <outlet property="datePickerEnd" destination="Lkt-DD-frh" id="MzZ-v3-bGs"/>
+                <outlet property="subStatemContr" destination="Hc1-bs-WrO" id="c2v-uA-acV"/>
+                <outlet property="tableView" destination="kLE-fq-hMF" id="YcN-SY-9BX"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
         </placeholder>
@@ -37,10 +39,13 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kLE-fq-hMF">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="76" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kLE-fq-hMF">
                     <rect key="frame" x="36" y="183" width="368" height="441"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="Hc1-bs-WrO" id="n4B-J8-L6G"/>
+                    </connections>
                 </tableView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kontoaktivitäten" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uqg-rL-DGY">
                     <rect key="frame" x="45" y="138" width="150" height="26"/>
@@ -75,6 +80,7 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
         </view>
+        <customObject id="Hc1-bs-WrO" customClass="KBAStatemTableController"/>
     </objects>
     <resources>
         <image name="info_orange" width="50" height="50"/>

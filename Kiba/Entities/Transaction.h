@@ -26,13 +26,15 @@
            amount: (NSNumber*) newAmount
              date: (NSDate*) newDate;
 
--(NSString *)printTransactionTiny;
+-(NSString *)printTransactionTiny: (NSString *) indicator;;
 
 -(NSString *)printTransactionTinyRecipient: (NSString *)indicator;
 
 -(NSString *)printTransactionTinySender: (NSString *)indicator;
 
 -(NSString *)printTransactionTinyOwn;
+
+-(NSString *)printTransactionTinyOwn2;
 
 
 @end

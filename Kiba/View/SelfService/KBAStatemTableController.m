@@ -1,12 +1,12 @@
 //
-//  KBAStatemTableContr.m
+//  KBAStatemTableController.m
 //  Kiba
 //
-//  Created by 1jendryc on 17.12.13.
-//  Copyright (c) 2013 KiBa App. All rights reserved.
+//  Created by 1jendryc on 24.01.14.
+//  Copyright (c) 2014 KiBa App. All rights reserved.
 //
 
-#import "KBAStatemTableContr.h"
+#import "KBAStatemTableController.h"
 #import "KBADependencyInjector.h"
 #import "KBATransactionDao.h"
 #import "KBAAuth.h"
@@ -16,19 +16,17 @@
 #import "Customer.h"
 #import "User.h"
 
-@interface KBAStatemTableContr ()
+@interface KBAStatemTableController ()
 @property NSMutableArray *statem;
+
 @end
 
-@implementation KBAStatemTableContr
-
-
+@implementation KBAStatemTableController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        
         id<KBATransactionDao> transDao = [KBADependencyInjector getByKey:@"transDao"];
         
         KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
@@ -44,7 +42,7 @@
             Account *recipient = [[trans objectAtIndex:i]recipient];
             if ((user.owner.userId == customer.userId) && (recipient.owner.userId != customer.userId) ) {
                 [indicator setString:@"-"];
-                string = [[trans objectAtIndex:i]printTransactionTinySender:indicator];
+                string = [[trans objectAtIndex:i]printTransactionTiny:indicator];
                 
                 [self.statem addObject: string];
                 
@@ -52,10 +50,15 @@
             else if ((recipient.owner.userId == customer.userId) && (user.owner.userId != customer.userId))
             {
                 [indicator setString:@"+"];
-                string = [[trans objectAtIndex:i]printTransactionTinyRecipient:indicator];
+                string = [[trans objectAtIndex:i]printTransactionTiny:indicator];
                 
                 [self.statem addObject: string];
-
+                
+            }
+            else if ((user.owner.userId == customer.userId) && (recipient.owner.userId == customer.userId ))
+            {
+                string = [[trans objectAtIndex:i]printTransactionTinyOwn2];
+                [self.statem addObject: string];
             }
         }
     }
@@ -65,6 +68,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,8 +101,7 @@
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:CellIdentifier];
     }
-
-   
+    
     cell.textLabel.text = [self.statem objectAtIndex:indexPath.row];
     cell.textLabel.numberOfLines = 0;
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
@@ -110,5 +113,7 @@
 {
     return @"Transaktionen";
 }
+
+
 
 @end
