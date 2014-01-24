@@ -87,6 +87,7 @@
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
             annotationView.image = [UIImage imageNamed:@"MarkerFiliale"];
+            annotationView.centerOffset = CGPointMake(-11.0, -40);
             
             KBAButton *rightButton = [KBAButton buttonWithType:UIButtonTypeDetailDisclosure];
             annotationView.rightCalloutAccessoryView = rightButton;
