@@ -176,8 +176,6 @@
                         }
                     }
                     [self.executeButton setTitle:@"Weiter" forState:UIControlStateNormal];
-            #warning //TODO:transaktion ausführen
-//            #error sucker
                 }
             };
             //–––––––––––––––––––––––––––––––––––––––––

@@ -33,13 +33,13 @@
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *dateLabel;
 
-@property (nonatomic, weak) IBOutlet UILabel *checkLine;
+@property (nonatomic, weak) IBOutlet KBAButton *proceedButton;
 
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint *bottomConstraint;
 @property (nonatomic, weak) IBOutlet UILabel *currencyLabel;
 @property (nonatomic, weak) IBOutlet UITextField *amountField;
 
-@property (nonatomic, strong) IBOutlet UIPanGestureRecognizer *panRecognizer;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *topConstraint;
+
 
 @property (nonatomic, strong) Account *sender;
 @property (nonatomic, strong) Account *recipient;
@@ -68,6 +68,9 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
                                              selector:@selector(respondToChosenAccountEntry:)
                                                  name:(NSString *)accountEntryChosen
                                                object:nil];
+        
+        [self respondToOrientation: UIApplication.sharedApplication.statusBarOrientation
+            inAnimatedDurationTime: 0.0];
 
     }
     return self;
@@ -135,11 +138,10 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
                      animations:^{
                         if (orientation == UIInterfaceOrientationPortrait ||
                              orientation == UIInterfaceOrientationPortraitUpsideDown) {
-                                 
-                                self.bottomConstraint.constant = 110;
+                            self.topConstraint.constant = 250;
                         }
                         else{
-                                self.bottomConstraint.constant = 40;
+                            self.topConstraint.constant = 250;
                         }
                         [self.view setNeedsLayout];
                      }];
@@ -232,89 +234,96 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
  *
  *  @param recognizer recognizes the pan/drag gesture
  */
--(IBAction)checkDragged:(UIPanGestureRecognizer*)recognizer
+-(IBAction)proceedTransaction
 {
-    if(recognizer.state == UIGestureRecognizerStateBegan){
-        for (UIView* element in self.checkElements) {
-            //capture positions at start of dragging
-            //all elements inherit from UIView (they all have a center attribute)
-            [self.checkElementsPositions addObject:[NSValue valueWithCGPoint: element.center]];
+    //capture positions
+    for (UIView* element in self.checkElements) {
+        //all elements inherit from UIView (they all have a center attribute)
+        [self.checkElementsPositions addObject:[NSValue valueWithCGPoint: element.center]];
+    }
+    
+    //amount must be greater than 0
+    if (self.amountField.text.doubleValue > 0) {
+        
+        /*check is customer-account has enough money*/
+        
+        //customer account has not enough money
+        if (0 > (self.sender.balance.doubleValue - self.amountField.text.doubleValue)) {
+            KBAAlertView *alertView = [KBAAlertView new];
+            alertView.titleLabel.text = @"Transaktion";
+            alertView.subTextLabel.text = @"Das Quellkonto verfügt nicht über genügend Kapital.";
+            //set buttons
+            [alertView setButtonTitles:@[@"Ok"]];
+            [alertView show];
+        }
+        //customer account has enough money
+        else{
+            KBAAlertView *alertView = [KBAAlertView new];
+            alertView.titleLabel.text = @"Transaktion";
+            alertView.subTextLabel.text = @"Bitte bestätigen sie ihre Transaktion.";
+            [alertView setButtonTitles:@[@"Abbrechen", @"Bestätigen"]];
+            
+            void(^respondToClick)(KBAAlertView *, int) =
+            ^(KBAAlertView * alertV, int bIndex) {
+                if(bIndex == 1) {
+                    id<KBATransactionDao> transactionDao = [KBADependencyInjector getByKey:@"transDao"];
+                    [transactionDao transferWithSender:self.sender ToRecipient:self.recipient withAmount:self.selectedAmount];
+                    [self startCheckAnimation];
+                }
+            };
+            alertView.onButtonTouchUpInside = respondToClick;
+            [alertView show];
+            
         }
     }
-    
-    //get amount of dragged points
-    CGPoint translation = [recognizer translationInView:self.view];
-    
-    //only allow to drag check downwards
-    if (translation.y < 0) {
-        translation.y = 0;
+    //if amount not greater than 0
+    else{
+        KBAAlertView *alertView = [KBAAlertView new];
+        alertView.titleLabel.text = @"Transaktion";
+        alertView.subTextLabel.text = @"Sie haben keinen Betrag angegeben.";
+        //set buttons
+        [alertView setButtonTitles:@[@"Ok"]];
+        [alertView show];
     }
+}
+
+/**
+ *  Move check out of the detail view to the right.
+ */
+-(void)startCheckAnimation
+{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationDelay:0.2];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
     
     //shift all elements belonging to check
     for (UIView* element in self.checkElements) {
-        element.center = CGPointMake(element.center.x, element.center.y + translation.y);
+        element.center = CGPointMake(element.center.x + self.view.frame.size.width, element.center.y);
     }
-    [recognizer setTranslation:CGPointMake(0, 0) inView:recognizer.view];
-
     
-    //if dragging ended
-    if(recognizer.state == UIGestureRecognizerStateEnded ||
-       recognizer.state == UIGestureRecognizerStateCancelled) {
-        
-        //if check-y-center was dragged below label "..hier hinüberziehen"
-        if (self.checkLine.center.y < self.checkImageView.center.y) {
-            
-            //amount must be greater than 0
-            if (self.amountField.text.doubleValue > 0) {
-                
-                //check is customer-account has enough money
-                
-                //customer account has not enough money
-                if (0 > (self.sender.balance.doubleValue - self.amountField.text.doubleValue)) {
-                    KBAAlertView *alertView = [KBAAlertView new];
-                    alertView.titleLabel.text = @"Transaktion";
-                    alertView.subTextLabel.text = @"Das Quellkonto verfügt nicht über genügend Kapital.";
-                    //set buttons
-                    [alertView setButtonTitles:@[@"Ok"]];
-                    [alertView show];
-                }
-                //customer account has enough money
-                else{
-                    KBAAlertView *alertView = [KBAAlertView new];
-                    alertView.titleLabel.text = @"Transaktion";
-                    alertView.subTextLabel.text = @"Bitte bestätigen sie ihre Transaktion.";
-                    [alertView setButtonTitles:@[@"Abbrechen", @"Bestätigen"]];
-                    
-                    void(^respondToClick)(KBAAlertView *, int) =
-                    ^(KBAAlertView * alertV, int bIndex) {
-                        if(bIndex == 1) {
-                            id<KBATransactionDao> transactionDao = [KBADependencyInjector getByKey:@"transDao"];
-                            [transactionDao transferWithSender:self.sender ToRecipient:self.recipient withAmount:self.selectedAmount];
-                        }
-                    };
-                    alertView.onButtonTouchUpInside = respondToClick;
-                    [alertView show];
-                    
-                }
-            }
-        }
-        [self putBackCheckElements];
-    }
+    //set "Ausführen"-button invisible
+    self.proceedButton.alpha = 0;
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(moveCheckBack:finished:context:)];
+    [UIView commitAnimations];
+    
 }
 
 /**
  *  put back elements to original position
  */
--(void)putBackCheckElements
+-(void)moveCheckBack:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context
 {
-    [UIView animateWithDuration:0.25 animations:^{
-        for (int i = 0; i < [self.checkElements count]; ++i) {
-            UIView *element = [self.checkElements objectAtIndex:i];
-            NSValue *centerPos = [self.checkElementsPositions objectAtIndex:i];
-            element.center = [centerPos CGPointValue];
-        }
-        [self.checkElementsPositions removeAllObjects];
-    }];
+    for (int i = 0; i < [self.checkElements count]; ++i) {
+        UIView *element = [self.checkElements objectAtIndex:i];
+        NSValue *centerPos = [self.checkElementsPositions objectAtIndex:i];
+        element.center = [centerPos CGPointValue];
+    }
+    [self.checkElementsPositions removeAllObjects];
+    //set "Ausführen"-button visible
+    self.proceedButton.alpha = 1;
+    self.amountField.text = @"0.00";
 }
 
 /**
