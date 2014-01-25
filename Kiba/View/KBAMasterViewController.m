@@ -46,9 +46,9 @@ static UIImage *lockedIcon;
 
 - (void)awakeFromNib
 {
-    self.clearsSelectionOnViewWillAppear = NO;
-    self.preferredContentSize = CGSizeMake(320.0, 600.0);
     [super awakeFromNib];
+    self.clearsSelectionOnViewWillAppear = NO;
+    self.preferredContentSize = CGSizeMake(320.0, 200.0);
 }
 
 - (void)viewDidLoad
@@ -65,6 +65,7 @@ static UIImage *lockedIcon;
     // hack to show the first detail view with the right settings!
     NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:0];
     [self tableView: self.tableView didSelectRowAtIndexPath:path];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void)didReceiveMemoryWarning
