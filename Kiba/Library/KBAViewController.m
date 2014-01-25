@@ -68,6 +68,14 @@
     }
 }
 
+-(void)enableViewHierachy:(UIView *)view
+{
+    for (UIView * subview in [view subviews]) {
+        [subview setUserInteractionEnabled: YES];
+        [self disableViewHierachy:subview];
+    }
+}
+
 -(void)setBackBarButton {
     KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
     Customer *customer = [auth identity];

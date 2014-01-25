@@ -10,5 +10,7 @@
 
 @interface KBAViewController : UIViewController<UISplitViewControllerDelegate>
 -(void)setBackBarButton;
+-(void)disableViewHierachy:(UIView *)view;
+-(void)enableViewHierachy:(UIView *)view;
 @property BOOL needsAuthentification;
 @end

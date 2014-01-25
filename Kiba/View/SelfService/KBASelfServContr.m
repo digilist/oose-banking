@@ -17,6 +17,8 @@
 
 @interface KBASelfServContr ()
 
+@property BOOL isConnected;
+
 @property (nonatomic, strong) IBOutlet KBATransTableContr *subMoneyTransferContr;
 @property (nonatomic, strong) IBOutlet KBADocTableContr *subDocContr;
 @property (nonatomic, strong) IBOutlet KBAStatemTableContr *subStatemContr;
@@ -30,12 +32,11 @@
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *topConstraintTitle;
 @property NSTimer *timer;
 
-//popover
-@property (strong) UIPopoverController *popController;
 @property (nonatomic, strong) KBAInfoController *serviceInfoController;
 
-
 @end
+
+NSString *isConnected = @"isConnected";
 
 @implementation KBASelfServContr
 
@@ -43,9 +44,49 @@
 {
     self = [super init];
     if (self) {
+        [self addObserver:self
+               forKeyPath:isConnected
+                  options:NSKeyValueObservingOptionNew
+                  context:NULL];
         self.needsAuthentification = YES;
+        self.isConnected = NO;
     }
     return self;
+}
+
+/**
+ *  To enable/disbable self-service functions
+ *  depending on isConneted status.
+ *
+ *  @param keyPath incoming key path
+ *  @param object  object that sent notification
+ *  @param change  change type
+ *  @param context context
+ */
+- (void) observeValueForKeyPath:(NSString *)keyPath
+                       ofObject:(id)object
+                         change:(NSDictionary *)change
+                        context:(void *)context
+{
+    if ([keyPath isEqualToString:isConnected]){
+        if (self.isConnected) {
+            [super enableViewHierachy:self.view];
+        }
+        else{
+            [super disableViewHierachy:self.view];
+            //connect button must be clickable
+            //if user is not connected
+            self.connectButton.userInteractionEnabled = YES;
+        }
+        
+    }
+}
+
+- (void)dealloc
+{
+    //remove observer on dealloc
+    [self removeObserver:self forKeyPath:isConnected context:NULL];
+    
 }
 
 - (void)viewDidLoad
@@ -55,7 +96,7 @@
     self.serviceInfoController = [KBAInfoController new];
     
     [self respondToOrientation: UIApplication.sharedApplication.statusBarOrientation
-        inAnimatedDurationTime: 0.5];
+        inAnimatedDurationTime: 0.0];
 }
 
 /**
@@ -127,9 +168,11 @@
             self.connectButton.enabled = NO;
             [self.connectButton setTitle:@"mit KiBa-Station verbunden" forState:UIControlStateDisabled];
             [self.connectButton setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
+            self.isConnected = YES;
         }
         else{
             [SVProgressHUD showErrorWithStatus:@"Fehlgeschlagen!"];
+            self.isConnected = NO;
         }
         
     }
@@ -166,37 +209,28 @@
 }
 
 -(IBAction)requestInformation: (UIButton *) sender {
-    [self showPopover:sender withPopoverController: self.serviceInfoController
-         andDirection:UIPopoverArrowDirectionAny
-            andOffset:CGPointMake(0, 15)];
+    [self showPopover:sender withPopoverController: self.serviceInfoController];
 }
 
 /**
  *  Show a Popover
  */
 - (void)showPopover: (UIButton *)sender withPopoverController:(UIViewController *)popoverController
-       andDirection: (UIPopoverArrowDirection) popoverDirection
-          andOffset: (CGPoint) offset{
-    
-    self.popController = [[UIPopoverController alloc]
-                          initWithContentViewController:popoverController];
-    
-
+{
+    //static to keep strong ref
+    static UIPopoverController *popController;
+    popController = [[UIPopoverController alloc] initWithContentViewController:popoverController];
     
     CGPoint buttonPosition = sender.frame.origin;
     buttonPosition.x += sender.superview.frame.origin.x;
     buttonPosition.y += sender.superview.frame.origin.y;
     
-    buttonPosition.x += offset.x;
-    buttonPosition.y += offset.y;
-    
     //given size as arg. is irrelevant
     //size is defined through size of view in popover
-    [self.popController presentPopoverFromRect:CGRectMake(buttonPosition.x, buttonPosition.y, 1, 1)
+    [popController presentPopoverFromRect:CGRectMake(buttonPosition.x, buttonPosition.y, 1, 1)
                                         inView:self.view
-                      permittedArrowDirections:popoverDirection
+                      permittedArrowDirections:UIPopoverArrowDirectionAny
                                       animated:YES];
-
 }
 
 @end
