@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -23,8 +23,8 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="length" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="3" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="qU7-V7-Hrp" customClass="KBAUISlider">
-                    <rect key="frame" x="208" y="279" width="788" height="35"/>
+                <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="length" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="3" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="qU7-V7-Hrp" customClass="ASValueTrackingSlider">
+                    <rect key="frame" x="144" y="279" width="788" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="bRn-RF-g0R"/>
@@ -33,8 +33,8 @@
                         <action selector="scheduleYears" destination="-1" eventType="valueChanged" id="PXp-0c-Zqs"/>
                     </connections>
                 </slider>
-                <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="249" restorationIdentifier="interest" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="75" minValue="10" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="wds-WO-fY0" customClass="KBAUISlider">
-                    <rect key="frame" x="208" y="363" width="788" height="35"/>
+                <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="249" restorationIdentifier="interest" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="75" minValue="10" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="wds-WO-fY0" customClass="ASValueTrackingSlider">
+                    <rect key="frame" x="144" y="363" width="788" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <accessibility key="accessibilityConfiguration">
                         <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
@@ -79,8 +79,8 @@
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="rate" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="3" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="4EO-O0-bfw" customClass="KBAUISlider">
-                    <rect key="frame" x="208" y="447" width="788" height="35"/>
+                <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="rate" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="3" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="4EO-O0-bfw" customClass="ASValueTrackingSlider">
+                    <rect key="frame" x="144" y="447" width="788" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="2w7-EW-kPB"/>
@@ -120,8 +120,8 @@
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="sum" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12000" minValue="2000" maxValue="20000" translatesAutoresizingMaskIntoConstraints="NO" id="Lco-ql-rRP" customClass="KBAUISlider">
-                    <rect key="frame" x="208" y="194" width="788" height="36"/>
+                <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="sum" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12000" minValue="2000" maxValue="20000" translatesAutoresizingMaskIntoConstraints="NO" id="Lco-ql-rRP" customClass="ASValueTrackingSlider">
+                    <rect key="frame" x="144" y="194" width="788" height="36"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="ufK-tC-cio"/>
@@ -157,10 +157,11 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTT-ct-0ul" customClass="KBAButton">
-                    <rect key="frame" x="436" y="614" width="153" height="34"/>
+                    <rect key="frame" x="429" y="585" width="167" height="36"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="Termin vereinbaren">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -198,14 +199,14 @@
                 <constraint firstItem="uM3-Q2-zh7" firstAttribute="trailing" secondItem="AHE-6b-J0B" secondAttribute="trailing" id="aJ8-gY-wxD"/>
                 <constraint firstItem="3PB-NM-YqM" firstAttribute="leading" secondItem="z09-aD-Dlv" secondAttribute="trailing" constant="8" id="c3s-mY-YKT"/>
                 <constraint firstItem="feB-ka-JNU" firstAttribute="leading" secondItem="ftm-Vp-5IF" secondAttribute="leading" id="dej-iw-HrG"/>
-                <constraint firstAttribute="trailing" secondItem="Lco-ql-rRP" secondAttribute="trailing" constant="30" id="eem-HF-61S"/>
-                <constraint firstItem="Lco-ql-rRP" firstAttribute="leading" secondItem="AHE-6b-J0B" secondAttribute="trailing" constant="59" id="fMs-0p-1K6"/>
+                <constraint firstAttribute="trailing" secondItem="Lco-ql-rRP" secondAttribute="trailing" constant="94" id="eem-HF-61S"/>
+                <constraint firstItem="Lco-ql-rRP" firstAttribute="leading" secondItem="AHE-6b-J0B" secondAttribute="trailing" constant="-5" id="fMs-0p-1K6"/>
                 <constraint firstItem="wds-WO-fY0" firstAttribute="top" secondItem="wkt-Da-hmL" secondAttribute="bottom" constant="9" id="g2g-ja-452"/>
-                <constraint firstAttribute="bottom" secondItem="YTT-ct-0ul" secondAttribute="bottom" constant="120" id="gfA-xA-pWv"/>
                 <constraint firstItem="Lco-ql-rRP" firstAttribute="trailing" secondItem="qU7-V7-Hrp" secondAttribute="trailing" id="iOT-B7-qwM"/>
                 <constraint firstItem="Md3-6Z-J7a" firstAttribute="leading" secondItem="Ijr-Km-z7V" secondAttribute="leading" id="jaV-rm-fZU"/>
                 <constraint firstItem="uM3-Q2-zh7" firstAttribute="leading" secondItem="AHE-6b-J0B" secondAttribute="leading" id="kyc-ws-ZXp"/>
                 <constraint firstItem="Lco-ql-rRP" firstAttribute="top" secondItem="uM3-Q2-zh7" secondAttribute="bottom" constant="9" id="lVX-Ah-ugm"/>
+                <constraint firstItem="YTT-ct-0ul" firstAttribute="top" secondItem="3PB-NM-YqM" secondAttribute="bottom" constant="32" id="nDb-tP-FyD"/>
                 <constraint firstItem="4EO-O0-bfw" firstAttribute="top" secondItem="Ijr-Km-z7V" secondAttribute="bottom" constant="9" id="nia-Li-FCv"/>
                 <constraint firstItem="wkt-Da-hmL" firstAttribute="top" secondItem="qU7-V7-Hrp" secondAttribute="bottom" constant="19" id="rVE-ZZ-QVH"/>
                 <constraint firstItem="Llq-aD-T8N" firstAttribute="centerY" secondItem="QO0-3c-eXe" secondAttribute="centerY" constant="-0.5" id="vdf-7e-uMK"/>

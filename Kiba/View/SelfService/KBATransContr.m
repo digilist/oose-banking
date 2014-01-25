@@ -252,7 +252,7 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
     //amount must be greater than 0
     if (self.amountField.text.doubleValue > 0) {
         
-        /*check is customer-account has enough money*/
+        /*check if customer-account has enough money*/
         
         //customer account has not enough money
         if (0 > (self.sender.balance.doubleValue - self.amountField.text.doubleValue)) {

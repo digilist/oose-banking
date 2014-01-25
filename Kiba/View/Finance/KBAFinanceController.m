@@ -10,13 +10,14 @@
 #import "KBAAppointmentContr.h"
 #import "KBADependencyInjector.h"
 #import "KBACustomerDao.h"
+#import "ASValueTrackingSlider.h"
 
 @interface KBAFinanceController ()
 
-@property (nonatomic, weak) IBOutlet UISlider *sumSlider;
-@property (nonatomic, weak) IBOutlet UISlider *lengthSlider;
-@property (nonatomic, weak) IBOutlet UISlider *interestSlider;
-@property (nonatomic, weak) IBOutlet UISlider *rateSlider;
+@property (nonatomic, weak) IBOutlet ASValueTrackingSlider *sumSlider;
+@property (nonatomic, weak) IBOutlet ASValueTrackingSlider *lengthSlider;
+@property (nonatomic, weak) IBOutlet ASValueTrackingSlider *interestSlider;
+@property (nonatomic, weak) IBOutlet ASValueTrackingSlider *rateSlider;
 
 @property (nonatomic, weak) IBOutlet UILabel *sumLabel;
 @property (nonatomic, weak) IBOutlet UILabel *lengthLabel;
@@ -36,10 +37,8 @@
 @property NSDictionary *creditInterest;
 @property NSMutableArray *sliderSteps;
 
-
 extern NSNotificationCenter *dismissNotifCenter;
 const extern NSString *dismissPopover;
-
 
 //popover
 @property (strong) UIPopoverController *popController;
@@ -71,22 +70,19 @@ const extern NSString *dismissPopover;
 {
     [super viewDidLoad];
     self.financeAppController = [KBAAppointmentContr new];
-    // Do any additional setup after loading the view from its nib.
+    
     //Datenstruktur
     self.sliderSteps = [[NSMutableArray alloc] init];
-  
     
     [self updateValue:self.sumSlider];
     [self updateValue:self.lengthSlider];
     [self updateValue:self.interestSlider];
     
     [self initUpdate];
-    
     [self calculateSliderSteps];
     
     [self updateAllValues];
     [self updateValue:self.rateSlider];
-    
     
     [self calculateCreditSum];
     [self calculateRate];
@@ -108,8 +104,14 @@ const extern NSString *dismissPopover;
                            selector:@selector(closePopover)
                                name:(NSString *)dismissPopover
                              object:nil];
-
+    
+    //sync popover values with label values 
+    self.sumSlider.externalLabelValue = self.sumLabel;
+    self.lengthSlider.externalLabelValue = self.lengthLabel;
+    self.interestSlider.externalLabelValue = self.interestLabel;
+    self.rateSlider.externalLabelValue = self.rateLabel;
 }
+
 - (void)dealloc
 {
     [dismissNotifCenter removeObserver:self
@@ -117,12 +119,11 @@ const extern NSString *dismissPopover;
                                 object:nil];
 }
 
--(void)initUpdate {
-    
+-(void)initUpdate
+{
     self.interest = (double)(round(self.interestSlider.value)/1000);
     self.length = self.lengthSlider.value;
     self.sum = (int)self.sumSlider.value;
-    
 }
 
 
@@ -131,15 +132,13 @@ const extern NSString *dismissPopover;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 /**
  *  initiates the dictionary
  */
 -(void)initDic {
     self.sliderLabel = [NSDictionary dictionaryWithObjectsAndKeys:
                         self.sumLabel, @"sum", self.lengthLabel, @"length", self.interestLabel, @"interest", self.rateLabel, @"rate", nil];
-
-
-    
     self.creditInterest =  [[KBADependencyInjector getByKey:@"customerDao"] customerWithName:nil andPassword:nil].creditRating.financingMatrix ;
 }
 /**
@@ -160,47 +159,29 @@ const extern NSString *dismissPopover;
     else {
         label.text = value;
     }
- 
- // NSLog(@"%@" , value);
-    
-  
-    
 }
-
-
-
 
 -(void)updateAllValues{
     self.interest = (double)(round(self.interestSlider.value)/1000);
     self.length = self.lengthSlider.value;
     self.sum = (int)self.sumSlider.value;
     self.rate = [[self.sliderSteps objectAtIndex: ((int) self.rateSlider.value)]floatValue];
-    
   //  NSLog(@"%f, %d, %d, %f" , self.interest, self. length, self.sum, self.rate);
-    
 }
+
 /**
  *  Calculates the other values when the rate slider is moved
  */
 -(void)calculateYears{
- 
-  
      // int length = - (log(1-((self.interest*self.sum)/self.rate))/(log(1+self.interest)));
     self.length = self.lengthSlider.maximumValue - (int) self.rateSlider.value;;
     self.lengthSlider.value = self.length;
     [self updateValue:self.lengthSlider];
-       
-    
-        
-    
 }
 
 -(void)calculateCreditSum{
     self.credit = self.sum * (self.interest*pow((1+self.interest),self.length) )/(pow((1+self.interest),self.length) -1) * self.length;
     self.creditSum.text = [NSString stringWithFormat:@"%0.f €", self.credit];
- 
-
-    
 }
 
 -(void)calculateRate{
@@ -286,7 +267,7 @@ const extern NSString *dismissPopover;
     for (int a = self.lengthSlider.maximumValue; a>=0; a--) {
         if(a >= (self.lengthSlider.minimumValue))
         {
-            double currenInterest = [[self.creditInterest objectForKey: [NSNumber numberWithInt:a ]] doubleValue]/1000;
+            double currenInterest = [[self.creditInterest objectForKey: [NSNumber numberWithInt:a]] doubleValue]/1000;
             
         float c = self.sum * (currenInterest*pow((1+currenInterest),a) )/(pow((1+currenInterest),a) -1) * a / a;
             [newSteps insertObject:[NSNumber numberWithFloat:c] atIndex:30-a];
@@ -295,7 +276,7 @@ const extern NSString *dismissPopover;
         {
             [newSteps insertObject:[NSNumber numberWithFloat:0] atIndex:30-a];
         }
-        }
+    }
     self.sliderSteps = newSteps;
     
 }

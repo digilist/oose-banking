@@ -31,6 +31,7 @@
 		2139AC6118610DD3008FB712 /* KBAChooseAccountTableContr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2139AC6018610DD3008FB712 /* KBAChooseAccountTableContr.xib */; };
 		2139AC6318610DF1008FB712 /* KBAChooseAccountTableContr.m in Sources */ = {isa = PBXBuildFile; fileRef = 2139AC6218610DF1008FB712 /* KBAChooseAccountTableContr.m */; };
 		213BC4741889E5F300E12598 /* KBAAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BC4731889E5F300E12598 /* KBAAlertView.m */; };
+		213C49931893B43E002D100A /* ASValueTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 213C49921893B43E002D100A /* ASValueTrackingSlider.m */; };
 		21BB5D1D187D5FC400460EE9 /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BB5D1B187D5FC400460EE9 /* JVFloatLabeledTextField.m */; };
 		21BBE56618895E350014DCF2 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BBE56418895E350014DCF2 /* TPKeyboardAvoidingScrollView.m */; };
 		21BBE56718895E350014DCF2 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BBE56518895E350014DCF2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
@@ -167,6 +168,8 @@
 		2139AC6418610E00008FB712 /* KBAChooseAccountTableContr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KBAChooseAccountTableContr.h; path = View/SelfService/KBAChooseAccountTableContr.h; sourceTree = "<group>"; };
 		213BC4721889E5F300E12598 /* KBAAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAAlertView.h; path = "View/Custom - GUI/KBAAlertView.h"; sourceTree = "<group>"; };
 		213BC4731889E5F300E12598 /* KBAAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAAlertView.m; path = "View/Custom - GUI/KBAAlertView.m"; sourceTree = "<group>"; };
+		213C49911893B43E002D100A /* ASValueTrackingSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASValueTrackingSlider.h; path = "View/Custom - GUI/ASValueTrackingSlider.h"; sourceTree = "<group>"; };
+		213C49921893B43E002D100A /* ASValueTrackingSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASValueTrackingSlider.m; path = "View/Custom - GUI/ASValueTrackingSlider.m"; sourceTree = "<group>"; };
 		21BB5D19187D5FC400460EE9 /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JVFloatLabeledTextField.h; path = "View/Custom - GUI/JVFloatLabeledTextField.h"; sourceTree = "<group>"; };
 		21BB5D1B187D5FC400460EE9 /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JVFloatLabeledTextField.m; path = "View/Custom - GUI/JVFloatLabeledTextField.m"; sourceTree = "<group>"; };
 		21BBE56218895E350014DCF2 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingScrollView.h; path = View/TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
@@ -221,7 +224,6 @@
 		A8A909E21887E29500435343 /* KBACreditRatingDaoRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBACreditRatingDaoRest.m; path = Library/DAO/KBACreditRatingDaoRest.m; sourceTree = "<group>"; };
 		A8AE9A61187BE73E00ACC653 /* KBAFinanceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAFinanceController.h; path = View/Finance/KBAFinanceController.h; sourceTree = "<group>"; };
 		A8AE9A62187BE73E00ACC653 /* KBAFinanceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAFinanceController.m; path = View/Finance/KBAFinanceController.m; sourceTree = "<group>"; };
-		A8AE9A63187BE73E00ACC653 /* KBAFinanceControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KBAFinanceControl.xib; path = View/Finance/KBAFinanceControl.xib; sourceTree = "<group>"; };
 		A8B6934E1885501300AD8DA3 /* KBAUISlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAUISlider.h; path = View/KBAUISlider.h; sourceTree = "<group>"; };
 		A8B6934F1885501300AD8DA3 /* KBAUISlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBAUISlider.m; path = View/KBAUISlider.m; sourceTree = "<group>"; };
 		A8D883141860463B006DD296 /* KBAStatemTableContr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBAStatemTableContr.h; path = View/SelfService/KBAStatemTableContr.h; sourceTree = "<group>"; };
@@ -390,6 +392,8 @@
 			children = (
 				21BB5D19187D5FC400460EE9 /* JVFloatLabeledTextField.h */,
 				21BB5D1B187D5FC400460EE9 /* JVFloatLabeledTextField.m */,
+				213C49911893B43E002D100A /* ASValueTrackingSlider.h */,
+				213C49921893B43E002D100A /* ASValueTrackingSlider.m */,
 				2139AC5D18610DB0008FB712 /* KBAFlatDatePicker.h */,
 				2139AC5E18610DB0008FB712 /* KBAFlatDatePicker.m */,
 				0AAEEE2B187BED9F00C1F767 /* SVProgressHUD.h */,
@@ -625,7 +629,6 @@
 				A8AE9A61187BE73E00ACC653 /* KBAFinanceController.h */,
 				A8AE9A62187BE73E00ACC653 /* KBAFinanceController.m */,
 				A83F99A7187ECB5B001E3F5B /* KBAFinanceController.xib */,
-				A8AE9A63187BE73E00ACC653 /* KBAFinanceControl.xib */,
 			);
 			name = Finance;
 			sourceTree = "<group>";
@@ -893,6 +896,7 @@
 				A8B693501885501300AD8DA3 /* KBAUISlider.m in Sources */,
 				C13B62F4183B7D0200207422 /* KBABranchDaoDummy.m in Sources */,
 				A8A909E01887E06B00435343 /* KBACreditRatingDaoDummy.m in Sources */,
+				213C49931893B43E002D100A /* ASValueTrackingSlider.m in Sources */,
 				0AF730F81887D9C100733AB2 /* Message.m in Sources */,
 				C152D40B188E72F20011BDEB /* KBAMessageService.m in Sources */,
 				C10C5FC5183B8DF7008FAECB /* KBABootstrap.m in Sources */,
