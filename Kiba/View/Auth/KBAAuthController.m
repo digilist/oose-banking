@@ -60,27 +60,45 @@
     [self.view addGestureRecognizer:tap];
 }
 
+
 /**
- *  Validates the auth code.
+ *  Validates the auth code. Starts a method chain 
+ *  including authenticateStep1,2,3. Starts with
+ *  authenticateStep1, ends with authenticateStep3.
  *
  *  @param sender
  */
-- (IBAction)authenticate:(id)sender {
+- (IBAction)authenticateStep1:(id)sender {
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
     
     [self dismissKeyboard];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(authenticateStep2)];
+    [UIView commitAnimations];
+}
+
+/**
+ *  Gets called after keyboard disappeared.
+ *  Starts timer which calls step3.
+ */
+-(void)authenticateStep2
+{
     NSRunLoop *r = [NSRunLoop mainRunLoop];
     self.timer = [NSTimer timerWithTimeInterval:0.01
                                          target:self
-                                       selector:@selector(respondToTimer)
+                                       selector:@selector(authenticateStep3)
                                        userInfo:nil
                                         repeats:YES];
     [r addTimer: self.timer forMode:NSDefaultRunLoopMode];
 }
 
 /**
- *  Will be executed when the timer fires an event.
+ *  Is executed when timer fires an event.
  */
--(void)respondToTimer
+-(void)authenticateStep3
 {
     static float time = 0.00;
     if (time <= 1.5) {
