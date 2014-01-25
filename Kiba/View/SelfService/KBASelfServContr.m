@@ -36,7 +36,9 @@
 
 @end
 
-NSString *isConnected = @"isConnected";
+//keep static
+static BOOL isConnectedBool = NO;
+NSString *isConnectedKeyPath = @"isConnected";
 
 @implementation KBASelfServContr
 
@@ -45,11 +47,15 @@ NSString *isConnected = @"isConnected";
     self = [super init];
     if (self) {
         [self addObserver:self
-               forKeyPath:isConnected
+               forKeyPath:isConnectedKeyPath
                   options:NSKeyValueObservingOptionNew
                   context:NULL];
         self.needsAuthentification = YES;
-        self.isConnected = NO;
+        //init with static var
+        self.isConnected = isConnectedBool;
+        if (self.isConnected) {
+            [self setConnected];
+        }
     }
     return self;
 }
@@ -68,7 +74,7 @@ NSString *isConnected = @"isConnected";
                          change:(NSDictionary *)change
                         context:(void *)context
 {
-    if ([keyPath isEqualToString:isConnected]){
+    if ([keyPath isEqualToString:isConnectedKeyPath]){
         if (self.isConnected) {
             [super enableViewHierachy:self.view];
         }
@@ -85,7 +91,7 @@ NSString *isConnected = @"isConnected";
 - (void)dealloc
 {
     //remove observer on dealloc
-    [self removeObserver:self forKeyPath:isConnected context:NULL];
+    [self removeObserver:self forKeyPath:isConnectedKeyPath context:NULL];
     
 }
 
@@ -140,7 +146,7 @@ NSString *isConnected = @"isConnected";
     NSRunLoop *r = [NSRunLoop mainRunLoop];
     self.timer = [NSTimer timerWithTimeInterval:0.01
                                          target:self
-                                       selector:@selector(respondToTimer)
+                                       selector:@selector(connectionProgress)
                                        userInfo:nil
                                         repeats:YES];
     [r addTimer: self.timer forMode:NSDefaultRunLoopMode];
@@ -149,7 +155,7 @@ NSString *isConnected = @"isConnected";
 /**
  *  Will be executed when the timer fires an event.
  */
--(void)respondToTimer
+-(void)connectionProgress
 {
     static float time = 0.00;
     if (time <= 1.5) {
@@ -165,17 +171,25 @@ NSString *isConnected = @"isConnected";
         
         if (true){
             [SVProgressHUD showSuccessWithStatus:@"Erfolgreich" ];
-            self.connectButton.enabled = NO;
-            [self.connectButton setTitle:@"mit KiBa-Station verbunden" forState:UIControlStateDisabled];
-            [self.connectButton setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
-            self.isConnected = YES;
+            [self setConnected];
         }
         else{
             [SVProgressHUD showErrorWithStatus:@"Fehlgeschlagen!"];
-            self.isConnected = NO;
         }
-        
     }
+}
+
+/**
+ *  Setup view regarding positive connection status.
+ */
+-(void)setConnected
+{
+    self.connectButton.enabled = NO;
+    [self.connectButton setTitle:@"mit KiBa-Station verbunden" forState:UIControlStateDisabled];
+    [self.connectButton setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
+    //set with static var
+    isConnectedBool = YES;
+    self.isConnected = isConnectedBool;
 }
 
 /**
