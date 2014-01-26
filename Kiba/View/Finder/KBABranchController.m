@@ -68,6 +68,7 @@ const NSString *currencyAvailability = @"currencyAvailability";
     [self.openingHoursLabel sizeToFit];
     
     self.branchLabel.text = self.branch.name;
+    self.title = self.branch.name;
     [self.branchLabel sizeToFit];
     
     self.contactImage.image = self.branch.consultant.image;
