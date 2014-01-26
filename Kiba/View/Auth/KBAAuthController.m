@@ -26,6 +26,7 @@
 @property (nonatomic, strong) KBAAuthAdvantagesController *advantagesController;
 @property (atomic, strong) NSTimer *timer;
 @property (nonatomic, retain) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
+@property BOOL runButtonAnimation;
 
 - (IBAction)showAuthPopOver:(UIButton*)sender;
 @end
@@ -59,29 +60,34 @@
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
-    [self startUpAnimation];
+    self.runButtonAnimation = YES;
+    [self buttonAnimation];
 }
 
--(void)startUpAnimation
+-(void)viewWillDisappear:(BOOL)animated
 {
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:1.5];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
-    
-    if (self.advantagesButton.alpha == 1) {
-        self.advantagesButton.alpha = 0.5;
-//        self.advantagesButton.transform = CGAffineTransformScale(self.advantagesButton.transform, 0.98, 0.98);
-//        self.advantagesButton.center = CGPointMake(0,0);
+    self.runButtonAnimation = NO;
+}
+
+-(void)buttonAnimation
+{
+    if (self.runButtonAnimation) {
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:1.5];
+        
+        if (self.advantagesButton.alpha == 1) {
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+            self.advantagesButton.alpha = 0.5;
+        }
+        else{
+            self.advantagesButton.alpha = 1;
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+        }
+        
+        [UIView setAnimationDelegate:self];
+        [UIView setAnimationDidStopSelector:@selector(buttonAnimation)];
+        [UIView commitAnimations];
     }
-    else{
-        self.advantagesButton.alpha = 1;
-//        self.advantagesButton.transform = CGAffineTransformScale(self.advantagesButton.transform, 1.02, 1.02);
-//        self.advantagesButton.center = CGPointMake(0,0);
-    }
-    
-    [UIView setAnimationDelegate:self];
-    [UIView setAnimationDidStopSelector:@selector(startUpAnimation)];
-    [UIView commitAnimations];
 }
 
 /**
@@ -153,18 +159,6 @@
 }
 
 /**
- *  Shows the auth info popover.
- *
- *  @param sender
- */
-- (IBAction)showAuthPopOver:(UIButton*)sender
-{
-    [self showPopover:sender withPopoverController: self.advantagesController
-            andDirection:UIPopoverArrowDirectionAny
-            andOffset:CGPointMake(0, 15)];
-}
-
-/**
  *  Setup view regarding authentication.
  */
 -(void)setAuthenticated
@@ -181,11 +175,21 @@
     [controller.tableView reloadData];
 }
 
-
-
 -(void)dismissKeyboard
 {
     [self.authCodeField resignFirstResponder];
+}
+
+/**
+ *  Shows the auth info popover.
+ *
+ *  @param sender
+ */
+- (IBAction)showAuthPopOver:(UIButton*)sender
+{
+    [self showPopover:sender withPopoverController: self.advantagesController
+            andDirection:UIPopoverArrowDirectionAny
+            andOffset:CGPointMake(0, 15)];
 }
 
 /**
