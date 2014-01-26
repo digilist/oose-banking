@@ -22,6 +22,7 @@
 @property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *authCodeField;
 @property (nonatomic, weak) IBOutlet UIView *comicView;
 @property (nonatomic, weak) IBOutlet KBAButton *validateButton;
+@property (nonatomic, weak) IBOutlet KBAButton *advantagesButton;
 @property (nonatomic, strong) KBAAuthAdvantagesController *advantagesController;
 @property (atomic, strong) NSTimer *timer;
 @property (nonatomic, retain) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
@@ -58,8 +59,30 @@
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    [self startUpAnimation];
 }
 
+-(void)startUpAnimation
+{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:1.5];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+    
+    if (self.advantagesButton.alpha == 1) {
+        self.advantagesButton.alpha = 0.5;
+//        self.advantagesButton.transform = CGAffineTransformScale(self.advantagesButton.transform, 0.98, 0.98);
+//        self.advantagesButton.center = CGPointMake(0,0);
+    }
+    else{
+        self.advantagesButton.alpha = 1;
+//        self.advantagesButton.transform = CGAffineTransformScale(self.advantagesButton.transform, 1.02, 1.02);
+//        self.advantagesButton.center = CGPointMake(0,0);
+    }
+    
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(startUpAnimation)];
+    [UIView commitAnimations];
+}
 
 /**
  *  Validates the auth code. Starts a method chain 
