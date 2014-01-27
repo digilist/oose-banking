@@ -103,6 +103,7 @@ NSString *isConnectedKeyPath = @"isConnected";
             //connect button must be clickable
             //if user is not connected
             self.connectButton.userInteractionEnabled = YES;
+            self.infoButton.userInteractionEnabled = YES;
         }
         
     }
