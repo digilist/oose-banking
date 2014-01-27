@@ -31,16 +31,26 @@
 - (IBAction)showAuthPopOver:(UIButton*)sender;
 @end
 
+
 @implementation KBAAuthController
 
-- (void)viewDidLoad
+/**
+ *  Called before viewDidLoad. To setup view smoothly 
+ *  (here especially for text in "validateButton").
+ */
+-(void)viewWillLayoutSubviews
 {
-    [super viewDidLoad];
     KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
     Customer *customer = [auth identity];
     if (customer.authenticated) {
         [self setAuthenticated];
     }
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
     //init scrollview
     [self.scrollView contentSizeToFit];
     //set initial scroll position
@@ -172,7 +182,17 @@
     // change locked icon in navigation
     UINavigationController *navController = self.splitViewController.viewControllers[0];
     KBAMasterViewController *controller = (KBAMasterViewController *)navController.topViewController;
+    
+    //remeber selected path
+    NSIndexPath *path = [controller.tableView indexPathForSelectedRow];
+    
+    //remove locks from master-table view-icons
     [controller.tableView reloadData];
+    
+    //keep highlighting auth view selection
+    [controller.tableView  selectRowAtIndexPath:path
+                                       animated:NO
+                                 scrollPosition:UITableViewScrollPositionNone];
 }
 
 -(void)dismissKeyboard

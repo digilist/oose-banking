@@ -53,24 +53,31 @@ NSString *isConnectedKeyPath = @"isConnected";
                forKeyPath:isConnectedKeyPath
                   options:NSKeyValueObservingOptionNew
                   context:NULL];
+        
+        self.serviceInfoController = [KBAInfoController new];
     }
     return self;
 }
 
-- (void)viewDidLoad
+/**
+ *  Called before viewDidLoad. To setup view smoothly 
+ *  (here especially for text in "connectButton").
+ */
+-(void)viewWillLayoutSubviews
 {
-    [super viewDidLoad];
-    self.serviceInfoController = [KBAInfoController new];
-    
-    [self respondToOrientation: UIApplication.sharedApplication.statusBarOrientation
-        inAnimatedDurationTime: 0.0];
-    
     /* isConnectedBool equivalent to function which
        evaluates connectivity to station */
     self.isConnected = isConnectedBool;
     if (self.isConnected) {
         [self setConnected];
     }
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self respondToOrientation: UIApplication.sharedApplication.statusBarOrientation
+        inAnimatedDurationTime: 0.0];
 }
 
 /**
@@ -105,7 +112,6 @@ NSString *isConnectedKeyPath = @"isConnected";
 {
     //remove observer on dealloc
     [self removeObserver:self forKeyPath:isConnectedKeyPath context:NULL];
-    
 }
 
 
@@ -182,9 +188,9 @@ NSString *isConnectedKeyPath = @"isConnected";
     }
 }
 
-///**
-// *  Setup view regarding positive connection status.
-// */
+/**
+ *  Setup view regarding positive connection status.
+ */
 -(void)setConnected
 {
     self.connectButton.enabled = NO;
