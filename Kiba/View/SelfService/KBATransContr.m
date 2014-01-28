@@ -348,8 +348,6 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
     [numberFormatter setLocale:german];
     [numberFormatter setNumberStyle: NSNumberFormatterSpellOutStyle];
     
-    //TODO: regex to check if inserted value is in correct format
-    
     //obtain amount values from string
     NSNumber *euroValue = [NSNumber numberWithDouble: floor([sender.text doubleValue])];
     //round needed due to erros in floating point representation (like 22.99999 cents instead of 23)
@@ -359,6 +357,13 @@ const NSString *accountEntryChosen = @"accountEntryChosen";
     //spell out single parts
     NSString *wordEuro = [numberFormatter stringFromNumber:euroValue];
     NSString *wordCent = [numberFormatter stringFromNumber:centValue];
+    
+    if ([euroValue isEqualToNumber: [NSNumber numberWithInt:1]]) {
+        wordEuro = @"ein";
+    }
+    if ([centValue isEqualToNumber: [NSNumber numberWithInt:1]]) {
+        wordCent = @"ein";
+    }
     
     self.selectedAmount = [NSNumber numberWithDouble:[sender.text doubleValue]];
     NSLog(@"%f", [self.selectedAmount doubleValue]);
