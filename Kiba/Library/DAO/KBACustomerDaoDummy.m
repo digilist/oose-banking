@@ -18,8 +18,8 @@
 
 - (Customer *)customerWithName:(NSString*)name andPassword:(NSString*)password
 {
-    Customer *customer = [[Customer alloc] initWithForeName: @"Max"
-                                                    surname: @"Mustermann"
+    Customer *customer = [[Customer alloc] initWithForeName: @"Markus"
+                                                    surname: @"König"
                                                  customerId: 1
                                                        pass: @"test"
                                                       ident: @"maxm"

@@ -43,7 +43,7 @@ const extern NSString *dismissPopover;
     
     NSLog(@"%@", formattedDateString);
     
-    NSString *contenString = [NSString stringWithFormat:@"Sehr geehrter Herr Mustermann, \ngerne bestätigen wir Ihre Terminamfrage am %@ \n\nherzliche Grüße, \n\nIhre KiBa-Filiale" , formattedDateString];
+    NSString *contenString = [NSString stringWithFormat:@"Sehr geehrter Herr König, \ngerne bestätigen wir Ihre Terminamfrage am %@ \n\nherzliche Grüße, \n\nIhre KiBa-Filiale" , formattedDateString];
     
     [KBAMessageService sendMessageToIdentityWithDescription:@"Terminbestätigung"
                                                  andContent:contenString

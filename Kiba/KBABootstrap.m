@@ -38,14 +38,14 @@
  *
  */
 + (void) bootstrap {
-    [KBABootstrap initDependencyInjector];
+    [KBABootstrap initDependencyInjectorWitMode:@"dev"];
 }
 
 /**
  * Initialize the dependency injector with all neccessary dependencies.
  *
  */
-+ (void) initDependencyInjector {
++ (void) initDependencyInjectorWitMode:(NSString*) mode {
 
     id<KBABranchDao> branchDao;
     id<KBAExchangeRateDao> exchangeRateDao;
@@ -58,7 +58,7 @@
     
     exchangeRateDao = [KBAExchangeRateDaoRest new];
     
-    if (true) { // if development / click dummy
+    if ([mode isEqualToString:@"dev"]) { // if development / click dummy
         branchDao = [KBABranchDaoDummy new];
         customerDao = [KBACustomerDaoDummy new];
         accountDAo = [KBAAccountDaoDummy new];

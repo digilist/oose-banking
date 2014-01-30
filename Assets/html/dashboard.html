@@ -69,7 +69,11 @@
 
         <div id="line" class="chart"></div>
 
-        <h2>Meine letzten Konto-Aktivitäten <span class="pull-right align-right" id="balance"></span></h2>
+        <h2>Meine letzten Konto-Aktivitäten
+           
+            <span class="pull-right align-right" id="balance"></span>
+          
+        </h2>
         <table class="table">
             <thead>
                 <tr>
@@ -1511,7 +1515,8 @@
                             //backgroundColor: { colors: [ "#fff", "#eee" ] },
                             markings: weekendAreas
                         },
-                        colors: ['#539770', '#4B7D74', '#8DC2BC', '#EDD6B4', '#BE7467', '#E2AE63', '#00a09a', '#f39222', '#999999', '#633189']
+                        colors: ['#80E8D5', '#4B7D74', '#8DC2BC', '#EDD6B4', '#BE7467', '#E2AE63', '#00a09a', '#f39222', '#999999', '#633189']
+                                // #0CE8C0, 80E8D5
                     };
                     $.plot('#line', data, lineChartOptions);
                 };
@@ -1523,7 +1528,7 @@
 
                 this.setBalance = function (balance)
                 {
-                    $('#balance').text(balance.balance);
+                    $('#balance').text("Gesamtvermögen: " + balance.balance);
                 };
 
                 this.setTransactions = function (transactions)

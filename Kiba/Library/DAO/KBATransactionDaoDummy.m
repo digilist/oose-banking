@@ -37,8 +37,8 @@
         Account *acc2 = [customer.accounts objectAtIndex:1];
         
         // Create fake recipients
-        Customer *custo2 = [[Customer alloc] initWithId:2 forename:@"Susanne" surname:@"Strebsam" password:nil];
-        Customer *custo3 = [[Customer alloc] initWithId:3 forename:@"Yolander" surname:@"Batzteki" password:nil];
+        Customer *custo2 = [[Customer alloc] initWithId:2 forename:@"Kai " surname:@"Bruns" password:nil];
+        Customer *custo3 = [[Customer alloc] initWithId:3 forename:@"Paul" surname:@"Rühmann" password:nil];
         Customer *custo4 = [[Customer alloc] initWithId:3 forename:@"Michael" surname:@"Schmidt" password:nil];
         Customer *custo5 = [[Customer alloc] initWithId:3 forename:@"Ralf" surname:@"Reichelt" password:nil];
         
@@ -49,7 +49,7 @@
         Account *accountA = [[Account alloc] initWithBalance: balanceA
                                                    overDraft: @0
                                                    accountNr: accountNrA
-                                                        name: @"Susannes Konto"
+                                                        name: @"Kais Konto"
                                                        owner: custo2];
         
         NSNumber *balanceB = [self generateRandomAmount];
@@ -58,7 +58,7 @@
         Account *accountB = [[Account alloc] initWithBalance: balanceB
                                                    overDraft: @0
                                                    accountNr: accountNrB
-                                                        name: @"Yolanders Konto"
+                                                        name: @"Pauls Konto"
                                                        owner: custo3];
         
         Account *accountC = [[Account alloc] initWithBalance: balanceB

@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KBAAuthController">
             <connections>
+                <outlet property="advantagesButton" destination="kHe-cw-ESG" id="iq0-ju-XSq"/>
                 <outlet property="authCodeField" destination="ggk-1H-ANl" id="k93-SF-XeT"/>
                 <outlet property="comicView" destination="Dru-38-HID" id="id4-Xl-kzv"/>
                 <outlet property="scrollView" destination="m0c-7M-W3j" id="sI0-Gk-JbV"/>
@@ -77,7 +78,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHe-cw-ESG" customClass="KBAButton">
                                     <rect key="frame" x="314" y="343" width="173" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                     <state key="normal" title="4. Vorteile genießen">
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>

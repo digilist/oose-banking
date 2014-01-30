@@ -22,23 +22,35 @@
 @property (nonatomic, weak) IBOutlet JVFloatLabeledTextField *authCodeField;
 @property (nonatomic, weak) IBOutlet UIView *comicView;
 @property (nonatomic, weak) IBOutlet KBAButton *validateButton;
+@property (nonatomic, weak) IBOutlet KBAButton *advantagesButton;
 @property (nonatomic, strong) KBAAuthAdvantagesController *advantagesController;
 @property (atomic, strong) NSTimer *timer;
 @property (nonatomic, retain) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
+@property BOOL runButtonAnimation;
 
 - (IBAction)showAuthPopOver:(UIButton*)sender;
 @end
 
+
 @implementation KBAAuthController
 
-- (void)viewDidLoad
+/**
+ *  Called before viewDidLoad. To setup view smoothly 
+ *  (here especially for text in "validateButton").
+ */
+-(void)viewWillLayoutSubviews
 {
-    [super viewDidLoad];
     KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
     Customer *customer = [auth identity];
     if (customer.authenticated) {
         [self setAuthenticated];
     }
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
     //init scrollview
     [self.scrollView contentSizeToFit];
     //set initial scroll position
@@ -58,8 +70,35 @@
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    self.runButtonAnimation = YES;
+    [self buttonAnimation];
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    self.runButtonAnimation = NO;
+}
+
+-(void)buttonAnimation
+{
+    if (self.runButtonAnimation) {
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:1.5];
+        
+        if (self.advantagesButton.alpha == 1) {
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+            self.advantagesButton.alpha = 0.5;
+        }
+        else{
+            self.advantagesButton.alpha = 1;
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+        }
+        
+        [UIView setAnimationDelegate:self];
+        [UIView setAnimationDidStopSelector:@selector(buttonAnimation)];
+        [UIView commitAnimations];
+    }
+}
 
 /**
  *  Validates the auth code. Starts a method chain 
@@ -130,18 +169,6 @@
 }
 
 /**
- *  Shows the auth info popover.
- *
- *  @param sender
- */
-- (IBAction)showAuthPopOver:(UIButton*)sender
-{
-    [self showPopover:sender withPopoverController: self.advantagesController
-            andDirection:UIPopoverArrowDirectionAny
-            andOffset:CGPointMake(0, 15)];
-}
-
-/**
  *  Setup view regarding authentication.
  */
 -(void)setAuthenticated
@@ -155,14 +182,34 @@
     // change locked icon in navigation
     UINavigationController *navController = self.splitViewController.viewControllers[0];
     KBAMasterViewController *controller = (KBAMasterViewController *)navController.topViewController;
+    
+    //remeber selected path
+    NSIndexPath *path = [controller.tableView indexPathForSelectedRow];
+    
+    //remove locks from master-table view-icons
     [controller.tableView reloadData];
+    
+    //keep highlighting auth view selection
+    [controller.tableView  selectRowAtIndexPath:path
+                                       animated:NO
+                                 scrollPosition:UITableViewScrollPositionNone];
 }
-
-
 
 -(void)dismissKeyboard
 {
     [self.authCodeField resignFirstResponder];
+}
+
+/**
+ *  Shows the auth info popover.
+ *
+ *  @param sender
+ */
+- (IBAction)showAuthPopOver:(UIButton*)sender
+{
+    [self showPopover:sender withPopoverController: self.advantagesController
+            andDirection:UIPopoverArrowDirectionAny
+            andOffset:CGPointMake(0, 15)];
 }
 
 /**

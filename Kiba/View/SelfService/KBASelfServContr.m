@@ -31,12 +31,14 @@
 
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *topConstraintTitle;
 @property NSTimer *timer;
-
+@property (strong) UIPopoverController *popController;
 @property (nonatomic, strong) KBAInfoController *serviceInfoController;
+
 
 @end
 
-//keep static
+/* isConnectedBool equivalent to function which
+   evaluates connectivity to station */
 static BOOL isConnectedBool = NO;
 NSString *isConnectedKeyPath = @"isConnected";
 
@@ -46,23 +48,41 @@ NSString *isConnectedKeyPath = @"isConnected";
 {
     self = [super init];
     if (self) {
+        self.needsAuthentification = YES;
         [self addObserver:self
                forKeyPath:isConnectedKeyPath
                   options:NSKeyValueObservingOptionNew
                   context:NULL];
-        self.needsAuthentification = YES;
-        //init with static var
-        self.isConnected = isConnectedBool;
-        if (self.isConnected) {
-            [self setConnected];
-        }
+        
+        self.serviceInfoController = [KBAInfoController new];
     }
     return self;
 }
 
 /**
+ *  Called before viewDidLoad. To setup view smoothly 
+ *  (here especially for text in "connectButton").
+ */
+-(void)viewWillLayoutSubviews
+{
+    /* isConnectedBool equivalent to function which
+       evaluates connectivity to station */
+    self.isConnected = isConnectedBool;
+    if (self.isConnected) {
+        [self setConnected];
+    }
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self respondToOrientation: UIApplication.sharedApplication.statusBarOrientation
+        inAnimatedDurationTime: 0.0];
+}
+
+/**
  *  To enable/disbable self-service functions
- *  depending on isConneted status.
+ *  depending on isConnected status.
  *
  *  @param keyPath incoming key path
  *  @param object  object that sent notification
@@ -83,6 +103,7 @@ NSString *isConnectedKeyPath = @"isConnected";
             //connect button must be clickable
             //if user is not connected
             self.connectButton.userInteractionEnabled = YES;
+            self.infoButton.userInteractionEnabled = YES;
         }
         
     }
@@ -92,18 +113,8 @@ NSString *isConnectedKeyPath = @"isConnected";
 {
     //remove observer on dealloc
     [self removeObserver:self forKeyPath:isConnectedKeyPath context:NULL];
-    
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    self.serviceInfoController = [KBAInfoController new];
-    
-    [self respondToOrientation: UIApplication.sharedApplication.statusBarOrientation
-        inAnimatedDurationTime: 0.0];
-}
 
 /**
  *  Set constraints based on iPad-orientation
@@ -118,7 +129,6 @@ NSString *isConnectedKeyPath = @"isConnected";
                          //animations if switch to portrait-mode
                          if (orientation == UIInterfaceOrientationPortrait ||
                              orientation == UIInterfaceOrientationPortraitUpsideDown) {
-                             
                          }
                          //animations if switch to landscape-mode
                          else{

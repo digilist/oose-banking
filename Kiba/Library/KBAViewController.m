@@ -152,12 +152,14 @@
 {
     KBAAuth *auth = [KBADependencyInjector getByKey:@"auth"];
     Customer *customer = [auth identity];
-
+    
     if (customer.authenticated) {
           self.popController = [[UIPopoverController alloc] initWithContentViewController: self.succesPopupController];
     } else {
           self.popController = [[UIPopoverController alloc] initWithContentViewController: self.failPopupController];
     }
+    
+    
     
     UIBarButtonItem *view = self.navigationItem.rightBarButtonItem;
     [self.popController presentPopoverFromBarButtonItem:view
