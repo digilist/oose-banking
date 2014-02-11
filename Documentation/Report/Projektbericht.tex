@@ -37,6 +37,29 @@
 \definecolor{kiba}{HTML}{41707C}
 
 %===============================================================================
+% Collaborative
+%===============================================================================
+\definecolor{markus}{HTML}{FF3118}
+\definecolor{alex}{HTML}{3152A5}
+\definecolor{julius}{HTML}{639C18}
+\definecolor{marco}{HTML}{844D18}
+\definecolor{michael}{HTML}{A50063}
+\definecolor{corny}{HTML}{0084A5}
+
+\makeatletter
+\def\name@markus{Markus Fasselt}
+\def\name@alex{Alexander Droste}
+\def\name@julius{Julius Wulk}
+\def\name@marco{Marco F. Jendryczko}
+\def\name@michael{Michael Schaarschmidt}
+\def\name@corny{Konstantin S. M. Möllers}
+\newcommand{\currentAuthor}{kiba}
+\newcommand{\authoredSection}[2]{%
+	\renewcommand{\currentAuthor}{#1}%
+	\section[#2]{#2 {\normalfont\sffamily\small von \csname name@#1\endcsname}}}
+\makeatother
+
+%===============================================================================
 % Head / Foot
 %===============================================================================
 \pagestyle{fancy}
@@ -62,7 +85,7 @@
 %===============================================================================
 % Sections
 %===============================================================================
-\titleformat{\section}[hang]{\Large\sffamily\bfseries\color{kiba}}{\thesection\quad}{0pt}{}
+\titleformat{\section}[hang]{\Large\sffamily\bfseries\color{\currentAuthor}}{\thesection\quad}{0pt}{}
 \titleformat{\subsection}[hang]{\large\sffamily\itshape}{\thesubsection\quad}{0pt}{}
 \titleformat{\subsubsection}[hang]{\large\sffamily}{\thesubsection\quad}{0pt}{}
     
