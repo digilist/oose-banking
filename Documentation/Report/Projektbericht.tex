@@ -6,6 +6,7 @@
 \usepackage{fontspec}
 \usepackage{geometry}
 \usepackage[ngerman]{babel} % Use new german language definition
+\usepackage{hyperref} % Hyperlinks in PDFs
 \usepackage{amsmath, amsfonts, amssymb} % Math packages
 \usepackage{graphicx} % For Graphics
 \usepackage{xcolor} % For coloring texts
@@ -15,6 +16,9 @@
 \usepackage{nameref} % References for names instead of numbers
 \usepackage[absolute]{textpos} % Absolute positioning
 \usepackage{titlesec} % Customizable ((Sub)Sub)Sections
+\usepackage{titletoc} % Customizable ToC
+\usepackage{tocloft} % Customizable ToC, LoF, …
+\usepackage{pdfpages} % Embedding pdfs
 
 %===============================================================================
 % Definitions
@@ -88,6 +92,24 @@
 \titleformat{\section}[hang]{\Large\sffamily\bfseries\color{\currentAuthor}}{\thesection\quad}{0pt}{}
 \titleformat{\subsection}[hang]{\large\sffamily\itshape}{\thesubsection\quad}{0pt}{}
 \titleformat{\subsubsection}[hang]{\large\sffamily}{\thesubsection\quad}{0pt}{}
+
+%===============================================================================
+% Table of Contents
+%===============================================================================
+\renewcommand{\cftfigpresnum}{Abb. }
+\renewcommand{\cfttabpresnum}{Tab. }
+\renewcommand{\cftfigaftersnum}{:}
+\renewcommand{\cfttabaftersnum}{:}
+\setlength{\cftfignumwidth}{2cm}
+\setlength{\cfttabnumwidth}{2cm}
+\setlength{\cftfigindent}{0cm}
+\setlength{\cfttabindent}{0cm}
+
+\def\tocindent{15mm}
+\titlecontents{section}[\tocindent]{\vspace{10pt}\sffamily\bfseries}{\noindent\contentslabel{\tocindent}}%
+	{\hspace*{0cm}}{\hfill\contentspage}
+\titlecontents{subsection}[\tocindent]{}{\noindent\contentslabel{\tocindent}}%
+	{\hspace*{0cm}}{\hfill\contentspage}
     
 %===============================================================================
 % Meta Description
@@ -126,5 +148,15 @@
 \input{Parts/Toolchain}
 \input{Parts/Qualitätssicherung}
 \input{Parts/Fazit}
+\newpage
+
+%===============================================================================
+% Verzeichnisse
+%===============================================================================
+\renewcommand{\currentAuthor}{kiba}
+\phantomsection
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+\listoffigures
+
 
 \end{document}
