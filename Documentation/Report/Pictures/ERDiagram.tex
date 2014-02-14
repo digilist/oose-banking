@@ -36,15 +36,15 @@
 		\node[attribute] (Branch2) [above left=of Branch] {bic} edge (Branch);
 		\node[attribute] (Branch3) [below left=of Branch] {openHours} edge (Branch);
 		\node[attribute] (Branch4) [left=of Branch] {phoneNumber} edge (Branch);
-		\node[relationship] (leads) [above=4cm of Branch] {located at} edge (Branch) edge (Consultant);
+		\node[relationship] (leads) [above=4cm of Branch] {leads} edge (Branch) edge (Consultant);
 		
 		% Account
 		\node[relationship] (owns) [below=2cm of Customer] {owns} edge (Customer);
 		\node[entity] (Account) [below=2cm of owns] {Account} edge (owns);
 		\node[attribute] (Acc1) [above left=.3cm and 1cm of Account] {balance} edge (Account);
-		\node[attribute] (Acc2) [above right=1cm and -.4cm of Account] {accountNr} edge (Account);
-		\node[attribute] (Acc3) [right=of Account] {description} edge (Account);
-		\node[attribute] (Acc4) [left=of Account] {overDraft} edge (Account);
+		\node[attribute] (Acc2) [above right=-.2cm and 1cm of Account] {accountNr} edge (Account);
+		\node[attribute] (Acc3) [below right=-.5cm and 1cm of Account] {description} edge (Account);
+		\node[attribute] (Acc4) [below left=-.5cm and 1cm of Account] {overDraft} edge (Account);
 		
 		% Transaction
 		\node[relationship] (recipient) [below left=1cm and .5cm of Account] {recipient} edge (Account);
@@ -64,7 +64,7 @@
 		\node[relationship] (inbox) [below right=.5cm and .5cm of Customer] {inbox} edge (Customer);
 		\node[entity] (Message) [below right=.5cm and .5cm of inbox] {Message} edge (inbox);
 		\node[attribute] (Message1) [below right=of Message] {description} edge (Message);
-		\node[attribute] (Message2) [below=.8cm of Message] {content} edge (Message);
+		\node[attribute] (Message2) [below left=.8cm of Message] {content} edge (Message);
 		\node[attribute] (Message3) [above right=of Message] {sender} edge (Message);
 		\node[attribute] (Message4) [above=of Message] {date} edge (Message);
 		\node[attribute] (Message5) [right=of Message] {msgId} edge (Message);
