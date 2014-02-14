@@ -9,8 +9,8 @@
 \BOOKMARK [1][-]{section.5}{Design}{}% 9
 \BOOKMARK [1][-]{section.6}{Ergebnis}{}% 10
 \BOOKMARK [1][-]{section.7}{Architektur}{}% 11
-\BOOKMARK [2][-]{subsection.7.1}{Anforderungen und Rahmenbedingungen}{section.7}% 12
-\BOOKMARK [2][-]{subsection.7.2}{Objektstruktur}{section.7}% 13
+\BOOKMARK [2][-]{subsection.7.1}{Umsetzung des MVC-Ansatzes}{section.7}% 12
+\BOOKMARK [2][-]{subsection.7.2}{Datenmodell}{section.7}% 13
 \BOOKMARK [2][-]{subsection.7.3}{Datenübertragung}{section.7}% 14
 \BOOKMARK [2][-]{subsection.7.4}{Dependency Injection}{section.7}% 15
 \BOOKMARK [1][-]{section.8}{Toolchain}{}% 16

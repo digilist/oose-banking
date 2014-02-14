@@ -1,0 +1,74 @@
+\begin{figure}[h]
+	\centering
+	\scalebox{.57}{
+	\begin{tikzpicture}[node distance=1.5cm, every edge/.style={link}]
+		% User
+		\node[entity] (User) {User};
+		\node[attribute] (User1) [above=of User] {userId} edge (User);
+		\node[attribute] (User2) [above right=of User] {forename} edge (User);
+		\node[attribute] (User3) [above left=of User] {surname} edge (User);
+		\node[attribute] (User4) [right=of User] {password} edge (User);
+		\node[isa] (isa) [below=1cm of User] {is a} edge[->] (User);
+		
+		% Consultant
+		\node[entity] (Consultant) [below left=1cm and 2cm of isa] {Consultant} edge[->] (isa);
+		\node[attribute] (Consultant1) [left=1cm of Consultant] {phoneNumber} edge (Consultant);
+		\node[attribute] (Consultant2) [above=1cm of Consultant] {image} edge (Consultant);
+		\node[attribute] (Consultant3) [above left=1cm of Consultant] {businessPosition} edge (Consultant);
+		
+		% Customer
+		\node[entity] (Customer) [below right=1cm and 2cm of isa] {Customer} edge[->] (isa);
+		\node[attribute] (Customer1) [above=of Customer] {authenticated} edge (Customer);
+		
+		% Address
+		\node[relationship] (livesAt) [below left=of Customer] {lives at} edge (Customer);
+		\node[entity] (Address) [below left=of livesAt] {Address} edge (livesAt);
+		\node[attribute] (Address1) [left=of Address] {street} edge (Address);
+		\node[attribute] (Address2) [right=of Address] {houseNr} edge (Address);
+		\node[attribute] (Address3) [below=of Address] {postalCode} edge (Address);
+		\node[attribute] (Address4) [above=of Address] {city} edge (Address);
+		\node[attribute] (Address5) [above left=of Address] {coordinates} edge (Address);
+		
+		% Branch
+		\node[relationship] (Located) [below left=1cm and 1.5cm of Address] {located at} edge (Address);
+		\node[entity] (Branch) [below left=.5cm and 0.75cm of Located] {Branch} edge (Located);
+		\node[attribute] (Branch1) [below=of Branch] {name} edge (Branch);
+		\node[attribute] (Branch2) [above left=of Branch] {bic} edge (Branch);
+		\node[attribute] (Branch3) [below left=of Branch] {openHours} edge (Branch);
+		\node[attribute] (Branch4) [left=of Branch] {phoneNumber} edge (Branch);
+		\node[relationship] (leads) [above=4cm of Branch] {located at} edge (Branch) edge (Consultant);
+		
+		% Account
+		\node[relationship] (owns) [below=2cm of Customer] {owns} edge (Customer);
+		\node[entity] (Account) [below=2cm of owns] {Account} edge (owns);
+		\node[attribute] (Acc1) [above left=.3cm and 1cm of Account] {balance} edge (Account);
+		\node[attribute] (Acc2) [above right=1cm and -.4cm of Account] {accountNr} edge (Account);
+		\node[attribute] (Acc3) [right=of Account] {description} edge (Account);
+		\node[attribute] (Acc4) [left=of Account] {overDraft} edge (Account);
+		
+		% Transaction
+		\node[relationship] (recipient) [below left=1cm and .5cm of Account] {recipient} edge (Account);
+		\node[relationship] (sender) [below right=1cm and .5cm of Account] {sender} edge (Account);
+		\node[entity] (Transaction) [below right=1cm and .5cm of recipient] {Transaction} edge (recipient) edge (sender);
+		\node[attribute] (Transaction1) [below=of Transaction] {amount} edge (Transaction);
+		\node[attribute] (Transaction2) [right=of Transaction] {date} edge (Transaction);
+		
+		% OpenHour
+		\node[relationship] (opens) [below right=.2cm and 1.5cm of Branch] {opens} edge (Branch);
+		\node[entity] (OpenHour) [below right=.2cm and 1.5cm of opens] {OpenHour} edge (opens);
+		\node[attribute] (OpenHour1) [below left=of OpenHour] {openingTime} edge (OpenHour);
+		\node[attribute] (OpenHour2) [below=of OpenHour] {closingTime} edge (OpenHour);
+		\node[attribute] (OpenHour3) [below right=of OpenHour] {weekDay} edge (OpenHour);
+		
+		% Message
+		\node[relationship] (inbox) [below right=.5cm and .5cm of Customer] {inbox} edge (Customer);
+		\node[entity] (Message) [below right=.5cm and .5cm of inbox] {Message} edge (inbox);
+		\node[attribute] (Message1) [below right=of Message] {description} edge (Message);
+		\node[attribute] (Message2) [below=.8cm of Message] {content} edge (Message);
+		\node[attribute] (Message3) [above right=of Message] {sender} edge (Message);
+		\node[attribute] (Message4) [above=of Message] {date} edge (Message);
+		\node[attribute] (Message5) [right=of Message] {msgId} edge (Message);
+	\end{tikzpicture}
+}
+	\caption{Entitäten-Relationen-Diagramm \label{fig:ERDiagram}}
+\end{figure}
