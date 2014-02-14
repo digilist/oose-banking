@@ -1,1 +1,28 @@
 \authoredSection{markus}{Architektur}
+	Nachdem zunächst in diesem Bericht bereits Konzepte und Ergebnisse erläutert wurden gehen wir an dieser Stelle nun auf die Implementierung und technische Umsetzung der App ein. Im Fokus dabei steht die Architektur, die maßgeblich zum Ablauf der Entwicklung und zur Organisation der Kernkomponenten beiträgt.
+	
+	Unsere App soll den Kontakt zwischen einer Filialbank und seinen Kunden stärken. Da es sich bei KiBa lediglich um eine fiktive Bank handelt und die App auch anderen interessierten Banken vorgestellt werden soll, bietet es sich an, einen "Click-Dummy" zu entwickeln. Dieser soll sich bereits wie eine vollwertige Banking-App bedienen lassen, die jedoch an keine reale Bank, respektive deren Datenbank, angeschlossen ist. Aufgrund dieser Rahmenbedingungen, haben wir uns für die Architektur entschieden, die im Folgenden vorgestellt wird.
+
+\subsection{Umsetzung des MVC-Ansatzes}
+	Die Architektur muss uns dabei auf die Entwicklung der Kernfeatures fokussieren. Wenn nicht klar ist, welche Teile der Logik, der GUI oder anderer 
+
+\subsection{Datenmodell}
+	
+
+\subsection{Datenübertragung}
+\begin{itemize}
+	\item keine Speicherung auf dem Gerät (Sicherheit)
+	\item alle Daten werden direkt übertragen
+	\item die Datenquelle soll leicht angepasst werden können über Dependency Injection
+\end{itemize}
+
+\subsection{Dependency Injection}
+	Eine zentrale Anforderung der App-Architektur für uns ist außerdem das Austauschen von einzelnen Kernkomponenten, wie etwa die Datenschicht. Denn hierdurch kann aus dem Click-Dummy eine vollwertige Banking-App erschaffen werden können, ohne große Änderungen am Code vornehmen zu müssen.  Sie muss uns den Eindruck nehmen können, an eine echte Bank gebunden zu sein.
+	
+	Die Abstraktion der Datenschicht sollte das Testen der App auch erleichtern. Dadurch, dass in dem Click-Dummy feste Daten hinterlegt sind, kann man sich zum Testen der App eine Authentifizierung gegenüber der Bank und das Warten auf die Datenübertragung sparen. Alle 
+	
+\begin{itemize}
+	\item um einzelne Komponenten leicht austauschen zu können (hauptsächlich die Datenschicht)
+	\item Abhängigkeiten sind an einem zentralen Ort geregelt (Bootstrap)
+	\item ist nur eine Art Dependency Injection, weil unsere Klassen die Instanzen selber holen, der Dependency Manager gibt nur die richtige Instanz zurück
+\end{itemize}
