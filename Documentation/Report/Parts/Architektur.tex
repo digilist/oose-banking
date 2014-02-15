@@ -7,7 +7,8 @@
 	Die Architektur muss uns dabei auf die Entwicklung der Kernfeatures fokussieren. Wenn nicht klar ist, welche Teile der Logik, der GUI oder anderer 
 
 \subsection{Datenmodell}	
-	Zur Modellbildung der App fiel unsere Entscheidung auf ein klassisches Entitäten-Be\-zieh\-ungs\-sys\-tem. Unser Weg zur Abstraktion einer Bank führt daher über Klassen, die Modelle zu Objekten der realen Welt darstellen. Wie wir dabei vorgegangen sind ist im Entitäten-Relationen-Diagramm unseres Datenmodells in Abbildung \ref{fig:ERDiagram} zu sehen.
+	Zur Modellbildung der App fiel unsere Entscheidung auf ein klassisches Entitäten-Be\-zieh\-ungs\-sys\-tem. Unser Weg zur Abstraktion einer Bank führt daher 
+	über Klassen, die Modelle zu Objekten der realen Welt darstellen. Wie wir dabei vorgegangen sind ist im Entitäten-Relationen-Diagramm unseres Datenmodells in Abbildung \ref{fig:ERDiagram} zu sehen.
 	
 	\input{Pictures/ERDiagram}
 
@@ -19,7 +20,11 @@
 \end{itemize}
 
 \subsection{Dependency Injection}
-	Eine zentrale Anforderung der App-Architektur für uns ist außerdem das Austauschen von einzelnen Kernkomponenten, wie etwa die Datenschicht. Denn hierdurch kann aus dem Click-Dummy eine vollwertige Banking-App erschaffen werden können, ohne große Änderungen am Code vornehmen zu müssen.  Sie muss uns den Eindruck nehmen können, an eine echte Bank gebunden zu sein.
+	Eine zentrale Anforderung der App-Architektur für uns ist außerdem das Austauschen von einzelnen Kernkomponenten, wie etwa die Datenschicht. Denn hierdurch kann aus dem Click-Dummy eine vollwertige Banking-App erschaffen werden können, ohne große Änderungen am Code vornehmen zu müssen. Sie muss uns den Eindruck nehmen, an eine echte Bank gebunden zu sein.
+	
+	Daher ist für uns Dependency Injection als Entwicklungsmuster die Lösung dieses Problems. Wir haben es in einer reduzierter Form selber versucht zu implementieren. Dabei wird an einer zentralen Stelle im Quelltext, nämlich im \emph{Bootstrapping}, in den \texttt{KBADependencyInjector} registriert, welche konkrete Implementierung einer Abhängigkeit in der Anwendung verwendet werden soll. Beim \texttt{KBADependencyInjector} handelt es sich dabei nur um einen einfachen Schlüssel-Wert-Speicher. Der Bootstrapping-Prozess ist in Programmausdruck \ref{lst:Bootstrapping} wiedergegeben.
+	
+	\lstinputlisting[label={lst:Bootstrapping}, caption={Der Bootstrapping-Vorgang}]{Listings/Bootstrapping}
 	
 	Die Abstraktion der Datenschicht sollte das Testen der App auch erleichtern. Dadurch, dass in dem Click-Dummy feste Daten hinterlegt sind, kann man sich zum Testen der App eine Authentifizierung gegenüber der Bank und das Warten auf die Datenübertragung sparen. Alle 
 	

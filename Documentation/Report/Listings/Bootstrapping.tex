@@ -1,0 +1,42 @@
++ (void)initDependencyInjectorWithMode:(NSString *)mode {
+	id<KBABranchDao> branchDao;
+	id<KBAExchangeRateDao> exchangeRateDao;
+	id<KBACustomerDao> customerDao;
+	id<KBAAccountDao> accountDAo;
+	id<KBATransactionDao> transDao;
+	id<KBACreditRatingDao> creditDao;
+	id<KBAMessageDao> messageDao;
+	KBAAuth *auth = [KBAAuth new];
+	
+	exchangeRateDao = [KBAExchangeRateDaoRest new];
+    
+    if ([mode isEqualToString:@"dev"]) { 
+		// if development / click dummy
+		branchDao = [KBABranchDaoDummy new];
+		customerDao = [KBACustomerDaoDummy new];
+		accountDAo = [KBAAccountDaoDummy new];
+		transDao = [KBATransactionDaoDummy new];
+		creditDao = [KBACreditRatingDaoDummy new];
+		messageDao = [KBAMessageDaoDummy new];
+    }
+    else {
+		// for production
+		creditDao = [KBACreditRatingDaoRest new];
+		branchDao = [KBABranchDaoRest new];
+		customerDao = [KBACustomerDaoRest new];
+		accountDAo = [KBAAccountDaoRest new];
+		transDao = [KBATransactionDaoRest new];
+		messageDao = [KBAMessageDaoRest new];
+	}
+    
+    [KBADependencyInjector setObject:branchDao withKey:@"branchDao"];
+    [KBADependencyInjector setObject:exchangeRateDao withKey:@"rateDao"];
+    [KBADependencyInjector setObject:customerDao withKey:@"customerDao"];
+    [KBADependencyInjector setObject:accountDAo withKey:@"accountDao"];
+    [KBADependencyInjector setObject:auth withKey:@"auth"];
+    [KBADependencyInjector setObject:transDao withKey:@"transDao"];
+    [KBADependencyInjector setObject:creditDao withKey:@"creditDao"];
+    [KBADependencyInjector setObject:messageDao withKey:@"messageDao"];
+    [auth login: @"max" withPassword:@"test"];
+    
+} // end of initDependencyInjectorWithMode:
