@@ -22,6 +22,7 @@
 \usepackage{wallpaper} % Background images
 \usepackage{tikz-er2} % Entity relation diagrams
 \usepackage{listings} % Code listings
+\usepackage{acronym} % Using acronyms
 
 %===============================================================================
 % Tikz-Librarys
@@ -203,11 +204,22 @@
 \input{Parts/Qualitaetssicherung}
 \input{Parts/Fazit}
 \newpage
+\renewcommand{\currentAuthor}{kiba}
 
 %===============================================================================
-% Verzeichnisse
+% Acronyms
 %===============================================================================
-\renewcommand{\currentAuthor}{kiba}
+\section*{Abkürzungsverzeichnis}
+\phantomsection
+\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+\begin{acronym}[DAO]
+	\acro{DAO}{Data Access Object}
+\end{acronym}
+\newpage
+
+%===============================================================================
+% Figures
+%===============================================================================
 \phantomsection
 \addcontentsline{toc}{section}{Abbildungsverzeichnis}
 \listoffigures

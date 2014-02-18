@@ -22,14 +22,14 @@
 \subsection{Dependency Injection}
 	Eine zentrale Anforderung der App-Architektur für uns ist außerdem das Austauschen von einzelnen Kernkomponenten, wie etwa die Datenschicht. Denn hierdurch kann aus dem Click-Dummy eine vollwertige Banking-App erschaffen werden können, ohne große Änderungen am Code vornehmen zu müssen. Sie muss uns den Eindruck nehmen, an eine echte Bank gebunden zu sein.
 	
-	Daher ist für uns Dependency Injection als Entwicklungsmuster die Lösung dieses Problems. Wir haben es in einer reduzierter Form selber versucht zu implementieren. Dabei wird an einer zentralen Stelle im Quelltext, nämlich im \emph{Bootstrapping}, in den \texttt{KBADependencyInjector} registriert, welche konkrete Implementierung einer Abhängigkeit in der Anwendung verwendet werden soll. Beim \texttt{KBADependencyInjector} handelt es sich dabei nur um einen einfachen Schlüssel-Wert-Speicher. Der Bootstrapping-Prozess ist in Programmausdruck \ref{lst:Bootstrapping} wiedergegeben.
+	Daher ist für uns Dependency Injection als Entwicklungsmuster die Lösung dieses Problems. Wir haben es in einer reduzierter Form selber versucht zu implementieren. Dabei wird an einer zentralen Stelle im Quelltext, nämlich im \emph{Bootstrapping}, in den \texttt{KBADependencyInjector} registriert, welche konkrete Implementierung einer Abhängigkeit in der Anwendung verwendet werden soll. Beim \texttt{KBADependencyInjector} handelt es sich dabei nur um einen einfachen Schlüssel-Wert-Speicher. Der Bootstrapping-Prozess ist im Programmausdruck \ref{lst:Bootstrapping} wiedergegeben.
 	
 	\lstinputlisting[label={lst:Bootstrapping}, caption={Der Bootstrapping-Vorgang}]{Listings/Bootstrapping}
 	
-	Die Abstraktion der Datenschicht sollte das Testen der App auch erleichtern. Dadurch, dass in dem Click-Dummy feste Daten hinterlegt sind, kann man sich zum Testen der App eine Authentifizierung gegenüber der Bank und das Warten auf die Datenübertragung sparen. Alle 
+	Wie man sehen kann, besitzt jedes \ac{DAO} ein Protocol, welches auf zwei Arten instanziiert werden kann. Dadurch erreichen wir, dass ein Programm auf verschiedene Art und Weise ausführbar ist.
 	
-\begin{itemize}
-	\item um einzelne Komponenten leicht austauschen zu können (hauptsächlich die Datenschicht)
-	\item Abhängigkeiten sind an einem zentralen Ort geregelt (Bootstrap)
-	\item ist nur eine Art Dependency Injection, weil unsere Klassen die Instanzen selber holen, der Dependency Manager gibt nur die richtige Instanz zurück
-\end{itemize}
+	Ein weiterer Vorteil dieser Abstraktion ist die Testbarkeit der App. Dadurch, dass im Click-Dummy feste Daten hinterlegt sind, kann man sich zum Testen der App verschiedene Fälle erzeugen, die einfach in den jeweiligen \texttt{DummyDao}s benutzt werden.
+	
+	Darüber hinaus erlaubt uns dieses Verfahren auch die erleichterte Austauschbarkeit einzelner Komponenten. Wenn man dieses Verfahren auf andere Funktionen der App anwendet, insbesondere dann, wenn benutzerspezifische Elemente erforderlich sind, so ist es schnell möglich, eine White-Label-App zu erzeugen. Das heißt also wir können eine App schaffen, die auf verschiedene Kunden zugemünzt werden kann. Dies hat für unseren Kunden den Vorteil, ihre App unter viele Kunden bringen zu können.
+	
+	Wir haben festgestellt, dass sich das frühe Auseinandersetzen mit seiner Softwarearchitektur eine gute Entscheidung ist. Durch die Implementierung unserer eigenen Dependency Injection und der zentralen Regelung von Abhängigkeiten an einem Ort haben wir eine dynamische und nachhaltige Methode geschaffen, unsere App sukzessive erweitern zu können.
