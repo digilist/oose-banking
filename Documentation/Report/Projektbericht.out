@@ -1,24 +1,26 @@
 \BOOKMARK [1][-]{section.1}{Einleitung und Projektkontext}{}% 1
 \BOOKMARK [1][-]{section.2}{App-Idee}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Name}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Gerät}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Funktionen}{section.2}% 5
-\BOOKMARK [1][-]{section.3}{Mockups}{}% 6
-\BOOKMARK [1][-]{section.4}{Vorgehen}{}% 7
-\BOOKMARK [2][-]{subsection.4.1}{Scrum}{section.4}% 8
-\BOOKMARK [1][-]{section.5}{Design}{}% 9
-\BOOKMARK [1][-]{section.6}{Ergebnis}{}% 10
-\BOOKMARK [1][-]{section.7}{Architektur}{}% 11
-\BOOKMARK [2][-]{subsection.7.1}{Umsetzung des MVC-Ansatzes}{section.7}% 12
-\BOOKMARK [2][-]{subsection.7.2}{Datenmodell}{section.7}% 13
-\BOOKMARK [2][-]{subsection.7.3}{Sicherheitsaspekte}{section.7}% 14
-\BOOKMARK [2][-]{subsection.7.4}{Dependency Injection}{section.7}% 15
-\BOOKMARK [1][-]{section.8}{Toolchain}{}% 16
-\BOOKMARK [2][-]{subsection.8.1}{Agiles Vorgehen im Projekt}{section.8}% 17
-\BOOKMARK [2][-]{subsection.8.2}{Quelltextversionierung}{section.8}% 18
-\BOOKMARK [2][-]{subsection.8.3}{Konzept und erster Entwurf}{section.8}% 19
-\BOOKMARK [2][-]{subsection.8.4}{Design- und Textsatztools}{section.8}% 20
-\BOOKMARK [1][-]{section.9}{Qualitätssicherung}{}% 21
-\BOOKMARK [1][-]{section.10}{Fazit}{}% 22
-\BOOKMARK [1][-]{section*.2}{Abkürzungsverzeichnis}{}% 23
-\BOOKMARK [1][-]{section*.3}{Abbildungsverzeichnis}{}% 24
+\BOOKMARK [2][-]{subsection.2.1}{Problematik}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Vision}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Name}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Gerät}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.5}{Funktionen}{section.2}% 7
+\BOOKMARK [1][-]{section.3}{Mockups}{}% 8
+\BOOKMARK [1][-]{section.4}{Vorgehen}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Scrum}{section.4}% 10
+\BOOKMARK [1][-]{section.5}{Design}{}% 11
+\BOOKMARK [1][-]{section.6}{Ergebnis}{}% 12
+\BOOKMARK [1][-]{section.7}{Architektur}{}% 13
+\BOOKMARK [2][-]{subsection.7.1}{Umsetzung des MVC-Ansatzes}{section.7}% 14
+\BOOKMARK [2][-]{subsection.7.2}{Datenmodell}{section.7}% 15
+\BOOKMARK [2][-]{subsection.7.3}{Sicherheitsaspekte}{section.7}% 16
+\BOOKMARK [2][-]{subsection.7.4}{Dependency Injection}{section.7}% 17
+\BOOKMARK [1][-]{section.8}{Toolchain}{}% 18
+\BOOKMARK [2][-]{subsection.8.1}{Agiles Vorgehen im Projekt}{section.8}% 19
+\BOOKMARK [2][-]{subsection.8.2}{Quelltextversionierung}{section.8}% 20
+\BOOKMARK [2][-]{subsection.8.3}{Konzept und erster Entwurf}{section.8}% 21
+\BOOKMARK [2][-]{subsection.8.4}{Design- und Textsatztools}{section.8}% 22
+\BOOKMARK [1][-]{section.9}{Qualitätssicherung}{}% 23
+\BOOKMARK [1][-]{section.10}{Fazit}{}% 24
+\BOOKMARK [1][-]{section*.2}{Abkürzungsverzeichnis}{}% 25
+\BOOKMARK [1][-]{section*.3}{Abbildungsverzeichnis}{}% 26
