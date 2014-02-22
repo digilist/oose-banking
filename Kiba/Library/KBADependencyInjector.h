@@ -12,5 +12,6 @@
 
 + (id) getByKey:(NSString*)key;
 + (void) setObject:(id)object withKey:(NSString*)key ;
++ (BOOL) hasDependency:(NSString *)key;
 
 @end

@@ -34,4 +34,15 @@ static NSMutableDictionary* dependencies;
     [dependencies setValue:object forKey:key];
 }
 
+/**
+ *  Return true, if a dependency exists.
+ *
+ *  @param key The key of the dependecy
+ *
+ *  @return true if exists
+ */
++ (BOOL)hasDependency:(NSString *)key {
+    return [dependencies objectForKey:key] != nil;
+}
+
 @end

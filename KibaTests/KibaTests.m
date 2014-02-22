@@ -2,11 +2,14 @@
 //  KibaTests.m
 //  KibaTests
 //
-//  Created by Konstantin Möllers on 16.11.13.
-//  Copyright (c) 2013 Projekt Kiba. All rights reserved.
+//  Created by Konstantin Möllers.
+//  Copyright (c) 2014 Projekt Kiba. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
+#import "KBABootstrap.h"
+#import "KBADependencyInjector.h"
+#import "KBAAuth.h"
 
 @interface KibaTests : XCTestCase
 
@@ -14,21 +17,34 @@
 
 @implementation KibaTests
 
+/**
+ *  Diese Methode wird vor jedem Test ausgeführt.
+ */
 - (void)setUp
 {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    // Bootstrap der App
+    [KBABootstrap bootstrap];
 }
 
+/**
+ *  Diese Methode wird nach jedem Test ausgeführt.
+ */
 - (void)tearDown
 {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
-- (void)testExample
+/**
+ *  Testet, ob die Abhängigkeit für die
+ *  Authentifizierung korrekt eingebunden wurde.
+ */
+- (void)testAuthDependency
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    XCTAssert([KBADependencyInjector hasDependency:@"auth"],
+              @"Auth dependency is missing!");
+    XCTAssert([[KBADependencyInjector getByKey:@"auth"] isKindOfClass:[KBAAuth class]],
+              @"Auth depdency is not a valid Auth object!");
 }
 
 @end
