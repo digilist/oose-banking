@@ -16,7 +16,6 @@
 \usepackage{nameref} % References for names instead of numbers
 \usepackage[absolute]{textpos} % Absolute positioning
 \usepackage{titlesec} % Customizable ((Sub)Sub)Sections
-\usepackage{titletoc} % Customizable ToC
 \usepackage{tocloft} % Customizable ToC, LoF, …
 \usepackage{pdfpages} % Embedding pdfs
 \usepackage{wallpaper} % Background images
@@ -157,16 +156,20 @@
 \renewcommand{\cfttabpresnum}{Tab. }
 \renewcommand{\cftfigaftersnum}{:}
 \renewcommand{\cfttabaftersnum}{:}
+\renewcommand{\cftdotsep}{\cftnodots}
+\renewcommand{\cftsecfont}{\bfseries\sffamily}
 \setlength{\cftfignumwidth}{2cm}
 \setlength{\cfttabnumwidth}{2cm}
 \setlength{\cftfigindent}{0cm}
 \setlength{\cfttabindent}{0cm}
-
-\def\tocindent{15mm}
-\titlecontents{section}[\tocindent]{\vspace{10pt}\sffamily\bfseries}{\noindent\contentslabel{\tocindent}}%
-	{\hspace*{0cm}}{\hfill\contentspage}
-\titlecontents{subsection}[\tocindent]{}{\noindent\contentslabel{\tocindent}}%
-	{\hspace*{0cm}}{\hfill\contentspage}
+\setlength{\cftbeforesubsecskip}{-1mm}
+\setlength{\cftbeforesubsubsecskip}{-1mm}
+\setlength{\cftsubsecindent}{0cm}
+\setlength{\cftsubsubsecindent}{0cm}
+\def\tocnumwidth{13mm}
+\setlength{\cftsecnumwidth}{\tocnumwidth}
+\setlength{\cftsubsecnumwidth}{\tocnumwidth}
+\setlength{\cftsubsubsecnumwidth}{\tocnumwidth}
     
 %===============================================================================
 % Meta Description
