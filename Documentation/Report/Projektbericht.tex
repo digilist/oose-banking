@@ -16,7 +16,7 @@
 \usepackage{nameref} % References for names instead of numbers
 \usepackage[absolute]{textpos} % Absolute positioning
 \usepackage{titlesec} % Customizable ((Sub)Sub)Sections
-\usepackage{tocloft} % Customizable ToC, LoF, …
+\usepackage[titles]{tocloft} % Customizable ToC, LoF, …
 \usepackage{pdfpages} % Embedding pdfs
 \usepackage{wallpaper} % Background images
 \usepackage{tikz-er2} % Entity relation diagrams
@@ -64,6 +64,15 @@
 	tabsize=4,
 	lineskip={-1pt}
 }
+\makeatletter
+\begingroup\let\newcounter\@gobble\let\setcounter\@gobbletwo
+  \globaldefs\@ne \let\c@loldepth\@ne
+  \newlistof{listings}{lol}{\lstlistlistingname}
+\endgroup
+\let\l@lstlisting\l@listings
+\AtBeginDocument{\addtocontents{lol}{\protect\addvspace{10\p@}}}
+\makeatother
+\renewcommand{\lstlistoflistings}{\listoflistings}
 
 %===============================================================================
 % Definitions
@@ -109,6 +118,7 @@
 	\section[#2]{#2 {\normalfont\sffamily\small von \csname name@#1\endcsname}}}
 \makeatother
 \renewcommand{\lstlistingname}{Programmausdruck}
+\renewcommand{\lstlistlistingname}{Programmausdrucke}
 
 %===============================================================================
 % Head / Foot
@@ -152,16 +162,21 @@
 %===============================================================================
 % Table of Contents
 %===============================================================================
-\renewcommand{\cftfigpresnum}{Abb. }
-\renewcommand{\cfttabpresnum}{Tab. }
-\renewcommand{\cftfigaftersnum}{:}
-\renewcommand{\cfttabaftersnum}{:}
 \renewcommand{\cftdotsep}{\cftnodots}
 \renewcommand{\cftsecfont}{\bfseries\sffamily}
+\renewcommand{\cftfigpresnum}{Abb. }
+\renewcommand{\cfttabpresnum}{Tab. }
+\renewcommand{\cftlistingspresnum}{Prog. }
+\renewcommand{\cftfigaftersnum}{:}
+\renewcommand{\cfttabaftersnum}{:}
+\renewcommand{\cftlistingsaftersnum}{:}
 \setlength{\cftfignumwidth}{2cm}
 \setlength{\cfttabnumwidth}{2cm}
+\setlength{\cftlistingsnumwidth}{2cm}
 \setlength{\cftfigindent}{0cm}
 \setlength{\cfttabindent}{0cm}
+\setlength{\cftbeforelistingsskip}{-2mm}
+\setlength{\cftlistingsindent}{0cm}
 \setlength{\cftbeforesubsecskip}{-1mm}
 \setlength{\cftbeforesubsubsecskip}{-1mm}
 \setlength{\cftsubsecindent}{0cm}
@@ -224,7 +239,6 @@
 	\acro{SOAP}{Simple Object Access Protocol}
 	\acro{VCS}{Version Control System (Versionsverwaltung)}
 \end{acronym}
-\newpage
 
 %===============================================================================
 % Figures
@@ -233,5 +247,11 @@
 \addcontentsline{toc}{section}{Abbildungsverzeichnis}
 \listoffigures
 
+%===============================================================================
+% Listings
+%===============================================================================
+\phantomsection
+\addcontentsline{toc}{section}{\lstlistlistingname}
+\lstlistoflistings
 
 \end{document}
