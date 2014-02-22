@@ -47,8 +47,8 @@
 % Listings
 %===============================================================================
 \lstset{
-	emph={KBABranchDao, KBAAccountDao, KBACustomerDao, KBATransactionDao, KBAExchangeRateDao, KBACustomerDao, KBACreditRatingDao, KBAMessageDao, KBAAuth, KBADependencyInjector},
-	emph={[2]NSString},
+	emph={KBABranchDao, KBAAccountDao, KBACustomerDao, KBATransactionDao, KBAExchangeRateDao, KBACustomerDao, KBACreditRatingDao, KBAMessageDao, KBAAuth, KBADependencyInjector, KibaTests, KBABootstrap},
+	emph={[2]NSString, XCTAssert},
 	language=[Objective]C, 
 	morekeywords={new,@,},
 	backgroundcolor=\color{black!3},
@@ -63,6 +63,7 @@
 	showstringspaces=false,
 	flexiblecolumns=false,
 	tabsize=4,
+	lineskip={-1pt}
 }
 
 %===============================================================================
@@ -125,7 +126,7 @@
 %===============================================================================
 % Font
 %===============================================================================
-\setmainfont{Times}
+\setmainfont{TeX Gyre Termes}
 \setsansfont[
 	Extension = .ttf,
 	Path = Fonts/,
@@ -140,6 +141,7 @@
 	BoldItalicFont = lmmonolt10-boldoblique,
 	ItalicFont = lmmonolt10-oblique
 ]{lmmono12-regular}
+\defaultfontfeatures{Ligatures=TeX}
 
 %===============================================================================
 % Sections

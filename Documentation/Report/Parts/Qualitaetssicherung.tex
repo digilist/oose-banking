@@ -1,9 +1,24 @@
 \authoredSection{corny}{Qualitätssicherung}
-\begin{itemize}
-	\item Gestaltungs-/Entwicklungsprozess (Mock-ups $\to$ Design $\to$ GUI-Bau $\to$ Logik)
-	\item Design und iOS7-Guidelines
-	\item Weeklies
-	\item Feature-Improvement nach Plenarveranstaltungen
-	\item Ausblick auf Unit Tests
-	\item Club Mate
-\end{itemize}
+	Für große Projekte wird es zunehmend unabdinglich, über Planung und Ausführung hinaus auch ein Monitoring und Controlling zu besitzen, auf welche ich in Form der Qualitätssicherung in diesem Abschnitt eingehen werde.\footnote{\textsc{Projekt Management Institute}: \textit{A Guide to the Project Management Body of Knowledge}. Fifth Edition. Newton Square, 2008. 589 Seiten.}
+
+\subsection{Entwicklungsprozess}
+	Um Planungssicherheit zu haben benötigt man einen kontinuierlichen Prozess, damit man weiß, an wen welche Aufgaben zu verteilen sind und jeder Projektteilnehmer den Vorgangsablauf kennt. In unserem Fall war die Aufgabenverteilung bereits durch Telekom anhand der Rollen Projektmanager, Konzepter, Berater und Entwickler vorgegeben, sodass wir uns auch versuchten daran zu orientieren. 
+	
+	Unsere Arbeitsprozesse waren wichtig für die Qualität der Entwicklung. Die effektive Arbeitsteilung half uns, sich auf seinen Bereich fokussieren zu können und mit entsprechender Kenntnis voranschreiten zu können. Auch wenn die Umsetzung der Prozesse nicht immer absolut problemfrei ablief, so haben wir es doch geschafft, unsere beiden Hauptfeatures Finder und Self-Service gut umsetzen zu können.
+
+\subsection{Qualität des Designs}
+	Damit sichergestellt ist, dass wir ein konsistentes, qualitatives Design haben, versuchten wir uns grundlegend an den iOS7-Design-Richtlinien zu orientieren.\footnote{\url{https://developer.apple.com/library/ios/documentation/userexperience/conceptual/mobilehig/}} Da leider kein Mitglied von uns weitreichende Erfahrungen mit Design-Werkzeugen hatte, war die Umsetzung deren für uns von größerem Problem.
+
+\subsection{Umgang mit Feedback}
+	Ein effektives Instrument zur Qualitätssicherung, dass uns durch die Veranstalter zur Verfügung gestellt wurde, ist das Feedback von potentiellen Kunden. Umso mehr ist es für uns daher eine große Hilfe gewesen, dass auf Probleme und Wünsche bei der App in wöchentlichen Plenarveranstaltungen eingegangen wurde. Wir haben jedes Feedback umgehend in unserer Facebook-Gruppe dokumentiert und Lösungen ausdiskutiert.
+	
+	Dieser Vorgang hat uns sehr in der Einhaltung der oben geschilderten Prozesse geholfen. Da wir uns jeden Dienstag und Donnerstag im Mac-Arbeitsraum getroffen hatten, konnten wir erst neue Storys in PivotalTracker anhand des Feedbacks anlegen, diese dann unter uns aufteilen und bis zur nächsten Plenarveranstaltung abarbeiten. Man kann sagen, dass wir also die Plenarveranstaltung als „Motor“ für unsere Scrum-Iterationen benutzt haben.
+	
+	Wir entwickelten somit über die Zeit ein immer besseres Gefühl für die Umsetzung von Feedback und auch über die Möglichkeit, Scrum als Methode des agilen Projektmanagements anzuwenden.
+
+\subsection{Ausblick}
+	Über die vorangegangen Punkte hinaus haben wir uns außerdem überlegt, wie wir auch entwicklungstechnischer Sicht Qualitätssicherung umsetzen können. Unser nächster Schritt in der Entwicklung wäre daher auch das Einbinden von Unittests gewesen, um auch in Hinblick auf die oben beschriebene Architektur eine Absicherung über die Prozesse geben.
+	
+	Programmausdruck \ref{lst:Unittest} zeigt ein Beispiel für so einen Unittest, wie er die Arbeitsweise der Dependency Injection verifizieren kann. Er zeigt, wie beispielsweise das Einbinden der Authentifizierung getestet werden kann.
+	
+	\lstinputlisting[label={lst:Unittest}, caption={Beispiel für einen Unittest mit iOS.}]{Listings/Unittest}
