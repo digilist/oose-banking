@@ -1,21 +1,30 @@
 \authoredSection{markus}{Architektur}
-	Nachdem zunächst in diesem Bericht bereits Konzepte und Ergebnisse erläutert wurden gehen wir an dieser Stelle nun auf die Implementierung und technische Umsetzung der App ein. Im Fokus dabei steht die Architektur, die maßgeblich zum Ablauf der Entwicklung und zur Organisation der Kernkomponenten beiträgt.
+	Nachdem zunächst in diesem Bericht bereits Konzepte und Ergebnisse erläutert wurden, gehen wir an dieser Stelle nun auf die Implementierung und technische Umsetzung der App ein. Im Fokus dabei steht die Architektur, die maßgeblich zum Ablauf der Entwicklung und zur Organisation der Kernkomponenten beiträgt.
 	
-	Unsere App soll den Kontakt zwischen einer Filialbank und seinen Kunden stärken. Da es sich bei KiBa lediglich um eine fiktive Bank handelt und die App auch anderen interessierten Banken vorgestellt werden soll, bietet es sich an, einen "Click-Dummy" zu entwickeln. Dieser soll sich bereits wie eine vollwertige Banking-App bedienen lassen, die jedoch an keine reale Bank, respektive deren Datenbank, angeschlossen ist. Aufgrund dieser Rahmenbedingungen, haben wir uns für die Architektur entschieden, die im Folgenden vorgestellt wird.
+	Unsere App soll den Kontakt zwischen einer Filialbank und seinen Kunden stärken. Da es sich bei KiBa lediglich um eine fiktive Bank handelt und die App auch anderen interessierten Banken vorgestellt werden soll, bietet es sich an, einen „Click-Dummy“ zu entwickeln. Dieser soll sich bereits wie eine vollwertige Banking-App bedienen lassen, die jedoch an keine reale Bank, respektive deren Datenbank, angeschlossen ist. Aufgrund dieser Rahmenbedingungen haben wir uns für die Architektur entschieden, die im Folgenden vorgestellt wird.
 
 \subsection{Umsetzung des MVC-Ansatzes}
-	Die Architektur muss uns dabei auf die Entwicklung der Kernfeatures fokussieren. Wenn nicht klar ist, welche Teile der Logik, der GUI oder anderer 
+	Die Architektur muss uns dabei auf die Entwicklung der Kernfeatures fokussieren. Wenn nicht klar ist, wo welche Teile der Logik, der GUI oder anderer Komponenten zu platzieren sind, verzögert dies den Entwicklungsprozess und macht das Entwicklungsteam weniger produktiv.
+	
+	Daher fiel unsere Entscheidung auf den MVC-Ansatz; das heißt, wir versuchten unseren Code in Datenmodellierung, Visualisierung und Kontextualisierung zu gliedern.
+	
+	Auf oberster Ebene befinden sich deswegen nun die Ordner „Entities“ für die Modellierungsentitäten, „Services“ für Dienstleisterklassen, „Views“ für View-Controller und die die View repräsentierenden \texttt{xib}-Dateien und zuletzt ein „Library“-Ordner, der für alle Bereiche unterstützende Helferklassen sammelt.
+	
+	Innerhalb dieser Ordner haben wir darüber hinaus eine funktionale Substruktur erschaffen, die nach unseren Feature-Komponenten aufgebaut ist. Das hatte auch den positiven Nebeneffekt, dass kollaboratives Arbeiten am Projekt erleichtert wurde. Denn auf diese Weise war es nicht zwangsläufig für jede Einheit erforderlich, eine eigene Git-Branch zu eröffnen, da in den Ordnern gearbeitet werden konnte.
 
 \subsection{Datenmodell}	
-	Zur Modellbildung der App fiel unsere Entscheidung auf ein klassisches Entitäten-Be\-zieh\-ungs\-sys\-tem. Unser Weg zur Abstraktion einer Bank führt daher 
-	über Klassen, die Modelle zu Objekten der realen Welt darstellen. Wie wir dabei vorgegangen sind ist im Entitäten-Relationen-Diagramm unseres Datenmodells in Abbildung \ref{fig:ERDiagram} zu sehen.
+	Zur Modellbildung der App fiel unsere Entscheidung auf ein klassisches Entitäten-Be\-zieh\-ungs\-sys\-tem. Unser Weg zur Abstraktion einer Bank führt daher	über Klassen, die Modelle zu Objekten der realen Welt darstellen. Wie wir dabei vorgegangen sind, ist im Entitäten-Relationen-Diagramm unseres Datenmodells in Abbildung \ref{fig:ERDiagram} zu sehen.
 	
 	\input{Pictures/ERDiagram}
+	
+	Da gibt es zum einen die mit der Bank agierenden Benutzer, nämlich den Berater und den Kunden, die von einer gemeinsamen Klasse a\texttt{User} erben. Kunden, sprich \texttt{Customer}, besitzen mehrere Konten (\texttt{Account}) und erhalten mehrere Nachrichten (\texttt{Message}). Des weiteren verfügen sie, ebenso wie die Filialen,  über eine Adresse. Diese Filialen (\texttt{Branch}) wiederum werden von Beratern geleitet und sind zu verschiedenen Öffnungszeiten (\texttt{OpenHour}) besuchbar. Darüber hinaus finden Transaktionen (\texttt{Transaction}) zwischen Konten statt.
 
 \subsection{Sicherheitsaspekte}
 	Ein wichtiger Aspekt, insbesondere im Hinblick auf den Umgang mit sensiblen Finanzdaten, ist die Sicherheit der App. Dabei ist es auch eine Aufgabe der Architektur, diese gewährleisten zu können. Im Folgenden erläutern wir die Schlüsse, die wir dementsprechend für die realistische Umsetzung zogen.
 	
 	Eine Fragestellung von essentieller Bedeutung für uns ist, was mit der App im Falle eines Diebstahls passieren würde. Da wir sowohl der Bank als auch dem Kunden gewährleisten müssen, dass ihre Daten sicher sind, haben wir das Risiko zu groß eingestuft, die Daten auf dem Gerät zu speichern. Deswegen liegen alle Informationen nur im Zwischenspeicher. Das hat für uns den Vorteil, dass beim Beenden der App alle Informationen verloren gehen, wenn der Kunde nicht mehr eingeloggt ist.
+	
+	Zudem würde in einer über einen Dummy hinausgehenden Implementierung ein Time-Out Token implementiert, welche nach beispielsweise zehn Minuten ohne Interaktion die Anwendung beendete. Außerdem gewährleistet der Authentifizierungsmechanismus, dass kritische Features serverseitig deaktiviert werden, indem der entsprechende Benutzer wieder auf nicht authentifiziert geschaltet wird. Dieser Mechanismus kann einerseits bei einer Verlustmeldung greifen, aber auch bei in irgendeiner Weise verdächtigem Verhalten, also ungewöhnlich viele oder große Transaktionen in bestimmten Zeiträumen.
 	
 	Wichtig ist außerdem, dass alle Daten direkt übertragen werden. Wir stellen uns ein direktes Protokoll wie eine \acs{REST}-Schnittstelle oder ein \acs{SOAP}-Verfahren zum Austausch der Informationen zwischen App und Server der Bank vor.
 	
@@ -24,14 +33,20 @@
 \subsection{Dependency Injection}
 	Eine zentrale Anforderung der App-Architektur für uns ist außerdem das Austauschen von einzelnen Kernkomponenten, wie etwa die Datenschicht. Denn hierdurch kann aus dem Click-Dummy eine vollwertige Banking-App erschaffen werden können, ohne große Änderungen am Code vornehmen zu müssen. Sie muss uns den Eindruck nehmen, an eine echte Bank gebunden zu sein.
 	
-	Daher ist für uns Dependency Injection als Entwicklungsmuster die Lösung dieses Problems. Wir haben es in einer reduzierter Form selber versucht zu implementieren. Dabei wird an einer zentralen Stelle im Quelltext, nämlich im \emph{Bootstrapping}, in den \texttt{KBADependencyInjector} registriert, welche konkrete Implementierung einer Abhängigkeit in der Anwendung verwendet werden soll. Beim \texttt{KBADependencyInjector} handelt es sich dabei nur um einen einfachen Schlüssel-Wert-Speicher. Der Bootstrapping-Prozess ist im Programmausdruck \ref{lst:Bootstrapping} wiedergegeben.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.25]{Pictures/uml-di}
+	\caption{Klassendiagramm unserer Dependency Injection\label{fig:UmlDi}}
+\end{figure}
+	
+	Daher ist für uns Dependency Injection als Entwicklungsmuster die Lösung dieses Problems. Wir haben es in einer reduzierten Form selbst versucht zu implementieren. Dabei wird an einer zentralen Stelle im Quelltext, nämlich im \emph{Bootstrapping}, in den \texttt{KBADependencyInjector} wie in Abbildung \ref{fig:UmlDi} sichtbar registriert, welche konkrete Implementierung einer Abhängigkeit in der Anwendung verwendet werden soll. Beim \texttt{KBADependencyInjector} handelt es sich dabei nur um einen einfachen Schlüssel-Wert-Speicher. Der Bootstrapping-Prozess ist im Programmausdruck \ref{lst:Bootstrapping} wiedergegeben.
 	
 	\lstinputlisting[label={lst:Bootstrapping}, caption={Der Bootstrapping-Vorgang}]{Listings/Bootstrapping}
 	
-\noindent	Wie man sehen kann, besitzt jedes \ac{DAO} ein Protocol, welches auf zwei Arten instanziiert werden kann. Dadurch erreichen wir, dass ein Programm auf verschiedene Art und Weise ausführbar ist.
+\noindent	Wie zu erkennen ist, besitzt jedes \ac{DAO} ein Protocol, welches auf zwei Arten instanziiert werden kann. Dadurch erreichen wir, dass ein Programm auf verschiedene Art und Weise ausführbar ist.
 	
 	Ein weiterer Vorteil dieser Abstraktion ist die Testbarkeit der App. Dadurch, dass im Click-Dummy feste Daten hinterlegt sind, kann man sich zum Testen der App verschiedene Fälle erzeugen, die einfach in den jeweiligen \texttt{DummyDao}s benutzt werden.
 	
-	Darüber hinaus erlaubt uns dieses Verfahren auch die erleichterte Austauschbarkeit einzelner Komponenten. Wenn man dieses Verfahren auf andere Funktionen der App anwendet, insbesondere dann, wenn benutzerspezifische Elemente erforderlich sind, so ist es schnell möglich, eine White-Label-App zu erzeugen. Das heißt also wir können eine App schaffen, die auf verschiedene Kunden zugemünzt werden kann. Dies hat für unseren Kunden den Vorteil, ihre App unter viele Kunden bringen zu können.
+	Darüber hinaus erlaubt uns dieses Verfahren auch die erleichterte Austauschbarkeit einzelner Komponenten. Wenn man dieses Verfahren auf andere Funktionen der App anwendet, insbesondere dann, wenn benutzerspezifische Elemente erforderlich sind, so ist es schnell möglich, eine White-Label-App zu erzeugen. Das heißt also wir können eine App schaffen, die auf verschiedene Kunden zugeschnitten werden kann. Dies hat für unseren Kunden T-Systems MMS in seiner Eigenschaft als Vermarkter den Vorteil, ihre App leicht auf Endkunden anpassen zu können.
 	
-	Wir haben festgestellt, dass sich das frühe Auseinandersetzen mit seiner Softwarearchitektur eine gute Entscheidung ist. Durch die Implementierung unserer eigenen Dependency Injection und der zentralen Regelung von Abhängigkeiten an einem Ort haben wir eine dynamische und nachhaltige Methode geschaffen, unsere App sukzessive erweitern zu können.
+	Wir haben festgestellt, dass die frühe Auseinandersetzung mit Fragen der Softwarearchitektur eine gute Entscheidung ist. Durch die Implementierung unserer eigenen Dependency-Injection und der zentralen Regelung von Abhängigkeiten an einem Ort haben wir eine dynamische und nachhaltige Methode geschaffen, unsere App sukzessive erweitern zu können.
