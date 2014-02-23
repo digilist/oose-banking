@@ -3,7 +3,7 @@
 \subsubsection{Dashboard}
 \begin{figure}[h]
 	\centering
-  \includegraphics[scale=0.4]{Pictures/Dashboard}
+  \includegraphics[width=0.5\textwidth]{Pictures/Dashboard}
 	\caption{Dashboard}
 	\label{fig1}
 \end{figure}
@@ -15,7 +15,7 @@ Das Dashboard ist die zentrale Anlaufstelle der Applikation, dort haben wir eine
 \subsubsection{Filialfinder}
 \begin{figure}[h]
 	\centering
-  \includegraphics[scale=0.4]{Pictures/filialfinder}
+  \includegraphics[width=0.5\textwidth]{Pictures/filialfinder}
 	\caption{Googlemaps mit Filialmarkierungen}
 	\label{fig2}
 \end{figure}
@@ -27,7 +27,7 @@ Das Dashboard ist die zentrale Anlaufstelle der Applikation, dort haben wir eine
 
 \begin{figure}[h]
 	\centering
-  \includegraphics[scale=0.4]{Pictures/Sortenanfrage}
+  \includegraphics[width=0.5\textwidth]{Pictures/Sortenanfrage}
 	\caption{Filialseite mit Sortenanfrage Pop-Over}
 	\label{fig3}
 \end{figure}
@@ -56,7 +56,7 @@ Das Dashboard ist die zentrale Anlaufstelle der Applikation, dort haben wir eine
 \subsubsection{Self-Service Station}
 \begin{figure}[h]
 	\centering
-  \includegraphics[scale=0.4]{Pictures/SSverbunden}
+  \includegraphics[width=0.5\textwidth]{Pictures/SSverbunden}
 	\caption{Self-Service Startseite. Die App ist verbunden.}
 	\label{fig5}
 \end{figure}
@@ -68,7 +68,7 @@ Das Dashboard ist die zentrale Anlaufstelle der Applikation, dort haben wir eine
 \subsubsection{Bescheinigungen}
 \begin{figure}[h]
 	\centering
-  \includegraphics[scale=0.4]{Pictures/Bescheinigungen}
+  \includegraphics[width=0.5\textwidth]{Pictures/Bescheinigungen}
 	\caption{Die verschiedenen Dokumenttypen}
 	\label{fig6}
 \end{figure}
@@ -78,7 +78,7 @@ Bei den Bescheinigungen sehen wir verschiedene von der Bank zur Verfügung geste
 \subsubsection{Kontoauszüge}
 \begin{figure}[h]
 	\centering
-  \includegraphics[scale=0.4]{Pictures/kontoauszuege}
+  \includegraphics[width=0.5\textwidth]{Pictures/kontoauszuege}
 	\caption{Übersicht der Kontoauszüge}
 	\label{fig7}
 \end{figure}
@@ -88,7 +88,7 @@ Bei den Bescheinigungen sehen wir verschiedene von der Bank zur Verfügung geste
 \subsubsection{Umbuchungen}
 \begin{figure}[h]
 	\centering
-  \includegraphics[scale=0.4]{Pictures/umbuchung}
+  \includegraphics[width=0.5\textwidth]{Pictures/umbuchung}
 	\caption{Eine Scheckgrafik als Formular für die Umbuchung}
 	\label{fig8}
 \end{figure}
@@ -98,7 +98,7 @@ Bei den Bescheinigungen sehen wir verschiedene von der Bank zur Verfügung geste
 \subsubsection{Finanzierungsrechner}
 \begin{figure}[h]
 	\centering
-  \includegraphics[scale=0.4]{Pictures/finanzierung}
+  \includegraphics[width=0.5\textwidth]{Pictures/finanzierung}
 	\caption{Finanzierungsrechner mit individuellen Konditionen}
 	\label{fig9}
 \end{figure}
@@ -111,23 +111,27 @@ Bei den Bescheinigungen sehen wir verschiedene von der Bank zur Verfügung geste
 %Nachrichtensystem
 %mbereichneu.png
 
-\begin{figure}[h]
+\begin{figure}
 	\centering
-  \includegraphics[scale=0.4]{Pictures/mbereichneu}
-	\caption{Ein minimalistischer Posteingang des Nutzers}
-	\label{fig10}
+  \includegraphics[width=0.5\textwidth]{Pictures/mbereichneu}
+	\caption{Ein minimalistischer Posteingang des Nutzers\label{fig10}}
 \end{figure}
 
 	Der Nutzer kann in seinem persönlichen Bereich Nachrichten der Bank empfangen und somit beispielsweise eine Bestätigung für seine Terminanfrage erhalten. Mit einem Klick auf die Zelle einer Nachricht bekommt man die entsprechende Nachricht in einer neuen Ansicht mit dem kompletten Nachrichtentext.
 
 \subsection{Die Design-Highlights}
-\begin{figure}[h]
+\begin{figure}[h!]
 	\centering
-    %\begin{tabular}{@{}@{}}
+    \begin{tabular}{@{}ccc@{}}
+    		\framebox{\includegraphics[width=2.5cm]{Pictures/DesignA}} &
+    		\framebox{\includegraphics[width=2.5cm]{Pictures/DesignC}} &
+    		\framebox{\includegraphics[width=2.5cm]{Pictures/DesignB}} \\
+    		A & B & C
+    \end{tabular}
 	\caption{Eigenkreationen für das Design\label{fig11}}
 \end{figure}
 
-Um unserer Applikation in mancher Hinsicht besser auf unsere Bedürfnisse anzupassen haben wir uns bei einigen Designelementen über die Standardimplementierungen von Apple hinweggesetzt. Dennoch blieben die iOS-7 Richtlinien ein Qualitätsmaßstab für uns.
+Um unserer Applikation in mancher Hinsicht besser auf unsere Bedürfnisse anzupassen haben wir uns bei einigen Designelementen über die Standardimplementierungen von Apple hinweggesetzt. Dennoch blieben die iOS7 Richtlinien ein Qualitätsmaßstab für uns.
 
 Wie in (A) zu sehen ist, bekam unser Schieberegler als kleine Erweiterung eine schwarze Sprechblase, welche den aktuellen Wert anzeigt. Dies ist unter anderem für die Bedienbarkeit implementiert worden, damit man beim Verschieben des Regler nicht immer auf die linke Seite schauen muss um den aktuellen Wert abzulesen.
 
@@ -142,7 +146,7 @@ Die Standard Pop-Over lassen sich nur bedingt anpassen. So konnten wir die Farbe
 \subsection{Herausforderungen}
 	Mit zu den größten Herausforderungen war das Design der einzelnen Bildschirme. Das „Flat“-Design braucht ein gutes Händchen und kleine Details können schon zu Unstimmigkeiten führen. Gleichzeitig war uns bewusst, dass wir eine Bank repräsentieren und somit ein gewisses Maß an Seriosität erforderlich war. Gleichzeitig mussten wir die Usability für den Endnutzer gewährleisten. Wir mussten ein App-Design erschaffen, welches drei Stakeholder gleichzeitig zufriedenstellt.
 
-%Die größte Herausforderung war aber ein sogenanntes "`Killer"'-Feature zu erschaffen. Nach unseren Erkenntnissen gibt es keine herausragende Eigenschaft der Filialbank, welche sie von Direktbanken unterscheidet. Vor allem nach der Finanzkrise ab 2007 ist das Vertrauen in Filialbanken stark gesunken, davor war die persönliche Beratung immer das Unterscheidungsmerkmal zu Direktbanken.
+%Die größte Herausforderung war aber ein sogenanntes „Killer“-Feature zu erschaffen. Nach unseren Erkenntnissen gibt es keine herausragende Eigenschaft der Filialbank, welche sie von Direktbanken unterscheidet. Vor allem nach der Finanzkrise ab 2007 ist das Vertrauen in Filialbanken stark gesunken, davor war die persönliche Beratung immer das Unterscheidungsmerkmal zu Direktbanken.
 %Es bleibt nur noch die Finanzierung übrig, doch diese wird nur von einem Bruchteil der Kunden in Anspruch genommen. Berücksichtigt man noch die Anstrengungen der Direktbank auch eine persönliche Beratung per Telefonhotline anzubieten, indem der Kunde immer den gleichen Berater am Apparat hat, dann sieht man, dass selbst diese Lücke langsam aber sicher von den Direktbanken geschlossen wird.
 %
 %Wir als Entwickler konnten natürlich die Bank in ihrem Wesen nicht verändern, die Einführung von neuer Hardware mit der Self-Service Station war schon das Maximum an Veränderung die wir Einfordern konnten.
