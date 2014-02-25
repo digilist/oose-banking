@@ -20,6 +20,8 @@
 	Da gibt es zum einen die mit der Bank agierenden Benutzer, nämlich den Berater und den Kunden, die von einer gemeinsamen Klasse a\texttt{User} erben. Kunden, sprich \texttt{Customer}, besitzen mehrere Konten (\texttt{Account}) und erhalten mehrere Nachrichten (\texttt{Message}). Des weiteren verfügen sie, ebenso wie die Filialen,  über eine Adresse. Diese Filialen (\texttt{Branch}) wiederum werden von Beratern geleitet und sind zu verschiedenen Öffnungszeiten (\texttt{OpenHour}) besuchbar. Darüber hinaus finden Transaktionen (\texttt{Transaction}) zwischen Konten statt.
 
 \subsection{Sicherheitsaspekte}
+% MARKUS: kannst du die sicherheitsaspekte noch etwas weiter ausformulieren und sagen, wieso wir die daten nicht speichern, dass es egal ist, ob man gerade keinen zugriff hat und das banking später machen kann
+%
 	Ein wichtiger Aspekt, insbesondere im Hinblick auf den Umgang mit sensiblen Finanzdaten, ist die Sicherheit der App. Dabei ist es auch eine Aufgabe der Architektur, diese gewährleisten zu können. Im Folgenden erläutern wir die Schlüsse, die wir dementsprechend für die realistische Umsetzung zogen.
 	
 	Eine Fragestellung von essentieller Bedeutung für uns ist, was mit der App im Falle eines Diebstahls passieren würde. Da wir sowohl der Bank als auch dem Kunden gewährleisten müssen, dass ihre Daten sicher sind, haben wir das Risiko zu groß eingestuft, die Daten auf dem Gerät zu speichern. Deswegen liegen alle Informationen nur im Zwischenspeicher. Das hat für uns den Vorteil, dass beim Beenden der App alle Informationen verloren gehen, wenn der Kunde nicht mehr eingeloggt ist.
@@ -31,6 +33,10 @@
 	Insbesondere letzter Punkt kann es erforderlich machen, dass die Datenquelle anpassbar sein muss. Eine Möglichkeit, das zu realisieren, erläutern wir im nächsten Abschnitt.
 
 \subsection{Dependency Injection}
+% MARKUS: beim dependency injection wäre es glaub ich noch gut, ein beispiel für die benutzung zu nennen. und den bootstrap code bitte noch etwas erklären a lá es werden variablen für alle typen erstellt, die je nach modus eine bestimmte instanz zugewiesen bekommen, die anschließend im dependency injector registriert werden
+%
+% MARKUS:und vllt initial das ziel davon nochmal genau nennen, dass man an beliebiger stelle im code auf diese registrierte abhängigkeit zugreifen kann, ohne verzweigen über den code zu verteilen
+%
 	Eine zentrale Anforderung der App-Architektur für uns ist außerdem das Austauschen von einzelnen Kernkomponenten, wie etwa die Datenschicht. Denn hierdurch kann aus dem Click-Dummy eine vollwertige Banking-App erschaffen werden können, ohne große Änderungen am Code vornehmen zu müssen. Sie muss uns den Eindruck nehmen, an eine echte Bank gebunden zu sein.
 	
 \begin{figure}[h]
