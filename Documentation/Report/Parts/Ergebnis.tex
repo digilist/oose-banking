@@ -95,7 +95,7 @@ Das Dashboard ist die zentrale Anlaufstelle der Applikation; dort haben wir eine
 \end{figure}
 
 	Im Umbuchungsbildschirm kann der Nutzer sowohl Ziel- als auch Quellkonto auswählen, zwischen denen der angegebene Betrag transferiert werden soll. Das Ganze wird mit einem Button bestätigt. Insbesondere wird hier das klassische Sparbuch um eine komfortable Umbuchungsfunktionalität erweitert, ohne dass dessen filialgebundener Charakter verloren ginge.
-
+\pagebreak
 \subsubsection{Finanzierungsrechner}
 \begin{figure}[h]
 	\centering
@@ -112,16 +112,16 @@ Das Dashboard ist die zentrale Anlaufstelle der Applikation; dort haben wir eine
 %Nachrichtensystem
 %mbereichneu.png
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
   \includegraphics[width=0.5\textwidth]{Pictures/mbereichneu}
 	\caption{Ein minimalistischer Posteingang des Nutzers\label{fig10}}
 \end{figure}
 
 	Der Nutzer kann in seinem persönlichen Bereich Nachrichten der Bank empfangen und somit beispielsweise eine Bestätigung für seine Terminanfrage erhalten. Mit einem Klick auf die Zelle einer Nachricht bekommt man die entsprechende Nachricht in einer neuen Ansicht mit dem kompletten Nachrichtentext.
-
+\pagebreak
 \subsection{Die Design-Highlights}
-\begin{figure}[h!]
+\begin{figure}[h]
 	\centering
     \begin{tabular}{@{}ccc@{}}
     		\framebox{\includegraphics[width=2.5cm]{Pictures/DesignA}} &
@@ -155,5 +155,11 @@ Die Standard Pop-Over lassen sich nur bedingt anpassen. So konnten wir die Farbe
 	Mit einer neu zu erlernenden Programmiersprache und deren Entwicklungsumgebung geht auch immer eine Herausforderung einher. Die ersten Wochen hatten wir somit erwartungsgemäß etwas geringere Produktivität, weil wir uns auf diese Gegebenheiten erst einstellen mussten. Je weiter jedoch das Projekt voranschritt, desto sicherer fühlten wir uns in Objective-C und im Umgang mit Xcode.
 
 	Während der Entwicklung stießen wir auch immer wieder auf Einschränkungen seitens Apple bezüglich der Standard GUI-Elemente. So konnten wir beispielsweise die Tint-Color eines Buttons im Pop-Over nicht ändern. Apple lässt dies nicht zu. Daher mussten wir hier unser eigenes Pop-Over implementieren.
+	
+	Weiterhin wollten wir auch gewährleisten, dass unsere Applikation, sowohl in der Potrait-Ansicht, als auch in der Landscape-Ansicht gut aussieht. Dafür haben wir in den meisten Fällen das Auto-Layout verwendet.
+	
+	Bei einigen Features überdeckte die hereinfahrende Tastatur das vom Nutzer ausgewählte Eingabefeld. Anstatt die Anordnung der Elemente der einzelnen Bildschirme zu verändern, haben wir eine dynamische Scrollen implementiert, welches soweit scrollt, dass das vom Nutzer fokussierte Element sich immer ganz oben im Sichtbereich befindet.
 
 	Nichtsdestotrotz konnten wir mit Unterstützung der Betreuer alle größeren und kleineren Herausforderungen bewältigen und hatten nie das Gefühl, vor einem unüberwindbaren Problem zu stehen.
+	
+	
