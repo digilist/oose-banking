@@ -2,7 +2,7 @@
 //  CreditRating.m
 //  Kiba
 //
-//  Created by 1jendryc on 21.11.13.
+//  Created by Marco F. Jendryczko on 21.11.13.
 //  Copyright (c) 2013 KiBa App. All rights reserved.
 //
 

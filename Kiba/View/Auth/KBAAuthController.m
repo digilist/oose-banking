@@ -2,7 +2,7 @@
 //  KBAAuthController.m
 //  Kiba
 //
-//  Created by 1fasselt on 26.11.13.
+//  Created by Markus Fasselt on 26.11.13.
 //  Copyright (c) 2013 KiBa App. All rights reserved.
 //
 

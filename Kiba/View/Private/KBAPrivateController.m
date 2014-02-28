@@ -2,7 +2,7 @@
 //  KBAPrivateController.m
 //  Kiba
 //
-//  Created by Schaarschmidt, Michael on 16.01.14.
+//  Created by Michael Schaarschmidt on 16.01.14.
 //  Copyright (c) 2014 KiBa App. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  KBAStatemTableController.m
 //  Kiba
 //
-//  Created by 1jendryc on 24.01.14.
+//  Created by Marco F. Jendryczko on 24.01.14.
 //  Copyright (c) 2014 KiBa App. All rights reserved.
 //
 
