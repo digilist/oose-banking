@@ -22,6 +22,7 @@
 \usepackage{tikz-er2} % Entity relation diagrams
 \usepackage{listings} % Code listings
 \usepackage{acronym} % Using acronyms
+\usepackage{natbib} % Literature
 
 %===============================================================================
 % Tikz-Librarys
@@ -41,6 +42,15 @@
 \tikzstyle{cty} = [auto, font=\sffamily\footnotesize]
 \tikzstyle{every isa} = [top color=white, bottom color=green!20, 
                          draw=green!50!black!100, drop shadow]
+                         
+%===============================================================================
+% BibTeX
+%===============================================================================
+\makeatletter
+\newcommand{\bibstyle@dinat}%
+	{\bibpunct{(}{)}{;}{a}{}{,~}%
+		\gdef\NAT@biblabelnum##1{\textbf{##1}}}
+\makeatother
                          
 %===============================================================================
 % Listings
@@ -120,7 +130,7 @@
 	\section[#2]{#2 {\normalfont\sffamily\small von \csname name@#1\endcsname}}}
 \makeatother
 \renewcommand{\lstlistingname}{Programmausdruck}
-\renewcommand{\lstlistlistingname}{Programmausdrucke}
+\renewcommand{\lstlistlistingname}{Programmausdrucksverzeichnis}
 
 %===============================================================================
 % Head / Foot
@@ -221,6 +231,27 @@
 \newpage
 
 %===============================================================================
+% Listings
+%===============================================================================
+\phantomsection
+\addcontentsline{toc}{section}{\lstlistlistingname}
+\lstlistoflistings
+
+%===============================================================================
+% Acronyms
+%===============================================================================
+\section*{Abkürzungsverzeichnis}
+\phantomsection
+\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+\begin{acronym}[SOAP]
+	\acro{DAO}{Data Access Object}
+	\acro{REST}{Representational State Transfer}
+	\acro{SOAP}{Simple Object Access Protocol}
+	\acro{VCS}{Version Control System (Versionsverwaltung)}
+\end{acronym}
+\newpage
+
+%===============================================================================
 % Parts
 %===============================================================================
 \input{Parts/Einleitung}
@@ -237,24 +268,13 @@
 \renewcommand{\currentAuthor}{kiba}
 
 %===============================================================================
-% Acronyms
+% Bibliography
 %===============================================================================
-\section*{Abkürzungsverzeichnis}
-\phantomsection
-\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
-\begin{acronym}[SOAP]
-	\acro{DAO}{Data Access Object}
-	\acro{REST}{Representational State Transfer}
-	\acro{SOAP}{Simple Object Access Protocol}
-	\acro{VCS}{Version Control System (Versionsverwaltung)}
-\end{acronym}
-
-
-%===============================================================================
-% Listings
-%===============================================================================
-\phantomsection
-\addcontentsline{toc}{section}{\lstlistlistingname}
-\lstlistoflistings
+\def\mybibname{Literaturverzeichnis}
+\renewcommand\bibname{\mybibname}
+\renewcommand\refname{\mybibname}
+\nocite *
+\bibliographystyle{dinat}
+\bibliography{Literature}
 
 \end{document}
