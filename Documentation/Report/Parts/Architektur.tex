@@ -6,7 +6,7 @@
 \subsection{Umsetzung des MVC-Ansatzes}
 	Die Architektur muss uns dabei auf die Entwicklung der Kernfeatures fokussieren. Wenn nicht klar ist, wo welche Teile der Logik, der GUI oder anderer Komponenten zu platzieren sind, verzögert dies den Entwicklungsprozess und macht das Entwicklungsteam weniger produktiv.
 	
-	Daher fiel unsere Entscheidung auf den MVC-Ansatz; das heißt, wir versuchten unseren Code in Datenmodellierung, Visualisierung und Kontextualisierung zu gliedern.
+	Daher fiel unsere Entscheidung auf den MVC-Ansatz; das heißt, wir versuchten unseren Code in Datenmodellierung, Visualisierung und Kontextualisierung zu gliedern \citep{Tutorialspoint14}.
 	
 	Auf oberster Ebene befinden sich deswegen nun die Ordner „Entities“ für die Modellierungsentitäten, „Services“ für Dienstleisterklassen, „Views“ für View-Controller und die die View repräsentierenden \texttt{xib}-Dateien und zuletzt ein „Library“-Ordner, der für alle Bereiche unterstützende Helferklassen sammelt.
 	
@@ -47,7 +47,7 @@
 	\caption{Klassendiagramm unserer Dependency Injection\label{fig:UmlDi}}
 \end{figure}
 	
-	Daher ist für uns Dependency Injection als Entwicklungsmuster die Lösung dieses Problems. Wir haben es in einer reduzierten Form selbst implementiert. Dabei wird an einer zentralen Stelle im Quelltext, nämlich im \emph{Bootstrapping}, in den \lstinline{KBADependencyInjector} wie in Abbildung \ref{fig:UmlDi} sichtbar registriert, welche konkrete Implementierung einer Abhängigkeit in der Anwendung verwendet werden soll. Beim \lstinline{KBADependencyInjector} handelt es sich dabei nur um einen einfachen Schlüssel-Wert-Speicher.
+	Daher ist für uns Dependency Injection als Entwicklungsmuster die Lösung dieses Problems \citep{Jenkov14}. Wir haben es in einer reduzierten Form selbst implementiert. Dabei wird an einer zentralen Stelle im Quelltext, nämlich im \emph{Bootstrapping}, in den \lstinline{KBADependencyInjector} wie in Abbildung \ref{fig:UmlDi} sichtbar registriert, welche konkrete Implementierung einer Abhängigkeit in der Anwendung verwendet werden soll. Beim \lstinline{KBADependencyInjector} handelt es sich dabei nur um einen einfachen Schlüssel-Wert-Speicher.
 	
 	Der Bootstrapping-Prozess unserer App ist im Programmausdruck \ref{lst:Bootstrapping} wiedergegeben. Er zeigt an, wie zunächst lokale Variablen zu den generalisierten Protokollen typisiert sind, dann allerdings in einer bedingten Verzweigung entweder mit einer Dummy- oder einer konkreten Implementierung instantiiert werden. Abschließend werden die instantiierten Abhängigkeiten in den \lstinline{KBADependencyInjector} geschrieben. Beispielsweise wird für das Filial-\ac{DAO} eine lokale Variable des Typs \lstinline{id<KBABranchDao>} eingeführt, die im Entwicklungsmodus mit der Dummy-Implementierung \lstinline{KBABranchDaoDummy} und produktiv mit dem \lstinline{KBABranchDaoRest} instantiiert wird. Danach wird sie registriert.
 	\pagebreak
