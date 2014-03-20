@@ -1,5 +1,7 @@
 \authoredSection{marco}{Ergebnis}
 \vspace{-24pt}
+\subsection{Features}
+\subsubsection{Dashboard}
 \begin{figure}[h!]
 	\centering
   	\includegraphics[height=0.25\textheight]{Pictures/Dashboard}
@@ -7,7 +9,10 @@
 	\caption{Screenshot des Dashboards}
 	\label{fig1}
 \end{figure}
-\vspace{-12pt}
+
+Das Dashboard ist die zentrale Anlaufstelle der Applikation; dort haben wir einen Überblick über den Verlauf der Kontostände aller unserer Konten. In der Tabelle darunter haben wir die Möglichkeit, alle Kontobewegungen nachzuverfolgen.
+
+\subsubsection{Filialfinder}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[height=0.25\textheight]{Pictures/filialfinder}
@@ -15,7 +20,9 @@
 	\caption{Screenshot des Filialfinders}
 	\label{fig2}
 \end{figure}
-\vspace{-12pt}
+	Beim Filialfinder findet man eine Karte von Apple Maps mit Markierungen, welche die Standorte der einzelnen Filialen markieren. Mit einem Klick auf das Infosymbol gelangt man zu einer Filialseite, auf der man die Öffnungszeiten nachschauen, sowie eine Terminanfrage oder Sortenanfrage stellen kann.
+
+\subsubsection{Sortenanfrage}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[height=0.25\textheight]{Pictures/Sortenanfrage}
@@ -23,20 +30,10 @@
 	\caption{Screenshot der Filialseite mit Sortenanfrage Pop-Over}
 	\label{fig3}
 \end{figure}
-
-\pagebreak
-\subsection{Features}
-\subsubsection{Dashboard}
-Das Dashboard ist die zentrale Anlaufstelle der Applikation; dort haben wir einen Überblick über den Verlauf der Kontostände aller unserer Konten. In der Tabelle darunter haben wir die Möglichkeit, alle Kontobewegungen nachzuverfolgen.
-
-\subsubsection{Filialfinder}
-	Beim Filialfinder findet man eine Karte von Apple Maps mit Markierungen, welche die Standorte der einzelnen Filialen markieren. Mit einem Klick auf das Infosymbol gelangt man zu einer Filialseite, auf der man die Öffnungszeiten nachschauen, sowie eine Terminanfrage oder Sortenanfrage stellen kann.
-
-\subsubsection{Sortenanfrage}
 	Mit einem Klick auf Sortenanfrage bekommt der Nutzer ein Pop-Over zu sehen, in welchem er seine Wunschwährung auswählen kann. Die entsprechenden Umrechnungskurse werden intern direkt von der Europäischen Zentralbank bezogen. Hat man die Summe, welche umgetauscht werden soll eingegeben, so kann man die Anfrage stellen und bekommt eine Nachricht, ob die gewünschte Währung in der entsprechenden Höhe bei der Filiale verfügbar ist.
 
 \subsubsection{Authentifizierung}
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
 	\begin{tabular}{@{}cc@{}}
         	\includegraphics[width=1.5cm]{Pictures/notauth} &
@@ -62,32 +59,34 @@ Das Dashboard ist die zentrale Anlaufstelle der Applikation; dort haben wir eine
 	\label{fig5}
 \end{figure}
 
-\noindent	Bei der Self-Service-Station haben wir die Möglichkeit, sofern wir mit dem Stationsgerät verbunden sind, drei verschiedene Aktionen eigenständig durchzuführen. Eine Umbuchung, Kontoauszüge anschauen und drucken, sowie Bescheinigungen ansehen, ausfüllen und ausdrucken gegebenfalls direkt abschicken.
+\noindent	Bei der Self-Service-Station haben wir die Möglichkeit, sofern wir mit dem Stationsgerät verbunden sind, drei verschiedene Aktionen eigenständig durchzuführen. Eine Umbuchung, Kontoauszüge anschauen und drucken, sowie Bescheinigungen ansehen, ausfüllen und ausdrucken, gegebenenfalls direkt abschicken.
 
 	Jede Auswahlmöglichkeit hat eine Tabelle mit Inhalten, die den User erwarten, wenn er auf den entsprechenden Button drückt.
 
 \subsubsection{Bescheinigungen}
-\begin{figure}[h]
+\begin{figure}[h!]
 	\centering
   \includegraphics[width=0.5\textwidth]{Pictures/Bescheinigungen}
 	\caption{Die verschiedenen Dokumenttypen}
 	\label{fig6}
 \end{figure}
 
-	Bei den Bescheinigungen sehen wir verschiedene von der Bank zur Verfügung gestellte Dokumente, die der Nutzer auswählen kann. Insbesondere beispielsweise sind Aktionen wie eine Kontoeröffnung möglich, für die man normalerweise am Schalter anstehen müsste.
+	Bei den Bescheinigungen sehen wir verschiedene von der Bank zur Verfügung gestellte Dokumente, die der Nutzer auswählen kann. Insbesondere sind Aktionen wie eine Kontoeröffnung möglich, für die man normalerweise am Schalter anstehen müsste. Diese Funktionalität wurde nicht komplett implementiert, so aber die Idee andeuten die dahinter steht. Es wird beim Drücken von den Buttons nichts passieren.
 
+\pagebreak
 \subsubsection{Kontoauszüge}
-\begin{figure}[h]
+\begin{figure}[h!]
 	\centering
   \includegraphics[width=0.5\textwidth]{Pictures/kontoauszuege}
 	\caption{Übersicht der Kontoauszüge}
 	\label{fig7}
 \end{figure}
 
-	Im Kontoauszugsbildschirm kann man Kontoaktivitäten für einen bestimmten Zeitraum drucken lassen. Somit integriert die Station den althergebrachten Kontoauszugsdrucker und gibt ihm eine zeitgemäßere Oberfläche.
+	Im Kontoauszugsbildschirm kann man Kontoaktivitäten für einen bestimmten Zeitraum drucken lassen. Somit integriert die Station den althergebrachten Kontoauszugsdrucker und gibt ihm eine zeitgemäßere Oberfläche. Die Druckfunktion ist hier auch nur angedeutet.
+
 
 \subsubsection{Umbuchungen}
-\begin{figure}[h]
+\begin{figure}[h!]
 	\centering
   \includegraphics[width=0.5\textwidth]{Pictures/umbuchung}
 	\caption{Eine Scheckgrafik als Formular für die Umbuchung}
@@ -95,9 +94,8 @@ Das Dashboard ist die zentrale Anlaufstelle der Applikation; dort haben wir eine
 \end{figure}
 
 	Im Umbuchungsbildschirm kann der Nutzer sowohl Ziel- als auch Quellkonto auswählen, zwischen denen der angegebene Betrag transferiert werden soll. Das Ganze wird mit einem Button bestätigt. Insbesondere wird hier das klassische Sparbuch um eine komfortable Umbuchungsfunktionalität erweitert. Umbuchungen werden weiterhin in den Räumlichkeiten der Bank vorgenommen, weshalb der filialgebundene Charakter erhalten bleibt.
-\pagebreak
 \subsubsection{Finanzierungsrechner}
-\begin{figure}[h]
+\begin{figure}[h!]
 	\centering
   \includegraphics[width=0.5\textwidth]{Pictures/finanzierung}
 	\caption{Finanzierungsrechner mit individuellen Konditionen}
@@ -107,21 +105,20 @@ Das Dashboard ist die zentrale Anlaufstelle der Applikation; dort haben wir eine
 	Mit dem Finanzierungsrechner kann man sich Kreditkonditionen zusammenstellen. Die Werte der einzelnen Schieberegler werden aus dem Profil des Kundens von der Bank vorgegeben.
 
 	Anschließend kann man einen Beratungstermin vereinbaren, um die Konditionen mit seinem Berater im Detail durchsprechen zu können. Im Rahmen des Gesprächs bietet sich die Möglichkeit zu prüfen, inwiefern die ausgewählten Konditionen empfehlenswert für den Kunden sind oder ob die Bank vielleicht noch bessere Konditionen anbieten kann.
-
+\pagebreak
 \subsubsection{Mein Bereich}
 %Nachrichtensystem
 %mbereichneu.png
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\centering
   \includegraphics[width=0.5\textwidth]{Pictures/mbereichneu}
 	\caption{Ein minimalistischer Posteingang des Nutzers\label{fig10}}
 \end{figure}
 
 	Der Nutzer kann in seinem persönlichen Bereich Nachrichten der Bank empfangen und somit beispielsweise eine Bestätigung für seine Terminanfrage erhalten. Mit einem Klick auf die Zelle einer Nachricht bekommt man die entsprechende Nachricht in einer neuen Ansicht mit dem kompletten Nachrichtentext.
-\pagebreak
 \subsection{Die Design-Highlights}
-\begin{figure}[h]
+\begin{figure}[h!]
 	\centering
     \begin{tabular}{@{}ccc@{}}
     		\framebox{\includegraphics[width=2.5cm]{Pictures/DesignA}} &
